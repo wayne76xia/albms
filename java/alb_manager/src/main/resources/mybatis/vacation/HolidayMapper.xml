@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="alb.project.vacation.mapper.HolidayMapper">
+
+    <resultMap type="alb.project.vacation.domain.Holiday" id="HolidayMap">
+        <id property="holidayId" column="holiday_id"/>
+        <result property="holidayType" column="holiday_type"/>
+        <result property="holidayTypeName" column="holiday_type_name"/>
+        <result property="holidayDuration" column="holiday_duration"/>
+        <result property="holidayInstruction" column="holiday_instruction"/>
+        <result property="proposerId" column="proposer_id"/>
+        <result property="proposerName" column="proposer_name"/>
+        <result property="currentApproverId" column="current_approver_id"/>
+        <result property="currentApproverName" column="current_approver_name"/>
+        <result property="currentApprovedIndex" column="current_approved_index"/>
+        <result property="status" column="status"/>
+        <result property="holidayStartDate" column="holiday_start_date"/>
+        <result property="holidayEndDate" column="holiday_end_date"/>
+        <result property="delFlag" column="del_flag"/>
+    </resultMap>
+
+    <!--查询单个是否存在-->
+    <select id="queryHolidayIsExists" resultType="java.lang.Integer">
+        select count(1)
+        from holiday h
+        where h.holiday_id = #{holidayId}
+          and h.del_flag = 0
+    </select>
+
+    <!--通过单个实体-->
+    <select id="queryOne" resultMap="HolidayMap">
+        select h.holiday_id,
+               h.holiday_type,
+               h.holiday_type_name,
+               h.holiday_duration,
+               h.holiday_instruction,
+               h.proposer_id,
+               (select su.nick_name FROM sys_user su where su.user_id = h.proposer_id) as proposer_name,
+               h.current_approver_id,
+               (select su.nick_name FROM sys_user su where su.user_id = h.current_approver_id) as current_approver_name,
+               h.current_approved_index,
+               h.status,
+               h.holiday_start_date,
+               h.holiday_end_date,
+               h.del_flag
+        from holiday h
+        where h.holiday_id = #{holidayId}
+          and h.del_flag = 0
+        limit 1
+    </select>
+
+    <!--查询多个实体-->
+    <select id="queryAll" resultMap="HolidayMap">
+        select h.holiday_id,
+        h.holiday_type,
+        h.holiday_type_name,
+        h.holiday_duration,
+        h.holiday_instruction,
+        h.proposer_id,
+        (select su.nick_name FROM sys_user su where su.user_id = h.proposer_id) as proposer_name,
+        h.current_approver_id,
+        (SELECT su.nick_name FROM sys_user su WHERE su.user_id = h.current_approver_id) as current_approver_name,
+        h.current_approved_index,
+        h.status,
+        h.holiday_start_date,
+        h.holiday_end_date,
+        h.del_flag
+        from holiday h
+        where
+        h.del_flag = 0
+        <if test="holidayType != null">
+            and h.holiday_type = #{holidayType}
+        </if>
+        <if test="holidayDuration != null">
+            and h.holiday_duration = #{holidayDuration}
+        </if>
+        <if test="proposerId != null">
+            and h.proposer_id = #{proposerId}
+        </if>
+        <if test="currentApproverId != null">
+            and h.current_approver_id = #{currentApproverId}
+        </if>
+        <if test="status != null">
+            and h.status = #{status}
+        </if>
+        <if test="selectStartDate != null and selectEndDate != null">
+            and (date_format(h.holiday_end_date ,'%Y-%m-%d') &lt;= date_format(#{selectEndDate} ,'%Y-%m-%d'))
+            and (date_format(h.holiday_start_date ,'%Y-%m-%d') &gt;= date_format(#{selectStartDate},'%Y-%m-%d'))
+        </if>
+    </select>
+
+    <insert id="insert" keyColumn="holiday_id" keyProperty="holidayId" parameterType="Holiday" useGeneratedKeys="true">
+        insert into holiday
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="holidayType != null">
+                holiday_type,
+            </if>
+            <if test="holidayTypeName != null">
+                holiday_type_name,
+            </if>
+            <if test="holidayDuration != null">
+                holiday_duration,
+            </if>
+            <if test="holidayInstruction != null">
+                holiday_instruction,
+            </if>
+            <if test="proposerId != null">
+                proposer_id,
+            </if>
+            <if test="currentApproverId != null">
+                current_approver_id,
+            </if>
+            <if test="currentApprovedIndex != null">
+                current_approved_index,
+            </if>
+            <if test="status != null">
+                `status`,
+            </if>
+            <if test="holidayStartDate != null">
+                holiday_start_date,
+            </if>
+            <if test="holidayEndDate != null">
+                holiday_end_date,
+            </if>
+            <if test="delFlag != null">
+                del_flag,
+            </if>
+            <if test="createBy != null">
+                create_by,
+            </if>
+            <if test="createTime != null">
+                create_time,
+            </if>
+            <if test="updateBy != null">
+                update_by,
+            </if>
+            <if test="updateTime != null">
+                update_time,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="holidayType != null">
+                #{holidayType,jdbcType=TINYINT},
+            </if>
+            <if test="holidayTypeName != null">
+                #{holidayTypeName,jdbcType=VARCHAR},
+            </if>
+            <if test="holidayDuration != null">
+                #{holidayDuration,jdbcType=DECIMAL},
+            </if>
+            <if test="holidayInstruction != null">
+                #{holidayInstruction,jdbcType=VARCHAR},
+            </if>
+            <if test="proposerId != null">
+                #{proposerId,jdbcType=BIGINT},
+            </if>
+            <if test="currentApproverId != null">
+                #{currentApproverId,jdbcType=BIGINT},
+            </if>
+            <if test="currentApprovedIndex != null">
+                #{currentApprovedIndex,jdbcType=TINYINT},
+            </if>
+            <if test="status != null">
+                #{status,jdbcType=BOOLEAN},
+            </if>
+            <if test="holidayStartDate != null">
+                #{holidayStartDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="holidayEndDate != null">
+                #{holidayEndDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="delFlag != null">
+                #{delFlag,jdbcType=BOOLEAN},
+            </if>
+            <if test="createBy != null">
+                #{createBy,jdbcType=VARCHAR},
+            </if>
+            <if test="createTime != null">
+                #{createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updateBy != null">
+                #{updateBy,jdbcType=VARCHAR},
+            </if>
+            <if test="updateTime != null">
+                #{updateTime,jdbcType=TIMESTAMP},
+            </if>
+        </trim>
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update" parameterType="Holiday">
+        update holiday
+        <set>
+            <if test="holidayType != null">
+                holiday_type = #{holidayType,jdbcType=TINYINT},
+            </if>
+            <if test="holidayTypeName != null">
+                holiday_type_name = #{holidayTypeName,jdbcType=VARCHAR},
+            </if>
+            <if test="holidayDuration != null">
+                holiday_duration = #{holidayDuration,jdbcType=DECIMAL},
+            </if>
+            <if test="holidayInstruction != null">
+                holiday_instruction = #{holidayInstruction,jdbcType=VARCHAR},
+            </if>
+            <if test="proposerId != null">
+                proposer_id = #{proposerId,jdbcType=BIGINT},
+            </if>
+            <if test="currentApproverId != null">
+                current_approver_id = #{currentApproverId,jdbcType=BIGINT},
+            </if>
+            <if test="currentApproverIndex != null">
+                current_approver_index = #{currentApproverIndex,jdbcType=TINYINT},
+            </if>
+            <if test="status != null">
+                `status` = #{status,jdbcType=BOOLEAN},
+            </if>
+            <if test="holidayStartDate != null">
+                holiday_start_date = #{holidayStartDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="holidayEndDate != null">
+                holiday_end_date = #{holidayEndDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="delFlag != null">
+                del_flag = #{delFlag,jdbcType=BOOLEAN},
+            </if>
+            <if test="createBy != null">
+                create_by = #{createBy,jdbcType=VARCHAR},
+            </if>
+            <if test="createTime != null">
+                create_time = #{createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updateBy != null">
+                update_by = #{updateBy,jdbcType=VARCHAR},
+            </if>
+            <if test="updateTime != null">
+                update_time = #{updateTime,jdbcType=TIMESTAMP},
+            </if>
+        </set>
+        where holiday_id = #{holidayId,jdbcType=BIGINT}
+        limit 1
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        update holiday
+        set del_flag = 1
+        where holiday_id = #{holidayId}
+        limit 1
+    </delete>
+
+</mapper>

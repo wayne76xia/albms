@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="alb.project.vacation.mapper.HolidayItemMapper">
+
+    <resultMap type="alb.project.vacation.domain.HolidayItem" id="HolidayItemMap">
+        <id column="holiday_id" jdbcType="BIGINT" property="holidayId"/>
+        <id column="approved_user_id" jdbcType="BIGINT" property="approvedUserId"/>
+        <result column="approved_user_name" property="approvedUserName"/>
+        <result column="approved_index" jdbcType="TINYINT" property="approvedIndex"/>
+        <result column="status" jdbcType="TINYINT" property="status"/>
+        <result column="del_flag" jdbcType="BOOLEAN" property="delStatus"/>
+    </resultMap>
+
+    <!--通过单个实体-->
+    <select id="queryOne" resultMap="HolidayItemMap">
+        select hu.holiday_id,
+               hu.approved_user_id,
+               (select su.nick_name from sys_user su) as approved_user_name,
+               hu.approved_index,
+               hu.status,
+               hu.del_status
+        from holiday_item hu
+        where hu.holiday_id = #{holidayId}
+          and hu.approved_user_id = #{approvedUserId}
+          and hu.del_status = 0
+        limit 1
+    </select>
+
+    <!--查询多个实体-->
+    <select id="queryAll" resultMap="HolidayItemMap">
+        select hu.holiday_id,
+        hu.approved_user_id,
+        (select su.nick_name from sys_user su) as approved_user_name,
+        hu.approved_index,
+        hu.status,
+        hu.del_status
+        from holiday_item hu
+        where
+        <if test="holidayId != null">
+            hu.holiday_id = #{holidayId} and
+        </if>
+        <if test="approvedUserId != null">
+            hu.approved_user_id = #{approvedUserId} and
+        </if>
+        hu.del_status = 0
+    </select>
+
+    <insert id="insert" parameterType="HolidayItem">
+        insert into holiday_item
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="holidayId != null">
+                holiday_id,
+            </if>
+            <if test="approvedUserId != null">
+                approved_user_id,
+            </if>
+            <if test="approvedIndex != null">
+                approved_index,
+            </if>
+            <if test="status != null">
+                `status`,
+            </if>
+            <if test="delFlag != null">
+                del_flag,
+            </if>
+            <if test="createBy != null">
+                create_by,
+            </if>
+            <if test="createTime != null">
+                create_time,
+            </if>
+            <if test="updateBy != null">
+                update_by,
+            </if>
+            <if test="updateTime != null">
+                update_time,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="holidayId != null">
+                #{holidayId,jdbcType=BIGINT},
+            </if>
+            <if test="approvedUserId != null">
+                #{approvedUserId,jdbcType=BIGINT},
+            </if>
+            <if test="approvedIndex != null">
+                #{approvedIndex,jdbcType=TINYINT},
+            </if>
+            <if test="status != null">
+                #{status,jdbcType=TINYINT},
+            </if>
+            <if test="delFlag != null">
+                #{delFlag,jdbcType=BOOLEAN},
+            </if>
+            <if test="createBy != null">
+                #{createBy,jdbcType=VARCHAR},
+            </if>
+            <if test="createTime != null">
+                #{createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updateBy != null">
+                #{updateBy,jdbcType=VARCHAR},
+            </if>
+            <if test="updateTime != null">
+                #{updateTime,jdbcType=TIMESTAMP},
+            </if>
+        </trim>
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update" parameterType="HolidayItem">
+        update holiday_item
+        <set>
+            <if test="status != null">
+                `status` = #{status,jdbcType=TINYINT},
+            </if>
+            <if test="delFlag != null">
+                del_flag = #{delFlag,jdbcType=BOOLEAN},
+            </if>
+            <if test="updateBy != null">
+                update_by = #{updateBy,jdbcType=VARCHAR},
+            </if>
+            <if test="updateTime != null">
+                update_time = #{updateTime,jdbcType=TIMESTAMP},
+            </if>
+        </set>
+        where holiday_id = #{holidayId,jdbcType=BIGINT}
+        and approved_user_id = #{approvedUserId,jdbcType=BIGINT}
+        and approved_index = #{approvedIndex,jdbcType=TINYINT}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        update holiday_item
+        set del_status = 1
+        where holiday_id = #{holidayId,jdbcType=BIGINT}
+    </delete>
+
+</mapper>
