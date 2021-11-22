@@ -3,6 +3,8 @@ package alb.project.vacation.domain;
 import alb.framework.web.domain.BaseEntity;
 import lombok.*;
 
+import java.util.Date;
+
 /**
  * @author HaoHao
  * Created on 2021/10/25.
@@ -28,6 +30,13 @@ public class HolidayItem extends BaseEntity
 
     /* 审批状态 0未处理，1通过，2驳回 */
     private Integer status;
+
+    /* 审批时间 */
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    private Date approveTime;
+
+    /* 审批说明 */
+    private String approveInstruction;
 
     /**
      * 删除状态0未1已
