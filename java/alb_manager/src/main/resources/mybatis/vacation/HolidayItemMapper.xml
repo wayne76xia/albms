@@ -8,6 +8,8 @@
         <result column="approved_user_name" property="approvedUserName"/>
         <result column="approved_index" jdbcType="TINYINT" property="approvedIndex"/>
         <result column="status" jdbcType="TINYINT" property="status"/>
+        <result column="approve_time" property="approveTime"/>
+        <result column="approve_instruction" property="approveInstruction"/>
         <result column="del_flag" jdbcType="BOOLEAN" property="delStatus"/>
     </resultMap>
 
@@ -18,6 +20,9 @@
                (select su.nick_name from sys_user su) as approved_user_name,
                hu.approved_index,
                hu.status,
+               hu.approve_time,
+               hu.approve_instruction,
+               approve_time
                hu.del_status
         from holiday_item hu
         where hu.holiday_id = #{holidayId}
@@ -33,6 +38,8 @@
         (select su.nick_name from sys_user su) as approved_user_name,
         hu.approved_index,
         hu.status,
+        hu.approve_time,
+        hu.approve_instruction,
         hu.del_status
         from holiday_item hu
         where
@@ -59,6 +66,12 @@
             </if>
             <if test="status != null">
                 `status`,
+            </if>
+            <if test="approveTime != null">
+                approve_time,
+            </if>
+            <if test="approveInstruction != null">
+                approve_instruction,
             </if>
             <if test="delFlag != null">
                 del_flag,
@@ -88,6 +101,12 @@
             </if>
             <if test="status != null">
                 #{status,jdbcType=TINYINT},
+            </if>
+            <if test="approveTime != null">
+                #{approveTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="approveInstruction != null">
+                #{approveInstruction,jdbcType=VARCHAR},
             </if>
             <if test="delFlag != null">
                 #{delFlag,jdbcType=BOOLEAN},
