@@ -188,53 +188,6 @@
                 </el-form-item>
               </el-col>
               <el-col :span="12">
-                <el-form-item label="年龄：">
-                  <el-input v-model="form.holidayAge" placeholder="请输入年龄" oninput="value=value.replace(/\D/g,'')"/>
-                </el-form-item>
-              </el-col>
-              <el-col :span="12">
-                <el-form-item label="详细地址：">
-                  <el-input v-model="form.address" placeholder="请输入详细地址" />
-                </el-form-item>
-              </el-col>
-              <el-col :span="12">
-                <el-form-item label="护照号：" prop="passportNumber">
-                  <el-input v-model="form.passportNumber" placeholder="请输入护照号" />
-                </el-form-item>
-              </el-col>
-              <el-col :span="12">
-                <el-form-item label="所在门店：" prop="shopId">
-                  <el-select v-model="form.shopId" placeholder="请选择" clearable style="width:100%">
-                    <el-option
-                      v-for="dict in allshopList"
-                      :key="dict.deptId"
-                      :label="dict.deptName"
-                      :value="dict.deptId"
-                    ></el-option>
-                  </el-select>
-                </el-form-item>
-              </el-col>
-              <el-col :span="12">
-                <el-form-item label="会员来源：" prop="sourceType">
-                  <el-select
-                    v-model="form.sourceType"
-                    placeholder="请选择"
-                    clearable
-                    filterable
-                    size="small"
-                    style="width:100%"
-                  >
-                    <el-option
-                      v-for="dict in sourcesList"
-                      :key="parseInt(dict.id)"
-                      :label="dict.name"
-                      :value="parseInt(dict.value)"
-                    />
-                  </el-select>
-                </el-form-item>
-              </el-col>
-
-              <el-col :span="12">
                 <el-form-item label="下一级审批人：">
                   <el-select
                     v-model="form.currentApproverId"
@@ -246,10 +199,10 @@
                     @change="fnEdit"
                   >
                     <el-option
-                      v-for="dict in holidayList"
-                      :key="dict.holidayId"
-                      :label="dict.holidayName"
-                      :value="dict.holidayId"
+                      v-for="dict in userList"
+                      :key="dict.userId"
+                      :label="dict.nickName"
+                      :value="dict.userId"
                     ></el-option>
                   </el-select>
                 </el-form-item>
@@ -274,54 +227,34 @@
         >
           <div>
             <div class="text-grayer flex">
-              <div>基本资料</div>
+              <div>假期详情</div>
               <div class="line_dash"></div>
             </div>
             <div class="aui-padded-15 font-size-14">
               <el-row>
                 <el-col :span="12" class="aui-padded-b-10">
-                  <span>姓名：</span>
-                  <span class="aui-padded-l-5 text-graybc">{{holidayDetail.holidayName}}</span>
+                  <span>申请人：</span>
+                  <span class="aui-padded-l-5 text-graybc">{{holidayDetail.proposerName}}</span>
                 </el-col>
                 <el-col :span="12" class="aui-padded-b-10">
-                  <span>性别：</span>
-                  <span class="aui-padded-l-5 text-graybc">{{holidayDetail.holidaySex === 0 ? '男' : holidayDetail.holidaySex === 1 ? '女' : '未知'}}</span>
+                  <span>假期类型：</span>
+                  <span class="aui-padded-l-5 text-graybc">{{holidayDetail.holidayTypeName}}</span>
                 </el-col>
                 <el-col :span="12" class="aui-padded-b-10">
-                  <span>电话：</span>
-                  <span class="aui-padded-l-5 text-graybc">{{holidayDetail.holidayPhone}}</span>
+                  <span>假期时长：</span>
+                  <span class="aui-padded-l-5 text-graybc">{{holidayDetail.holidayDuration}}</span>
                 </el-col>
                 <el-col :span="12" class="aui-padded-b-10">
-                  <span>年龄：</span>
-                  <span class="aui-padded-l-5 text-graybc">{{holidayDetail.holidayAge}}</span>
+                  <span>假期开始时间：</span>
+                  <span class="aui-padded-l-5 text-graybc">{{holidayDetail.holidayStartDate}}</span>
                 </el-col>
                 <el-col :span="12" class="aui-padded-b-10">
-                  <span>所在区域：</span>
-                  <span class="aui-padded-l-5 text-graybc">{{holidayDetail.holidayArea}}</span>
+                  <span>假期结束时间：</span>
+                  <span class="aui-padded-l-5 text-graybc">{{holidayDetail.holidayEndDate}}</span>
                 </el-col>
                 <el-col :span="12" class="aui-padded-b-10">
-                  <span>详细地址：</span>
-                  <span class="aui-padded-l-5 text-graybc">{{holidayDetail.holidayAddress}}</span>
-                </el-col>
-                <el-col :span="12" class="aui-padded-b-10">
-                  <span>护照号：</span>
-                  <span class="aui-padded-l-5 text-graybc">{{holidayDetail.holidayPassportNum}}</span>
-                </el-col>
-                <el-col :span="12" class="aui-padded-b-10">
-                  <span>所在门店：</span>
-                  <span class="aui-padded-l-5 text-graybc">{{holidayDetail.shopName}}</span>
-                </el-col>
-                <el-col :span="12" class="aui-padded-b-10">
-                  <span>介绍人：</span>
-                  <span class="aui-padded-l-5 text-graybc">{{holidayDetail.parentHolidayName}}</span>
-                </el-col>
-                <el-col :span="12" class="aui-padded-b-10">
-                  <span>预约来源：</span>
-                  <span class="aui-padded-l-5 text-graybc">{{holidayDetail.sourceTypeName}}</span>
-                </el-col>
-                <el-col :span="12" class="aui-padded-b-10">
-                  <span>预约人：</span>
-                  <span class="aui-padded-l-5 text-graybc">{{holidayDetail.userNickName}}</span>
+                  <span>当前审批状态：</span>
+                  <span class="aui-padded-l-5 text-graybc">{{holidayDetail.status === 0 ? '审批中' : holidayDetail.status === 1 ? '已通过' : '已驳回'}}</span>
                 </el-col>
                 <el-col :span="12" class="aui-padded-b-10">
                   <span>客户备注：</span>
@@ -330,50 +263,22 @@
               </el-row>
             </div>
             <div class="text-grayer flex">
-              <div>数据统计</div>
+              <div>审批详情</div>
               <div class="line_dash"></div>
             </div>
             <div class="aui-padded-15 font-size-14 aui-padded-b-0">
-              <el-row>
-                <el-col :span="12" class="aui-padded-b-10">
-                  <span>建档时间：</span>
-                  <span class="aui-padded-l-5 text-graybc">{{holidayDetail.holidayCreateDate}}</span>
-                </el-col>
-                <el-col :span="12" class="aui-padded-b-10">
-                  <span>来源：</span>
-                  <span class="aui-padded-l-5 text-graybc">{{holidayDetail.sourceTypeName}}</span>
-                </el-col>
-                <el-col :span="12" class="aui-padded-b-10">
-                  <span>会员等级：</span>
-                  <span class="aui-padded-l-5 text-graybc">{{holidayDetail.holidayMemberLevelName}}</span>
-                </el-col>
-                <el-col :span="12" class="aui-padded-b-10">
-                  <span>累计消费：</span>
-                  <span class="aui-padded-l-5 text-graybc">{{holidayDetail.holidayTotalConsumption}}</span>
-                </el-col>
-                <el-col :span="12" class="aui-padded-b-10">
-                  <span>消费次数：</span>
-                  <span class="aui-padded-l-5 text-theme">{{holidayDetail.holidayConsumptionNum}}</span>
-                </el-col>
-                <el-col :span="12" class="aui-padded-b-10">
-                  <span>上次消费时间：</span>
-                  <span
-                    class="aui-padded-l-5 text-graybc"
-                  >{{holidayDetail.holidayLastConsumptionDate}}</span>
-                </el-col>
-                <el-col :span="12" class="aui-padded-b-10">
-                  <span>转介绍次数：</span>
-                  <span class="aui-padded-l-5 text-theme">{{holidayDetail.holidayParentNum}}</span>
-                </el-col>
-                <el-col :span="12" class="aui-padded-b-10">
-                  <span>累计积分：</span>
-                  <span class="aui-padded-l-5 text-graybc">{{holidayDetail.holidayTotalIntegral}}</span>
-                </el-col>
-                <el-col :span="12" class="aui-padded-b-10">
-                  <span>剩余积分：</span>
-                  <span class="aui-padded-l-5 text-graybc">{{holidayDetail.holidayIntegral}}</span>
-                </el-col>
-              </el-row>
+              <el-table :data="holidayDetail.holidayList" stripe >
+                <el-table-column label="审批人" prop="proposerName" align="center" />
+                <el-table-column label="审批状态" align="center">
+                  <template slot-scope="scope">
+                    <span v-if="scope.row.status === 0">审批中</span>
+                    <span v-if="scope.row.status === 1">通过</span>
+                    <span v-if="scope.row.status === 2">驳回</span>
+                  </template>
+                </el-table-column>
+                <el-table-column label="审批时间" prop="holidayTypeName" align="center" />
+                <el-table-column label="审批说明" prop="holidayTypeName" align="center" />
+              </el-table>
             </div>
           </div>
         </el-dialog>
