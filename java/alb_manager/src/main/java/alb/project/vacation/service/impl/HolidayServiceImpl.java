@@ -1,5 +1,6 @@
 package alb.project.vacation.service.impl;
 
+import cn.hutool.core.util.IdUtil;
 import alb.project.vacation.domain.Holiday;
 import alb.project.vacation.domain.HolidayItem;
 import alb.project.vacation.mapper.HolidayItemMapper;
@@ -44,7 +45,7 @@ public class HolidayServiceImpl implements IHolidayService {
      * @return
      */
     @Override
-    public List<Holiday> queryAllByParams(Holiday holiday) {
+    public List<Holiday> queryAll(Holiday holiday) {
         List<Holiday> resultAll = this.holidayMapper.queryAll(holiday);
         for (Holiday one : resultAll) {
             HolidayItem params = HolidayItem.builder()
@@ -63,20 +64,10 @@ public class HolidayServiceImpl implements IHolidayService {
      */
     @Override
     public int insert(Holiday holiday) {
+        // 雪花算法生成唯一通话记录号 单体服务 数据中心id和终端id都填1
+        holiday.setHolidayId(IdUtil.getSnowflake(1, 1).nextId());
         return this.holidayMapper.insert(holiday);
     }
-
-    /**
-     * 新增事项数据
-     *
-     * @param holidayItem 实例对象
-     * @return 实例对象
-     */
-    @Override
-    public int insertItem(HolidayItem holidayItem) {
-        return this.holidayItemMapper.insert(holidayItem);
-    }
-
 
     /**
      * 修改数据
@@ -87,17 +78,6 @@ public class HolidayServiceImpl implements IHolidayService {
     @Override
     public int update(Holiday holiday) {
         return this.holidayMapper.update(holiday);
-    }
-
-    /**
-     * 修改事项数据
-     *
-     * @param holidayItem 实例对象
-     * @return 实例对象
-     */
-    @Override
-    public int updateItem(HolidayItem holidayItem) {
-        return this.holidayItemMapper.update(holidayItem);
     }
 
     /**
