@@ -42,5 +42,5 @@ public class HolidayItem extends BaseEntity
     /**
      * 删除状态0未1已
      */
-    private Integer delStatus;
+    private Integer delFlag;
 }
