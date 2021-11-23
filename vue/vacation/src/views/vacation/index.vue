@@ -54,10 +54,10 @@
                       style="width: 200px"
                     >
                       <el-option
-                        v-for="item in holidayTypeList"
-                        :key="item.type"
-                        :label="item.name"
-                        :value="item.type"
+                        v-for="dict in holidayTypeList"
+                        :key="dict.dictCode.toString()"
+                        :label="dict.dictLabel"
+                        :value="dict.dictCode.toString()"
                       />
                     </el-select>
                   </el-form-item>
@@ -167,10 +167,10 @@
                     style="width:100%"
                   >
                     <el-option
-                      v-for="item in holidayTypeList"
-                      :key="item.type"
-                      :label="item.name"
-                      :value="item.type"
+                      v-for="dict in holidayTypeList"
+                      :key="dict.dictCode.toString()"
+                      :label="dict.dictLabel"
+                      :value="dict.dictCode.toString()"
                     ></el-option>
                   </el-select>
                 </el-form-item>
@@ -291,8 +291,8 @@
 import {
   getHolidayInfo,
   holidayAdd,
-  holidayInfo,
-  holidayList, holidayRemove,
+  holidayList,
+  holidayRemove,
   holidayUpdate,
   userListForVacation
 } from '../../api/vacation'
@@ -333,48 +333,7 @@ export default {
       // 用户列表
       userList: [],
       // 假期类型
-      holidayTypeList: [
-        {
-          name: '调休',
-          type: 1
-        },
-        {
-          name: '事假',
-          type: 2
-        },
-        {
-          name: '年假',
-          type: 3
-        },
-        {
-          name: '婚假',
-          type: 4
-        },
-        {
-          name: '病假',
-          type: 5
-        },
-        {
-          name: '哺乳假',
-          type: 6
-        },
-        {
-          name: '产假',
-          type: 7
-        },
-        {
-          name: '陪产假',
-          type: 8
-        },
-        {
-          name: '丧假',
-          type: 9
-        },
-        {
-          name: '公假',
-          type: 10
-        },
-      ],
+      holidayTypeList: [],
       ageList: [],
       holidayList: [],
       rules: {
@@ -398,6 +357,9 @@ export default {
   created() {
     this.getHolidayList();
     this.getUserList();
+    this.getDicts("holiday_type").then((response) => {
+      this.holidayTypeList = response.data;
+    });
   },
   methods: {
     // 多选框选中数据
