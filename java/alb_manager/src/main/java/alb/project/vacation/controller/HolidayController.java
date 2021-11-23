@@ -60,7 +60,7 @@ public class HolidayController extends BaseController {
     @PreAuthorize("@ss.hasPermi('vacation:holiday:list')")
     public TableDataInfo queryList(Holiday holiday) {
         startPage();
-        List<Holiday> list = this.holidayService.queryAllByParams(holiday);
+        List<Holiday> list = this.holidayService.queryAll(holiday);
         return getDataTable(list);
     }
 
@@ -70,7 +70,7 @@ public class HolidayController extends BaseController {
      * @param holiday
      * @return
      */
-    @GetMapping("/list/user")
+    @GetMapping("/user/list")
     @PreAuthorize("@ss.hasPermi('vacation:holiday:add')")
     public AjaxResult queryUserList(Holiday holiday) {
         LoginUser loginUser = tokenService.getLoginUser(ServletUtils.getRequest());
@@ -102,7 +102,7 @@ public class HolidayController extends BaseController {
      * @param holidayItem 实例对象
      * @return 实例对象
      */
-    @PostMapping("item")
+    @PostMapping("/item")
     @PreAuthorize("@ss.hasPermi('vacation:holiday:add')")
     @Log(title = "假期", businessType = BusinessType.INSERT)
     public AjaxResult addHolidayItem(@RequestBody HolidayItem holidayItem) {
@@ -136,6 +136,20 @@ public class HolidayController extends BaseController {
     public AjaxResult modifyHolidayItem(@RequestBody HolidayItem holidayItem) {
         int count = this.holidayService.updateItem(holidayItem);
         return count > 0 ? AjaxResult.success("修改成功") : AjaxResult.error("修改失败");
+    }
+
+    /**
+     * 通过主键删除数据
+     *
+     * @param holidayId 主键
+     * @return 是否成功
+     */
+    @DeleteMapping("/{holidayId}")
+    @PreAuthorize("@ss.hasPermi('vacation:holiday:delete')")
+    @Log(title = "假期", businessType = BusinessType.DELETE)
+    public AjaxResult deleteById(@PathVariable("holidayId") Long holidayId) {
+        int count = this.holidayService.deleteById(holidayId);
+        return count > 0 ? AjaxResult.success("删除成功") : AjaxResult.error("删除失败");
     }
 
     /**
