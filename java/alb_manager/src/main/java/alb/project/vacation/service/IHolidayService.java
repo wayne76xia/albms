@@ -24,7 +24,7 @@ public interface IHolidayService {
      * @param holiday
      * @return
      */
-    List<Holiday> queryAllByParams(Holiday holiday);
+    List<Holiday> queryAll(Holiday holiday);
 
     /**
      * 新增数据
@@ -35,28 +35,12 @@ public interface IHolidayService {
     int insert(Holiday holiday);
 
     /**
-     * 新增事项数据
-     *
-     * @param holidayItem 实例对象
-     * @return 实例对象
-     */
-    int insertItem(HolidayItem holidayItem);
-
-    /**
      * 修改数据
      *
      * @param holiday 实例对象
      * @return 实例对象
      */
     int update(Holiday holiday);
-
-    /**
-     * 修改事项数据
-     *
-     * @param holidayItem 实例对象
-     * @return 实例对象
-     */
-    int updateItem(HolidayItem holidayItem);
 
     /**
      * 通过主键删除数据
