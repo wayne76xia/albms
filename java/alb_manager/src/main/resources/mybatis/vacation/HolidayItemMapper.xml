@@ -10,46 +10,50 @@
         <result column="status" jdbcType="TINYINT" property="status"/>
         <result column="approve_time" property="approveTime"/>
         <result column="approve_instruction" property="approveInstruction"/>
-        <result column="del_flag" jdbcType="BOOLEAN" property="delStatus"/>
+        <result column="del_flag" property="delFlag"/>
+        <result property="createBy" column="create_by"/>
+        <result property="createTime" column="create_time"/>
+        <result property="updateBy" column="update_by"/>
+        <result property="updateTime" column="update_time"/>
     </resultMap>
 
     <!--通过单个实体-->
     <select id="queryOne" resultMap="HolidayItemMap">
-        select hu.holiday_id,
-               hu.approved_user_id,
+        select hi.holiday_id,
+               hi.approved_user_id,
                (select su.nick_name from sys_user su) as approved_user_name,
-               hu.approved_index,
-               hu.status,
-               hu.approve_time,
-               hu.approve_instruction,
+               hi.approved_index,
+               hi.status,
+               hi.approve_time,
+               hi.approve_instruction,
                approve_time
-               hu.del_status
-        from holiday_item hu
-        where hu.holiday_id = #{holidayId}
-          and hu.approved_user_id = #{approvedUserId}
-          and hu.del_status = 0
+               hi.del_flag
+        from holiday_item hi
+        where hi.holiday_id = #{holidayId}
+          and hi.approved_user_id = #{approvedUserId}
+          and hi.del_flag = 0
         limit 1
     </select>
 
     <!--查询多个实体-->
     <select id="queryAll" resultMap="HolidayItemMap">
-        select hu.holiday_id,
-        hu.approved_user_id,
+        select hi.holiday_id,
+        hi.approved_user_id,
         (select su.nick_name from sys_user su) as approved_user_name,
-        hu.approved_index,
-        hu.status,
-        hu.approve_time,
-        hu.approve_instruction,
-        hu.del_status
-        from holiday_item hu
+        hi.approved_index,
+        hi.status,
+        hi.approve_time,
+        hi.approve_instruction,
+        hi.del_flag
+        from holiday_item hi
         where
         <if test="holidayId != null">
-            hu.holiday_id = #{holidayId} and
+            hi.holiday_id = #{holidayId} and
         </if>
         <if test="approvedUserId != null">
-            hu.approved_user_id = #{approvedUserId} and
+            hi.approved_user_id = #{approvedUserId} and
         </if>
-        hu.del_status = 0
+        hi.del_flag = 0
     </select>
 
     <insert id="insert" parameterType="HolidayItem">
@@ -79,9 +83,7 @@
             <if test="createBy != null">
                 create_by,
             </if>
-            <if test="createTime != null">
                 create_time,
-            </if>
             <if test="updateBy != null">
                 update_by,
             </if>
@@ -91,37 +93,35 @@
         </trim>
         <trim prefix="values (" suffix=")" suffixOverrides=",">
             <if test="holidayId != null">
-                #{holidayId,jdbcType=BIGINT},
+                #{holidayId},
             </if>
             <if test="approvedUserId != null">
-                #{approvedUserId,jdbcType=BIGINT},
+                #{approvedUserId},
             </if>
             <if test="approvedIndex != null">
-                #{approvedIndex,jdbcType=TINYINT},
+                #{approvedIndex},
             </if>
             <if test="status != null">
-                #{status,jdbcType=TINYINT},
+                #{status},
             </if>
             <if test="approveTime != null">
-                #{approveTime,jdbcType=TIMESTAMP},
+                #{approveTime},
             </if>
             <if test="approveInstruction != null">
-                #{approveInstruction,jdbcType=VARCHAR},
+                #{approveInstruction},
             </if>
             <if test="delFlag != null">
-                #{delFlag,jdbcType=BOOLEAN},
+                #{delFlag},
             </if>
             <if test="createBy != null">
-                #{createBy,jdbcType=VARCHAR},
+                #{createBy},
             </if>
-            <if test="createTime != null">
-                #{createTime,jdbcType=TIMESTAMP},
-            </if>
+                sysdate(),
             <if test="updateBy != null">
-                #{updateBy,jdbcType=VARCHAR},
+                #{updateBy},
             </if>
             <if test="updateTime != null">
-                #{updateTime,jdbcType=TIMESTAMP},
+                #{updateTime},
             </if>
         </trim>
     </insert>
@@ -131,28 +131,26 @@
         update holiday_item
         <set>
             <if test="status != null">
-                `status` = #{status,jdbcType=TINYINT},
+                `status` = #{status},
             </if>
             <if test="delFlag != null">
-                del_flag = #{delFlag,jdbcType=BOOLEAN},
+                del_flag = #{delFlag},
             </if>
             <if test="updateBy != null">
-                update_by = #{updateBy,jdbcType=VARCHAR},
+                update_by = #{updateBy},
             </if>
-            <if test="updateTime != null">
-                update_time = #{updateTime,jdbcType=TIMESTAMP},
-            </if>
+                update_time = sysdate()
         </set>
-        where holiday_id = #{holidayId,jdbcType=BIGINT}
-        and approved_user_id = #{approvedUserId,jdbcType=BIGINT}
-        and approved_index = #{approvedIndex,jdbcType=TINYINT}
+        where holiday_id = #{holidayId}
+        and approved_user_id = #{approvedUserId}
+        and approved_index = #{approvedIndex}
     </update>
 
     <!--通过主键删除-->
     <delete id="deleteById">
         update holiday_item
-        set del_status = 1
-        where holiday_id = #{holidayId,jdbcType=BIGINT}
+        set del_flag =w 1
+        where holiday_id = #{holidayId}
     </delete>
 
 </mapper>
