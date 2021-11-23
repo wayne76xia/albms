@@ -10,7 +10,7 @@ import java.util.List;
 public interface HolidayItemMapper {
 
     /**
-     * 通过ID查询单条数据
+     * 查询单条数据
      *
      * @param holidayItem 实例对象
      * @return 实例对象
