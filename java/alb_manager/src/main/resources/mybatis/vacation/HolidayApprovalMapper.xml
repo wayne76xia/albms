@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="alb.project.vacation.mapper.HolidayApprovalMapper">
+
+    <resultMap type="alb.project.vacation.domain.HolidayApproval" id="HolidayApprovalMap">
+        <id column="holiday_approval_id" jdbcType="BIGINT" property="holidayApprovalId"/>
+        <result column="holiday_type_id" jdbcType="BIGINT" property="holidayTypeId"/>
+        <result column="dict_label" property="typeName"/>
+        <result column="dict_value" property="typeValue"/>
+        <result column="role_id" jdbcType="BIGINT" property="roleId"/>
+        <result column="approved_role_id" jdbcType="BIGINT" property="approvedRoleId"/>
+        <result column="current_approved_index" property="currentApprovedIndex"/>
+        <result column="next_approval_id" jdbcType="BIGINT" property="nextApprovalId"/>
+        <result column="del_flag" property="delFlag"/>
+        <result property="createBy" column="create_by"/>
+        <result property="createTime" column="create_time"/>
+        <result property="updateBy" column="update_by"/>
+        <result property="updateTime" column="update_time"/>
+    </resultMap>
+
+    <!--通过单个实体-->
+    <select id="queryOne" resultMap="HolidayApprovalMap">
+        select ha.holiday_approval_id,
+               ha.holiday_type_id,
+               s.dict_label,
+               s.dict_value,
+               ha.role_id,
+               ha.approved_role_id,
+               ha.current_approved_index,
+               ha.next_approval_id,
+               ha.next_approval_id,
+               ha.next_approval_id,
+               ha.del_flag
+        from holiday_approval ha
+                 left join sys_dict_data s on s.dict_type = 'holiday_type' and ha.holiday_type_id = s.dict_code
+        where ha.holiday_approval_id = #{holidayApprovalId}
+          and ha.del_flag = 0
+          limit 1
+    </select>
+
+    <!--查询多个实体-->
+    <select id="queryAll" resultMap="HolidayApprovalMap">
+        select ha.holiday_approval_id,
+        ha.holiday_type_id,
+        s.dict_label,
+        s.dict_value,
+        ha.role_id,
+        ha.approved_role_id,
+        ha.current_approved_index,
+        ha.next_approval_id,
+        ha.next_approval_id,
+        ha.next_approval_id,
+        ha.del_flag
+        from holiday_approval ha
+        left join sys_dict_data s on s.dict_type = 'holiday_type' and ha.holiday_type_id = s.dict_code
+        where ha.holiday_type_id = #{holidayApprovalId}
+          and ha.del_flag = 0
+    </select>
+
+    <insert id="insert" parameterType="HolidayApproval">
+        insert into holiday_approval
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="holidayApprovalId != null">
+                holiday_approval_id,
+            </if>
+            <if test="holidayTypeId != null">
+                holiday_type_id,
+            </if>
+            <if test="roleId != null">
+                role_id,
+            </if>
+            <if test="approvedRoleId != null">
+                approved_role_id,
+            </if>
+            <if test="currentApprovedIndex != null">
+                current_approved_index,
+            </if>
+            <if test="nextApprovalId != null">
+                next_approval_id,
+            </if>
+            <if test="delFlag != null">
+                del_flag,
+            </if>
+            <if test="createBy != null">
+                create_by,
+            </if>
+                create_time,
+            <if test="updateBy != null">
+                update_by,
+            </if>
+            <if test="updateTime != null">
+                update_time,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="holidayApprovalId != null">
+                #{holidayApprovalId},
+            </if>
+            <if test="holidayTypeId != null">
+                #{holidayTypeId},
+            </if>
+            <if test="roleId != null">
+                #{roleId},
+            </if>
+            <if test="approvedRoleId != null">
+                #{approvedRoleId},
+            </if>
+            <if test="currentApprovedIndex != null">
+                #{currentApprovedIndex},
+            </if>
+            <if test="nextApprovalId != null">
+                #{nextApprovalId},
+            </if>
+            <if test="delFlag != null">
+                #{delFlag},
+            </if>
+            <if test="createBy != null">
+                #{createBy},
+            </if>
+                sysdate(),
+            <if test="updateBy != null">
+                #{updateBy},
+            </if>
+            <if test="updateTime != null">
+                #{updateTime},
+            </if>
+        </trim>
+    </insert>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        update holiday_approval
+        set del_flag = 1
+        where holiday_approval_id = #{holiday_approval_id}
+    </delete>
+
+</mapper>
