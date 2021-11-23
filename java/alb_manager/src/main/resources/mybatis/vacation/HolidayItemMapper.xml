@@ -26,7 +26,6 @@
                hi.status,
                hi.approve_time,
                hi.approve_instruction,
-               approve_time
                hi.del_flag
         from holiday_item hi
         where hi.holiday_id = #{holidayId}
@@ -71,9 +70,7 @@
             <if test="status != null">
                 `status`,
             </if>
-            <if test="approveTime != null">
                 approve_time,
-            </if>
             <if test="approveInstruction != null">
                 approve_instruction,
             </if>
@@ -104,9 +101,7 @@
             <if test="status != null">
                 #{status},
             </if>
-            <if test="approveTime != null">
-                #{approveTime},
-            </if>
+                sysdate(),
             <if test="approveInstruction != null">
                 #{approveInstruction},
             </if>

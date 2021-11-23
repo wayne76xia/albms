@@ -1,6 +1,5 @@
 package alb.project.vacation.mapper;
 
-import alb.project.vacation.domain.Holiday;
 import alb.project.vacation.domain.HolidayApproval;
 
 import java.util.List;
@@ -9,6 +8,14 @@ import java.util.List;
  * 假期事项表数据库访问层
  */
 public interface HolidayApprovalMapper {
+
+    /**
+     * 通过实体查询是否存在下一节点
+     *
+     * @param holidayApproval 实例对象
+     * @return 实例对象
+     */
+    int hasNext(HolidayApproval holidayApproval);
 
     /**
      * 通过ID查询单条数据
