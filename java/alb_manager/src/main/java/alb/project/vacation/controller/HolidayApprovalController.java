@@ -19,7 +19,7 @@ import java.util.List;
  */
 
 @RestController
-@RequestMapping("/vacation/holidayApproval/type")
+@RequestMapping("/vacation/holiday/approval")
 public class HolidayApprovalController extends BaseController {
 
     @Resource // @Resource（这个注解属于J2EE的），默认按照名称进行装配
@@ -33,7 +33,7 @@ public class HolidayApprovalController extends BaseController {
      */
     @GetMapping("/{holidayApprovalId}")
     @PreAuthorize("@ss.hasPermi('vacation:holidayApproval:query')")
-    public AjaxResult queryHoliday(@PathVariable("holidayApprovalId") Long holidayApprovalId) {
+    public AjaxResult queryHolidayApproval(@PathVariable("holidayApprovalId") Long holidayApprovalId) {
         HolidayApproval result = this.holidayApprovalService.queryOne(holidayApprovalId);
         return result != null ? AjaxResult.success(result) : AjaxResult.error();
     }
@@ -61,7 +61,10 @@ public class HolidayApprovalController extends BaseController {
     @PostMapping("/")
     @PreAuthorize("@ss.hasPermi('vacation:holidayApproval:add')")
     @Log(title = "假期", businessType = BusinessType.INSERT)
-    public AjaxResult addHoliday(@RequestBody HolidayApproval holidayApproval) {
+    public AjaxResult addHolidayApproval(@RequestBody HolidayApproval holidayApproval) {
+        if (this.holidayApprovalService.hasRing(holidayApproval)) {
+            return AjaxResult.error("新增失败，添加该项会产生环");
+        }
         int count = this.holidayApprovalService.insert(holidayApproval);
         return count > 0 ? AjaxResult.success("新增成功") : AjaxResult.error("新增失败");
     }

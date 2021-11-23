@@ -62,7 +62,9 @@
         left join sys_dict_data s on s.dict_type = 'holiday_type' and ha.holiday_type_id = s.dict_code
         where ha.holiday_type_id = #{holidayTypeId}
           and ha.role_id = #{roleId}
-          and ha.current_approved_index = #{currentApprovedIndex}
+        <if test="currentApprovedIndex != null">
+            and ha.current_approved_index = #{currentApprovedIndex}
+        </if>
           and ha.del_flag = 0
     </select>
 

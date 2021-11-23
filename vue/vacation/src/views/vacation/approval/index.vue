@@ -112,7 +112,7 @@
                   v-hasPermi="['vacation:holiday:detail']"
                   title="查看详情"
                 >
-                  <img src="../../assets/image/chaxun.png" alt />
+                  <img src="holidayTypeId../../assets/image/chaxun.png" alt />
                 </el-button>
                 <el-button
                   size="mini"
@@ -287,8 +287,8 @@ import {
   holidayRemove,
   holidayUpdate,
   userListForVacation
-} from '../../api/vacation'
-import store from '../../store'
+} from '../../../api/vacation'
+import store from '../../../store'
 
 export default {
   name: "holiday",

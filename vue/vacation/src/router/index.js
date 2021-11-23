@@ -131,10 +131,15 @@ export const constantRoutes = [{
     component: Layout,
     hidden: true,
     children: [{
-      path: 'add',
-      component: (resolve) => require(['@/views/vacation/holiday/add'], resolve),
-      name: 'holidayAdd',
-      meta: { title: '申请假期', icon: '' }
+      path: 'holiday',
+      component: (resolve) => require(['@/views/vacation/holiday/index'], resolve),
+      name: '假期管理',
+      meta: { title: '假期管理'}
+    },{
+      path: 'approval',
+      component: (resolve) => require(['@/views/vacation/approval/index'], resolve),
+      name: '假期审批',
+      meta: { title: '假期审批'}
     }]
   },
 ]

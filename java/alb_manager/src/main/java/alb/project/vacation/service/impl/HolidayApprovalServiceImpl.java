@@ -7,7 +7,9 @@ import alb.project.vacation.service.IHolidayApprovalService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  * 假期审批表(HolidayApproval)表服务实现类
@@ -47,9 +49,21 @@ public class HolidayApprovalServiceImpl implements IHolidayApprovalService {
      * @return 实例对象
      */
     @Override
-    public boolean checkRing(HolidayApproval holidayApproval) {
-//        return this.holidayApprovalMapper.queryOne(holidayApproval);
-        return false;
+    public boolean hasRing(HolidayApproval holidayApproval) {
+        HolidayApproval params = HolidayApproval.builder()
+                .holidayTypeId(holidayApproval.getHolidayTypeId())
+                .roleId(holidayApproval.getRoleId())
+                .build();
+        List<HolidayApproval> list = this.holidayApprovalMapper.queryAll(params);
+        Set<Long> set = new HashSet<>();
+        set.add(holidayApproval.getRoleId());
+        for (HolidayApproval approval : list) {
+            if (set.contains(approval.getHolidayApprovalId())) {
+                return false;
+            }
+            set.add(approval.getHolidayApprovalId());
+        }
+        return true;
     }
 
     /**

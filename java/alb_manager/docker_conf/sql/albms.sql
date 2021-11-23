@@ -11,7 +11,7 @@
  Target Server Version : 50724
  File Encoding         : 65001
 
- Date: 23/11/2021 08:01:55
+ Date: 24/11/2021 01:13:23
 */
 
 SET NAMES utf8mb4;
@@ -77,10 +77,8 @@ CREATE TABLE `gen_table_column`  (
 DROP TABLE IF EXISTS `holiday`;
 CREATE TABLE `holiday`  (
   `holiday_id` bigint(20) NOT NULL COMMENT '假期ID',
-  `holiday_type` tinyint(4) NULL DEFAULT NULL COMMENT '假期类型',
-  `holiday_type_name` varchar(5) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '假期类型名称',
+  `holiday_type_id` bigint(20) NULL DEFAULT NULL COMMENT '假期类型',
   `holiday_duration` decimal(10, 2) NULL DEFAULT NULL COMMENT '假期时长',
-  `holiday_instruction` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '请假说明',
   `proposer_id` bigint(20) NULL DEFAULT NULL COMMENT '申请人ID',
   `current_approver_id` bigint(20) NULL DEFAULT NULL COMMENT '当前审批人ID',
   `current_approved_index` tinyint(1) NULL DEFAULT NULL COMMENT '当前审批序号 从1开始计数',
@@ -93,6 +91,25 @@ CREATE TABLE `holiday`  (
   `update_by` varchar(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT '' COMMENT '更新者',
   `update_time` datetime(0) NULL DEFAULT NULL COMMENT '更新时间',
   PRIMARY KEY (`holiday_id`) USING BTREE
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Table structure for holiday_approval
+-- ----------------------------
+DROP TABLE IF EXISTS `holiday_approval`;
+CREATE TABLE `holiday_approval`  (
+  `holiday_approval_id` bigint(20) NOT NULL COMMENT '假期审批ID',
+  `holiday_type_id` bigint(20) NOT NULL COMMENT '假期类型ID',
+  `role_id` bigint(20) NOT NULL COMMENT '待审批人角色ID',
+  `approved_role_id` bigint(20) NOT NULL COMMENT '审批人角色ID',
+  `current_approved_index` tinyint(4) NOT NULL COMMENT '当前审批序号 从1开始计数',
+  `next_approval_id` bigint(20) NOT NULL COMMENT '下一级审批的的ID，若为最后一级审批则为0',
+  `del_flag` tinyint(1) NULL DEFAULT 0 COMMENT '删除标志（0代表存在 1代表删除）',
+  `create_by` varchar(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT '' COMMENT '创建者',
+  `create_time` datetime(0) NULL DEFAULT NULL COMMENT '创建时间',
+  `update_by` varchar(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT '' COMMENT '更新者',
+  `update_time` datetime(0) NULL DEFAULT NULL COMMENT '更新时间',
+  PRIMARY KEY (`holiday_type_id`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
@@ -285,7 +302,7 @@ CREATE TABLE `qrtz_scheduler_state`  (
 -- ----------------------------
 -- Records of qrtz_scheduler_state
 -- ----------------------------
-INSERT INTO `qrtz_scheduler_state` VALUES ('RuoyiScheduler', 'LAPTOP-5GCLI6BI1637593703531', 1637594021040, 15000);
+INSERT INTO `qrtz_scheduler_state` VALUES ('RuoyiScheduler', 'LAPTOP-5GCLI6BI1637687469926', 1637687547120, 15000);
 
 -- ----------------------------
 -- Table structure for qrtz_simple_triggers
@@ -354,9 +371,9 @@ CREATE TABLE `qrtz_triggers`  (
 -- ----------------------------
 -- Records of qrtz_triggers
 -- ----------------------------
-INSERT INTO `qrtz_triggers` VALUES ('RuoyiScheduler', 'TASK_CLASS_NAME1', 'DEFAULT', 'TASK_CLASS_NAME1', 'DEFAULT', NULL, 1637593710000, -1, 5, 'PAUSED', 'CRON', 1637593703000, 0, NULL, 2, '');
-INSERT INTO `qrtz_triggers` VALUES ('RuoyiScheduler', 'TASK_CLASS_NAME2', 'DEFAULT', 'TASK_CLASS_NAME2', 'DEFAULT', NULL, 1637593710000, -1, 5, 'PAUSED', 'CRON', 1637593703000, 0, NULL, 2, '');
-INSERT INTO `qrtz_triggers` VALUES ('RuoyiScheduler', 'TASK_CLASS_NAME3', 'DEFAULT', 'TASK_CLASS_NAME3', 'DEFAULT', NULL, 1637593720000, -1, 5, 'PAUSED', 'CRON', 1637593703000, 0, NULL, 2, '');
+INSERT INTO `qrtz_triggers` VALUES ('RuoyiScheduler', 'TASK_CLASS_NAME1', 'DEFAULT', 'TASK_CLASS_NAME1', 'DEFAULT', NULL, 1637687470000, -1, 5, 'PAUSED', 'CRON', 1637687470000, 0, NULL, 2, '');
+INSERT INTO `qrtz_triggers` VALUES ('RuoyiScheduler', 'TASK_CLASS_NAME2', 'DEFAULT', 'TASK_CLASS_NAME2', 'DEFAULT', NULL, 1637687475000, -1, 5, 'PAUSED', 'CRON', 1637687470000, 0, NULL, 2, '');
+INSERT INTO `qrtz_triggers` VALUES ('RuoyiScheduler', 'TASK_CLASS_NAME3', 'DEFAULT', 'TASK_CLASS_NAME3', 'DEFAULT', NULL, 1637687480000, -1, 5, 'PAUSED', 'CRON', 1637687470000, 0, NULL, 2, '');
 
 -- ----------------------------
 -- Table structure for sys_config
@@ -443,7 +460,7 @@ CREATE TABLE `sys_dict_data`  (
   `update_time` datetime(0) NULL DEFAULT NULL COMMENT '更新时间',
   `remark` varchar(500) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '备注',
   PRIMARY KEY (`dict_code`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 31 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '字典数据表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 41 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '字典数据表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of sys_dict_data
@@ -478,6 +495,16 @@ INSERT INTO `sys_dict_data` VALUES (27, 1, '成功', '0', 'sys_common_status', '
 INSERT INTO `sys_dict_data` VALUES (28, 2, '失败', '1', 'sys_common_status', '', 'danger', 'N', '0', 'admin', '2018-03-16 11:33:00', 'ry', '2018-03-16 11:33:00', '停用状态');
 INSERT INTO `sys_dict_data` VALUES (29, 1, '正常', '0', 'del_status', NULL, NULL, 'N', '0', 'admin', '2020-07-16 14:23:09', '', NULL, '未删除');
 INSERT INTO `sys_dict_data` VALUES (30, 2, '已删除', '1', 'del_status', NULL, NULL, 'N', '0', 'admin', '2020-07-16 14:23:20', '', NULL, NULL);
+INSERT INTO `sys_dict_data` VALUES (31, 1, '调休', '1', 'holiday_type', '', '', 'N', '0', 'admin', '2021-11-20 14:23:20', NULL, NULL, 'COMPENSATORY_LEAVE');
+INSERT INTO `sys_dict_data` VALUES (32, 2, '事假', '2', 'holiday_type', '', '', 'Y', '0', 'admin', '2021-11-20 14:23:20', NULL, NULL, 'COMPASSIONATE_LEAVE');
+INSERT INTO `sys_dict_data` VALUES (33, 3, '年假', '3', 'holiday_type', '', '', 'N', '0', 'admin', '2021-11-20 14:23:20', NULL, NULL, 'ANNUAL_LEAVE');
+INSERT INTO `sys_dict_data` VALUES (34, 4, '婚假', '4', 'holiday_type', '', '', 'N', '0', 'admin', '2021-11-20 14:23:20', NULL, NULL, 'MARRIAGE_LEAVE');
+INSERT INTO `sys_dict_data` VALUES (35, 5, '病假', '5', 'holiday_type', '', '', 'N', '0', 'admin', '2021-11-20 14:23:20', NULL, NULL, 'SICK_LEAVE');
+INSERT INTO `sys_dict_data` VALUES (36, 6, '哺乳假', '6', 'holiday_type', '', '', 'N', '0', 'admin', '2021-11-20 14:23:20', NULL, NULL, 'LACTATION_LEAVE');
+INSERT INTO `sys_dict_data` VALUES (37, 7, '产假', '7', 'holiday_type', '', '', 'N', '0', 'admin', '2021-11-20 14:23:20', NULL, NULL, 'MATERNITY_LEAVE');
+INSERT INTO `sys_dict_data` VALUES (38, 8, '陪产假', '8', 'holiday_type', '', '', 'N', '0', 'admin', '2021-11-20 14:23:20', NULL, NULL, 'PATERNITY_LEAVE');
+INSERT INTO `sys_dict_data` VALUES (39, 9, '丧假', '9', 'holiday_type', '', '', 'N', '0', 'admin', '2021-11-20 14:23:20', NULL, NULL, 'FUNERAL_LEAVE');
+INSERT INTO `sys_dict_data` VALUES (40, 10, '公假', '10', 'holiday_type', '', '', 'N', '0', 'admin', '2021-11-20 14:23:20', NULL, NULL, 'PUBLIC_LEAVE');
 
 -- ----------------------------
 -- Table structure for sys_dict_type
@@ -495,7 +522,7 @@ CREATE TABLE `sys_dict_type`  (
   `remark` varchar(500) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '备注',
   PRIMARY KEY (`dict_id`) USING BTREE,
   UNIQUE INDEX `dict_type`(`dict_type`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 12 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '字典类型表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 13 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '字典类型表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of sys_dict_type
@@ -511,6 +538,7 @@ INSERT INTO `sys_dict_type` VALUES (8, '通知状态', 'sys_notice_status', '0',
 INSERT INTO `sys_dict_type` VALUES (9, '操作类型', 'sys_oper_type', '0', 'admin', '2018-03-16 11:33:00', 'ry', '2018-03-16 11:33:00', '操作类型列表');
 INSERT INTO `sys_dict_type` VALUES (10, '系统状态', 'sys_common_status', '0', 'admin', '2018-03-16 11:33:00', 'ry', '2018-03-16 11:33:00', '登录状态列表');
 INSERT INTO `sys_dict_type` VALUES (11, '逻辑删除状态', 'del_status', '0', 'admin', '2020-07-16 14:22:26', '', NULL, NULL);
+INSERT INTO `sys_dict_type` VALUES (12, '假期类型', 'holiday_type', '0', 'admin', '2021-11-20 14:23:20', NULL, NULL, '假期类型列表');
 
 -- ----------------------------
 -- Table structure for sys_job
@@ -571,7 +599,7 @@ CREATE TABLE `sys_logininfor`  (
   `msg` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT '' COMMENT '提示消息',
   `login_time` datetime(0) NULL DEFAULT NULL COMMENT '访问时间',
   PRIMARY KEY (`info_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 759 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '系统访问记录' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 761 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '系统访问记录' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of sys_logininfor
@@ -840,6 +868,8 @@ INSERT INTO `sys_logininfor` VALUES (755, 'admin', '127.0.0.1', '内网IP', 'Chr
 INSERT INTO `sys_logininfor` VALUES (756, 'admin', '127.0.0.1', '内网IP', 'Chrome 9', 'Windows 10', '0', '登录成功', '2021-11-22 20:36:06');
 INSERT INTO `sys_logininfor` VALUES (757, 'admin', '127.0.0.1', '内网IP', 'Chrome 9', 'Windows 10', '0', '登录成功', '2021-11-22 21:33:16');
 INSERT INTO `sys_logininfor` VALUES (758, 'admin', '127.0.0.1', '内网IP', 'Chrome 9', 'Windows 10', '0', '登录成功', '2021-11-22 22:55:26');
+INSERT INTO `sys_logininfor` VALUES (759, 'admin', '127.0.0.1', '内网IP', 'Chrome 9', 'Windows 10', '0', '登录成功', '2021-11-23 21:44:09');
+INSERT INTO `sys_logininfor` VALUES (760, 'admin', '127.0.0.1', '内网IP', 'Chrome 9', 'Windows 10', '0', '登录成功', '2021-11-23 23:11:39');
 
 -- ----------------------------
 -- Table structure for sys_menu
@@ -864,7 +894,7 @@ CREATE TABLE `sys_menu`  (
   `update_time` datetime(0) NULL DEFAULT NULL COMMENT '更新时间',
   `remark` varchar(500) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT '' COMMENT '备注',
   PRIMARY KEY (`menu_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1390 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '菜单权限表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 1396 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '菜单权限表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of sys_menu
@@ -987,12 +1017,18 @@ INSERT INTO `sys_menu` VALUES (1325, '镜架参数设置列表', 1071, 16, '', N
 INSERT INTO `sys_menu` VALUES (1326, '镜架型号列表', 1071, 21, '', NULL, 1, 'F', '0', '0', 'glasses:type:list', '#', 'admin', '2020-11-07 15:09:45', '', NULL, '');
 INSERT INTO `sys_menu` VALUES (1340, '导出子公司', 1073, 2, '', NULL, 1, 'F', '0', '0', 'system:dept:subsidiaryCompanyListExport', '#', 'admin', '2020-12-18 19:05:54', '', NULL, '');
 INSERT INTO `sys_menu` VALUES (1383, '假期管理', 0, 3, 'vacation', NULL, 1, 'M', '0', '0', '', 'date', 'admin', '2021-11-21 16:01:45', 'admin', '2021-11-21 16:02:45', '');
-INSERT INTO `sys_menu` VALUES (1384, '假期管理', 1383, 1, 'holiday', 'vacation/index', 1, 'C', '0', '0', 'vacation:holiday:list', 'list', 'admin', '2021-11-21 16:19:23', 'admin', '2021-11-21 17:00:59', '');
+INSERT INTO `sys_menu` VALUES (1384, '假期管理', 1383, 1, 'holiday', 'vacation/holiday/index', 1, 'C', '0', '0', 'vacation:holiday:list', 'list', 'admin', '2021-11-21 16:19:23', 'admin', '2021-11-24 00:47:25', '');
 INSERT INTO `sys_menu` VALUES (1385, '假期查询', 1384, 1, '', NULL, 1, 'F', '0', '0', 'vacation:holiday:query', '#', 'admin', '2021-11-21 16:28:18', '', NULL, '');
 INSERT INTO `sys_menu` VALUES (1386, '假期新增', 1384, 2, '', NULL, 1, 'F', '0', '0', 'vacation:holiday:add', '#', 'admin', '2021-11-21 16:29:10', '', NULL, '');
 INSERT INTO `sys_menu` VALUES (1387, '假期修改', 1384, 3, '', NULL, 1, 'F', '0', '0', 'vacation:holiday:edit', '#', 'admin', '2021-11-21 16:29:31', '', NULL, '');
 INSERT INTO `sys_menu` VALUES (1388, '假期删除', 1384, 4, 'vacation:holiday:remove', NULL, 1, 'F', '0', '0', 'vacation:holiday:remove', '#', 'admin', '2021-11-21 16:29:52', '', NULL, '');
 INSERT INTO `sys_menu` VALUES (1389, '假期详情', 1384, 5, '', NULL, 1, 'F', '0', '0', 'vacation:holiday:detail', '#', 'admin', '2021-11-21 19:43:51', '', NULL, '');
+INSERT INTO `sys_menu` VALUES (1390, '假期审批', 1383, 2, 'approval', '/vacation/approval/index', 1, 'C', '0', '0', 'vacation:holidayApproval:list', 'list', 'admin', '2021-11-24 00:49:11', 'admin', '2021-11-24 00:49:28', '');
+INSERT INTO `sys_menu` VALUES (1391, '审批查询', 1390, 1, '', NULL, 1, 'F', '0', '0', 'vacation:holidayApproval:query', '#', 'admin', '2021-11-24 00:51:30', '', NULL, '');
+INSERT INTO `sys_menu` VALUES (1392, '审批新增', 1390, 2, '', NULL, 1, 'F', '0', '0', 'vacation:holidayApproval:add', '#', 'admin', '2021-11-24 00:52:53', '', NULL, '');
+INSERT INTO `sys_menu` VALUES (1393, '审批修改', 1390, 3, '', NULL, 1, 'F', '0', '0', 'vacation:holidayApproval:edit', '#', 'admin', '2021-11-24 00:53:07', '', NULL, '');
+INSERT INTO `sys_menu` VALUES (1394, '审批删除', 1390, 4, '', NULL, 1, 'F', '0', '0', 'vacation:holidayApproval:remove', '#', 'admin', '2021-11-24 00:53:59', '', NULL, '');
+INSERT INTO `sys_menu` VALUES (1395, '审批详情', 1390, 5, '', NULL, 1, 'F', '0', '0', 'vacation:holidayApproval:detail', '#', 'admin', '2021-11-24 00:54:14', '', NULL, '');
 
 -- ----------------------------
 -- Table structure for sys_notice
@@ -1059,7 +1095,7 @@ CREATE TABLE `sys_oper_log`  (
   `error_msg` varchar(2000) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT '' COMMENT '错误消息',
   `oper_time` datetime(0) NULL DEFAULT NULL COMMENT '操作时间',
   PRIMARY KEY (`oper_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 35 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '操作日志记录' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 43 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '操作日志记录' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of sys_oper_log
@@ -1098,6 +1134,14 @@ INSERT INTO `sys_oper_log` VALUES (31, '角色管理', 1, 'alb.project.system.co
 INSERT INTO `sys_oper_log` VALUES (32, '角色管理', 1, 'alb.project.system.controller.SysRoleController.add()', 'POST', 1, 'admin', NULL, '/system/role', '127.0.0.1', '内网IP', '{\"flag\":false,\"roleId\":5,\"admin\":false,\"params\":{},\"roleSort\":\"2\",\"createBy\":\"admin\",\"roleKey\":\"boss\",\"roleName\":\"boss\",\"deptIds\":[],\"menuIds\":[1072,100,1001,1002,1003,1004,1005,1006,1007,103,1017,1018,1019,1020,1383,1384,1385,1386,1387,1388,1389],\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2021-11-22 23:02:26');
 INSERT INTO `sys_oper_log` VALUES (33, '角色管理', 1, 'alb.project.system.controller.SysRoleController.add()', 'POST', 1, 'admin', NULL, '/system/role', '127.0.0.1', '内网IP', '{\"flag\":false,\"roleId\":6,\"admin\":false,\"params\":{},\"roleSort\":\"3\",\"createBy\":\"admin\",\"roleKey\":\"manager\",\"roleName\":\"manager\",\"deptIds\":[],\"menuIds\":[1072,100,1001,1002,1003,1004,1005,1006,1007,103,1017,1018,1019,1020,1383,1384,1385,1386,1387,1388,1389],\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2021-11-22 23:03:18');
 INSERT INTO `sys_oper_log` VALUES (34, '角色管理', 1, 'alb.project.system.controller.SysRoleController.add()', 'POST', 1, 'admin', NULL, '/system/role', '127.0.0.1', '内网IP', '{\"flag\":false,\"roleId\":7,\"admin\":false,\"params\":{},\"roleSort\":\"4\",\"createBy\":\"admin\",\"roleKey\":\"staff\",\"roleName\":\"staff\",\"deptIds\":[],\"menuIds\":[1001,1007,1017,1385,1386,1389,1072,100,103,1383,1384],\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2021-11-22 23:04:23');
+INSERT INTO `sys_oper_log` VALUES (35, '菜单管理', 2, 'alb.project.system.controller.SysMenuController.edit()', 'PUT', 1, 'admin', NULL, '/system/menu', '127.0.0.1', '内网IP', '{\"visible\":\"0\",\"icon\":\"list\",\"orderNum\":\"1\",\"menuName\":\"假期管理\",\"params\":{},\"parentId\":1383,\"path\":\"holiday\",\"component\":\"vacation/holiday/index\",\"children\":[],\"createTime\":1637482763000,\"updateBy\":\"admin\",\"isFrame\":\"1\",\"menuId\":1384,\"menuType\":\"C\",\"perms\":\"vacation:holiday:list\",\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2021-11-24 00:47:26');
+INSERT INTO `sys_oper_log` VALUES (36, '菜单管理', 1, 'alb.project.system.controller.SysMenuController.add()', 'POST', 1, 'admin', NULL, '/system/menu', '127.0.0.1', '内网IP', '{\"visible\":\"0\",\"icon\":\"list\",\"orderNum\":\"2\",\"menuName\":\"假期审批\",\"params\":{},\"parentId\":1383,\"path\":\"/vacation/approval/index\",\"createBy\":\"admin\",\"children\":[],\"isFrame\":\"1\",\"menuType\":\"C\",\"perms\":\"vacation:holidayApproval:list\",\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2021-11-24 00:49:11');
+INSERT INTO `sys_oper_log` VALUES (37, '菜单管理', 2, 'alb.project.system.controller.SysMenuController.edit()', 'PUT', 1, 'admin', NULL, '/system/menu', '127.0.0.1', '内网IP', '{\"visible\":\"0\",\"icon\":\"list\",\"orderNum\":\"2\",\"menuName\":\"假期审批\",\"params\":{},\"parentId\":1383,\"path\":\"approval\",\"component\":\"/vacation/approval/index\",\"children\":[],\"createTime\":1637686151000,\"updateBy\":\"admin\",\"isFrame\":\"1\",\"menuId\":1390,\"menuType\":\"C\",\"perms\":\"vacation:holidayApproval:list\",\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2021-11-24 00:49:28');
+INSERT INTO `sys_oper_log` VALUES (38, '菜单管理', 1, 'alb.project.system.controller.SysMenuController.add()', 'POST', 1, 'admin', NULL, '/system/menu', '127.0.0.1', '内网IP', '{\"visible\":\"0\",\"orderNum\":\"1\",\"menuName\":\"审批查询\",\"params\":{},\"parentId\":1390,\"createBy\":\"admin\",\"children\":[],\"isFrame\":\"1\",\"menuType\":\"F\",\"perms\":\"vacation:holidayApproval:query\",\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2021-11-24 00:51:30');
+INSERT INTO `sys_oper_log` VALUES (39, '菜单管理', 1, 'alb.project.system.controller.SysMenuController.add()', 'POST', 1, 'admin', NULL, '/system/menu', '127.0.0.1', '内网IP', '{\"visible\":\"0\",\"orderNum\":\"2\",\"menuName\":\"审批新增\",\"params\":{},\"parentId\":1390,\"createBy\":\"admin\",\"children\":[],\"isFrame\":\"1\",\"menuType\":\"F\",\"perms\":\"vacation:holidayApproval:add\",\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2021-11-24 00:52:53');
+INSERT INTO `sys_oper_log` VALUES (40, '菜单管理', 1, 'alb.project.system.controller.SysMenuController.add()', 'POST', 1, 'admin', NULL, '/system/menu', '127.0.0.1', '内网IP', '{\"visible\":\"0\",\"orderNum\":\"3\",\"menuName\":\"审批修改\",\"params\":{},\"parentId\":1390,\"createBy\":\"admin\",\"children\":[],\"isFrame\":\"1\",\"menuType\":\"F\",\"perms\":\"vacation:holidayApproval:edit\",\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2021-11-24 00:53:07');
+INSERT INTO `sys_oper_log` VALUES (41, '菜单管理', 1, 'alb.project.system.controller.SysMenuController.add()', 'POST', 1, 'admin', NULL, '/system/menu', '127.0.0.1', '内网IP', '{\"visible\":\"0\",\"orderNum\":\"4\",\"menuName\":\"审批删除\",\"params\":{},\"parentId\":1390,\"createBy\":\"admin\",\"children\":[],\"isFrame\":\"1\",\"menuType\":\"F\",\"perms\":\"vacation:holidayApproval:remove\",\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2021-11-24 00:53:59');
+INSERT INTO `sys_oper_log` VALUES (42, '菜单管理', 1, 'alb.project.system.controller.SysMenuController.add()', 'POST', 1, 'admin', NULL, '/system/menu', '127.0.0.1', '内网IP', '{\"visible\":\"0\",\"orderNum\":\"5\",\"menuName\":\"审批详情\",\"params\":{},\"parentId\":1390,\"createBy\":\"admin\",\"children\":[],\"isFrame\":\"1\",\"menuType\":\"F\",\"perms\":\"vacation:holidayApproval:detail\",\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2021-11-24 00:54:14');
 
 -- ----------------------------
 -- Table structure for sys_post

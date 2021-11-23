@@ -31,7 +31,7 @@ public interface IHolidayApprovalService {
      * @param holidayApproval 实例对象
      * @return 实例对象
      */
-    public boolean checkRing(HolidayApproval holidayApproval);
+    public boolean hasRing(HolidayApproval holidayApproval);
 
     /**
      * 通过实体作为筛选条件查询
