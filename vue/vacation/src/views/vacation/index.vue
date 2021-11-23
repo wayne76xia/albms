@@ -98,8 +98,8 @@
             <el-table-column label="当前审批状态" align="center">
               <template slot-scope="scope">
                 <span v-if="scope.row.status === 0">审批中</span>
-                <span v-if="scope.row.status === 1">通过</span>
-                <span v-if="scope.row.status === 2">驳回</span>
+                <span v-if="scope.row.status === 1">已通过</span>
+                <span v-if="scope.row.status === 2">已驳回</span>
               </template>
             </el-table-column>
             <el-table-column label="操作" align="center" width="200">
@@ -128,6 +128,7 @@
                   type="text"
                   icon="el-icon-delete"
                   @click="handleDelete(scope.row)"
+                  v-if="scope.row.status === 1"
                   style="color: #E8522A !important;font-size:16px"
                   v-hasPermi="['vacation:holiday:remove']"
                   title="删除"
@@ -195,7 +196,6 @@
                     filterable
                     placeholder="请输入姓名"
                     style="width:100%"
-                    :filter-method="brandKeyChange"
                     @change="fnEdit"
                   >
                     <el-option
@@ -234,31 +234,31 @@
               <el-row>
                 <el-col :span="12" class="aui-padded-b-10">
                   <span>申请人：</span>
-                  <span class="aui-padded-l-5 text-graybc">{{holidayDetail.proposerName}}</span>
+                  <span class="aui-padded-l-5 text-graybc">{{holidayInfo.proposerName}}</span>
                 </el-col>
                 <el-col :span="12" class="aui-padded-b-10">
                   <span>假期类型：</span>
-                  <span class="aui-padded-l-5 text-graybc">{{holidayDetail.holidayTypeName}}</span>
+                  <span class="aui-padded-l-5 text-graybc">{{holidayInfo.holidayTypeName}}</span>
                 </el-col>
                 <el-col :span="12" class="aui-padded-b-10">
                   <span>假期时长：</span>
-                  <span class="aui-padded-l-5 text-graybc">{{holidayDetail.holidayDuration}}</span>
+                  <span class="aui-padded-l-5 text-graybc">{{holidayInfo.holidayDuration}}</span>
                 </el-col>
                 <el-col :span="12" class="aui-padded-b-10">
                   <span>假期开始时间：</span>
-                  <span class="aui-padded-l-5 text-graybc">{{holidayDetail.holidayStartDate}}</span>
+                  <span class="aui-padded-l-5 text-graybc">{{holidayInfo.holidayStartDate}}</span>
                 </el-col>
                 <el-col :span="12" class="aui-padded-b-10">
                   <span>假期结束时间：</span>
-                  <span class="aui-padded-l-5 text-graybc">{{holidayDetail.holidayEndDate}}</span>
+                  <span class="aui-padded-l-5 text-graybc">{{holidayInfo.holidayEndDate}}</span>
                 </el-col>
                 <el-col :span="12" class="aui-padded-b-10">
                   <span>当前审批状态：</span>
-                  <span class="aui-padded-l-5 text-graybc">{{holidayDetail.status === 0 ? '审批中' : holidayDetail.status === 1 ? '已通过' : '已驳回'}}</span>
+                  <span class="aui-padded-l-5 text-graybc">{{holidayInfo.status === 0 ? '审批中' : holidayInfo.status === 1 ? '已通过' : '已驳回'}}</span>
                 </el-col>
                 <el-col :span="12" class="aui-padded-b-10">
                   <span>客户备注：</span>
-                  <span class="aui-padded-l-5 text-graybc">{{holidayDetail.holidayRemark}}</span>
+                  <span class="aui-padded-l-5 text-graybc">{{holidayInfo.holidayRemark}}</span>
                 </el-col>
               </el-row>
             </div>
@@ -267,30 +267,35 @@
               <div class="line_dash"></div>
             </div>
             <div class="aui-padded-15 font-size-14 aui-padded-b-0">
-              <el-table :data="holidayDetail.holidayList" stripe >
+              <el-table :data="holidayInfo.holidayList" stripe >
                 <el-table-column label="审批人" prop="proposerName" align="center" />
-                <el-table-column label="审批状态" align="center">
+                <el-table-column label="审批状态"align="center">
                   <template slot-scope="scope">
                     <span v-if="scope.row.status === 0">审批中</span>
-                    <span v-if="scope.row.status === 1">通过</span>
-                    <span v-if="scope.row.status === 2">驳回</span>
+                    <span v-if="scope.row.status === 1">已通过</span>
+                    <span v-if="scope.row.status === 2">已驳回</span>
                   </template>
                 </el-table-column>
-                <el-table-column label="审批时间" prop="holidayTypeName" align="center" />
-                <el-table-column label="审批说明" prop="holidayTypeName" align="center" />
+                <el-table-column label="审批时间" prop="approveTime" align="center" />
+                <el-table-column label="审批说明" prop="approveInstruction" align="center" />
               </el-table>
             </div>
           </div>
         </el-dialog>
-
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import location from "@/components/address";
-import age from "@/components/age";
+import {
+  getHolidayInfo,
+  holidayAdd,
+  holidayInfo,
+  holidayList, holidayRemove,
+  holidayUpdate,
+  userListForVacation
+} from '../../api/vacation'
 
 export default {
   name: "holiday",
@@ -299,10 +304,7 @@ export default {
   data() {
     return {
       dialogVisible: false,
-
-      addressList: [],
-
-      // 会员列表
+      // 假期列表
       title: "",
       open: false,
       loading: false,
@@ -328,10 +330,9 @@ export default {
       },
       // 表单参数
       form: {},
-      // 用户下拉列表
+      // 用户列表
       userList: [],
-      // 预约来源列表
-      sourcesList: [],
+      // 假期类型
       holidayTypeList: [
         {
           name: '调休',
@@ -375,30 +376,15 @@ export default {
         },
       ],
       ageList: [],
-      addressForm: [],
       holidayList: [],
       rules: {
-        holidayName: [
-          { required: true, message: "姓名不能为空", trigger: "blur" },
-        ],
-        holidaySex: [
-          { required: true, message: "性别不能为空", trigger: "blur" },
-        ],
-        holidayPhone: [
-          { required: true, message: "手机号不能为空", trigger: "blur" },
-        ],
-        passportNumber: [
-          { required: true, message: "护照号不能为空", trigger: "blur" },
-        ],
-        sourceType: [
-          { required: true, message: "请选择会员来源", trigger: "blur" },
-        ],
-        shopId: [{ required: true, message: "门店不能为空", trigger: "blur" }],
+        // holidayName: [
+        //   { required: true, message: "姓名不能为空", trigger: "blur" },
+        // ],
       },
       // 客户详情
       textarea: "",
-      holidayDetail: {
-        visitList: [],
+      holidayInfo: {
       },
       infoHoliday: "",
 
@@ -410,13 +396,8 @@ export default {
     };
   },
   created() {
-    this.addressList = location; //地址列表
-    this.ageList = age;
     this.getHolidayList();
-    this.getuserList();
-    this.getshopList();
-    this.holidaylevelList();
-    this.sourceList();
+    this.getUserList();
   },
   methods: {
     // 多选框选中数据
@@ -425,48 +406,30 @@ export default {
       this.single = selection.length != 1;
       this.multiple = !selection.length;
     },
-    // 根据手机号或护照号搜索客户
-    brandKeyChange: function (inputKey) {
-      //inputKey为当前输入的数据
-      getClientByPhone(inputKey).then((response) => {
-        if (response.code == 200) {
-          this.clientList = response.data;
-        }
-      });
-    },
     // 审批人选择
     fnEdit(vId) {
       this.form.parentHolidayId = vId;
     },
-    // 查看客户详细信息
+    // 查看假期详细信息
     handleDataScope(row) {
       this.infoHoliday = row;
       this.infoCheck();
     },
     infoCheck() {
       const id = this.infoHoliday.holidayId;
-      holidayDetail(id).then((response) => {
+      getHolidayInfo(id).then((response) => {
         if (response.code == 200) {
-          this.holidayDetail = response.data;
+          this.holidayInfo = response.data;
           this.dialogVisible = true;
         }
       });
     },
     // 新增确定按钮
     submitForm() {
-      this.form.province = this.addressForm[0]; //省
-      this.form.city = this.addressForm[1]; //市
-      this.form.district = this.addressForm[2]; //区
       this.$refs["form"].validate((valid) => {
         if (valid) {
-          // let regs = /^((13[0-9])|(17[0-1,6-8])|(15[^4,\\D])|(18[0-9]))\d{8}$/;
-          let regs = /^1([358][0-9]|4[579]|66|7[0135678]|9[89])[0-9]{8}$/
-          if (!regs.test(this.form.holidayPhone)) {
-            this.msgError("手机号格式有误");
-            return;
-          }
           if (this.form.holidayId != undefined) {
-            updateHoliday(this.form).then((response) => {
+            holidayUpdate(this.form).then((response) => {
               if (response.code === 200) {
                 this.msgSuccess("修改成功");
                 this.open = false;
@@ -474,7 +437,7 @@ export default {
               }
             });
           } else {
-            addHoliday(this.form).then((response) => {
+            holidayAdd(this.form).then((response) => {
               if (response.code === 200) {
                 this.msgSuccess("新增成功");
                 this.open = false;
@@ -494,13 +457,13 @@ export default {
     handleDelete(row) {
       const name = row.holidayName;
       const ids = row.holidayId;
-      this.$confirm('是否确认删除会员名为"' + name + '"的数据项?', "警告", {
+      this.$confirm('是否确认对此假期进行销假?', "警告", {
         confirmButtonText: "确定",
         cancelButtonText: "取消",
         type: "warning",
       })
         .then(function () {
-          return delHoliday(ids);
+          return holidayRemove(ids);
         })
         .then((res) => {
           console.log(res);
@@ -513,18 +476,15 @@ export default {
     handleAdd() {
       this.reset();
       this.open = true;
-      this.title = "添加会员信息";
+      this.title = "添加假期信息";
     },
     /** 修改按钮操作 */
     handleUpdate(row) {
       this.reset();
       const id = row.holidayId;
-      getHolidayDetail(id).then((response) => {
-        this.addressForm.push(response.data.province);
-        this.addressForm.push(response.data.city);
-        this.addressForm.push(response.data.district);
+      getHolidayInfo(id).then((response) => {
         this.form = response.data;
-        this.title = "修改会员信息";
+        this.title = "修改假期信息";
         this.open = true;
       });
     },
@@ -552,10 +512,10 @@ export default {
       };
       this.resetForm("form");
     },
-    // 查询会员列表
+    // 查询假期列表
     getHolidayList() {
       this.loading = true;
-      listHoliday(this.queryParams).then((response) => {
+      holidayList(this.queryParams).then((response) => {
         console.log(response);
         if (response.code == 200) {
           this.holidayList = response.rows;
@@ -565,42 +525,15 @@ export default {
       });
     },
     //获取用户下拉列表
-    getuserList() {
-      listUser().then((response) => {
+    getUserList() {
+      userListForVacation().then((response) => {
         if (response.code == 200) {
           this.userList = response.data;
         }
       });
     },
-    //获取所有的门店列表
-    getshopList() {
-      listAllShop().then((response) => {
-        if (response.code == 200) {
-          this.allshopList = response.data;
-        }
-      });
-    },
-    /** 查询会员等级设置列表 */
-    holidaylevelList() {
-      listMemberLevel().then((response) => {
-        if (response.code == 200) {
-          this.holidaylevList = response.data;
-        }
-      });
-    },
-    /** 预约来源列表 */
-    sourceList() {
-      listParamsData().then((response) => {
-        if (response.code == 200) {
-          console.log(response.data)
-          this.sourcesList = response.data;
-        }
-      });
-    },
-
     // 重置表单
     resetQuery() {
-      this.addressSel = "";
       this.dateRange = "";
       this.queryParams = {
         pageNum: 1,
@@ -628,72 +561,11 @@ export default {
       this.queryParams.pageNum = 1;
       this.queryParams.beginTime = this.dateRange[0]; //开始时间
       this.queryParams.endTime = this.dateRange[1]; //结束时间
-      this.queryParams.province = this.addressSel[0]; //省
-      this.queryParams.city = this.addressSel[1]; //市
-      this.queryParams.district = this.addressSel[2]; //区
-      if (
-        this.queryParams.minConsumptionNum >= this.queryParams.maxConsumptionNum
-      ) {
-        this.msgError("最大消费次数应大于最小消费次数");
-        return;
-      }
-      this.getHolidayList();
-    },
-    /** 导出按钮操作 */
-    handleExport() {
-      const queryParams = this.queryParams;
-      this.$confirm("是否确认导出所选会员列表?", "警告", {
-        confirmButtonText: "确定",
-        cancelButtonText: "取消",
-        type: "warning",
-      })
-        .then(function () {
-          return exportHoliday(queryParams);
-        })
-        .then((res) => {
-          this.download(res.msg);
-        })
-        .catch(function () {});
-    },
-    // 导入按钮操作
-    handleImport() {
-      this.upload.title = "用户导入";
-      this.upload.open = true;
-    },
-    /** 下载模板操作 */
-    importTemplate() {
-      importHoliday().then((response) => {
-        this.download(response.msg);
-      });
-    },
-
-    // 提交上传文件
-    submitFileForm() {
-      this.$refs.upload.submit();
-    },
-    // 文件上传中处理
-    handleFileUploadProgress(event, file, fileList) {
-      this.upload.isUploading = true;
-    },
-    // 文件上传成功处理
-    handleFileSuccess(response, file, fileList) {
-      this.upload.open = false;
-      this.upload.isUploading = false;
-      this.$refs.upload.clearFiles();
-      this.$alert(response.msg, "导入结果", { dangerouslyUseHTMLString: true });
       this.getHolidayList();
     },
     // 关闭页面
     handleClose(done) {
       done();
-    },
-    // 用户配镜快捷键
-    handlePj(row) {
-      const holidayPhone = row.holidayPhone;
-      this.$router.push({
-        path: "/sell/sellAdd",
-        query: { holidayPhone: holidayPhone },
-      });
     },
   },
 };

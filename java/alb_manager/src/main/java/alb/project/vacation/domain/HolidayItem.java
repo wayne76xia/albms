@@ -1,6 +1,7 @@
 package alb.project.vacation.domain;
 
 import alb.framework.web.domain.BaseEntity;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.*;
 
 import java.util.Date;

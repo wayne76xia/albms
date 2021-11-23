@@ -24,14 +24,14 @@ public class HolidayServiceImpl implements IHolidayService {
     /**
      * 查询单条数据
      *
-     * @param holiday 实例对象
+     * @param holidayId 实例对象
      * @return 实例对象
      */
     @Override
-    public Holiday queryOne(Holiday holiday) {
-        Holiday resultOne = this.holidayMapper.queryOne(holiday);
+    public Holiday queryOne(Long holidayId) {
+        Holiday resultOne = this.holidayMapper.queryOne(holidayId);
         HolidayItem params = HolidayItem.builder()
-                .holidayId(holiday.getHolidayId())
+                .holidayId(holidayId)
                 .build();
         resultOne.setItems(this.holidayItemMapper.queryAll(params));
         return resultOne;

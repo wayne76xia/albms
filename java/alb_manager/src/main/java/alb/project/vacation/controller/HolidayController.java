@@ -1,14 +1,22 @@
 package alb.project.vacation.controller;
 
+import alb.common.utils.ServletUtils;
+import alb.common.utils.StringUtils;
 import alb.framework.aspectj.lang.annotation.Log;
 import alb.framework.aspectj.lang.enums.BusinessType;
+import alb.framework.security.LoginUser;
+import alb.framework.security.service.TokenService;
 import alb.framework.web.controller.BaseController;
 import alb.framework.web.domain.AjaxResult;
 import alb.framework.web.page.TableDataInfo;
+import alb.project.system.domain.SysDept;
+import alb.project.system.domain.SysRole;
 import alb.project.vacation.domain.Holiday;
 import alb.project.vacation.domain.HolidayItem;
 import alb.project.vacation.service.IHolidayService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -23,19 +31,22 @@ import java.util.List;
 @RequestMapping("/vacation/holiday")
 public class HolidayController extends BaseController {
 
-    @Resource
+    @Resource // @Resource（这个注解属于J2EE的），默认按照名称进行装配
     private IHolidayService holidayService;
+
+    @Autowired // @Autowired（这个注解是属于spring的），默认按类型装配
+    private TokenService tokenService;
 
     /**
      * 查询单条数据
      *
-     * @param holiday 主键
+     * @param holidayId 主键
      * @return 实例对象
      */
-    @GetMapping("")
+    @GetMapping("/{holidayId}")
     @PreAuthorize("@ss.hasPermi('vacation:holiday:query')")
-    public AjaxResult queryUser(Holiday holiday) {
-        Holiday result = this.holidayService.queryOne(holiday);
+    public AjaxResult queryHoliday(@PathVariable("holidayId") Long holidayId) {
+        Holiday result = this.holidayService.queryOne(holidayId);
         return result != null ? AjaxResult.success(result) : AjaxResult.error();
     }
 
@@ -51,6 +62,24 @@ public class HolidayController extends BaseController {
         startPage();
         List<Holiday> list = this.holidayService.queryAllByParams(holiday);
         return getDataTable(list);
+    }
+
+    /**
+     * 查询多条数据
+     *
+     * @param holiday
+     * @return
+     */
+    @GetMapping("/list/user")
+    @PreAuthorize("@ss.hasPermi('vacation:holiday:add')")
+    public AjaxResult queryUserList(Holiday holiday) {
+        LoginUser loginUser = tokenService.getLoginUser(ServletUtils.getRequest());
+        if (!StringUtils.isNull(loginUser) && !CollectionUtils.isEmpty(loginUser.getUser().getRoles()))
+        {
+            SysDept dept = loginUser.getUser().getDept();
+            List<SysRole> roles = loginUser.getUser().getRoles();
+        }
+        return AjaxResult.error("当前用户暂无权限！");
     }
 
     /**

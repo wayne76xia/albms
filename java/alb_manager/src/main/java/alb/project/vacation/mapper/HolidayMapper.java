@@ -19,10 +19,10 @@ public interface HolidayMapper {
     /**
      * 通过ID查询单条数据
      *
-     * @param holiday 实例对象
+     * @param holidayId 主键
      * @return 实例对象
      */
-    Holiday queryOne(Holiday holiday);
+    Holiday queryOne(Long holidayId);
 
     /**
      * 通过实体作为筛选条件查询
