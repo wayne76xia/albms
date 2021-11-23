@@ -1,6 +1,5 @@
 package alb.project.vacation.service;
 
-import alb.project.vacation.domain.Holiday;
 import alb.project.vacation.domain.HolidayApproval;
 
 import java.util.List;
@@ -9,6 +8,14 @@ import java.util.List;
  * 假期表服务接口
  */
 public interface IHolidayApprovalService {
+
+    /**
+     * 通过实体查询是否存在下一节点
+     *
+     * @param holidayApproval 实例对象
+     * @return 实例对象
+     */
+    boolean hasNextApproved(HolidayApproval holidayApproval);
 
     /**
      * 查询单条数据

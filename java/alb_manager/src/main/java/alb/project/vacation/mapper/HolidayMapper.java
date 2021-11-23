@@ -1,6 +1,8 @@
 package alb.project.vacation.mapper;
 
 import alb.project.vacation.domain.Holiday;
+import alb.project.vacation.paramsVO.HolidayUserParamsVO;
+import alb.project.vacation.resultVO.HolidayUserResultVO;
 
 import java.util.List;
 
@@ -55,5 +57,13 @@ public interface HolidayMapper {
      * @return 影响行数
      */
     int deleteById(Long holidayId);
+
+    /**
+     * 查询用户列表
+     *
+     * @param holidayUserParamsVO 实例对象
+     * @return 实例对象
+     */
+    List<HolidayUserResultVO> selectUserList(HolidayUserParamsVO holidayUserParamsVO);
 
 }

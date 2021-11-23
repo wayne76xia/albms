@@ -3,9 +3,7 @@ package alb.project.vacation.service.impl;
 import cn.hutool.core.util.IdUtil;
 import alb.project.vacation.domain.HolidayApproval;
 import alb.project.vacation.mapper.HolidayApprovalMapper;
-import alb.project.vacation.mapper.HolidayTypeMapper;
 import alb.project.vacation.service.IHolidayApprovalService;
-import alb.project.vacation.service.IHolidayTypeService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -19,6 +17,17 @@ public class HolidayApprovalServiceImpl implements IHolidayApprovalService {
 
     @Resource
     private HolidayApprovalMapper holidayApprovalMapper;
+
+    /**
+     * 通过实体查询是否存在下一节点
+     *
+     * @param holidayApproval 实例对象
+     * @return 实例对象
+     */
+    @Override
+    public boolean hasNextApproved(HolidayApproval holidayApproval){
+        return this.holidayApprovalMapper.hasNext(holidayApproval) > 0;
+    }
 
     /**
      * 查询单条数据

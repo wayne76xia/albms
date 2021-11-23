@@ -1,11 +1,13 @@
 package alb.project.vacation.service.impl;
 
-import cn.hutool.core.util.IdUtil;
 import alb.project.vacation.domain.Holiday;
 import alb.project.vacation.domain.HolidayItem;
 import alb.project.vacation.mapper.HolidayItemMapper;
 import alb.project.vacation.mapper.HolidayMapper;
+import alb.project.vacation.paramsVO.HolidayUserParamsVO;
+import alb.project.vacation.resultVO.HolidayUserResultVO;
 import alb.project.vacation.service.IHolidayService;
+import cn.hutool.core.util.IdUtil;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -91,5 +93,16 @@ public class HolidayServiceImpl implements IHolidayService {
         int count = this.holidayItemMapper.deleteById(holidayId);
         int countItem = this.holidayMapper.deleteById(holidayId);
         return count > 0 && countItem > 0 ? 1 : 0;
+    }
+
+    /**
+     * 查询用户列表
+     *
+     * @param holidayUserParamsVO 实例对象
+     * @return 实例对象
+     */
+    @Override
+    public List<HolidayUserResultVO> selectUserList(HolidayUserParamsVO holidayUserParamsVO){
+        return this.holidayMapper.selectUserList(holidayUserParamsVO);
     }
 }

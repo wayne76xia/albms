@@ -24,9 +24,11 @@ public class Holiday extends BaseEntity
     private Long holidayId;
 
     /* 假期类型 */
-    private Integer holidayType;
+    private Long holidayTypeId;
 
-    private String holidayTypeName;
+    private String typeName;
+
+    private String typeValue;
 
     /* 假期时长 */
     private Double holidayDuration;

@@ -4,10 +4,10 @@
 
     <resultMap type="alb.project.vacation.domain.Holiday" id="HolidayMap">
         <id property="holidayId" column="holiday_id"/>
-        <result property="holidayType" column="holiday_type"/>
-        <result property="holidayTypeName" column="holiday_type_name"/>
+        <result column="holiday_type_id" jdbcType="BIGINT" property="holidayTypeId"/>
+        <result column="dict_label" property="typeName"/>
+        <result column="dict_value" property="typeValue"/>
         <result property="holidayDuration" column="holiday_duration"/>
-        <result property="holidayInstruction" column="holiday_instruction"/>
         <result property="proposerId" column="proposer_id"/>
         <result property="proposerName" column="proposer_name"/>
         <result property="currentApproverId" column="current_approver_id"/>
@@ -34,10 +34,10 @@
     <!--通过单个实体-->
     <select id="queryOne" resultMap="HolidayMap">
         select h.holiday_id,
-               h.holiday_type,
-               h.holiday_type_name,
+               h.holiday_type_id,
+               s.dict_label,
+               s.dict_value,
                h.holiday_duration,
-               h.holiday_instruction,
                h.proposer_id,
                (select su.nick_name FROM sys_user su where su.user_id = h.proposer_id) as proposer_name,
                h.current_approver_id,
@@ -48,6 +48,7 @@
                h.holiday_end_date,
                h.del_flag
         from holiday h
+                 left join sys_dict_data s on s.dict_type = 'holiday_type' and h.holiday_type_id = s.dict_code
         where h.holiday_id = #{holidayId}
           and h.del_flag = 0
         limit 1
@@ -56,10 +57,10 @@
     <!--查询多个实体-->
     <select id="queryAll" resultMap="HolidayMap">
         select h.holiday_id,
-        h.holiday_type,
-        h.holiday_type_name,
+        h.holiday_type_id,
+        s.dict_label,
+        s.dict_value,
         h.holiday_duration,
-        h.holiday_instruction,
         h.proposer_id,
         (select su.nick_name FROM sys_user su where su.user_id = h.proposer_id) as proposer_name,
         h.current_approver_id,
@@ -70,10 +71,11 @@
         h.holiday_end_date,
         h.del_flag
         from holiday h
+        left join sys_dict_data s on s.dict_type = 'holiday_type' and h.holiday_type_id = s.dict_code
         where
         h.del_flag = 0
-        <if test="holidayType != null">
-            and h.holiday_type = #{holidayType}
+        <if test="holidayTypeId != null">
+            and h.holiday_type_id = #{holidayTypeId}
         </if>
         <if test="holidayDuration != null">
             and h.holiday_duration = #{holidayDuration}
@@ -96,17 +98,11 @@
     <insert id="insert" keyColumn="holiday_id" keyProperty="holidayId" parameterType="Holiday" useGeneratedKeys="true">
         insert into holiday
         <trim prefix="(" suffix=")" suffixOverrides=",">
-            <if test="holidayType != null">
-                holiday_type,
-            </if>
-            <if test="holidayTypeName != null">
-                holiday_type_name,
+            <if test="holidayTypeId != null">
+                holiday_type_id,
             </if>
             <if test="holidayDuration != null">
                 holiday_duration,
-            </if>
-            <if test="holidayInstruction != null">
-                holiday_instruction,
             </if>
             <if test="proposerId != null">
                 proposer_id,
@@ -117,18 +113,14 @@
             <if test="currentApprovedIndex != null">
                 current_approved_index,
             </if>
-            <if test="status != null">
                 `status`,
-            </if>
             <if test="holidayStartDate != null">
                 holiday_start_date,
             </if>
             <if test="holidayEndDate != null">
                 holiday_end_date,
             </if>
-            <if test="delFlag != null">
                 del_flag,
-            </if>
             <if test="createBy != null">
                 create_by,
             </if>
@@ -141,17 +133,11 @@
             </if>
         </trim>
         <trim prefix="values (" suffix=")" suffixOverrides=",">
-            <if test="holidayType != null">
-                #{holidayType},
-            </if>
-            <if test="holidayTypeName != null">
-                #{holidayTypeName},
+            <if test="holidayTypeId != null">
+                #{holidayTypeId},
             </if>
             <if test="holidayDuration != null">
                 #{holidayDuration},
-            </if>
-            <if test="holidayInstruction != null">
-                #{holidayInstruction},
             </if>
             <if test="proposerId != null">
                 #{proposerId},
@@ -162,18 +148,14 @@
             <if test="currentApprovedIndex != null">
                 #{currentApprovedIndex},
             </if>
-            <if test="status != null">
-                #{status},
-            </if>
+                0,
             <if test="holidayStartDate != null">
                 #{holidayStartDate},
             </if>
             <if test="holidayEndDate != null">
                 #{holidayEndDate},
             </if>
-            <if test="delFlag != null">
-                #{delFlag},
-            </if>
+                0,
             <if test="createBy != null">
                 #{createBy},
             </if>
@@ -191,17 +173,8 @@
     <update id="update" parameterType="Holiday">
         update holiday
         <set>
-            <if test="holidayType != null">
-                holiday_type = #{holidayType},
-            </if>
-            <if test="holidayTypeName != null">
-                holiday_type_name = #{holidayTypeName},
-            </if>
             <if test="holidayDuration != null">
                 holiday_duration = #{holidayDuration},
-            </if>
-            <if test="holidayInstruction != null">
-                holiday_instruction = #{holidayInstruction},
             </if>
             <if test="proposerId != null">
                 proposer_id = #{proposerId},
@@ -246,5 +219,19 @@
         where holiday_id = #{holidayId}
         limit 1
     </delete>
+
+    <select id="selectUserList" parameterType="alb.project.vacation.paramsVO.HolidayUserParamsVO"
+            resultType="alb.project.vacation.resultVO.HolidayUserResultVO">
+        select u.user_id as userId,
+        (u.nick_name + '(' + u.user_code + '):' + r.role_name + '(' + r.role_id + ')') as displayName
+        from sys_user u
+        left join sys_dept d on u.dept_id = d.dept_id
+        left join sys_user_role ur on u.user_id = ur.user_id
+        left join sys_role r on ur.role_id = r.role_id
+        where u.dept_id = #{deptId}
+            and r.role_id = #{roleId}
+            and u.del_flag = '0'
+            and u.user_id != 1
+    </select>
 
 </mapper>

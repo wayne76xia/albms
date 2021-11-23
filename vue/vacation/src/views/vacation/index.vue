@@ -44,9 +44,9 @@
 <!--                      @keyup.enter.native="handleQuery"-->
 <!--                    />-->
 <!--                  </el-form-item>-->
-                  <el-form-item label="假期类型：" prop="holidayType">
+                  <el-form-item label="假期类型：" prop="holidayTypeId">
                     <el-select
-                      v-model="queryParams.holidayType"
+                      v-model="queryParams.holidayTypeId"
                       placeholder="请选择"
                       clearable
                       filterable
@@ -55,9 +55,9 @@
                     >
                       <el-option
                         v-for="dict in holidayTypeList"
-                        :key="dict.dictCode.toString()"
+                        :key="dict.dictCode"
                         :label="dict.dictLabel"
-                        :value="dict.dictCode.toString()"
+                        :value="dict.dictCode"
                       />
                     </el-select>
                   </el-form-item>
@@ -91,10 +91,10 @@
             <el-table-column type="selection" width="80" align="center" />
             <el-table-column label="申请人" prop="proposerName" align="center" />
             <el-table-column label="当前审批人" prop="currentApproverName" align="center"/>
-            <el-table-column label="假期类型" prop="holidayTypeName" align="center" />
+            <el-table-column label="假期类型" prop="typeName" align="center" />
             <el-table-column label="假期开始时间" prop="holidayStartDate" align="center" />
             <el-table-column label="假期结束时间" prop="holidayEndDate" align="center" />
-            <el-table-column label="假期时长" prop="holidayDuration" align="center" />
+<!--            <el-table-column label="假期时长" prop="holidayDuration" align="center" />-->
             <el-table-column label="当前审批状态" align="center">
               <template slot-scope="scope">
                 <span v-if="scope.row.status === 0">审批中</span>
@@ -148,34 +148,25 @@
         <!-- 添加或修改窗 -->
         <el-dialog class :title="title" :visible.sync="open" width="40%" append-to-body>
           <el-form ref="form" :model="form" :rules="rules" label-width="100px">
-            <div class="text-grayer aui-padded-t-15 aui-padded-b-15 flex">
-              <div class="font-size-12">基本资料</div>
-              <div class="line_dash"></div>
-            </div>
             <el-row>
-              <el-col :span="12">
-                <el-form-item label="申请人：" prop="proposerName">
-                  <el-input v-model="form.proposerName"/>
-                </el-form-item>
-              </el-col>
               <el-col :span="12">
                 <el-form-item label="假期类型：">
                   <el-select
-                    v-model="form.holidayType"
+                    v-model="form.holidayTypeId"
                     placeholder="请选择"
                     clearable
                     style="width:100%"
                   >
                     <el-option
                       v-for="dict in holidayTypeList"
-                      :key="dict.dictCode.toString()"
+                      :key="dict.dictCode"
                       :label="dict.dictLabel"
-                      :value="dict.dictCode.toString()"
+                      :value="dict.dictCode"
                     ></el-option>
                   </el-select>
                 </el-form-item>
               </el-col>
-              <el-col :span="12">
+              <el-col :span="24">
                 <el-form-item label="时间：">
                   <el-date-picker
                     v-model="dateRange"
@@ -189,19 +180,20 @@
                 </el-form-item>
               </el-col>
               <el-col :span="12">
-                <el-form-item label="下一级审批人：">
+                <el-form-item label="审批人：">
                   <el-select
                     v-model="form.currentApproverId"
                     clearable
                     filterable
                     placeholder="请输入姓名"
+                    :filter-method="brandKeyChange"
                     style="width:100%"
                     @change="fnEdit"
                   >
                     <el-option
                       v-for="dict in userList"
                       :key="dict.userId"
-                      :label="dict.nickName"
+                      :label="dict.displayName"
                       :value="dict.userId"
                     ></el-option>
                   </el-select>
@@ -238,12 +230,12 @@
                 </el-col>
                 <el-col :span="12" class="aui-padded-b-10">
                   <span>假期类型：</span>
-                  <span class="aui-padded-l-5 text-graybc">{{holidayInfo.holidayTypeName}}</span>
+                  <span class="aui-padded-l-5 text-graybc">{{holidayInfo.typeName}}</span>
                 </el-col>
-                <el-col :span="12" class="aui-padded-b-10">
-                  <span>假期时长：</span>
-                  <span class="aui-padded-l-5 text-graybc">{{holidayInfo.holidayDuration}}</span>
-                </el-col>
+<!--                <el-col :span="12" class="aui-padded-b-10">-->
+<!--                  <span>假期时长：</span>-->
+<!--                  <span class="aui-padded-l-5 text-graybc">{{holidayInfo.holidayDuration}}</span>-->
+<!--                </el-col>-->
                 <el-col :span="12" class="aui-padded-b-10">
                   <span>假期开始时间：</span>
                   <span class="aui-padded-l-5 text-graybc">{{holidayInfo.holidayStartDate}}</span>
@@ -296,6 +288,7 @@ import {
   holidayUpdate,
   userListForVacation
 } from '../../api/vacation'
+import store from '../../store'
 
 export default {
   name: "holiday",
@@ -329,7 +322,8 @@ export default {
         endTime: undefined,
       },
       // 表单参数
-      form: {},
+      form: {
+      },
       // 用户列表
       userList: [],
       // 假期类型
@@ -346,7 +340,6 @@ export default {
       holidayInfo: {
       },
       infoHoliday: "",
-
       recordForm: {
         holidayId: undefined,
         type: 1,
@@ -356,9 +349,9 @@ export default {
   },
   created() {
     this.getHolidayList();
-    this.getUserList();
     this.getDicts("holiday_type").then((response) => {
       this.holidayTypeList = response.data;
+      console.log(this.holidayTypeList)
     });
   },
   methods: {
@@ -415,7 +408,6 @@ export default {
       this.open = false;
       this.reset();
     },
-
     handleDelete(row) {
       const name = row.holidayName;
       const ids = row.holidayId;
@@ -437,18 +429,48 @@ export default {
     /** 新增按钮操作 */
     handleAdd() {
       this.reset();
-      this.open = true;
-      this.title = "添加假期信息";
+      let data = {
+        // holidayTypeId: 32, // default is COMPASSIONATE_LEAVE
+        // currentApprovedIndex: 1
+      }
+      userListForVacation(data).then((response) => {
+        if (response.code === 200) {
+          this.userList = response.data;
+          let expect = {
+            holidayTypeId: data.holidayTypeId,
+          }
+          this.form = expect
+          this.title = "添加假期信息";
+          this.open = true;
+        }
+      })
     },
     /** 修改按钮操作 */
     handleUpdate(row) {
       this.reset();
       const id = row.holidayId;
       getHolidayInfo(id).then((response) => {
-        this.form = response.data;
-        this.title = "修改假期信息";
-        this.open = true;
+        let data = {
+            holidayTypeId: response.data.holidayTypeId,
+            currentApprovedIndex: response.data.currentApprovedIndex,
+        }
+        userListForVacation(data).then((response2) => {
+          if (response2.code === 200) {
+            let expect = {
+              holidayId: response.data.holidayId,
+              holidayTypeId: response.data.holidayTypeId,
+              // 可能缺参数
+            }
+            this.form = expect
+            this.userList = response2.data;
+            this.title = "修改假期信息";
+            this.open = true;
+          }
+        })
       });
+    },
+    brandKeyChange(inputKey){
+
     },
     // 表单重置
     reset() {
@@ -483,14 +505,6 @@ export default {
           this.holidayList = response.rows;
           this.total = response.total;
           this.loading = false;
-        }
-      });
-    },
-    //获取用户下拉列表
-    getUserList() {
-      userListForVacation().then((response) => {
-        if (response.code == 200) {
-          this.userList = response.data;
         }
       });
     },

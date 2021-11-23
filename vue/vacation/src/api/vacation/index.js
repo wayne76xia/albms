@@ -44,10 +44,11 @@ export function holidayRemove(id) {
     })
 }
 
-export function userListForVacation() {
+export function userListForVacation(data) {
   return request({
-    url: '/vacation/holiday/list/user',
-    method: 'GET'
+    url: '/vacation/holiday/user/list',
+    method: 'GET',
+    params: data
   })
 }
 

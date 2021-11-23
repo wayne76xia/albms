@@ -1,6 +1,7 @@
 package alb.project.vacation.domain;
 
 import alb.framework.web.domain.BaseEntity;
+import lombok.*;
 
 @Data
 @NoArgsConstructor

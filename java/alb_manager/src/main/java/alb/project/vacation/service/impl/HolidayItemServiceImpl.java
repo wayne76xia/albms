@@ -1,12 +1,9 @@
 package alb.project.vacation.service.impl;
 
-import cn.hutool.core.util.IdUtil;
-import alb.project.vacation.domain.HolidayItem;
 import alb.project.vacation.domain.HolidayItem;
 import alb.project.vacation.mapper.HolidayItemMapper;
-import alb.project.vacation.mapper.HolidayMapper;
 import alb.project.vacation.service.IHolidayItemService;
-import alb.project.vacation.service.IHolidayService;
+import cn.hutool.core.util.IdUtil;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -52,7 +49,7 @@ public class HolidayItemServiceImpl implements IHolidayItemService {
     @Override
     public int insert(HolidayItem holidayItem) {
         // 雪花算法生成唯一通话记录号 单体服务 数据中心id和终端id都填1
-        holidayItem.setHolidayItemId(IdUtil.getSnowflake(1, 1).nextId());
+        holidayItem.setHolidayId(IdUtil.getSnowflake(1, 1).nextId());
         return this.holidayItemMapper.insert(holidayItem);
     }
 
