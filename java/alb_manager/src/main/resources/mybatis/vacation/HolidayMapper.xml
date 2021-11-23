@@ -17,6 +17,10 @@
         <result property="holidayStartDate" column="holiday_start_date"/>
         <result property="holidayEndDate" column="holiday_end_date"/>
         <result property="delFlag" column="del_flag"/>
+        <result property="createBy" column="create_by"/>
+        <result property="createTime" column="create_time"/>
+        <result property="updateBy" column="update_by"/>
+        <result property="updateTime" column="update_time"/>
     </resultMap>
 
     <!--查询单个是否存在-->
@@ -128,9 +132,7 @@
             <if test="createBy != null">
                 create_by,
             </if>
-            <if test="createTime != null">
                 create_time,
-            </if>
             <if test="updateBy != null">
                 update_by,
             </if>
@@ -140,49 +142,47 @@
         </trim>
         <trim prefix="values (" suffix=")" suffixOverrides=",">
             <if test="holidayType != null">
-                #{holidayType,jdbcType=TINYINT},
+                #{holidayType},
             </if>
             <if test="holidayTypeName != null">
-                #{holidayTypeName,jdbcType=VARCHAR},
+                #{holidayTypeName},
             </if>
             <if test="holidayDuration != null">
-                #{holidayDuration,jdbcType=DECIMAL},
+                #{holidayDuration},
             </if>
             <if test="holidayInstruction != null">
-                #{holidayInstruction,jdbcType=VARCHAR},
+                #{holidayInstruction},
             </if>
             <if test="proposerId != null">
-                #{proposerId,jdbcType=BIGINT},
+                #{proposerId},
             </if>
             <if test="currentApproverId != null">
-                #{currentApproverId,jdbcType=BIGINT},
+                #{currentApproverId},
             </if>
             <if test="currentApprovedIndex != null">
-                #{currentApprovedIndex,jdbcType=TINYINT},
+                #{currentApprovedIndex},
             </if>
             <if test="status != null">
-                #{status,jdbcType=BOOLEAN},
+                #{status},
             </if>
             <if test="holidayStartDate != null">
-                #{holidayStartDate,jdbcType=TIMESTAMP},
+                #{holidayStartDate},
             </if>
             <if test="holidayEndDate != null">
-                #{holidayEndDate,jdbcType=TIMESTAMP},
+                #{holidayEndDate},
             </if>
             <if test="delFlag != null">
-                #{delFlag,jdbcType=BOOLEAN},
+                #{delFlag},
             </if>
             <if test="createBy != null">
-                #{createBy,jdbcType=VARCHAR},
+                #{createBy},
             </if>
-            <if test="createTime != null">
-                #{createTime,jdbcType=TIMESTAMP},
-            </if>
+                sysdate(),
             <if test="updateBy != null">
-                #{updateBy,jdbcType=VARCHAR},
+                #{updateBy},
             </if>
             <if test="updateTime != null">
-                #{updateTime,jdbcType=TIMESTAMP},
+                #{updateTime},
             </if>
         </trim>
     </insert>
@@ -192,52 +192,50 @@
         update holiday
         <set>
             <if test="holidayType != null">
-                holiday_type = #{holidayType,jdbcType=TINYINT},
+                holiday_type = #{holidayType},
             </if>
             <if test="holidayTypeName != null">
-                holiday_type_name = #{holidayTypeName,jdbcType=VARCHAR},
+                holiday_type_name = #{holidayTypeName},
             </if>
             <if test="holidayDuration != null">
-                holiday_duration = #{holidayDuration,jdbcType=DECIMAL},
+                holiday_duration = #{holidayDuration},
             </if>
             <if test="holidayInstruction != null">
-                holiday_instruction = #{holidayInstruction,jdbcType=VARCHAR},
+                holiday_instruction = #{holidayInstruction},
             </if>
             <if test="proposerId != null">
-                proposer_id = #{proposerId,jdbcType=BIGINT},
+                proposer_id = #{proposerId},
             </if>
             <if test="currentApproverId != null">
-                current_approver_id = #{currentApproverId,jdbcType=BIGINT},
+                current_approver_id = #{currentApproverId},
             </if>
             <if test="currentApproverIndex != null">
-                current_approver_index = #{currentApproverIndex,jdbcType=TINYINT},
+                current_approver_index = #{currentApproverIndex},
             </if>
             <if test="status != null">
-                `status` = #{status,jdbcType=BOOLEAN},
+                `status` = #{status},
             </if>
             <if test="holidayStartDate != null">
-                holiday_start_date = #{holidayStartDate,jdbcType=TIMESTAMP},
+                holiday_start_date = #{holidayStartDate},
             </if>
             <if test="holidayEndDate != null">
-                holiday_end_date = #{holidayEndDate,jdbcType=TIMESTAMP},
+                holiday_end_date = #{holidayEndDate},
             </if>
             <if test="delFlag != null">
-                del_flag = #{delFlag,jdbcType=BOOLEAN},
+                del_flag = #{delFlag},
             </if>
             <if test="createBy != null">
-                create_by = #{createBy,jdbcType=VARCHAR},
+                create_by = #{createBy},
             </if>
             <if test="createTime != null">
-                create_time = #{createTime,jdbcType=TIMESTAMP},
+                create_time = #{createTime},
             </if>
             <if test="updateBy != null">
-                update_by = #{updateBy,jdbcType=VARCHAR},
+                update_by = #{updateBy},
             </if>
-            <if test="updateTime != null">
-                update_time = #{updateTime,jdbcType=TIMESTAMP},
-            </if>
+                update_time = sysdate()
         </set>
-        where holiday_id = #{holidayId,jdbcType=BIGINT}
+        where holiday_id = #{holidayId}
         limit 1
     </update>
 
