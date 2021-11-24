@@ -140,6 +140,11 @@ export const constantRoutes = [{
       component: (resolve) => require(['@/views/vacation/approval/index'], resolve),
       name: '假期审批',
       meta: { title: '假期审批'}
+    },{
+      path: 'approvalSetting',
+      component: (resolve) => require(['@/views/vacation/approval/setting'], resolve),
+      name: '审批设置',
+      meta: { title: '审批设置'}
     }]
   },
 ]
