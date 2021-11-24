@@ -33,7 +33,7 @@ public class Holiday extends BaseEntity
     /* 假期时长 */
     private Double holidayDuration;
 
-    /* 请假说明 */
+    /* 请假说明/审批说明 */
     private String holidayInstruction;
 
     /* 假期事项列表 */
