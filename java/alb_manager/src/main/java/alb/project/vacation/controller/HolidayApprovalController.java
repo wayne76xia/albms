@@ -53,6 +53,17 @@ public class HolidayApprovalController extends BaseController {
     }
 
     /**
+     * 查询角色列表
+     *
+     * @return 对象列表
+     */
+    @GetMapping("/roleList")
+    @PreAuthorize("@ss.hasPermi('vacation:holidayApproval:list')")
+    public AjaxResult queryHolidayApproval() {
+        return AjaxResult.success(this.holidayApprovalService.selectRoleList());
+    }
+
+    /**
      * 新增数据
      *
      * @param holidayApproval 实例对象
@@ -63,7 +74,7 @@ public class HolidayApprovalController extends BaseController {
     @Log(title = "假期", businessType = BusinessType.INSERT)
     public AjaxResult addHolidayApproval(@RequestBody HolidayApproval holidayApproval) {
         if (this.holidayApprovalService.hasRing(holidayApproval)) {
-            return AjaxResult.error("新增失败，添加该项会产生环");
+            return AjaxResult.error("新增失败，无法添加该项");
         }
         int count = this.holidayApprovalService.insert(holidayApproval);
         return count > 0 ? AjaxResult.success("新增成功") : AjaxResult.error("新增失败");
