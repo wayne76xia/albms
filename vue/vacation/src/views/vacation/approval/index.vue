@@ -7,13 +7,6 @@
 <!--        新增按钮-->
         <div class="flex flex_start aui-padded-b-10 aui-margin-t-10">
           <p class="font-size-20">假期审批</p>
-          <div class="aui-padded-l-10 flex">
-            <div
-              class="addnew bg-theme text-white border-radius font-size-14"
-              @click="handleAdd"
-              v-hasPermi="['vacation:holiday:add']"
-            >新增</div>
-          </div>
         </div>
 
 <!--        搜索框 + 列表-->
@@ -22,17 +15,6 @@
             <el-form :model="queryParams" ref="queryForm" :inline="true" label-width="100px">
               <el-row>
                 <el-col :span="20">
-                  <el-form-item label="申请人：" prop="proposerName"
-                                v-hasPermi="['vacation:holiday:query']">
-                    <el-input
-                      v-model="queryParams.proposerName"
-                      placeholder="请输入申请人"
-                      clearable
-                      size="small"
-                      style="width: 200px"
-                      @keyup.enter.native="handleQuery"
-                    />
-                  </el-form-item>
                   <el-form-item label="假期类型：" prop="holidayTypeId">
                     <el-select
                       v-model="queryParams.holidayTypeId"
@@ -84,12 +66,12 @@
             <el-table-column label="假期结束时间" prop="holidayEndDate" align="center" />
             <el-table-column label="当前审批状态" align="center">
               <template slot-scope="scope">
-                <span v-if="scope.row.status === 0">审批中</span>
-                <span v-if="scope.row.status === 1">已通过</span>
-                <span v-if="scope.row.status === 2">已驳回</span>
+                <span v-if="scope.row.status == 0">审批中</span>
+                <span v-if="scope.row.status == 1">已通过</span>
+                <span v-if="scope.row.status == 2">已驳回</span>
               </template>
             </el-table-column>
-            <el-table-column label="操作" align="center" width="200">
+            <el-table-column label="操作" align="center" width="300">
               <template slot-scope="scope">
                 <el-button
                   size="mini"
@@ -99,17 +81,17 @@
                   v-hasPermi="['vacation:holiday:detail']"
                   title="查看详情"
                 >
-                  <img src="holidayTypeId../../assets/image/chaxun.png" alt />
+                  <img src="../../../assets/image/chaxun.png" alt />
                 </el-button>
                 <el-button
                   class="pj"
                   @click="handleUpdate(scope.row, 1)"
-                  v-hasPermi="['vacation:holiday:pass']"
+                  v-hasPermi="['vacation:holiday:edit']"
                 >通过</el-button>
                 <el-button
                   class="bh"
                   @click="handleUpdate(scope.row, 2)"
-                  v-hasPermi="['vacation:holiday:refuse']"
+                  v-hasPermi="['vacation:holiday:edit']"
                 >驳回</el-button>
               </template>
             </el-table-column>
@@ -195,13 +177,13 @@
               <div class="line_dash"></div>
             </div>
             <div class="aui-padded-15 font-size-14 aui-padded-b-0">
-              <el-table :data="holidayInfo.holidayList" stripe >
-                <el-table-column label="审批人" prop="proposerName" align="center" />
+              <el-table :data="holidayInfo.items" stripe >
+                <el-table-column label="审批人" prop="approvedUserName" align="center" />
                 <el-table-column label="审批状态"align="center">
                   <template slot-scope="scope">
-                    <span v-if="scope.row.status === 0">审批中</span>
-                    <span v-if="scope.row.status === 1">已通过</span>
-                    <span v-if="scope.row.status === 2">已驳回</span>
+                    <span v-if="scope.row.status == 0">审批中</span>
+                    <span v-if="scope.row.status == 1">已通过</span>
+                    <span v-if="scope.row.status == 2">已驳回</span>
                   </template>
                 </el-table-column>
                 <el-table-column label="审批时间" prop="approveTime" align="center" />
@@ -219,7 +201,7 @@
 import {
   getHolidayInfo, hasNextApproved,
   holidayAdd,
-  holidayList,
+  holidayListNeedApproval,
   holidayRemove,
   holidayUpdate,
   userListForVacation
@@ -242,30 +224,40 @@ export default {
       dateRange: "",
       queryParams: {
         pageNum: 1,
-        pageSize: 10,
-        status: 1,
-        holidayName: undefined,
-        sourceType: undefined,
-        userId: undefined,
-        holidayLevel: undefined,
-        minConsumptionNum: undefined,
-        maxConsumptionNum: undefined,
-        shopId: undefined,
-        province: undefined,
-        city: undefined,
-        district: undefined,
-        address: undefined,
-        beginTime: undefined,
-        endTime: undefined,
+        pageSize: 20,
+        status: 0,
+        selectStartDate: undefined,
+        selectEndDate: undefined,
+        holidayTypeId: undefined
       },
       // 表单参数
       form: {
+        holidayId:undefined,
+        holidayTypeId:undefined,
+        proposerId:undefined,
+        currentApprovedIndex:undefined,
+        currentApproverId:undefined,
+        status:undefined,
+        holidayInstruction:undefined,
       },
       // 用户列表
       userList: [],
       // 假期类型
       holidayTypeList: [],
-      ageList: [],
+      statusList:[
+        {
+          name: '审批中',
+          value: 0
+        },
+        {
+          name: '已通过',
+          value: 1
+        },
+        {
+          name: '被驳回',
+          value: 2
+        },
+      ],
       holidayList: [],
       rules: {
         // holidayName: [
@@ -288,7 +280,6 @@ export default {
     this.getHolidayList();
     this.getDicts("holiday_type").then((response) => {
       this.holidayTypeList = response.data;
-      console.log(this.holidayTypeList)
     });
   },
   methods: {
@@ -311,6 +302,7 @@ export default {
       const id = this.infoHoliday.holidayId;
       getHolidayInfo(id).then((response) => {
         if (response.code == 200) {
+          console.log(response.data)
           this.holidayInfo = response.data;
           this.dialogVisible = true;
         }
@@ -319,10 +311,11 @@ export default {
     // 新增确定按钮
     submitForm() {
       this.$refs["form"].validate((valid) => {
+        console.log(this.form)
         if (valid) {
           if (this.form.holidayId != undefined) {
             holidayUpdate(this.form).then((response) => {
-              if (response.code === 200) {
+              if (response.code == 200) {
                 this.msgSuccess("修改成功");
                 this.open = false;
                 this.selectUser = false;
@@ -331,7 +324,7 @@ export default {
             });
           } else {
             holidayAdd(this.form).then((response) => {
-              if (response.code === 200) {
+              if (response.code == 200) {
                 this.msgSuccess("新增成功");
                 this.open = false;
                 this.selectUser = false;
@@ -348,24 +341,22 @@ export default {
       this.selectUser = false;
       this.reset();
     },
-    handleDelete(row) {
-      const name = row.holidayName;
-      const ids = row.holidayId;
-      this.$confirm('是否确认对此假期进行销假?', "警告", {
-        confirmButtonText: "确定",
-        cancelButtonText: "取消",
-        type: "warning",
-      })
-        .then(function () {
-          return holidayRemove(ids);
-        })
-        .then((res) => {
-          console.log(res);
-          this.getHolidayList();
-          this.msgSuccess("删除成功");
-        })
-        .catch(function () {});
-    },
+    // handleDelete(row) {
+    //   const ids = row.holidayId;
+    //   this.$confirm('是否确认对此假期进行销假?', "警告", {
+    //     confirmButtonText: "确定",
+    //     cancelButtonText: "取消",
+    //     type: "warning",
+    //   })
+    //     .then(function () {
+    //       return holidayRemove(ids);
+    //     })
+    //     .then((res) => {
+    //       this.getHolidayList();
+    //       this.msgSuccess("删除成功");
+    //     })
+    //     .catch(function () {});
+    // },
     /** 新增按钮操作 */
     // handleAdd() {
     //   this.reset();
@@ -374,7 +365,7 @@ export default {
     //     // currentApprovedIndex: 1
     //   }
     //   userListForVacation(data).then((response) => {
-    //     if (response.code === 200) {
+    //     if (response.code == 200) {
     //       this.userList = response.data;
     //       this.form = {
     //         holidayTypeId: data.holidayTypeId,
@@ -390,40 +381,40 @@ export default {
       this.reset();
       let id = row.holidayId;
       this.cStatus = status
-      getHolidayInfo(id).then((response) => {
-        if (response.code === 200) {
-          let data1 = {
-            holidayTypeId: response.data.holidayTypeId,
-            proposerId: response.data.proposerId,
-            currentApprovedIndex: response.data.currentApprovedIndex
+      hasNextApproved(id).then((response1) => {
+        if (response1.code == 200 && response1.data != null) { // 存在下一节点
+          let data2 = {
+            holidayId: row.holidayId,
+            holidayTypeId: row.holidayTypeId,
+            proposerId: row.proposerId,
+            currentApprovedIndex: row.currentApprovedIndex
           }
-          hasNextApproved(data1).then((response1) => {
-            if (response1.code === 200) { // 存在下一节点
-              let data2 = {
-                holidayId: id,
-                holidayTypeId: response.data.holidayTypeId,
-                proposerId: response.data.proposerId,
-                currentApprovedIndex: response.data.currentApprovedIndex
+          userListForVacation(data2).then((response2) => {
+            if (response2.code == 200 ) {
+              this.form = {
+                holidayId: row.holidayId,
+                holidayTypeId: row.holidayTypeId,
+                proposerId: row.proposerId,
+                currentApprovedIndex: row.currentApprovedIndex,
+                status: this.cStatus
               }
-              userListForVacation(data2).then((response2) => {
-                if (response2.code === 200) {
-                  this.form = {
-                    holidayId: row.holidayId,
-                    holidayTypeId: row.holidayTypeId,
-                    proposerId: response.data.proposerId,
-                    currentApprovedIndex: response.data.currentApprovedIndex,
-                    status: this.cStatus
-                  }
-                  this.userList = response2.data;
-                  this.title = "修改假期信息";
-                  this.open = true;
-                  this.selectUser = true;
-                }
-              })
-            } else {
-              this.selectUser = false
+              this.userList = response2.data;
+              this.title = "修改假期信息";
+              this.open = true;
+              this.selectUser = true;
             }
           })
+        } else {
+          this.form = {
+            holidayId: row.holidayId,
+            holidayTypeId: row.holidayTypeId,
+            proposerId: row.proposerId,
+            currentApprovedIndex: row.currentApprovedIndex,
+            status: this.cStatus
+          }
+          this.title = "修改假期信息";
+          this.open = true;
+          this.selectUser = false;
         }
       })
     },
@@ -434,31 +425,20 @@ export default {
     reset() {
       this.addressForm = [];
       this.form = {
-        status: 1,
-        holidayName: undefined,
-        holidaySex: undefined,
-        holidayPhone: undefined,
-        holidayAge: undefined,
-        passportNumber: undefined,
-        province: undefined,
-        city: undefined,
-        district: undefined,
-        address: undefined,
-        shopId: undefined,
-        remark: undefined,
-        parentHolidayId: undefined,
-
-        // 新增
-        sourceType:undefined,
-        sourceTypeName:undefined
+        holidayId:undefined,
+        holidayTypeId:undefined,
+        proposerId:undefined,
+        currentApprovedIndex:undefined,
+        currentApproverId:undefined,
+        status:undefined,
+        holidayInstruction:undefined,
       };
       this.resetForm("form");
     },
     // 查询假期列表
     getHolidayList() {
       this.loading = true;
-      holidayList(this.queryParams).then((response) => {
-        console.log(response);
+      holidayListNeedApproval(this.queryParams).then((response) => {
         if (response.code == 200) {
           this.holidayList = response.rows;
           this.total = response.total;
@@ -472,29 +452,18 @@ export default {
       this.queryParams = {
         pageNum: 1,
         pageSize: 20,
-        status: 1,
-        holidayName: undefined,
-        holidayPhone: undefined,
-        sourceType: undefined,
-        userId: undefined,
-        holidayLevel: undefined,
-        minConsumptionNum: undefined,
-        maxConsumptionNum: undefined,
-        shopId: undefined,
-        province: undefined,
-        city: undefined,
-        district: undefined,
-        address: undefined,
-        beginTime: undefined,
-        endTime: undefined,
+        status: 0,
+        selectStartDate: undefined,
+        selectEndDate: undefined,
+        holidayTypeId: undefined
       };
       this.getHolidayList();
     },
     /** 搜索按钮操作 */
     handleQuery() {
       this.queryParams.pageNum = 1;
-      this.queryParams.beginTime = this.dateRange[0]; //开始时间
-      this.queryParams.endTime = this.dateRange[1]; //结束时间
+      this.queryParams.selectStartDate = this.dateRange[0]; //开始时间
+      this.queryParams.selectEndDate = this.dateRange[1]; //结束时间
       this.getHolidayList();
     },
     // 关闭页面

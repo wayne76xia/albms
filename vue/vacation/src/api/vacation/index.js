@@ -5,7 +5,16 @@ import request from '@/utils/request'
 export function holidayList(data) {
   return request({
     url: '/vacation/holiday/list',
-    method: 'GET',
+    method: 'get',
+    params: data
+  })
+}
+
+// 假期审批列表
+export function holidayListNeedApproval(data) {
+  return request({
+    url: '/vacation/holiday/approvalList',
+    method: 'get',
     params: data
   })
 }
@@ -14,7 +23,7 @@ export function holidayList(data) {
 export function getHolidayInfo(id) {
     return request({
         url: '/vacation/holiday/' + id,
-        method: 'GET'
+        method: 'get'
     })
 }
 
@@ -22,7 +31,7 @@ export function getHolidayInfo(id) {
 export function holidayAdd(data) {
     return request({
         url: '/vacation/holiday',
-        method: 'POST',
+        method: 'post',
         data: data
     })
 }
@@ -31,7 +40,7 @@ export function holidayAdd(data) {
 export function holidayUpdate(data) {
     return request({
         url: '/vacation/holiday',
-        method: 'PUT',
+        method: 'put',
         data: data
     })
 }
@@ -40,23 +49,22 @@ export function holidayUpdate(data) {
 export function holidayRemove(id) {
     return request({
         url: '/vacation/holiday/' + id,
-        method: 'DELETE'
+        method: 'delete'
     })
 }
 
 export function userListForVacation(data) {
   return request({
     url: '/vacation/holiday/user/list',
-    method: 'GET',
+    method: 'get',
     params: data
   })
 }
 
-export function hasNextApproved(data) {
+export function hasNextApproved(id) {
   return request({
-    url: '/vacation/holiday/next',
-    method: 'GET',
-    params: data
+    url: '/vacation/holiday/next/' + id,
+    method: 'get'
   })
 }
 

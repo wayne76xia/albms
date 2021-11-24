@@ -56,14 +56,13 @@
           </div>
           <el-table v-loading="loading" :data="holidayApprovalList"   @selection-change="handleSelectionChange" stripe >
             <el-table-column type="selection" width="80" align="center" />
-            <el-table-column label="假期类型" prop="holidayTypeId" align="center" />
-            <el-table-column label="待审批人角色" prop="roleId" align="center" />
-            <el-table-column label="审批人角色" prop="approvedRoleId" align="center"/>
             <el-table-column label="当前审批序号" prop="currentApprovedIndex" align="center" />
-            <el-table-column label="是否存在下一级" prop="nextApprovalId" align="center" >
+            <el-table-column label="待审批人角色" prop="roleName" align="center" />
+            <el-table-column label="审批人角色" prop="approvedRoleName" align="center"/>
+            <el-table-column label="是否为最后一级" prop="nextApprovalId" align="center" >
               <template slot-scope="scope">
-                <span v-if="scope.row.status === 0">否</span>
-                <span v-if="scope.row.status !== 0">是</span>
+                <span v-if="scope.row.nextApprovalId == 0">是</span>
+                <span v-if="scope.row.nextApprovalId != 0">否</span>
               </template>
             </el-table-column>
             <el-table-column label="操作" align="center" width="200">
@@ -73,7 +72,6 @@
                   type="text"
                   icon="el-icon-delete"
                   @click="handleDelete(scope.row)"
-                  v-if="scope.row.status === 1"
                   style="color: #E8522A !important;font-size:16px"
                   v-hasPermi="['vacation:holidayApproval:remove']"
                   title="删除"
@@ -171,7 +169,6 @@ import {
   holidayApprovalList,
   holidayApprovalRemove,
   holidayApprovalUpdate,
-  holidayApprovalList,
   roleList
 } from '../../../api/vacation/approval'
 import store from '../../../store'
@@ -193,19 +190,7 @@ export default {
         pageNum: 1,
         pageSize: 10,
         status: 1,
-        holidayName: undefined,
-        sourceType: undefined,
-        userId: undefined,
-        holidayLevel: undefined,
-        minConsumptionNum: undefined,
-        maxConsumptionNum: undefined,
-        shopId: undefined,
-        province: undefined,
-        city: undefined,
-        district: undefined,
-        address: undefined,
-        beginTime: undefined,
-        endTime: undefined,
+        holidayTypeId: undefined,
       },
       // 表单参数
       form: {
@@ -216,9 +201,9 @@ export default {
       holidayApprovalList: [],
       roleList: [],
       rules: {
-        // holidayName: [
-        //   { required: true, message: "姓名不能为空", trigger: "blur" },
-        // ],
+        holidayInstruction: [
+          { required: true, message: "请假说明不能为空", trigger: "blur" },
+        ],
       },
       // 客户详情
       textarea: "",
@@ -270,7 +255,7 @@ export default {
         if (valid) {
           if (this.form.holidayId != undefined) {
             holidayApprovalUpdate(this.form).then((response) => {
-              if (response.code === 200) {
+              if (response.code == 200) {
                 this.msgSuccess("修改成功");
                 this.open = false;
                 this.getHolidayApprovalList();
@@ -279,7 +264,7 @@ export default {
           } else {
             if (this.form.roleId !== this.form.approvedRoleId) {
               holidayApprovalAdd(this.form).then((response) => {
-                if (response.code === 200) {
+                if (response.code == 200) {
                   this.msgSuccess("新增成功");
                   this.open = false;
                   this.getHolidayApprovalList();
@@ -299,8 +284,7 @@ export default {
       this.reset();
     },
     handleDelete(row) {
-      const name = row.holidayName;
-      const ids = row.holidayId;
+      const ids = row.holidayApprovalId;
       this.$confirm('是否确认删除此项?', "警告", {
         confirmButtonText: "确定",
         cancelButtonText: "取消",
@@ -332,7 +316,7 @@ export default {
     //         currentApprovedIndex: response.data.currentApprovedIndex,
     //     }
     //     userListForVacation(data).then((response2) => {
-    //       if (response2.code === 200) {
+    //       if (response2.code == 200) {
     //         let expect = {
     //           holidayId: response.data.holidayId,
     //           holidayTypeId: response.data.holidayTypeId,
@@ -377,7 +361,6 @@ export default {
     getHolidayApprovalList() {
       this.loading = true;
       holidayApprovalList(this.queryParams).then((response) => {
-        console.log(response);
         if (response.code == 200) {
           this.holidayApprovalList = response.rows;
           this.total = response.total;
@@ -389,7 +372,7 @@ export default {
     getRoleList() {
       roleList().then((response) => {
         if (response.code == 200) {
-          this.holidayApprovalList = response.rows;
+          this.roleList = response.data;
         }
       });
     },

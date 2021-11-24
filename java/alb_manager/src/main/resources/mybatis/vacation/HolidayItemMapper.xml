@@ -38,7 +38,7 @@
     <select id="queryAll" resultMap="HolidayItemMap">
         select hi.holiday_id,
         hi.approved_user_id,
-        (select su.nick_name from sys_user su) as approved_user_name,
+        (select su.nick_name from sys_user su where hi.approved_user_id = su.user_id ) as approved_user_name,
         hi.approved_index,
         hi.status,
         hi.approve_time,

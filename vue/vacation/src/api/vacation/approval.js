@@ -1,11 +1,10 @@
 import request from '@/utils/request'
 
-
 // 假期审批列表
 export function holidayApprovalList(data) {
   return request({
     url: '/vacation/holiday/approval/list',
-    method: 'GET',
+    method: 'get',
     params: data
   })
 }
@@ -14,7 +13,7 @@ export function holidayApprovalList(data) {
 export function roleList() {
   return request({
     url: '/vacation/holiday/approval/roleList',
-    method: 'GET'
+    method: 'get'
   })
 }
 
@@ -22,7 +21,7 @@ export function roleList() {
 export function getHolidayApprovalInfo(id) {
   return request({
     url: '/vacation/holiday/approval/' + id,
-    method: 'GET'
+    method: 'get'
   })
 }
 
@@ -30,7 +29,7 @@ export function getHolidayApprovalInfo(id) {
 export function holidayApprovalAdd(data) {
   return request({
     url: '/vacation/holiday/approval',
-    method: 'POST',
+    method: 'post',
     data: data
   })
 }
@@ -39,7 +38,7 @@ export function holidayApprovalAdd(data) {
 export function holidayApprovalUpdate(data) {
   return request({
     url: '/vacation/holiday/approval',
-    method: 'PUT',
+    method: 'put',
     data: data
   })
 }
@@ -48,6 +47,6 @@ export function holidayApprovalUpdate(data) {
 export function holidayApprovalRemove(id) {
   return request({
     url: '/vacation/holiday/approval/' + id,
-    method: 'DELETE'
+    method: 'delete'
   })
 }

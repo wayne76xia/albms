@@ -7,7 +7,6 @@ import alb.project.vacation.mapper.HolidayMapper;
 import alb.project.vacation.paramsVO.HolidayUserParamsVO;
 import alb.project.vacation.resultVO.HolidayUserResultVO;
 import alb.project.vacation.service.IHolidayService;
-import cn.hutool.core.util.IdUtil;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -66,8 +65,6 @@ public class HolidayServiceImpl implements IHolidayService {
      */
     @Override
     public int insert(Holiday holiday) {
-        // 雪花算法生成唯一通话记录号 单体服务 数据中心id和终端id都填1
-        holiday.setHolidayId(IdUtil.getSnowflake(1, 1).nextId());
         return this.holidayMapper.insert(holiday);
     }
 

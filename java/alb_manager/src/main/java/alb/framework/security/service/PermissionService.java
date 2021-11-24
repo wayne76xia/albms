@@ -1,14 +1,14 @@
 package alb.framework.security.service;
 
-import java.util.Set;
-
+import alb.common.utils.ServletUtils;
+import alb.common.utils.StringUtils;
+import alb.framework.security.LoginUser;
 import alb.project.system.domain.SysRole;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
-import alb.common.utils.ServletUtils;
-import alb.common.utils.StringUtils;
-import alb.framework.security.LoginUser;
+
+import java.util.Set;
 
 /**
  * 自定义权限实现，ss取自SpringSecurity首字母
@@ -18,7 +18,7 @@ import alb.framework.security.LoginUser;
 public class PermissionService
 {
     /** 所有权限标识 */
-    private static final String ALL_PERMISSION = "*:*:*";
+    public static final String ALL_PERMISSION = "*:*:*";
 
     /** 管理员角色权限标识 */
     private static final String SUPER_ADMIN = "admin";

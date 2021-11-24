@@ -77,9 +77,6 @@
         <if test="holidayTypeId != null">
             and h.holiday_type_id = #{holidayTypeId}
         </if>
-        <if test="holidayDuration != null">
-            and h.holiday_duration = #{holidayDuration}
-        </if>
         <if test="proposerId != null">
             and h.proposer_id = #{proposerId}
         </if>
@@ -98,6 +95,9 @@
     <insert id="insert" keyColumn="holiday_id" keyProperty="holidayId" parameterType="Holiday" useGeneratedKeys="true">
         insert into holiday
         <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="holidayId != null">
+                holiday_id,
+            </if>
             <if test="holidayTypeId != null">
                 holiday_type_id,
             </if>
@@ -133,6 +133,9 @@
             </if>
         </trim>
         <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="holidayId != null">
+                #{holidayId},
+            </if>
             <if test="holidayTypeId != null">
                 #{holidayTypeId},
             </if>
@@ -182,8 +185,8 @@
             <if test="currentApproverId != null">
                 current_approver_id = #{currentApproverId},
             </if>
-            <if test="currentApproverIndex != null">
-                current_approver_index = #{currentApproverIndex},
+            <if test="currentApprovedIndex != null">
+                current_approved_index = #{currentApprovedIndex},
             </if>
             <if test="status != null">
                 `status` = #{status},
@@ -223,7 +226,7 @@
     <select id="selectUserList" parameterType="alb.project.vacation.paramsVO.HolidayUserParamsVO"
             resultType="alb.project.vacation.resultVO.HolidayUserResultVO">
         select u.user_id as userId,
-        (u.nick_name + '(' + u.user_code + '):' + r.role_name + '(' + r.role_id + ')') as displayName
+               CONCAT(u.nick_name, '(' ,u.user_code, '):', r.role_name) AS displayName
         from sys_user u
         left join sys_dept d on u.dept_id = d.dept_id
         left join sys_user_role ur on u.user_id = ur.user_id

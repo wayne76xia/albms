@@ -1,7 +1,11 @@
 package alb.project.vacation.domain;
 
 import alb.framework.web.domain.BaseEntity;
+import alb.project.vacation.utils.LongJsonDeserializer;
+import alb.project.vacation.utils.LongJsonSerializer;
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import lombok.*;
 
 import java.util.Date;
@@ -21,9 +25,13 @@ public class Holiday extends BaseEntity
     private static final long serialVersionUID = 1L;
 
     /* 假期主键 */
+    @JsonSerialize(using = LongJsonSerializer.class)
+    @JsonDeserialize(using = LongJsonDeserializer.class)
     private Long holidayId;
 
     /* 假期类型 */
+    @JsonSerialize(using = LongJsonSerializer.class)
+    @JsonDeserialize(using = LongJsonDeserializer.class)
     private Long holidayTypeId;
 
     private String typeName;
@@ -40,10 +48,14 @@ public class Holiday extends BaseEntity
     private List<HolidayItem> items;
 
     /* 申请人ID */
+    @JsonSerialize(using = LongJsonSerializer.class)
+    @JsonDeserialize(using = LongJsonDeserializer.class)
     private Long proposerId;
     private String proposerName;
 
     /* 当前审批人ID */
+    @JsonSerialize(using = LongJsonSerializer.class)
+    @JsonDeserialize(using = LongJsonDeserializer.class)
     private Long currentApproverId;
     private String currentApproverName;
 

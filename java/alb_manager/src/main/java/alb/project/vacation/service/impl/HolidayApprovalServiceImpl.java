@@ -57,14 +57,17 @@ public class HolidayApprovalServiceImpl implements IHolidayApprovalService {
                 .build();
         List<HolidayApproval> list = this.holidayApprovalMapper.queryAll(params);
         Set<Long> set = new HashSet<>();
+        // 放入当前节点
         set.add(holidayApproval.getRoleId());
+        set.add(holidayApproval.getApprovedRoleId());
+        // 检测之前节点
         for (HolidayApproval approval : list) {
-            if (set.contains(approval.getHolidayApprovalId())) {
-                return false;
+            if (set.contains(approval.getApprovedRoleId())) {
+                return true;
             }
-            set.add(approval.getHolidayApprovalId());
+            set.add(approval.getApprovedRoleId());
         }
-        return true;
+        return false;
     }
 
     /**
@@ -83,6 +86,7 @@ public class HolidayApprovalServiceImpl implements IHolidayApprovalService {
      *
      * @return 对象列表
      */
+    @Override
     public List<SysRole> selectRoleList(){
         return this.holidayApprovalMapper.selectRoleList();
     }
@@ -102,10 +106,13 @@ public class HolidayApprovalServiceImpl implements IHolidayApprovalService {
         List<HolidayApproval> list = this.holidayApprovalMapper.queryAll(holidayApproval);
         holidayApproval.setCurrentApprovedIndex(list.isEmpty() ?
                 1 : (list.get(list.size() - 1).getCurrentApprovedIndex() + 1));
-        holidayApproval.setNextApprovalId(0);
-        holidayApproval.setDelFlag(0);
-        if () { // 非头节点还需要修改前置节点
+        holidayApproval.setNextApprovalId(0L);
 
+        // 非头节点还需要修改前置节点
+        if (holidayApproval.getCurrentApprovedIndex() != 1) {
+            HolidayApproval pre = list.get(list.size() - 1);
+            pre.setNextApprovalId(holidayApproval.getApprovedRoleId());
+            this.holidayApprovalMapper.update(pre);
         }
         return this.holidayApprovalMapper.insert(holidayApproval);
     }
@@ -120,7 +127,8 @@ public class HolidayApprovalServiceImpl implements IHolidayApprovalService {
     public int deleteById(Long holidayApprovalId) {
         HolidayApproval holidayApproval = this.holidayApprovalMapper.queryOne(holidayApprovalId);
 
-        if (holidayApproval.getNextApprovalId() != 0) { // 有后续节点
+        // 有后续节点
+        if (holidayApproval.getNextApprovalId() != 0) {
             HolidayApproval params = HolidayApproval.builder()
                     .holidayTypeId(holidayApproval.getHolidayTypeId())
                     .roleId(holidayApproval.getRoleId())
@@ -128,7 +136,7 @@ public class HolidayApprovalServiceImpl implements IHolidayApprovalService {
             List<HolidayApproval> list = this.holidayApprovalMapper.queryAll(params);
 
             // 非头节点还需要处理前置节点
-            if (holidayApproval.setCurrentApprovedIndex() != 1) {
+            if (holidayApproval.getCurrentApprovedIndex() != 1) {
                 HolidayApproval preParams = HolidayApproval.builder()
                         .holidayTypeId(holidayApproval.getHolidayTypeId())
                         .roleId(holidayApproval.getRoleId())
@@ -140,18 +148,22 @@ public class HolidayApprovalServiceImpl implements IHolidayApprovalService {
             }
 
             // 处理后续节点
-
+            for (int i = holidayApproval.getCurrentApprovedIndex(); i < list.size(); i++){
+                HolidayApproval next = list.get(i);
+                next.setCurrentApprovedIndex(next.getCurrentApprovedIndex() - 1);
+                this.holidayApprovalMapper.update(next);
+            }
         }
 
         // 无后续节点，但仍需要处理前置节点
-        if (holidayApproval.setCurrentApprovedIndex() != 1) {
+        if (holidayApproval.getCurrentApprovedIndex() != 1) {
             HolidayApproval preParams = HolidayApproval.builder()
                     .holidayTypeId(holidayApproval.getHolidayTypeId())
                     .roleId(holidayApproval.getRoleId())
                     .currentApprovedIndex(holidayApproval.getCurrentApprovedIndex() - 1)
                     .build();
             HolidayApproval pre = this.holidayApprovalMapper.queryAll(preParams).get(0);
-            pre.setNextApprovalId(0);
+            pre.setNextApprovalId(0L);
             this.holidayApprovalMapper.update(pre);
         }
 

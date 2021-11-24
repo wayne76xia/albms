@@ -69,7 +69,7 @@ public class HolidayApprovalController extends BaseController {
      * @param holidayApproval 实例对象
      * @return 实例对象
      */
-    @PostMapping("/")
+    @PostMapping("")
     @PreAuthorize("@ss.hasPermi('vacation:holidayApproval:add')")
     @Log(title = "假期", businessType = BusinessType.INSERT)
     public AjaxResult addHolidayApproval(@RequestBody HolidayApproval holidayApproval) {

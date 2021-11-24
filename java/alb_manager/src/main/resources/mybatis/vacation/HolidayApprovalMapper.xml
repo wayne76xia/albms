@@ -13,7 +13,6 @@
         <result column="approved_role_name" property="approvedRoleName"/>
         <result column="current_approved_index" property="currentApprovedIndex"/>
         <result column="next_approval_id" jdbcType="BIGINT" property="nextApprovalId"/>
-        <result column="del_flag" property="delFlag"/>
         <result property="createBy" column="create_by"/>
         <result property="createTime" column="create_time"/>
         <result property="updateBy" column="update_by"/>
@@ -25,20 +24,18 @@
         select r.role_id as roleId,
                r.role_name as roleName
         from sys_role r
-        where r.del_flag = '0'
-          and r.role_name != 'admin'
+        where r.role_name != 'admin'
         order by r.role_sort
     </select>
 
     <!--查询是否下个实体-->
-    <select id="hasNext" parameterType="Long">
-        select ha.nextApprovalId
+    <select id="hasNext" resultType="java.lang.Long">
+        select ha.next_approval_id
         from holiday_approval ha
                  left join sys_dict_data s on s.dict_type = 'holiday_type' and ha.holiday_type_id = s.dict_code
         where ha.holiday_type_id = #{holidayTypeId}
           and ha.role_id = #{roleId}
           and ha.current_approved_index = #{currentApprovedIndex}
-          and ha.del_flag = 0
         limit 1
     </select>
 
@@ -53,12 +50,10 @@
                ha.approved_role_id,
                (select r.role_name from sys_role r where ha.approved_role_id = r.role_id) as approved_role_name,
                ha.current_approved_index,
-               ha.next_approval_id,
-               ha.del_flag
+               ha.next_approval_id
         from holiday_approval ha
                  left join sys_dict_data s on s.dict_type = 'holiday_type' and ha.holiday_type_id = s.dict_code
         where ha.holiday_approval_id = #{holidayApprovalId}
-          and ha.del_flag = 0
           limit 1
     </select>
 
@@ -73,16 +68,16 @@
         ha.approved_role_id,
         (select r.role_name from sys_role r where ha.approved_role_id = r.role_id) as approved_role_name,
         ha.current_approved_index,
-        ha.next_approval_id,
-        ha.del_flag
+        ha.next_approval_id
         from holiday_approval ha
         left join sys_dict_data s on s.dict_type = 'holiday_type' and ha.holiday_type_id = s.dict_code
         where ha.holiday_type_id = #{holidayTypeId}
-          and ha.role_id = #{roleId}
+        <if test="roleId != null">
+            and ha.role_id = #{roleId}
+        </if>
         <if test="currentApprovedIndex != null">
             and ha.current_approved_index = #{currentApprovedIndex}
         </if>
-          and ha.del_flag = 0
         order by current_approved_index
     </select>
 
@@ -106,9 +101,6 @@
             </if>
             <if test="nextApprovalId != null">
                 next_approval_id,
-            </if>
-            <if test="delFlag != null">
-                del_flag,
             </if>
             <if test="createBy != null">
                 create_by,
@@ -139,9 +131,6 @@
             </if>
             <if test="nextApprovalId != null">
                 #{nextApprovalId},
-            </if>
-            <if test="delFlag != null">
-                #{delFlag},
             </if>
             <if test="createBy != null">
                 #{createBy},
@@ -176,8 +165,7 @@
 
     <!--通过主键删除-->
     <delete id="deleteById">
-        update holiday_approval
-        set del_flag = 1
+        delete from holiday_approval
         where holiday_approval_id = #{holidayApprovalId}
     </delete>
 

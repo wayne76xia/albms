@@ -21,15 +21,14 @@ import alb.project.system.service.ISysDeptService;
 import alb.project.system.service.ISysPostService;
 import alb.project.system.service.ISysRoleService;
 import alb.project.system.service.ISysUserService;
+import cn.hutool.core.date.DateUtil;
+import cn.hutool.core.util.NumberUtil;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 /**
@@ -57,65 +56,65 @@ public class SysUserController extends BaseController {
         this.deptService = deptService;
     }
 
-//    /**
-//     * 统计数据
-//     * @return
-//     */
-//    @RequestMapping(value = "/topData",method = RequestMethod.GET)
-//    public AjaxResult topData(){
-//        List<String> monthList = DateUtils.getInitMonthMapWithZero();
-//        String thisMonth = DateUtil.format(new Date(), "yyyy-MM");
-//        String lastMonth = DateUtil.format(DateUtil.lastMonth(), "yyyy-MM");
-//        // 总公司员工数量
-//        List<Integer> totalUserNumList = new ArrayList<>();
-//        // 子公司数量
-//        List<Integer> totalCompanyNumList = new ArrayList<>();
+    /**
+     * 统计数据
+     * @return
+     */
+    @RequestMapping(value = "/topData",method = RequestMethod.GET)
+    public AjaxResult topData(){
+        List<String> monthList = DateUtils.getInitMonthMapWithZero();
+        String thisMonth = DateUtil.format(new Date(), "yyyy-MM");
+        String lastMonth = DateUtil.format(DateUtil.lastMonth(), "yyyy-MM");
+        // 总公司员工数量
+        List<Integer> totalUserNumList = new ArrayList<>();
+        // 子公司数量
+        List<Integer> totalCompanyNumList = new ArrayList<>();
 //        // 门店数量
 //        List<Integer> totalShopNumList = new ArrayList<>();
 //        // 验光师数量
 //        List<Integer> totalOptometristNumList = new ArrayList<>();
-//        for (String month : monthList) {
-//            // 根据月份获取员工数量
-//            totalUserNumList.add(userService.getTotalNumByMonth(month));
-//            // 根据月份获取子公司数据
-//            totalCompanyNumList.add(deptService.getTotalCompanyNumByMonth(month));
+        for (String month : monthList) {
+            // 根据月份获取员工数量
+            totalUserNumList.add(userService.getTotalNumByMonth(month));
+            // 根据月份获取子公司数据
+            totalCompanyNumList.add(deptService.getTotalCompanyNumByMonth(month));
 //            // 根据月份获取门店数量
 //            totalShopNumList.add(deptService.getTotalShopNumByMonth(month));
 //            // 根据月份验光师数量
 //            totalOptometristNumList.add(userService.getTotalOptometristNumByMonth(month));
-//        }
-//
-//
-//        // 总公司员工数量
-//        Integer totalUserNum = userService.getTotalNum();
-//        // 本月总公司人数
-//        Integer thisMonthTotalUserNum = userService.getTotalNumByMonth(thisMonth);
-//        // 上月总公司人数
-//        Integer lastMonthTotalUserNum = userService.getTotalNumByMonth(lastMonth);
-//        String totalUserNumRatio = null;
-//        if (lastMonthTotalUserNum > 0) {
-//            totalUserNumRatio = NumberUtil.div(NumberUtil.sub(thisMonthTotalUserNum, lastMonthTotalUserNum), lastMonthTotalUserNum,2) + "%";
-//        } else if (NumberUtil.compare(thisMonthTotalUserNum, lastMonthTotalUserNum) == 0) {
-//            totalUserNumRatio = "+0%";
-//        } else {
-//            totalUserNumRatio = "+100%";
-//        }
-//
-//        // 子公司数量
-//        Integer totalCompanyNum = deptService.getTotalCompanyNum();
-//        // 本月子公司数量
-//        Integer thisMonthTotalCompanyNum = deptService.getTotalShopNumByMonth(thisMonth);
-//        // 上月子公司数量
-//        Integer lastMonthTotalCompanyNum = deptService.getTotalShopNumByMonth(lastMonth);
-//        String totalCompanyNumRatio = null;
-//        if (lastMonthTotalCompanyNum > 0) {
-//            totalCompanyNumRatio = NumberUtil.div(NumberUtil.sub(thisMonthTotalCompanyNum, lastMonthTotalCompanyNum), lastMonthTotalCompanyNum,2) + "%";
-//        } else if (NumberUtil.compare(thisMonthTotalCompanyNum, lastMonthTotalCompanyNum) == 0) {
-//            totalCompanyNumRatio = "+0%";
-//        } else {
-//            totalCompanyNumRatio = "+100%";
-//        }
-//
+        }
+
+
+        // 总公司员工数量
+        Integer totalUserNum = userService.getTotalNum();
+        // 本月总公司人数
+        Integer thisMonthTotalUserNum = userService.getTotalNumByMonth(thisMonth);
+        // 上月总公司人数
+        Integer lastMonthTotalUserNum = userService.getTotalNumByMonth(lastMonth);
+        String totalUserNumRatio = null;
+        if (lastMonthTotalUserNum > 0) {
+            totalUserNumRatio = NumberUtil.div(NumberUtil.sub(thisMonthTotalUserNum, lastMonthTotalUserNum), lastMonthTotalUserNum,2) + "%";
+        } else if (NumberUtil.compare(thisMonthTotalUserNum, lastMonthTotalUserNum) == 0) {
+            totalUserNumRatio = "+0%";
+        } else {
+            totalUserNumRatio = "+100%";
+        }
+
+        // 子公司数量
+        Integer totalCompanyNum = deptService.getTotalCompanyNum();
+        // 本月子公司数量
+        Integer thisMonthTotalCompanyNum = deptService.getTotalShopNumByMonth(thisMonth);
+        // 上月子公司数量
+        Integer lastMonthTotalCompanyNum = deptService.getTotalShopNumByMonth(lastMonth);
+        String totalCompanyNumRatio = null;
+        if (lastMonthTotalCompanyNum > 0) {
+            totalCompanyNumRatio = NumberUtil.div(NumberUtil.sub(thisMonthTotalCompanyNum, lastMonthTotalCompanyNum), lastMonthTotalCompanyNum,2) + "%";
+        } else if (NumberUtil.compare(thisMonthTotalCompanyNum, lastMonthTotalCompanyNum) == 0) {
+            totalCompanyNumRatio = "+0%";
+        } else {
+            totalCompanyNumRatio = "+100%";
+        }
+
 //        // 门店数量
 //        Integer totalShopNum = deptService.getTotalShopNum();
 //        // 本月门店数量
@@ -145,36 +144,36 @@ public class SysUserController extends BaseController {
 //        } else {
 //            totalOptometristNumRatio = "+100%";
 //        }
-//
-//        Map<String, Object> resultMap = new HashMap<>();
-//        // 日期
-//        resultMap.put("monthList",monthList);
-//        // 总公司员工数量
-//        resultMap.put("totalUserNum", totalUserNum);
-//        // 总公司员工数量同上月对比
-//        resultMap.put("totalUserNumRatio", totalUserNumRatio);
-//        // 总公司员工数量曲线图
-//        resultMap.put("totalUserNumList", totalUserNumList);
+
+        Map<String, Object> resultMap = new HashMap<>();
+        // 日期
+        resultMap.put("monthList",monthList);
+        // 总公司员工数量
+        resultMap.put("totalUserNum", totalUserNum);
+        // 总公司员工数量同上月对比
+        resultMap.put("totalUserNumRatio", totalUserNumRatio);
+        // 总公司员工数量曲线图
+        resultMap.put("totalUserNumList", totalUserNumList);
+        // 子公司数量
+        resultMap.put("totalCompanyNum", totalCompanyNum);
+        // 子公司数量同上月对比
+        resultMap.put("totalCompanyNumRatio", totalCompanyNumRatio);
+        // 子公司数量曲线图
+        resultMap.put("totalCompanyNumList", totalCompanyNumList);
 //        // 门店数量
 //        resultMap.put("totalShopNum", totalShopNum);
 //        // 门店数量同上月对比
 //        resultMap.put("totalShopNumRatio", totalShopNumRatio);
 //        // 门店数量曲线图
 //        resultMap.put("totalShopNumList", totalShopNumList);
-//        // 子公司数量
-//        resultMap.put("totalCompanyNum", totalCompanyNum);
-//        // 子公司数量同上月对比
-//        resultMap.put("totalCompanyNumRatio", totalCompanyNumRatio);
-//        // 子公司数量曲线图
-//        resultMap.put("totalCompanyNumList", totalCompanyNumList);
 //        // 验光师数量
 //        resultMap.put("totalOptometristNum", totalOptometristNum);
 //        // 验光师数量同上月对比
 //        resultMap.put("totalOptometristNumRatio", totalOptometristNumRatio);
 //        // 验光师数量曲线图
 //        resultMap.put("totalOptometristNumList",totalOptometristNumList);
-//        return AjaxResult.success(resultMap);
-//    }
+        return AjaxResult.success(resultMap);
+    }
 
     /**
      * 获取用户列表

@@ -11,7 +11,7 @@
  Target Server Version : 50724
  File Encoding         : 65001
 
- Date: 24/11/2021 01:13:23
+ Date: 25/11/2021 02:44:52
 */
 
 SET NAMES utf8mb4;
@@ -90,8 +90,15 @@ CREATE TABLE `holiday`  (
   `create_time` datetime(0) NULL DEFAULT NULL COMMENT '创建时间',
   `update_by` varchar(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT '' COMMENT '更新者',
   `update_time` datetime(0) NULL DEFAULT NULL COMMENT '更新时间',
+  `holiday_instruction` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '请假说明',
   PRIMARY KEY (`holiday_id`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of holiday
+-- ----------------------------
+INSERT INTO `holiday` VALUES (1463543151288520704, 31, NULL, 2, 4, 2, 1, '2021-11-24 08:00:00', '2021-11-24 18:00:00', 0, '', '2021-11-25 00:20:53', '', '2021-11-25 02:39:25', NULL);
+INSERT INTO `holiday` VALUES (1463544612969910272, 31, NULL, 2, 4, 1, 2, '2021-11-25 08:00:00', '2021-11-25 18:00:00', 0, '', '2021-11-25 00:26:41', '', '2021-11-25 02:42:36', NULL);
 
 -- ----------------------------
 -- Table structure for holiday_approval
@@ -109,8 +116,14 @@ CREATE TABLE `holiday_approval`  (
   `create_time` datetime(0) NULL DEFAULT NULL COMMENT '创建时间',
   `update_by` varchar(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT '' COMMENT '更新者',
   `update_time` datetime(0) NULL DEFAULT NULL COMMENT '更新时间',
-  PRIMARY KEY (`holiday_type_id`) USING BTREE
+  PRIMARY KEY (`holiday_approval_id`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of holiday_approval
+-- ----------------------------
+INSERT INTO `holiday_approval` VALUES (1463527019865313280, 31, 7, 6, 1, 5, 0, '', '2021-11-24 23:16:48', '', '2021-11-24 23:16:56');
+INSERT INTO `holiday_approval` VALUES (1463527058012508160, 31, 7, 5, 2, 0, 0, '', '2021-11-24 23:16:56', '', NULL);
 
 -- ----------------------------
 -- Table structure for holiday_item
@@ -128,8 +141,15 @@ CREATE TABLE `holiday_item`  (
   `create_time` datetime(0) NULL DEFAULT NULL COMMENT '创建时间',
   `update_by` varchar(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT '' COMMENT '更新者',
   `update_time` datetime(0) NULL DEFAULT NULL COMMENT '更新时间',
-  PRIMARY KEY (`holiday_id`, `approved_user_id`, `approved_index`) USING BTREE
+  PRIMARY KEY (`holiday_id`, `approved_user_id`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of holiday_item
+-- ----------------------------
+INSERT INTO `holiday_item` VALUES (1463543151288520704, 3, 1, 1, '2021-11-25 00:20:53', '333', 0, '', '2021-11-25 00:20:53', '', '2021-11-25 01:57:01');
+INSERT INTO `holiday_item` VALUES (1463543151288520704, 4, 2, 1, '2021-11-25 01:57:01', '111', 0, '', '2021-11-25 01:57:01', '', '2021-11-25 02:39:25');
+INSERT INTO `holiday_item` VALUES (1463544612969910272, 4, 1, 2, '2021-11-25 00:26:41', '111', 0, '', '2021-11-25 00:26:41', '', '2021-11-25 02:42:36');
 
 -- ----------------------------
 -- Table structure for messages
@@ -302,7 +322,7 @@ CREATE TABLE `qrtz_scheduler_state`  (
 -- ----------------------------
 -- Records of qrtz_scheduler_state
 -- ----------------------------
-INSERT INTO `qrtz_scheduler_state` VALUES ('RuoyiScheduler', 'LAPTOP-5GCLI6BI1637687469926', 1637687547120, 15000);
+INSERT INTO `qrtz_scheduler_state` VALUES ('RuoyiScheduler', 'LAPTOP-5GCLI6BI1637777730641', 1637779480359, 15000);
 
 -- ----------------------------
 -- Table structure for qrtz_simple_triggers
@@ -371,9 +391,9 @@ CREATE TABLE `qrtz_triggers`  (
 -- ----------------------------
 -- Records of qrtz_triggers
 -- ----------------------------
-INSERT INTO `qrtz_triggers` VALUES ('RuoyiScheduler', 'TASK_CLASS_NAME1', 'DEFAULT', 'TASK_CLASS_NAME1', 'DEFAULT', NULL, 1637687470000, -1, 5, 'PAUSED', 'CRON', 1637687470000, 0, NULL, 2, '');
-INSERT INTO `qrtz_triggers` VALUES ('RuoyiScheduler', 'TASK_CLASS_NAME2', 'DEFAULT', 'TASK_CLASS_NAME2', 'DEFAULT', NULL, 1637687475000, -1, 5, 'PAUSED', 'CRON', 1637687470000, 0, NULL, 2, '');
-INSERT INTO `qrtz_triggers` VALUES ('RuoyiScheduler', 'TASK_CLASS_NAME3', 'DEFAULT', 'TASK_CLASS_NAME3', 'DEFAULT', NULL, 1637687480000, -1, 5, 'PAUSED', 'CRON', 1637687470000, 0, NULL, 2, '');
+INSERT INTO `qrtz_triggers` VALUES ('RuoyiScheduler', 'TASK_CLASS_NAME1', 'DEFAULT', 'TASK_CLASS_NAME1', 'DEFAULT', NULL, 1637777730000, -1, 5, 'PAUSED', 'CRON', 1637777730000, 0, NULL, 2, '');
+INSERT INTO `qrtz_triggers` VALUES ('RuoyiScheduler', 'TASK_CLASS_NAME2', 'DEFAULT', 'TASK_CLASS_NAME2', 'DEFAULT', NULL, 1637777730000, -1, 5, 'PAUSED', 'CRON', 1637777730000, 0, NULL, 2, '');
+INSERT INTO `qrtz_triggers` VALUES ('RuoyiScheduler', 'TASK_CLASS_NAME3', 'DEFAULT', 'TASK_CLASS_NAME3', 'DEFAULT', NULL, 1637777740000, -1, 5, 'PAUSED', 'CRON', 1637777730000, 0, NULL, 2, '');
 
 -- ----------------------------
 -- Table structure for sys_config
@@ -495,8 +515,8 @@ INSERT INTO `sys_dict_data` VALUES (27, 1, '成功', '0', 'sys_common_status', '
 INSERT INTO `sys_dict_data` VALUES (28, 2, '失败', '1', 'sys_common_status', '', 'danger', 'N', '0', 'admin', '2018-03-16 11:33:00', 'ry', '2018-03-16 11:33:00', '停用状态');
 INSERT INTO `sys_dict_data` VALUES (29, 1, '正常', '0', 'del_status', NULL, NULL, 'N', '0', 'admin', '2020-07-16 14:23:09', '', NULL, '未删除');
 INSERT INTO `sys_dict_data` VALUES (30, 2, '已删除', '1', 'del_status', NULL, NULL, 'N', '0', 'admin', '2020-07-16 14:23:20', '', NULL, NULL);
-INSERT INTO `sys_dict_data` VALUES (31, 1, '调休', '1', 'holiday_type', '', '', 'N', '0', 'admin', '2021-11-20 14:23:20', NULL, NULL, 'COMPENSATORY_LEAVE');
-INSERT INTO `sys_dict_data` VALUES (32, 2, '事假', '2', 'holiday_type', '', '', 'Y', '0', 'admin', '2021-11-20 14:23:20', NULL, NULL, 'COMPASSIONATE_LEAVE');
+INSERT INTO `sys_dict_data` VALUES (31, 1, '调休', '1', 'holiday_type', '', '', 'Y', '0', 'admin', '2021-11-20 14:23:20', NULL, NULL, 'COMPENSATORY_LEAVE');
+INSERT INTO `sys_dict_data` VALUES (32, 2, '事假', '2', 'holiday_type', '', '', 'N', '0', 'admin', '2021-11-20 14:23:20', NULL, NULL, 'COMPASSIONATE_LEAVE');
 INSERT INTO `sys_dict_data` VALUES (33, 3, '年假', '3', 'holiday_type', '', '', 'N', '0', 'admin', '2021-11-20 14:23:20', NULL, NULL, 'ANNUAL_LEAVE');
 INSERT INTO `sys_dict_data` VALUES (34, 4, '婚假', '4', 'holiday_type', '', '', 'N', '0', 'admin', '2021-11-20 14:23:20', NULL, NULL, 'MARRIAGE_LEAVE');
 INSERT INTO `sys_dict_data` VALUES (35, 5, '病假', '5', 'holiday_type', '', '', 'N', '0', 'admin', '2021-11-20 14:23:20', NULL, NULL, 'SICK_LEAVE');
@@ -599,7 +619,7 @@ CREATE TABLE `sys_logininfor`  (
   `msg` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT '' COMMENT '提示消息',
   `login_time` datetime(0) NULL DEFAULT NULL COMMENT '访问时间',
   PRIMARY KEY (`info_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 761 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '系统访问记录' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 803 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '系统访问记录' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of sys_logininfor
@@ -870,6 +890,48 @@ INSERT INTO `sys_logininfor` VALUES (757, 'admin', '127.0.0.1', '内网IP', 'Chr
 INSERT INTO `sys_logininfor` VALUES (758, 'admin', '127.0.0.1', '内网IP', 'Chrome 9', 'Windows 10', '0', '登录成功', '2021-11-22 22:55:26');
 INSERT INTO `sys_logininfor` VALUES (759, 'admin', '127.0.0.1', '内网IP', 'Chrome 9', 'Windows 10', '0', '登录成功', '2021-11-23 21:44:09');
 INSERT INTO `sys_logininfor` VALUES (760, 'admin', '127.0.0.1', '内网IP', 'Chrome 9', 'Windows 10', '0', '登录成功', '2021-11-23 23:11:39');
+INSERT INTO `sys_logininfor` VALUES (761, 'admin', '127.0.0.1', '内网IP', 'Chrome 9', 'Windows 10', '0', '登录成功', '2021-11-24 22:17:59');
+INSERT INTO `sys_logininfor` VALUES (762, 'admin', '127.0.0.1', '内网IP', 'Chrome 9', 'Windows 10', '0', '退出成功', '2021-11-24 23:14:07');
+INSERT INTO `sys_logininfor` VALUES (763, 'admin', '127.0.0.1', '内网IP', 'Chrome 9', 'Windows 10', '0', '登录成功', '2021-11-24 23:14:13');
+INSERT INTO `sys_logininfor` VALUES (764, 'admin', '127.0.0.1', '内网IP', 'Chrome 9', 'Windows 10', '0', '登录成功', '2021-11-24 23:36:26');
+INSERT INTO `sys_logininfor` VALUES (765, 'admin', '127.0.0.1', '内网IP', 'Chrome 9', 'Windows 10', '0', '退出成功', '2021-11-24 23:41:46');
+INSERT INTO `sys_logininfor` VALUES (766, 'Olajuwon', '127.0.0.1', '内网IP', 'Chrome 9', 'Windows 10', '0', '登录成功', '2021-11-24 23:41:52');
+INSERT INTO `sys_logininfor` VALUES (767, 'Olajuwon', '127.0.0.1', '内网IP', 'Chrome 9', 'Windows 10', '0', '登录成功', '2021-11-25 00:02:53');
+INSERT INTO `sys_logininfor` VALUES (768, 'Olajuwon', '127.0.0.1', '内网IP', 'Chrome 9', 'Windows 10', '0', '退出成功', '2021-11-25 00:27:08');
+INSERT INTO `sys_logininfor` VALUES (769, 'admin', '127.0.0.1', '内网IP', 'Chrome 9', 'Windows 10', '0', '登录成功', '2021-11-25 00:27:20');
+INSERT INTO `sys_logininfor` VALUES (770, 'admin', '127.0.0.1', '内网IP', 'Chrome 9', 'Windows 10', '0', '退出成功', '2021-11-25 00:48:25');
+INSERT INTO `sys_logininfor` VALUES (771, 'James', '127.0.0.1', '内网IP', 'Chrome 9', 'Windows 10', '0', '登录成功', '2021-11-25 00:48:35');
+INSERT INTO `sys_logininfor` VALUES (772, 'James', '127.0.0.1', '内网IP', 'Chrome 9', 'Windows 10', '0', '退出成功', '2021-11-25 01:46:21');
+INSERT INTO `sys_logininfor` VALUES (773, 'admin', '127.0.0.1', '内网IP', 'Chrome 9', 'Windows 10', '0', '登录成功', '2021-11-25 01:46:33');
+INSERT INTO `sys_logininfor` VALUES (774, 'admin', '127.0.0.1', '内网IP', 'Chrome 9', 'Windows 10', '0', '退出成功', '2021-11-25 01:49:59');
+INSERT INTO `sys_logininfor` VALUES (775, 'admin', '127.0.0.1', '内网IP', 'Chrome 9', 'Windows 10', '0', '登录成功', '2021-11-25 01:50:05');
+INSERT INTO `sys_logininfor` VALUES (776, 'admin', '127.0.0.1', '内网IP', 'Chrome 9', 'Windows 10', '0', '退出成功', '2021-11-25 01:50:19');
+INSERT INTO `sys_logininfor` VALUES (777, 'James', '127.0.0.1', '内网IP', 'Chrome 9', 'Windows 10', '0', '登录成功', '2021-11-25 01:50:40');
+INSERT INTO `sys_logininfor` VALUES (778, 'James', '127.0.0.1', '内网IP', 'Chrome 9', 'Windows 10', '0', '退出成功', '2021-11-25 01:57:07');
+INSERT INTO `sys_logininfor` VALUES (779, 'Jordan', '127.0.0.1', '内网IP', 'Chrome 9', 'Windows 10', '0', '登录成功', '2021-11-25 01:57:19');
+INSERT INTO `sys_logininfor` VALUES (780, 'Jordan', '127.0.0.1', '内网IP', 'Chrome 9', 'Windows 10', '0', '退出成功', '2021-11-25 02:04:23');
+INSERT INTO `sys_logininfor` VALUES (781, 'admin', '127.0.0.1', '内网IP', 'Chrome 9', 'Windows 10', '0', '登录成功', '2021-11-25 02:05:48');
+INSERT INTO `sys_logininfor` VALUES (782, 'admin', '127.0.0.1', '内网IP', 'Chrome 9', 'Windows 10', '0', '退出成功', '2021-11-25 02:07:48');
+INSERT INTO `sys_logininfor` VALUES (783, 'Jordan', '127.0.0.1', '内网IP', 'Chrome 9', 'Windows 10', '0', '登录成功', '2021-11-25 02:08:01');
+INSERT INTO `sys_logininfor` VALUES (784, 'Jordan', '127.0.0.1', '内网IP', 'Chrome 9', 'Windows 10', '0', '退出成功', '2021-11-25 02:09:26');
+INSERT INTO `sys_logininfor` VALUES (785, 'Jordan', '127.0.0.1', '内网IP', 'Chrome 9', 'Windows 10', '0', '登录成功', '2021-11-25 02:09:33');
+INSERT INTO `sys_logininfor` VALUES (786, 'Jordan', '127.0.0.1', '内网IP', 'Chrome 9', 'Windows 10', '0', '退出成功', '2021-11-25 02:09:36');
+INSERT INTO `sys_logininfor` VALUES (787, 'admin', '127.0.0.1', '内网IP', 'Chrome 9', 'Windows 10', '0', '登录成功', '2021-11-25 02:09:52');
+INSERT INTO `sys_logininfor` VALUES (788, 'admin', '127.0.0.1', '内网IP', 'Chrome 9', 'Windows 10', '0', '退出成功', '2021-11-25 02:10:27');
+INSERT INTO `sys_logininfor` VALUES (789, 'Jordan', '127.0.0.1', '内网IP', 'Chrome 9', 'Windows 10', '0', '登录成功', '2021-11-25 02:10:37');
+INSERT INTO `sys_logininfor` VALUES (790, 'Jordan', '127.0.0.1', '内网IP', 'Chrome 9', 'Windows 10', '0', '退出成功', '2021-11-25 02:12:46');
+INSERT INTO `sys_logininfor` VALUES (791, 'admin', '127.0.0.1', '内网IP', 'Chrome 9', 'Windows 10', '0', '登录成功', '2021-11-25 02:12:54');
+INSERT INTO `sys_logininfor` VALUES (792, 'admin', '127.0.0.1', '内网IP', 'Chrome 9', 'Windows 10', '0', '退出成功', '2021-11-25 02:15:46');
+INSERT INTO `sys_logininfor` VALUES (793, 'admin', '127.0.0.1', '内网IP', 'Chrome 9', 'Windows 10', '0', '登录成功', '2021-11-25 02:15:53');
+INSERT INTO `sys_logininfor` VALUES (794, 'admin', '127.0.0.1', '内网IP', 'Chrome 9', 'Windows 10', '0', '退出成功', '2021-11-25 02:15:56');
+INSERT INTO `sys_logininfor` VALUES (795, 'Jordan', '127.0.0.1', '内网IP', 'Chrome 9', 'Windows 10', '0', '登录成功', '2021-11-25 02:16:12');
+INSERT INTO `sys_logininfor` VALUES (796, 'Jordan', '127.0.0.1', '内网IP', 'Chrome 9', 'Windows 10', '0', '退出成功', '2021-11-25 02:25:59');
+INSERT INTO `sys_logininfor` VALUES (797, 'admin', '127.0.0.1', '内网IP', 'Chrome 9', 'Windows 10', '0', '登录成功', '2021-11-25 02:26:11');
+INSERT INTO `sys_logininfor` VALUES (798, 'Jordan', '127.0.0.1', '内网IP', 'Firefox 9', 'Windows 10', '0', '登录成功', '2021-11-25 02:30:48');
+INSERT INTO `sys_logininfor` VALUES (799, 'Jordan', '127.0.0.1', '内网IP', 'Firefox 9', 'Windows 10', '0', '退出成功', '2021-11-25 02:33:23');
+INSERT INTO `sys_logininfor` VALUES (800, 'Jordan', '127.0.0.1', '内网IP', 'Firefox 9', 'Windows 10', '0', '登录成功', '2021-11-25 02:33:41');
+INSERT INTO `sys_logininfor` VALUES (801, 'admin', '127.0.0.1', '内网IP', 'Chrome 9', 'Windows 10', '0', '退出成功', '2021-11-25 02:42:49');
+INSERT INTO `sys_logininfor` VALUES (802, 'Olajuwon', '127.0.0.1', '内网IP', 'Chrome 9', 'Windows 10', '0', '登录成功', '2021-11-25 02:43:30');
 
 -- ----------------------------
 -- Table structure for sys_menu
@@ -894,7 +956,7 @@ CREATE TABLE `sys_menu`  (
   `update_time` datetime(0) NULL DEFAULT NULL COMMENT '更新时间',
   `remark` varchar(500) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT '' COMMENT '备注',
   PRIMARY KEY (`menu_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1396 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '菜单权限表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 1403 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '菜单权限表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of sys_menu
@@ -1023,12 +1085,16 @@ INSERT INTO `sys_menu` VALUES (1386, '假期新增', 1384, 2, '', NULL, 1, 'F', 
 INSERT INTO `sys_menu` VALUES (1387, '假期修改', 1384, 3, '', NULL, 1, 'F', '0', '0', 'vacation:holiday:edit', '#', 'admin', '2021-11-21 16:29:31', '', NULL, '');
 INSERT INTO `sys_menu` VALUES (1388, '假期删除', 1384, 4, 'vacation:holiday:remove', NULL, 1, 'F', '0', '0', 'vacation:holiday:remove', '#', 'admin', '2021-11-21 16:29:52', '', NULL, '');
 INSERT INTO `sys_menu` VALUES (1389, '假期详情', 1384, 5, '', NULL, 1, 'F', '0', '0', 'vacation:holiday:detail', '#', 'admin', '2021-11-21 19:43:51', '', NULL, '');
-INSERT INTO `sys_menu` VALUES (1390, '假期审批', 1383, 2, 'approval', '/vacation/approval/index', 1, 'C', '0', '0', 'vacation:holidayApproval:list', 'list', 'admin', '2021-11-24 00:49:11', 'admin', '2021-11-24 00:49:28', '');
-INSERT INTO `sys_menu` VALUES (1391, '审批查询', 1390, 1, '', NULL, 1, 'F', '0', '0', 'vacation:holidayApproval:query', '#', 'admin', '2021-11-24 00:51:30', '', NULL, '');
-INSERT INTO `sys_menu` VALUES (1392, '审批新增', 1390, 2, '', NULL, 1, 'F', '0', '0', 'vacation:holidayApproval:add', '#', 'admin', '2021-11-24 00:52:53', '', NULL, '');
-INSERT INTO `sys_menu` VALUES (1393, '审批修改', 1390, 3, '', NULL, 1, 'F', '0', '0', 'vacation:holidayApproval:edit', '#', 'admin', '2021-11-24 00:53:07', '', NULL, '');
-INSERT INTO `sys_menu` VALUES (1394, '审批删除', 1390, 4, '', NULL, 1, 'F', '0', '0', 'vacation:holidayApproval:remove', '#', 'admin', '2021-11-24 00:53:59', '', NULL, '');
-INSERT INTO `sys_menu` VALUES (1395, '审批详情', 1390, 5, '', NULL, 1, 'F', '0', '0', 'vacation:holidayApproval:detail', '#', 'admin', '2021-11-24 00:54:14', '', NULL, '');
+INSERT INTO `sys_menu` VALUES (1390, '假期审批', 1383, 2, 'approval', '/vacation/approval/index', 1, 'C', '0', '0', 'vacation:holiday:list', 'list', 'admin', '2021-11-24 00:49:11', 'admin', '2021-11-24 22:23:17', '');
+INSERT INTO `sys_menu` VALUES (1391, '审批查询', 1396, 1, '', NULL, 1, 'F', '0', '0', 'vacation:holidayApproval:query', '#', 'admin', '2021-11-24 00:51:30', 'admin', '2021-11-24 22:23:06', '');
+INSERT INTO `sys_menu` VALUES (1392, '审批新增', 1396, 2, '', NULL, 1, 'F', '0', '0', 'vacation:holidayApproval:add', '#', 'admin', '2021-11-24 00:52:53', 'admin', '2021-11-24 22:22:20', '');
+INSERT INTO `sys_menu` VALUES (1393, '审批修改', 1396, 3, '', NULL, 1, 'F', '0', '0', 'vacation:holidayApproval:edit', '#', 'admin', '2021-11-24 00:53:07', 'admin', '2021-11-24 22:22:37', '');
+INSERT INTO `sys_menu` VALUES (1394, '审批删除', 1396, 4, '', NULL, 1, 'F', '0', '0', 'vacation:holidayApproval:remove', '#', 'admin', '2021-11-24 00:53:59', 'admin', '2021-11-24 22:22:45', '');
+INSERT INTO `sys_menu` VALUES (1395, '审批详情', 1396, 5, '', NULL, 1, 'F', '0', '0', 'vacation:holidayApproval:detail', '#', 'admin', '2021-11-24 00:54:14', 'admin', '2021-11-24 22:22:52', '');
+INSERT INTO `sys_menu` VALUES (1396, '审批设置', 1383, 3, 'approvalSetting', '/vacation/approval/setting', 1, 'C', '0', '0', 'vacation:holidayApproval:list', 'list', 'admin', '2021-11-24 22:21:25', 'admin', '2021-11-24 22:24:52', '');
+INSERT INTO `sys_menu` VALUES (1397, '假期查询', 1390, 1, '', NULL, 1, 'F', '0', '0', 'vacation:holiday:query', '#', 'admin', '2021-11-24 23:39:06', '', NULL, '');
+INSERT INTO `sys_menu` VALUES (1398, '假期详情', 1390, 2, '', NULL, 1, 'F', '0', '0', 'vacation:holiday:detail', '#', 'admin', '2021-11-24 23:39:32', '', NULL, '');
+INSERT INTO `sys_menu` VALUES (1399, '假期修改', 1390, 3, '', NULL, 1, 'F', '0', '0', 'vacation:holiday:edit', '#', 'admin', '2021-11-24 23:40:01', 'admin', '2021-11-25 02:15:40', '');
 
 -- ----------------------------
 -- Table structure for sys_notice
@@ -1095,7 +1161,7 @@ CREATE TABLE `sys_oper_log`  (
   `error_msg` varchar(2000) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT '' COMMENT '错误消息',
   `oper_time` datetime(0) NULL DEFAULT NULL COMMENT '操作时间',
   PRIMARY KEY (`oper_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 43 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '操作日志记录' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 119 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '操作日志记录' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of sys_oper_log
@@ -1142,6 +1208,82 @@ INSERT INTO `sys_oper_log` VALUES (39, '菜单管理', 1, 'alb.project.system.co
 INSERT INTO `sys_oper_log` VALUES (40, '菜单管理', 1, 'alb.project.system.controller.SysMenuController.add()', 'POST', 1, 'admin', NULL, '/system/menu', '127.0.0.1', '内网IP', '{\"visible\":\"0\",\"orderNum\":\"3\",\"menuName\":\"审批修改\",\"params\":{},\"parentId\":1390,\"createBy\":\"admin\",\"children\":[],\"isFrame\":\"1\",\"menuType\":\"F\",\"perms\":\"vacation:holidayApproval:edit\",\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2021-11-24 00:53:07');
 INSERT INTO `sys_oper_log` VALUES (41, '菜单管理', 1, 'alb.project.system.controller.SysMenuController.add()', 'POST', 1, 'admin', NULL, '/system/menu', '127.0.0.1', '内网IP', '{\"visible\":\"0\",\"orderNum\":\"4\",\"menuName\":\"审批删除\",\"params\":{},\"parentId\":1390,\"createBy\":\"admin\",\"children\":[],\"isFrame\":\"1\",\"menuType\":\"F\",\"perms\":\"vacation:holidayApproval:remove\",\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2021-11-24 00:53:59');
 INSERT INTO `sys_oper_log` VALUES (42, '菜单管理', 1, 'alb.project.system.controller.SysMenuController.add()', 'POST', 1, 'admin', NULL, '/system/menu', '127.0.0.1', '内网IP', '{\"visible\":\"0\",\"orderNum\":\"5\",\"menuName\":\"审批详情\",\"params\":{},\"parentId\":1390,\"createBy\":\"admin\",\"children\":[],\"isFrame\":\"1\",\"menuType\":\"F\",\"perms\":\"vacation:holidayApproval:detail\",\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2021-11-24 00:54:14');
+INSERT INTO `sys_oper_log` VALUES (43, '菜单管理', 1, 'alb.project.system.controller.SysMenuController.add()', 'POST', 1, 'admin', NULL, '/system/menu', '127.0.0.1', '内网IP', '{\"visible\":\"0\",\"orderNum\":\"3\",\"menuName\":\"审批设置\",\"params\":{},\"parentId\":1383,\"path\":\"setting\",\"component\":\"/vacation/approval/setting\",\"createBy\":\"admin\",\"children\":[],\"isFrame\":\"1\",\"menuType\":\"C\",\"perms\":\"vacation:holiday:list\",\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2021-11-24 22:21:25');
+INSERT INTO `sys_oper_log` VALUES (44, '菜单管理', 2, 'alb.project.system.controller.SysMenuController.edit()', 'PUT', 1, 'admin', NULL, '/system/menu', '127.0.0.1', '内网IP', '{\"visible\":\"0\",\"icon\":\"#\",\"orderNum\":\"3\",\"menuName\":\"审批设置\",\"params\":{},\"parentId\":1383,\"path\":\"setting\",\"component\":\"/vacation/approval/setting\",\"children\":[],\"createTime\":1637763685000,\"updateBy\":\"admin\",\"isFrame\":\"1\",\"menuId\":1396,\"menuType\":\"C\",\"perms\":\"vacation:holidayApproval:list\",\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2021-11-24 22:21:39');
+INSERT INTO `sys_oper_log` VALUES (45, '菜单管理', 2, 'alb.project.system.controller.SysMenuController.edit()', 'PUT', 1, 'admin', NULL, '/system/menu', '127.0.0.1', '内网IP', '{\"visible\":\"0\",\"icon\":\"#\",\"orderNum\":\"2\",\"menuName\":\"审批新增\",\"params\":{},\"parentId\":1396,\"path\":\"\",\"children\":[],\"createTime\":1637686373000,\"updateBy\":\"admin\",\"isFrame\":\"1\",\"menuId\":1392,\"menuType\":\"F\",\"perms\":\"vacation:holidayApproval:add\",\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2021-11-24 22:22:20');
+INSERT INTO `sys_oper_log` VALUES (46, '菜单管理', 2, 'alb.project.system.controller.SysMenuController.edit()', 'PUT', 1, 'admin', NULL, '/system/menu', '127.0.0.1', '内网IP', '{\"visible\":\"0\",\"icon\":\"#\",\"orderNum\":\"3\",\"menuName\":\"审批修改\",\"params\":{},\"parentId\":1396,\"path\":\"\",\"children\":[],\"createTime\":1637686387000,\"updateBy\":\"admin\",\"isFrame\":\"1\",\"menuId\":1393,\"menuType\":\"F\",\"perms\":\"vacation:holidayApproval:edit\",\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2021-11-24 22:22:37');
+INSERT INTO `sys_oper_log` VALUES (47, '菜单管理', 2, 'alb.project.system.controller.SysMenuController.edit()', 'PUT', 1, 'admin', NULL, '/system/menu', '127.0.0.1', '内网IP', '{\"visible\":\"0\",\"icon\":\"#\",\"orderNum\":\"4\",\"menuName\":\"审批删除\",\"params\":{},\"parentId\":1396,\"path\":\"\",\"children\":[],\"createTime\":1637686439000,\"updateBy\":\"admin\",\"isFrame\":\"1\",\"menuId\":1394,\"menuType\":\"F\",\"perms\":\"vacation:holidayApproval:remove\",\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2021-11-24 22:22:45');
+INSERT INTO `sys_oper_log` VALUES (48, '菜单管理', 2, 'alb.project.system.controller.SysMenuController.edit()', 'PUT', 1, 'admin', NULL, '/system/menu', '127.0.0.1', '内网IP', '{\"visible\":\"0\",\"icon\":\"#\",\"orderNum\":\"5\",\"menuName\":\"审批详情\",\"params\":{},\"parentId\":1396,\"path\":\"\",\"children\":[],\"createTime\":1637686454000,\"updateBy\":\"admin\",\"isFrame\":\"1\",\"menuId\":1395,\"menuType\":\"F\",\"perms\":\"vacation:holidayApproval:detail\",\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2021-11-24 22:22:52');
+INSERT INTO `sys_oper_log` VALUES (49, '菜单管理', 2, 'alb.project.system.controller.SysMenuController.edit()', 'PUT', 1, 'admin', NULL, '/system/menu', '127.0.0.1', '内网IP', '{\"visible\":\"0\",\"icon\":\"#\",\"orderNum\":\"1\",\"menuName\":\"审批查询\",\"params\":{},\"parentId\":1396,\"path\":\"\",\"children\":[],\"createTime\":1637686290000,\"updateBy\":\"admin\",\"isFrame\":\"1\",\"menuId\":1391,\"menuType\":\"F\",\"perms\":\"vacation:holidayApproval:query\",\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2021-11-24 22:23:06');
+INSERT INTO `sys_oper_log` VALUES (50, '菜单管理', 2, 'alb.project.system.controller.SysMenuController.edit()', 'PUT', 1, 'admin', NULL, '/system/menu', '127.0.0.1', '内网IP', '{\"visible\":\"0\",\"icon\":\"list\",\"orderNum\":\"2\",\"menuName\":\"假期审批\",\"params\":{},\"parentId\":1383,\"path\":\"approval\",\"component\":\"/vacation/approval/index\",\"children\":[],\"createTime\":1637686151000,\"updateBy\":\"admin\",\"isFrame\":\"1\",\"menuId\":1390,\"menuType\":\"C\",\"perms\":\"vacation:holiday:list\",\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2021-11-24 22:23:17');
+INSERT INTO `sys_oper_log` VALUES (51, '菜单管理', 2, 'alb.project.system.controller.SysMenuController.edit()', 'PUT', 1, 'admin', NULL, '/system/menu', '127.0.0.1', '内网IP', '{\"visible\":\"0\",\"icon\":\"list\",\"orderNum\":\"3\",\"menuName\":\"审批设置\",\"params\":{},\"parentId\":1383,\"path\":\"setting\",\"component\":\"/vacation/approval/setting\",\"children\":[],\"createTime\":1637763685000,\"updateBy\":\"admin\",\"isFrame\":\"1\",\"menuId\":1396,\"menuType\":\"C\",\"perms\":\"vacation:holidayApproval:list\",\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2021-11-24 22:23:28');
+INSERT INTO `sys_oper_log` VALUES (52, '菜单管理', 2, 'alb.project.system.controller.SysMenuController.edit()', 'PUT', 1, 'admin', NULL, '/system/menu', '127.0.0.1', '内网IP', '{\"visible\":\"0\",\"icon\":\"list\",\"orderNum\":\"3\",\"menuName\":\"审批设置\",\"params\":{},\"parentId\":1383,\"path\":\"setting\",\"component\":\"/vacation/approval/setting\",\"children\":[],\"createTime\":1637763685000,\"updateBy\":\"admin\",\"isFrame\":\"1\",\"menuId\":1396,\"menuType\":\"C\",\"perms\":\"vacation:holidayApproval:list\",\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2021-11-24 22:24:33');
+INSERT INTO `sys_oper_log` VALUES (53, '菜单管理', 2, 'alb.project.system.controller.SysMenuController.edit()', 'PUT', 1, 'admin', NULL, '/system/menu', '127.0.0.1', '内网IP', '{\"visible\":\"0\",\"icon\":\"list\",\"orderNum\":\"3\",\"menuName\":\"审批设置\",\"params\":{},\"parentId\":1383,\"path\":\"approvalSetting\",\"component\":\"/vacation/approval/setting\",\"children\":[],\"createTime\":1637763685000,\"updateBy\":\"admin\",\"isFrame\":\"1\",\"menuId\":1396,\"menuType\":\"C\",\"perms\":\"vacation:holidayApproval:list\",\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2021-11-24 22:24:52');
+INSERT INTO `sys_oper_log` VALUES (54, '假期', 1, 'alb.project.vacation.controller.HolidayApprovalController.addHolidayApproval()', 'POST', 1, 'admin', NULL, '/vacation/holiday/approval', '127.0.0.1', '内网IP', '{\"roleId\":7,\"params\":{},\"approvedRoleId\":6,\"holidayTypeId\":32}', '{\"msg\":\"新增失败，无法添加该项\",\"code\":500}', 0, NULL, '2021-11-24 22:31:35');
+INSERT INTO `sys_oper_log` VALUES (55, '假期', 1, 'alb.project.vacation.controller.HolidayApprovalController.addHolidayApproval()', 'POST', 1, 'admin', NULL, '/vacation/holiday/approval', '127.0.0.1', '内网IP', '{\"holidayApprovalId\":1463516077802786816,\"roleId\":7,\"nextApprovalId\":0,\"delFlag\":0,\"params\":{},\"currentApprovedIndex\":1,\"approvedRoleId\":6,\"holidayTypeId\":32}', '{\"msg\":\"新增成功\",\"code\":200}', 0, NULL, '2021-11-24 22:33:18');
+INSERT INTO `sys_oper_log` VALUES (56, '假期', 3, 'alb.project.vacation.controller.HolidayApprovalController.deleteById()', 'DELETE', 1, 'admin', NULL, '/vacation/holiday/approval/1463516077802786800', '127.0.0.1', '内网IP', '{holidayApprovalId=1463516077802786800}', 'null', 1, '', '2021-11-24 22:41:52');
+INSERT INTO `sys_oper_log` VALUES (57, '假期', 3, 'alb.project.vacation.controller.HolidayApprovalController.deleteById()', 'DELETE', 1, 'admin', NULL, '/vacation/holiday/approval/1463516077802786816', '127.0.0.1', '内网IP', '{holidayApprovalId=1463516077802786816}', '{\"msg\":\"删除成功\",\"code\":200}', 0, NULL, '2021-11-24 22:57:30');
+INSERT INTO `sys_oper_log` VALUES (58, '假期', 1, 'alb.project.vacation.controller.HolidayApprovalController.addHolidayApproval()', 'POST', 1, 'admin', NULL, '/vacation/holiday/approval', '127.0.0.1', '内网IP', '{\"holidayApprovalId\":1463522238857875456,\"roleId\":7,\"nextApprovalId\":0,\"delFlag\":0,\"params\":{},\"currentApprovedIndex\":1,\"approvedRoleId\":6,\"holidayTypeId\":32}', 'null', 1, '\r\n### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry \'32\' for key \'PRIMARY\'\r\n### The error may involve alb.project.vacation.mapper.HolidayApprovalMapper.insert-Inline\r\n### The error occurred while setting parameters\r\n### SQL: insert into holiday_approval          ( holiday_approval_id,                                           holiday_type_id,                                           role_id,                                           approved_role_id,                                           current_approved_index,                                           next_approval_id,                                           del_flag,                                           create_time )           values ( ?,                                           ?,                                           ?,                                           ?,                                           ?,                                           ?,                                           ?,                                           sysdate() )\r\n### Cause: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry \'32\' for key \'PRIMARY\'\n; Duplicate entry \'32\' for key \'PRIMARY\'; nested exception is java.sql.SQLIntegrityConstraintViolationException: Duplicate entry \'32\' for key \'PRIMARY\'', '2021-11-24 22:57:47');
+INSERT INTO `sys_oper_log` VALUES (59, '假期', 1, 'alb.project.vacation.controller.HolidayApprovalController.addHolidayApproval()', 'POST', 1, 'admin', NULL, '/vacation/holiday/approval', '127.0.0.1', '内网IP', '{\"holidayApprovalId\":1463523047813287936,\"roleId\":7,\"nextApprovalId\":0,\"params\":{},\"currentApprovedIndex\":1,\"approvedRoleId\":6,\"holidayTypeId\":32}', '{\"msg\":\"新增成功\",\"code\":200}', 0, NULL, '2021-11-24 23:01:00');
+INSERT INTO `sys_oper_log` VALUES (60, '假期', 1, 'alb.project.vacation.controller.HolidayApprovalController.addHolidayApproval()', 'POST', 1, 'admin', NULL, '/vacation/holiday/approval', '127.0.0.1', '内网IP', '{\"holidayApprovalId\":1463523098904104960,\"roleId\":7,\"nextApprovalId\":0,\"params\":{},\"currentApprovedIndex\":2,\"approvedRoleId\":5,\"holidayTypeId\":32}', 'null', 1, '\r\n### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry \'32\' for key \'PRIMARY\'\r\n### The error may involve alb.project.vacation.mapper.HolidayApprovalMapper.insert-Inline\r\n### The error occurred while setting parameters\r\n### SQL: insert into holiday_approval          ( holiday_approval_id,                                           holiday_type_id,                                           role_id,                                           approved_role_id,                                           current_approved_index,                                           next_approval_id,                                           create_time )           values ( ?,                                           ?,                                           ?,                                           ?,                                           ?,                                           ?,                                           sysdate() )\r\n### Cause: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry \'32\' for key \'PRIMARY\'\n; Duplicate entry \'32\' for key \'PRIMARY\'; nested exception is java.sql.SQLIntegrityConstraintViolationException: Duplicate entry \'32\' for key \'PRIMARY\'', '2021-11-24 23:01:12');
+INSERT INTO `sys_oper_log` VALUES (61, '假期', 1, 'alb.project.vacation.controller.HolidayApprovalController.addHolidayApproval()', 'POST', 1, 'admin', NULL, '/vacation/holiday/approval', '127.0.0.1', '内网IP', '{\"holidayApprovalId\":1463523259403341824,\"roleId\":7,\"nextApprovalId\":0,\"params\":{},\"currentApprovedIndex\":2,\"approvedRoleId\":5,\"holidayTypeId\":32}', '{\"msg\":\"新增成功\",\"code\":200}', 0, NULL, '2021-11-24 23:01:50');
+INSERT INTO `sys_oper_log` VALUES (62, '假期', 3, 'alb.project.vacation.controller.HolidayApprovalController.deleteById()', 'DELETE', 1, 'admin', NULL, '/vacation/holiday/approval/1463523047813287936', '127.0.0.1', '内网IP', '{holidayApprovalId=1463523047813287936}', '{\"msg\":\"删除成功\",\"code\":200}', 0, NULL, '2021-11-24 23:01:54');
+INSERT INTO `sys_oper_log` VALUES (63, '假期', 3, 'alb.project.vacation.controller.HolidayApprovalController.deleteById()', 'DELETE', 1, 'admin', NULL, '/vacation/holiday/approval/1463523259403341824', '127.0.0.1', '内网IP', '{holidayApprovalId=1463523259403341824}', 'null', 1, 'Index: 0, Size: 0', '2021-11-24 23:03:26');
+INSERT INTO `sys_oper_log` VALUES (64, '假期', 1, 'alb.project.vacation.controller.HolidayApprovalController.addHolidayApproval()', 'POST', 1, 'admin', NULL, '/vacation/holiday/approval', '127.0.0.1', '内网IP', '{\"holidayApprovalId\":1463523775566974976,\"roleId\":7,\"nextApprovalId\":0,\"params\":{},\"currentApprovedIndex\":1,\"approvedRoleId\":6,\"holidayTypeId\":32}', '{\"msg\":\"新增成功\",\"code\":200}', 0, NULL, '2021-11-24 23:03:53');
+INSERT INTO `sys_oper_log` VALUES (65, '假期', 1, 'alb.project.vacation.controller.HolidayApprovalController.addHolidayApproval()', 'POST', 1, 'admin', NULL, '/vacation/holiday/approval', '127.0.0.1', '内网IP', '{\"holidayApprovalId\":1463523900590788608,\"roleId\":7,\"nextApprovalId\":0,\"params\":{},\"currentApprovedIndex\":2,\"approvedRoleId\":5,\"holidayTypeId\":32}', '{\"msg\":\"新增成功\",\"code\":200}', 0, NULL, '2021-11-24 23:05:40');
+INSERT INTO `sys_oper_log` VALUES (66, '假期', 1, 'alb.project.vacation.controller.HolidayApprovalController.addHolidayApproval()', 'POST', 1, 'admin', NULL, '/vacation/holiday/approval', '127.0.0.1', '内网IP', '{\"holidayApprovalId\":1463524362752757760,\"roleId\":7,\"nextApprovalId\":0,\"params\":{},\"currentApprovedIndex\":2,\"approvedRoleId\":5,\"holidayTypeId\":32}', '{\"msg\":\"新增成功\",\"code\":200}', 0, NULL, '2021-11-24 23:06:13');
+INSERT INTO `sys_oper_log` VALUES (67, '假期', 3, 'alb.project.vacation.controller.HolidayApprovalController.deleteById()', 'DELETE', 1, 'admin', NULL, '/vacation/holiday/approval/1463523775566974976', '127.0.0.1', '内网IP', '{holidayApprovalId=1463523775566974976}', '{\"msg\":\"删除成功\",\"code\":200}', 0, NULL, '2021-11-24 23:06:19');
+INSERT INTO `sys_oper_log` VALUES (68, '假期', 1, 'alb.project.vacation.controller.HolidayApprovalController.addHolidayApproval()', 'POST', 1, 'admin', NULL, '/vacation/holiday/approval', '127.0.0.1', '内网IP', '{\"holidayApprovalId\":1463524430721454080,\"roleId\":7,\"nextApprovalId\":0,\"params\":{},\"currentApprovedIndex\":2,\"approvedRoleId\":5,\"holidayTypeId\":32}', '{\"msg\":\"新增成功\",\"code\":200}', 0, NULL, '2021-11-24 23:06:29');
+INSERT INTO `sys_oper_log` VALUES (69, '假期', 1, 'alb.project.vacation.controller.HolidayApprovalController.addHolidayApproval()', 'POST', 1, 'admin', NULL, '/vacation/holiday/approval', '127.0.0.1', '内网IP', '{\"holidayApprovalId\":1463525779781586944,\"roleId\":7,\"nextApprovalId\":0,\"params\":{},\"currentApprovedIndex\":2,\"approvedRoleId\":5,\"holidayTypeId\":32}', '{\"msg\":\"新增成功\",\"code\":200}', 0, NULL, '2021-11-24 23:11:56');
+INSERT INTO `sys_oper_log` VALUES (70, '假期', 1, 'alb.project.vacation.controller.HolidayApprovalController.addHolidayApproval()', 'POST', 1, 'admin', NULL, '/vacation/holiday/approval', '127.0.0.1', '内网IP', '{\"holidayApprovalId\":1463526238957211648,\"roleId\":7,\"nextApprovalId\":0,\"params\":{},\"currentApprovedIndex\":2,\"approvedRoleId\":5,\"holidayTypeId\":32}', '{\"msg\":\"新增成功\",\"code\":200}', 0, NULL, '2021-11-24 23:13:41');
+INSERT INTO `sys_oper_log` VALUES (71, '假期', 3, 'alb.project.vacation.controller.HolidayApprovalController.deleteById()', 'DELETE', 1, 'admin', NULL, '/vacation/holiday/approval/1463526238957211648', '127.0.0.1', '内网IP', '{holidayApprovalId=1463526238957211648}', '{\"msg\":\"删除成功\",\"code\":200}', 0, NULL, '2021-11-24 23:14:30');
+INSERT INTO `sys_oper_log` VALUES (72, '假期', 1, 'alb.project.vacation.controller.HolidayApprovalController.addHolidayApproval()', 'POST', 1, 'admin', NULL, '/vacation/holiday/approval', '127.0.0.1', '内网IP', '{\"roleId\":7,\"params\":{},\"approvedRoleId\":5,\"holidayTypeId\":32}', '{\"msg\":\"新增失败，无法添加该项\",\"code\":500}', 0, NULL, '2021-11-24 23:14:43');
+INSERT INTO `sys_oper_log` VALUES (73, '假期', 1, 'alb.project.vacation.controller.HolidayApprovalController.addHolidayApproval()', 'POST', 1, 'admin', NULL, '/vacation/holiday/approval', '127.0.0.1', '内网IP', '{\"roleId\":7,\"params\":{},\"approvedRoleId\":5,\"holidayTypeId\":32}', '{\"msg\":\"新增失败，无法添加该项\",\"code\":500}', 0, NULL, '2021-11-24 23:16:24');
+INSERT INTO `sys_oper_log` VALUES (74, '假期', 3, 'alb.project.vacation.controller.HolidayApprovalController.deleteById()', 'DELETE', 1, 'admin', NULL, '/vacation/holiday/approval/1463524362752757760', '127.0.0.1', '内网IP', '{holidayApprovalId=1463524362752757760}', '{\"msg\":\"删除成功\",\"code\":200}', 0, NULL, '2021-11-24 23:16:30');
+INSERT INTO `sys_oper_log` VALUES (75, '假期', 1, 'alb.project.vacation.controller.HolidayApprovalController.addHolidayApproval()', 'POST', 1, 'admin', NULL, '/vacation/holiday/approval', '127.0.0.1', '内网IP', '{\"holidayApprovalId\":1463527019865313280,\"roleId\":7,\"nextApprovalId\":0,\"params\":{},\"currentApprovedIndex\":1,\"approvedRoleId\":6,\"holidayTypeId\":31}', '{\"msg\":\"新增成功\",\"code\":200}', 0, NULL, '2021-11-24 23:16:48');
+INSERT INTO `sys_oper_log` VALUES (76, '假期', 1, 'alb.project.vacation.controller.HolidayApprovalController.addHolidayApproval()', 'POST', 1, 'admin', NULL, '/vacation/holiday/approval', '127.0.0.1', '内网IP', '{\"holidayApprovalId\":1463527058012508160,\"roleId\":7,\"nextApprovalId\":0,\"params\":{},\"currentApprovedIndex\":2,\"approvedRoleId\":5,\"holidayTypeId\":31}', '{\"msg\":\"新增成功\",\"code\":200}', 0, NULL, '2021-11-24 23:16:56');
+INSERT INTO `sys_oper_log` VALUES (77, '用户管理', 1, 'alb.project.system.controller.SysUserController.add()', 'POST', 1, 'admin', NULL, '/system/user', '127.0.0.1', '内网IP', '{\"phonenumber\":\"13845678900\",\"admin\":false,\"userCode\":\"0047\",\"password\":\"$2a$10$wYbeN3y6v9msJMrPUosTnucY84vwrs4aw2WdvUzDl4kzWsxiPpwKq\",\"postIds\":[],\"email\":\"123@163.com\",\"nickName\":\"Olajuwon\",\"sex\":\"0\",\"deptId\":187,\"params\":{},\"userName\":\"Olajuwon\",\"userId\":2,\"createBy\":\"admin\",\"roleIds\":[7],\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2021-11-24 23:27:52');
+INSERT INTO `sys_oper_log` VALUES (78, '用户管理', 1, 'alb.project.system.controller.SysUserController.add()', 'POST', 1, 'admin', NULL, '/system/user', '127.0.0.1', '内网IP', '{\"phonenumber\":\"13844455555\",\"admin\":false,\"userCode\":\"0048\",\"password\":\"$2a$10$Wb3SQRpyC/Oe84ZeWtl6ae.VjeTWqtINdj6dbB31mTKAMRHsnX5GW\",\"postIds\":[],\"email\":\"456@163.com\",\"nickName\":\"James\",\"sex\":\"0\",\"deptId\":187,\"params\":{},\"userName\":\"James\",\"userId\":3,\"createBy\":\"admin\",\"roleIds\":[6],\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2021-11-24 23:29:22');
+INSERT INTO `sys_oper_log` VALUES (79, '用户管理', 1, 'alb.project.system.controller.SysUserController.add()', 'POST', 1, 'admin', NULL, '/system/user', '127.0.0.1', '内网IP', '{\"phonenumber\":\"18933366666\",\"admin\":false,\"userCode\":\"0049\",\"password\":\"$2a$10$Kq3Ssn4P2dsCjX0gOxcUsuvWBTN7l1A6nf1lyHqs98BczobgWgHB2\",\"postIds\":[],\"email\":\"789@163.com\",\"nickName\":\"Jordan\",\"deptId\":187,\"params\":{},\"userName\":\"Jordan\",\"userId\":4,\"createBy\":\"admin\",\"roleIds\":[5],\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2021-11-24 23:30:32');
+INSERT INTO `sys_oper_log` VALUES (80, '用户管理', 1, 'alb.project.system.controller.SysUserController.add()', 'POST', 1, 'admin', NULL, '/system/user', '127.0.0.1', '内网IP', '{\"phonenumber\":\"13877897777\",\"admin\":false,\"userCode\":\"0004\",\"password\":\"$2a$10$pdwpJ24KmNwLiTsIv5DZruW/76Xc9yXe5Ts3rYhFO4IySa9HEF8DG\",\"postIds\":[],\"email\":\"1111@166.com\",\"nickName\":\"1111\",\"sex\":\"0\",\"deptId\":187,\"params\":{},\"userName\":\"1111\",\"userId\":5,\"createBy\":\"admin\",\"roleIds\":[7],\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2021-11-24 23:32:21');
+INSERT INTO `sys_oper_log` VALUES (81, '用户管理', 3, 'alb.project.system.controller.SysUserController.remove()', 'DELETE', 1, 'admin', NULL, '/system/user/5', '127.0.0.1', '内网IP', '{userIds=5}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2021-11-24 23:32:26');
+INSERT INTO `sys_oper_log` VALUES (82, '菜单管理', 1, 'alb.project.system.controller.SysMenuController.add()', 'POST', 1, 'admin', NULL, '/system/menu', '127.0.0.1', '内网IP', '{\"visible\":\"0\",\"orderNum\":\"1\",\"menuName\":\"假期查询\",\"params\":{},\"parentId\":1390,\"createBy\":\"admin\",\"children\":[],\"isFrame\":\"1\",\"menuType\":\"F\",\"perms\":\"vacation:holiday:query\",\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2021-11-24 23:39:06');
+INSERT INTO `sys_oper_log` VALUES (83, '菜单管理', 1, 'alb.project.system.controller.SysMenuController.add()', 'POST', 1, 'admin', NULL, '/system/menu', '127.0.0.1', '内网IP', '{\"visible\":\"0\",\"orderNum\":\"2\",\"menuName\":\"假期详情\",\"params\":{},\"parentId\":1390,\"createBy\":\"admin\",\"children\":[],\"isFrame\":\"1\",\"menuType\":\"F\",\"perms\":\"vacation:holiday:detail\",\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2021-11-24 23:39:32');
+INSERT INTO `sys_oper_log` VALUES (84, '菜单管理', 1, 'alb.project.system.controller.SysMenuController.add()', 'POST', 1, 'admin', NULL, '/system/menu', '127.0.0.1', '内网IP', '{\"visible\":\"0\",\"orderNum\":\"3\",\"menuName\":\"假期审批-通过\",\"params\":{},\"parentId\":1390,\"createBy\":\"admin\",\"children\":[],\"isFrame\":\"1\",\"menuType\":\"F\",\"perms\":\"vacation:holiday:pass\",\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2021-11-24 23:40:01');
+INSERT INTO `sys_oper_log` VALUES (85, '菜单管理', 2, 'alb.project.system.controller.SysMenuController.edit()', 'PUT', 1, 'admin', NULL, '/system/menu', '127.0.0.1', '内网IP', '{\"visible\":\"0\",\"icon\":\"#\",\"orderNum\":\"3\",\"menuName\":\"审批通过\",\"params\":{},\"parentId\":1390,\"path\":\"\",\"children\":[],\"createTime\":1637768401000,\"updateBy\":\"admin\",\"isFrame\":\"1\",\"menuId\":1399,\"menuType\":\"F\",\"perms\":\"vacation:holiday:pass\",\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2021-11-24 23:40:10');
+INSERT INTO `sys_oper_log` VALUES (86, '菜单管理', 1, 'alb.project.system.controller.SysMenuController.add()', 'POST', 1, 'admin', NULL, '/system/menu', '127.0.0.1', '内网IP', '{\"visible\":\"0\",\"orderNum\":\"4\",\"menuName\":\"审批驳回\",\"params\":{},\"parentId\":1390,\"createBy\":\"admin\",\"children\":[],\"isFrame\":\"1\",\"menuType\":\"F\",\"perms\":\"vacation:holiday:refuse\",\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2021-11-24 23:40:25');
+INSERT INTO `sys_oper_log` VALUES (87, '角色管理', 2, 'alb.project.system.controller.SysRoleController.edit()', 'PUT', 1, 'admin', NULL, '/system/role', '127.0.0.1', '内网IP', '{\"flag\":false,\"roleId\":5,\"admin\":false,\"dataScope\":\"1\",\"delFlag\":\"0\",\"params\":{},\"roleSort\":\"2\",\"createTime\":1637593346000,\"updateBy\":\"admin\",\"roleKey\":\"boss\",\"roleName\":\"boss\",\"menuIds\":[1072,100,1001,1002,1003,1004,1005,1006,1007,103,1017,1018,1019,1020,1390,1397,1398,1399,1400,1383],\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2021-11-24 23:40:48');
+INSERT INTO `sys_oper_log` VALUES (88, '角色管理', 2, 'alb.project.system.controller.SysRoleController.edit()', 'PUT', 1, 'admin', NULL, '/system/role', '127.0.0.1', '内网IP', '{\"flag\":false,\"roleId\":6,\"admin\":false,\"dataScope\":\"1\",\"delFlag\":\"0\",\"params\":{},\"roleSort\":\"3\",\"createTime\":1637593398000,\"updateBy\":\"admin\",\"roleKey\":\"manager\",\"roleName\":\"manager\",\"menuIds\":[1072,100,1001,1002,1003,1004,1005,1006,1007,103,1017,1018,1019,1020,1383,1384,1385,1386,1387,1388,1389,1390,1397,1398,1399,1400,1396,1391,1392,1393,1394,1395],\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2021-11-24 23:40:56');
+INSERT INTO `sys_oper_log` VALUES (89, '角色管理', 2, 'alb.project.system.controller.SysRoleController.edit()', 'PUT', 1, 'admin', NULL, '/system/role', '127.0.0.1', '内网IP', '{\"flag\":false,\"roleId\":6,\"admin\":false,\"dataScope\":\"1\",\"delFlag\":\"0\",\"params\":{},\"roleSort\":\"3\",\"createTime\":1637593398000,\"updateBy\":\"admin\",\"roleKey\":\"manager\",\"roleName\":\"manager\",\"menuIds\":[1072,100,1001,1002,1003,1004,1005,1006,1007,103,1017,1018,1019,1020,1384,1385,1386,1387,1388,1389,1390,1397,1398,1399,1400,1383],\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2021-11-24 23:41:01');
+INSERT INTO `sys_oper_log` VALUES (90, '角色管理', 2, 'alb.project.system.controller.SysRoleController.edit()', 'PUT', 1, 'admin', NULL, '/system/role', '127.0.0.1', '内网IP', '{\"flag\":false,\"roleId\":7,\"admin\":false,\"dataScope\":\"1\",\"delFlag\":\"0\",\"params\":{},\"roleSort\":\"4\",\"createTime\":1637593463000,\"updateBy\":\"admin\",\"roleKey\":\"staff\",\"roleName\":\"staff\",\"menuIds\":[1001,1007,1017,1385,1386,1389,1072,100,103,1383,1384],\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2021-11-24 23:41:16');
+INSERT INTO `sys_oper_log` VALUES (91, '假期', 1, 'alb.project.vacation.controller.HolidayController.addHoliday()', 'POST', 1, 'Olajuwon', NULL, '/vacation/holiday', '127.0.0.1', '内网IP', '{\"holidayInstruction\":\"请假\",\"proposerId\":2,\"holidayStartDate\":1637712000000,\"holidayTypeId\":31,\"holidayEndDate\":1637748000000,\"params\":{},\"currentApproverId\":3,\"holidayId\":1463539665582821376,\"status\":1}', 'null', 1, '\r\n### Error updating database.  Cause: java.sql.SQLException: Field \'holiday_id\' doesn\'t have a default value\r\n### The error may involve alb.project.vacation.mapper.HolidayMapper.insert-Inline\r\n### The error occurred while setting parameters\r\n### SQL: insert into holiday          ( holiday_type_id,                                                        proposer_id,                                           current_approver_id,                                           `status`,                              holiday_start_date,                                           holiday_end_date,                              del_flag,                              create_time )           values ( ?,                                                        ?,                                           ?,                                           0,                              ?,                                           ?,                              0,                              sysdate() )\r\n### Cause: java.sql.SQLException: Field \'holiday_id\' doesn\'t have a default value\n; Field \'holiday_id\' doesn\'t have a default value; nested exception is java.sql.SQLException: Field \'holiday_id\' doesn\'t have a default value', '2021-11-25 00:07:02');
+INSERT INTO `sys_oper_log` VALUES (92, '假期', 1, 'alb.project.vacation.controller.HolidayController.addHoliday()', 'POST', 1, 'Olajuwon', NULL, '/vacation/holiday', '127.0.0.1', '内网IP', '{\"holidayInstruction\":\"请假\",\"proposerId\":2,\"holidayStartDate\":1637712000000,\"holidayTypeId\":31,\"holidayEndDate\":1637748000000,\"params\":{},\"currentApproverId\":3,\"holidayId\":1463540568389980160,\"status\":1}', 'null', 1, '\r\n### Error updating database.  Cause: java.sql.SQLException: Field \'approved_index\' doesn\'t have a default value\r\n### The error may involve alb.project.vacation.mapper.HolidayItemMapper.insert-Inline\r\n### The error occurred while setting parameters\r\n### SQL: insert into holiday_item          ( holiday_id,                                           approved_user_id,                                                        `status`,                              approve_time,                                           del_flag,                                           create_time )           values ( ?,                                           ?,                                                        ?,                              sysdate(),                                           ?,                                           sysdate() )\r\n### Cause: java.sql.SQLException: Field \'approved_index\' doesn\'t have a default value\n; Field \'approved_index\' doesn\'t have a default value; nested exception is java.sql.SQLException: Field \'approved_index\' doesn\'t have a default value', '2021-11-25 00:10:37');
+INSERT INTO `sys_oper_log` VALUES (93, '假期', 1, 'alb.project.vacation.controller.HolidayController.addHoliday()', 'POST', 1, 'Olajuwon', NULL, '/vacation/holiday', '127.0.0.1', '内网IP', '{\"holidayInstruction\":\"111\",\"proposerId\":2,\"holidayStartDate\":1637712000000,\"holidayTypeId\":31,\"holidayEndDate\":1637748000000,\"params\":{},\"currentApproverId\":3,\"currentApprovedIndex\":1,\"holidayId\":1463543151288520704,\"status\":1}', '{\"msg\":\"新增成功\",\"code\":200}', 0, NULL, '2021-11-25 00:20:53');
+INSERT INTO `sys_oper_log` VALUES (94, '假期', 1, 'alb.project.vacation.controller.HolidayController.addHoliday()', 'POST', 1, 'Olajuwon', NULL, '/vacation/holiday', '127.0.0.1', '内网IP', '{\"holidayInstruction\":\"222\",\"proposerId\":2,\"holidayStartDate\":1637798400000,\"holidayTypeId\":31,\"holidayEndDate\":1637834400000,\"params\":{},\"currentApproverId\":4,\"currentApprovedIndex\":1,\"holidayId\":1463544612969910272,\"status\":1}', '{\"msg\":\"新增成功\",\"code\":200}', 0, NULL, '2021-11-25 00:26:41');
+INSERT INTO `sys_oper_log` VALUES (95, '菜单管理', 2, 'alb.project.system.controller.SysMenuController.edit()', 'PUT', 1, 'admin', NULL, '/system/menu', '127.0.0.1', '内网IP', '{\"visible\":\"0\",\"icon\":\"#\",\"orderNum\":\"3\",\"menuName\":\"审批修改\",\"params\":{},\"parentId\":1390,\"path\":\"\",\"children\":[],\"createTime\":1637768401000,\"updateBy\":\"admin\",\"isFrame\":\"1\",\"menuId\":1399,\"menuType\":\"F\",\"perms\":\"vacation:holiday:modify\",\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2021-11-25 01:49:06');
+INSERT INTO `sys_oper_log` VALUES (96, '菜单管理', 3, 'alb.project.system.controller.SysMenuController.remove()', 'DELETE', 1, 'admin', NULL, '/system/menu/1400', '127.0.0.1', '内网IP', '{menuId=1400}', '{\"msg\":\"菜单已分配,不允许删除\",\"code\":500}', 0, NULL, '2021-11-25 01:49:11');
+INSERT INTO `sys_oper_log` VALUES (97, '菜单管理', 2, 'alb.project.system.controller.SysMenuController.edit()', 'PUT', 1, 'admin', NULL, '/system/menu', '127.0.0.1', '内网IP', '{\"visible\":\"0\",\"icon\":\"#\",\"orderNum\":\"3\",\"menuName\":\"假期修改\",\"params\":{},\"parentId\":1390,\"path\":\"\",\"children\":[],\"createTime\":1637768401000,\"updateBy\":\"admin\",\"isFrame\":\"1\",\"menuId\":1399,\"menuType\":\"F\",\"perms\":\"vacation:holiday:modify\",\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2021-11-25 01:49:29');
+INSERT INTO `sys_oper_log` VALUES (98, '角色管理', 2, 'alb.project.system.controller.SysRoleController.edit()', 'PUT', 1, 'admin', NULL, '/system/role', '127.0.0.1', '内网IP', '{\"flag\":false,\"roleId\":6,\"admin\":false,\"dataScope\":\"1\",\"delFlag\":\"0\",\"params\":{},\"roleSort\":\"3\",\"createTime\":1637593398000,\"updateBy\":\"admin\",\"roleKey\":\"manager\",\"roleName\":\"manager\",\"menuIds\":[1072,100,1001,1002,1003,1004,1005,1006,1007,103,1017,1018,1019,1020,1384,1385,1386,1387,1388,1389,1397,1398,1399,1383,1390],\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2021-11-25 01:49:39');
+INSERT INTO `sys_oper_log` VALUES (99, '角色管理', 2, 'alb.project.system.controller.SysRoleController.edit()', 'PUT', 1, 'admin', NULL, '/system/role', '127.0.0.1', '内网IP', '{\"flag\":false,\"roleId\":5,\"admin\":false,\"dataScope\":\"1\",\"delFlag\":\"0\",\"params\":{},\"roleSort\":\"2\",\"createTime\":1637593346000,\"updateBy\":\"admin\",\"roleKey\":\"boss\",\"roleName\":\"boss\",\"menuIds\":[1072,100,1001,1002,1003,1004,1005,1006,1007,103,1017,1018,1019,1020,1397,1398,1399,1383,1390],\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2021-11-25 01:49:48');
+INSERT INTO `sys_oper_log` VALUES (100, '菜单管理', 3, 'alb.project.system.controller.SysMenuController.remove()', 'DELETE', 1, 'admin', NULL, '/system/menu/1400', '127.0.0.1', '内网IP', '{menuId=1400}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2021-11-25 01:49:52');
+INSERT INTO `sys_oper_log` VALUES (101, '假期', 2, 'alb.project.vacation.controller.HolidayController.modifyHoliday()', 'PUT', 1, 'James', NULL, '/vacation/holiday', '127.0.0.1', '内网IP', '{\"holidayInstruction\":\"333\",\"proposerId\":2,\"holidayTypeId\":31,\"params\":{},\"currentApproverId\":4,\"currentApprovedIndex\":1,\"holidayId\":1463543151288520704,\"status\":0}', 'null', 1, 'nested exception is org.apache.ibatis.reflection.ReflectionException: There is no getter for property named \'currentApproverIndex\' in \'class alb.project.vacation.domain.Holiday\'', '2021-11-25 01:50:50');
+INSERT INTO `sys_oper_log` VALUES (102, '假期', 2, 'alb.project.vacation.controller.HolidayController.modifyHoliday()', 'PUT', 1, 'James', NULL, '/vacation/holiday', '127.0.0.1', '内网IP', '{\"holidayInstruction\":\"333\",\"proposerId\":2,\"holidayTypeId\":31,\"params\":{},\"currentApproverId\":4,\"currentApprovedIndex\":1,\"holidayId\":1463543151288520704,\"status\":0}', 'null', 1, '\r\n### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry \'1463543151288520704-4-2\' for key \'PRIMARY\'\r\n### The error may involve alb.project.vacation.mapper.HolidayItemMapper.insert-Inline\r\n### The error occurred while setting parameters\r\n### SQL: insert into holiday_item          ( holiday_id,                                           approved_user_id,                                           approved_index,                                           `status`,                              approve_time,                                           del_flag,                                           create_time )           values ( ?,                                           ?,                                           ?,                                           ?,                              sysdate(),                                           ?,                                           sysdate() )\r\n### Cause: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry \'1463543151288520704-4-2\' for key \'PRIMARY\'\n; Duplicate entry \'1463543151288520704-4-2\' for key \'PRIMARY\'; nested exception is java.sql.SQLIntegrityConstraintViolationException: Duplicate entry \'1463543151288520704-4-2\' for key \'PRIMARY\'', '2021-11-25 01:52:52');
+INSERT INTO `sys_oper_log` VALUES (103, '假期', 2, 'alb.project.vacation.controller.HolidayController.modifyHoliday()', 'PUT', 1, 'James', NULL, '/vacation/holiday', '127.0.0.1', '内网IP', '{\"holidayInstruction\":\"333\",\"proposerId\":2,\"holidayTypeId\":31,\"params\":{},\"currentApproverId\":4,\"currentApprovedIndex\":1,\"holidayId\":1463543151288520704,\"status\":0}', '{\"msg\":\"修改成功\",\"code\":200}', 0, NULL, '2021-11-25 01:57:01');
+INSERT INTO `sys_oper_log` VALUES (104, '角色管理', 2, 'alb.project.system.controller.SysRoleController.edit()', 'PUT', 1, 'admin', NULL, '/system/role', '127.0.0.1', '内网IP', '{\"flag\":false,\"roleId\":5,\"admin\":false,\"dataScope\":\"1\",\"delFlag\":\"0\",\"params\":{},\"roleSort\":\"2\",\"createTime\":1637593346000,\"updateBy\":\"admin\",\"roleKey\":\"boss\",\"roleName\":\"boss\",\"menuIds\":[1072,100,1001,1002,1003,1004,1005,1006,1007,103,1017,1018,1019,1020],\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2021-11-25 02:10:01');
+INSERT INTO `sys_oper_log` VALUES (105, '角色管理', 2, 'alb.project.system.controller.SysRoleController.edit()', 'PUT', 1, 'admin', NULL, '/system/role', '127.0.0.1', '内网IP', '{\"flag\":false,\"roleId\":5,\"admin\":false,\"dataScope\":\"1\",\"delFlag\":\"0\",\"params\":{},\"roleSort\":\"2\",\"createTime\":1637593346000,\"updateBy\":\"admin\",\"roleKey\":\"boss\",\"roleName\":\"boss\",\"menuIds\":[1072,100,1001,1002,1003,1004,1005,1006,1007,103,1017,1018,1019,1020,1390,1397,1398,1399,1383],\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2021-11-25 02:10:06');
+INSERT INTO `sys_oper_log` VALUES (106, '菜单管理', 2, 'alb.project.system.controller.SysMenuController.edit()', 'PUT', 1, 'admin', NULL, '/system/menu', '127.0.0.1', '内网IP', '{\"visible\":\"0\",\"icon\":\"#\",\"orderNum\":\"3\",\"menuName\":\"假期修改\",\"params\":{},\"parentId\":1390,\"path\":\"\",\"children\":[],\"createTime\":1637768401000,\"updateBy\":\"admin\",\"isFrame\":\"1\",\"menuId\":1399,\"menuType\":\"F\",\"perms\":\"vacation:holiday:edit\",\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2021-11-25 02:15:40');
+INSERT INTO `sys_oper_log` VALUES (107, '菜单管理', 1, 'alb.project.system.controller.SysMenuController.add()', 'POST', 1, 'admin', NULL, '/system/menu', '127.0.0.1', '内网IP', '{\"visible\":\"0\",\"orderNum\":\"4\",\"menuName\":\"假期删除\",\"params\":{},\"parentId\":1390,\"createBy\":\"admin\",\"children\":[],\"isFrame\":\"1\",\"menuType\":\"F\",\"perms\":\"vacation:holiday:remove\",\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2021-11-25 02:29:29');
+INSERT INTO `sys_oper_log` VALUES (108, '菜单管理', 1, 'alb.project.system.controller.SysMenuController.add()', 'POST', 1, 'admin', NULL, '/system/menu', '127.0.0.1', '内网IP', '{\"visible\":\"0\",\"orderNum\":\"5\",\"menuName\":\"假期新增\",\"params\":{},\"parentId\":1390,\"createBy\":\"admin\",\"children\":[],\"isFrame\":\"1\",\"menuType\":\"F\",\"perms\":\"vacation:holiday:add\",\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2021-11-25 02:29:57');
+INSERT INTO `sys_oper_log` VALUES (109, '角色管理', 2, 'alb.project.system.controller.SysRoleController.edit()', 'PUT', 1, 'admin', NULL, '/system/role', '127.0.0.1', '内网IP', '{\"flag\":false,\"roleId\":5,\"admin\":false,\"dataScope\":\"1\",\"delFlag\":\"0\",\"params\":{},\"roleSort\":\"2\",\"createTime\":1637593346000,\"updateBy\":\"admin\",\"roleKey\":\"boss\",\"roleName\":\"boss\",\"menuIds\":[1072,100,1001,1002,1003,1004,1005,1006,1007,103,1017,1018,1019,1020,1390,1397,1398,1399,1401,1402,1383],\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2021-11-25 02:30:12');
+INSERT INTO `sys_oper_log` VALUES (110, '角色管理', 2, 'alb.project.system.controller.SysRoleController.edit()', 'PUT', 1, 'admin', NULL, '/system/role', '127.0.0.1', '内网IP', '{\"flag\":false,\"roleId\":6,\"admin\":false,\"dataScope\":\"1\",\"delFlag\":\"0\",\"params\":{},\"roleSort\":\"3\",\"createTime\":1637593398000,\"updateBy\":\"admin\",\"roleKey\":\"manager\",\"roleName\":\"manager\",\"menuIds\":[1072,100,1001,1002,1003,1004,1005,1006,1007,103,1017,1018,1019,1020,1384,1385,1386,1387,1388,1389,1390,1397,1398,1399,1401,1402,1383],\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2021-11-25 02:30:18');
+INSERT INTO `sys_oper_log` VALUES (111, '假期', 1, 'alb.project.vacation.controller.HolidayController.addHoliday()', 'POST', 1, 'Jordan', NULL, '/vacation/holiday', '127.0.0.1', '内网IP', '{\"holidayInstruction\":\"111\",\"proposerId\":4,\"params\":{},\"currentApprovedIndex\":1,\"holidayId\":1463575889668345856}', 'null', 1, '', '2021-11-25 02:30:58');
+INSERT INTO `sys_oper_log` VALUES (112, '假期', 1, 'alb.project.vacation.controller.HolidayController.addHoliday()', 'POST', 1, 'Jordan', NULL, '/vacation/holiday', '127.0.0.1', '内网IP', '{\"holidayInstruction\":\"111\",\"proposerId\":4,\"params\":{},\"currentApprovedIndex\":1,\"holidayId\":1463576055527903232}', 'null', 1, '', '2021-11-25 02:32:37');
+INSERT INTO `sys_oper_log` VALUES (113, '角色管理', 2, 'alb.project.system.controller.SysRoleController.edit()', 'PUT', 1, 'admin', NULL, '/system/role', '127.0.0.1', '内网IP', '{\"flag\":false,\"roleId\":5,\"admin\":false,\"dataScope\":\"1\",\"delFlag\":\"0\",\"params\":{},\"roleSort\":\"2\",\"createTime\":1637593346000,\"updateBy\":\"admin\",\"roleKey\":\"boss\",\"roleName\":\"boss\",\"menuIds\":[1072,100,1001,1002,1003,1004,1005,1006,1007,103,1017,1018,1019,1020,1397,1398,1399,1383,1390],\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2021-11-25 02:33:36');
+INSERT INTO `sys_oper_log` VALUES (114, '角色管理', 2, 'alb.project.system.controller.SysRoleController.edit()', 'PUT', 1, 'admin', NULL, '/system/role', '127.0.0.1', '内网IP', '{\"flag\":false,\"roleId\":6,\"admin\":false,\"dataScope\":\"1\",\"delFlag\":\"0\",\"params\":{},\"roleSort\":\"3\",\"createTime\":1637593398000,\"updateBy\":\"admin\",\"roleKey\":\"manager\",\"roleName\":\"manager\",\"menuIds\":[1072,100,1001,1002,1003,1004,1005,1006,1007,103,1017,1018,1019,1020,1384,1385,1386,1387,1388,1389,1397,1398,1399,1383,1390],\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2021-11-25 02:33:49');
+INSERT INTO `sys_oper_log` VALUES (115, '菜单管理', 3, 'alb.project.system.controller.SysMenuController.remove()', 'DELETE', 1, 'admin', NULL, '/system/menu/1401', '127.0.0.1', '内网IP', '{menuId=1401}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2021-11-25 02:33:59');
+INSERT INTO `sys_oper_log` VALUES (116, '菜单管理', 3, 'alb.project.system.controller.SysMenuController.remove()', 'DELETE', 1, 'admin', NULL, '/system/menu/1402', '127.0.0.1', '内网IP', '{menuId=1402}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2021-11-25 02:34:01');
+INSERT INTO `sys_oper_log` VALUES (117, '假期', 2, 'alb.project.vacation.controller.HolidayController.modifyHoliday()', 'PUT', 1, 'Jordan', NULL, '/vacation/holiday', '127.0.0.1', '内网IP', '{\"holidayInstruction\":\"111\",\"proposerId\":2,\"holidayTypeId\":31,\"params\":{},\"currentApprovedIndex\":2,\"holidayId\":1463543151288520704,\"status\":1}', '{\"msg\":\"修改成功\",\"code\":200}', 0, NULL, '2021-11-25 02:39:25');
+INSERT INTO `sys_oper_log` VALUES (118, '假期', 2, 'alb.project.vacation.controller.HolidayController.modifyHoliday()', 'PUT', 1, 'Jordan', NULL, '/vacation/holiday', '127.0.0.1', '内网IP', '{\"holidayInstruction\":\"111\",\"proposerId\":2,\"holidayTypeId\":31,\"params\":{},\"currentApprovedIndex\":1,\"holidayId\":1463544612969910272,\"status\":2}', '{\"msg\":\"修改成功\",\"code\":200}', 0, NULL, '2021-11-25 02:42:36');
 
 -- ----------------------------
 -- Table structure for sys_post
@@ -1185,9 +1327,9 @@ CREATE TABLE `sys_role`  (
 -- Records of sys_role
 -- ----------------------------
 INSERT INTO `sys_role` VALUES (1, 'admin', 'admin', 1, '1', '0', '0', 'admin', '2018-03-16 11:33:00', 'ry', '2018-03-16 11:33:00', '系统管理员');
-INSERT INTO `sys_role` VALUES (5, 'boss', 'boss', 2, '1', '0', '0', 'admin', '2021-11-22 23:02:26', '', NULL, NULL);
-INSERT INTO `sys_role` VALUES (6, 'manager', 'manager', 3, '1', '0', '0', 'admin', '2021-11-22 23:03:18', '', NULL, NULL);
-INSERT INTO `sys_role` VALUES (7, 'staff', 'staff', 4, '1', '0', '0', 'admin', '2021-11-22 23:04:23', '', NULL, NULL);
+INSERT INTO `sys_role` VALUES (5, 'boss', 'boss', 2, '1', '0', '0', 'admin', '2021-11-22 23:02:26', 'admin', '2021-11-25 02:33:36', NULL);
+INSERT INTO `sys_role` VALUES (6, 'manager', 'manager', 3, '1', '0', '0', 'admin', '2021-11-22 23:03:18', 'admin', '2021-11-25 02:33:49', NULL);
+INSERT INTO `sys_role` VALUES (7, 'staff', 'staff', 4, '1', '0', '0', 'admin', '2021-11-22 23:04:23', 'admin', '2021-11-24 23:41:16', NULL);
 
 -- ----------------------------
 -- Table structure for sys_role_dept
@@ -1227,12 +1369,10 @@ INSERT INTO `sys_role_menu` VALUES (5, 1019);
 INSERT INTO `sys_role_menu` VALUES (5, 1020);
 INSERT INTO `sys_role_menu` VALUES (5, 1072);
 INSERT INTO `sys_role_menu` VALUES (5, 1383);
-INSERT INTO `sys_role_menu` VALUES (5, 1384);
-INSERT INTO `sys_role_menu` VALUES (5, 1385);
-INSERT INTO `sys_role_menu` VALUES (5, 1386);
-INSERT INTO `sys_role_menu` VALUES (5, 1387);
-INSERT INTO `sys_role_menu` VALUES (5, 1388);
-INSERT INTO `sys_role_menu` VALUES (5, 1389);
+INSERT INTO `sys_role_menu` VALUES (5, 1390);
+INSERT INTO `sys_role_menu` VALUES (5, 1397);
+INSERT INTO `sys_role_menu` VALUES (5, 1398);
+INSERT INTO `sys_role_menu` VALUES (5, 1399);
 INSERT INTO `sys_role_menu` VALUES (6, 100);
 INSERT INTO `sys_role_menu` VALUES (6, 103);
 INSERT INTO `sys_role_menu` VALUES (6, 1001);
@@ -1254,6 +1394,10 @@ INSERT INTO `sys_role_menu` VALUES (6, 1386);
 INSERT INTO `sys_role_menu` VALUES (6, 1387);
 INSERT INTO `sys_role_menu` VALUES (6, 1388);
 INSERT INTO `sys_role_menu` VALUES (6, 1389);
+INSERT INTO `sys_role_menu` VALUES (6, 1390);
+INSERT INTO `sys_role_menu` VALUES (6, 1397);
+INSERT INTO `sys_role_menu` VALUES (6, 1398);
+INSERT INTO `sys_role_menu` VALUES (6, 1399);
 INSERT INTO `sys_role_menu` VALUES (7, 100);
 INSERT INTO `sys_role_menu` VALUES (7, 103);
 INSERT INTO `sys_role_menu` VALUES (7, 1001);
@@ -1279,7 +1423,7 @@ CREATE TABLE `sys_sequence`  (
 -- ----------------------------
 -- Records of sys_sequence
 -- ----------------------------
-INSERT INTO `sys_sequence` VALUES ('s_sys_user', 46, 1);
+INSERT INTO `sys_sequence` VALUES ('s_sys_user', 3, 1);
 
 -- ----------------------------
 -- Table structure for sys_user
@@ -1312,12 +1456,16 @@ CREATE TABLE `sys_user`  (
   `remark` varchar(500) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '备注',
   PRIMARY KEY (`user_id`) USING BTREE,
   UNIQUE INDEX `sys_user_user_code_uindex`(`user_code`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '用户信息表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '用户信息表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of sys_user
 -- ----------------------------
 INSERT INTO `sys_user` VALUES (1, 100, '0000', 'admin', '系统管理员', '00', '', '18888888888', '0', NULL, '', '', '', '/profile/avatar/2020/12/22/2aaebacd1fccf1787e6477faf71c61cd.jpeg', '$2a$10$Kx0SXEFbjPbtZX9Y4uKZyOXMinVjzud/MOqlyEEM6S9HI0YIKdEaW', '0', '0', '', NULL, 'admin', '2018-03-16 11:33:00', '', '2020-12-22 15:03:12', '管理员');
+INSERT INTO `sys_user` VALUES (2, 187, '0001', 'Olajuwon', 'Olajuwon', '00', '123@163.com', '13845678900', '0', NULL, NULL, NULL, NULL, '', '$2a$10$wYbeN3y6v9msJMrPUosTnucY84vwrs4aw2WdvUzDl4kzWsxiPpwKq', '0', '0', '', NULL, 'admin', '2021-11-24 23:27:52', '', NULL, NULL);
+INSERT INTO `sys_user` VALUES (3, 187, '0002', 'James', 'James', '00', '456@163.com', '13844455555', '0', NULL, NULL, NULL, NULL, '', '$2a$10$Wb3SQRpyC/Oe84ZeWtl6ae.VjeTWqtINdj6dbB31mTKAMRHsnX5GW', '0', '0', '', NULL, 'admin', '2021-11-24 23:29:22', '', NULL, NULL);
+INSERT INTO `sys_user` VALUES (4, 187, '0003', 'Jordan', 'Jordan', '00', '789@163.com', '18933366666', '0', NULL, NULL, NULL, NULL, '', '$2a$10$Kq3Ssn4P2dsCjX0gOxcUsuvWBTN7l1A6nf1lyHqs98BczobgWgHB2', '0', '0', '', NULL, 'admin', '2021-11-24 23:30:32', '', NULL, NULL);
+INSERT INTO `sys_user` VALUES (5, 187, '0004', '1111', '1111', '00', '1111@166.com', '13877897777', '0', NULL, NULL, NULL, NULL, '', '$2a$10$pdwpJ24KmNwLiTsIv5DZruW/76Xc9yXe5Ts3rYhFO4IySa9HEF8DG', '0', '2', '', NULL, 'admin', '2021-11-24 23:32:21', '', NULL, NULL);
 
 -- ----------------------------
 -- Table structure for sys_user_online
@@ -1367,6 +1515,10 @@ CREATE TABLE `sys_user_role`  (
 -- Records of sys_user_role
 -- ----------------------------
 INSERT INTO `sys_user_role` VALUES (1, 1);
+INSERT INTO `sys_user_role` VALUES (2, 7);
+INSERT INTO `sys_user_role` VALUES (3, 6);
+INSERT INTO `sys_user_role` VALUES (4, 5);
+INSERT INTO `sys_user_role` VALUES (5, 7);
 
 -- ----------------------------
 -- Function structure for currval
