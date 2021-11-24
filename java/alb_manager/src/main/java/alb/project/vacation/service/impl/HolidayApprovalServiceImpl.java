@@ -1,5 +1,6 @@
 package alb.project.vacation.service.impl;
 
+import alb.project.system.domain.SysRole;
 import cn.hutool.core.util.IdUtil;
 import alb.project.vacation.domain.HolidayApproval;
 import alb.project.vacation.mapper.HolidayApprovalMapper;
@@ -28,7 +29,7 @@ public class HolidayApprovalServiceImpl implements IHolidayApprovalService {
      */
     @Override
     public boolean hasNextApproved(HolidayApproval holidayApproval){
-        return this.holidayApprovalMapper.hasNext(holidayApproval) > 0;
+        return this.holidayApprovalMapper.hasNext(holidayApproval) > 0L;
     }
 
     /**
@@ -78,6 +79,16 @@ public class HolidayApprovalServiceImpl implements IHolidayApprovalService {
     }
 
     /**
+     * 查询角色列表
+     *
+     * @return 对象列表
+     */
+    public List<SysRole> selectRoleList(){
+        return this.holidayApprovalMapper.selectRoleList();
+    }
+
+
+    /**
      * 新增数据
      *
      * @param holidayApproval 实例对象
@@ -87,6 +98,15 @@ public class HolidayApprovalServiceImpl implements IHolidayApprovalService {
     public int insert(HolidayApproval holidayApproval) {
         // 雪花算法生成唯一通话记录号 单体服务 数据中心id和终端id都填1
         holidayApproval.setHolidayApprovalId(IdUtil.getSnowflake(1, 1).nextId());
+
+        List<HolidayApproval> list = this.holidayApprovalMapper.queryAll(holidayApproval);
+        holidayApproval.setCurrentApprovedIndex(list.isEmpty() ?
+                1 : (list.get(list.size() - 1).getCurrentApprovedIndex() + 1));
+        holidayApproval.setNextApprovalId(0);
+        holidayApproval.setDelFlag(0);
+        if () { // 非头节点还需要修改前置节点
+
+        }
         return this.holidayApprovalMapper.insert(holidayApproval);
     }
 
@@ -98,6 +118,44 @@ public class HolidayApprovalServiceImpl implements IHolidayApprovalService {
      */
     @Override
     public int deleteById(Long holidayApprovalId) {
+        HolidayApproval holidayApproval = this.holidayApprovalMapper.queryOne(holidayApprovalId);
+
+        if (holidayApproval.getNextApprovalId() != 0) { // 有后续节点
+            HolidayApproval params = HolidayApproval.builder()
+                    .holidayTypeId(holidayApproval.getHolidayTypeId())
+                    .roleId(holidayApproval.getRoleId())
+                    .build();
+            List<HolidayApproval> list = this.holidayApprovalMapper.queryAll(params);
+
+            // 非头节点还需要处理前置节点
+            if (holidayApproval.setCurrentApprovedIndex() != 1) {
+                HolidayApproval preParams = HolidayApproval.builder()
+                        .holidayTypeId(holidayApproval.getHolidayTypeId())
+                        .roleId(holidayApproval.getRoleId())
+                        .currentApprovedIndex(holidayApproval.getCurrentApprovedIndex() - 1)
+                        .build();
+                HolidayApproval pre = this.holidayApprovalMapper.queryAll(params).get(0);
+                pre.setNextApprovalId(holidayApproval.getNextApprovalId());
+                this.holidayApprovalMapper.update(pre);
+            }
+
+            // 处理后续节点
+
+        }
+
+        // 无后续节点，但仍需要处理前置节点
+        if (holidayApproval.setCurrentApprovedIndex() != 1) {
+            HolidayApproval preParams = HolidayApproval.builder()
+                    .holidayTypeId(holidayApproval.getHolidayTypeId())
+                    .roleId(holidayApproval.getRoleId())
+                    .currentApprovedIndex(holidayApproval.getCurrentApprovedIndex() - 1)
+                    .build();
+            HolidayApproval pre = this.holidayApprovalMapper.queryAll(preParams).get(0);
+            pre.setNextApprovalId(0);
+            this.holidayApprovalMapper.update(pre);
+        }
+
+        // 头节点，且无后续节点直接删
         return this.holidayApprovalMapper.deleteById(holidayApprovalId);
     }
 }
