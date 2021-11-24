@@ -1,5 +1,6 @@
 package alb.project.vacation.service;
 
+import alb.project.system.domain.SysRole;
 import alb.project.vacation.domain.HolidayApproval;
 
 import java.util.List;
@@ -31,7 +32,7 @@ public interface IHolidayApprovalService {
      * @param holidayApproval 实例对象
      * @return 实例对象
      */
-    public boolean hasRing(HolidayApproval holidayApproval);
+    boolean hasRing(HolidayApproval holidayApproval);
 
     /**
      * 通过实体作为筛选条件查询
@@ -40,6 +41,14 @@ public interface IHolidayApprovalService {
      * @return 对象列表
      */
     List<HolidayApproval> queryAll(HolidayApproval holidayApproval);
+
+
+    /**
+     * 查询角色列表
+     *
+     * @return 对象列表
+     */
+    List<SysRole> selectRoleList();
 
     /**
      * 新增数据
