@@ -52,3 +52,12 @@ export function userListForVacation(data) {
   })
 }
 
+export function hasNextApproved(data) {
+  return request({
+    url: '/vacation/holiday/next',
+    method: 'GET',
+    params: data
+  })
+}
+
+
