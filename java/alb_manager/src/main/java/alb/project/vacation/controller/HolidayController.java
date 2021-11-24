@@ -63,6 +63,25 @@ public class HolidayController extends BaseController {
     }
 
     /**
+     * 是否有下一节点
+     *
+     * @param holiday 实例对象
+     * @return 实例对象
+     */
+    @GetMapping("/next")
+    @PreAuthorize("@ss.hasPermi('vacation:holiday:query')")
+    public AjaxResult hasNext(@RequestBody Holiday holiday) {
+        // 默认取第一个角色
+        Long roleId = this.userService.selectUserById(holiday.getProposerId()).getRoles().get(0);
+        HolidayApproval params = HolidayApproval.builder()
+                .holidayTypeId(holiday.getHolidayTypeId())
+                .roleId(roleId)
+                .currentApprovedIndex(holiday.getCurrentApprovedIndex())
+                .build();
+        return this.holidayApprovalService.hasNextApproved(params) ? AjaxResult.success("存在下一节点") : AjaxResult.error("不存在下一节点");
+    }
+
+    /**
      * 查询多条数据
      *
      * @param holiday
@@ -83,16 +102,13 @@ public class HolidayController extends BaseController {
      * @return
      */
     @GetMapping("/user/list")
-    @PreAuthorize("@ss.hasPermi('vacation:holiday:add')")
+    @PreAuthorize("@ss.hasPermi('vacation:holiday:list')")
     public AjaxResult queryUserList(Holiday holiday) {
-        LoginUser loginUser = tokenService.getLoginUser(ServletUtils.getRequest());
-        if (!StringUtils.isNull(loginUser) && !CollectionUtils.isEmpty(loginUser.getUser().getRoles())) {
+        if (holiday.getHolidayId() != null) { // 审批阶段查询
             List<HolidayUserResultVO> result = new ArrayList<>();
-
-            Long deptId = loginUser.getUser().getDept().getDeptId();
-            List<SysRole> roles = loginUser.getUser().getRoles();
+            List<SysRole> roles = this.userService.selectUserById(holiday.getProposerId()).getRoles();
             for (SysRole role : roles) {
-                // 根据类型和当前用户角色ID，查询
+                // 根据类型和当前用户角色ID，查询预设审批
                 HolidayApproval approvalParams = HolidayApproval.builder()
                         .holidayTypeId(holiday.getHolidayTypeId())
                         .roleId(role.getRoleId())
@@ -103,13 +119,40 @@ public class HolidayController extends BaseController {
                 for (HolidayApproval approval : approvals) {
                     HolidayUserParamsVO paramsVO = HolidayUserParamsVO.builder()
                             .deptId(deptId)
-                            .roleId(approval.getRoleId())
+                            .roleId(approval.getApprovedRoleId())
                             .build();
                     List<HolidayUserResultVO> resultVOList = holidayService.selectUserList(paramsVO);
                     result.addAll(resultVOList);
                 }
             }
             return AjaxResult.success(result);
+        } else { // 新增阶段查询
+            LoginUser loginUser = tokenService.getLoginUser(ServletUtils.getRequest());
+            if (!StringUtils.isNull(loginUser) && !CollectionUtils.isEmpty(loginUser.getUser().getRoles())) {
+                List<HolidayUserResultVO> result = new ArrayList<>();
+
+                Long deptId = loginUser.getUser().getDept().getDeptId();
+                List<SysRole> roles = loginUser.getUser().getRoles();
+                for (SysRole role : roles) {
+                    // 根据类型和当前用户角色ID，查询预设审批
+                    HolidayApproval approvalParams = HolidayApproval.builder()
+                            .holidayTypeId(holiday.getHolidayTypeId())
+                            .roleId(role.getRoleId())
+                            .currentApprovedIndex(holiday.getCurrentApprovedIndex())
+                            .build();
+                    List<HolidayApproval> approvals = holidayApprovalService.queryAll(approvalParams);
+                    // 根据部门ID和查询到的角色ID，查询可选用户
+                    for (HolidayApproval approval : approvals) {
+                        HolidayUserParamsVO paramsVO = HolidayUserParamsVO.builder()
+                                .deptId(deptId)
+                                .roleId(approval.getApprovedRoleId())
+                                .build();
+                        List<HolidayUserResultVO> resultVOList = holidayService.selectUserList(paramsVO);
+                        result.addAll(resultVOList);
+                    }
+                }
+                return AjaxResult.success(result);
+            }
         }
         return AjaxResult.error("当前用户暂无权限！");
     }
@@ -131,8 +174,8 @@ public class HolidayController extends BaseController {
                 .holidayId(holiday.getHolidayId())
                 .approvedUserId(holiday.getCurrentApproverId())
                 .approvedIndex(holiday.getCurrentApprovedIndex())
-                .status(holiday.getStatus())
-                .approveInstruction(holiday.getHolidayInstruction())
+                .status(0)
+                .approveInstruction()
                 .delFlag(0)
                 .build();
         int countItem = this.holidayItemService.insert(holidayItem);
@@ -149,25 +192,35 @@ public class HolidayController extends BaseController {
     @PreAuthorize("@ss.hasPermi('vacation:holiday:modify')")
     @Log(title = "假期", businessType = BusinessType.UPDATE)
     public AjaxResult modifyHoliday(@RequestBody Holiday holiday) {
+        // 保存当前审批事项
         HolidayItem holidayItem = HolidayItem.builder()
                 .holidayId(holiday.getHolidayId())
-                .approvedUserId(holiday.getCurrentApproverId())
                 .approvedIndex(holiday.getCurrentApprovedIndex())
                 .status(holiday.getStatus())
                 .approveInstruction(holiday.getHolidayInstruction())
-                .delFlag(0)
                 .build();
-        int countItem = this.holidayItemService.insert(holidayItem);
+        int countItem = this.holidayItemService.update(holidayItem);
 
-        HolidayApproval holidayApproval = HolidayApproval.builder()
+        // 若通过且有下一节点，则添加下一事项
+        // 默认取第一个角色
+        Long roleId = this.userService.selectUserById(holiday.getProposerId()).getRoles().get(0);
+        HolidayApproval params = HolidayApproval.builder()
                 .holidayTypeId(holiday.getHolidayTypeId())
-                .currentApprovedIndex(holiday.getCurrentApprovedIndex() + 1)
+                .roleId(roleId)
+                .currentApprovedIndex(holiday.getCurrentApprovedIndex())
                 .build();
-        if (this.holidayApprovalService.hasNextApproved(holidayApproval)) {
+        if (this.holidayApprovalService.hasNextApproved(params) && holiday.getStatus() == 1) {
             holiday.setStatus(0);
-        } else { // 没有下一节点了
-            holiday.setCurrentApprovedIndex(0);
+            HolidayItem newHolidayItem = HolidayItem.builder()
+                    .holidayId(holiday.getHolidayId())
+                    .approvedUserId(holiday.getCurrentApproverId())
+                    .approvedIndex(holiday.getCurrentApprovedIndex() + 1)
+                    .status(0)
+                    .delFlag(0)
+                    .build();
+            this.holidayItemService.insert(newHolidayItem);
         }
+        // 驳回了 / 没有下一节点了
         int count = this.holidayService.update(holiday);
         return count > 0 & countItem > 0? AjaxResult.success("修改成功") : AjaxResult.error("修改失败");
     }
