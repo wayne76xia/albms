@@ -1,5 +1,6 @@
 package alb.project.vacation.mapper;
 
+import alb.project.system.domain.SysRole;
 import alb.project.vacation.domain.HolidayApproval;
 
 import java.util.List;
@@ -15,7 +16,7 @@ public interface HolidayApprovalMapper {
      * @param holidayApproval 实例对象
      * @return 实例对象
      */
-    int hasNext(HolidayApproval holidayApproval);
+    Long hasNext(HolidayApproval holidayApproval);
 
     /**
      * 通过ID查询单条数据
@@ -42,6 +43,14 @@ public interface HolidayApprovalMapper {
     int insert(HolidayApproval holidayApproval);
 
     /**
+     * 修改数据
+     *
+     * @param holidayApproval 实例对象
+     * @return 影响行数
+     */
+    int update(HolidayApproval holidayApproval);
+
+    /**
      * 通过主键删除数据
      *
      * @param holidayId 主键
@@ -49,4 +58,10 @@ public interface HolidayApprovalMapper {
      */
     int deleteById(Long holidayId);
 
+    /**
+     * 查询角色列表
+     *
+     * @return 对象列表
+     */
+    List<SysRole> selectRoleList();
 }
