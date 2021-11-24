@@ -22,28 +22,6 @@
             <el-form :model="queryParams" ref="queryForm" :inline="true" label-width="100px">
               <el-row>
                 <el-col :span="20">
-<!--                  <el-form-item label="申请人：" prop="proposerName"-->
-<!--                                v-hasPermi="['vacation:holiday:query']">-->
-<!--                    <el-input-->
-<!--                      v-model="queryParams.proposerName"-->
-<!--                      placeholder="请输入申请人"-->
-<!--                      clearable-->
-<!--                      size="small"-->
-<!--                      style="width: 200px"-->
-<!--                      @keyup.enter.native="handleQuery"-->
-<!--                    />-->
-<!--                  </el-form-item>-->
-<!--                  <el-form-item label="当前审批人：" prop="currentApproverName"-->
-<!--                                v-hasPermi="['vacation:holiday:query']">-->
-<!--                    <el-input-->
-<!--                      v-model="queryParams.currentApproverName"-->
-<!--                      placeholder="请输入当前审批人"-->
-<!--                      clearable-->
-<!--                      size="small"-->
-<!--                      style="width: 200px"-->
-<!--                      @keyup.enter.native="handleQuery"-->
-<!--                    />-->
-<!--                  </el-form-item>-->
                   <el-form-item label="假期类型：" prop="holidayTypeId">
                     <el-select
                       v-model="queryParams.holidayTypeId"
@@ -114,15 +92,15 @@
                 >
                   <img src="holidayTypeId../../assets/image/chaxun.png" alt />
                 </el-button>
-                <el-button
-                  size="mini"
-                  type="text"
-                  icon="el-icon-edit"
-                  @click="handleUpdate(scope.row)"
-                  v-hasPermi="['vacation:holiday:edit']"
-                  style="color:#5ECC59 !important;font-size:16px"
-                  title="编辑"
-                ></el-button>
+<!--                <el-button-->
+<!--                  size="mini"-->
+<!--                  type="text"-->
+<!--                  icon="el-icon-edit"-->
+<!--                  @click="handleUpdate(scope.row)"-->
+<!--                  v-hasPermi="['vacation:holiday:edit']"-->
+<!--                  style="color:#5ECC59 !important;font-size:16px"-->
+<!--                  title="编辑"-->
+<!--                ></el-button>-->
                 <el-button
                   size="mini"
                   type="text"
@@ -131,7 +109,7 @@
                   v-if="scope.row.status === 1"
                   style="color: #E8522A !important;font-size:16px"
                   v-hasPermi="['vacation:holiday:remove']"
-                  title="删除"
+                  title="销假"
                 ></el-button>
               </template>
             </el-table-column>
@@ -145,7 +123,7 @@
           @pagination="getHolidayList"
         />
 
-        <!-- 添加或修改窗 -->
+        <!-- 添加窗 -->
         <el-dialog class :title="title" :visible.sync="open" width="40%" append-to-body>
           <el-form ref="form" :model="form" :rules="rules" label-width="100px">
             <el-row>
@@ -185,7 +163,7 @@
                     v-model="form.currentApproverId"
                     clearable
                     filterable
-                    placeholder="请输入姓名"
+                    placeholder="请选择审批人"
                     :filter-method="brandKeyChange"
                     style="width:100%"
                     @change="fnEdit"
@@ -248,10 +226,6 @@
                   <span>当前审批状态：</span>
                   <span class="aui-padded-l-5 text-graybc">{{holidayInfo.status === 0 ? '审批中' : holidayInfo.status === 1 ? '已通过' : '已驳回'}}</span>
                 </el-col>
-                <el-col :span="12" class="aui-padded-b-10">
-                  <span>客户备注：</span>
-                  <span class="aui-padded-l-5 text-graybc">{{holidayInfo.holidayRemark}}</span>
-                </el-col>
               </el-row>
             </div>
             <div class="text-grayer flex">
@@ -288,7 +262,6 @@ import {
   holidayUpdate,
   userListForVacation
 } from '../../../api/vacation'
-import store from '../../../store'
 
 export default {
   name: "holiday",
@@ -331,9 +304,15 @@ export default {
       ageList: [],
       holidayList: [],
       rules: {
-        // holidayName: [
-        //   { required: true, message: "姓名不能为空", trigger: "blur" },
-        // ],
+        holidayTypeId: [
+          { required: true, message: "姓名不能为空", trigger: "blur" },
+        ],
+        currentApproverId: [
+          { required: true, message: "姓名不能为空", trigger: "blur" },
+        ],
+        holidayInstruction: [
+          { required: true, message: "姓名不能为空", trigger: "blur" },
+        ],
       },
       // 客户详情
       textarea: "",
@@ -436,39 +415,38 @@ export default {
       userListForVacation(data).then((response) => {
         if (response.code === 200) {
           this.userList = response.data;
-          let expect = {
+          this.form = {
             holidayTypeId: data.holidayTypeId,
           }
-          this.form = expect
           this.title = "添加假期信息";
           this.open = true;
         }
       })
     },
     /** 修改按钮操作 */
-    handleUpdate(row) {
-      this.reset();
-      const id = row.holidayId;
-      getHolidayInfo(id).then((response) => {
-        let data = {
-            holidayTypeId: response.data.holidayTypeId,
-            currentApprovedIndex: response.data.currentApprovedIndex,
-        }
-        userListForVacation(data).then((response2) => {
-          if (response2.code === 200) {
-            let expect = {
-              holidayId: response.data.holidayId,
-              holidayTypeId: response.data.holidayTypeId,
-              // 可能缺参数
-            }
-            this.form = expect
-            this.userList = response2.data;
-            this.title = "修改假期信息";
-            this.open = true;
-          }
-        })
-      });
-    },
+    // handleUpdate(row) {
+    //   this.reset();
+    //   const id = row.holidayId;
+    //   getHolidayInfo(id).then((response) => {
+    //     let data = {
+    //         holidayId: id,
+    //         holidayTypeId: response.data.holidayTypeId,
+    //         currentApprovedIndex: response.data.currentApprovedIndex,
+    //     }
+    //     userListForVacation(data).then((response2) => {
+    //       if (response2.code === 200) {
+    //         this.form = {
+    //           holidayId: response.data.holidayId,
+    //           holidayTypeId: response.data.holidayTypeId,
+    //           // 可能缺参数
+    //         }
+    //         this.userList = response2.data;
+    //         this.title = "修改假期信息";
+    //         this.open = true;
+    //       }
+    //     })
+    //   });
+    // },
     brandKeyChange(inputKey){
 
     },
