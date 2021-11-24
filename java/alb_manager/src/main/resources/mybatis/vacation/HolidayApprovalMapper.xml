@@ -8,7 +8,9 @@
         <result column="dict_label" property="typeName"/>
         <result column="dict_value" property="typeValue"/>
         <result column="role_id" jdbcType="BIGINT" property="roleId"/>
+        <result column="role_name" property="roleName"/>
         <result column="approved_role_id" jdbcType="BIGINT" property="approvedRoleId"/>
+        <result column="approved_role_name" property="approvedRoleName"/>
         <result column="current_approved_index" property="currentApprovedIndex"/>
         <result column="next_approval_id" jdbcType="BIGINT" property="nextApprovalId"/>
         <result column="del_flag" property="delFlag"/>
@@ -18,25 +20,38 @@
         <result property="updateTime" column="update_time"/>
     </resultMap>
 
-    <!--通过单个实体-->
-    <select id="hasNext" resultMap="HolidayApprovalMap">
-        select count(1)
+    <!--查询角色列表-->
+    <select id="selectRoleList" resultType="alb.project.system.domain.SysRole">
+        select r.role_id as roleId,
+               r.role_name as roleName
+        from sys_role r
+        where r.del_flag = '0'
+          and r.role_name != 'admin'
+        order by r.role_sort
+    </select>
+
+    <!--查询是否下个实体-->
+    <select id="hasNext" parameterType="Long">
+        select ha.nextApprovalId
         from holiday_approval ha
                  left join sys_dict_data s on s.dict_type = 'holiday_type' and ha.holiday_type_id = s.dict_code
         where ha.holiday_type_id = #{holidayTypeId}
+          and ha.role_id = #{roleId}
           and ha.current_approved_index = #{currentApprovedIndex}
           and ha.del_flag = 0
         limit 1
     </select>
 
-    <!--通过单个实体-->
+    <!--查询单个实体-->
     <select id="queryOne" resultMap="HolidayApprovalMap">
         select ha.holiday_approval_id,
                ha.holiday_type_id,
                s.dict_label,
                s.dict_value,
                ha.role_id,
+               (select r.role_name from sys_role r where ha.role_id = r.role_id) as role_name,
                ha.approved_role_id,
+               (select r.role_name from sys_role r where ha.approved_role_id = r.role_id) as approved_role_name,
                ha.current_approved_index,
                ha.next_approval_id,
                ha.del_flag
@@ -54,7 +69,9 @@
         s.dict_label,
         s.dict_value,
         ha.role_id,
+        (select r.role_name from sys_role r where ha.role_id = r.role_id) as role_name,
         ha.approved_role_id,
+        (select r.role_name from sys_role r where ha.approved_role_id = r.role_id) as approved_role_name,
         ha.current_approved_index,
         ha.next_approval_id,
         ha.del_flag
@@ -66,6 +83,7 @@
             and ha.current_approved_index = #{currentApprovedIndex}
         </if>
           and ha.del_flag = 0
+        order by current_approved_index
     </select>
 
     <insert id="insert" parameterType="HolidayApproval">
@@ -138,11 +156,29 @@
         </trim>
     </insert>
 
+    <!--通过主键修改数据-->
+    <update id="update" parameterType="HolidayApproval">
+        update holiday_approval
+        <set>
+            <if test="currentApprovedIndex != null">
+                current_approved_index = #{currentApprovedIndex},
+            </if>
+            <if test="nextApprovalId != null">
+                next_approval_id = #{nextApprovalId},
+            </if>
+            <if test="updateBy != null">
+                update_by = #{updateBy},
+            </if>
+            update_time = sysdate()
+        </set>
+        where holiday_approval_id = #{holidayApprovalId}
+    </update>
+
     <!--通过主键删除-->
     <delete id="deleteById">
         update holiday_approval
         set del_flag = 1
-        where holiday_approval_id = #{holiday_approval_id}
+        where holiday_approval_id = #{holidayApprovalId}
     </delete>
 
 </mapper>
