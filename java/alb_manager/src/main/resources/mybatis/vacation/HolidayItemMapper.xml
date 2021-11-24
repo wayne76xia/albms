@@ -125,20 +125,22 @@
     <update id="update" parameterType="HolidayItem">
         update holiday_item
         <set>
+            <if test="approveInstruction != null">
+                approve_instruction = #{approveInstruction},
+            </if>
             <if test="status != null">
                 `status` = #{status},
-            </if>
-            <if test="delFlag != null">
-                del_flag = #{delFlag},
             </if>
             <if test="updateBy != null">
                 update_by = #{updateBy},
             </if>
                 update_time = sysdate()
         </set>
-        where holiday_id = #{holidayId}
-        and approved_user_id = #{approvedUserId}
-        and approved_index = #{approvedIndex}
+        where holiday_id = #{holidayId} and
+        <if test="approvedUserId != null">
+            approved_user_id = #{approvedUserId} and
+        </if>
+        approved_index = #{approvedIndex}
     </update>
 
     <!--通过主键删除-->
