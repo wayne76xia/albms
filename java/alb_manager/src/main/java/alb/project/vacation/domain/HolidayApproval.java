@@ -25,13 +25,17 @@ public class HolidayApproval extends BaseEntity
     /* 待审批人角色ID */
     private Long roleId;
 
+    private String roleName;
+
     /* 审批人角色ID */
     private Long approvedRoleId;
+
+    private String approvedRoleName;
 
     /* 当前审批序号 从1开始计数 */
     private Integer currentApprovedIndex;
 
-    /* 下一级审批的的ID，若为最后一级审批则为0 */
+    /* 下一级审批的的角色ID，若为最后一级审批则为0 */
     private Long nextApprovalId;
 
     /**
