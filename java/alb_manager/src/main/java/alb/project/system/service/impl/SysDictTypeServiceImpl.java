@@ -17,7 +17,7 @@ import alb.common.utils.DictUtils;
 import alb.common.utils.StringUtils;
 
 /**
- * 字典 业务层处理
+ * The dictionary Business layer processing
  *
  */
 @Service
@@ -30,7 +30,7 @@ public class SysDictTypeServiceImpl implements ISysDictTypeService
     private SysDictDataMapper dictDataMapper;
 
     /**
-     * 项目启动时，初始化字典到缓存
+     * At project launch,Initialize the dictionary to the cache
      */
     @PostConstruct
     public void init()
@@ -44,10 +44,10 @@ public class SysDictTypeServiceImpl implements ISysDictTypeService
     }
 
     /**
-     * 根据条件分页查询字典类型
+     * Query dictionary types based on conditional paging
      * 
-     * @param dictType 字典类型信息
-     * @return 字典类型集合信息
+     * @param dictType Dictionary type information
+     * @return Dictionary type collection information
      */
     @Override
     public List<SysDictType> selectDictTypeList(SysDictType dictType)
@@ -56,9 +56,9 @@ public class SysDictTypeServiceImpl implements ISysDictTypeService
     }
 
     /**
-     * 根据所有字典类型
+     * According to all dictionary types
      * 
-     * @return 字典类型集合信息
+     * @return Dictionary type collection information
      */
     @Override
     public List<SysDictType> selectDictTypeAll()
@@ -67,10 +67,10 @@ public class SysDictTypeServiceImpl implements ISysDictTypeService
     }
 
     /**
-     * 根据字典类型查询字典数据
+     * Query dictionary data by dictionary type
      * 
-     * @param dictType 字典类型
-     * @return 字典数据集合信息
+     * @param dictType A dictionary type
+     * @return Dictionary data set information
      */
     @Override
     public List<SysDictData> selectDictDataByType(String dictType)
@@ -90,10 +90,10 @@ public class SysDictTypeServiceImpl implements ISysDictTypeService
     }
 
     /**
-     * 根据字典类型ID查询信息
+     * According to the dictionary typeIDQuery information
      * 
-     * @param dictId 字典类型ID
-     * @return 字典类型
+     * @param dictId A dictionary typeID
+     * @return A dictionary type
      */
     @Override
     public SysDictType selectDictTypeById(Long dictId)
@@ -102,10 +102,10 @@ public class SysDictTypeServiceImpl implements ISysDictTypeService
     }
 
     /**
-     * 根据字典类型查询信息
+     * Query information by dictionary type
      * 
-     * @param dictType 字典类型
-     * @return 字典类型
+     * @param dictType A dictionary type
+     * @return A dictionary type
      */
     @Override
     public SysDictType selectDictTypeByType(String dictType)
@@ -114,10 +114,10 @@ public class SysDictTypeServiceImpl implements ISysDictTypeService
     }
 
     /**
-     * 批量删除字典类型信息
+     * Delete dictionary types in batches
      * 
-     * @param dictIds 需要删除的字典ID
-     * @return 结果
+     * @param dictIds Dictionaries that need to be deletedID
+     * @return The results of
      */
     @Override
     public int deleteDictTypeByIds(Long[] dictIds)
@@ -127,7 +127,7 @@ public class SysDictTypeServiceImpl implements ISysDictTypeService
             SysDictType dictType = selectDictTypeById(dictId);
             if (dictDataMapper.countDictDataByType(dictType.getDictType()) > 0)
             {
-                throw new CustomException(String.format("%1$s已分配,不能删除", dictType.getDictName()));
+                throw new CustomException(String.format("%1$sallocated,Can't delete", dictType.getDictName()));
             }
         }
         int count = dictTypeMapper.deleteDictTypeByIds(dictIds);
@@ -139,7 +139,7 @@ public class SysDictTypeServiceImpl implements ISysDictTypeService
     }
 
     /**
-     * 清空缓存数据
+     * Clearing cached data
      */
     @Override
     public void clearCache()
@@ -148,10 +148,10 @@ public class SysDictTypeServiceImpl implements ISysDictTypeService
     }
 
     /**
-     * 新增保存字典类型信息
+     * Added saving dictionary type information
      * 
-     * @param dictType 字典类型信息
-     * @return 结果
+     * @param dictType Dictionary type information
+     * @return The results of
      */
     @Override
     public int insertDictType(SysDictType dictType)
@@ -165,10 +165,10 @@ public class SysDictTypeServiceImpl implements ISysDictTypeService
     }
 
     /**
-     * 修改保存字典类型信息
+     * Modify save dictionary type information
      * 
-     * @param dictType 字典类型信息
-     * @return 结果
+     * @param dictType Dictionary type information
+     * @return The results of
      */
     @Override
     @Transactional
@@ -185,10 +185,10 @@ public class SysDictTypeServiceImpl implements ISysDictTypeService
     }
 
     /**
-     * 校验字典类型称是否唯一
+     * Verify that the dictionary type name is unique
      * 
-     * @param dict 字典类型
-     * @return 结果
+     * @param dict A dictionary type
+     * @return The results of
      */
     @Override
     public String checkDictTypeUnique(SysDictType dict)

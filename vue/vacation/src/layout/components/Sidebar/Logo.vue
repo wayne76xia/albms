@@ -26,7 +26,7 @@ export default {
   },
   data() {
     return {
-      title: '假期预定管理系统',
+      title: 'Vacation reservation management system',
       logo: logoImg
     }
   }

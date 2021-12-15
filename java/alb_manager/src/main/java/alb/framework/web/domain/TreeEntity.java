@@ -4,26 +4,26 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Tree基类
+ * TreeThe base class
  *
  */
 public class TreeEntity extends BaseEntity
 {
     private static final long serialVersionUID = 1L;
 
-    /** 父菜单名称 */
+    /** Parent menu name */
     private String parentName;
 
-    /** 父菜单ID */
+    /** The parent menuID */
     private Long parentId;
 
-    /** 显示顺序 */
+    /** According to the order */
     private Integer orderNum;
 
-    /** 祖级列表 */
+    /** Face level list */
     private String ancestors;
 
-    /** 子部门 */
+    /** A division */
     private List<?> children = new ArrayList<>();
 
     public String getParentName()

@@ -12,7 +12,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * 通用http工具封装
+ * generalhttpTool encapsulation
  *
  */
 public class HttpHelper
@@ -34,7 +34,7 @@ public class HttpHelper
         }
         catch (IOException e)
         {
-            LOGGER.warn("getBodyString出现问题！");
+            LOGGER.warn("getBodyStringThere is a problem!");
         }
         finally
         {

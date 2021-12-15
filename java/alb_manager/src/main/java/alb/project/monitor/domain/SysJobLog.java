@@ -7,7 +7,7 @@ import alb.framework.aspectj.lang.annotation.Excel;
 import alb.framework.web.domain.BaseEntity;
 
 /**
- * 定时任务调度日志表 sys_job_log
+ * Scheduled task scheduling log table sys_job_log
  *
  */
 public class SysJobLog extends BaseEntity
@@ -15,37 +15,37 @@ public class SysJobLog extends BaseEntity
     private static final long serialVersionUID = 1L;
 
     /** ID */
-    @Excel(name = "日志序号")
+    @Excel(name = "The log sequence number")
     private Long jobLogId;
 
-    /** 任务名称 */
-    @Excel(name = "任务名称")
+    /** The name of the task */
+    @Excel(name = "The name of the task")
     private String jobName;
 
-    /** 任务组名 */
-    @Excel(name = "任务组名")
+    /** The task group name */
+    @Excel(name = "The task group name")
     private String jobGroup;
 
-    /** 调用目标字符串 */
-    @Excel(name = "调用目标字符串")
+    /** Calling the target string */
+    @Excel(name = "Calling the target string")
     private String invokeTarget;
 
-    /** 日志信息 */
-    @Excel(name = "日志信息")
+    /** Log information */
+    @Excel(name = "Log information")
     private String jobMessage;
 
-    /** 执行状态（0正常 1失败） */
-    @Excel(name = "执行状态", readConverterExp = "0=正常,1=失败")
+    /** Execution status(0normal 1failure) */
+    @Excel(name = "Execution status", readConverterExp = "0=normal,1=failure")
     private String status;
 
-    /** 异常信息 */
-    @Excel(name = "异常信息")
+    /** Exception information */
+    @Excel(name = "Exception information")
     private String exceptionInfo;
 
-    /** 开始时间 */
+    /** The start time */
     private Date startTime;
 
-    /** 停止时间 */
+    /** Stop time */
     private Date stopTime;
 
     public Long getJobLogId()

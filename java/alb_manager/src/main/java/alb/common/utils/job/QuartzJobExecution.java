@@ -4,7 +4,7 @@ import alb.project.monitor.domain.SysJob;
 import org.quartz.JobExecutionContext;
 
 /**
- * 定时任务处理（允许并发执行）
+ * Scheduled Task Processing(Allow concurrent execution)
  *
  *
  */

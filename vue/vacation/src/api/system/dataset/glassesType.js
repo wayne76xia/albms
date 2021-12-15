@@ -1,6 +1,6 @@
 import request from '@/utils/request'
 
-// 查询镜架型号列表
+// Query the frame model list
 export function listType(query) {
     return request({
         url: '/glasses/type/list',
@@ -9,7 +9,7 @@ export function listType(query) {
     })
 }
 
-// 查询镜架型号列表
+// Query the frame model list
 export function getListByType(query) {
     return request({
         url: '/glasses/mirrorBracketParams/getListByType?type=' + query,
@@ -17,7 +17,7 @@ export function getListByType(query) {
     })
 }
 
-// 查询镜架型号详细
+// Query mirror frame model details
 export function getType(id) {
     return request({
         url: '/glasses/type/' + id,
@@ -25,7 +25,7 @@ export function getType(id) {
     })
 }
 
-// 新增镜架型号
+// New frame model
 export function addType(data) {
     return request({
         url: '/glasses/type',
@@ -34,7 +34,7 @@ export function addType(data) {
     })
 }
 
-// 修改镜架型号
+// Modify the frame model
 export function updateType(data) {
     return request({
         url: '/glasses/type',
@@ -43,7 +43,7 @@ export function updateType(data) {
     })
 }
 
-// 删除镜架型号
+// Delete the mirror frame model
 export function delType(id) {
     return request({
         url: '/glasses/type/' + id,
@@ -51,7 +51,7 @@ export function delType(id) {
     })
 }
 
-// 导出镜架型号
+// Export the frame model
 export function exportType(query) {
     return request({
         url: '/glasses/type/export',

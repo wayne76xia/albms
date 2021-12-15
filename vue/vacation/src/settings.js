@@ -1,23 +1,23 @@
 module.exports = {
-    title: '假期预定管理系统',
+    title: 'Vacation reservation management system',
 
     /**
-     * 是否系统布局配置
+     * Whether the system layout is configured
      */
     showSettings: false,
 
     /**
-     * 是否显示 tagsView
+     * Whether or not shown tagsView
      */
     tagsView: true,
 
     /**
-     * 是否固定头部
+     * Fixed head or not
      */
     fixedHeader: false,
 
     /**
-     * 是否显示logo
+     * Whether or not shownlogo
      */
     sidebarLogo: true,
 

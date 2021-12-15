@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 /**
- * 调度任务信息操作处理
+ * Scheduling task information operation processing
  *
  */
 @RestController
@@ -28,7 +28,7 @@ public class SysJobController extends BaseController
     private ISysJobService jobService;
 
     /**
-     * 查询定时任务列表
+     * Example Query the scheduled task list
      */
     @PreAuthorize("@ss.hasPermi('monitor:job:list')")
     @GetMapping("/list")
@@ -40,20 +40,20 @@ public class SysJobController extends BaseController
     }
 
     /**
-     * 导出定时任务列表
+     * Example Export the scheduled task list
      */
     @PreAuthorize("@ss.hasPermi('monitor:job:export')")
-    @Log(title = "定时任务", businessType = BusinessType.EXPORT)
+    @Log(title = "Timing task", businessType = BusinessType.EXPORT)
     @GetMapping("/export")
     public AjaxResult export(SysJob sysJob)
     {
         List<SysJob> list = jobService.selectJobList(sysJob);
         ExcelUtil<SysJob> util = new ExcelUtil<SysJob>(SysJob.class);
-        return util.exportExcel(list, "定时任务");
+        return util.exportExcel(list, "Timing task");
     }
 
     /**
-     * 获取定时任务详细信息
+     * Obtain details about scheduled tasks
      */
     @PreAuthorize("@ss.hasPermi('monitor:job:query')")
     @GetMapping(value = "/{jobId}")
@@ -63,10 +63,10 @@ public class SysJobController extends BaseController
     }
 
     /**
-     * 新增定时任务
+     * Adding a Scheduled Task
      */
     @PreAuthorize("@ss.hasPermi('monitor:job:add')")
-    @Log(title = "定时任务", businessType = BusinessType.INSERT)
+    @Log(title = "Timing task", businessType = BusinessType.INSERT)
     @PostMapping
     public AjaxResult add(@RequestBody SysJob sysJob) throws SchedulerException, TaskException
     {
@@ -74,10 +74,10 @@ public class SysJobController extends BaseController
     }
 
     /**
-     * 修改定时任务
+     * Modifying a Scheduled Task
      */
     @PreAuthorize("@ss.hasPermi('monitor:job:edit')")
-    @Log(title = "定时任务", businessType = BusinessType.UPDATE)
+    @Log(title = "Timing task", businessType = BusinessType.UPDATE)
     @PutMapping
     public AjaxResult edit(@RequestBody SysJob sysJob) throws SchedulerException, TaskException
     {
@@ -85,10 +85,10 @@ public class SysJobController extends BaseController
     }
 
     /**
-     * 定时任务状态修改
+     * The scheduled task status is changed
      */
     @PreAuthorize("@ss.hasPermi('monitor:job:changeStatus')")
-    @Log(title = "定时任务", businessType = BusinessType.UPDATE)
+    @Log(title = "Timing task", businessType = BusinessType.UPDATE)
     @PutMapping("/changeStatus")
     public AjaxResult changeStatus(@RequestBody SysJob job) throws SchedulerException
     {
@@ -98,10 +98,10 @@ public class SysJobController extends BaseController
     }
 
     /**
-     * 定时任务立即执行一次
+     * The scheduled task is executed immediately
      */
     @PreAuthorize("@ss.hasPermi('monitor:job:changeStatus')")
-    @Log(title = "定时任务", businessType = BusinessType.UPDATE)
+    @Log(title = "Timing task", businessType = BusinessType.UPDATE)
     @PutMapping("/run")
     public AjaxResult run(@RequestBody SysJob job) throws SchedulerException
     {
@@ -110,10 +110,10 @@ public class SysJobController extends BaseController
     }
 
     /**
-     * 删除定时任务
+     * Deleting a Scheduled Task
      */
     @PreAuthorize("@ss.hasPermi('monitor:job:remove')")
-    @Log(title = "定时任务", businessType = BusinessType.DELETE)
+    @Log(title = "Timing task", businessType = BusinessType.DELETE)
     @DeleteMapping("/{jobIds}")
     public AjaxResult remove(@PathVariable Long[] jobIds) throws SchedulerException, TaskException
     {

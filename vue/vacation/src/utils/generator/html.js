@@ -8,8 +8,8 @@ export function dialogWrapper(str) {
   return `<el-dialog v-bind="$attrs" v-on="$listeners" @open="onOpen" @close="onClose" title="Dialog Titile">
     ${str}
     <div slot="footer">
-      <el-button @click="close">取消</el-button>
-      <el-button type="primary" @click="handelConfirm">确定</el-button>
+      <el-button @click="close">cancel</el-button>
+      <el-button type="primary" @click="handelConfirm">determine</el-button>
     </div>
   </el-dialog>`
 }
@@ -56,8 +56,8 @@ function buildFromBtns(conf, type) {
   let str = ''
   if (conf.formBtns && type === 'file') {
     str = `<el-form-item size="large">
-          <el-button type="primary" @click="submitForm">提交</el-button>
-          <el-button @click="resetForm">重置</el-button>
+          <el-button type="primary" @click="submitForm">submit</el-button>
+          <el-button @click="resetForm">reset</el-button>
         </el-form-item>`
     if (someSpanIsNot24) {
       str = `<el-col :span="24">
@@ -68,7 +68,7 @@ function buildFromBtns(conf, type) {
   return str
 }
 
-// span不为24的用el-col包裹
+// spanDon't for24useel-colThe parcel
 function colWrapper(element, str) {
   if (someSpanIsNot24 || element.span !== 24) {
     return `<el-col :span="${element.span}">
@@ -123,7 +123,7 @@ const tags = {
       : ''
     let child = buildElInputChild(el)
 
-    if (child) child = `\n${child}\n` // 换行
+    if (child) child = `\n${child}\n` // A newline
     return `<${el.tag} ${vModel} ${type} ${placeholder} ${maxlength} ${showWordLimit} ${readonly} ${disabled} ${clearable} ${prefixIcon} ${suffixIcon} ${showPassword} ${autosize} ${width}>${child}</${el.tag}>`
   },
   'el-input-number': el => {
@@ -145,7 +145,7 @@ const tags = {
     const multiple = el.multiple ? 'multiple' : ''
     let child = buildElSelectChild(el)
 
-    if (child) child = `\n${child}\n` // 换行
+    if (child) child = `\n${child}\n` // A newline
     return `<${el.tag} ${vModel} ${placeholder} ${disabled} ${multiple} ${filterable} ${clearable} ${width}>${child}</${el.tag}>`
   },
   'el-radio-group': el => {
@@ -153,7 +153,7 @@ const tags = {
     const size = `size="${el.size}"`
     let child = buildElRadioGroupChild(el)
 
-    if (child) child = `\n${child}\n` // 换行
+    if (child) child = `\n${child}\n` // A newline
     return `<${el.tag} ${vModel} ${size} ${disabled}>${child}</${el.tag}>`
   },
   'el-checkbox-group': el => {
@@ -163,7 +163,7 @@ const tags = {
     const max = el.max ? `:max="${el.max}"` : ''
     let child = buildElCheckboxGroupChild(el)
 
-    if (child) child = `\n${child}\n` // 换行
+    if (child) child = `\n${child}\n` // A newline
     return `<${el.tag} ${vModel} ${min} ${max} ${size} ${disabled}>${child}</${el.tag}>`
   },
   'el-switch': el => {
@@ -257,7 +257,7 @@ const tags = {
     const ref = `ref="${el.vModel}"`
     let child = buildElUploadChild(el)
 
-    if (child) child = `\n${child}\n` // 换行
+    if (child) child = `\n${child}\n` // A newline
     return `<${el.tag} ${ref} ${fileList} ${action} ${autoUpload} ${multiple} ${beforeUpload} ${listType} ${accept} ${name} ${disabled}>${child}</${el.tag}>`
   }
 }
@@ -316,7 +316,7 @@ function buildElUploadChild(conf) {
   const list = []
   if (conf['list-type'] === 'picture-card') list.push('<i class="el-icon-plus"></i>')
   else list.push(`<el-button size="small" type="primary" icon="el-icon-upload">${conf.buttonText}</el-button>`)
-  if (conf.showTip) list.push(`<div slot="tip" class="el-upload__tip">只能上传不超过 ${conf.fileSize}${conf.sizeUnit} 的${conf.accept}文件</div>`)
+  if (conf.showTip) list.push(`<div slot="tip" class="el-upload__tip">Can only upload no more than ${conf.fileSize}${conf.sizeUnit} the${conf.accept}file</div>`)
   return list.join('\n')
 }
 

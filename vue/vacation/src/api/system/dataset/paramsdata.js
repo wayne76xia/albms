@@ -1,6 +1,6 @@
 import request from '@/utils/request'
 
-// 查询参数设置列表
+// Example Query the parameter list
 export function listParamsData(query) {
   return request({
     url: '/vacation/paramsData/list',
@@ -9,7 +9,7 @@ export function listParamsData(query) {
   })
 }
 
-// 查询参数设置详细
+// Query parameter Settings in detail
 export function getParamsData(id) {
   return request({
     url: '/vacation/paramsData/' + id,
@@ -17,7 +17,7 @@ export function getParamsData(id) {
   })
 }
 
-// 查询参数设置详细
+// Query parameter Settings in detail
 export function getBackGroundPic(id) {
   return request({
     url: '/vacation/paramsData/backGroundPic/' + id,
@@ -25,7 +25,7 @@ export function getBackGroundPic(id) {
   })
 }
 
-// 新增参数设置
+// New Parameter Settings
 export function addParamsData(data) {
   return request({
     url: '/vacation/paramsData',
@@ -34,7 +34,7 @@ export function addParamsData(data) {
   })
 }
 
-// 修改参数设置
+// Modifying Parameter Settings
 export function updateParamsData(data) {
   return request({
     url: '/vacation/paramsData',
@@ -43,7 +43,7 @@ export function updateParamsData(data) {
   })
 }
 
-// 查询参数设置详细
+// Query parameter Settings in detail
 export function updateBackGroundPic(data) {
   return request({
     url: '/vacation/paramsData/backGroundPic',
@@ -52,7 +52,7 @@ export function updateBackGroundPic(data) {
   })
 }
 
-// 删除参数设置
+// Delete parameter Settings
 export function delParamsData(id) {
   return request({
     url: '/vacation/paramsData/' + id,
@@ -60,7 +60,7 @@ export function delParamsData(id) {
   })
 }
 
-// 导出参数设置
+// Export Parameter Settings
 export function exportParamsData(query) {
   return request({
     url: '/vacation/paramsData/export',

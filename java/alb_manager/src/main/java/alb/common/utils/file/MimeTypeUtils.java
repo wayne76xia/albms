@@ -1,7 +1,7 @@
 package alb.common.utils.file;
 
 /**
- * 媒体类型工具类
+ * Media type utility classes
  *
  */
 public class MimeTypeUtils
@@ -24,11 +24,11 @@ public class MimeTypeUtils
             "asf", "rm", "rmvb" };
 
     public static final String[] DEFAULT_ALLOWED_EXTENSION = {
-            // 图片
+            // The picture
             "bmp", "gif", "jpg", "jpeg", "png",
             // word excel powerpoint
             "doc", "docx", "xls", "xlsx", "ppt", "pptx", "html", "htm", "txt",
-            // 压缩文件
+            // The compressed file
             "rar", "zip", "gz", "bz2",
             // pdf
             "pdf" };

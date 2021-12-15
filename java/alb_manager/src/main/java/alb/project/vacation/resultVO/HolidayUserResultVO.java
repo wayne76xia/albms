@@ -13,12 +13,12 @@ import lombok.*;
 public class HolidayUserResultVO {
 
     /**
-     * 用户ID
+     * The userID
      */
     private Long userId;
 
     /**
-     * 用户昵称(工号)
+     * The user nickname(Work number)
      */
     private String displayName;
 

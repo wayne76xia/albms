@@ -3,7 +3,7 @@ package alb.common.exception.user;
 import alb.common.exception.BaseException;
 
 /**
- * 用户信息异常类
+ * User information exception class
  *
  */
 public class UserException extends BaseException

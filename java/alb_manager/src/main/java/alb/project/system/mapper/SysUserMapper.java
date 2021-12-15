@@ -6,112 +6,112 @@ import org.apache.ibatis.annotations.Param;
 import java.util.List;
 
 /**
- * 用户表 数据层
+ * The users table The data layer
  *
  */
 public interface SysUserMapper {
     /**
-     * 根据条件分页查询用户列表
+     * Query the user list by conditional paging
      *
-     * @param sysUser 用户信息
-     * @return 用户信息集合信息
+     * @param sysUser The user information
+     * @return User information Set information
      */
     List<SysUser> selectUserList(SysUser sysUser);
 
     /**
-     * 通过用户名查询用户
+     * Query users by user name
      *
-     * @param userName 用户名
-     * @return 用户对象信息
+     * @param userName The user name
+     * @return User Object Information
      */
     SysUser selectUserByUserName(String userName);
 
     /**
-     * 通过用户ID查询用户
+     * By the userIDQuery the user
      *
-     * @param userId 用户ID
-     * @return 用户对象信息
+     * @param userId The userID
+     * @return User Object Information
      */
     SysUser selectUserById(Long userId);
 
     /**
-     * 通过用户工号查询用户
+     * Query users by user ID
      * @param userCode
      * @return
      */
     SysUser selectUserByUserCode(String userCode);
 
     /**
-     * 新增用户信息
+     * Adding User Information
      *
-     * @param user 用户信息
-     * @return 结果
+     * @param user The user information
+     * @return The results of
      */
     int insertUser(SysUser user);
 
     /**
-     * 修改用户信息
+     * Modifying User Information
      *
-     * @param user 用户信息
-     * @return 结果
+     * @param user The user information
+     * @return The results of
      */
     int updateUser(SysUser user);
 
     /**
-     * 修改用户头像
+     * Modifying a User's Profile picture
      *
-     * @param userName 用户名
-     * @param avatar   头像地址
-     * @return 结果
+     * @param userName The user name
+     * @param avatar   Head address
+     * @return The results of
      */
     int updateUserAvatar(@Param("userName") String userName, @Param("avatar") String avatar);
 
     /**
-     * 重置用户密码
+     * Resetting a user password
      *
-     * @param userName 用户名
-     * @param password 密码
-     * @return 结果
+     * @param userName The user name
+     * @param password password
+     * @return The results of
      */
     int resetUserPwd(@Param("userName") String userName, @Param("password") String password);
 
     /**
-     * 通过用户ID删除用户
+     * By the userIDDelete user
      *
-     * @param userId 用户ID
-     * @return 结果
+     * @param userId The userID
+     * @return The results of
      */
     int deleteUserById(Long userId);
 
     /**
-     * 批量删除用户信息
+     * Delete user information in batches
      *
-     * @param userIds 需要删除的用户ID
-     * @return 结果
+     * @param userIds The user to be deletedID
+     * @return The results of
      */
     int deleteUserByIds(Long[] userIds);
 
     /**
-     * 校验用户名称是否唯一
+     * Verify that the user name is unique
      *
-     * @param userName 用户名称
-     * @return 结果
+     * @param userName The user name
+     * @return The results of
      */
     int checkUserNameUnique(String userName);
 
     /**
-     * 校验手机号码是否唯一
+     * Verify that the mobile phone number is unique
      *
-     * @param phonenumber 手机号码
-     * @return 结果
+     * @param phonenumber Mobile phone number
+     * @return The results of
      */
     SysUser checkPhoneUnique(String phonenumber);
 
     /**
-     * 校验email是否唯一
+     * checkemailWhether or not the only
      *
-     * @param email 用户邮箱
-     * @return 结果
+     * @param email User mailbox
+     * @return The results of
      */
     SysUser checkEmailUnique(String email);
 
@@ -120,7 +120,7 @@ public interface SysUserMapper {
     List<SysUser> selectDeptEmployeesList(@Param("deptId") Long deptId);
 
     /**
-     * 根据月份获取员工数量
+     * Get the number of employees by month
      *
      * @param month
      * @return
@@ -128,7 +128,7 @@ public interface SysUserMapper {
     Integer getTotalNumByMonth(@Param("month") String month);
 
     /**
-     * 根据月份验光师数量
+     * According to the number of optometrists per month
      *
      * @param month
      * @return
@@ -136,19 +136,19 @@ public interface SysUserMapper {
     Integer getTotalOptometristNumByMonth(@Param("month") String month);
 
     /**
-     * 获取所有用户数量
+     * Get all user numbers
      * @return
      */
     Integer getTotalNum();
 
     /**
-     * 获取所有验光师数量
+     * Get all optometrists
      * @return
      */
     Integer getTotalOptometristNum();
 
     /**
-     * 获取最新的用户工号
+     * Get the latest user id
      * @return
      */
     Integer getLastUserCode();

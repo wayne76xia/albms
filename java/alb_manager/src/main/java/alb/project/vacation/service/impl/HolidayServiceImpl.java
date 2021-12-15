@@ -13,7 +13,7 @@ import javax.annotation.Resource;
 import java.util.List;
 
 /**
- * 假期表(Holiday)表服务实现类
+ * Holiday table(Holiday)Table service implementation class
  */
 @Service("holidayService")
 public class HolidayServiceImpl implements IHolidayService {
@@ -24,10 +24,10 @@ public class HolidayServiceImpl implements IHolidayService {
     private HolidayItemMapper holidayItemMapper;
 
     /**
-     * 查询单条数据
+     * Example Query a single piece of data
      *
-     * @param holidayId 实例对象
-     * @return 实例对象
+     * @param holidayId Instance objects
+     * @return Instance objects
      */
     @Override
     public Holiday queryOne(Long holidayId) {
@@ -40,7 +40,7 @@ public class HolidayServiceImpl implements IHolidayService {
     }
 
     /**
-     * 查询多条数据
+     * Querying multiple pieces of Data
      *
      * @param holiday
      * @return
@@ -58,10 +58,10 @@ public class HolidayServiceImpl implements IHolidayService {
     }
 
     /**
-     * 新增数据
+     * The new data
      *
-     * @param holiday 实例对象
-     * @return 实例对象
+     * @param holiday Instance objects
+     * @return Instance objects
      */
     @Override
     public int insert(Holiday holiday) {
@@ -69,10 +69,10 @@ public class HolidayServiceImpl implements IHolidayService {
     }
 
     /**
-     * 修改数据
+     * Modify the data
      *
-     * @param holiday 实例对象
-     * @return 实例对象
+     * @param holiday Instance objects
+     * @return Instance objects
      */
     @Override
     public int update(Holiday holiday) {
@@ -80,10 +80,10 @@ public class HolidayServiceImpl implements IHolidayService {
     }
 
     /**
-     * 通过主键删除数据
+     * Delete data by primary key
      *
-     * @param holidayId 主键
-     * @return 是否成功
+     * @param holidayId A primary key
+     * @return The success of
      */
     @Override
     public int deleteById(Long holidayId) {
@@ -93,10 +93,10 @@ public class HolidayServiceImpl implements IHolidayService {
     }
 
     /**
-     * 查询用户列表
+     * Querying a User List
      *
-     * @param holidayUserParamsVO 实例对象
-     * @return 实例对象
+     * @param holidayUserParamsVO Instance objects
+     * @return Instance objects
      */
     @Override
     public List<HolidayUserResultVO> selectUserList(HolidayUserParamsVO holidayUserParamsVO){

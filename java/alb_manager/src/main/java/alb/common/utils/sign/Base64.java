@@ -1,7 +1,7 @@
 package alb.common.utils.sign;
 
 /**
- * Base64工具类
+ * Base64Utility class
  *
  */
 public final class Base64

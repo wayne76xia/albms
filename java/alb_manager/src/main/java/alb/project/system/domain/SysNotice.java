@@ -8,26 +8,26 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
 /**
- * 通知公告表 sys_notice
+ * Notice form sys_notice
  *
  */
 public class SysNotice extends BaseEntity
 {
     private static final long serialVersionUID = 1L;
 
-    /** 公告ID */
+    /** The announcementID */
     private Long noticeId;
 
-    /** 公告标题 */
+    /** The announcement title */
     private String noticeTitle;
 
-    /** 公告类型（1通知 2公告） */
+    /** The announcement type(1notice 2The announcement) */
     private String noticeType;
 
-    /** 公告内容 */
+    /** Content of the announcement */
     private String noticeContent;
 
-    /** 公告状态（0正常 1关闭） */
+    /** The announcement state(0normal 1Shut down) */
     private String status;
 
     public Long getNoticeId()
@@ -45,8 +45,8 @@ public class SysNotice extends BaseEntity
         this.noticeTitle = noticeTitle;
     }
 
-    @NotBlank(message = "公告标题不能为空")
-    @Size(min = 0, max = 50, message = "公告标题不能超过50个字符")
+    @NotBlank(message = "The announcement title cannot be empty")
+    @Size(min = 0, max = 50, message = "The announcement title cannot exceed50A character")
     public String getNoticeTitle()
     {
         return noticeTitle;

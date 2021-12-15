@@ -1,43 +1,43 @@
 package alb.framework.web.domain.server;
 
 /**
- * 系统文件相关信息
+ * Information about system files
  *
  */
 public class SysFile
 {
     /**
-     * 盘符路径
+     * Drive path
      */
     private String dirName;
 
     /**
-     * 盘符类型
+     * Drive type
      */
     private String sysTypeName;
 
     /**
-     * 文件类型
+     * The file type
      */
     private String typeName;
 
     /**
-     * 总大小
+     * Total size
      */
     private String total;
 
     /**
-     * 剩余大小
+     * The remaining size
      */
     private String free;
 
     /**
-     * 已经使用量
+     * Already used
      */
     private String used;
 
     /**
-     * 资源的使用率
+     * Resource usage
      */
     private double usage;
 

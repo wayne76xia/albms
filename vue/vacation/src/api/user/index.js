@@ -1,13 +1,13 @@
 import request from '@/utils/request'
 
-// 查询生成表数据
+// Query the generated table data
 export function getAllSubsidiaryCompany() {
     return request({
         url: '/system/dept/getAllSubsidiaryCompany',
         method: 'get',
     })
 }
-// 子公司列表数据
+// Subsidiary list data
 export function subsidiaryCompanyList(data) {
     console.log(data)
     return request({
@@ -16,7 +16,7 @@ export function subsidiaryCompanyList(data) {
         params: data
     })
 }
-// 子公司列表数据导出
+// Export subsidiary list data
 export function subsidiaryCompanyListExport(data) {
     console.log(data)
     return request({
@@ -26,7 +26,7 @@ export function subsidiaryCompanyListExport(data) {
     })
 }
 
-// 下载子公司导入模板
+// Download the subsidiary import template
 export function importTemplate() {
     return request({
         url: '/system/dept/importTemplate',
@@ -34,7 +34,7 @@ export function importTemplate() {
     })
 }
 
-// 子公司详细信息
+// Subsidiary Details
 export function subsidiaryCompanyInfo(deptId) {
     return request({
         url: '/system/dept/subsidiaryCompanyInfo',
@@ -42,7 +42,7 @@ export function subsidiaryCompanyInfo(deptId) {
         params: { deptId }
     })
 }
-// 查询用户详情
+// Querying User Details
 export function userInfo(userId) {
     return request({
         url: '/system/user/userInfo',
@@ -52,7 +52,7 @@ export function userInfo(userId) {
 }
 
 
-// 根据子公司id查询门店列表
+// According to the subsidiaryidQuery store list
 export function getShop(ids) {
     return request({
         url: '/commonApi/getShopListByCompanyIds?ids=' + ids,
@@ -63,8 +63,8 @@ export function getShop(ids) {
 
 
 
-// 门店接口
-// 获取门店列表
+// Store interface
+// Get store list
 export function shopList(data) {
     return request({
         url: '/system/dept/shopList',
@@ -73,7 +73,7 @@ export function shopList(data) {
     })
 }
 
-// 查询门店信息
+// Querying store information
 export function shopQuery(deptId) {
     return request({
         url: '/system/dept/' + deptId,
@@ -81,7 +81,7 @@ export function shopQuery(deptId) {
     })
 }
 
-// 门店详细信息
+// Store Details
 export function shopInfo(deptId) {
     return request({
         url: '/system/dept/shopInfo',
@@ -89,7 +89,7 @@ export function shopInfo(deptId) {
         params: { deptId }
     })
 }
-// 新增门店
+// The new store
 export function addShop(data) {
     return request({
         url: '/system/dept',
@@ -98,7 +98,7 @@ export function addShop(data) {
     })
 }
 
-// 修改门店
+// Modify the stores
 export function updateShop(data) {
     return request({
         url: '/system/dept',
@@ -106,14 +106,14 @@ export function updateShop(data) {
         data: data
     })
 }
-// 删除门店
+// Delete stores
 export function delShop(id) {
     return request({
         url: '/system/dept/' + id,
         method: 'delete'
     })
 }
-// 下载门店导入模板
+// Download the store import template
 export function importShopTemplate(data) {
     return request({
         url: '/system/dept/importShopTemplate',
@@ -121,7 +121,7 @@ export function importShopTemplate(data) {
         params: data
     })
 }
-// 门店数据导出
+// Store data Export
 export function shopListExport(data) {
     console.log(data)
     return request({
@@ -132,7 +132,7 @@ export function shopListExport(data) {
 }
 
 
-// 获取部门下员工列表
+// Obtain the list of employees in the department
 export function deptEmployeesList(deptId) {
     return request({
         url: '/system/dept/deptEmployeesList?deptId=' + deptId,

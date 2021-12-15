@@ -1,58 +1,58 @@
 package alb.framework.aspectj.lang.enums;
 
 /**
- * 业务操作类型
+ * Business operation type
  *
  */
 public enum BusinessType
 {
     /**
-     * 其它
+     * other
      */
     OTHER,
 
     /**
-     * 新增
+     * new
      */
     INSERT,
 
     /**
-     * 修改
+     * Modify the
      */
     UPDATE,
 
     /**
-     * 删除
+     * delete
      */
     DELETE,
 
     /**
-     * 授权
+     * authorization
      */
     GRANT,
 
     /**
-     * 导出
+     * export
      */
     EXPORT,
 
     /**
-     * 导入
+     * The import
      */
     IMPORT,
 
     /**
-     * 强退
+     * Strong back
      */
     FORCE,
 
     /**
-     * 生成代码
+     * The generated code
      */
     GENCODE,
     
     /**
-     * 清空数据
+     * Empty data
      */
     CLEAN,
 }

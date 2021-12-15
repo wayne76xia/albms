@@ -69,7 +69,7 @@ export default {
           orient: "vertical",
           left: 140,
           bottom: 20,
-          selectedMode: false, //取消图例上的点击事件
+          selectedMode: false, //Cancel the click event on the legend
           itemWidth: 9,
           itemHeight: 9,
           // formatter: function (name) {
@@ -82,7 +82,7 @@ export default {
           //     }
           //   }
           //   return (
-          //     name + "\t\t\t" + target + "同上月对比"
+          //     name + "\t\t\t" + target + "Comparison with last month"
           //   );
           // },
         },
@@ -92,16 +92,16 @@ export default {
           orient: "vertical",
           left: 40,
           bottom: 120,
-          selectedMode: false, //取消图例上的点击事件
+          selectedMode: false, //Cancel the click event on the legend
           itemWidth: 9,
           itemHeight: 9,
-          data:["镜架", "成镜", "兑换商品", "赠送商品"],
+          data:["frame", "As a mirror", "For goods", "Free goods"],
         },
 
-        //环形颜色
+        //Color ring
         color: ["#4860FB", "#5ECC59", "#745BEB", "#E8522A"],
         
-        // 设置环形中间的数据
+        // Sets the data in the middle of the ring
         graphic: [
           {
             type: "text",
@@ -110,7 +110,7 @@ export default {
             z: 10,
             style: {
               fill: "#717880",
-              text: this.data_num + "\n商品总数",
+              text: this.data_num + "\nThe total number of goods",
               font: "16px Microsoft YaHei",
               textAlign: "middle",
               textVerticalAlign: "middle",
@@ -120,17 +120,17 @@ export default {
         series: [
           {
             hoverAnimation: false,
-            name: "商品占比分析",
+            name: "Commodity proportion analysis",
             type: "pie",
-             radius: ["35%", "48%"], //两个表示环：内半径,外半径
-            center: ["65%", "48%"], //左右，上下
+             radius: ["35%", "48%"], //Two representation rings:Within a radius of,Outer radius
+            center: ["65%", "48%"], //Or so,Up and down
             avoidLabelOverlap: true,
             label: {
               normal: {
                 show: false,
                 position: "outer",
-                //模板变量有 {a}, {b}，{c}，{d}，{e}，分别表示系列名，数据名，数据值等。
-                formatter: "{c_set|{c}\t\t}人" + "\n\n占比{d}%",
+                //The template variables have {a}, {b},{c},{d},{e},Respectively indicate the series names,The data of,The data values etc.。
+                formatter: "{c_set|{c}\t\t}people" + "\n\nAccounted for{d}%",
                 borderWidth: 20,
                 borderRadius: 4,
                 padding: [90, -50],
@@ -152,7 +152,7 @@ export default {
               //   },
               // },
             },
-            //牵引线条颜色
+            //Color of traction line
             // labelLine: {
             //   normal: {
             //     show: false,

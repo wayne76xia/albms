@@ -5,7 +5,7 @@
 #if($column.query)
 #set($dictType=$column.dictType)
 #set($AttrName=$column.javaField.substring(0,1).toUpperCase() + ${column.javaField.substring(1)})
-#set($parentheseIndex=$column.columnComment.indexOf("（"))
+#set($parentheseIndex=$column.columnComment.indexOf("("))
 #if($parentheseIndex != -1)
 #set($comment=$column.columnComment.substring(0, $parentheseIndex))
 #else
@@ -15,7 +15,7 @@
       <el-form-item label="${comment}" prop="${column.javaField}">
         <el-input
           v-model="queryParams.${column.javaField}"
-          placeholder="请输入${comment}"
+          placeholder="Please enter the${comment}"
           clearable
           size="small"
           @keyup.enter.native="handleQuery"
@@ -23,7 +23,7 @@
       </el-form-item>
 #elseif(($column.htmlType == "select" || $column.htmlType == "radio") && "" != $dictType)
       <el-form-item label="${comment}" prop="${column.javaField}">
-        <el-select v-model="queryParams.${column.javaField}" placeholder="请选择${comment}" clearable size="small">
+        <el-select v-model="queryParams.${column.javaField}" placeholder="Please select a${comment}" clearable size="small">
           <el-option
             v-for="dict in ${column.javaField}Options"
             :key="dict.dictValue"
@@ -34,8 +34,8 @@
       </el-form-item>
 #elseif(($column.htmlType == "select" || $column.htmlType == "radio") && $dictType)
       <el-form-item label="${comment}" prop="${column.javaField}">
-        <el-select v-model="queryParams.${column.javaField}" placeholder="请选择${comment}" clearable size="small">
-          <el-option label="请选择字典生成" value="" />
+        <el-select v-model="queryParams.${column.javaField}" placeholder="Please select a${comment}" clearable size="small">
+          <el-option label="Select dictionary generation" value="" />
         </el-select>
       </el-form-item>
 #elseif($column.htmlType == "datetime")
@@ -44,7 +44,7 @@
           v-model="queryParams.${column.javaField}"
           type="date"
           value-format="yyyy-MM-dd"
-          placeholder="选择${comment}">
+          placeholder="choose${comment}">
         </el-date-picker>
       </el-form-item>
 #end
@@ -57,7 +57,7 @@
           icon="el-icon-search"
           size="mini"
           @click="handleQuery"
-        >搜索</el-button>
+        >search</el-button>
         <el-button
           class="filter-item"
           type="primary"
@@ -65,7 +65,7 @@
           size="mini"
           @click="handleAdd"
           v-hasPermi="['${moduleName}:${businessName}:add']"
-        >新增</el-button>
+        >new</el-button>
       </el-form-item>
     </el-form>
 
@@ -78,7 +78,7 @@
     >
 #foreach($column in $columns)
 #set($javaField=$column.javaField)
-#set($parentheseIndex=$column.columnComment.indexOf("（"))
+#set($parentheseIndex=$column.columnComment.indexOf("("))
 #if($parentheseIndex != -1)
 #set($comment=$column.columnComment.substring(0, $parentheseIndex))
 #else
@@ -97,7 +97,7 @@
       <el-table-column label="${comment}" align="center" prop="${javaField}" />
 #end
 #end
-      <el-table-column label="操作" align="center" class-name="small-padding fixed-width">
+      <el-table-column label="operation" align="center" class-name="small-padding fixed-width">
         <template slot-scope="scope">
           <el-button
             size="mini"
@@ -105,26 +105,26 @@
             icon="el-icon-edit"
             @click="handleUpdate(scope.row)"
             v-hasPermi="['${moduleName}:${businessName}:edit']"
-          >修改</el-button>
+          >Modify the</el-button>
           <el-button
             size="mini"
             type="text"
             icon="el-icon-delete"
             @click="handleDelete(scope.row)"
             v-hasPermi="['${moduleName}:${businessName}:remove']"
-          >删除</el-button>
+          >delete</el-button>
         </template>
       </el-table-column>
     </el-table>
 
-    <!-- 添加或修改${functionName}对话框 -->
+    <!-- Add or modify${functionName}dialog -->
     <el-dialog :title="title" :visible.sync="open" width="500px" append-to-body>
       <el-form ref="form" :model="form" :rules="rules" label-width="80px">
 #foreach($column in $columns)
 #set($field=$column.javaField)
 #if($column.insert && !$column.pk)
 #if(($column.usableColumn) || (!$column.superColumn))
-#set($parentheseIndex=$column.columnComment.indexOf("（"))
+#set($parentheseIndex=$column.columnComment.indexOf("("))
 #if($parentheseIndex != -1)
 #set($comment=$column.columnComment.substring(0, $parentheseIndex))
 #else
@@ -133,15 +133,15 @@
 #set($dictType=$column.dictType)
 #if("" != $treeParentCode && $column.javaField == $treeParentCode)
         <el-form-item label="${comment}" prop="${treeParentCode}">
-          <treeselect v-model="form.${treeParentCode}" :options="${businessName}Options" :normalizer="normalizer" placeholder="请选择${comment}" />
+          <treeselect v-model="form.${treeParentCode}" :options="${businessName}Options" :normalizer="normalizer" placeholder="Please select a${comment}" />
         </el-form-item>
 #elseif($column.htmlType == "input")
         <el-form-item label="${comment}" prop="${field}">
-          <el-input v-model="form.${field}" placeholder="请输入${comment}" />
+          <el-input v-model="form.${field}" placeholder="Please enter the${comment}" />
         </el-form-item>
 #elseif($column.htmlType == "select" && "" != $dictType)
         <el-form-item label="${comment}">
-          <el-select v-model="form.${field}" placeholder="请选择${comment}">
+          <el-select v-model="form.${field}" placeholder="Please select a${comment}">
             <el-option
               v-for="dict in ${field}Options"
               :key="dict.dictValue"
@@ -153,8 +153,8 @@
         </el-form-item>
 #elseif($column.htmlType == "select" && $dictType)
         <el-form-item label="${comment}">
-          <el-select v-model="form.${field}" placeholder="请选择${comment}">
-            <el-option label="请选择字典生成" value="" />
+          <el-select v-model="form.${field}" placeholder="Please select a${comment}">
+            <el-option label="Select dictionary generation" value="" />
           </el-select>
         </el-form-item>
 #elseif($column.htmlType == "radio" && "" != $dictType)
@@ -171,7 +171,7 @@
 #elseif($column.htmlType == "radio" && $dictType)
         <el-form-item label="${comment}">
           <el-radio-group v-model="form.${field}">
-            <el-radio label="1">请选择字典生成</el-radio>
+            <el-radio label="1">Select dictionary generation</el-radio>
           </el-radio-group>
         </el-form-item>
 #elseif($column.htmlType == "datetime")
@@ -180,12 +180,12 @@
             v-model="form.${field}"
             type="date"
             value-format="yyyy-MM-dd"
-            placeholder="选择${comment}">
+            placeholder="choose${comment}">
           </el-date-picker>
         </el-form-item>
 #elseif($column.htmlType == "textarea")
         <el-form-item label="${comment}" prop="${field}">
-          <el-input v-model="form.${field}" type="textarea" placeholder="请输入内容" />
+          <el-input v-model="form.${field}" type="textarea" placeholder="Please enter the content" />
         </el-form-item>
 #end
 #end
@@ -193,8 +193,8 @@
 #end
       </el-form>
       <div slot="footer" class="dialog-footer">
-        <el-button type="primary" @click="submitForm">确 定</el-button>
-        <el-button @click="cancel">取 消</el-button>
+        <el-button type="primary" @click="submitForm">indeed set</el-button>
+        <el-button @click="cancel">take eliminate</el-button>
       </div>
     </el-dialog>
   </div>
@@ -210,29 +210,29 @@ export default {
   components: { Treeselect },
   data() {
     return {
-      // 遮罩层
+      // The mask layer
       loading: true,
-      // ${functionName}表格数据
+      // ${functionName}Tabular data
       ${businessName}List: [],
-      // ${functionName}树选项
+      // ${functionName}The tree options
       ${businessName}Options: [],
-      // 弹出层标题
+      // Pop-up layer title
       title: "",
-      // 是否显示弹出层
+      // Whether to display the pop-up layer
       open: false,
 #foreach ($column in $columns)
-#set($parentheseIndex=$column.columnComment.indexOf("（"))
+#set($parentheseIndex=$column.columnComment.indexOf("("))
 #if($parentheseIndex != -1)
 #set($comment=$column.columnComment.substring(0, $parentheseIndex))
 #else
 #set($comment=$column.columnComment)
 #end
 #if(${column.dictType} != '')
-      // $comment字典
+      // $commentThe dictionary
       ${column.javaField}Options: [],
 #end
 #end
-      // 查询参数
+      // Query parameters
       queryParams: {
 #foreach ($column in $columns)
 #if($column.query)
@@ -241,13 +241,13 @@ export default {
 #end
 #end
       },
-      // 表单参数
+      // The form parameter
       form: {},
-      // 表单校验
+      // Form validation
       rules: {
 #foreach ($column in $columns)
 #if($column.required)
-#set($parentheseIndex=$column.columnComment.indexOf("（"))
+#set($parentheseIndex=$column.columnComment.indexOf("("))
 #if($parentheseIndex != -1)
 #set($comment=$column.columnComment.substring(0, $parentheseIndex))
 #else
@@ -255,7 +255,7 @@ export default {
 #end
 #set($comment=$column.columnComment)
         $column.javaField: [
-          { required: true, message: "$comment不能为空", trigger: "blur" }
+          { required: true, message: "$commentCan't be empty", trigger: "blur" }
         ]#if($velocityCount != $columns.size()),#end
 
 #end
@@ -274,7 +274,7 @@ export default {
 #end
   },
   methods: {
-    /** 查询${functionName}列表 */
+    /** The query${functionName}The list of */
     getList() {
       this.loading = true;
       list${BusinessName}(this.queryParams).then(response => {
@@ -282,7 +282,7 @@ export default {
         this.loading = false;
       });
     },
-    /** 转换${functionName}数据结构 */
+    /** conversion${functionName}The data structure */
     normalizer(node) {
       if (node.children && !node.children.length) {
         delete node.children;
@@ -293,35 +293,35 @@ export default {
         children: node.children
       };
     },
-	/** 查询部门下拉树结构 */
+	/** Query the department drop-down tree structure */
     getTreeselect() {
       list${BusinessName}().then(response => {
         this.${businessName}Options = [];
-        const data = { ${treeCode}: 0, ${treeName}: '顶级节点', children: [] };
+        const data = { ${treeCode}: 0, ${treeName}: 'The top node', children: [] };
         data.children = this.handleTree(response.data, "${treeCode}", "${treeParentCode}");
         this.${businessName}Options.push(data);
       });
     },
 #foreach ($column in $columns)
 #if(${column.dictType} != '')
-#set($parentheseIndex=$column.columnComment.indexOf("（"))
+#set($parentheseIndex=$column.columnComment.indexOf("("))
 #if($parentheseIndex != -1)
 #set($comment=$column.columnComment.substring(0, $parentheseIndex))
 #else
 #set($comment=$column.columnComment)
 #end
-    // $comment字典翻译
+    // $commentThe dictionary translation
     ${column.javaField}Format(row, column) {
       return this.selectDictLabel(this.${column.javaField}Options, row.${column.javaField});
     },
 #end
 #end
-    // 取消按钮
+    // Cancel button
     cancel() {
       this.open = false;
       this.reset();
     },
-    // 表单重置
+    // Reset the form
     reset() {
       this.form = {
 #foreach ($column in $columns)
@@ -336,23 +336,23 @@ export default {
       };
       this.resetForm("form");
     },
-    /** 搜索按钮操作 */
+    /** Search button operation */
     handleQuery() {
       this.getList();
     },
-    /** 重置按钮操作 */
+    /** Reset button operation */
     resetQuery() {
       this.resetForm("queryForm");
       this.handleQuery();
     },
-    /** 新增按钮操作 */
+    /** New Button Operation */
     handleAdd() {
       this.reset();
 	  this.getTreeselect();
       this.open = true;
-      this.title = "添加${functionName}";
+      this.title = "add${functionName}";
     },
-    /** 修改按钮操作 */
+    /** Modify button operation */
     handleUpdate(row) {
       this.reset();
 	  this.getTreeselect();
@@ -362,17 +362,17 @@ export default {
       get${BusinessName}(row.${pkColumn.javaField}).then(response => {
         this.form = response.data;
         this.open = true;
-        this.title = "修改${functionName}";
+        this.title = "Modify the${functionName}";
       });
     },
-    /** 提交按钮 */
+    /** The submit button */
     submitForm: function() {
       this.#[[$]]#refs["form"].validate(valid => {
         if (valid) {
           if (this.form.${pkColumn.javaField} != undefined) {
             update${BusinessName}(this.form).then(response => {
               if (response.code === 200) {
-                this.msgSuccess("修改成功");
+                this.msgSuccess("Modify the success");
                 this.open = false;
                 this.getList();
               }
@@ -380,7 +380,7 @@ export default {
           } else {
             add${BusinessName}(this.form).then(response => {
               if (response.code === 200) {
-                this.msgSuccess("新增成功");
+                this.msgSuccess("New success");
                 this.open = false;
                 this.getList();
               }
@@ -389,17 +389,17 @@ export default {
         }
       });
     },
-    /** 删除按钮操作 */
+    /** Delete button operation */
     handleDelete(row) {
-      this.$confirm('是否确认删除${functionName}编号为"' + row.${pkColumn.javaField} + '"的数据项?', "警告", {
-          confirmButtonText: "确定",
-          cancelButtonText: "取消",
+      this.$confirm('Confirm deletion.${functionName}Numbers for"' + row.${pkColumn.javaField} + '"Data item?', "warning", {
+          confirmButtonText: "determine",
+          cancelButtonText: "cancel",
           type: "warning"
         }).then(function() {
           return del${BusinessName}(row.${pkColumn.javaField});
         }).then(() => {
           this.getList();
-          this.msgSuccess("删除成功");
+          this.msgSuccess("Delete the success");
         }).catch(function() {});
     }
   }

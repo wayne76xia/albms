@@ -6,44 +6,44 @@ import alb.project.system.domain.SysUserPost;
 import org.apache.ibatis.annotations.Param;
 
 /**
- * 用户与岗位关联表 数据层
+ * User and job association table The data layer
  *
  */
 public interface SysUserPostMapper {
     /**
-     * 通过用户ID删除用户和岗位关联
+     * By the userIDDelete the association between a user and a job
      *
-     * @param userId 用户ID
-     * @return 结果
+     * @param userId The userID
+     * @return The results of
      */
     int deleteUserPostByUserId(Long userId);
 
     /**
-     * 通过岗位ID查询岗位使用数量
+     * Through the postIDQuery the number of positions used
      *
-     * @param postId 岗位ID
-     * @return 结果
+     * @param postId jobsID
+     * @return The results of
      */
     int countUserPostById(Long postId);
 
     /**
-     * 批量删除用户和岗位关联
+     * Delete the association between a user and a job in batches
      *
-     * @param ids 需要删除的数据ID
-     * @return 结果
+     * @param ids Data to be deletedID
+     * @return The results of
      */
     int deleteUserPost(Long[] ids);
 
     /**
-     * 批量新增用户岗位信息
+     * Add user post information in batches
      *
-     * @param userPostList 用户角色列表
-     * @return 结果
+     * @param userPostList User Role List
+     * @return The results of
      */
     int batchUserPost(List<SysUserPost> userPostList);
 
     /**
-     * 根据用户id和部门id查询是否存在这条记录
+     * According to the useridAnd departmentsidQuery whether the record exists
      *
      * @param userId
      * @param postId
@@ -52,7 +52,7 @@ public interface SysUserPostMapper {
     SysUserPost checkUserIsThisPost(@Param("userId") Long userId, @Param("postId") Long postId);
 
     /**
-     * 随机获取一名话务员id
+     * Obtain a random operatorid
      *
      * @param postId
      * @return

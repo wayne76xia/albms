@@ -4,37 +4,37 @@ import java.io.Serializable;
 import java.util.List;
 
 /**
- * 表格分页数据对象
+ * Table paging data object
  *
  */
 public class TableDataInfo implements Serializable
 {
     private static final long serialVersionUID = 1L;
 
-    /** 总记录数 */
+    /** The total number of records */
     private long total;
 
-    /** 列表数据 */
+    /** The list of data */
     private List<?> rows;
 
-    /** 消息状态码 */
+    /** Message status code */
     private int code;
 
-    /** 消息内容 */
+    /** The message content */
     private String msg;
 
     /**
-     * 表格数据对象
+     * Tabular data object
      */
     public TableDataInfo()
     {
     }
 
     /**
-     * 分页
+     * paging
      * 
-     * @param list 列表数据
-     * @param total 总记录数
+     * @param list The list of data
+     * @param total The total number of records
      */
     public TableDataInfo(List<?> list, int total)
     {

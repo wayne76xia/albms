@@ -6,18 +6,18 @@ import lombok.Data;
 import javax.validation.constraints.NotNull;
 
 /**
- * 发送验证码请求参数
+ * Send captcha request parameters
  */
 @Data
 public class SendSmsParams {
 
-    @NotNull(message = "手机号码为空！")
-    @Phone(message = "手机号不正确！")
+    @NotNull(message = "The mobile phone number is empty!")
+    @Phone(message = "The phone number is incorrect!")
     private String phone;
 
-    @NotNull(message = "验证码请求类型为空！")
+    @NotNull(message = "The verification code request type is empty!")
     private Integer dealType;
 
-    @NotNull(message = "模板类型为空！")
+    @NotNull(message = "The template type is empty!")
     private Integer templateType;
 }

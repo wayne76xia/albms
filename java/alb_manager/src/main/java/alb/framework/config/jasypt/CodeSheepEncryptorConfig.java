@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Configuration;
 
 /**
  *  @Date: 2020/5/25 15:00
- *  @Description: 自定义加密器
+ *  @Description: Custom encryptor
  */ 
 @Configuration
 public class CodeSheepEncryptorConfig {

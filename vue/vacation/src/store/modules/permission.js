@@ -14,10 +14,10 @@ const permission = {
     }
   },
   actions: {
-    // 生成路由
+    // Generate routing
     GenerateRoutes({ commit }) {
       return new Promise(resolve => {
-        // 向后端请求路由数据
+        // The back-end requests routing data
         getRouters().then(res => {
           const accessedRoutes = filterAsyncRouter(res.data)
           accessedRoutes.push({ path: '*', redirect: '/404', hidden: true })
@@ -29,11 +29,11 @@ const permission = {
   }
 }
 
-// 遍历后台传来的路由字符串，转换为组件对象
+// Traverses the route string from the background,Convert to component objects
 function filterAsyncRouter(asyncRouterMap) {
   return asyncRouterMap.filter(route => {
     if (route.component) {
-      // Layout组件特殊处理
+      // LayoutComponent special handling
       if (route.component === 'Layout') {
         route.component = Layout
       } else {
@@ -47,7 +47,7 @@ function filterAsyncRouter(asyncRouterMap) {
   })
 }
 
-export const loadView = (view) => { // 路由懒加载
+export const loadView = (view) => { // Route lazy loading
   return (resolve) =>  require([`@/views/${view}`], resolve)
 }
 

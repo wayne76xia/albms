@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.Set;
 
 /**
- * 假期审批表(HolidayApproval)表服务实现类
+ * Leave approval form(HolidayApproval)Table service implementation class
  */
 @Service("holidayApprovalService")
 public class HolidayApprovalServiceImpl implements IHolidayApprovalService {
@@ -22,10 +22,10 @@ public class HolidayApprovalServiceImpl implements IHolidayApprovalService {
     private HolidayApprovalMapper holidayApprovalMapper;
 
     /**
-     * 通过实体查询是否存在下一节点
+     * Check whether the next node exists by entity
      *
-     * @param holidayApproval 实例对象
-     * @return 实例对象
+     * @param holidayApproval Instance objects
+     * @return Instance objects
      */
     @Override
     public boolean hasNextApproved(HolidayApproval holidayApproval){
@@ -33,10 +33,10 @@ public class HolidayApprovalServiceImpl implements IHolidayApprovalService {
     }
 
     /**
-     * 查询单条数据
+     * Example Query a single piece of data
      *
-     * @param holidayApprovalId 实例对象
-     * @return 实例对象
+     * @param holidayApprovalId Instance objects
+     * @return Instance objects
      */
     @Override
     public HolidayApproval queryOne(Long holidayApprovalId) {
@@ -44,10 +44,10 @@ public class HolidayApprovalServiceImpl implements IHolidayApprovalService {
     }
 
     /**
-     * 检测插入后，假期类型是否有环
+     * After detection insertion,Whether the holiday type has a ring
      *
-     * @param holidayApproval 实例对象
-     * @return 实例对象
+     * @param holidayApproval Instance objects
+     * @return Instance objects
      */
     @Override
     public boolean hasRing(HolidayApproval holidayApproval) {
@@ -57,10 +57,10 @@ public class HolidayApprovalServiceImpl implements IHolidayApprovalService {
                 .build();
         List<HolidayApproval> list = this.holidayApprovalMapper.queryAll(params);
         Set<Long> set = new HashSet<>();
-        // 放入当前节点
+        // Put into the current node
         set.add(holidayApproval.getRoleId());
         set.add(holidayApproval.getApprovedRoleId());
-        // 检测之前节点
+        // Node before detection
         for (HolidayApproval approval : list) {
             if (set.contains(approval.getApprovedRoleId())) {
                 return true;
@@ -71,7 +71,7 @@ public class HolidayApprovalServiceImpl implements IHolidayApprovalService {
     }
 
     /**
-     * 查询多条数据
+     * Querying multiple pieces of Data
      *
      * @param holidayApproval
      * @return
@@ -82,9 +82,9 @@ public class HolidayApprovalServiceImpl implements IHolidayApprovalService {
     }
 
     /**
-     * 查询角色列表
+     * Querying the Role List
      *
-     * @return 对象列表
+     * @return The object list
      */
     @Override
     public List<SysRole> selectRoleList(){
@@ -93,14 +93,14 @@ public class HolidayApprovalServiceImpl implements IHolidayApprovalService {
 
 
     /**
-     * 新增数据
+     * The new data
      *
-     * @param holidayApproval 实例对象
-     * @return 实例对象
+     * @param holidayApproval Instance objects
+     * @return Instance objects
      */
     @Override
     public int insert(HolidayApproval holidayApproval) {
-        // 雪花算法生成唯一通话记录号 单体服务 数据中心id和终端id都填1
+        // Snowflake algorithm generates unique call log numbers Individual services The data centeridAnd terminalidAll fill in1
         holidayApproval.setHolidayApprovalId(IdUtil.getSnowflake(1, 1).nextId());
 
         List<HolidayApproval> list = this.holidayApprovalMapper.queryAll(holidayApproval);
@@ -108,7 +108,7 @@ public class HolidayApprovalServiceImpl implements IHolidayApprovalService {
                 1 : (list.get(list.size() - 1).getCurrentApprovedIndex() + 1));
         holidayApproval.setNextApprovalId(0L);
 
-        // 非头节点还需要修改前置节点
+        // The non-head nodes also need to modify the front nodes
         if (holidayApproval.getCurrentApprovedIndex() != 1) {
             HolidayApproval pre = list.get(list.size() - 1);
             pre.setNextApprovalId(holidayApproval.getApprovedRoleId());
@@ -118,16 +118,16 @@ public class HolidayApprovalServiceImpl implements IHolidayApprovalService {
     }
 
     /**
-     * 通过主键删除数据
+     * Delete data by primary key
      *
-     * @param holidayApprovalId 主键
-     * @return 是否成功
+     * @param holidayApprovalId A primary key
+     * @return The success of
      */
     @Override
     public int deleteById(Long holidayApprovalId) {
         HolidayApproval holidayApproval = this.holidayApprovalMapper.queryOne(holidayApprovalId);
 
-        // 有后续节点
+        // There are subsequent nodes
         if (holidayApproval.getNextApprovalId() != 0) {
             HolidayApproval params = HolidayApproval.builder()
                     .holidayTypeId(holidayApproval.getHolidayTypeId())
@@ -135,7 +135,7 @@ public class HolidayApprovalServiceImpl implements IHolidayApprovalService {
                     .build();
             List<HolidayApproval> list = this.holidayApprovalMapper.queryAll(params);
 
-            // 非头节点还需要处理前置节点
+            // Non-head nodes also need to process front nodes
             if (holidayApproval.getCurrentApprovedIndex() != 1) {
                 HolidayApproval preParams = HolidayApproval.builder()
                         .holidayTypeId(holidayApproval.getHolidayTypeId())
@@ -147,7 +147,7 @@ public class HolidayApprovalServiceImpl implements IHolidayApprovalService {
                 this.holidayApprovalMapper.update(pre);
             }
 
-            // 处理后续节点
+            // Processing subsequent nodes
             for (int i = holidayApproval.getCurrentApprovedIndex(); i < list.size(); i++){
                 HolidayApproval next = list.get(i);
                 next.setCurrentApprovedIndex(next.getCurrentApprovedIndex() - 1);
@@ -155,7 +155,7 @@ public class HolidayApprovalServiceImpl implements IHolidayApprovalService {
             }
         }
 
-        // 无后续节点，但仍需要处理前置节点
+        // No subsequent node,But you still need to deal with the front nodes
         if (holidayApproval.getCurrentApprovedIndex() != 1) {
             HolidayApproval preParams = HolidayApproval.builder()
                     .holidayTypeId(holidayApproval.getHolidayTypeId())
@@ -167,7 +167,7 @@ public class HolidayApprovalServiceImpl implements IHolidayApprovalService {
             this.holidayApprovalMapper.update(pre);
         }
 
-        // 头节点，且无后续节点直接删
+        // Head node,No subsequent nodes are directly deleted
         return this.holidayApprovalMapper.deleteById(holidayApprovalId);
     }
 }

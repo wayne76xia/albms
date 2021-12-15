@@ -32,7 +32,7 @@ import alb.common.utils.StringUtils;
 import alb.common.utils.ip.IpUtils;
 
 /**
- * 操作日志记录处理
+ * Record operation logs
  *
  */
 @Aspect
@@ -41,16 +41,16 @@ public class LogAspect
 {
     private static final Logger log = LoggerFactory.getLogger(LogAspect.class);
 
-    // 配置织入点
+    // Configure the weave point
     @Pointcut("@annotation(alb.framework.aspectj.lang.annotation.Log)")
     public void logPointCut()
     {
     }
 
     /**
-     * 处理完请求后执行
+     * Execute after processing the request
      *
-     * @param joinPoint 切点
+     * @param joinPoint Point of tangency
      */
     @AfterReturning(pointcut = "logPointCut()", returning = "jsonResult")
     public void doAfterReturning(JoinPoint joinPoint, Object jsonResult)
@@ -59,10 +59,10 @@ public class LogAspect
     }
 
     /**
-     * 拦截异常操作
+     * Intercept exception operation
      * 
-     * @param joinPoint 切点
-     * @param e 异常
+     * @param joinPoint Point of tangency
+     * @param e abnormal
      */
     @AfterThrowing(value = "logPointCut()", throwing = "e")
     public void doAfterThrowing(JoinPoint joinPoint, Exception e)
@@ -74,23 +74,23 @@ public class LogAspect
     {
         try
         {
-            // 获得注解
+            // Get annotations
             Log controllerLog = getAnnotationLog(joinPoint);
             if (controllerLog == null)
             {
                 return;
             }
 
-            // 获取当前的用户
+            // Gets the current user
             LoginUser loginUser = SpringUtils.getBean(TokenService.class).getLoginUser(ServletUtils.getRequest());
 
-            // *========数据库日志=========*//
+            // *========Database logs=========*//
             SysOperLog operLog = new SysOperLog();
             operLog.setStatus(BusinessStatus.SUCCESS.ordinal());
-            // 请求的地址
+            // Requested address
             String ip = IpUtils.getIpAddr(ServletUtils.getRequest());
             operLog.setOperIp(ip);
-            // 返回参数
+            // Returns the parameter
             operLog.setJsonResult(JSON.toJSONString(jsonResult));
 
             operLog.setOperUrl(ServletUtils.getRequest().getRequestURI());
@@ -104,57 +104,57 @@ public class LogAspect
                 operLog.setStatus(BusinessStatus.FAIL.ordinal());
                 operLog.setErrorMsg(StringUtils.substring(e.getMessage(), 0, 2000));
             }
-            // 设置方法名称
+            // Setting Method Name
             String className = joinPoint.getTarget().getClass().getName();
             String methodName = joinPoint.getSignature().getName();
             operLog.setMethod(className + "." + methodName + "()");
-            // 设置请求方式
+            // Setting the request Mode
             operLog.setRequestMethod(ServletUtils.getRequest().getMethod());
-            // 处理设置注解上的参数
+            // Handle parameters on set annotations
             getControllerMethodDescription(joinPoint, controllerLog, operLog);
-            // 控制台日志打印返回参数
-            log.info("\n操作日志参数详情:{}","请求IP:"+ip+"\n请求方式:"+operLog.getRequestMethod()+"\n请求URL:"+operLog.getOperUrl()+"\n方法名："+className + "." + methodName + "()\n请求参数:"+operLog.getOperParam()+ "\n返回参数:"+operLog.getJsonResult());
-            // 保存数据库
+            // Console log print returns parameters
+            log.info("\nDetails about operation log parameters:{}","requestIP:"+ip+"\nrequest way:"+operLog.getRequestMethod()+"\nrequestURL:"+operLog.getOperUrl()+"\nThe method name:"+className + "." + methodName + "()\nrequest params:"+operLog.getOperParam()+ "\nReturns the parameter:"+operLog.getJsonResult());
+            // Save the database
             AsyncManager.me().execute(AsyncFactory.recordOper(operLog));
 
         }
         catch (Exception exp)
         {
-            // 记录本地异常日志
-            log.error("==前置通知异常==");
-            log.error("异常信息:{}", exp.getMessage());
+            // Record local exception logs
+            log.error("==Pre-notification exception==");
+            log.error("Exception information:{}", exp.getMessage());
             exp.printStackTrace();
         }
     }
 
     /**
-     * 获取注解中对方法的描述信息 用于Controller层注解
+     * Gets the description of the method in the annotation Used forControllerLayer annotation
      * 
-     * @param log 日志
-     * @param operLog 操作日志
+     * @param log The log
+     * @param operLog The operation log
      * @throws Exception
      */
     public void getControllerMethodDescription(JoinPoint joinPoint, Log log, SysOperLog operLog) throws Exception
     {
-        // 设置action动作
+        // Set up theactionaction
         operLog.setBusinessType(log.businessType().ordinal());
-        // 设置标题
+        // Set the title
         operLog.setTitle(log.title());
-        // 设置操作人类别
+        // Set the operator category
         operLog.setOperatorType(log.operatorType().ordinal());
-        // 是否需要保存request，参数和值
+        // Whether to saverequest,Parameters and values
         if (log.isSaveRequestData())
         {
-            // 获取参数的信息，传入到数据库中。
+            // Gets information about parameters,Passed into the database。
             setRequestValue(joinPoint, operLog);
         }
     }
 
     /**
-     * 获取请求的参数，放到log中
+     * Gets the parameters of the request,In thelogIn the
      * 
-     * @param operLog 操作日志
-     * @throws Exception 异常
+     * @param operLog The operation log
+     * @throws Exception abnormal
      */
     private void setRequestValue(JoinPoint joinPoint, SysOperLog operLog) throws Exception
     {
@@ -172,7 +172,7 @@ public class LogAspect
     }
 
     /**
-     * 是否存在注解，如果存在就获取
+     * Are there annotations?,Get if it exists
      */
     private Log getAnnotationLog(JoinPoint joinPoint) throws Exception
     {
@@ -188,7 +188,7 @@ public class LogAspect
     }
 
     /**
-     * 参数拼装
+     * Parameters of the assembled
      */
     private String argsArrayToString(Object[] paramsArray)
     {
@@ -208,10 +208,10 @@ public class LogAspect
     }
 
     /**
-     * 判断是否需要过滤的对象。
+     * Determines whether an object needs to be filtered。
      * 
-     * @param o 对象信息。
-     * @return 如果是需要过滤的对象，则返回true；否则返回false。
+     * @param o Object information。
+     * @return If it is an object to be filtered,It returnstrue; else returns false。
      */
     public boolean isFilterObject(final Object o)
     {

@@ -5,175 +5,175 @@ import alb.project.system.domain.SysUser;
 import java.util.List;
 
 /**
- * 用户 业务层
+ * The user The business layer
  *
  */
 public interface ISysUserService
 {
     /**
-     * 根据条件分页查询用户列表
+     * Query the user list by conditional paging
      * 
-     * @param user 用户信息
-     * @return 用户信息集合信息
+     * @param user The user information
+     * @return User information Set information
      */
     List<SysUser> selectUserList(SysUser user);
 
     /**
-     * 通过用户名查询用户
+     * Query users by user name
      * 
-     * @param userName 用户名
-     * @return 用户对象信息
+     * @param userName The user name
+     * @return User Object Information
      */
     SysUser selectUserByUserName(String userName);
 
     /**
-     * 通过用户ID查询用户
+     * By the userIDQuery the user
      * 
-     * @param userId 用户ID
-     * @return 用户对象信息
+     * @param userId The userID
+     * @return User Object Information
      */
     SysUser selectUserById(Long userId);
 
     /**
-     * 通过用户工号查询用户
+     * Query users by user ID
      * @param userCode
      * @return
      */
     SysUser selectUserByUserCode(String userCode);
 
     /**
-     * 根据用户ID查询用户所属角色组
+     * According to the userIDExample Query the role group of a user
      * 
-     * @param userName 用户名
-     * @return 结果
+     * @param userName The user name
+     * @return The results of
      */
     String selectUserRoleGroup(String userName);
 
     /**
-     * 根据用户ID查询用户所属岗位组
+     * According to the userIDExample Query the job group to which a user belongs
      * 
-     * @param userName 用户名
-     * @return 结果
+     * @param userName The user name
+     * @return The results of
      */
     String selectUserPostGroup(String userName);
 
     /**
-     * 校验用户名称是否唯一
+     * Verify that the user name is unique
      * 
-     * @param userName 用户名称
-     * @return 结果
+     * @param userName The user name
+     * @return The results of
      */
     String checkUserNameUnique(String userName);
 
     /**
-     * 校验手机号码是否唯一
+     * Verify that the mobile phone number is unique
      *
-     * @param user 用户信息
-     * @return 结果
+     * @param user The user information
+     * @return The results of
      */
     String checkPhoneUnique(SysUser user);
 
     /**
-     * 校验email是否唯一
+     * checkemailWhether or not the only
      *
-     * @param user 用户信息
-     * @return 结果
+     * @param user The user information
+     * @return The results of
      */
     String checkEmailUnique(SysUser user);
 
     /**
-     * 校验用户是否允许操作
+     * Verify whether the user is allowed to perform operations
      * 
-     * @param user 用户信息
+     * @param user The user information
      */
     void checkUserAllowed(SysUser user);
 
     /**
-     * 新增用户信息
+     * Adding User Information
      * 
-     * @param user 用户信息
-     * @return 结果
+     * @param user The user information
+     * @return The results of
      */
     int insertUser(SysUser user);
 
     /**
-     * 修改用户信息
+     * Modifying User Information
      * 
-     * @param user 用户信息
-     * @return 结果
+     * @param user The user information
+     * @return The results of
      */
     int updateUser(SysUser user);
 
     /**
-     * 修改用户状态
+     * Modifying user Status
      * 
-     * @param user 用户信息
-     * @return 结果
+     * @param user The user information
+     * @return The results of
      */
     int updateUserStatus(SysUser user);
 
     /**
-     * 修改用户基本信息
+     * Example Modify basic user information
      * 
-     * @param user 用户信息
-     * @return 结果
+     * @param user The user information
+     * @return The results of
      */
     int updateUserProfile(SysUser user);
 
     /**
-     * 修改用户头像
+     * Modifying a User's Profile picture
      * 
-     * @param userName 用户名
-     * @param avatar 头像地址
-     * @return 结果
+     * @param userName The user name
+     * @param avatar Head address
+     * @return The results of
      */
     boolean updateUserAvatar(String userName, String avatar);
 
     /**
-     * 重置用户密码
+     * Resetting a user password
      * 
-     * @param user 用户信息
-     * @return 结果
+     * @param user The user information
+     * @return The results of
      */
     int resetPwd(SysUser user);
 
     /**
-     * 重置用户密码
+     * Resetting a user password
      * 
-     * @param userName 用户名
-     * @param password 密码
-     * @return 结果
+     * @param userName The user name
+     * @param password password
+     * @return The results of
      */
     int resetUserPwd(String userName, String password);
 
     /**
-     * 通过用户ID删除用户
+     * By the userIDDelete user
      * 
-     * @param userId 用户ID
-     * @return 结果
+     * @param userId The userID
+     * @return The results of
      */
     int deleteUserById(Long userId);
 
     /**
-     * 批量删除用户信息
+     * Delete user information in batches
      * 
-     * @param userIds 需要删除的用户ID
-     * @return 结果
+     * @param userIds The user to be deletedID
+     * @return The results of
      */
     int deleteUserByIds(Long[] userIds);
 
     /**
-     * 导入用户数据
+     * Importing User Data
      * 
-     * @param userList 用户数据列表
-     * @param isUpdateSupport 是否更新支持，如果已存在，则进行更新数据
-     * @param operName 操作用户
-     * @return 结果
+     * @param userList User data list
+     * @param isUpdateSupport Whether to update support,If it already exists,The data is updated
+     * @param operName The user operation
+     * @return The results of
      */
     String importUser(List<SysUser> userList, Boolean isUpdateSupport, String operName);
 
     /**
-     * 根据手机号查询用户信息
+     * Query user information by mobile phone number
      * @param phone
      * @return SysUser
      */
@@ -182,33 +182,33 @@ public interface ISysUserService
     List<SysUser> selectDeptEmployeesList(Long deptId);
 
     /**
-     * 根据月份获取员工数量
+     * Get the number of employees by month
      * @param month
      * @return
      */
     Integer getTotalNumByMonth(String month);
 
     /**
-     * 根据月份验光师数量
+     * According to the number of optometrists per month
      * @param month
      * @return
      */
     Integer getTotalOptometristNumByMonth(String month);
 
     /**
-     * 获取所有用户数量
+     * Get all user numbers
      * @return
      */
     Integer getTotalNum();
 
     /**
-     * 获取所有验光师数量
+     * Get all optometrists
      * @return
      */
     Integer getTotalOptometristNum();
 
     /**
-     * 获取新的工号
+     * Get a new id
      * @return
      */
     String getLastUserCode();

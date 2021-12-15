@@ -10,7 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 /**
- * 用户权限处理
+ * User Permission Processing
  *
  */
 @Component
@@ -23,15 +23,15 @@ public class SysPermissionService
     private ISysMenuService menuService;
 
     /**
-     * 获取角色数据权限
+     * Obtain role data permission
      * 
-     * @param user 用户信息
-     * @return 角色权限信息
+     * @param user The user information
+     * @return Role Permission Information
      */
     public Set<String> getRolePermission(SysUser user)
     {
         Set<String> roles = new HashSet<String>();
-        // 管理员拥有所有权限
+        // The administrator has all permissions
         if (user.isAdmin())
         {
             roles.add("admin");
@@ -44,15 +44,15 @@ public class SysPermissionService
     }
 
     /**
-     * 获取菜单数据权限
+     * Obtain menu data permission
      * 
-     * @param user 用户信息
-     * @return 菜单权限信息
+     * @param user The user information
+     * @return Menu Permission Information
      */
     public Set<String> getMenuPermission(SysUser user)
     {
         Set<String> perms = new HashSet<String>();
-        // 管理员拥有所有权限
+        // The administrator has all permissions
         if (user.isAdmin())
         {
             perms.add("*:*:*");

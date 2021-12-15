@@ -5,111 +5,111 @@ import org.apache.ibatis.annotations.Param;
 import alb.project.system.domain.SysMenu;
 
 /**
- * 菜单表 数据层
+ * The menu list The data layer
  *
  */
 public interface SysMenuMapper
 {
     /**
-     * 查询系统菜单列表
+     * Example Query the system menu list
      * 
-     * @param menu 菜单信息
-     * @return 菜单列表
+     * @param menu Menu information
+     * @return Menu list
      */
     List<SysMenu> selectMenuList(SysMenu menu);
 
     /**
-     * 根据用户所有权限
+     * According to all user permissions
      * 
-     * @return 权限列表
+     * @return Permissions list
      */
     List<String> selectMenuPerms();
 
     /**
-     * 根据用户查询系统菜单列表
+     * Query the system menu list by user
      * 
-     * @param menu 菜单信息
-     * @return 菜单列表
+     * @param menu Menu information
+     * @return Menu list
      */
     List<SysMenu> selectMenuListByUserId(SysMenu menu);
 
     /**
-     * 根据用户ID查询权限
+     * According to the userIDQuery permissions
      * 
-     * @param userId 用户ID
-     * @return 权限列表
+     * @param userId The userID
+     * @return Permissions list
      */
     List<String> selectMenuPermsByUserId(Long userId);
 
     /**
-     * 根据用户ID查询菜单
+     * According to the userIDQuery menu
      * 
-     * @return 菜单列表
+     * @return Menu list
      */
     List<SysMenu> selectMenuTreeAll();
 
     /**
-     * 根据用户ID查询菜单
+     * According to the userIDQuery menu
      * 
-     * @param username 用户ID
-     * @return 菜单列表
+     * @param username The userID
+     * @return Menu list
      */
     List<SysMenu> selectMenuTreeByUserId(Long userId);
 
     /**
-     * 根据角色ID查询菜单树信息
+     * According to the characterIDExample Query menu tree information
      * 
-     * @param roleId 角色ID
-     * @return 选中菜单列表
+     * @param roleId roleID
+     * @return Select menu list
      */
     List<Integer> selectMenuListByRoleId(Long roleId);
 
     /**
-     * 根据菜单ID查询信息
+     * According to the menuIDQuery information
      * 
-     * @param menuId 菜单ID
-     * @return 菜单信息
+     * @param menuId The menuID
+     * @return Menu information
      */
     SysMenu selectMenuById(Long menuId);
 
     /**
-     * 是否存在菜单子节点
+     * Whether a list node exists
      * 
-     * @param menuId 菜单ID
-     * @return 结果
+     * @param menuId The menuID
+     * @return The results of
      */
     int hasChildByMenuId(Long menuId);
 
     /**
-     * 新增菜单信息
+     * Add Menu information
      * 
-     * @param menu 菜单信息
-     * @return 结果
+     * @param menu Menu information
+     * @return The results of
      */
     int insertMenu(SysMenu menu);
 
     /**
-     * 修改菜单信息
+     * Modifying menu Information
      * 
-     * @param menu 菜单信息
-     * @return 结果
+     * @param menu Menu information
+     * @return The results of
      */
     int updateMenu(SysMenu menu);
 
     /**
-     * 删除菜单管理信息
+     * Example Delete menu management information
      * 
-     * @param menuId 菜单ID
-     * @return 结果
+     * @param menuId The menuID
+     * @return The results of
      */
     int deleteMenuById(Long menuId);
 
     /**
-     * 校验菜单名称是否唯一
+     * Verify that menu names are unique
      * 
-     * @param menuName 菜单名称
-     * @param parentId 父菜单ID
-     * @return 结果
+     * @param menuName The name of the menu
+     * @param parentId The parent menuID
+     * @return The results of
      */
     SysMenu checkMenuNameUnique(@Param("menuName") String menuName, @Param("parentId") Long parentId);
 }

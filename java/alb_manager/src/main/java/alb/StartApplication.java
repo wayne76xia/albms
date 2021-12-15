@@ -9,7 +9,7 @@ import org.springframework.core.annotation.Order;
 import org.springframework.scheduling.annotation.EnableScheduling;
 
 /**
- * 启动程序
+ * Start the program
  *
  */
 @SpringBootApplication(exclude = { DataSourceAutoConfiguration.class })
@@ -20,7 +20,7 @@ public class StartApplication implements CommandLineRunner
 {
     public static void main(String[] args) {
         SpringApplication.run(StartApplication.class, args);
-        System.out.println("(♥◠‿◠)ﾉﾞ  Start Success   ლ(´ڡ`ლ)ﾞ" +
+        System.out.println("(♥◠‿◠)ノ゙  Start Success   ლ( ́ڡ`ლ)゙" +
                 " ___  ____   __    ____  ____    ___  __  __  ___  ___  ____  ___  ___ \n" +
                 "/ __)(_  _) /__\\  (  _ \\(_  _)  / __)(  )(  )/ __)/ __)( ___)/ __)/ __)\n" +
                 "\\__ \\  )(  /(__)\\  )   /  )(    \\__ \\ )(__)(( (__( (__  )__) \\__ \\\\__ \\\n" +

@@ -6,7 +6,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 /**
  * @ClassName WebAPiConfigurer
- * @Description 全局跨域配置
+ * @Description Global cross-domain configuration
  * @Date 2020/11/7 10:05
  */
 @Configuration

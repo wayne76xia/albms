@@ -18,7 +18,7 @@ import alb.framework.web.domain.AjaxResult;
 import alb.framework.web.page.TableDataInfo;
 
 /**
- * 数据字典信息
+ * Data dictionary information
  *
  */
 @RestController
@@ -37,18 +37,18 @@ public class SysDictTypeController extends BaseController
         return getDataTable(list);
     }
 
-    @Log(title = "字典类型", businessType = BusinessType.EXPORT)
+    @Log(title = "A dictionary type", businessType = BusinessType.EXPORT)
     @PreAuthorize("@ss.hasPermi('system:dict:export')")
     @GetMapping("/export")
     public AjaxResult export(SysDictType dictType)
     {
         List<SysDictType> list = dictTypeService.selectDictTypeList(dictType);
         ExcelUtil<SysDictType> util = new ExcelUtil<SysDictType>(SysDictType.class);
-        return util.exportExcel(list, "字典类型");
+        return util.exportExcel(list, "A dictionary type");
     }
 
     /**
-     * 查询字典类型详细
+     * Query details about the dictionary type
      */
     @PreAuthorize("@ss.hasPermi('system:dict:query')")
     @GetMapping(value = "/{dictId}")
@@ -58,42 +58,42 @@ public class SysDictTypeController extends BaseController
     }
 
     /**
-     * 新增字典类型
+     * New dictionary type
      */
     @PreAuthorize("@ss.hasPermi('system:dict:add')")
-    @Log(title = "字典类型", businessType = BusinessType.INSERT)
+    @Log(title = "A dictionary type", businessType = BusinessType.INSERT)
     @PostMapping
     public AjaxResult add(@Validated @RequestBody SysDictType dict)
     {
         if (UserConstants.NOT_UNIQUE.equals(dictTypeService.checkDictTypeUnique(dict)))
         {
-            return AjaxResult.error("新增字典'" + dict.getDictName() + "'失败，字典类型已存在");
+            return AjaxResult.error("The new dictionary'" + dict.getDictName() + "'failure,The dictionary type already exists");
         }
         dict.setCreateBy(SecurityUtils.getUsername());
         return toAjax(dictTypeService.insertDictType(dict));
     }
 
     /**
-     * 修改字典类型
+     * Changing the dictionary type
      */
     @PreAuthorize("@ss.hasPermi('system:dict:edit')")
-    @Log(title = "字典类型", businessType = BusinessType.UPDATE)
+    @Log(title = "A dictionary type", businessType = BusinessType.UPDATE)
     @PutMapping
     public AjaxResult edit(@Validated @RequestBody SysDictType dict)
     {
         if (UserConstants.NOT_UNIQUE.equals(dictTypeService.checkDictTypeUnique(dict)))
         {
-            return AjaxResult.error("修改字典'" + dict.getDictName() + "'失败，字典类型已存在");
+            return AjaxResult.error("To modify a dictionary'" + dict.getDictName() + "'failure,The dictionary type already exists");
         }
         dict.setUpdateBy(SecurityUtils.getUsername());
         return toAjax(dictTypeService.updateDictType(dict));
     }
 
     /**
-     * 删除字典类型
+     * Delete dictionary type
      */
     @PreAuthorize("@ss.hasPermi('system:dict:remove')")
-    @Log(title = "字典类型", businessType = BusinessType.DELETE)
+    @Log(title = "A dictionary type", businessType = BusinessType.DELETE)
     @DeleteMapping("/{dictIds}")
     public AjaxResult remove(@PathVariable Long[] dictIds)
     {
@@ -101,10 +101,10 @@ public class SysDictTypeController extends BaseController
     }
 
     /**
-     * 清空缓存
+     * Clear the cache
      */
     @PreAuthorize("@ss.hasPermi('system:dict:remove')")
-    @Log(title = "字典类型", businessType = BusinessType.CLEAN)
+    @Log(title = "A dictionary type", businessType = BusinessType.CLEAN)
     @DeleteMapping("/clearCache")
     public AjaxResult clearCache()
     {
@@ -113,7 +113,7 @@ public class SysDictTypeController extends BaseController
     }
 
     /**
-     * 获取字典选择框列表
+     * Gets a list of dictionary selection boxes
      */
     @GetMapping("/optionselect")
     public AjaxResult optionselect()

@@ -1,6 +1,6 @@
 import request from '@/utils/request'
 
-// 查询业绩考核计算设置列表
+// Query the list of performance assessment calculation Settings
 export function listCalculate(query) {
     return request({
         url: '/glasses/calculate/list',
@@ -9,7 +9,7 @@ export function listCalculate(query) {
     })
 }
 
-// 查询业绩考核计算设置详细
+// Query performance assessment calculation set details
 export function getCalculate(id) {
     return request({
         url: '/glasses/calculate/' + id,
@@ -17,7 +17,7 @@ export function getCalculate(id) {
     })
 }
 
-// 新增业绩考核计算设置
+// New performance assessment calculation Settings
 export function addCalculate(data) {
     return request({
         url: '/glasses/calculate',
@@ -26,7 +26,7 @@ export function addCalculate(data) {
     })
 }
 
-// 修改业绩考核计算设置
+// Modify performance assessment calculation Settings
 export function updateCalculate(data) {
     return request({
         url: '/glasses/calculate',
@@ -35,7 +35,7 @@ export function updateCalculate(data) {
     })
 }
 
-// 删除业绩考核计算设置
+// Delete performance appraisal calculation Settings
 export function delCalculate(id) {
     return request({
         url: '/glasses/calculate/' + id,
@@ -43,7 +43,7 @@ export function delCalculate(id) {
     })
 }
 
-// 导出业绩考核计算设置
+// Export performance appraisal calculation Settings
 export function exportCalculate(query) {
     return request({
         url: '/glasses/calculate/export',

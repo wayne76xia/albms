@@ -1,37 +1,37 @@
-# 数据源配置
+# Data Source Configuration
 spring:
     datasource:
         type: com.alibaba.druid.pool.DruidDataSource
         driverClassName: com.mysql.cj.jdbc.Driver
         druid:
-            # 主库数据源123.56.228.87
+            # Master library data source123.56.228.87
             master:
                 url: jdbc:mysql://vacation_mysql.vacation_manager_vacation_net:33068/vacation_data?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8
                 username: root
                 password: Renbowen(y6oDJ+jgWeWfSBSmHvdQstAqff6XXD+bCEJkml8mIps3r3qmeAd4ZvCUyaOG3DqF)
 #                password: p@s5w0rd
-            # 从库数据源
+            # Slave data source
             slave:
-                # 从数据源开关/默认关闭
+                # Slave data source switch/Off by default
                 enabled: false
                 url: 
                 username: 
                 password: 
-            # 初始连接数
+            # Initial connection number
             initialSize: 5
-            # 最小连接池数量
+            # Minimum number of connection pools
             minIdle: 10
-            # 最大连接池数量
+            # Maximum number of connection pools
             maxActive: 20
-            # 配置获取连接等待超时的时间
+            # The timeout period for obtaining connections is set
             maxWait: 60000
-            # 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
+            # How often does the configuration check occur,Detect idle connections that need to be closed,In milliseconds
             timeBetweenEvictionRunsMillis: 60000
-            # 配置一个连接在池中最小生存的时间，单位是毫秒
+            # Sets the minimum time for a connection to live in the pool,In milliseconds
             minEvictableIdleTimeMillis: 300000
-            # 配置一个连接在池中最大生存的时间，单位是毫秒
+            # Configures the maximum lifetime of a connection in the pool,In milliseconds
             maxEvictableIdleTimeMillis: 900000
-            # 配置检测连接是否有效
+            # The configuration checks whether the connection is valid
             validationQuery: SELECT 1 FROM DUAL
             testWhileIdle: true
             testOnBorrow: false
@@ -40,16 +40,16 @@ spring:
                 enabled: true
             statViewServlet:
                 enabled: true
-                # 设置白名单，不填则允许所有访问
+                # Setting a Whitelist,All access is allowed if you leave it blank
                 allow:
                 url-pattern: /druid/*
-                # 控制台管理用户名和密码
+                # The console manages user names and passwords
                 login-username: renbowen
                 login-password: renbowen
             filter:
                 stat:
                     enabled: true
-                    # 慢SQL记录
+                    # slowSQLrecord
                     log-slow-sql: true
                     slow-sql-millis: 1000
                     merge-sql: true

@@ -7,7 +7,7 @@ import alb.framework.aspectj.lang.annotation.Excel.ColumnType;
 import alb.framework.web.domain.BaseEntity;
 
 /**
- * 系统访问记录表 sys_logininfor
+ * System access record form sys_logininfor
  *
  */
 public class SysLogininfor extends BaseEntity
@@ -15,40 +15,40 @@ public class SysLogininfor extends BaseEntity
     private static final long serialVersionUID = 1L;
 
     /** ID */
-    @Excel(name = "序号", cellType = ColumnType.NUMERIC)
+    @Excel(name = "The serial number", cellType = ColumnType.NUMERIC)
     private Long infoId;
 
-    /** 用户账号 */
-    @Excel(name = "用户账号")
+    /** The user account */
+    @Excel(name = "The user account")
     private String userName;
 
-    /** 登录状态 0成功 1失败 */
-    @Excel(name = "登录状态", readConverterExp = "0=成功,1=失败")
+    /** The login status 0successful 1failure */
+    @Excel(name = "The login status", readConverterExp = "0=successful,1=failure")
     private String status;
 
-    /** 登录IP地址 */
-    @Excel(name = "登录地址")
+    /** The loginIPaddress */
+    @Excel(name = "The login address")
     private String ipaddr;
 
-    /** 登录地点 */
-    @Excel(name = "登录地点")
+    /** The login site */
+    @Excel(name = "The login site")
     private String loginLocation;
 
-    /** 浏览器类型 */
-    @Excel(name = "浏览器")
+    /** Browser Type */
+    @Excel(name = "The browser")
     private String browser;
 
-    /** 操作系统 */
-    @Excel(name = "操作系统")
+    /** The operating system */
+    @Excel(name = "The operating system")
     private String os;
 
-    /** 提示消息 */
-    @Excel(name = "提示消息")
+    /** The prompt message */
+    @Excel(name = "The prompt message")
     private String msg;
 
-    /** 访问时间 */
+    /** Access time */
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-    @Excel(name = "访问时间", width = 30, dateFormat = "yyyy-MM-dd HH:mm:ss")
+    @Excel(name = "Access time", width = 30, dateFormat = "yyyy-MM-dd HH:mm:ss")
     private Date loginTime;
 
     public Long getInfoId()

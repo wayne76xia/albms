@@ -1,6 +1,6 @@
 import request from '@/utils/request'
 
-// 查询公告列表
+// Querying the Bulletin List
 export function listNotice(query) {
     return request({
         url: '/system/notice/list',
@@ -8,7 +8,7 @@ export function listNotice(query) {
         params: query
     })
 }
-// 查询公告列表
+// Querying the Bulletin List
 export function listNotice1() {
     return request({
         url: '/system/notice/listIndex?status=0',
@@ -16,7 +16,7 @@ export function listNotice1() {
     })
 }
 
-// 查询公告详细
+// Query Announcement Details
 export function getNotice(noticeId) {
     return request({
         url: '/system/notice/' + noticeId,
@@ -24,7 +24,7 @@ export function getNotice(noticeId) {
     })
 }
 
-// 新增公告
+// The new announcement
 export function addNotice(data) {
     return request({
         url: '/system/notice',
@@ -33,7 +33,7 @@ export function addNotice(data) {
     })
 }
 
-// 修改公告
+// Modify bulletin
 export function updateNotice(data) {
     return request({
         url: '/system/notice',
@@ -42,7 +42,7 @@ export function updateNotice(data) {
     })
 }
 
-// 删除公告
+// Delete the announcement
 export function delNotice(noticeId) {
     return request({
         url: '/system/notice/' + noticeId,

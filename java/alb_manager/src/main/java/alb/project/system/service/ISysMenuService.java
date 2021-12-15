@@ -8,129 +8,129 @@ import alb.project.system.domain.vo.RouterVo;
 import alb.framework.web.domain.TreeSelect;
 
 /**
- * 菜单 业务层
+ * The menu The business layer
  *
  */
 public interface ISysMenuService
 {
     /**
-     * 根据用户查询系统菜单列表
+     * Query the system menu list by user
      * 
-     * @param userId 用户ID
-     * @return 菜单列表
+     * @param userId The userID
+     * @return Menu list
      */
     List<SysMenu> selectMenuList(Long userId);
 
     /**
-     * 根据用户查询系统菜单列表
+     * Query the system menu list by user
      * 
-     * @param menu 菜单信息
-     * @param userId 用户ID
-     * @return 菜单列表
+     * @param menu Menu information
+     * @param userId The userID
+     * @return Menu list
      */
     List<SysMenu> selectMenuList(SysMenu menu, Long userId);
 
     /**
-     * 根据用户ID查询权限
+     * According to the userIDQuery permissions
      * 
-     * @param userId 用户ID
-     * @return 权限列表
+     * @param userId The userID
+     * @return Permissions list
      */
     Set<String> selectMenuPermsByUserId(Long userId);
 
     /**
-     * 根据用户ID查询菜单树信息
+     * According to the userIDExample Query menu tree information
      * 
-     * @param userId 用户ID
-     * @return 菜单列表
+     * @param userId The userID
+     * @return Menu list
      */
     List<SysMenu> selectMenuTreeByUserId(Long userId);
 
     /**
-     * 根据角色ID查询菜单树信息
+     * According to the characterIDExample Query menu tree information
      * 
-     * @param roleId 角色ID
-     * @return 选中菜单列表
+     * @param roleId roleID
+     * @return Select menu list
      */
     List<Integer> selectMenuListByRoleId(Long roleId);
 
     /**
-     * 构建前端路由所需要的菜单
+     * The menu needed to build the front-end route
      * 
-     * @param menus 菜单列表
-     * @return 路由列表
+     * @param menus Menu list
+     * @return The routing list
      */
     List<RouterVo> buildMenus(List<SysMenu> menus);
 
     /**
-     * 构建前端所需要树结构
+     * The tree structure is needed to build the front end
      * 
-     * @param menus 菜单列表
-     * @return 树结构列表
+     * @param menus Menu list
+     * @return Tree structure list
      */
     List<SysMenu> buildMenuTree(List<SysMenu> menus);
 
     /**
-     * 构建前端所需要下拉树结构
+     * The drop-down tree structure is needed to build the front end
      * 
-     * @param menus 菜单列表
-     * @return 下拉树结构列表
+     * @param menus Menu list
+     * @return List of drop-down tree structures
      */
     List<TreeSelect> buildMenuTreeSelect(List<SysMenu> menus);
 
     /**
-     * 根据菜单ID查询信息
+     * According to the menuIDQuery information
      * 
-     * @param menuId 菜单ID
-     * @return 菜单信息
+     * @param menuId The menuID
+     * @return Menu information
      */
     SysMenu selectMenuById(Long menuId);
 
     /**
-     * 是否存在菜单子节点
+     * Whether a list node exists
      * 
-     * @param menuId 菜单ID
-     * @return 结果 true 存在 false 不存在
+     * @param menuId The menuID
+     * @return The results of true There are false There not are
      */
     boolean hasChildByMenuId(Long menuId);
 
     /**
-     * 查询菜单是否存在角色
+     * Query whether a role exists in the menu
      * 
-     * @param menuId 菜单ID
-     * @return 结果 true 存在 false 不存在
+     * @param menuId The menuID
+     * @return The results of true There are false There not are
      */
     boolean checkMenuExistRole(Long menuId);
 
     /**
-     * 新增保存菜单信息
+     * Added Save menu information
      * 
-     * @param menu 菜单信息
-     * @return 结果
+     * @param menu Menu information
+     * @return The results of
      */
     int insertMenu(SysMenu menu);
 
     /**
-     * 修改保存菜单信息
+     * Modify save menu information
      * 
-     * @param menu 菜单信息
-     * @return 结果
+     * @param menu Menu information
+     * @return The results of
      */
     int updateMenu(SysMenu menu);
 
     /**
-     * 删除菜单管理信息
+     * Example Delete menu management information
      * 
-     * @param menuId 菜单ID
-     * @return 结果
+     * @param menuId The menuID
+     * @return The results of
      */
     int deleteMenuById(Long menuId);
 
     /**
-     * 校验菜单名称是否唯一
+     * Verify that menu names are unique
      * 
-     * @param menu 菜单信息
-     * @return 结果
+     * @param menu Menu information
+     * @return The results of
      */
     String checkMenuNameUnique(SysMenu menu);
 }

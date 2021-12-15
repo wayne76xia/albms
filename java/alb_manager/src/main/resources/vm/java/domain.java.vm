@@ -9,7 +9,7 @@ import alb.framework.aspectj.lang.annotation.Excel;
 #end
 
 /**
- * ${functionName}对象 ${tableName}
+ * ${functionName}object ${tableName}
  * 
  * @author ${author}
  * @date ${datetime}
@@ -27,7 +27,7 @@ public class ${ClassName} extends ${Entity}
 #if(!$table.isSuperColumn($column.javaField))
     /** $column.columnComment */
 #if($column.list)
-#set($parentheseIndex=$column.columnComment.indexOf("（"))
+#set($parentheseIndex=$column.columnComment.indexOf("("))
 #if($parentheseIndex != -1)
 #set($comment=$column.columnComment.substring(0, $parentheseIndex))
 #else

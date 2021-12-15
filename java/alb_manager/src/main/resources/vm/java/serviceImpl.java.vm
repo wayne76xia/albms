@@ -14,7 +14,7 @@ import ${packageName}.domain.${ClassName};
 import ${packageName}.service.I${ClassName}Service;
 
 /**
- * ${functionName}Service业务层处理
+ * ${functionName}ServiceBusiness layer processing
  * 
  * @author ${author}
  * @date ${datetime}
@@ -26,7 +26,7 @@ public class ${ClassName}ServiceImpl implements I${ClassName}Service
     private ${ClassName}Mapper ${className}Mapper;
 
     /**
-     * 查询${functionName}
+     * The query${functionName}
      * 
      * @param ${pkColumn.javaField} ${functionName}ID
      * @return ${functionName}
@@ -38,7 +38,7 @@ public class ${ClassName}ServiceImpl implements I${ClassName}Service
     }
 
     /**
-     * 查询${functionName}列表
+     * The query${functionName}The list of
      * 
      * @param ${className} ${functionName}
      * @return ${functionName}
@@ -50,10 +50,10 @@ public class ${ClassName}ServiceImpl implements I${ClassName}Service
     }
 
     /**
-     * 新增${functionName}
+     * new${functionName}
      * 
      * @param ${className} ${functionName}
-     * @return 结果
+     * @return The results of
      */
     @Override
     public int insert${ClassName}(${ClassName} ${className})
@@ -67,10 +67,10 @@ public class ${ClassName}ServiceImpl implements I${ClassName}Service
     }
 
     /**
-     * 修改${functionName}
+     * Modify the${functionName}
      * 
      * @param ${className} ${functionName}
-     * @return 结果
+     * @return The results of
      */
     @Override
     public int update${ClassName}(${ClassName} ${className})
@@ -84,10 +84,10 @@ public class ${ClassName}ServiceImpl implements I${ClassName}Service
     }
 
     /**
-     * 批量删除${functionName}
+     * Batch delete${functionName}
      * 
-     * @param ${pkColumn.javaField}s 需要删除的${functionName}ID
-     * @return 结果
+     * @param ${pkColumn.javaField}s To be deleted${functionName}ID
+     * @return The results of
      */
     @Override
     public int delete${ClassName}ByIds(${pkColumn.javaType}[] ${pkColumn.javaField}s)
@@ -96,10 +96,10 @@ public class ${ClassName}ServiceImpl implements I${ClassName}Service
     }
 
     /**
-     * 删除${functionName}信息
+     * delete${functionName}information
      * 
      * @param ${pkColumn.javaField} ${functionName}ID
-     * @return 结果
+     * @return The results of
      */
     @Override
     public int delete${ClassName}ById(${pkColumn.javaType} ${pkColumn.javaField})

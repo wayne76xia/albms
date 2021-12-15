@@ -3,10 +3,10 @@
     <el-row>
       <el-col :span="12">
         <el-form-item prop="tplCategory">
-          <span slot="label">生成模板</span>
+          <span slot="label">Generate template</span>
           <el-select v-model="info.tplCategory">
-            <el-option label="单表（增删改查）" value="crud" />
-            <el-option label="树表（增删改查）" value="tree"/>
+            <el-option label="Single table(Add and delete)" value="crud" />
+            <el-option label="Tree table(Add and delete)" value="tree"/>
           </el-select>
         </el-form-item>
       </el-col>
@@ -14,8 +14,8 @@
       <el-col :span="12">
         <el-form-item prop="packageName">
           <span slot="label">
-            生成包路径
-            <el-tooltip content="生成在哪个java包下，例如 com.ruoyi.system" placement="top">
+            Generate package path
+            <el-tooltip content="Which one is generatedjavaUnder the bag,For example, com.ruoyi.system" placement="top">
               <i class="el-icon-question"></i>
             </el-tooltip>
           </span>
@@ -26,8 +26,8 @@
       <el-col :span="12">
         <el-form-item prop="moduleName">
           <span slot="label">
-            生成模块名
-            <el-tooltip content="可理解为子系统名，例如 system" placement="top">
+            Generate module name
+            <el-tooltip content="Can be understood as the subsystem name,For example, system" placement="top">
               <i class="el-icon-question"></i>
             </el-tooltip>
           </span>
@@ -38,8 +38,8 @@
       <el-col :span="12">
         <el-form-item prop="businessName">
           <span slot="label">
-            生成业务名
-            <el-tooltip content="可理解为功能英文名，例如 user" placement="top">
+            Generate a business name
+            <el-tooltip content="It can be understood as the English name of the function,For example, user" placement="top">
               <i class="el-icon-question"></i>
             </el-tooltip>
           </span>
@@ -50,8 +50,8 @@
       <el-col :span="12">
         <el-form-item prop="functionName">
           <span slot="label">
-            生成功能名
-            <el-tooltip content="用作类描述，例如 用户" placement="top">
+            Generate function name
+            <el-tooltip content="Used as a class description,For example, The user" placement="top">
               <i class="el-icon-question"></i>
             </el-tooltip>
           </span>
@@ -61,20 +61,20 @@
     </el-row>
 
     <el-row v-show="info.tplCategory == 'tree'">
-      <h4 class="form-header">其他信息</h4>
+      <h4 class="form-header">Other information</h4>
       <el-col :span="12">
         <el-form-item>
           <span slot="label">
-            树编码字段
-            <el-tooltip content="树显示的编码字段名， 如：dept_id" placement="top">
+            Tree coded field
+            <el-tooltip content="Tree displays the encoded field name, Such as:dept_id" placement="top">
               <i class="el-icon-question"></i>
             </el-tooltip>
           </span>
-          <el-select v-model="info.treeCode" placeholder="请选择">
+          <el-select v-model="info.treeCode" placeholder="Please select a">
             <el-option
               v-for="column in info.columns"
               :key="column.columnName"
-              :label="column.columnName + '：' + column.columnComment"
+              :label="column.columnName + ':' + column.columnComment"
               :value="column.columnName"
             ></el-option>
           </el-select>
@@ -83,16 +83,16 @@
       <el-col :span="12">
         <el-form-item>
           <span slot="label">
-            树父编码字段
-            <el-tooltip content="树显示的父编码字段名， 如：parent_Id" placement="top">
+            Tree parent code field
+            <el-tooltip content="Tree displays the name of the parent encoded field, Such as:parent_Id" placement="top">
               <i class="el-icon-question"></i>
             </el-tooltip>
           </span>
-          <el-select v-model="info.treeParentCode" placeholder="请选择">
+          <el-select v-model="info.treeParentCode" placeholder="Please select a">
             <el-option
               v-for="column in info.columns"
               :key="column.columnName"
-              :label="column.columnName + '：' + column.columnComment"
+              :label="column.columnName + ':' + column.columnComment"
               :value="column.columnName"
             ></el-option>
           </el-select>
@@ -101,16 +101,16 @@
       <el-col :span="12">
         <el-form-item>
           <span slot="label">
-            树名称字段
-            <el-tooltip content="树节点的显示名称字段名， 如：dept_name" placement="top">
+            Tree name field
+            <el-tooltip content="Display name field name of the tree node, Such as:dept_name" placement="top">
               <i class="el-icon-question"></i>
             </el-tooltip>
           </span>
-          <el-select v-model="info.treeName" placeholder="请选择">
+          <el-select v-model="info.treeName" placeholder="Please select a">
             <el-option
               v-for="column in info.columns"
               :key="column.columnName"
-              :label="column.columnName + '：' + column.columnComment"
+              :label="column.columnName + ':' + column.columnComment"
               :value="column.columnName"
             ></el-option>
           </el-select>
@@ -132,19 +132,19 @@ export default {
     return {
       rules: {
         tplCategory: [
-          { required: true, message: "请选择生成模板", trigger: "blur" }
+          { required: true, message: "Select generate template", trigger: "blur" }
         ],
         packageName: [
-          { required: true, message: "请输入生成包路径", trigger: "blur" }
+          { required: true, message: "Please enter the generated package path", trigger: "blur" }
         ],
         moduleName: [
-          { required: true, message: "请输入生成模块名", trigger: "blur" }
+          { required: true, message: "Please enter the build module name", trigger: "blur" }
         ],
         businessName: [
-          { required: true, message: "请输入生成业务名", trigger: "blur" }
+          { required: true, message: "Please enter a generate business name", trigger: "blur" }
         ],
         functionName: [
-          { required: true, message: "请输入生成功能名", trigger: "blur" }
+          { required: true, message: "Please enter the build feature name", trigger: "blur" }
         ]
       }
     };

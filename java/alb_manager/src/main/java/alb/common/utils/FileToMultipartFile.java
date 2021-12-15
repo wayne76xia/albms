@@ -13,45 +13,45 @@ import java.io.OutputStream;
 
 /**
  * @Date: 2020/7/8 15:35
- * @Description:file转换为MultipartFile
+ * @Description:fileconvertMultipartFile
  */
 public class FileToMultipartFile {
 
     private static void picUpload(MultipartFile file) {
-        //图片上传
-        if (file != null) {// 判断上传的文件是否为空
-            String path = null;// 文件路径
-            String type = null;// 文件类型
-            String fileName = file.getOriginalFilename();// 文件原名称
-            System.out.println("上传的文件原名称:" + fileName);
-            // 判断文件类型
+        //Image upload
+        if (file != null) {// Check whether the uploaded file is empty
+            String path = null;// The file path
+            String type = null;// The file type
+            String fileName = file.getOriginalFilename();// Original file name
+            System.out.println("The original name of the uploaded file:" + fileName);
+            // Determine the file type
             type = fileName.indexOf(".") != -1 ? fileName.substring(fileName.lastIndexOf(".") + 1) : null;
-            if (type != null) {// 判断文件类型是否为空
+            if (type != null) {// Check whether the file type is empty
                 if ("GIF".equalsIgnoreCase(type) || "PNG".equalsIgnoreCase(type) || "JPG".equalsIgnoreCase(type)) {
-                    // 项目在容器中实际发布运行的根路径
+                    // The root path where the project actually publishes runs in the container
                     //String realPath=request.getSession().getServletContext().getRealPath("/");
-                    //哥哥自己写的路径
+                    //Brother wrote his own path
                     String realPath = "F://pic//";
-                    // 自定义的文件名称
+                    // User-defined file name
                     String trueFileName = fileName;
-                    // 设置存放图片文件的路径
+                    // Set the path for storing image files
                     path = realPath + trueFileName;
-                    System.out.println("存放图片文件的路径:" + path);
-                    // 转存文件到指定的路径
+                    System.out.println("The path to the image file:" + path);
+                    // Saves the file to the specified path
                     try {
                         file.transferTo(new File(path));
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
-                    System.out.println("文件成功上传到指定目录下");
+                    System.out.println("The file is successfully uploaded to the specified directory");
                 } else {
-                    System.out.println("不是我们想要的文件类型,请按要求重新上传");
+                    System.out.println("Not the type of file we want,Please re-upload as required");
                 }
             } else {
-                System.out.println("文件类型为空");
+                System.out.println("The file type is empty");
             }
         }
-        System.out.println("没有找到相对应的文件");
+        System.out.println("No corresponding file was found");
     }
 
     public static MultipartFile getMulFileByPath(String picPath) {

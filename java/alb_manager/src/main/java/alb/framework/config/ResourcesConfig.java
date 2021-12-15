@@ -9,7 +9,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import alb.framework.interceptor.RepeatSubmitInterceptor;
 
 /**
- * 通用配置
+ * General configuration
  *
  */
 @Configuration
@@ -21,16 +21,16 @@ public class ResourcesConfig implements WebMvcConfigurer
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry)
     {
-        /** 本地文件上传路径 */
+        /** Local file upload path */
         registry.addResourceHandler(Constants.RESOURCE_PREFIX + "/**").addResourceLocations("file:" + WlwqConfig.getProfile() + "/");
 
-        /** swagger配置 */
+        /** swaggerconfiguration */
         registry.addResourceHandler("swagger-ui.html").addResourceLocations("classpath:/META-INF/resources/");
         registry.addResourceHandler("/webjars/**").addResourceLocations("classpath:/META-INF/resources/webjars/");
     }
 
     /**
-     * 自定义拦截规则
+     * Custom interception rules
      */
     @Override
     public void addInterceptors(InterceptorRegistry registry)

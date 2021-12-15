@@ -8,13 +8,13 @@ import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
 import org.springframework.stereotype.Component;
 
 /**
- * spring工具类 方便在非spring管理环境中获取bean
+ * springUtility class Convenient in thespringObtained from the management environmentbean
  *
  */
 @Component
 public final class SpringUtils implements BeanFactoryPostProcessor
 {
-    /** Spring应用上下文环境 */
+    /** SpringApplication Context */
     private static ConfigurableListableBeanFactory beanFactory;
 
     @Override
@@ -24,10 +24,10 @@ public final class SpringUtils implements BeanFactoryPostProcessor
     }
 
     /**
-     * 获取对象
+     * Access to the object
      *
      * @param name
-     * @return Object 一个以所给名字注册的bean的实例
+     * @return Object One registered in the given namebeanAn instance of the
      * @throws org.springframework.beans.BeansException
      *
      */
@@ -38,7 +38,7 @@ public final class SpringUtils implements BeanFactoryPostProcessor
     }
 
     /**
-     * 获取类型为requiredType的对象
+     * The acquisition type isrequiredTypeThe object of
      *
      * @param clz
      * @return
@@ -52,7 +52,7 @@ public final class SpringUtils implements BeanFactoryPostProcessor
     }
 
     /**
-     * 如果BeanFactory包含一个与所给名称匹配的bean定义，则返回true
+     * ifBeanFactoryContains one that matches the given namebeandefine,It returnstrue
      *
      * @param name
      * @return boolean
@@ -63,7 +63,7 @@ public final class SpringUtils implements BeanFactoryPostProcessor
     }
 
     /**
-     * 判断以给定名字注册的bean定义是一个singleton还是一个prototype。 如果与给定名字相应的bean定义没有被找到，将会抛出一个异常（NoSuchBeanDefinitionException）
+     * Determines whether registered under the given namebeanThe definition is asingletonOr aprototype。 If corresponding to the given namebeanDefinition not found,An exception will be thrown(NoSuchBeanDefinitionException)
      *
      * @param name
      * @return boolean
@@ -77,7 +77,7 @@ public final class SpringUtils implements BeanFactoryPostProcessor
 
     /**
      * @param name
-     * @return Class 注册对象的类型
+     * @return Class Register the type of the object
      * @throws org.springframework.beans.factory.NoSuchBeanDefinitionException
      *
      */
@@ -87,7 +87,7 @@ public final class SpringUtils implements BeanFactoryPostProcessor
     }
 
     /**
-     * 如果给定的bean名字在bean定义中有别名，则返回这些别名
+     * If givenbeanName inbeanThere are aliases in the definition,Returns these aliases
      *
      * @param name
      * @return
@@ -100,7 +100,7 @@ public final class SpringUtils implements BeanFactoryPostProcessor
     }
 
     /**
-     * 获取aop代理对象
+     * To obtainaopProxy objects
      * 
      * @param invoker
      * @return

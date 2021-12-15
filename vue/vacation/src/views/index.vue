@@ -1,9 +1,9 @@
 <template>
   <div class="page1">
-    <!-- 公告通知 -->
+    <!-- The announcement to inform -->
     <div class="flex aui-padded-15 aui-padded-t-0  aui-margin-t-10" style="align-items: flex-start">
       <div class="font-size-14">
-        <div class="text-black aui-padded-b-10 fw5">公告通知</div>
+        <div class="text-black aui-padded-b-10 fw5">The announcement to inform</div>
         <div
           class="bg-radius aui-padded-t-15 aui-padded-b-15 bg-white part_box1 bg_shadow"
         >
@@ -19,7 +19,7 @@
                   <span class="font-size-30 text-graydf aui-padded-r-5 bull"></span>
                   <span>{{ item.noticeTitle }}</span>
                 </p>
-                <p class="font-size-12 text-theme part1_item2">查看详情</p>
+                <p class="font-size-12 text-theme part1_item2">Check the details</p>
                 <!-- <p class="part1_item2" v-html="item.noticeContent"></p> -->
                 <p class="part1_item3 aui-text-gray aui-text-right">
                   {{ item.createTime }}
@@ -39,20 +39,20 @@
       <div class="font-size-14">
         <el-row>
           <el-col :span="24" class="aui-padded-b-10">
-            <span class="text-graybc">标题：</span>
+            <span class="text-graybc">The title:</span>
             <span class="aui-padded-l-5">{{ noticeDetail.noticeTitle }}</span>
           </el-col>
           <el-col :span="24" class="aui-padded-b-10">
-            <span class="text-graybc">类型：</span>
+            <span class="text-graybc">type:</span>
             <span class="aui-padded-l-5">{{ noticeDetail.noticeTypeTxt }}</span>
           </el-col>
           <el-col :span="24" class="aui-padded-b-10">
-            <span class="text-graybc">创建时间：</span>
+            <span class="text-graybc">Creation time:</span>
             <span class="aui-padded-l-5">{{ noticeDetail.createTime }}</span>
           </el-col>
           <el-col :span="24" class="aui-padded-b-10">
             <el-col :span="5" class="aui-padded-b-10">
-              <span class="text-graybc">内容：</span>
+              <span class="text-graybc">content:</span>
             </el-col>
             <el-col :span="19" class="aui-padded-b-10">
               <div v-html="noticeDetail.noticeContent"></div>
@@ -177,19 +177,19 @@ export default {
           )
         }
       })
-      // 曲线图数据
+      // Graph data
       salePriceAnalyse().then((res) => {
         if (res.code == 200) {
           this.chartData = res.data
         }
       })
-      // 柱状图数据
+      // Bar chart data
       saleNumAnalyse().then((res) => {
         if (res.code == 200) {
           this.histogramData = res.data
         }
       })
-      // 环形图数据
+      // Ring graph data
 
       clientMemberLevelAnalyse().then((res) => {
         if (res.code == 200) {
@@ -261,7 +261,7 @@ export default {
         })
       }
     },
-    // 查看客户详细信息
+    // View customer details
     handleDataScope(row) {
       const id = row.clientId
       clientDetail(id).then((response) => {
@@ -347,7 +347,7 @@ export default {
   height: 346px;
 }
 
-// 待办事项
+// todo
 .page1 .part_box1 {
   height: 348px;
   overflow: auto;
@@ -359,7 +359,7 @@ export default {
 }
 
 .page1 .part_box::-webkit-scrollbar {
-  display: none; /*隐藏滚动条*/
+  display: none; /*Hide scroll bar*/
 }
 
 .page1 .part1:last-child .aui-border-b {

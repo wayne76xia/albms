@@ -1,6 +1,6 @@
 import request from '@/utils/request'
 
-// 查询生成表数据
+// Query the generated table data
 export function listTable(query) {
   return request({
     url: '/tool/gen/list',
@@ -8,7 +8,7 @@ export function listTable(query) {
     params: query
   })
 }
-// 查询db数据库列表
+// The querydbDatabase list
 export function listDbTable(query) {
   return request({
     url: '/tool/gen/db/list',
@@ -17,7 +17,7 @@ export function listDbTable(query) {
   })
 }
 
-// 查询表详细信息
+// Query table details
 export function getGenTable(tableId) {
   return request({
     url: '/tool/gen/' + tableId,
@@ -25,7 +25,7 @@ export function getGenTable(tableId) {
   })
 }
 
-// 修改代码生成信息
+// Modify code generation information
 export function updateGenTable(data) {
   return request({
     url: '/tool/gen',
@@ -34,7 +34,7 @@ export function updateGenTable(data) {
   })
 }
 
-// 导入表
+// The import table
 export function importTable(data) {
   return request({
     url: '/tool/gen/importTable',
@@ -42,14 +42,14 @@ export function importTable(data) {
     params: data
   })
 }
-// 预览生成代码
+// Preview generated code
 export function previewTable(tableId) {
   return request({
     url: '/tool/gen/preview/' + tableId,
     method: 'get'
   })
 }
-// 删除表数据
+// Drop table data
 export function delTable(tableId) {
   return request({
     url: '/tool/gen/' + tableId,

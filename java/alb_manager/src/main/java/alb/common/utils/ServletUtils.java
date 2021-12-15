@@ -11,13 +11,13 @@ import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
 /**
- * 客户端工具类
+ * Client utility classes
  *
  */
 public class ServletUtils
 {
     /**
-     * 获取String参数
+     * To obtainStringparameter
      */
     public static String getParameter(String name)
     {
@@ -25,7 +25,7 @@ public class ServletUtils
     }
 
     /**
-     * 获取String参数
+     * To obtainStringparameter
      */
     public static String getParameter(String name, String defaultValue)
     {
@@ -33,7 +33,7 @@ public class ServletUtils
     }
 
     /**
-     * 获取Integer参数
+     * To obtainIntegerparameter
      */
     public static Integer getParameterToInt(String name)
     {
@@ -41,7 +41,7 @@ public class ServletUtils
     }
 
     /**
-     * 获取Integer参数
+     * To obtainIntegerparameter
      */
     public static Integer getParameterToInt(String name, Integer defaultValue)
     {
@@ -49,7 +49,7 @@ public class ServletUtils
     }
 
     /**
-     * 获取request
+     * To obtainrequest
      */
     public static HttpServletRequest getRequest()
     {
@@ -57,7 +57,7 @@ public class ServletUtils
     }
 
     /**
-     * 获取response
+     * To obtainresponse
      */
     public static HttpServletResponse getResponse()
     {
@@ -65,7 +65,7 @@ public class ServletUtils
     }
 
     /**
-     * 获取session
+     * To obtainsession
      */
     public static HttpSession getSession()
     {
@@ -79,10 +79,10 @@ public class ServletUtils
     }
 
     /**
-     * 将字符串渲染到客户端
+     * Render the string to the client
      * 
-     * @param response 渲染对象
-     * @param string 待渲染的字符串
+     * @param response Apply colours to a drawing object
+     * @param string The string to render
      * @return null
      */
     public static String renderString(HttpServletResponse response, String string)
@@ -102,7 +102,7 @@ public class ServletUtils
     }
 
     /**
-     * 是否是Ajax异步请求
+     * Whether it isAjaxAn asynchronous request
      * 
      * @param request
      */

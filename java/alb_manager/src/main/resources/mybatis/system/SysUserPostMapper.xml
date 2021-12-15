@@ -34,7 +34,7 @@
             (#{item.userId}, #{item.postId})
         </foreach>
     </insert>
-    <!--    根据用户id和部门id查询是否存在这条记录-->
+    <!--    According to the useridAnd departmentsidQuery whether the record exists-->
     <select id="checkUserIsThisPost" resultMap="SysUserPostResult">
         select user_id, post_id
         from sys_user_post
@@ -42,7 +42,7 @@
           and post_id = #{postId}
           limit 1
     </select>
-    <!--随机获取一名话务员id-->
+    <!--Obtain a random operatorid-->
     <select id="getRandomUserId" resultType="java.lang.Long">
         select sup.user_id from sys_user_post sup left join sys_user su on sup.user_id = su.user_id
         where sup.post_id = #{postId} and su.del_flag = '0' and su.status = '0' ORDER BY rand() LIMIT 1

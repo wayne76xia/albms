@@ -1,33 +1,33 @@
 package alb.project.monitor.domain;
 
 /**
- * 当前在线会话
+ * Current Online Session
  *
  */
 public class SysUserOnline
 {
-    /** 会话编号 */
+    /** The session id */
     private String tokenId;
 
-    /** 部门名称 */
+    /** Department name */
     private String deptName;
 
-    /** 用户名称 */
+    /** The user name */
     private String userName;
 
-    /** 登录IP地址 */
+    /** The loginIPaddress */
     private String ipaddr;
 
-    /** 登录地址 */
+    /** The login address */
     private String loginLocation;
 
-    /** 浏览器类型 */
+    /** Browser Type */
     private String browser;
 
-    /** 操作系统 */
+    /** The operating system */
     private String os;
 
-    /** 登录时间 */
+    /** The login time */
     private Long loginTime;
 
     public String getTokenId()

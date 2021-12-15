@@ -1,7 +1,5 @@
 package alb.common.utils.job;
 
-import java.util.Date;
-
 import alb.common.constant.Constants;
 import alb.common.constant.ScheduleConstants;
 import alb.common.utils.ExceptionUtil;
@@ -17,8 +15,10 @@ import org.quartz.JobExecutionException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.Date;
+
 /**
- * 抽象quartz调用
+ * abstractquartzcall
  *
  */
 public abstract class AbstractQuartzJob implements Job
@@ -26,7 +26,7 @@ public abstract class AbstractQuartzJob implements Job
     private static final Logger log = LoggerFactory.getLogger(AbstractQuartzJob.class);
 
     /**
-     * 线程本地变量
+     * Thread local variable
      */
     private static final ThreadLocal<Date> threadLocal = new ThreadLocal<>();
 
@@ -46,16 +46,16 @@ public abstract class AbstractQuartzJob implements Job
         }
         catch (Exception e)
         {
-            log.error("任务执行异常  - ：", e);
+            log.error("Task execution exception  - :", e);
             after(context, sysJob, e);
         }
     }
 
     /**
-     * 执行前
+     * Perform before
      *
-     * @param context 工作执行上下文对象
-     * @param sysJob 系统计划任务
+     * @param context Work execution context object
+     * @param sysJob System Scheduled Tasks
      */
     protected void before(JobExecutionContext context, SysJob sysJob)
     {
@@ -63,10 +63,10 @@ public abstract class AbstractQuartzJob implements Job
     }
 
     /**
-     * 执行后
+     * After performing
      *
-     * @param context 工作执行上下文对象
-     * @param sysScheduleJob 系统计划任务
+     * @param context Work execution context object
+     * @param sysScheduleJob System Scheduled Tasks
      */
     protected void after(JobExecutionContext context, SysJob sysJob, Exception e)
     {
@@ -80,7 +80,7 @@ public abstract class AbstractQuartzJob implements Job
         sysJobLog.setStartTime(startTime);
         sysJobLog.setStopTime(new Date());
         long runMs = sysJobLog.getStopTime().getTime() - sysJobLog.getStartTime().getTime();
-        sysJobLog.setJobMessage(sysJobLog.getJobName() + " 总共耗时：" + runMs + "毫秒");
+        sysJobLog.setJobMessage(sysJobLog.getJobName() + " The total time consuming:" + runMs + "ms");
         if (e != null)
         {
             sysJobLog.setStatus(Constants.FAIL);
@@ -92,16 +92,16 @@ public abstract class AbstractQuartzJob implements Job
             sysJobLog.setStatus(Constants.SUCCESS);
         }
 
-        // 写入数据库当中
+        // Write to the database
         SpringUtils.getBean(ISysJobLogService.class).addJobLog(sysJobLog);
     }
 
     /**
-     * 执行方法，由子类重载
+     * Execution method,Reload by subclass
      *
-     * @param context 工作执行上下文对象
-     * @param sysJob 系统计划任务
-     * @throws Exception 执行过程中的异常
+     * @param context Work execution context object
+     * @param sysJob System Scheduled Tasks
+     * @throws Exception Exceptions during execution
      */
     protected abstract void doExecute(JobExecutionContext context, SysJob sysJob) throws Exception;
 }

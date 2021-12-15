@@ -16,9 +16,9 @@ import static java.lang.annotation.ElementType.*;
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
 /**
- * 验证手机号，空和正确的手机号都能验证通过<br/>
- * 正确的手机号由11位数字组成，第一位为1
- * 第二位为 3、4、5、7、8.9
+ * Verify mobile phone number,Both empty and the correct phone number can be verified<br/>
+ * Correct mobile phone number by11Bit digit composition,The first is1
+ * The second is 3、4、5、7、8.9
  */
 @ConstraintComposition(CompositionType.OR)
 @Pattern(regexp = "1[3|4|5|7|8|9][0-9]\\d{8}")
@@ -29,7 +29,7 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 @Retention(RUNTIME)
 @ReportAsSingleViolation
 public @interface Phone {
-    String message() default "手机号校验错误";
+    String message() default "Mobile phone number verification error";
 
     Class<?>[] groups() default {};
 

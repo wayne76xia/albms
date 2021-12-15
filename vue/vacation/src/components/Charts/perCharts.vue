@@ -84,7 +84,7 @@ export default {
           },
         },
         yAxis: {
-          name:'百分比',
+          name:'The percentage',
           type: "value",
           axisLine: {
             lineStyle: {
@@ -102,24 +102,24 @@ export default {
         },
         series: [
           {
-            name: "话务员业绩达标率",
+            name: "Rate of operator performance up to standard",
             type: "line",
-            symbolSize: 10, //拐点圆的大小
-            color: "#715AE5", //折线条的颜色
+            symbolSize: 10, //The size of an inflection circle
+            color: "#715AE5", //The color of the broken line
             data: this.data.totalReachRatioArray,
           },
           {
-            name: "子公司业绩达标率",
+            name: "Achievement rate of subsidiaries",
             type: "line",
-            symbolSize: 10, //拐点圆的大小
-            color: "#5ECC59", //折线条的颜色
+            symbolSize: 10, //The size of an inflection circle
+            color: "#5ECC59", //The color of the broken line
             data: this.data.totalCompanyRatioArray,
           },
           {
-            name: "门店业绩达标率",
+            name: "Store performance up to standard rate",
             type: "line",
-            symbolSize: 10, //拐点圆的大小
-            color: "#E8522A", //折线条的颜色
+            symbolSize: 10, //The size of an inflection circle
+            color: "#E8522A", //The color of the broken line
             data: this.data.totalShopRatioArray,
           },
         ],

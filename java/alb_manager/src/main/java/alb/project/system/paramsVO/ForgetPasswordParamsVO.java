@@ -8,7 +8,7 @@ import javax.validation.constraints.NotNull;
 
 /**
  * @ClassName ForgetPasswordParamsVO
- * @Description 忘记密码参数封装
+ * @Description Forget password parameter encapsulation
  * @Date 2020/7/13 19:33
  */
 @AllArgsConstructor
@@ -18,23 +18,23 @@ import javax.validation.constraints.NotNull;
 @Builder
 public class ForgetPasswordParamsVO {
 
-    @Phone(message = "手机号码格式不正确！")
-    @NotNull(message = "手机号码为空！")
+    @Phone(message = "The mobile phone number format is incorrect!")
+    @NotNull(message = "The mobile phone number is empty!")
     private String phone;
 
-    @NotNull(message = "验证码为空！")
-    @Length(min = 6, max = 6, message = "验证码长度为6位！")
+    @NotNull(message = "The verification code is empty!")
+    @Length(min = 6, max = 6, message = "The length of the verification code is6position!")
     private String code;
 
-    @NotNull(message = "密码为空！")
-    @Length(min = 6,max = 20,message = "密码长度限制6-20字符！")
+    @NotNull(message = "Password is empty!")
+    @Length(min = 6,max = 20,message = "Password length limit6-20character!")
     private String password;
 
-    @NotNull(message = "请再次输入密码！")
-    @Length(min = 6,max = 20,message = "密码长度限制6-20字符！")
+    @NotNull(message = "Please enter your password again!")
+    @Length(min = 6,max = 20,message = "Password length limit6-20character!")
     private String againPassword;
 
-    @NotNull(message = "唯一标识为空！")
+    @NotNull(message = "The unique identifier is null!")
     private String uuid;
 
 }

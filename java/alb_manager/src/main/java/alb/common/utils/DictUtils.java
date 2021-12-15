@@ -1,24 +1,24 @@
 package alb.common.utils;
 
-import java.util.Collection;
-import java.util.List;
-
 import alb.common.constant.Constants;
 import alb.common.utils.spring.SpringUtils;
 import alb.framework.redis.RedisCache;
 import alb.project.system.domain.SysDictData;
 
+import java.util.Collection;
+import java.util.List;
+
 /**
- * 字典工具类
+ * Dictionary utility class
  *
  */
 public class DictUtils
 {
     /**
-     * 设置字典缓存
+     * Setting up dictionary cache
      * 
-     * @param key 参数键
-     * @param dictDatas 字典数据列表
+     * @param key The parameters of the key
+     * @param dictDatas Dictionary data list
      */
     public static void setDictCache(String key, List<SysDictData> dictDatas)
     {
@@ -26,10 +26,10 @@ public class DictUtils
     }
 
     /**
-     * 获取字典缓存
+     * Get the dictionary cache
      * 
-     * @param key 参数键
-     * @return dictDatas 字典数据列表
+     * @param key The parameters of the key
+     * @return dictDatas Dictionary data list
      */
     public static List<SysDictData> getDictCache(String key)
     {
@@ -43,7 +43,7 @@ public class DictUtils
     }
 
     /**
-     * 清空字典缓存
+     * Clearing the dictionary cache
      */
     public static void clearDictCache()
     {
@@ -52,10 +52,10 @@ public class DictUtils
     }
 
     /**
-     * 设置cache key
+     * Set up thecache key
      * 
-     * @param configKey 参数键
-     * @return 缓存键key
+     * @param configKey The parameters of the key
+     * @return Cache keykey
      */
     public static String getCacheKey(String configKey)
     {

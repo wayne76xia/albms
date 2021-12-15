@@ -1,6 +1,6 @@
 import request from '@/utils/request'
 
-// 查询${functionName}列表
+// The query${functionName}The list of
 export function list${BusinessName}(query) {
   return request({
     url: '/${moduleName}/${businessName}/list',
@@ -9,7 +9,7 @@ export function list${BusinessName}(query) {
   })
 }
 
-// 查询${functionName}详细
+// The query${functionName}detailed
 export function get${BusinessName}(${pkColumn.javaField}) {
   return request({
     url: '/${moduleName}/${businessName}/' + ${pkColumn.javaField},
@@ -17,7 +17,7 @@ export function get${BusinessName}(${pkColumn.javaField}) {
   })
 }
 
-// 新增${functionName}
+// new${functionName}
 export function add${BusinessName}(data) {
   return request({
     url: '/${moduleName}/${businessName}',
@@ -26,7 +26,7 @@ export function add${BusinessName}(data) {
   })
 }
 
-// 修改${functionName}
+// Modify the${functionName}
 export function update${BusinessName}(data) {
   return request({
     url: '/${moduleName}/${businessName}',
@@ -35,7 +35,7 @@ export function update${BusinessName}(data) {
   })
 }
 
-// 删除${functionName}
+// delete${functionName}
 export function del${BusinessName}(${pkColumn.javaField}) {
   return request({
     url: '/${moduleName}/${businessName}/' + ${pkColumn.javaField},
@@ -43,7 +43,7 @@ export function del${BusinessName}(${pkColumn.javaField}) {
   })
 }
 
-// 导出${functionName}
+// export${functionName}
 export function export${BusinessName}(query) {
   return request({
     url: '/${moduleName}/${businessName}/export',

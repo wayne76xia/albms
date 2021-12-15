@@ -13,7 +13,7 @@ import com.fasterxml.jackson.databind.SerializerProvider;
 import java.io.IOException;
 
 /**
- * Long 类型字段序列化时转为字符串，避免js丢失精度
+ * Long Type fields are serialized as strings,avoidjsLoss of accuracy
  *
  */
 

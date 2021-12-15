@@ -15,7 +15,7 @@ import alb.framework.aspectj.lang.enums.BusinessType;
 import alb.framework.web.controller.BaseController;
 
 /**
- * 操作日志记录
+ * Operation Log
  *
  */
 @RestController
@@ -34,14 +34,14 @@ public class SysOperlogController extends BaseController
         return getDataTable(list);
     }
 
-    @Log(title = "操作日志", businessType = BusinessType.EXPORT)
+    @Log(title = "The operation log", businessType = BusinessType.EXPORT)
     @PreAuthorize("@ss.hasPermi('monitor:operlog:export')")
     @GetMapping("/export")
     public AjaxResult export(SysOperLog operLog)
     {
         List<SysOperLog> list = operLogService.selectOperLogList(operLog);
         ExcelUtil<SysOperLog> util = new ExcelUtil<SysOperLog>(SysOperLog.class);
-        return util.exportExcel(list, "操作日志");
+        return util.exportExcel(list, "The operation log");
     }
 
     @PreAuthorize("@ss.hasPermi('monitor:operlog:remove')")
@@ -51,7 +51,7 @@ public class SysOperlogController extends BaseController
         return toAjax(operLogService.deleteOperLogByIds(operIds));
     }
 
-    @Log(title = "操作日志", businessType = BusinessType.CLEAN)
+    @Log(title = "The operation log", businessType = BusinessType.CLEAN)
     @PreAuthorize("@ss.hasPermi('monitor:operlog:remove')")
     @DeleteMapping("/clean")
     public AjaxResult clean()

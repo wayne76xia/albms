@@ -6,110 +6,110 @@ import alb.project.system.domain.SysPost;
 import alb.project.system.domain.SysUserPost;
 
 /**
- * 岗位信息 服务层
+ * Post information The service layer
  *
  */
 public interface ISysPostService
 {
     /**
-     * 查询岗位信息集合
+     * Query the job information set
      * 
-     * @param post 岗位信息
-     * @return 岗位列表
+     * @param post Post information
+     * @return Post a list of
      */
     List<SysPost> selectPostList(SysPost post);
 
     /**
-     * 查询所有岗位
+     * Query all posts
      * 
-     * @return 岗位列表
+     * @return Post a list of
      */
     List<SysPost> selectPostAll();
 
     /**
-     * 通过岗位ID查询岗位信息
+     * Through the postIDQuery job information
      * 
-     * @param postId 岗位ID
-     * @return 角色对象信息
+     * @param postId jobsID
+     * @return Role Object Information
      */
     SysPost selectPostById(Long postId);
 
     /**
-     * 根据用户ID获取岗位选择框列表
+     * According to the userIDGet the job selection box list
      * 
-     * @param userId 用户ID
-     * @return 选中岗位ID列表
+     * @param userId The userID
+     * @return Select the jobsIDThe list of
      */
     List<Integer> selectPostListByUserId(Long userId);
 
     /**
-     * 校验岗位名称
+     * Calibration post Name
      * 
-     * @param post 岗位信息
-     * @return 结果
+     * @param post Post information
+     * @return The results of
      */
     String checkPostNameUnique(SysPost post);
 
     /**
-     * 校验岗位编码
+     * Check post code
      * 
-     * @param post 岗位信息
-     * @return 结果
+     * @param post Post information
+     * @return The results of
      */
     String checkPostCodeUnique(SysPost post);
 
     /**
-     * 通过岗位ID查询岗位使用数量
+     * Through the postIDQuery the number of positions used
      * 
-     * @param postId 岗位ID
-     * @return 结果
+     * @param postId jobsID
+     * @return The results of
      */
     int countUserPostById(Long postId);
 
     /**
-     * 删除岗位信息
+     * Delete job information
      * 
-     * @param postId 岗位ID
-     * @return 结果
+     * @param postId jobsID
+     * @return The results of
      */
     int deletePostById(Long postId);
 
     /**
-     * 批量删除岗位信息
+     * Delete job information in batches
      * 
-     * @param postIds 需要删除的岗位ID
-     * @return 结果
-     * @throws Exception 异常
+     * @param postIds Jobs to be deletedID
+     * @return The results of
+     * @throws Exception abnormal
      */
     int deletePostByIds(Long[] postIds);
 
     /**
-     * 新增保存岗位信息
+     * Added Saving job information
      * 
-     * @param post 岗位信息
-     * @return 结果
+     * @param post Post information
+     * @return The results of
      */
     int insertPost(SysPost post);
 
     /**
-     * 修改保存岗位信息
+     * Modify save job information
      * 
-     * @param post 岗位信息
-     * @return 结果
+     * @param post Post information
+     * @return The results of
      */
     int updatePost(SysPost post);
 
     List<String> selectPostNameByUserId(Long userId);
 
     /**
-     * 根据职位编码查询职位
+     * Search for jobs by job code
      * @param ygs
      * @return
      */
     SysPost selectPostByPostCode(String ygs);
 
     /**
-     * 根据用户id和部门id查询是否存在这条记录
+     * According to the useridAnd departmentsidQuery whether the record exists
      * @param userId
      * @param postId
      * @return
@@ -117,7 +117,7 @@ public interface ISysPostService
     SysUserPost checkUserIsThisPost(Long userId, Long postId);
 
     /**
-     * 随机获取一名话务员id
+     * Obtain a random operatorid
      * @return
      */
     Long getRandomUserId(Long postId);

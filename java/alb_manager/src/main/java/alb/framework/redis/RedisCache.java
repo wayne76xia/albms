@@ -8,7 +8,7 @@ import java.util.*;
 import java.util.concurrent.TimeUnit;
 
 /**
- * spring redis 工具类
+ * spring redis Utility class
  *
  **/
 @SuppressWarnings(value = { "unchecked", "rawtypes" })
@@ -19,11 +19,11 @@ public class RedisCache
     public RedisTemplate redisTemplate;
 
     /**
-     * 缓存基本的对象，Integer、String、实体类等
+     * Cache basic objects,Integer、String、Entity class etc.
      *
-     * @param key 缓存的键值
-     * @param value 缓存的值
-     * @return 缓存的对象
+     * @param key The cached key value
+     * @param value The value of the cache
+     * @return Cached object
      */
     public <T> ValueOperations<String, T> setCacheObject(String key, T value)
     {
@@ -33,13 +33,13 @@ public class RedisCache
     }
 
     /**
-     * 缓存基本的对象，Integer、String、实体类等
+     * Cache basic objects,Integer、String、Entity class etc.
      *
-     * @param key 缓存的键值
-     * @param value 缓存的值
-     * @param timeout 时间
-     * @param timeUnit 时间颗粒度
-     * @return 缓存的对象
+     * @param key The cached key value
+     * @param value The value of the cache
+     * @param timeout time
+     * @param timeUnit Temporal granularity
+     * @return Cached object
      */
     public <T> ValueOperations<String, T> setCacheObject(String key, T value, Integer timeout, TimeUnit timeUnit)
     {
@@ -49,10 +49,10 @@ public class RedisCache
     }
 
     /**
-     * 获得缓存的基本对象。
+     * Get the cached base object。
      *
-     * @param key 缓存键值
-     * @return 缓存键值对应的数据
+     * @param key The cache keys
+     * @return Caches data corresponding to key values
      */
     public <T> T getCacheObject(String key)
     {
@@ -61,7 +61,7 @@ public class RedisCache
     }
 
     /**
-     * 删除单个对象
+     * Deleting a single object
      *
      * @param key
      */
@@ -71,7 +71,7 @@ public class RedisCache
     }
 
     /**
-     * 删除集合对象
+     * Deleting a collection object
      *
      * @param collection
      */
@@ -81,11 +81,11 @@ public class RedisCache
     }
 
     /**
-     * 缓存List数据
+     * The cacheListdata
      *
-     * @param key 缓存的键值
-     * @param dataList 待缓存的List数据
-     * @return 缓存的对象
+     * @param key The cached key value
+     * @param dataList To be cachedListdata
+     * @return Cached object
      */
     public <T> ListOperations<String, T> setCacheList(String key, List<T> dataList)
     {
@@ -102,10 +102,10 @@ public class RedisCache
     }
 
     /**
-     * 获得缓存的list对象
+     * cachedlistobject
      *
-     * @param key 缓存的键值
-     * @return 缓存键值对应的数据
+     * @param key The cached key value
+     * @return Caches data corresponding to key values
      */
     public <T> List<T> getCacheList(String key)
     {
@@ -121,11 +121,11 @@ public class RedisCache
     }
 
     /**
-     * 缓存Set
+     * The cacheSet
      *
-     * @param key 缓存键值
-     * @param dataSet 缓存的数据
-     * @return 缓存数据的对象
+     * @param key The cache keys
+     * @param dataSet Cached data
+     * @return An object for caching data
      */
     public <T> BoundSetOperations<String, T> setCacheSet(String key, Set<T> dataSet)
     {
@@ -139,7 +139,7 @@ public class RedisCache
     }
 
     /**
-     * 获得缓存的set
+     * cachedset
      *
      * @param key
      * @return
@@ -153,7 +153,7 @@ public class RedisCache
     }
 
     /**
-     * 缓存Map
+     * The cacheMap
      *
      * @param key
      * @param dataMap
@@ -173,7 +173,7 @@ public class RedisCache
     }
 
     /**
-     * 获得缓存的Map
+     * cachedMap
      *
      * @param key
      * @return
@@ -185,7 +185,7 @@ public class RedisCache
     }
 
     /**
-     * 获得Hash缓存的值
+     * To obtainHashThe value of the cache
      *
      * @param tableKey
      * @param objKey
@@ -198,10 +198,10 @@ public class RedisCache
     }
 
     /**
-     * 获得缓存的基本对象列表
+     * Get a list of cached base objects
      *
-     * @param pattern 字符串前缀
-     * @return 对象列表
+     * @param pattern String prefix
+     * @return The object list
      */
     public Collection<String> keys(String pattern)
     {

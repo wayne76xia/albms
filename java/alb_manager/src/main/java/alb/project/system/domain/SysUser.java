@@ -17,140 +17,140 @@ import alb.framework.web.domain.BaseEntity;
 import org.springframework.data.annotation.Transient;
 
 /**
- * 用户对象 sys_user
+ * The user object sys_user
  *
  */
 public class SysUser extends BaseEntity {
     private static final long serialVersionUID = 1L;
 
     /**
-     * 用户ID
+     * The userID
      */
-    @Excel(name = "用户序号", cellType = ColumnType.NUMERIC, prompt = "用户编号")
+    @Excel(name = "User number", cellType = ColumnType.NUMERIC, prompt = "The user id")
     private Long userId;
 
     /**
-     * 部门ID
+     * departmentID
      */
     private Long deptId;
 
-    @Excel(name = "部门编号", type = Type.IMPORT)
+    @Excel(name = "Department number", type = Type.IMPORT)
     @Transient
     private String deptCode;
 
 
-    @Excel(name = "工号")
+    @Excel(name = "Work number")
     private String userCode;
 
     /**
-     * 职位名字
+     * Position name
      */
-    @Excel(name = "职位",type = Type.EXPORT)
+    @Excel(name = "position",type = Type.EXPORT)
     @Transient
     private String postName;
 
     /**
-     * 用户账号
+     * The user account
      */
-    @Excel(name = "登录名称")
+    @Excel(name = "The login name")
     private String userName;
 
     /**
-     * 用户昵称
+     * The user nickname
      */
-    @Excel(name = "用户名称")
+    @Excel(name = "The user name")
     private String nickName;
 
     /**
-     * 用户邮箱
+     * User mailbox
      */
-    @Excel(name = "用户邮箱")
+    @Excel(name = "User mailbox")
     private String email;
 
     /**
-     * 手机号码
+     * Mobile phone number
      */
-    @Excel(name = "手机号码")
+    @Excel(name = "Mobile phone number")
     private String phonenumber;
 
     /**
-     * 用户性别
+     * User's gender
      */
-    @Excel(name = "用户性别", readConverterExp = "0=男,1=女,2=未知")
+    @Excel(name = "User's gender", readConverterExp = "0=male,1=female,2=The unknown")
     private String sex;
 
     /**
-     * 用户头像
+     * The avatars
      */
     private String avatar;
 
-    @Excel(name = "年龄")
+    @Excel(name = "age")
     private Integer age;
 
-    @Excel(name = "省")
+    @Excel(name = "province")
     private String province;
 
-    @Excel(name = "市")
+    @Excel(name = "The city")
     private String city;
 
-    @Excel(name = "区")
+    @Excel(name = "area")
     private String district;
 
     /**
-     * 密码
+     * password
      */
     private String password;
 
     /**
-     * 盐加密
+     * Salt encryption
      */
     private String salt;
 
     /**
-     * 帐号状态（0正常 1停用）
+     * Account status(0normal 1disable)
      */
-    @Excel(name = "帐号状态", readConverterExp = "0=正常,1=停用")
+    @Excel(name = "Account status", readConverterExp = "0=normal,1=disable")
     private String status;
 
     /**
-     * 删除标志（0代表存在 2代表删除）
+     * Delete logo(0On behalf of there 2On behalf of the delete)
      */
     private String delFlag;
 
     /**
-     * 最后登陆IP
+     * The final landingIP
      */
-    @Excel(name = "最后登陆IP", type = Type.EXPORT)
+    @Excel(name = "The final landingIP", type = Type.EXPORT)
     private String loginIp;
 
     /**
-     * 最后登陆时间
+     * Last landing time
      */
-    @Excel(name = "最后登陆时间", width = 30, dateFormat = "yyyy-MM-dd HH:mm:ss", type = Type.EXPORT)
+    @Excel(name = "Last landing time", width = 30, dateFormat = "yyyy-MM-dd HH:mm:ss", type = Type.EXPORT)
     private Date loginDate;
 
     /**
-     * 部门对象
+     * Department of object
      */
     @Excels({
-            @Excel(name = "部门编号", targetAttr = "deptCode",type = Type.EXPORT),
-            @Excel(name = "部门名称", targetAttr = "deptName", type = Type.EXPORT),
-            @Excel(name = "部门负责人", targetAttr = "leader", type = Type.EXPORT)
+            @Excel(name = "Department number", targetAttr = "deptCode",type = Type.EXPORT),
+            @Excel(name = "Department name", targetAttr = "deptName", type = Type.EXPORT),
+            @Excel(name = "Department head", targetAttr = "leader", type = Type.EXPORT)
     })
     private SysDept dept;
 
     /**
-     * 角色对象
+     * Role object
      */
     private List<SysRole> roles;
 
     /**
-     * 角色组
+     * Character set
      */
     private Long[] roleIds;
 
     /**
-     * 岗位组
+     * Post group
      */
     private Long[] postIds;
 
@@ -204,7 +204,7 @@ public class SysUser extends BaseEntity {
         this.deptId = deptId;
     }
 
-    @Size(min = 0, max = 30, message = "用户昵称长度不能超过30个字符")
+    @Size(min = 0, max = 30, message = "The user nickname cannot exceed the maximum length30A character")
     public String getNickName() {
         return nickName;
     }
@@ -213,8 +213,8 @@ public class SysUser extends BaseEntity {
         this.nickName = nickName;
     }
 
-    @NotBlank(message = "用户账号不能为空")
-    @Size(min = 0, max = 30, message = "用户账号长度不能超过30个字符")
+    @NotBlank(message = "The user account cannot be empty")
+    @Size(min = 0, max = 30, message = "The length of the user account cannot exceed30A character")
     public String getUserName() {
         return userName;
     }
@@ -223,8 +223,8 @@ public class SysUser extends BaseEntity {
         this.userName = userName;
     }
 
-    @Email(message = "邮箱格式不正确")
-    @Size(min = 0, max = 50, message = "邮箱长度不能超过50个字符")
+    @Email(message = "The mailbox format is incorrect")
+    @Size(min = 0, max = 50, message = "The length of the mailbox cannot exceed50A character")
     public String getEmail() {
         return email;
     }
@@ -233,7 +233,7 @@ public class SysUser extends BaseEntity {
         this.email = email;
     }
 
-    @Size(min = 0, max = 11, message = "手机号码长度不能超过11个字符")
+    @Size(min = 0, max = 11, message = "The length of the mobile phone number cannot exceed11A character")
     public String getPhonenumber() {
         return phonenumber;
     }

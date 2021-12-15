@@ -123,7 +123,7 @@
         </if>
         <if test="longitude != null  and longitude != ''"> and longitude = #{longitude}</if>
         <if test="latitude != null  and latitude != ''"> and latitude = #{latitude}</if>
-        <!-- 数据范围过滤 -->
+        <!-- Data range filtering -->
         ${params.dataScope}
         order by d.parent_id desc , d.order_num desc
     </select>
@@ -461,7 +461,7 @@
         <if test="address != null  and address != ''">
             and address like concat('%', #{address}, '%')
         </if>
-        <!-- 数据范围过滤 -->
+        <!-- Data range filtering -->
         ${params.dataScope}
                 order by d.parent_id, d.order_num
     </select>
@@ -514,7 +514,7 @@
         <if test="address != null  and address != ''">
             and address like concat('%', #{address}, '%')
         </if>
-        <!-- 数据范围过滤 -->
+        <!-- Data range filtering -->
         ${params.dataScope}
                 order by d.parent_id, d.order_num
     </select>
@@ -541,7 +541,7 @@
           and del_flag = '0'
         limit 1
     </select>
-    <!--获取所有的门店列表-->
+    <!--Get a list of all stores-->
     <select id="getAllShopList" resultType="java.util.Map">
         select dept_id as deptId, dept_name as deptName
         from sys_dept
@@ -550,7 +550,7 @@
           AND type = 2
     </select>
 
-    <!--查询所有的分公司列表 只查询deptId与deptName-->
+    <!--Query the list of all branches Only the querydeptIdwithdeptName-->
     <select id="getAllSubsidiaryCompanyList" resultMap="SysDeptResult">
         select dept_id, dept_name
         from sys_dept
@@ -558,7 +558,7 @@
           and STATUS = '0'
           AND type = 1
     </select>
-    <!--查询分公司下所有门店-->
+    <!--Query all stores in branches-->
     <select id="selectShopListByParentId" resultMap="SysDeptResult">
         select dept_id, dept_name
         from sys_dept
@@ -568,7 +568,7 @@
           and parent_id = #{deptId}
     </select>
 
-    <!--根据shopIds查询门店-->
+    <!--According to theshopIdsQuery stores-->
     <select id="selectDeptByIds" resultMap="SysDeptResult">
         select dept_id,
                dept_code,
@@ -598,7 +598,7 @@
           and status = '0'
           and type = 2
     </select>
-    <!--    根据子公司id查询门店列表-->
+    <!--    According to the subsidiaryidQuery store list-->
     <select id="getShopListByCompanyIds" resultMap="SysDeptResult">
         select dept_id,
                dept_code,
@@ -628,7 +628,7 @@
           and type = 2
           and parent_id in (${ids})
     </select>
-    <!--    根据月份获取子公司数据-->
+    <!--    Obtain subsidiary data by month-->
     <select id="getTotalCompanyNumByMonth" resultType="java.lang.Integer">
         select ifnull(count(dept_id), 0)
         from sys_dept
@@ -637,7 +637,7 @@
           and type = 1
           and DATE_FORMAT(create_time, '%Y-%m') = #{month}
     </select>
-    <!--根据月份获取门店数量-->
+    <!--Obtain the number of stores by month-->
     <select id="getTotalShopNumByMonth" resultType="java.lang.Integer">
         select ifnull(count(dept_id), 0)
         from sys_dept
@@ -647,7 +647,7 @@
           and DATE_FORMAT(create_time, '%Y-%m') = #{month}
     </select>
 
-    <!--   门店数量-->
+    <!--   Number of stores-->
     <select id="getTotalShopNum" resultType="java.lang.Integer">
         select ifnull(count(dept_id), 0)
         from sys_dept
@@ -655,7 +655,7 @@
           and status = '0'
           and type = 2
     </select>
-    <!--    子公司数量-->
+    <!--    Number of subsidiaries-->
     <select id="getTotalCompanyNum" resultType="java.lang.Integer">
         select ifnull(count(dept_id), 0)
         from sys_dept
@@ -663,7 +663,7 @@
           and status = '0'
           and type = 1
     </select>
-    <!--    查询所有的子公司列表-划分数据权限-->
+    <!--    Query the list of all subsidiaries-Dividing data Permissions-->
     <select id="getSubsidiaryCompanyList" parameterType="SysDept" resultMap="SysDeptResult">
         select d.dept_id, d.dept_name
         from sys_dept d

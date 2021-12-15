@@ -18,53 +18,53 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Swagger2的接口配置
+ * Swagger2Interface configuration of
  *
  */
 @Configuration
 @EnableSwagger2
 public class SwaggerConfig
 {
-    /** 系统基础配置 */
+    /** Basic System Configuration */
     @Autowired
     private WlwqConfig wlwqConfig;
 
-    /** 是否开启swagger */
+    /** Whether openswagger */
     @Value("${swagger.enabled}")
     private boolean enabled;
 
-    /** 设置请求的统一前缀 */
+    /** Sets a unified prefix for requests */
     @Value("${swagger.pathMapping}")
     private String pathMapping;
 
     /**
-     * 创建API
+     * createAPI
      */
     @Bean
     public Docket createRestApi()
     {
         return new Docket(DocumentationType.SWAGGER_2)
-                // 是否启用Swagger
+                // Whether to enableSwagger
                 .enable(enabled)
-                // 用来创建该API的基本信息，展示在文档的页面中（自定义展示的信息）
+                // Used to create theAPIBasic information about,Displayed on the page of the document(Customize the information displayed)
                 .apiInfo(apiInfo())
-                // 设置哪些接口暴露给Swagger展示
+                // Sets which interfaces are exposed toSwaggershow
                 .select()
-                // 扫描所有有注解的api，用这种方式更灵活
+                // Scan all annotated onesapi,It's more flexible that way
                 .apis(RequestHandlerSelectors.withMethodAnnotation(ApiOperation.class))
-                // 扫描指定包中的swagger注解
+                // Scans the specified packageswaggerannotations
                 // .apis(RequestHandlerSelectors.basePackage("com.Renbowen.project.tool.swagger"))
-                // 扫描所有 .apis(RequestHandlerSelectors.any())
+                // Scan all .apis(RequestHandlerSelectors.any())
                 .paths(PathSelectors.any())
                 .build()
-                /* 设置安全模式，swagger可以设置访问token */
+                /* Setting safe Mode,swaggerYou can set accesstoken */
                 .securitySchemes(securitySchemes())
                 .securityContexts(securityContexts())
                 .pathMapping(pathMapping);
     }
 
     /**
-     * 安全模式，这里指定token通过Authorization头请求头传递
+     * Safe mode,Specified heretokenthroughAuthorizationHeaders request headers pass
      */
     private List<ApiKey> securitySchemes()
     {
@@ -74,7 +74,7 @@ public class SwaggerConfig
     }
 
     /**
-     * 安全上下文
+     * Security context
      */
     private List<SecurityContext> securityContexts()
     {
@@ -88,7 +88,7 @@ public class SwaggerConfig
     }
 
     /**
-     * 默认的安全上引用
+     * Default security reference
      */
     private List<SecurityReference> defaultAuth()
     {
@@ -101,20 +101,20 @@ public class SwaggerConfig
     }
 
     /**
-     * 添加摘要信息
+     * Adding summary Information
      */
     private ApiInfo apiInfo()
     {
-        // 用ApiInfoBuilder进行定制
+        // withApiInfoBuildercustomized
         return new ApiInfoBuilder()
-                // 设置标题
-                .title("标题：xxx管理系统_接口文档")
-                // 描述
-                .description("描述：用于xxx")
-                // 作者信息
+                // Set the title
+                .title("The title:xxxManagement system_Interface documentation")
+                // describe
+                .description("describe:Used forxxx")
+                // The author information
                 .contact(new Contact(wlwqConfig.getName(), null, null))
-                // 版本
-                .version("版本号:" + wlwqConfig.getVersion())
+                // version
+                .version("The version number:" + wlwqConfig.getVersion())
                 .build();
     }
 }

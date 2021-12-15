@@ -9,7 +9,7 @@ import javax.annotation.Resource;
 import java.util.List;
 
 /**
- * 假期事项表(HolidayItem)表服务实现类
+ * Holiday schedule(HolidayItem)Table service implementation class
  */
 @Service("holidayItemService")
 public class HolidayItemServiceImpl implements IHolidayItemService {
@@ -18,10 +18,10 @@ public class HolidayItemServiceImpl implements IHolidayItemService {
     private HolidayItemMapper holidayItemMapper;
 
     /**
-     * 查询单条数据
+     * Example Query a single piece of data
      *
-     * @param holidayItem 实例对象
-     * @return 实例对象
+     * @param holidayItem Instance objects
+     * @return Instance objects
      */
     @Override
     public HolidayItem queryOne(HolidayItem holidayItem) {
@@ -29,7 +29,7 @@ public class HolidayItemServiceImpl implements IHolidayItemService {
     }
 
     /**
-     * 查询多条数据
+     * Querying multiple pieces of Data
      *
      * @param holidayItem
      * @return
@@ -40,22 +40,22 @@ public class HolidayItemServiceImpl implements IHolidayItemService {
     }
 
     /**
-     * 新增数据
+     * The new data
      *
-     * @param holidayItem 实例对象
-     * @return 实例对象
+     * @param holidayItem Instance objects
+     * @return Instance objects
      */
     @Override
     public int insert(HolidayItem holidayItem) {
-        // 雪花算法生成唯一通话记录号 单体服务 数据中心id和终端id都填1
+        // Snowflake algorithm generates unique call log numbers Individual services The data centeridAnd terminalidAll fill in1
         return this.holidayItemMapper.insert(holidayItem);
     }
 
     /**
-     * 修改数据
+     * Modify the data
      *
-     * @param holidayItem 实例对象
-     * @return 实例对象
+     * @param holidayItem Instance objects
+     * @return Instance objects
      */
     @Override
     public int update(HolidayItem holidayItem) {
@@ -63,10 +63,10 @@ public class HolidayItemServiceImpl implements IHolidayItemService {
     }
 
     /**
-     * 通过主键删除数据
+     * Delete data by primary key
      *
-     * @param holidayId 主键
-     * @return 是否成功
+     * @param holidayId A primary key
+     * @return The success of
      */
     @Override
     public int deleteById(Long holidayId) {

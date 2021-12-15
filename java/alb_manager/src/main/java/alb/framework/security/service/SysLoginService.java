@@ -24,7 +24,7 @@ import alb.framework.manager.factory.AsyncFactory;
 import alb.framework.security.LoginUser;
 
 /**
- * 登录校验方法
+ * Login verification method
  *
  */
 @Component
@@ -39,13 +39,13 @@ public class SysLoginService {
     private RedisCache redisCache;
 
     /**
-     * 登录验证
+     * Login authentication
      *
-     * @param username 用户名
-     * @param password 密码
-     * @param code     验证码
-     * @param uuid     唯一标识
-     * @return 结果
+     * @param username The user name
+     * @param password password
+     * @param code     Verification code
+     * @param uuid     A unique identifier
+     * @return The results of
      */
     public String login(String username, String password, String code, String uuid) {
         String verifyKey = Constants.CAPTCHA_CODE_KEY + uuid;
@@ -59,10 +59,10 @@ public class SysLoginService {
             AsyncManager.me().execute(AsyncFactory.recordLogininfor(username, Constants.LOGIN_FAIL, MessageUtils.message("user.jcaptcha.error")));
             throw new CaptchaException();
         }
-        // 用户验证
+        // User authentication
         Authentication authentication = null;
         try {
-            // 该方法会去调用UserDetailsServiceImpl.loadUserByUsername
+            // The method is calledUserDetailsServiceImpl.loadUserByUsername
             authentication = authenticationManager
                     .authenticate(new UsernamePasswordAuthenticationToken(username, password));
         } catch (Exception e) {
@@ -74,21 +74,21 @@ public class SysLoginService {
                 throw new CustomException(e.getMessage());
             }
         }
-        // 强退其他用户
+        // Force other users to quit
 //        Collection<String> keys = redisCache.keys(Constants.LOGIN_TOKEN_KEY + "*");
 //        for (String key : keys) {
 //            LoginUser user = redisCache.getCacheObject(key);
 //            if (user != null){
-//                // 如果登录名等于redis存储的用户登录名
+//                // If the login name is equal toredisThe user login name of the storage
 //                if(username.equals(user.getUsername())){
-//                    // 退出登录
+//                    // Log out
 //                    redisCache.deleteObject(Constants.LOGIN_TOKEN_KEY + user.getToken());
 //                }
 //            }
 //        }
         AsyncManager.me().execute(AsyncFactory.recordLogininfor(username, Constants.LOGIN_SUCCESS, MessageUtils.message("user.login.success")));
         LoginUser loginUser = (LoginUser) authentication.getPrincipal();
-        // 生成token
+        // generatetoken
         return tokenService.createToken(loginUser);
     }
 
@@ -98,41 +98,41 @@ public class SysLoginService {
     /**
      *
      * @Date: 2020/7/13 20:10
-     * @Description:短信验证码修改密码
+     * @Description:SMS verification code Changes the password
      */
     public int forgetPassword(ForgetPasswordParamsVO params) {
-        // 根据手机号码查询用户信息
+        // Query user information by mobile phone number
         SysUser user = userService.selectUserByPhone(params.getPhone());
         if (user == null) {
             throw new ApiException(500, MessageUtils.message("user.null"));
         }
-        // 校验两次密码是否输入一致
+        // Verify that the two passwords are the same
         if (!params.getPassword().equals(params.getAgainPassword())) {
             throw new ApiException(500, MessageUtils.message("user.password.reset.not.match"));
         }
-        // 校验验证码
-        // 1.获取参数uuid
+        // Verification code
+        // 1.To obtain parametersuuid
         String uuid = params.getUuid();
-        // 2.拼接redis的key
+        // 2.Joining togetherredisthekey
         String verifyKey = Constants.CAPTCHA_CODE_KEY + uuid;
-        // 3.从redis中取验证码
+        // 3.fromredisTo obtain the verification code
         String verifyCode = redisCache.getCacheObject(verifyKey);
 
-        // 未获取到验证码，抛出异常，存记录
+        // The verification code is not obtained. Procedure,An exception is thrown,To save record
         if (verifyCode == null) {
             AsyncManager.me().execute(AsyncFactory.recordLogininfor(user.getUserName(), Constants.SMS_RESET_PASSWORD_FAIL, MessageUtils.message("user.sms.expire")));
             throw new SmsCodeExpireException();
         }
-        // 验证码不正确
+        // The verification code is incorrect
         if (!verifyCode.equals(params.getCode())) {
             AsyncManager.me().execute(AsyncFactory.recordLogininfor(user.getUserName(), Constants.SMS_RESET_PASSWORD_FAIL, MessageUtils.message("user.sms.error")));
             throw new SmsCodeException();
         }
-        // 4.清除redis中的验证码
+        // 4.removeredisVerification code in
         redisCache.deleteObject(verifyKey);
-        // 5.记录短信修改密码成功日志
+        // 5.The password was successfully changed by SMS
         AsyncManager.me().execute(AsyncFactory.recordLogininfor(user.getUserName(), Constants.SMS_RESET_PASSWORD_SUCCESS, MessageUtils.message("user.password.reset.success")));
-        // 6.执行修改密码操作
+        // 6.Change the password
         SysUser resetUser = new SysUser();
         resetUser.setUserId(user.getUserId());
         resetUser.setPassword(SecurityUtils.encryptPassword(params.getPassword()));

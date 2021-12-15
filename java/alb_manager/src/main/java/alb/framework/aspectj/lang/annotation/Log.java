@@ -9,7 +9,7 @@ import alb.framework.aspectj.lang.enums.BusinessType;
 import alb.framework.aspectj.lang.enums.OperatorType;
 
 /**
- * 自定义操作日志记录注解
+ * Custom operation log annotations
  *
  *
  */
@@ -19,22 +19,22 @@ import alb.framework.aspectj.lang.enums.OperatorType;
 public @interface Log
 {
     /**
-     * 模块 
+     * The module 
      */
     String title() default "";
 
     /**
-     * 功能
+     * function
      */
     BusinessType businessType() default BusinessType.OTHER;
 
     /**
-     * 操作人类别
+     * Operator type
      */
     OperatorType operatorType() default OperatorType.MANAGE;
 
     /**
-     * 是否保存请求的参数
+     * Whether to save the parameters of the request
      */
     boolean isSaveRequestData() default true;
 }

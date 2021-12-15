@@ -1,19 +1,19 @@
 package alb.framework.config;
 
-import java.util.HashMap;
-import java.util.Map;
-import javax.servlet.DispatcherType;
-
+import alb.common.filter.RepeatableFilter;
 import alb.common.filter.XssFilter;
+import alb.common.utils.StringUtils;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import alb.common.filter.RepeatableFilter;
-import alb.common.utils.StringUtils;
+
+import javax.servlet.DispatcherType;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
- * Filter配置
+ * Filterconfiguration
  *
  */
 @Configuration

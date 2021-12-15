@@ -1,28 +1,28 @@
 package alb.framework.security;
 
 /**
- * 用户登录对象
+ * User Login Object
  *
  */
 public class LoginBody
 {
     /**
-     * 用户名
+     * The user name
      */
     private String username;
 
     /**
-     * 用户密码
+     * The user password
      */
     private String password;
 
     /**
-     * 验证码
+     * Verification code
      */
     private String code;
 
     /**
-     * 唯一标识
+     * A unique identifier
      */
     private String uuid = "";
 

@@ -14,7 +14,7 @@ import alb.common.utils.StringUtils;
 import alb.common.utils.html.EscapeUtil;
 
 /**
- * XSS过滤处理
+ * XSSFiltering processing
  *
  */
 public class XssHttpServletRequestWrapper extends HttpServletRequestWrapper
@@ -37,7 +37,7 @@ public class XssHttpServletRequestWrapper extends HttpServletRequestWrapper
             String[] escapseValues = new String[length];
             for (int i = 0; i < length; i++)
             {
-                // 防xss攻击和过滤前后空格
+                // preventxssAttack and filter before and after Spaces
                 escapseValues[i] = EscapeUtil.clean(values[i]).trim();
             }
             return escapseValues;
@@ -48,20 +48,20 @@ public class XssHttpServletRequestWrapper extends HttpServletRequestWrapper
     @Override
     public ServletInputStream getInputStream() throws IOException
     {
-        // 非json类型，直接返回
+        // nonjsontype,Direct return
         if (!isJsonRequest())
         {
             return super.getInputStream();
         }
 
-        // 为空，直接返回
+        // Is empty,Direct return
         String json = IOUtils.toString(super.getInputStream(), StandardCharsets.UTF_8);
         if (StringUtils.isEmpty(json))
         {
             return super.getInputStream();
         }
 
-        // xss过滤
+        // xssfilter
         json = EscapeUtil.clean(json).trim();
         final ByteArrayInputStream bis = new ByteArrayInputStream(json.getBytes(StandardCharsets.UTF_8));
         return new ServletInputStream()
@@ -92,7 +92,7 @@ public class XssHttpServletRequestWrapper extends HttpServletRequestWrapper
     }
 
     /**
-     * 是否是Json请求
+     * Whether it isJsonrequest
      * 
      * @param request
      */

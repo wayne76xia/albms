@@ -5,16 +5,16 @@ import org.springframework.stereotype.Component;
 import alb.common.utils.ServletUtils;
 
 /**
- * 服务相关配置
+ * Service Configuration
  *
  */
 @Component
 public class ServerConfig
 {
     /**
-     * 获取完整的请求路径，包括：域名，端口，上下文访问路径
+     * Gets the full request path,including:The domain name,port,Context access path
      * 
-     * @return 服务地址
+     * @return Service address
      */
     public String getUrl()
     {

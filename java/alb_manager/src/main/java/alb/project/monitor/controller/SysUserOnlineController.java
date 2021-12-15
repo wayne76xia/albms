@@ -21,7 +21,7 @@ import alb.framework.security.LoginUser;
 import alb.framework.web.controller.BaseController;
 
 /**
- * 在线用户监控
+ * Online User Monitoring
  *
  */
 @RestController
@@ -75,10 +75,10 @@ public class SysUserOnlineController extends BaseController
     }
 
     /**
-     * 强退用户
+     * Strong back user
      */
     @PreAuthorize("@ss.hasPermi('monitor:online:forceLogout')")
-    @Log(title = "在线用户", businessType = BusinessType.DELETE)
+    @Log(title = "Online users", businessType = BusinessType.DELETE)
     @DeleteMapping("/{tokenId}")
     public AjaxResult forceLogout(@PathVariable String tokenId)
     {

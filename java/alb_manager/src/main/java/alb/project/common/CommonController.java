@@ -28,21 +28,21 @@ import java.util.Map;
 import java.util.regex.Pattern;
 
 /**
- * 通用请求处理
+ * Generic request processing
  *
  */
 @RestController
 public class CommonController {
     private static final Logger log = LoggerFactory.getLogger(CommonController.class);
-    // 匹配电话号码
+    // Match a phone number
     private static final Pattern phonePattern = Pattern.compile("^1([358][0-9]|4[579]|66|7[0135678]|9[89])[0-9]{8}$");
     @Autowired
     private ServerConfig serverConfig;
     @Autowired
     private ISysConfigService configService;
     @Autowired
-    private IParamsDataService paramsDataService; // 参数设置
-    // 缓存
+    private IParamsDataService paramsDataService; // Parameter Settings
+    // The cache
     @Autowired
     private RedisCache redisCache;
     @Autowired
@@ -53,7 +53,7 @@ public class CommonController {
     /**
      *
      * @Date: 2020/7/21 17:25
-     * @Description: 获取登录背景图和技术电话
+     * @Description: Get login background and technical phone
      */
     @RequestMapping(value = "/getLoginBackGroundPicAndTechnicalPhone", method = RequestMethod.GET)
     public AjaxResult getLoginBackGroundPicAndTechnicalPhone() {
@@ -73,7 +73,7 @@ public class CommonController {
      * Create By Renbowen
      *
      * @Date: 2020/7/22 17:07
-     * @Description: 根据登录账号获取名字
+     * @Description: Get the name based on the login account
      */
     @RequestMapping(value = "/getDeptNameByUserName", method = RequestMethod.GET)
     public AjaxResult getDeptNameByUserName(String userName) {
@@ -89,16 +89,16 @@ public class CommonController {
     }
 
     /**
-     * 通用下载请求
+     * Common download request
      *
-     * @param fileName 文件名称
-     * @param delete   是否删除
+     * @param fileName The file name
+     * @param delete   Whether or not to delete
      */
     @GetMapping("common/download")
     public void fileDownload(String fileName, Boolean delete, HttpServletResponse response, HttpServletRequest request) {
         try {
             if (!FileUtils.isValidFilename(fileName)) {
-                throw new Exception(StringUtils.format("文件名称({})非法，不允许下载。 ", fileName));
+                throw new Exception(StringUtils.format("The file name({})illegal,Download not allowed。 ", fileName));
             }
             String realFileName = System.currentTimeMillis() + fileName.substring(fileName.indexOf("_") + 1);
             String filePath = WlwqConfig.getDownloadPath() + fileName;
@@ -112,19 +112,19 @@ public class CommonController {
                 FileUtils.deleteFile(filePath);
             }
         } catch (Exception e) {
-            log.error("下载文件失败", e);
+            log.error("Failed to download file", e);
         }
     }
 
     /**
-     * 通用上传请求
+     * Common upload request
      */
     @PostMapping("/common/upload")
     public AjaxResult uploadFile(MultipartFile file) throws Exception {
         try {
-            // 上传文件路径
+            // Path to upload files
             String filePath = WlwqConfig.getUploadPath();
-            // 上传并返回新文件名称
+            // Upload and return the new file name
             String fileName = FileUploadUtils.upload(filePath, file);
             String url = serverConfig.getUrl() + fileName;
             AjaxResult ajax = AjaxResult.success();
@@ -137,15 +137,15 @@ public class CommonController {
     }
 
     /**
-     * 本地资源通用下载
+     * Local resources universal download
      */
     @GetMapping("/common/download/resource")
     public void resourceDownload(String name, HttpServletRequest request, HttpServletResponse response) throws Exception {
-        // 本地资源路径
+        // Local Resource Path
         String localPath = WlwqConfig.getProfile();
-        // 数据库资源地址
+        // Database resource address
         String downloadPath = localPath + StringUtils.substringAfter(name, Constants.RESOURCE_PREFIX);
-        // 下载名称
+        // Download the name
         String downloadName = StringUtils.substringAfterLast(downloadPath, "/");
         response.setCharacterEncoding("utf-8");
         response.setContentType("multipart/form-data");
@@ -155,7 +155,7 @@ public class CommonController {
     }
 
 //    /**
-//     * 推送至进线池缓冲队列
+//     * Push to incoming pool buffer queue
 //     *
 //     * @return
 //     */
@@ -169,29 +169,29 @@ public class CommonController {
 //            return;
 //        }
 //        switch (sourceType) {
-//            case 2: // 南航
+//            case 2: // China southern airlines
 //                break;
-//            case 3: // 国航
+//            case 3: // Air China
 //                break;
-//            case 4: // 东航
+//            case 4: // China Eastern airlines
 //                break;
-//            case 5: // 海航
+//            case 5: // hna
 //                break;
 //            default:
-//                sourceType = 1; // 电话
+//                sourceType = 1; // The phone
 //        }
-//        // 放入消息队列
+//        // Put into message queue
 //        List<String> list = new ArrayList<>();
 //        try {
 //            ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
 //            ObjectMapper mapper = new ObjectMapper();
 //            JsonGenerator jg = mapper.getFactory().createGenerator(byteArrayOutputStream, JsonEncoding.UTF8);
 //            jg.writeStartObject(); // {
-//            // 电话
+//            // The phone
 //            jg.writeStringField("phone", phone);
-//            // 性别 （1=男,2=女,3=未知） => （0=男,1=女,2=未知）
+//            // gender (1=male,2=female,3=The unknown) => (0=male,1=female,2=The unknown)
 //            jg.writeNumberField("sex", 2);
-//            // 来源
+//            // source
 //            jg.writeNumberField("sourceType", sourceType);
 //            jg.writeEndObject(); // }
 //            jg.close();

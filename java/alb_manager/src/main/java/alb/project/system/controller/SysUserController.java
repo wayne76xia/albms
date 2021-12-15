@@ -32,7 +32,7 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 /**
- * 用户信息
+ * The user information
  *
  */
 @RestController
@@ -57,7 +57,7 @@ public class SysUserController extends BaseController {
     }
 
     /**
-     * 统计数据
+     * statistics
      * @return
      */
     @RequestMapping(value = "/topData",method = RequestMethod.GET)
@@ -65,31 +65,31 @@ public class SysUserController extends BaseController {
         List<String> monthList = DateUtils.getInitMonthMapWithZero();
         String thisMonth = DateUtil.format(new Date(), "yyyy-MM");
         String lastMonth = DateUtil.format(DateUtil.lastMonth(), "yyyy-MM");
-        // 总公司员工数量
+        // Number of head office employees
         List<Integer> totalUserNumList = new ArrayList<>();
-        // 子公司数量
+        // Number of subsidiaries
         List<Integer> totalCompanyNumList = new ArrayList<>();
-//        // 门店数量
+//        // Number of stores
 //        List<Integer> totalShopNumList = new ArrayList<>();
-//        // 验光师数量
+//        // Number of optometrists
 //        List<Integer> totalOptometristNumList = new ArrayList<>();
         for (String month : monthList) {
-            // 根据月份获取员工数量
+            // Get the number of employees by month
             totalUserNumList.add(userService.getTotalNumByMonth(month));
-            // 根据月份获取子公司数据
+            // Obtain subsidiary data by month
             totalCompanyNumList.add(deptService.getTotalCompanyNumByMonth(month));
-//            // 根据月份获取门店数量
+//            // Obtain the number of stores by month
 //            totalShopNumList.add(deptService.getTotalShopNumByMonth(month));
-//            // 根据月份验光师数量
+//            // According to the number of optometrists per month
 //            totalOptometristNumList.add(userService.getTotalOptometristNumByMonth(month));
         }
 
 
-        // 总公司员工数量
+        // Number of head office employees
         Integer totalUserNum = userService.getTotalNum();
-        // 本月总公司人数
+        // Head office headcount this month
         Integer thisMonthTotalUserNum = userService.getTotalNumByMonth(thisMonth);
-        // 上月总公司人数
+        // Head office headcount last month
         Integer lastMonthTotalUserNum = userService.getTotalNumByMonth(lastMonth);
         String totalUserNumRatio = null;
         if (lastMonthTotalUserNum > 0) {
@@ -100,11 +100,11 @@ public class SysUserController extends BaseController {
             totalUserNumRatio = "+100%";
         }
 
-        // 子公司数量
+        // Number of subsidiaries
         Integer totalCompanyNum = deptService.getTotalCompanyNum();
-        // 本月子公司数量
+        // Number of subsidiaries this month
         Integer thisMonthTotalCompanyNum = deptService.getTotalShopNumByMonth(thisMonth);
-        // 上月子公司数量
+        // Number of subsidiaries last month
         Integer lastMonthTotalCompanyNum = deptService.getTotalShopNumByMonth(lastMonth);
         String totalCompanyNumRatio = null;
         if (lastMonthTotalCompanyNum > 0) {
@@ -115,11 +115,11 @@ public class SysUserController extends BaseController {
             totalCompanyNumRatio = "+100%";
         }
 
-//        // 门店数量
+//        // Number of stores
 //        Integer totalShopNum = deptService.getTotalShopNum();
-//        // 本月门店数量
+//        // Number of stores this month
 //        Integer thisMonthTotalShopNum = deptService.getTotalShopNumByMonth(thisMonth);
-//        // 上月门店数量
+//        // Number of stores in last month
 //        Integer lastMonthTotalShopNum = deptService.getTotalShopNumByMonth(lastMonth);
 //        String totalShopNumRatio = null;
 //        if (lastMonthTotalShopNum > 0) {
@@ -130,11 +130,11 @@ public class SysUserController extends BaseController {
 //            totalShopNumRatio = "+100%";
 //        }
 //
-//        // 验光师数量
+//        // Number of optometrists
 //        Integer totalOptometristNum = userService.getTotalOptometristNum();
-//        // 本月验光师数量
+//        // Number of optometrists this month
 //        Integer thisMonthTotalOptometristNum = userService.getTotalOptometristNumByMonth(thisMonth);
-//        // 上月验光师数量
+//        // Number of optometrists last month
 //        Integer lastMonthTotalOptometristNum = userService.getTotalOptometristNumByMonth(lastMonth);
 //        String totalOptometristNumRatio = null;
 //        if (lastMonthTotalOptometristNum > 0) {
@@ -146,37 +146,37 @@ public class SysUserController extends BaseController {
 //        }
 
         Map<String, Object> resultMap = new HashMap<>();
-        // 日期
+        // The date of
         resultMap.put("monthList",monthList);
-        // 总公司员工数量
+        // Number of head office employees
         resultMap.put("totalUserNum", totalUserNum);
-        // 总公司员工数量同上月对比
+        // Head office staff compared with last month
         resultMap.put("totalUserNumRatio", totalUserNumRatio);
-        // 总公司员工数量曲线图
+        // Head office employee number chart
         resultMap.put("totalUserNumList", totalUserNumList);
-        // 子公司数量
+        // Number of subsidiaries
         resultMap.put("totalCompanyNum", totalCompanyNum);
-        // 子公司数量同上月对比
+        // Number of subsidiaries compared with last month
         resultMap.put("totalCompanyNumRatio", totalCompanyNumRatio);
-        // 子公司数量曲线图
+        // Number of subsidiaries graph
         resultMap.put("totalCompanyNumList", totalCompanyNumList);
-//        // 门店数量
+//        // Number of stores
 //        resultMap.put("totalShopNum", totalShopNum);
-//        // 门店数量同上月对比
+//        // The number of stores compared with last month
 //        resultMap.put("totalShopNumRatio", totalShopNumRatio);
-//        // 门店数量曲线图
+//        // Number of stores graph
 //        resultMap.put("totalShopNumList", totalShopNumList);
-//        // 验光师数量
+//        // Number of optometrists
 //        resultMap.put("totalOptometristNum", totalOptometristNum);
-//        // 验光师数量同上月对比
+//        // Number of optometrists compared with last month
 //        resultMap.put("totalOptometristNumRatio", totalOptometristNumRatio);
-//        // 验光师数量曲线图
+//        // Number of optometrists chart
 //        resultMap.put("totalOptometristNumList",totalOptometristNumList);
         return AjaxResult.success(resultMap);
     }
 
     /**
-     * 获取用户列表
+     * Get user list
      */
     @GetMapping("/allList")
     public AjaxResult allList(SysUser user) {
@@ -185,7 +185,7 @@ public class SysUserController extends BaseController {
     }
 
     /**
-     * 获取用户列表
+     * Get user list
      */
     @PreAuthorize("@ss.hasPermi('system:user:list')")
     @GetMapping("/list")
@@ -200,7 +200,7 @@ public class SysUserController extends BaseController {
         return getDataTable(list);
     }
 
-    @Log(title = "用户管理", businessType = BusinessType.EXPORT)
+    @Log(title = "User Management", businessType = BusinessType.EXPORT)
     @PreAuthorize("@ss.hasPermi('system:user:export')")
     @GetMapping("/export")
     public AjaxResult export(SysUser user) {
@@ -211,10 +211,10 @@ public class SysUserController extends BaseController {
             su.setPostName(StringUtils.join(postNameList, ","));
         }
         ExcelUtil<SysUser> util = new ExcelUtil<SysUser>(SysUser.class);
-        return util.exportExcel(list, "用户数据");
+        return util.exportExcel(list, "User data");
     }
 
-    @Log(title = "用户管理", businessType = BusinessType.IMPORT)
+    @Log(title = "User Management", businessType = BusinessType.IMPORT)
     @PreAuthorize("@ss.hasPermi('system:user:import')")
     @PostMapping("/importData")
     public AjaxResult importData(MultipartFile file, boolean updateSupport) throws Exception {
@@ -229,11 +229,11 @@ public class SysUserController extends BaseController {
     @GetMapping("/importTemplate")
     public AjaxResult importTemplate() {
         ExcelUtil<SysUser> util = new ExcelUtil<SysUser>(SysUser.class);
-        return util.importTemplateExcel("用户数据");
+        return util.importTemplateExcel("User data");
     }
 
     /**
-     * 根据用户编号获取详细信息
+     * Get details based on the user number
      */
     @PreAuthorize("@ss.hasPermi('system:user:query')")
     @GetMapping(value = {"/", "/{userId}"})
@@ -251,18 +251,18 @@ public class SysUserController extends BaseController {
     }
 
     /**
-     * 新增用户
+     * New users
      */
     @PreAuthorize("@ss.hasPermi('system:user:add')")
-    @Log(title = "用户管理", businessType = BusinessType.INSERT)
+    @Log(title = "User Management", businessType = BusinessType.INSERT)
     @PostMapping
     public AjaxResult add(@Validated @RequestBody SysUser user) {
         if (UserConstants.NOT_UNIQUE.equals(userService.checkUserNameUnique(user.getUserName()))) {
-            return AjaxResult.error("新增用户'" + user.getUserName() + "'失败，登录账号已存在");
+            return AjaxResult.error("New users'" + user.getUserName() + "'failure,The login account already exists");
         } else if (UserConstants.NOT_UNIQUE.equals(userService.checkPhoneUnique(user))) {
-            return AjaxResult.error("新增用户'" + user.getUserName() + "'失败，手机号码已存在");
+            return AjaxResult.error("New users'" + user.getUserName() + "'failure,The mobile phone number already exists");
         } else if (UserConstants.NOT_UNIQUE.equals(userService.checkEmailUnique(user))) {
-            return AjaxResult.error("新增用户'" + user.getUserName() + "'失败，邮箱账号已存在");
+            return AjaxResult.error("New users'" + user.getUserName() + "'failure,The email account already exists");
         }
         user.setUserCode(userService.getLastUserCode());
         user.setCreateBy(SecurityUtils.getUsername());
@@ -271,37 +271,37 @@ public class SysUserController extends BaseController {
     }
 
     /**
-     * 修改用户
+     * Modify the user
      */
     @PreAuthorize("@ss.hasPermi('system:user:edit')")
-    @Log(title = "用户管理", businessType = BusinessType.UPDATE)
+    @Log(title = "User Management", businessType = BusinessType.UPDATE)
     @PutMapping
     public AjaxResult edit(@Validated @RequestBody SysUser user) {
         userService.checkUserAllowed(user);
         if (UserConstants.NOT_UNIQUE.equals(userService.checkPhoneUnique(user))) {
-            return AjaxResult.error("修改用户'" + user.getUserName() + "'失败，手机号码已存在");
+            return AjaxResult.error("Modify the user'" + user.getUserName() + "'failure,The mobile phone number already exists");
         } else if (UserConstants.NOT_UNIQUE.equals(userService.checkEmailUnique(user))) {
-            return AjaxResult.error("修改用户'" + user.getUserName() + "'失败，邮箱账号已存在");
+            return AjaxResult.error("Modify the user'" + user.getUserName() + "'failure,The email account already exists");
         }
         user.setUpdateBy(SecurityUtils.getUsername());
         return toAjax(userService.updateUser(user));
     }
 
     /**
-     * 删除用户
+     * Delete user
      */
     @PreAuthorize("@ss.hasPermi('system:user:remove')")
-    @Log(title = "用户管理", businessType = BusinessType.DELETE)
+    @Log(title = "User Management", businessType = BusinessType.DELETE)
     @DeleteMapping("/{userIds}")
     public AjaxResult remove(@PathVariable Long[] userIds) {
         return toAjax(userService.deleteUserByIds(userIds));
     }
 
     /**
-     * 重置密码
+     * To reset your password
      */
     @PreAuthorize("@ss.hasPermi('system:user:edit')")
-    @Log(title = "用户管理", businessType = BusinessType.UPDATE)
+    @Log(title = "User Management", businessType = BusinessType.UPDATE)
     @PutMapping("/resetPwd")
     public AjaxResult resetPwd(@RequestBody SysUser user) {
         userService.checkUserAllowed(user);
@@ -311,10 +311,10 @@ public class SysUserController extends BaseController {
     }
 
     /**
-     * 状态修改
+     * State changes
      */
     @PreAuthorize("@ss.hasPermi('system:user:edit')")
-    @Log(title = "用户管理", businessType = BusinessType.UPDATE)
+    @Log(title = "User Management", businessType = BusinessType.UPDATE)
     @PutMapping("/changeStatus")
     public AjaxResult changeStatus(@RequestBody SysUser user) {
         userService.checkUserAllowed(user);
@@ -324,7 +324,7 @@ public class SysUserController extends BaseController {
 
 
     /**
-     * 查询用户详情
+     * Querying User Details
      *
      * @param userId
      * @return
@@ -333,23 +333,23 @@ public class SysUserController extends BaseController {
     @GetMapping(value = "/userInfo")
     public AjaxResult userInfo(Long userId) {
         if (userId == null) {
-            throw new CustomException("用户标识为空！");
+            throw new CustomException("The user ID is empty!");
         }
         Map<String, Object> resultMap = new HashMap<>(12);
-        // 获取用户信息
+        // Obtaining User information
         SysUser user = userService.selectUserById(userId);
-        // 获取用户职位信息
+        // Get user position information
         List<String> postNameList = postService.selectPostNameByUserId(userId);
         if (user != null) {
-            // 查询部门信息
+            // Querying Department Information
             SysDept dept = deptService.selectDeptById(user.getDeptId());
-            // 用户信息
+            // The user information
             resultMap.put("nickName", user.getNickName() == null ? "" : user.getNickName());
             resultMap.put("userCode", user.getUserCode() == null ? "" : user.getUserCode());
             resultMap.put("deptName", dept == null ? "" : dept.getDeptName() == null ? "" : dept.getDeptName());
             resultMap.put("postName", StringUtils.join(postNameList, ","));
-            resultMap.put("status", user.getStatus() == null ? "" : "0".equals(user.getStatus()) ? "在职" : "离职");
-            resultMap.put("sex", user.getSex() == null ? "未知" : "1".equals(user.getSex()) ? "男" : "2".equals(user.getSex()) ? "女" : "未知");
+            resultMap.put("status", user.getStatus() == null ? "" : "0".equals(user.getStatus()) ? "on-the-job" : "departure");
+            resultMap.put("sex", user.getSex() == null ? "The unknown" : "1".equals(user.getSex()) ? "male" : "2".equals(user.getSex()) ? "female" : "The unknown");
             resultMap.put("phoneNumber", user.getPhonenumber() == null ? "" : user.getPhonenumber());
             StringBuilder address = new StringBuilder();
             if (user.getProvince()!= null){
@@ -361,10 +361,10 @@ public class SysUserController extends BaseController {
             }
             resultMap.put("address", address.toString());
         }
-        // 用户详情数据统计
-        // 入职时间
+        // User details statistics
+        // In the time
         resultMap.put("hireDate", user == null ? "" : user.getCreateTime() == null ? "" : DateUtils.formatDateToAppoint(user.getCreateTime(), 3));
-        // 入职时长
+        // The induction time
         resultMap.put("hireTotal", DateUtils.dayComparePrecise(user == null ? new Date() : user.getCreateTime() == null ? new Date() : user.getCreateTime(), new Date()));
         return AjaxResult.success(resultMap);
     }

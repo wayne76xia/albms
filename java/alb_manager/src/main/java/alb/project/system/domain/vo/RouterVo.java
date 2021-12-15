@@ -4,49 +4,49 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import java.util.List;
 
 /**
- * 路由配置信息
+ * Route Configuration information
  *
  */
 @JsonInclude(JsonInclude.Include.NON_EMPTY)
 public class RouterVo
 {
     /**
-     * 路由名字
+     * Routing name
      */
     private String name;
 
     /**
-     * 路由地址
+     * The routing address
      */
     private String path;
 
     /**
-     * 是否隐藏路由，当设置 true 的时候该路由不会再侧边栏出现
+     * Whether to hide routes,When setting true The route will no longer appear in the sidebar
      */
     private boolean hidden;
 
     /**
-     * 重定向地址，当设置 noRedirect 的时候该路由在面包屑导航中不可被点击
+     * Redirect address,When setting noRedirect The route is not clickable in breadcrumb navigation
      */
     private String redirect;
 
     /**
-     * 组件地址
+     * Component address
      */
     private String component;
 
     /**
-     * 当你一个路由下面的 children 声明的路由大于1个时，自动会变成嵌套的模式--如组件页面
+     * When you have a route below children The declared route is greater than1When a,Automatically becomes a nested mode--Such as component pages
      */
     private Boolean alwaysShow;
 
     /**
-     * 其他元素
+     * Other elements
      */
     private MetaVo meta;
 
     /**
-     * 子路由
+     * Zi lu by
      */
     private List<RouterVo> children;
 

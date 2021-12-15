@@ -24,7 +24,7 @@ import static alb.framework.web.domain.AjaxResult.success;
 
 /**
  * @ClassName SendSmsController
- * @Description 短信验证码操作处理
+ * @Description SMS verification code processing
  * @Date 2020/7/13 14:46
  */
 @RestController
@@ -35,54 +35,54 @@ public class SendSmsController {
     @Autowired
     private RedisCache redisCache;
 
-    // 注册模板
+    // Register template
     @Value("${aliyunSms.templateRegist}")
     private String templateRegist;
-    // 忘记密码模板
+    // Forget password template
     @Value("${aliyunSms.templateUpdatePassword}")
     private String templateUpdatePassword;
-    // 变更信息模板
+    // Change information template
     @Value("${aliyunSms.templateInformationChange}")
     private String templateInformationChange;
 
     /**
      *  @Date: 2020/7/14 16:26
-     *  @Description: 发送验证码
+     *  @Description: Send verification code
      */
     @RequestMapping(value = "/sendSMS",method = RequestMethod.POST)
     public AjaxResult sendSMS(@Validated SendSmsParams params,
                               BindingResult bindingResult) throws ClientException {
-        // 校验字段
+        // Check the field
         if (bindingResult.hasErrors()) {
             return error(bindingResult.getFieldError().getDefaultMessage());
         }
         String templateCode = "";
         if (params.getTemplateType() == 1) {
-            log.info("请求短信模板：{}", templateRegist);
+            log.info("Requesting AN SMS Template:{}", templateRegist);
             templateCode = templateRegist;
         }
         if (params.getTemplateType() == 2) {
-            log.info("请求短信模板：{}", templateUpdatePassword);
+            log.info("Requesting AN SMS Template:{}", templateUpdatePassword);
             templateCode = templateUpdatePassword;
         }
         if (params.getTemplateType() == 3) {
-            log.info("请求短信模板：{}", templateInformationChange);
+            log.info("Requesting AN SMS Template:{}", templateInformationChange);
             templateCode = templateInformationChange;
         }
-//        // 通过手机号获取用户信息
+//        // Obtain user information by mobile phone number
 //        AppAccount appAccount = accountService.jwtFindAccountByPhone(params.getPhone());
-//        // 发送验证码操作为 需要用户存在
+//        // The operation of sending a verification code is Need users to exist
 //        if (params.getDealType() == 1) {
-//            // 为空 用户不存在
+//            // Is empty User does not exist
 //            if (appAccount == null) {
-//                return ResultVOUtil.error("该用户不存在，请注册！");
+//                return ResultVOUtil.error("The user does not exist,Please register!");
 //            }
 //        }
-//        // 发送验证码操作为 不需要用户存在
+//        // The operation of sending a verification code is No user is required
 //        if (params.getDealType() == 0) {
-//            // 不为空 用户存在
+//            // Don't empty The user is
 //            if (appAccount != null) {
-//                return ResultVOUtil.error("该用户已存在，请登录！");
+//                return ResultVOUtil.error("The user already exists,Please log in!");
 //            }
 //        }
 
@@ -92,18 +92,18 @@ public class SendSmsController {
             verifyCode += String.valueOf(c);
         }
 
-        // 阿里短信接口
+        // Ali SMS interface
         SendSmsResponse response = new AliYunSms(params.getPhone(), templateCode, "{\"code\":\"" + verifyCode + "\"}").sendSms();
-        log.error("阿里云短信回调：{}", response.getCode());
-        log.error("发送验证码：{}", verifyCode);
+        log.error("Ali Cloud SMS callback:{}", response.getCode());
+        log.error("Send verification code:{}", verifyCode);
         if (!response.getCode().equals("OK")) {
-            return error("短信发送失败！");
+            return error("SMS sending failure!");
         }
-        // 短信验证码发送成功！
-        // 唯一标识
+        // The SMS verification code is successfully sent. Procedure!
+        // A unique identifier
         String uuid = IdUtils.simpleUUID();
         String verifyKey = Constants.CAPTCHA_CODE_KEY + uuid;
-        // 放入redis中 设置过期时间为10分钟 时间颗粒度：分钟
+        // In theredisIn the Set the expiration time to10minutes Temporal granularity:minutes
         redisCache.setCacheObject(verifyKey, verifyCode, Constants.SMS_EXPIRATION, TimeUnit.MINUTES);
         AjaxResult result = new AjaxResult();
         result.put("uuid",uuid);

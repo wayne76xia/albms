@@ -13,7 +13,7 @@ import com.fasterxml.jackson.databind.JsonDeserializer;
 import java.io.IOException;
 
 /**
- * 将字符串转为Long
+ * Convert a string toLong
  *
  */
 public class LongJsonDeserializer extends JsonDeserializer<Long> {

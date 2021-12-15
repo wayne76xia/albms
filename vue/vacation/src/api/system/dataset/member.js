@@ -1,6 +1,6 @@
 import request from '@/utils/request'
 
-// 查询会员等级设置列表
+// Query the membership level setting list
 export function listMemberLevel(query) {
     return request({
         url: '/glasses/memberLevel/list',
@@ -9,7 +9,7 @@ export function listMemberLevel(query) {
     })
 }
 
-// 查询会员等级设置详细
+// Query membership level setting details
 export function getMemberLevel(id) {
     return request({
         url: '/glasses/memberLevel/' + id,
@@ -17,7 +17,7 @@ export function getMemberLevel(id) {
     })
 }
 
-// 新增会员等级设置
+// New member level setting
 export function addMemberLevel(data) {
     return request({
         url: '/glasses/memberLevel',
@@ -25,7 +25,7 @@ export function addMemberLevel(data) {
         data: data
     })
 }
-// 修改会员等级设置
+// Modify membership level Settings
 export function updateMemberLevel(data) {
     return request({
         url: '/glasses/memberLevel',
@@ -34,7 +34,7 @@ export function updateMemberLevel(data) {
     })
 }
 
-// 删除会员等级设置
+// Delete membership level Settings
 export function delMemberLevel(id) {
     return request({
         url: '/glasses/memberLevel/' + id,
@@ -42,7 +42,7 @@ export function delMemberLevel(id) {
     })
 }
 
-// 导出会员等级设置
+// Export membership level Settings
 export function exportMemberLevel(query) {
     return request({
         url: '/glasses/memberLevel/export',
@@ -52,7 +52,7 @@ export function exportMemberLevel(query) {
 }
 
 
-// 生成二维码
+// Generate qr code
 export function getQrCode(query) {
     return request({
         url: '/vacation/paramsData/getQrCode',

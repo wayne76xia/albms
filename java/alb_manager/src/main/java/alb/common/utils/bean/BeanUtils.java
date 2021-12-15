@@ -7,25 +7,25 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * Bean 工具类
+ * Bean Utility class
  *
  */
 public class BeanUtils extends org.springframework.beans.BeanUtils
 {
-    /** Bean方法名中属性名开始的下标 */
+    /** BeanThe subscript at the beginning of the attribute name in the method name */
     private static final int BEAN_METHOD_PROP_INDEX = 3;
 
-    /** * 匹配getter方法的正则表达式 */
+    /** * matchinggetterMethod */
     private static final Pattern GET_PATTERN = Pattern.compile("get(\\p{javaUpperCase}\\w*)");
 
-    /** * 匹配setter方法的正则表达式 */
+    /** * matchingsetterMethod */
     private static final Pattern SET_PATTERN = Pattern.compile("set(\\p{javaUpperCase}\\w*)");
 
     /**
-     * Bean属性复制工具方法。
+     * BeanProperty copy tool method。
      * 
-     * @param dest 目标对象
-     * @param src 源对象
+     * @param dest The target object
+     * @param src The source object
      */
     public static void copyBeanProp(Object dest, Object src)
     {
@@ -40,20 +40,20 @@ public class BeanUtils extends org.springframework.beans.BeanUtils
     }
 
     /**
-     * 获取对象的setter方法。
+     * Of the objectsettermethods。
      * 
-     * @param obj 对象
-     * @return 对象的setter方法列表
+     * @param obj object
+     * @return The object'ssetterMethods list
      */
     public static List<Method> getSetterMethods(Object obj)
     {
-        // setter方法列表
+        // setterMethods list
         List<Method> setterMethods = new ArrayList<Method>();
 
-        // 获取所有方法
+        // Get all methods
         Method[] methods = obj.getClass().getMethods();
 
-        // 查找setter方法
+        // To find thesettermethods
 
         for (Method method : methods)
         {
@@ -63,24 +63,24 @@ public class BeanUtils extends org.springframework.beans.BeanUtils
                 setterMethods.add(method);
             }
         }
-        // 返回setter方法列表
+        // returnsetterMethods list
         return setterMethods;
     }
 
     /**
-     * 获取对象的getter方法。
+     * Of the objectgettermethods。
      * 
-     * @param obj 对象
-     * @return 对象的getter方法列表
+     * @param obj object
+     * @return The object'sgetterMethods list
      */
 
     public static List<Method> getGetterMethods(Object obj)
     {
-        // getter方法列表
+        // getterMethods list
         List<Method> getterMethods = new ArrayList<Method>();
-        // 获取所有方法
+        // Get all methods
         Method[] methods = obj.getClass().getMethods();
-        // 查找getter方法
+        // To find thegettermethods
         for (Method method : methods)
         {
             Matcher m = GET_PATTERN.matcher(method.getName());
@@ -89,17 +89,17 @@ public class BeanUtils extends org.springframework.beans.BeanUtils
                 getterMethods.add(method);
             }
         }
-        // 返回getter方法列表
+        // returngetterMethods list
         return getterMethods;
     }
 
     /**
-     * 检查Bean方法名中的属性名是否相等。<br>
-     * 如getName()和setName()属性名一样，getName()和setAge()属性名不一样。
+     * checkBeanWhether attribute names in method names are equal。<br>
+     * Such asgetName()andsetName()Same property name,getName()andsetAge()Attribute names are different。
      * 
-     * @param m1 方法名1
-     * @param m2 方法名2
-     * @return 属性名一样返回true，否则返回false
+     * @param m1 The method name1
+     * @param m2 The method name2
+     * @return Returns the same as the property nametrue,Otherwise returnsfalse
      */
 
     public static boolean isMethodPropEquals(String m1, String m2)

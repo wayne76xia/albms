@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
- * 系统访问日志情况信息 服务层处理
+ * Information about system access logs Service layer processing
  *
  */
 @Service
@@ -20,9 +20,9 @@ public class SysLogininforServiceImpl implements ISysLogininforService
     private SysLogininforMapper logininforMapper;
 
     /**
-     * 新增系统登录日志
+     * Added system login logs
      * 
-     * @param logininfor 访问日志对象
+     * @param logininfor Accessing log objects
      */
     @Override
     public void insertLogininfor(SysLogininfor logininfor)
@@ -31,10 +31,10 @@ public class SysLogininforServiceImpl implements ISysLogininforService
     }
 
     /**
-     * 查询系统登录日志集合
+     * Example Query a set of system login logs
      * 
-     * @param logininfor 访问日志对象
-     * @return 登录记录集合
+     * @param logininfor Accessing log objects
+     * @return Collection of login records
      */
     @Override
     public List<SysLogininfor> selectLogininforList(SysLogininfor logininfor)
@@ -43,9 +43,9 @@ public class SysLogininforServiceImpl implements ISysLogininforService
     }
 
     /**
-     * 批量删除系统登录日志
+     * Delete system login logs in batches
      * 
-     * @param infoIds 需要删除的登录日志ID
+     * @param infoIds Login logs to be deletedID
      * @return
      */
     @Override
@@ -55,7 +55,7 @@ public class SysLogininforServiceImpl implements ISysLogininforService
     }
 
     /**
-     * 清空系统登录日志
+     * None example Clear system login logs
      */
     @Override
     public void cleanLogininfor()

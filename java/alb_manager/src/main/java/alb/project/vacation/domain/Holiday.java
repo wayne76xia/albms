@@ -24,12 +24,12 @@ public class Holiday extends BaseEntity
 {
     private static final long serialVersionUID = 1L;
 
-    /* 假期主键 */
+    /* The primary key holiday */
     @JsonSerialize(using = LongJsonSerializer.class)
     @JsonDeserialize(using = LongJsonDeserializer.class)
     private Long holidayId;
 
-    /* 假期类型 */
+    /* Holiday types */
     @JsonSerialize(using = LongJsonSerializer.class)
     @JsonDeserialize(using = LongJsonDeserializer.class)
     private Long holidayTypeId;
@@ -38,59 +38,59 @@ public class Holiday extends BaseEntity
 
     private String typeValue;
 
-    /* 假期时长 */
+    /* The vacation time */
     private Double holidayDuration;
 
-    /* 请假说明/审批说明 */
+    /* Leave that/Instructions for examination and approval of */
     private String holidayInstruction;
 
-    /* 假期事项列表 */
+    /* Holiday List */
     private List<HolidayItem> items;
 
-    /* 申请人ID */
+    /* The applicantID */
     @JsonSerialize(using = LongJsonSerializer.class)
     @JsonDeserialize(using = LongJsonDeserializer.class)
     private Long proposerId;
     private String proposerName;
 
-    /* 当前审批人ID */
+    /* Current approverID */
     @JsonSerialize(using = LongJsonSerializer.class)
     @JsonDeserialize(using = LongJsonDeserializer.class)
     private Long currentApproverId;
     private String currentApproverName;
 
-    /* 当前审批序号 从1开始计数 */
+    /* Current Approval Number from1Start counting */
     private Integer currentApprovedIndex;
 
-    /* 当前审批状态 0审批中，1通过，2驳回 */
+    /* Current Approval Status 0In the examination and approval,1through,2rejected */
     private Integer status;
 
     /**
-     * 假期开始时间
+     * Start time of vacation
      */
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date holidayStartDate;
 
     /**
-     * 假期结束时间
+     * End of vacation
      */
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date holidayEndDate;
 
     /**
-     * 查询假期时间 - 开始时间
+     * Querying holiday hours - The start time
      */
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date selectStartDate;
 
     /**
-     * 查询假期时间 - 结束时间
+     * Querying holiday hours - The end of time
      */
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date selectEndDate;
 
     /**
-     * 删除状态0未1已
+     * Delete the state0not1has
      */
     private Integer delFlag;
 }

@@ -13,12 +13,12 @@ import lombok.*;
 public class HolidayUserParamsVO {
 
     /**
-     * 部门ID
+     * departmentID
      */
     private Long deptId;
 
     /**
-     * 角色ID
+     * roleID
      */
     private Long roleId;
 }

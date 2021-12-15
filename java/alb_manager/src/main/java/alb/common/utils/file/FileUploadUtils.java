@@ -1,8 +1,5 @@
 package alb.common.utils.file;
 
-import java.io.File;
-import java.io.IOException;
-
 import alb.common.constant.Constants;
 import alb.common.exception.file.FileNameLengthLimitExceededException;
 import alb.common.exception.file.FileSizeLimitExceededException;
@@ -14,24 +11,27 @@ import alb.framework.config.WlwqConfig;
 import org.apache.commons.io.FilenameUtils;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.io.File;
+import java.io.IOException;
+
 /**
- * 文件上传工具类
+ * File upload tool class
  *
  */
 public class FileUploadUtils
 {
     /**
-     * 默认大小 50M
+     * The default size 50M
      */
     public static final long DEFAULT_MAX_SIZE = 50 * 1024 * 1024;
 
     /**
-     * 默认的文件名最大长度 100
+     * Default maximum length of file name 100
      */
     public static final int DEFAULT_FILE_NAME_LENGTH = 100;
 
     /**
-     * 默认上传的地址
+     * Default upload address
      */
     private static String defaultBaseDir = WlwqConfig.getProfile();
 
@@ -48,10 +48,10 @@ public class FileUploadUtils
     }
 
     /**
-     * 以默认配置进行文件上传
+     * Upload files with default Settings
      *
-     * @param file 上传的文件
-     * @return 文件名称
+     * @param file Uploaded file
+     * @return The file name
      * @throws Exception
      */
     public static final String upload(MultipartFile file) throws IOException
@@ -67,11 +67,11 @@ public class FileUploadUtils
     }
 
     /**
-     * 根据文件路径上传
+     * Upload according to the file path
      *
-     * @param baseDir 相对应用的基目录
-     * @param file 上传的文件
-     * @return 文件名称
+     * @param baseDir Base directory relative to the application
+     * @param file Uploaded file
+     * @return The file name
      * @throws IOException
      */
     public static final String upload(String baseDir, MultipartFile file) throws IOException
@@ -87,16 +87,16 @@ public class FileUploadUtils
     }
 
     /**
-     * 文件上传
+     * File upload
      *
-     * @param baseDir 相对应用的基目录
-     * @param file 上传的文件
-     * @param extension 上传文件类型
-     * @return 返回上传成功的文件名
-     * @throws FileSizeLimitExceededException 如果超出最大大小
-     * @throws FileNameLengthLimitExceededException 文件名太长
-     * @throws IOException 比如读写文件出错时
-     * @throws InvalidExtensionException 文件校验异常
+     * @param baseDir Base directory relative to the application
+     * @param file Uploaded file
+     * @param extension Type of uploaded files
+     * @return The file name of the successful upload file is displayed
+     * @throws FileSizeLimitExceededException If you go beyond the maximum size
+     * @throws FileNameLengthLimitExceededException File name too long
+     * @throws IOException For example, when reading or writing a file fails
+     * @throws InvalidExtensionException File verification exception
      */
     public static final String upload(String baseDir, MultipartFile file, String[] allowedExtension)
             throws FileSizeLimitExceededException, IOException, FileNameLengthLimitExceededException,
@@ -119,7 +119,7 @@ public class FileUploadUtils
     }
 
     /**
-     * 编码文件名
+     * Encoding file name
      */
     public static final String extractFilename(MultipartFile file)
     {
@@ -153,7 +153,7 @@ public class FileUploadUtils
     }
 
     /**
-     * 编码文件名
+     * Encoding file name
      */
     private static final String encodingFilename(String fileName)
     {
@@ -163,11 +163,11 @@ public class FileUploadUtils
     }
 
     /**
-     * 文件大小校验
+     * File size check
      *
-     * @param file 上传的文件
+     * @param file Uploaded file
      * @return
-     * @throws FileSizeLimitExceededException 如果超出最大大小
+     * @throws FileSizeLimitExceededException If you go beyond the maximum size
      * @throws InvalidExtensionException
      */
     public static final void assertAllowed(MultipartFile file, String[] allowedExtension)
@@ -207,7 +207,7 @@ public class FileUploadUtils
     }
 
     /**
-     * 判断MIME类型是否是允许的MIME类型
+     * judgeMIMEWhether the type is allowedMIMEtype
      *
      * @param extension
      * @param allowedExtension
@@ -226,10 +226,10 @@ public class FileUploadUtils
     }
 
     /**
-     * 获取文件名的后缀
+     * Gets the suffix of the file name
      * 
-     * @param file 表单文件
-     * @return 后缀名
+     * @param file The form file
+     * @return suffix
      */
     public static final String getExtension(MultipartFile file)
     {

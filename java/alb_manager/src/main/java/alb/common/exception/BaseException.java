@@ -4,7 +4,7 @@ import alb.common.utils.MessageUtils;
 import alb.common.utils.StringUtils;
 
 /**
- * 基础异常
+ * Based on abnormal
  *
  */
 public class BaseException extends RuntimeException
@@ -12,22 +12,22 @@ public class BaseException extends RuntimeException
     private static final long serialVersionUID = 1L;
 
     /**
-     * 所属模块
+     * Subordinate to the module
      */
     private final String module;
 
     /**
-     * 错误码
+     * Error code
      */
     private final String code;
 
     /**
-     * 错误码对应的参数
+     * Parameter corresponding to the error code
      */
     private final Object[] args;
 
     /**
-     * 错误消息
+     * The error message
      */
     private final String defaultMessage;
 

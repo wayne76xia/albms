@@ -34,7 +34,7 @@ export default {
   data() {
     return {
       chart: null,
-      data_num: '6.5万'
+      data_num: '6.5wan'
     }
   },
   watch: {
@@ -57,7 +57,7 @@ export default {
   },
   methods: {
     initChart() {
-      let clientTitle = this.clientStatus === 0 ? '准会员' : '会员'
+      let clientTitle = this.clientStatus === 0 ? 'Associate member' : 'members'
 
       this.chart = echarts.init(document.getElementById(this.id))
       this.chart.setOption({
@@ -70,7 +70,7 @@ export default {
           orient: 'vertical',
           left: 20,
           top: 50,
-          selectedMode: false, //取消图例上的点击事件
+          selectedMode: false, //Cancel the click event on the legend
           itemWidth: 9,
           itemHeight: 9
           // formatter: function (name) {
@@ -87,15 +87,15 @@ export default {
           //   );
           // },
         },
-        //环形颜色
+        //Color ring
         color: ['#4860FB', '#E8522A', '#01ff79', '#745BEB', '#ffa200', '#ff0000', '#ad9ae9', '#ee83ab', '#47d1ea', '#fcff00', '#05f52c'],
         series: [
           {
             hoverAnimation: false,
-            name: clientTitle + '来源',
+            name: clientTitle + 'source',
             type: 'pie',
-            radius: ['40%', '60%'], //两个表示环：内半径,外半径
-            center: ['70%', '53%'], //左右，上下
+            radius: ['40%', '60%'], //Two representation rings:Within a radius of,Outer radius
+            center: ['70%', '53%'], //Or so,Up and down
             avoidLabelOverlap: true,
             label: {
               normal: {
@@ -104,7 +104,7 @@ export default {
 
             },
 
-            // //牵引线条颜色
+            // //Color of traction line
             labelLine: {
               normal: {
                 show: false

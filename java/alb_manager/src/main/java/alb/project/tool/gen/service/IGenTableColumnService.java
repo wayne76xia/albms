@@ -4,40 +4,40 @@ import java.util.List;
 import alb.project.tool.gen.domain.GenTableColumn;
 
 /**
- * 业务字段 服务层
+ * The business field The service layer
  *
  */
 public interface IGenTableColumnService
 {
     /**
-     * 查询业务字段列表
+     * Example Query the service field list
      * 
-     * @param tableId 业务字段编号
-     * @return 业务字段集合
+     * @param tableId Business Field Number
+     * @return Collection of business fields
      */
     List<GenTableColumn> selectGenTableColumnListByTableId(Long tableId);
 
     /**
-     * 新增业务字段
+     * New Service Field
      * 
-     * @param genTableColumn 业务字段信息
-     * @return 结果
+     * @param genTableColumn Business field information
+     * @return The results of
      */
     int insertGenTableColumn(GenTableColumn genTableColumn);
 
     /**
-     * 修改业务字段
+     * Modifying service Fields
      * 
-     * @param genTableColumn 业务字段信息
-     * @return 结果
+     * @param genTableColumn Business field information
+     * @return The results of
      */
     int updateGenTableColumn(GenTableColumn genTableColumn);
 
     /**
-     * 删除业务字段信息
+     * Example Delete service fields
      * 
-     * @param ids 需要删除的数据ID
-     * @return 结果
+     * @param ids Data to be deletedID
+     * @return The results of
      */
     int deleteGenTableColumnByIds(String ids);
 }

@@ -11,7 +11,7 @@ import java.util.Date;
 
 /**
  * @ClassName ShopExcelVO
- * @Description 导出门店
+ * @Description The export of stores
  * @Date 2020/7/30 9:45
  */
 @AllArgsConstructor
@@ -20,57 +20,57 @@ import java.util.Date;
 @Builder
 public class ShopExcelVO implements Serializable {
 
-    @Excel(name = "门店所属子公司编号")
+    @Excel(name = "Number of the subsidiary of the store")
     private String parentDeptCode;
 
-    /** 门店所属子公司 */
-    @Excel(name = "门店所属子公司",type = Excel.Type.EXPORT)
+    /** Subsidiaries of stores */
+    @Excel(name = "Subsidiaries of stores",type = Excel.Type.EXPORT)
     private String parentDeptName;
 
-    /** 部门编码 */
-    @Excel(name = "部门编码")
+    /** Department code */
+    @Excel(name = "Department code")
     private String deptCode;
 
-    /** 部门名称 */
-    @Excel(name = "部门名称")
+    /** Department name */
+    @Excel(name = "Department name")
     private String deptName;
 
-    @Excel(name = "门店类型1=自营店,2=加盟店",readConverterExp = "1=自营店,2=加盟店")
+    @Excel(name = "Store type1=Own stores,2=Its franchisees",readConverterExp = "1=Own stores,2=Its franchisees")
     private Integer deptType;
 
-    /** 负责人 */
-    @Excel(name = "店长")
+    /** head */
+    @Excel(name = "The manager")
     private String leader;
 
-    /** 联系电话 */
-    @Excel(name = "店长电话")
+    /** Contact phone number */
+    @Excel(name = "The manager phone")
     private String phone;
 
-    /** 邮箱 */
-    @Excel(name = "店长邮箱")
+    /** email */
+    @Excel(name = "The manager email account")
     private String email;
 
-    /** 省 .*/
-    @Excel(name = "省")
+    /** province .*/
+    @Excel(name = "province")
     private String province;
 
-    /** 市 .*/
-    @Excel(name = "市")
+    /** The city .*/
+    @Excel(name = "The city")
     private String city;
 
-    /** 区 .*/
-    @Excel(name = "区")
+    /** area .*/
+    @Excel(name = "area")
     private String district;
 
-    /** 详细地址 .*/
-    @Excel(name = "详细地址")
+    /** Detailed address .*/
+    @Excel(name = "Detailed address")
     private String address;
 
-    /** 显示顺序 */
-    @Excel(name = "显示顺序（默认由小到大）")
+    /** According to the order */
+    @Excel(name = "According to the order(Default from small to large)")
     private Integer orderNum;
 
-    @Excel(name = "创建时间",dateFormat = "yyyy-MM-dd HH:mm:ss", type = Excel.Type.EXPORT)
+    @Excel(name = "Creation time",dateFormat = "yyyy-MM-dd HH:mm:ss", type = Excel.Type.EXPORT)
     private Date createTime;
 }
 

@@ -6,57 +6,57 @@ import alb.project.system.domain.SysUserRole;
 import org.apache.ibatis.annotations.Param;
 
 /**
- * 用户与角色关联表 数据层
+ * The association table between users and roles The data layer
  *
  */
 public interface SysUserRoleMapper
 {
     /**
-     * 通过用户ID删除用户和角色关联
+     * By the userIDDelete the association between a user and a role
      * 
-     * @param userId 用户ID
-     * @return 结果
+     * @param userId The userID
+     * @return The results of
      */
     int deleteUserRoleByUserId(Long userId);
 
     /**
-     * 批量删除用户和角色关联
+     * Delete associations between users and roles in batches
      * 
-     * @param ids 需要删除的数据ID
-     * @return 结果
+     * @param ids Data to be deletedID
+     * @return The results of
      */
     int deleteUserRole(Long[] ids);
 
     /**
-     * 通过角色ID查询角色使用数量
+     * Through the roleIDExample Query the number of roles
      * 
-     * @param roleId 角色ID
-     * @return 结果
+     * @param roleId roleID
+     * @return The results of
      */
     int countUserRoleByRoleId(Long roleId);
 
     /**
-     * 批量新增用户角色信息
+     * Add user role information in batches
      * 
-     * @param userRoleList 用户角色列表
-     * @return 结果
+     * @param userRoleList User Role List
+     * @return The results of
      */
     int batchUserRole(List<SysUserRole> userRoleList);
 
     /**
-     * 删除用户和角色关联信息
+     * Example Delete the association between a user and a role
      * 
-     * @param userRole 用户和角色关联信息
-     * @return 结果
+     * @param userRole User and role association information
+     * @return The results of
      */
     int deleteUserRoleInfo(SysUserRole userRole);
 
     /**
-     * 批量取消授权用户角色
+     * Cancel the roles of authorized users in batches
      * 
-     * @param roleId 角色ID
-     * @param userIds 需要删除的用户数据ID
-     * @return 结果
+     * @param roleId roleID
+     * @param userIds User data to be deletedID
+     * @return The results of
      */
     int deleteUserRoleInfos(@Param("roleId") Long roleId, @Param("userIds") Long[] userIds);
 }

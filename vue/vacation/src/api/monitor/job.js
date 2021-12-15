@@ -1,6 +1,6 @@
 import request from '@/utils/request'
 
-// 查询定时任务调度列表
+// Example Query the scheduled task list
 export function listJob(query) {
   return request({
     url: '/monitor/job/list',
@@ -9,7 +9,7 @@ export function listJob(query) {
   })
 }
 
-// 查询定时任务调度详细
+// Query details about scheduled task scheduling
 export function getJob(jobId) {
   return request({
     url: '/monitor/job/' + jobId,
@@ -17,7 +17,7 @@ export function getJob(jobId) {
   })
 }
 
-// 新增定时任务调度
+// Added scheduled task scheduling
 export function addJob(data) {
   return request({
     url: '/monitor/job',
@@ -26,7 +26,7 @@ export function addJob(data) {
   })
 }
 
-// 修改定时任务调度
+// Example Modify scheduled task scheduling
 export function updateJob(data) {
   return request({
     url: '/monitor/job',
@@ -35,7 +35,7 @@ export function updateJob(data) {
   })
 }
 
-// 删除定时任务调度
+// Example Delete scheduled task scheduling
 export function delJob(jobId) {
   return request({
     url: '/monitor/job/' + jobId,
@@ -43,7 +43,7 @@ export function delJob(jobId) {
   })
 }
 
-// 导出定时任务调度
+// Example Export scheduled task scheduling
 export function exportJob(query) {
   return request({
     url: '/monitor/job/export',
@@ -52,7 +52,7 @@ export function exportJob(query) {
   })
 }
 
-// 任务状态修改
+// Task Status Modification
 export function changeJobStatus(jobId, status) {
   const data = {
     jobId,
@@ -66,7 +66,7 @@ export function changeJobStatus(jobId, status) {
 }
 
 
-// 定时任务立即执行一次
+// The scheduled task is executed immediately
 export function runJob(jobId, jobGroup) {
   const data = {
     jobId,

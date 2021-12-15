@@ -3,9 +3,9 @@ package alb.common.exception;
 import lombok.Data;
 
 /**
- * @ClassName : ApiException  //类名
- * @Description : 我的异常处理  //描述
- * @Date: 2019-11-27 15:42  //时间
+ * @ClassName : ApiException  //The name of the class
+ * @Description : My exception handling  //describe
+ * @Date: 2019-11-27 15:42  //time
  */
 @Data
 public class ApiException extends RuntimeException {

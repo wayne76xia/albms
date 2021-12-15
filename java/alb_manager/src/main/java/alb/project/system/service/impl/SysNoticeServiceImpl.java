@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import alb.project.system.service.ISysNoticeService;
 
 /**
- * 公告 服务层实现
+ * The announcement Service layer implementation
  *
  */
 @Service
@@ -19,10 +19,10 @@ public class SysNoticeServiceImpl implements ISysNoticeService
     private SysNoticeMapper noticeMapper;
 
     /**
-     * 查询公告信息
+     * Querying Bulletin Information
      * 
-     * @param noticeId 公告ID
-     * @return 公告信息
+     * @param noticeId The announcementID
+     * @return Announcement of the information
      */
     @Override
     public SysNotice selectNoticeById(Long noticeId)
@@ -31,10 +31,10 @@ public class SysNoticeServiceImpl implements ISysNoticeService
     }
 
     /**
-     * 查询公告列表
+     * Querying the Bulletin List
      * 
-     * @param notice 公告信息
-     * @return 公告集合
+     * @param notice Announcement of the information
+     * @return The announcement set
      */
     @Override
     public List<SysNotice> selectNoticeList(SysNotice notice)
@@ -43,10 +43,10 @@ public class SysNoticeServiceImpl implements ISysNoticeService
     }
 
     /**
-     * 新增公告
+     * The new announcement
      * 
-     * @param notice 公告信息
-     * @return 结果
+     * @param notice Announcement of the information
+     * @return The results of
      */
     @Override
     public int insertNotice(SysNotice notice)
@@ -55,10 +55,10 @@ public class SysNoticeServiceImpl implements ISysNoticeService
     }
 
     /**
-     * 修改公告
+     * Modify bulletin
      * 
-     * @param notice 公告信息
-     * @return 结果
+     * @param notice Announcement of the information
+     * @return The results of
      */
     @Override
     public int updateNotice(SysNotice notice)
@@ -67,10 +67,10 @@ public class SysNoticeServiceImpl implements ISysNoticeService
     }
 
     /**
-     * 删除公告对象
+     * Deleting a Bulletin Object
      * 
-     * @param noticeId 公告ID
-     * @return 结果
+     * @param noticeId The announcementID
+     * @return The results of
      */
     @Override
     public int deleteNoticeById(Long noticeId)
@@ -79,10 +79,10 @@ public class SysNoticeServiceImpl implements ISysNoticeService
     }
 
     /**
-     * 批量删除公告信息
+     * Delete bulletins in batches
      * 
-     * @param noticeIds 需要删除的公告ID
-     * @return 结果
+     * @param noticeIds Bulletin to deleteID
+     * @return The results of
      */
     @Override
     public int deleteNoticeByIds(Long[] noticeIds)

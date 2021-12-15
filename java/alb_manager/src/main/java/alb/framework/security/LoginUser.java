@@ -9,7 +9,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
- * 登录用户身份权限
+ * Login user identity permission
  *
  */
 public class LoginUser implements UserDetails
@@ -17,47 +17,47 @@ public class LoginUser implements UserDetails
     private static final long serialVersionUID = 1L;
 
     /**
-     * 用户唯一标识
+     * Unique user identification
      */
     private String token;
 
     /**
-     * 登陆时间
+     * Landing time
      */
     private Long loginTime;
 
     /**
-     * 过期时间
+     * Expiration time
      */
     private Long expireTime;
 
     /**
-     * 登录IP地址
+     * The loginIPaddress
      */
     private String ipaddr;
 
     /**
-     * 登录地点
+     * The login site
      */
     private String loginLocation;
 
     /**
-     * 浏览器类型
+     * Browser Type
      */
     private String browser;
 
     /**
-     * 操作系统
+     * The operating system
      */
     private String os;
 
     /**
-     * 权限列表
+     * Permissions list
      */
     private Set<String> permissions;
 
     /**
-     * 用户信息
+     * The user information
      */
     private SysUser user;
 
@@ -95,7 +95,7 @@ public class LoginUser implements UserDetails
     }
 
     /**
-     * 账户是否未过期,过期无法验证
+     * Whether the account has not expired,Expiration cannot be verified
      */
     @JsonIgnore
     @Override
@@ -105,7 +105,7 @@ public class LoginUser implements UserDetails
     }
 
     /**
-     * 指定用户是否解锁,锁定的用户无法进行身份验证
+     * Specifies whether to unlock the user,The locked user cannot be authenticated
      * 
      * @return
      */
@@ -117,7 +117,7 @@ public class LoginUser implements UserDetails
     }
 
     /**
-     * 指示是否已过期的用户的凭据(密码),过期的凭据防止认证
+     * User credentials that indicate whether they have expired(password),Expired credentials prevent authentication
      * 
      * @return
      */
@@ -129,7 +129,7 @@ public class LoginUser implements UserDetails
     }
 
     /**
-     * 是否可用 ,禁用的用户不能身份验证
+     * Whether the available ,Disabled users cannot be authenticated
      * 
      * @return
      */

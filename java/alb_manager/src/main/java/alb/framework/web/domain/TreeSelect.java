@@ -9,20 +9,20 @@ import alb.project.system.domain.SysMenu;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
 /**
- * Treeselect树结构实体类
+ * TreeselectTree structure entity class
  *
  */
 public class TreeSelect implements Serializable
 {
     private static final long serialVersionUID = 1L;
 
-    /** 节点ID */
+    /** nodeID */
     private Long id;
 
-    /** 节点名称 */
+    /** The name of the node */
     private String label;
 
-    /** 子节点 */
+    /** Child nodes */
     @JsonInclude(JsonInclude.Include.NON_EMPTY)
     private List<TreeSelect> children;
 

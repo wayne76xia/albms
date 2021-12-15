@@ -4,11 +4,11 @@
       <chart />
     </div>
     <div class="title_box aui-padded-t-15">
-      <p class="font-size-20">子公司管理</p>
+      <p class="font-size-20">Subsidiary management</p>
       <div
         class="addnew bg-theme text-white aui-margin-l-10 border-radius font-size-14"
         @click="handleAdd"
-      >新增</div>
+      >new</div>
     </div>
     <div class="table_data">
       <div class="bg-white bg_shadow bg-radius">
@@ -16,25 +16,25 @@
           <el-form :model="queryParams" ref="queryForm" :inline="true">
             <el-row>
               <el-col :span="20">
-                <el-form-item label-width="130px" label="子公司名称/代码：" prop="deptName">
+                <el-form-item label-width="130px" label="Name of Subsidiary/code:" prop="deptName">
                   <el-input
                     v-model="queryParams.deptName"
-                    placeholder="请输入子公司名称或代码"
+                    placeholder="Please enter a subsidiary name or code"
                     clearable
                     style="width: 240px"
                     @keyup.enter.native="handleQuery"
                   />
                 </el-form-item>
-                <el-form-item label-width="150px" label="负责人/负责人电话：" prop="leader">
+                <el-form-item label-width="150px" label="head/headphone:" prop="leader">
                   <el-input
                     v-model="queryParams.leader"
-                    placeholder="请输入负责人姓名或电话"
+                    placeholder="Please enter the name or phone number of the responsible person"
                     clearable
                     style="width: 240px"
                     @keyup.enter.native="handleQuery"
                   />
                 </el-form-item>
-                <el-form-item label="区域：">
+                <el-form-item label="area:">
                   <el-cascader
                   style="width: 240px"
                     :options="options"
@@ -46,21 +46,21 @@
                   ></el-cascader>
                 </el-form-item>
                 <el-form-item>
-                  <el-button type="primary" size="medium" @click="handleQuery">查询</el-button>
-                  <el-button size="medium" @click="resetQuery">重置</el-button>
+                  <el-button type="primary" size="medium" @click="handleQuery">The query</el-button>
+                  <el-button size="medium" @click="resetQuery">reset</el-button>
                 </el-form-item>
               </el-col>
               <el-col :span="4">
                 <div class>
                   <div class="flex export_box" style="float:right">
-                    <div class="text-black font-size-14 aui-padded-r-10">共{{total}}条数据</div>
+                    <div class="text-black font-size-14 aui-padded-r-10">A total of{{total}}The data</div>
                     <el-button size="mini" @click="handleImport">
                       <img src="../../../assets/image/daoru.png" alt />
-                      <p style="margin-top:2px">导入</p>
+                      <p style="margin-top:2px">The import</p>
                     </el-button>
                     <el-button size="mini" @click="handleExport" v-hasPermi="['system:dept:subsidiaryCompanyListExport']">
                       <img src="../../../assets/image/daochu.png" alt />
-                      <p style="margin-top:2px">导出</p>
+                      <p style="margin-top:2px">export</p>
                     </el-button>
                   </div>
                 </div>
@@ -77,16 +77,16 @@
           stripe
         >
           <el-table-column type="selection" width="80" align="center" />
-          <el-table-column label="代码" align="center" prop="deptCode" width="120"/>
-          <el-table-column label="公司名称" align="center" prop="deptName" :show-overflow-tooltip="true" />
-          <el-table-column label="负责人" align="center" prop="leader" :show-overflow-tooltip="true" />
+          <el-table-column label="code" align="center" prop="deptCode" width="120"/>
+          <el-table-column label="The name of the company" align="center" prop="deptName" :show-overflow-tooltip="true" />
+          <el-table-column label="head" align="center" prop="leader" :show-overflow-tooltip="true" />
           <el-table-column
-            label="负责人电话"
+            label="Responsible person telephone"
             align="center"
             prop="leaderPhone"
             :show-overflow-tooltip="true"
           />
-          <el-table-column label="门店数量" align="center" width="120">
+          <el-table-column label="Number of stores" align="center" width="120">
             <template slot-scope="scope">
               <span
               v-if="scope.row.shopNum>0"
@@ -99,18 +99,18 @@
               >{{scope.row.shopNum}}</span>
             </template>
           </el-table-column>
-          <el-table-column label="所在区域" :show-overflow-tooltip="true">
+          <el-table-column label="area" :show-overflow-tooltip="true">
             <template
               slot-scope="scope"
             >{{ scope.row.province }} {{ scope.row.city }} {{ scope.row.district }}</template>
           </el-table-column>
-          <el-table-column label="详细地址" align="center" prop="address" width="160">
+          <el-table-column label="Detailed address" align="center" prop="address" width="160">
             <template slot-scope="scope">
               <span>{{ scope.row.address }}</span>
             </template>
           </el-table-column>
           <el-table-column
-            label="操作"
+            label="operation"
             align="center"
             width="180"
             class-name="small-padding fixed-width"
@@ -121,7 +121,7 @@
                 type="text"
                 @click="handleShow(scope.row)"
                 v-hasPermi="['system:dept:subsidiaryCompanyInfo']"
-                title="查看详情"
+                title="Check the details"
               >
                 <img src="../../../assets/image/chaxun.png" alt />
               </el-button>
@@ -132,7 +132,7 @@
                 style="color:#5ECC59 !important;font-size:16px"
                 @click="handleUpdate(scope.row)"
                 v-hasPermi="['system:dept:edit']"
-                title="编辑"
+                title="The editor"
               ></el-button>
               <el-button
                 v-if="scope.row.userId !== 1"
@@ -142,7 +142,7 @@
                 style="color: #E8522A !important;font-size:16px"
                 @click="handleDelete(scope.row)"
                 v-hasPermi="['system:dept:remove']"
-                title="删除"
+                title="delete"
               ></el-button>
             </template>
           </el-table-column>
@@ -157,24 +157,24 @@
       />
     </div>
 
-    <!-- 门店数据 -->
+    <!-- Store the data -->
     <el-dialog class="table_data" :title="titleShop" :visible.sync="open1" width="65%" append-to-body>
       <el-table :data="shopData" header-cell-class-name="headerColor" stripe>
-        <el-table-column label="代码" align="left" prop="deptCode" />
-        <el-table-column label="门店名称" align="left" prop="deptName" :show-overflow-tooltip="true" />
-        <el-table-column label="门店类型" align="left" prop="deptType" :show-overflow-tooltip="true">
-          <template slot-scope="scope">{{ scope.row.deptType == '1' ? '直营店':'加盟店' }}</template>
+        <el-table-column label="code" align="left" prop="deptCode" />
+        <el-table-column label="The name of the store" align="left" prop="deptName" :show-overflow-tooltip="true" />
+        <el-table-column label="Store type" align="left" prop="deptType" :show-overflow-tooltip="true">
+          <template slot-scope="scope">{{ scope.row.deptType == '1' ? 'stores':'Its franchisees' }}</template>
         </el-table-column>
 
-        <el-table-column label="店长" align="left" prop="leader" :show-overflow-tooltip="true" />
+        <el-table-column label="The manager" align="left" prop="leader" :show-overflow-tooltip="true" />
         <el-table-column
-          label="店长电话"
+          label="The manager phone"
           align="left"
           prop="phone"
           :show-overflow-tooltip="true"
         />
-        <el-table-column label="门店电话" align="left" prop="deptPhone"  />
-        <el-table-column label="所在区域" :show-overflow-tooltip="true" width='200'>
+        <el-table-column label="Store the phone" align="left" prop="deptPhone"  />
+        <el-table-column label="area" :show-overflow-tooltip="true" width='200'>
           <template
             slot-scope="scope"
           >
@@ -182,7 +182,7 @@
           {{ scope.row.province }} {{ scope.row.city }} {{ scope.row.district }}</div></template>
         </el-table-column>
         <el-table-column
-          label="详细地址"
+          label="Detailed address"
           :show-overflow-tooltip="true"
           align="left"
           prop="address"
@@ -195,24 +195,24 @@
       </el-table>
     </el-dialog>
 
-    <!-- 添加或修改参数配置对话框 -->
+    <!-- Add or modify parameter configuration dialog box -->
     <el-dialog :title="title" :visible.sync="open" width="40%" append-to-body>
-      <div class="info_box" v-if="title == '子公司信息'">
+      <div class="info_box" v-if="title == 'Subsidiary information'">
         <div class="text-grayer flex aui-padded-b-10">
-          <div>基本资料</div>
+          <div>Basic information</div>
           <div class="line_dash"></div>
         </div>
 
         <el-row>
           <el-col :span="12">
             <div class="info_index">
-              <p>代码：</p>
+              <p>code:</p>
               <span v-text="form.deptCode"></span>
             </div>
           </el-col>
           <el-col :span="12">
             <div class="info_index">
-              <p>名称：</p>
+              <p>The name of the:</p>
               <span v-text="form.deptName"></span>
             </div>
           </el-col>
@@ -220,13 +220,13 @@
         <el-row>
           <el-col :span="12">
             <div class="info_index">
-              <p>负责人：</p>
+              <p>head:</p>
               <span v-text="form.leader"></span>
             </div>
           </el-col>
           <el-col :span="12">
             <div class="info_index">
-              <p>负责人电话：</p>
+              <p>Responsible person telephone:</p>
               <span v-text="form.leaderPhone"></span>
             </div>
           </el-col>
@@ -234,31 +234,31 @@
         <el-row>
           <el-col :span="12">
             <div class="info_index">
-              <p>所在地区：</p>
+              <p>In the area:</p>
               <span>{{form.province}}{{form.city}}{{form.district}}</span>
             </div>
           </el-col>
           <el-col :span="12">
             <div class="info_index">
-              <p>详细地址：</p>
+              <p>Detailed address:</p>
               <span v-text="form.address"></span>
             </div>
           </el-col>
         </el-row>
         <div class="text-grayer flex aui-padded-b-10">
-          <div>数据统计</div>
+          <div>Data statistics</div>
           <div class="line_dash"></div>
         </div>
         <el-row>
           <el-col :span="12">
             <div class="info_index">
-              <p>添加时间：</p>
+              <p>Add the time:</p>
               <span v-text="form.createDate"></span>
             </div>
           </el-col>
           <el-col :span="12">
             <div class="info_index">
-              <p>门店：</p>
+              <p>stores:</p>
               <span v-text="form.totalNum"></span>
             </div>
           </el-col>
@@ -266,19 +266,19 @@
         <el-row>
           <el-col :span="12">
             <div class="info_index">
-              <p>会员：</p>
+              <p>members:</p>
               <span v-text="form.memberNum"></span>
             </div>
           </el-col>
           <el-col :span="12">
             <div class="info_index">
-              <p>准会员：</p>
+              <p>Associate member:</p>
               <span v-text="form.associateMemberNum"></span>
             </div>
           </el-col>
         </el-row>
         <div class="text-grayer flex aui-padded-b-10">
-          <div>门店</div>
+          <div>stores</div>
           <div class="line_dash"></div>
         </div>
         <el-row justify="start" type="flex" :gutter="20">
@@ -287,52 +287,52 @@
           </el-col>
         </el-row>
       </div>
-      <el-form v-if="title != '子公司信息'" ref="form" :model="form" :rules="rules" label-width="120px">
+      <el-form v-if="title != 'Subsidiary information'" ref="form" :model="form" :rules="rules" label-width="120px">
         <el-row>
           <el-col :span="24" v-if="form.parentId !== 0">
-            <el-form-item label="上级部门：" prop="parentId">
+            <el-form-item label="Superior departments:" prop="parentId">
               <treeselect
                 v-model="form.parentId"
                 :options="deptOptions"
                 :normalizer="normalizer"
-                placeholder="选择上级部门"
+                placeholder="Select superior department"
               />
             </el-form-item>
           </el-col>
           <el-col :span="12">
-            <el-form-item label="代码：" prop="deptCode">
-              <el-input v-model="form.deptCode" placeholder="请输入子公司代码" />
+            <el-form-item label="code:" prop="deptCode">
+              <el-input v-model="form.deptCode" placeholder="Please enter the subsidiary code" />
             </el-form-item>
           </el-col>
           <el-col :span="12">
-            <el-form-item label="名称：" prop="deptName">
-              <el-input v-model="form.deptName" placeholder="请输入子公司名称" />
+            <el-form-item label="The name of the:" prop="deptName">
+              <el-input v-model="form.deptName" placeholder="Please enter a subsidiary name" />
 
             </el-form-item>
           </el-col>
         </el-row>
         <el-row>
           <el-col :span="12">
-            <el-form-item label="负责人：" prop="leader">
-              <el-input v-model="form.leader" placeholder="请输入负责人名称" />
+            <el-form-item label="head:" prop="leader">
+              <el-input v-model="form.leader" placeholder="Please enter the responsible person name" />
             </el-form-item>
           </el-col>
           <el-col :span="12">
-            <el-form-item label="负责人电话：" prop="leaderPhone">
-              <el-input v-model="form.phone" placeholder="请输入负责人电话" maxlength="11" />
+            <el-form-item label="Responsible person telephone:" prop="leaderPhone">
+              <el-input v-model="form.phone" placeholder="Please enter the responsible person telephone number" maxlength="11" />
             </el-form-item>
           </el-col>
         </el-row>
         <el-row>
           <el-col :span="12">
-            <el-form-item label="所在地区：">
+            <el-form-item label="In the area:">
               <el-cascader
                 :class="{'cascader' : selectedName != ''} "
                 :options="options"
                 :props="props"
                 v-model="selectedOptions1"
                 @change="handleChange1"
-                :placeholder="selectedName != '' ? selectedName : '请选择'"
+                :placeholder="selectedName != '' ? selectedName : 'Please select a'"
                 clearable
                 filterable
                 style="width:100%"
@@ -340,22 +340,22 @@
             </el-form-item>
           </el-col>
           <el-col :span="12">
-            <el-form-item label="详细地址：" prop="address">
-              <el-input v-model="form.address" placeholder="请输入详细地址" type="text" />
+            <el-form-item label="Detailed address:" prop="address">
+              <el-input v-model="form.address" placeholder="Please enter your full address" type="text" />
             </el-form-item>
           </el-col>
         </el-row>
         <el-row>
           <el-col :span="12">
-            <el-form-item class label="显示排序：" prop="orderNum">
-              <el-input v-model="form.orderNum" placeholder="请输入序号" oninput="value=value.replace(/^\.+|[^\d.]/g,'')"></el-input>
+            <el-form-item class label="According to the sorting:" prop="orderNum">
+              <el-input v-model="form.orderNum" placeholder="Please enter the serial number" oninput="value=value.replace(/^\.+|[^\d.]/g,'')"></el-input>
             </el-form-item>
           </el-col>
           <el-col :span="12">
             <span
               class="font-size-14 text-graybc aui-padded-l-10"
               style="line-height:36px"
-            >顺序排序，可用来控制子公司排序</span>
+            >order,Can be used to control subsidiary sorting</span>
           </el-col>
         </el-row>
         <el-row>
@@ -363,13 +363,13 @@
 
         </el-row>
       </el-form>
-      <div v-if="title != '子公司信息'" slot="footer" class="dialog-footer">
-        <el-button @click="cancel">取 消</el-button>
-        <el-button type="primary" @click="submitForm">确 定</el-button>
+      <div v-if="title != 'Subsidiary information'" slot="footer" class="dialog-footer">
+        <el-button @click="cancel">take eliminate</el-button>
+        <el-button type="primary" @click="submitForm">indeed set</el-button>
       </div>
     </el-dialog>
 
-    <!-- 用户导入对话框 -->
+    <!-- User import dialog box -->
     <el-dialog :title="upload.title" :visible.sync="upload.open" width="400px" append-to-body>
       <el-upload
         ref="upload"
@@ -385,18 +385,18 @@
       >
         <i class="el-icon-upload"></i>
         <div class="el-upload__text">
-          将文件拖到此处，或
-          <em>点击上传</em>
+          Drag the file here,or
+          <em>Click on the upload</em>
         </div>
         <div class="el-upload__tip" slot="tip">
-          <el-checkbox v-model="upload.updateSupport" />是否更新已经存在的子公司数据
-          <el-link type="info" style="font-size:12px" @click="importTemplate">下载模板</el-link>
+          <el-checkbox v-model="upload.updateSupport" />Whether to update existing subsidiary data
+          <el-link type="info" style="font-size:12px" @click="importTemplate">Download the template</el-link>
         </div>
-        <div class="el-upload__tip" style="color:red" slot="tip">提示：仅允许导入“xls”或“xlsx”格式文件！</div>
+        <div class="el-upload__tip" style="color:red" slot="tip">prompt:Import only“xls”or“xlsx”Format file!</div>
       </el-upload>
       <div slot="footer" class="dialog-footer">
-        <el-button type="primary" @click="submitFileForm">确 定</el-button>
-        <el-button @click="upload.open = false">取 消</el-button>
+        <el-button type="primary" @click="submitFileForm">indeed set</el-button>
+        <el-button @click="upload.open = false">take eliminate</el-button>
       </div>
     </el-dialog>
   </div>
@@ -436,61 +436,61 @@ export default {
       selectedOptions: [],
       options: regionData,
       selectedName: "",
-      selectedOptions1: [], // 修改中选择器得值
-      // 遮罩层
+      selectedOptions1: [], // Modify the value of the selector
+      // The mask layer
       loading: true,
-      // 选中数组
+      // Select the array
       ids: [],
-      // 非单个禁用
+      // Non-single disable
       single: true,
-      // 非多个禁用
+      // Non-multiple disable
       multiple: true,
-      // 总条数
+      // The total number of article
       total: 0,
-      // 部门
+      // department
       allSubsidiaryCompany: null,
-      // 弹出层标题
+      // Pop-up layer title
       title: "",
-      // 部门树选项
+      // Department tree option
       deptOptions: undefined,
-      // 是否显示弹出层
+      // Whether to display the pop-up layer
       open: false,
-      // 部门名称
+      // Department name
       deptName: undefined,
-      // 默认密码
+      // The default password
       initPassword: undefined,
-      // 状态数据字典
+      // State data dictionary
       statusOptions: [],
-      // 性别状态字典
+      // Gender status dictionary
       sexOptions: [],
-      // 岗位选项
+      // Job options
       postOptions: [],
-      // 角色选项
+      // Role options
       roleOptions: [],
-      // 表单参数
+      // The form parameter
       form: {},
       defaultProps: {
         children: "children",
         label: "label",
       },
-      // 用户导入参数
+      // User Import Parameters
       upload: {
-        // 是否显示弹出层（用户导入）
+        // Whether to display the pop-up layer(The user to import)
         open: false,
-        // 弹出层标题（用户导入）
+        // Pop-up layer title(The user to import)
         title: "",
-        // 是否禁用上传
+        // Whether to disable upload
         isUploading: false,
-        // 是否更新已经存在的用户数据
+        // Whether to update existing user data
         updateSupport: 0,
-        // 设置上传的请求头部
+        // Set the upload request header
         headers: { Authorization: "Bearer " + getToken() },
-        // 上传的地址
+        // Upload address
         url:
           process.env.VUE_APP_BASE_API +
           "/system/dept/subsidiaryCompanyListImport",
       },
-      // 查询参数
+      // Query parameters
       queryParams: {
         pageNum: 1,
         pageSize: 10,
@@ -500,29 +500,29 @@ export default {
         city: undefined,
         district: undefined,
       },
-      // 表单校验
+      // Form validation
       rules: {
         orderNum: [
-          { required: true, message: "排序不能为空", trigger: "blur" },
+          { required: true, message: "The sort cannot be empty", trigger: "blur" },
         ],
         parentId: [
-          { required: true, message: "上级部门不能为空", trigger: "blur" },
+          { required: true, message: "The upper department cannot be empty", trigger: "blur" },
         ],
         deptCode: [
-          { required: true, message: "子公司代码不能为空", trigger: "blur" },
+          { required: true, message: "The subsidiary code cannot be empty", trigger: "blur" },
         ],
         deptName: [
-          { required: true, message: "子公司名称不能为空", trigger: "blur" },
+          { required: true, message: "The subsidiary name cannot be empty", trigger: "blur" },
         ],
         leader: [
-          { required: true, message: "负责人不能为空", trigger: "blur" },
+          { required: true, message: "The person in charge cannot be empty", trigger: "blur" },
         ],
       },
     };
   },
 
   watch: {
-    // 根据名称筛选部门树
+    // Filter the department tree by name
     deptName(val) {
       this.$refs.tree.filter(val);
     },
@@ -606,23 +606,23 @@ export default {
         this.loading = false;
       });
     },
-    // 筛选节点
+    // Screening of node
     filterNode(value, data) {
       if (!value) return true;
       return data.label.indexOf(value) !== -1;
     },
-    // 节点单击事件
+    // Node Click event
     handleNodeClick(data) {
       this.queryParams.deptId = data.id;
       this.subsidiaryCompanyList();
     },
 
-    // 取消按钮
+    // Cancel button
     cancel() {
       this.open = false;
       this.reset();
     },
-    // 表单重置
+    // Reset the form
     reset() {
       this.form = {
         deptName: undefined,
@@ -645,12 +645,12 @@ export default {
       this.selectedOptions1 = [];
       this.resetForm("form");
     },
-    /** 搜索按钮操作 */
+    /** Search button operation */
     handleQuery() {
       this.queryParams.page = 1;
       this.subsidiaryCompanyList();
     },
-    /** 重置按钮操作 */
+    /** Reset button operation */
     resetQuery() {
       this.selectedOptions = [];
       this.queryParams = {
@@ -661,13 +661,13 @@ export default {
       this.resetForm("queryForm");
       this.handleQuery();
     },
-    // 多选框选中数据
+    // Select data in multiple boxes
     handleSelectionChange(selection) {
       this.ids = selection.map((item) => item.userId);
       this.single = selection.length != 1;
       this.multiple = !selection.length;
     },
-    /** 新增按钮操作 */
+    /** New Button Operation */
     handleAdd() {
       this.reset();
       this.subsidiaryCompanyList();
@@ -675,7 +675,7 @@ export default {
       listDept().then((response) => {
         this.deptOptions = this.handleTree(response.data, "deptId");
         this.open = true;
-        this.title = "添加子公司";
+        this.title = "Add a subsidiary";
       });
 
 
@@ -690,17 +690,17 @@ export default {
         children: node.children,
       };
     },
-    /** 查看按钮操作 */
+    /** View button action */
     handleShow(row) {
       this.reset();
       const deptId = row.deptId;
       subsidiaryCompanyInfo(deptId).then((response) => {
         this.form = response.data;
         this.open = true;
-        this.title = "子公司信息";
+        this.title = "Subsidiary information";
       });
     },
-    /** 修改按钮操作 */
+    /** Modify button operation */
     handleUpdate(row) {
       this.reset();
       const deptId = row.deptId;
@@ -718,20 +718,20 @@ export default {
             response.data.district,
           ].join("/");
           this.open = true;
-          this.title = "编辑子公司";
+          this.title = "Editing subsidiary";
         });
       });
     },
 
-    /** 提交按钮 */
+    /** The submit button */
     submitForm: function () {
       this.$refs["form"].validate((valid) => {
         if (valid) {
 
-          if (this.title == "编辑子公司") {
+          if (this.title == "Editing subsidiary") {
             updateDept(this.form).then((response) => {
               if (response.code === 200) {
-                this.msgSuccess("修改成功");
+                this.msgSuccess("Modify the success");
                 this.open = false;
                 this.subsidiaryCompanyList();
               }
@@ -740,7 +740,7 @@ export default {
             this.form.type = 1;
             addDept(this.form).then((response) => {
               if (response.code === 200) {
-                this.msgSuccess("新增成功");
+                this.msgSuccess("New success");
                 this.open = false;
                 this.subsidiaryCompanyList();
               }
@@ -749,12 +749,12 @@ export default {
         }
       });
     },
-    /** 删除按钮操作 */
+    /** Delete button operation */
     handleDelete(row) {
       const deptId = row.deptId || this.ids;
-      this.$confirm('是否确认删除所选数据?', "警告", {
-        confirmButtonText: "确定",
-        cancelButtonText: "取消",
+      this.$confirm('Confirm deleting the selected data?', "warning", {
+        confirmButtonText: "determine",
+        cancelButtonText: "cancel",
         type: "warning",
       })
         .then(function () {
@@ -762,16 +762,16 @@ export default {
         })
         .then(() => {
           this.subsidiaryCompanyList();
-          this.msgSuccess("删除成功");
+          this.msgSuccess("Delete the success");
         })
         .catch(function () {});
     },
-    /** 导出按钮操作 */
+    /** Export button operation */
     handleExport() {
       const queryParams = this.queryParams;
-      this.$confirm("是否确认导出所有数据项?", "警告", {
-        confirmButtonText: "确定",
-        cancelButtonText: "取消",
+      this.$confirm("Verify that all data items are exported?", "warning", {
+        confirmButtonText: "determine",
+        cancelButtonText: "cancel",
         type: "warning",
       })
         .then(function () {
@@ -782,30 +782,30 @@ export default {
         })
         .catch(function () {});
     },
-    /** 导入按钮操作 */
+    /** Import button operation */
     handleImport() {
-      this.upload.title = "子公司导入";
+      this.upload.title = "Subsidiary import";
       this.upload.open = true;
     },
-    /** 下载模板操作 */
+    /** Downloading a Template */
     importTemplate() {
       importTemplate().then((response) => {
         this.download(response.msg);
       });
     },
-    // 文件上传中处理
+    // File upload processing
     handleFileUploadProgress(event, file, fileList) {
       this.upload.isUploading = true;
     },
-    // 文件上传成功处理
+    // The file is successfully uploaded. Procedure
     handleFileSuccess(response, file, fileList) {
       this.upload.open = false;
       this.upload.isUploading = false;
       this.$refs.upload.clearFiles();
-      this.$alert(response.msg, "导入结果", { dangerouslyUseHTMLString: true });
+      this.$alert(response.msg, "Import the results", { dangerouslyUseHTMLString: true });
       this.subsidiaryCompanyList();
     },
-    // 提交上传文件
+    // Submit and upload files
     submitFileForm() {
       this.$refs.upload.submit();
     },

@@ -18,7 +18,7 @@ import alb.common.utils.StringUtils;
 import alb.project.system.service.ISysDeptService;
 
 /**
- * 部门管理 服务实现
+ * Department Management The service implementation
  *
  */
 @Service
@@ -28,10 +28,10 @@ public class SysDeptServiceImpl implements ISysDeptService {
     private SysDeptMapper deptMapper;
 
     /**
-     * 查询部门管理数据
+     * Example Query department management data
      *
-     * @param dept 部门信息
-     * @return 部门信息集合
+     * @param dept Department information
+     * @return Department information set
      */
     @Override
     @DataScope(deptAlias = "d")
@@ -40,10 +40,10 @@ public class SysDeptServiceImpl implements ISysDeptService {
     }
 
     /**
-     * 构建前端所需要树结构
+     * The tree structure is needed to build the front end
      *
-     * @param depts 部门列表
-     * @return 树结构列表
+     * @param depts Department list
+     * @return Tree structure list
      */
     @Override
     public List<SysDept> buildDeptTree(List<SysDept> depts) {
@@ -54,7 +54,7 @@ public class SysDeptServiceImpl implements ISysDeptService {
         }
         for (Iterator<SysDept> iterator = depts.iterator(); iterator.hasNext(); ) {
             SysDept dept = iterator.next();
-            // 如果是顶级节点, 遍历该父节点的所有子节点
+            // If it's a top-level node, All children of the parent node are traversed
             if (!tempList.contains(dept.getParentId())) {
                 recursionFn(depts, dept);
                 returnList.add(dept);
@@ -67,10 +67,10 @@ public class SysDeptServiceImpl implements ISysDeptService {
     }
 
     /**
-     * 构建前端所需要下拉树结构
+     * The drop-down tree structure is needed to build the front end
      *
-     * @param depts 部门列表
-     * @return 下拉树结构列表
+     * @param depts Department list
+     * @return List of drop-down tree structures
      */
     @Override
     public List<TreeSelect> buildDeptTreeSelect(List<SysDept> depts) {
@@ -79,10 +79,10 @@ public class SysDeptServiceImpl implements ISysDeptService {
     }
 
     /**
-     * 根据角色ID查询部门树信息
+     * According to the characterIDExample Query department tree information
      *
-     * @param roleId 角色ID
-     * @return 选中部门列表
+     * @param roleId roleID
+     * @return Select department list
      */
     @Override
     public List<Integer> selectDeptListByRoleId(Long roleId) {
@@ -90,10 +90,10 @@ public class SysDeptServiceImpl implements ISysDeptService {
     }
 
     /**
-     * 根据部门ID查询信息
+     * According to the departmentIDQuery information
      *
-     * @param deptId 部门ID
-     * @return 部门信息
+     * @param deptId departmentID
+     * @return Department information
      */
     @Override
     public SysDept selectDeptById(Long deptId) {
@@ -101,10 +101,10 @@ public class SysDeptServiceImpl implements ISysDeptService {
     }
 
     /**
-     * 根据ID查询所有子部门（正常状态）
+     * According to theIDQuery all subdepartments(The normal state)
      *
-     * @param deptId 部门ID
-     * @return 子部门数
+     * @param deptId departmentID
+     * @return Department number
      */
     @Override
     public int selectNormalChildrenDeptById(Long deptId) {
@@ -112,10 +112,10 @@ public class SysDeptServiceImpl implements ISysDeptService {
     }
 
     /**
-     * 是否存在子节点
+     * Whether there are child nodes
      *
-     * @param deptId 部门ID
-     * @return 结果
+     * @param deptId departmentID
+     * @return The results of
      */
     @Override
     public boolean hasChildByDeptId(Long deptId) {
@@ -124,10 +124,10 @@ public class SysDeptServiceImpl implements ISysDeptService {
     }
 
     /**
-     * 查询部门是否存在用户
+     * Query whether users exist in the department
      *
-     * @param deptId 部门ID
-     * @return 结果 true 存在 false 不存在
+     * @param deptId departmentID
+     * @return The results of true There are false There not are
      */
     @Override
     public boolean checkDeptExistUser(Long deptId) {
@@ -136,10 +136,10 @@ public class SysDeptServiceImpl implements ISysDeptService {
     }
 
     /**
-     * 校验部门名称是否唯一
+     * Verify that the department name is unique
      *
-     * @param dept 部门信息
-     * @return 结果
+     * @param dept Department information
+     * @return The results of
      */
     @Override
     public String checkDeptNameUnique(SysDept dept) {
@@ -152,27 +152,27 @@ public class SysDeptServiceImpl implements ISysDeptService {
     }
 
     /**
-     * 新增保存部门信息
+     * Added Saving department information
      *
-     * @param dept 部门信息
-     * @return 结果
+     * @param dept Department information
+     * @return The results of
      */
     @Override
     public int insertDept(SysDept dept) {
         SysDept info = deptMapper.selectDeptById(dept.getParentId());
-        // 如果父节点不为正常状态,则不允许新增子节点
+        // If the parent node is not in the normal state,You cannot add child nodes
         if (!UserConstants.DEPT_NORMAL.equals(info.getStatus())) {
-            throw new CustomException("部门停用，不允许新增");
+            throw new CustomException("Department of stopping,Not allowed to add");
         }
         dept.setAncestors(info.getAncestors() + "," + dept.getParentId());
         return deptMapper.insertDept(dept);
     }
 
     /**
-     * 修改保存部门信息
+     * Modify Save department information
      *
-     * @param dept 部门信息
-     * @return 结果
+     * @param dept Department information
+     * @return The results of
      */
     @Override
     public int updateDept(SysDept dept) {
@@ -186,16 +186,16 @@ public class SysDeptServiceImpl implements ISysDeptService {
         }
         int result = deptMapper.updateDept(dept);
         if (UserConstants.DEPT_NORMAL.equals(dept.getStatus())) {
-            // 如果该部门是启用状态，则启用该部门的所有上级部门
+            // If the department is enabled,Enable all superior departments of the department
             updateParentDeptStatus(dept);
         }
         return result;
     }
 
     /**
-     * 修改该部门的父级部门状态
+     * Example Change the status of the parent department
      *
-     * @param dept 当前部门
+     * @param dept The current department
      */
     private void updateParentDeptStatus(SysDept dept) {
         String updateBy = dept.getUpdateBy();
@@ -205,11 +205,11 @@ public class SysDeptServiceImpl implements ISysDeptService {
     }
 
     /**
-     * 修改子元素关系
+     * Modify child element relationships
      *
-     * @param deptId       被修改的部门ID
-     * @param newAncestors 新的父ID集合
-     * @param oldAncestors 旧的父ID集合
+     * @param deptId       The modified departmentID
+     * @param newAncestors The new parentIDA collection of
+     * @param oldAncestors The old fatherIDA collection of
      */
     public void updateDeptChildren(Long deptId, String newAncestors, String oldAncestors) {
         List<SysDept> children = deptMapper.selectChildrenDeptById(deptId);
@@ -222,10 +222,10 @@ public class SysDeptServiceImpl implements ISysDeptService {
     }
 
     /**
-     * 删除部门管理信息
+     * Example Delete department management information
      *
-     * @param deptId 部门ID
-     * @return 结果
+     * @param deptId departmentID
+     * @return The results of
      */
     @Override
     public int deleteDeptById(Long deptId) {
@@ -233,15 +233,15 @@ public class SysDeptServiceImpl implements ISysDeptService {
     }
 
     /**
-     * 递归列表
+     * Recursive list
      */
     private void recursionFn(List<SysDept> list, SysDept t) {
-        // 得到子节点列表
+        // Get a list of child nodes
         List<SysDept> childList = getChildList(list, t);
         t.setChildren(childList);
         for (SysDept tChild : childList) {
             if (hasChild(list, tChild)) {
-                // 判断是否有子节点
+                // Check whether there are child nodes
                 Iterator<SysDept> it = childList.iterator();
                 while (it.hasNext()) {
                     SysDept n = it.next();
@@ -252,7 +252,7 @@ public class SysDeptServiceImpl implements ISysDeptService {
     }
 
     /**
-     * 得到子节点列表
+     * Get a list of child nodes
      */
     private List<SysDept> getChildList(List<SysDept> list, SysDept t) {
         List<SysDept> tlist = new ArrayList<SysDept>();
@@ -267,7 +267,7 @@ public class SysDeptServiceImpl implements ISysDeptService {
     }
 
     /**
-     * 判断是否有子节点
+     * Check whether there are child nodes
      */
     private boolean hasChild(List<SysDept> list, SysDept t) {
         return getChildList(list, t).size() > 0;
@@ -285,7 +285,7 @@ public class SysDeptServiceImpl implements ISysDeptService {
     }
 
     /**
-     *  查询所有子公司列表   划分数据权限
+     *  Query the list of all subsidiaries   Dividing data Permissions
      * @param dept
      * @return
      */
@@ -307,7 +307,7 @@ public class SysDeptServiceImpl implements ISysDeptService {
     }
 
     /**
-     * 导入子公司
+     * Import subsidiary
      * @param list
      * @param isUpdateSupport
      * @param operName
@@ -317,7 +317,7 @@ public class SysDeptServiceImpl implements ISysDeptService {
     public String importSubsidiaryCompany(List<SubsidiaryCompanyExcelVO> list, boolean isUpdateSupport, String operName) {
         if (StringUtils.isNull(list) || list.size() == 0)
         {
-            throw new CustomException("导入子公司数据不能为空！");
+            throw new CustomException("The imported subsidiary data cannot be empty!");
         }
         int successNum = 0;
         int failureNum = 0;
@@ -328,11 +328,11 @@ public class SysDeptServiceImpl implements ISysDeptService {
             try
             {
                 SysDept info = deptMapper.selectDeptById(100L);
-                // 如果父节点不为正常状态,则不允许新增子节点
+                // If the parent node is not in the normal state,You cannot add child nodes
                 if (!UserConstants.DEPT_NORMAL.equals(info.getStatus())) {
-                    throw new CustomException(info.getDeptName() + " 停用，不允许新增");
+                    throw new CustomException(info.getDeptName() + " disable,Not allowed to add");
                 }
-                // 验证是否存在这个部门
+                // Verify that the department exists
                 SysDept dept = deptMapper.checkDeptCodeUnique(vo.getDeptCode());
                 if (StringUtils.isNull(dept))
                 {
@@ -356,7 +356,7 @@ public class SysDeptServiceImpl implements ISysDeptService {
                     insertDept.setCreateBy(operName);
                     deptMapper.insertDept(insertDept);
                     successNum++;
-                    successMsg.append("<br/>").append(successNum).append("、子公司 ").append(vo.getDeptName()).append(" 导入成功");
+                    successMsg.append("<br/>").append(successNum).append("、subsidiary ").append(vo.getDeptName()).append(" Import success");
                 }
                 else if (isUpdateSupport)
                 {
@@ -375,37 +375,37 @@ public class SysDeptServiceImpl implements ISysDeptService {
                     dept.setUpdateBy(operName);
                     deptMapper.updateDept(dept);
                     successNum++;
-                    successMsg.append("<br/>").append(successNum).append("、子公司 ").append(vo.getDeptName()).append(" 更新成功");
+                    successMsg.append("<br/>").append(successNum).append("、subsidiary ").append(vo.getDeptName()).append(" The update is successful");
                 }
                 else
                 {
                     failureNum++;
-                    failureMsg.append("<br/>").append(failureNum).append("、子公司 ").append(vo.getDeptCode()).append(" 已存在");
+                    failureMsg.append("<br/>").append(failureNum).append("、subsidiary ").append(vo.getDeptCode()).append(" existing");
                 }
             }
             catch (Exception e)
             {
                 failureNum++;
-                String msg = "<br/>" + failureNum + "、子公司 " + vo.getDeptName() + " 导入失败：";
+                String msg = "<br/>" + failureNum + "、subsidiary " + vo.getDeptName() + " Import failure:";
                 failureMsg.append(msg).append(e.getMessage());
                 log.error(msg, e);
             }
         }
         if (failureNum > 0)
         {
-            failureMsg.insert(0, "很抱歉，导入失败！共 " + failureNum + " 条数据格式不正确，错误如下：");
+            failureMsg.insert(0, "I'm sorry,Import failure!A total of " + failureNum + " The data format is incorrect,Error is as follows:");
             throw new CustomException(failureMsg.toString());
         }
         else
         {
-            successMsg.insert(0, "恭喜您，数据已全部导入成功！共 " + successNum + " 条，数据如下：");
+            successMsg.insert(0, "Congratulations to you,All data has been imported successfully!A total of " + successNum + " article,The following data:");
         }
         return successMsg.toString();
     }
 
 
     /**
-     * 导入门店
+     * The import of stores
      * @param list
      * @param isUpdateSupport
      * @param operName
@@ -415,7 +415,7 @@ public class SysDeptServiceImpl implements ISysDeptService {
     public String importShop(List<ShopExcelVO> list, boolean isUpdateSupport, String operName) {
         if (StringUtils.isNull(list) || list.size() == 0)
         {
-            throw new CustomException("导入门店数据不能为空！");
+            throw new CustomException("Import store data cannot be empty!");
         }
         int successNum = 0;
         int failureNum = 0;
@@ -425,14 +425,14 @@ public class SysDeptServiceImpl implements ISysDeptService {
         {
             try
             {
-                // 根据门店所属子公司编码查询子公司信息
+                // Query subsidiary information according to the code of the subsidiary of the store
                 SysDept info = deptMapper.selectDeptByCode(vo.getParentDeptCode());
 
-                // 如果父节点不为正常状态,则不允许新增子节点
+                // If the parent node is not in the normal state,You cannot add child nodes
                 if (!UserConstants.DEPT_NORMAL.equals(info.getStatus())) {
-                    throw new CustomException(info.getDeptName() + "子公司停用，不允许新增");
+                    throw new CustomException(info.getDeptName() + "Subsidiary discontinuation,Not allowed to add");
                 }
-                // 验证是否存在这个门店
+                // Verify the existence of the store
 //                SysDept dept = deptMapper.checkDeptNameUnique(vo.getDeptName(),info.getDeptId(),vo.getDeptCode());
                 SysDept dept = deptMapper.checkDeptCodeUnique(vo.getDeptCode());
                 if (StringUtils.isNull(dept))
@@ -457,7 +457,7 @@ public class SysDeptServiceImpl implements ISysDeptService {
                     insertDept.setCreateBy(operName);
                     deptMapper.insertDept(insertDept);
                     successNum++;
-                    successMsg.append("<br/>").append(successNum).append("、门店 ").append(vo.getDeptName()).append(" 导入成功");
+                    successMsg.append("<br/>").append(successNum).append("、stores ").append(vo.getDeptName()).append(" Import success");
                 }
                 else if (isUpdateSupport)
                 {
@@ -477,36 +477,36 @@ public class SysDeptServiceImpl implements ISysDeptService {
                     dept.setUpdateBy(operName);
                     deptMapper.updateDept(dept);
                     successNum++;
-                    successMsg.append("<br/>").append(successNum).append("、门店 ").append(vo.getDeptName()).append(" 更新成功");
+                    successMsg.append("<br/>").append(successNum).append("、stores ").append(vo.getDeptName()).append(" The update is successful");
                 }
                 else
                 {
                     failureNum++;
-                    failureMsg.append("<br/>").append(failureNum).append("、门店 ").append(vo.getDeptCode()).append(" 已存在");
+                    failureMsg.append("<br/>").append(failureNum).append("、stores ").append(vo.getDeptCode()).append(" existing");
                 }
             }
             catch (Exception e)
             {
                 failureNum++;
-                String msg = "<br/>" + failureNum + "、门店 " + vo.getDeptName() + " 导入失败：";
+                String msg = "<br/>" + failureNum + "、stores " + vo.getDeptName() + " Import failure:";
                 failureMsg.append(msg).append(e.getMessage());
                 log.error(msg, e);
             }
         }
         if (failureNum > 0)
         {
-            failureMsg.insert(0, "很抱歉，导入失败！共 " + failureNum + " 条数据格式不正确，错误如下：");
+            failureMsg.insert(0, "I'm sorry,Import failure!A total of " + failureNum + " The data format is incorrect,Error is as follows:");
             throw new CustomException(failureMsg.toString());
         }
         else
         {
-            successMsg.insert(0, "恭喜您，数据已全部导入成功！共 " + successNum + " 条，数据如下：");
+            successMsg.insert(0, "Congratulations to you,All data has been imported successfully!A total of " + successNum + " article,The following data:");
         }
         return successMsg.toString();
     }
 
     /**
-     * 获取所有的门店列表
+     * Get a list of all stores
      * @return
      */
     @Override
@@ -515,7 +515,7 @@ public class SysDeptServiceImpl implements ISysDeptService {
     }
 
     /**
-     * 查询所有的分公司列表 只查询deptId与deptName
+     * Query the list of all branches Only the querydeptIdwithdeptName
      * @return
      */
     @Override
@@ -524,7 +524,7 @@ public class SysDeptServiceImpl implements ISysDeptService {
     }
 
     /**
-     * 查询分公司下所有门店
+     * Query all stores in branches
      * @param deptId
      * @return
      */
@@ -534,7 +534,7 @@ public class SysDeptServiceImpl implements ISysDeptService {
     }
 
     /**
-     * 根据shopIds查询门店
+     * According to theshopIdsQuery stores
      * @param shopIds
      * @return
      */
@@ -544,7 +544,7 @@ public class SysDeptServiceImpl implements ISysDeptService {
     }
 
     /**
-     * 根据子公司id查询门店列表
+     * According to the subsidiaryidQuery store list
      * @param ids
      * @return
      */
@@ -554,7 +554,7 @@ public class SysDeptServiceImpl implements ISysDeptService {
     }
 
     /**
-     * 根据月份获取子公司数据
+     * Obtain subsidiary data by month
      * @param month
      * @return
      */
@@ -564,7 +564,7 @@ public class SysDeptServiceImpl implements ISysDeptService {
     }
 
     /**
-     * 根据月份获取门店数量
+     * Obtain the number of stores by month
      * @param month
      * @return
      */
@@ -574,7 +574,7 @@ public class SysDeptServiceImpl implements ISysDeptService {
     }
 
     /**
-     * 门店数量
+     * Number of stores
      * @return
      */
     @Override
@@ -583,7 +583,7 @@ public class SysDeptServiceImpl implements ISysDeptService {
     }
 
     /**
-     * 子公司数量
+     * Number of subsidiaries
      * @return
      */
     @Override
@@ -592,7 +592,7 @@ public class SysDeptServiceImpl implements ISysDeptService {
     }
 
     /**
-     * 查询所有的子公司列表-划分数据权限
+     * Query the list of all subsidiaries-Dividing data Permissions
      * @return
      */
     @Override

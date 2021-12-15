@@ -15,17 +15,17 @@ import org.quartz.TriggerBuilder;
 import org.quartz.TriggerKey;
 
 /**
- * 定时任务工具类
+ * Scheduled task tool class
  *
  *
  */
 public class ScheduleUtils
 {
     /**
-     * 得到quartz任务类
+     * getquartzThe task class
      *
-     * @param sysJob 执行计划
-     * @return 具体执行任务类
+     * @param sysJob The execution plan
+     * @return Specific execution task class
      */
     private static Class<? extends Job> getQuartzJobClass(SysJob sysJob)
     {
@@ -34,7 +34,7 @@ public class ScheduleUtils
     }
 
     /**
-     * 构建任务触发对象
+     * Build the task trigger object
      */
     public static TriggerKey getTriggerKey(Long jobId, String jobGroup)
     {
@@ -42,7 +42,7 @@ public class ScheduleUtils
     }
 
     /**
-     * 构建任务键对象
+     * Build the task key object
      */
     public static JobKey getJobKey(Long jobId, String jobGroup)
     {
@@ -50,37 +50,37 @@ public class ScheduleUtils
     }
 
     /**
-     * 创建定时任务
+     * Creating a Scheduled Task
      */
     public static void createScheduleJob(Scheduler scheduler, SysJob job) throws SchedulerException, TaskException
     {
         Class<? extends Job> jobClass = getQuartzJobClass(job);
-        // 构建job信息
+        // buildjobinformation
         Long jobId = job.getJobId();
         String jobGroup = job.getJobGroup();
         JobDetail jobDetail = JobBuilder.newJob(jobClass).withIdentity(getJobKey(jobId, jobGroup)).build();
 
-        // 表达式调度构建器
+        // Expression scheduling builder
         CronScheduleBuilder cronScheduleBuilder = CronScheduleBuilder.cronSchedule(job.getCronExpression());
         cronScheduleBuilder = handleCronScheduleMisfirePolicy(job, cronScheduleBuilder);
 
-        // 按新的cronExpression表达式构建一个新的trigger
+        // According to the newcronExpressionExpression builds a new onetrigger
         CronTrigger trigger = TriggerBuilder.newTrigger().withIdentity(getTriggerKey(jobId, jobGroup))
                 .withSchedule(cronScheduleBuilder).build();
 
-        // 放入参数，运行时的方法可以获取
+        // In the parameter,The runtime methods can be obtained
         jobDetail.getJobDataMap().put(ScheduleConstants.TASK_PROPERTIES, job);
 
-        // 判断是否存在
+        // Determine whether there is
         if (scheduler.checkExists(getJobKey(jobId, jobGroup)))
         {
-            // 防止创建时存在数据问题 先移除，然后在执行创建操作
+            // Prevent data problems during creation To remove the first,Then perform the create operation
             scheduler.deleteJob(getJobKey(jobId, jobGroup));
         }
 
         scheduler.scheduleJob(jobDetail, trigger);
 
-        // 暂停任务
+        // Suspended task
         if (job.getStatus().equals(ScheduleConstants.Status.PAUSE.getValue()))
         {
             scheduler.pauseJob(ScheduleUtils.getJobKey(jobId, jobGroup));
@@ -88,7 +88,7 @@ public class ScheduleUtils
     }
 
     /**
-     * 设置定时任务策略
+     * Example Set a scheduled task policy
      */
     public static CronScheduleBuilder handleCronScheduleMisfirePolicy(SysJob job, CronScheduleBuilder cb)
             throws TaskException

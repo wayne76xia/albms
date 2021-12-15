@@ -1,15 +1,15 @@
 import store from '@/store'
 
 /**
- * 字符权限校验
- * @param {Array} value 校验值
+ * Character permission check
+ * @param {Array} value Calibration value
  * @returns {Boolean}
  */
 export function checkPermi(value) {
     if (value && value instanceof Array && value.length > 0) {
         const permissions = store.getters && store.getters.permissions
         const permissionDatas = value
-        const all_permission = "*:*:*"; // 管理员权限
+        const all_permission = "*:*:*"; // Administrator rights
         const hasPermission = permissions.some(permission => {
             return all_permission === permission || permissionDatas.includes(permission)
         })
@@ -25,8 +25,8 @@ export function checkPermi(value) {
 }
 
 /**
- * 角色权限校验
- * @param {Array} value 校验值
+ * Role Permission Verification
+ * @param {Array} value Calibration value
  * @returns {Boolean}
  */
 export function checkRole(value) {

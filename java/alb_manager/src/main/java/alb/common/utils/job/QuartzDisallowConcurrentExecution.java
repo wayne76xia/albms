@@ -5,7 +5,7 @@ import org.quartz.DisallowConcurrentExecution;
 import org.quartz.JobExecutionContext;
 
 /**
- * 定时任务处理（禁止并发执行）
+ * Scheduled Task Processing(Disable concurrent execution)
  *
  *
  */

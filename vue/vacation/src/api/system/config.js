@@ -1,6 +1,6 @@
 import request from '@/utils/request'
 
-// 查询参数列表
+// Querying the Parameter List
 export function listConfig(query) {
   return request({
     url: '/system/config/list',
@@ -9,7 +9,7 @@ export function listConfig(query) {
   })
 }
 
-// 查询参数详细
+// Query Parameters
 export function getConfig(configId) {
   return request({
     url: '/system/config/' + configId,
@@ -17,7 +17,7 @@ export function getConfig(configId) {
   })
 }
 
-// 根据参数键名查询参数值
+// Query parameter values by parameter key names
 export function getConfigKey(configKey) {
   return request({
     url: '/system/config/configKey/' + configKey,
@@ -25,7 +25,7 @@ export function getConfigKey(configKey) {
   })
 }
 
-// 新增参数配置
+// New Parameter Configuration
 export function addConfig(data) {
   return request({
     url: '/system/config',
@@ -34,7 +34,7 @@ export function addConfig(data) {
   })
 }
 
-// 修改参数配置
+// Modifying Parameter Settings
 export function updateConfig(data) {
   return request({
     url: '/system/config',
@@ -43,7 +43,7 @@ export function updateConfig(data) {
   })
 }
 
-// 删除参数配置
+// Deleting Parameter Settings
 export function delConfig(configId) {
   return request({
     url: '/system/config/' + configId,
@@ -51,7 +51,7 @@ export function delConfig(configId) {
   })
 }
 
-// 清理参数缓存
+// Clearing the parameter cache
 export function clearCache() {
   return request({
     url: '/system/config/clearCache',
@@ -59,7 +59,7 @@ export function clearCache() {
   })
 }
 
-// 导出参数
+// The export parameters
 export function exportConfig(query) {
   return request({
     url: '/system/config/export',

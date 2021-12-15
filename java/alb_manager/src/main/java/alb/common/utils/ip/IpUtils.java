@@ -8,7 +8,7 @@ import alb.common.utils.StringUtils;
 import alb.common.utils.html.EscapeUtil;
 
 /**
- * 获取IP方法
+ * To obtainIPmethods
  *
  */
 public class IpUtils
@@ -88,10 +88,10 @@ public class IpUtils
     }
 
     /**
-     * 将IPv4地址转换成字节
+     * willIPv4Addresses are translated into bytes
      * 
-     * @param text IPv4地址
-     * @return byte 字节
+     * @param text IPv4address
+     * @return byte byte
      */
     public static byte[] textToNumericFormatV4(String text)
     {
@@ -190,6 +190,6 @@ public class IpUtils
         catch (UnknownHostException e)
         {
         }
-        return "未知";
+        return "The unknown";
     }
 }

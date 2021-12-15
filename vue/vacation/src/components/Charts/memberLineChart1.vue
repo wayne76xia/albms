@@ -126,7 +126,7 @@ export default {
         ],
         series: [
           {
-            name: "会员增长量",
+            name: "Membership growth",
             type: "line",
             smooth: true,
             symbol: "circle",

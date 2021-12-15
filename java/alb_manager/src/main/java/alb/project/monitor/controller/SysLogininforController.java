@@ -15,7 +15,7 @@ import alb.framework.aspectj.lang.enums.BusinessType;
 import alb.framework.web.controller.BaseController;
 
 /**
- * 系统访问记录
+ * System Access Record
  *
  */
 @RestController
@@ -34,18 +34,18 @@ public class SysLogininforController extends BaseController
         return getDataTable(list);
     }
 
-    @Log(title = "登陆日志", businessType = BusinessType.EXPORT)
+    @Log(title = "In the log", businessType = BusinessType.EXPORT)
     @PreAuthorize("@ss.hasPermi('monitor:logininfor:export')")
     @GetMapping("/export")
     public AjaxResult export(SysLogininfor logininfor)
     {
         List<SysLogininfor> list = logininforService.selectLogininforList(logininfor);
         ExcelUtil<SysLogininfor> util = new ExcelUtil<SysLogininfor>(SysLogininfor.class);
-        return util.exportExcel(list, "登陆日志");
+        return util.exportExcel(list, "In the log");
     }
 
     @PreAuthorize("@ss.hasPermi('monitor:logininfor:remove')")
-    @Log(title = "登陆日志", businessType = BusinessType.DELETE)
+    @Log(title = "In the log", businessType = BusinessType.DELETE)
     @DeleteMapping("/{infoIds}")
     public AjaxResult remove(@PathVariable Long[] infoIds)
     {
@@ -53,7 +53,7 @@ public class SysLogininforController extends BaseController
     }
 
     @PreAuthorize("@ss.hasPermi('monitor:logininfor:remove')")
-    @Log(title = "登陆日志", businessType = BusinessType.CLEAN)
+    @Log(title = "In the log", businessType = BusinessType.CLEAN)
     @DeleteMapping("/clean")
     public AjaxResult clean()
     {

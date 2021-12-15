@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletRequestWrapper;
 import alb.common.utils.http.HttpHelper;
 
 /**
- * 构建可重复读取inputStream的request
+ * Build repeatable readsinputStreamtherequest
  *
  */
 public class RepeatedlyRequestWrapper extends HttpServletRequestWrapper

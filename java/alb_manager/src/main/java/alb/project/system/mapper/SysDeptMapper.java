@@ -7,130 +7,130 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * 部门管理 数据层
+ * Department Management The data layer
  *
  */
 public interface SysDeptMapper {
     /**
-     * 查询部门管理数据
+     * Example Query department management data
      *
-     * @param dept 部门信息
-     * @return 部门信息集合
+     * @param dept Department information
+     * @return Department information set
      */
     List<SysDept> selectDeptList(SysDept dept);
 
     /**
-     * 根据角色ID查询部门树信息
+     * According to the characterIDExample Query department tree information
      *
-     * @param roleId 角色ID
-     * @return 选中部门列表
+     * @param roleId roleID
+     * @return Select department list
      */
     List<Integer> selectDeptListByRoleId(Long roleId);
 
     /**
-     * 根据部门ID查询信息
+     * According to the departmentIDQuery information
      *
-     * @param deptId 部门ID
-     * @return 部门信息
+     * @param deptId departmentID
+     * @return Department information
      */
     SysDept selectDeptById(Long deptId);
 
     /**
-     * 根据ID查询所有子部门
+     * According to theIDQuery all subdepartments
      *
-     * @param deptId 部门ID
-     * @return 部门列表
+     * @param deptId departmentID
+     * @return Department list
      */
     List<SysDept> selectChildrenDeptById(Long deptId);
 
     /**
-     * 根据ID查询所有子部门（正常状态）
+     * According to theIDQuery all subdepartments(The normal state)
      *
-     * @param deptId 部门ID
-     * @return 子部门数
+     * @param deptId departmentID
+     * @return Department number
      */
     int selectNormalChildrenDeptById(Long deptId);
 
     /**
-     * 是否存在子节点
+     * Whether there are child nodes
      *
-     * @param deptId 部门ID
-     * @return 结果
+     * @param deptId departmentID
+     * @return The results of
      */
     int hasChildByDeptId(Long deptId);
 
     /**
-     * 查询部门是否存在用户
+     * Query whether users exist in the department
      *
-     * @param deptId 部门ID
-     * @return 结果
+     * @param deptId departmentID
+     * @return The results of
      */
     int checkDeptExistUser(Long deptId);
 
     /**
-     * 校验部门名称是否唯一
+     * Verify that the department name is unique
      *
-     * @param deptName 部门名称
-     * @param parentId 父部门ID
-     * @return 结果
+     * @param deptName Department name
+     * @param parentId The parent departmentID
+     * @return The results of
      */
     SysDept checkDeptNameUnique(@Param("deptName") String deptName, @Param("parentId") Long parentId, @Param("deptCode") String deptCode);
 
     /**
-     * 新增部门信息
+     * Add Department Information
      *
-     * @param dept 部门信息
-     * @return 结果
+     * @param dept Department information
+     * @return The results of
      */
     int insertDept(SysDept dept);
 
     /**
-     * 修改部门信息
+     * Modifying Department Information
      *
-     * @param dept 部门信息
-     * @return 结果
+     * @param dept Department information
+     * @return The results of
      */
     int updateDept(SysDept dept);
 
     /**
-     * 修改所在部门的父级部门状态
+     * Example Change the status of the parent department of the department
      *
-     * @param dept 部门
+     * @param dept department
      */
     void updateDeptStatus(SysDept dept);
 
     /**
-     * 修改子元素关系
+     * Modify child element relationships
      *
-     * @param depts 子元素
-     * @return 结果
+     * @param depts Child elements
+     * @return The results of
      */
     int updateDeptChildren(@Param("depts") List<SysDept> depts);
 
     /**
-     * 删除部门管理信息
+     * Example Delete department management information
      *
-     * @param deptId 部门ID
-     * @return 结果
+     * @param deptId departmentID
+     * @return The results of
      */
     int deleteDeptById(Long deptId);
 
     /**
-     * 统计所有父id为此id的数量
+     * Count all parentsidTo do thisidThe number of
      *
      * @param deptId
      */
     Integer countTotalNumByParentId(Long deptId);
 
     /**
-     * 查询总公司id（仅查询一个）
+     * Check head officeid(Query only one)
      *
      * @return Long
      */
     Long selectHeadCompanyId();
 
     /**
-     * 查询子公司列表
+     * Querying the List of subsidiaries
      *
      * @param dept
      * @return
@@ -138,7 +138,7 @@ public interface SysDeptMapper {
     List<Map<String, Object>> selectSubsidiaryCompanyList(SysDept dept);
 
     /**
-     * 获取门店列表
+     * Get store list
      *
      * @param dept
      * @return
@@ -152,21 +152,21 @@ public interface SysDeptMapper {
     SysDept checkDeptCodeUnique(@Param("deptCode") String deptCode);
 
     /**
-     * 获取所有的门店列表
+     * Get a list of all stores
      *
      * @return
      */
     List<Map<String, Object>> getAllShopList();
 
     /**
-     * 查询所有的分公司列表 只查询deptId与deptName
+     * Query the list of all branches Only the querydeptIdwithdeptName
      *
      * @return
      */
     List<SysDept> getAllSubsidiaryCompanyList();
 
     /**
-     * 查询分公司下所有门店
+     * Query all stores in branches
      *
      * @param deptId
      * @return
@@ -174,7 +174,7 @@ public interface SysDeptMapper {
     List<SysDept> selectShopListByParentId(@Param("deptId") Long deptId);
 
     /**
-     * 根据shopIds查询门店
+     * According to theshopIdsQuery stores
      *
      * @param shopIds
      * @return
@@ -182,7 +182,7 @@ public interface SysDeptMapper {
     List<SysDept> selectDeptByIds(@Param("shopIds") String shopIds);
 
     /**
-     * 根据子公司id查询门店列表
+     * According to the subsidiaryidQuery store list
      *
      * @param ids
      * @return
@@ -190,7 +190,7 @@ public interface SysDeptMapper {
     List<SysDept> getShopListByCompanyIds(@Param("ids") String ids);
 
     /**
-     * 根据月份获取子公司数据
+     * Obtain subsidiary data by month
      *
      * @param month
      * @return
@@ -198,7 +198,7 @@ public interface SysDeptMapper {
     Integer getTotalCompanyNumByMonth(@Param("month") String month);
 
     /**
-     * 根据月份获取门店数量
+     * Obtain the number of stores by month
      *
      * @param month
      * @return
@@ -206,19 +206,19 @@ public interface SysDeptMapper {
     Integer getTotalShopNumByMonth(@Param("month") String month);
 
     /**
-     * 门店数量
+     * Number of stores
      * @return
      */
     Integer getTotalShopNum();
 
     /**
-     * 子公司数量
+     * Number of subsidiaries
      * @return
      */
     Integer getTotalCompanyNum();
 
     /**
-     * 查询所有的子公司列表-划分数据权限
+     * Query the list of all subsidiaries-Dividing data Permissions
      * @return
      */
     List<SysDept> getSubsidiaryCompanyList(SysDept dept);

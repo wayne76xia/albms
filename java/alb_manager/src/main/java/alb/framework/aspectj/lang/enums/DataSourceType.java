@@ -1,18 +1,18 @@
 package alb.framework.aspectj.lang.enums;
 
 /**
- * 数据源
+ * The data source
  *
  */
 public enum DataSourceType
 {
     /**
-     * 主库
+     * The main library
      */
     MASTER,
 
     /**
-     * 从库
+     * From the library
      */
     SLAVE
 }

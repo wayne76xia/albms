@@ -1,7 +1,7 @@
 package alb.common.exception.user;
 
 /**
- * 用户密码不正确或不符合规范异常类
+ * The user password is incorrect or does not conform to the standard exception class
  *
  */
 public class UserPasswordNotMatchException extends UserException

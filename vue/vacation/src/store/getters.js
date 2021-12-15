@@ -12,7 +12,7 @@ const getters = {
     roles: state => state.user.roles,
     permissions: state => state.user.permissions,
     permission_routes: state => state.permission.routes,
-    //新增
+    //new
     remark: state => state.user.remark,
     infonum: state => state.user.infonum,
     rolesname: state => state.user.rolesname,

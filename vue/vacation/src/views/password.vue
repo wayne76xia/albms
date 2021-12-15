@@ -7,23 +7,23 @@
             <img src="../assets/image/login_top.png" alt />
             <h3
               class="title aui-margin-l-5 aui-padded-l-10 aui-margin-t-5 text-black aui-border-l"
-            >忘记密码</h3>
+            >Forgot password</h3>
           </div>
           <div class>
-            <P class="text-black font-size-12 aui-margin-b-5">手机号：</P>
+            <P class="text-black font-size-12 aui-margin-b-5">Mobile phone no.:</P>
             <el-form-item prop="username">
-              <el-input v-model="form.phone" type="text" auto-complete="off" placeholder="请输入手机号"></el-input>
+              <el-input v-model="form.phone" type="text" auto-complete="off" placeholder="Please enter your mobile phone number"></el-input>
             </el-form-item>
           </div>
 
           <div class>
-            <P class="text-black font-size-12 aui-margin-b-5">验证码：</P>
+            <P class="text-black font-size-12 aui-margin-b-5">Verification code:</P>
             <el-form-item prop="code">
               <div class="flex" style="border-bottom:1px solid #eee">
                 <el-input
                   v-model="form.code"
                   auto-complete="off"
-                  placeholder="请输入验证码"
+                  placeholder="Please enter the verification code"
                   style="width: 63%;"
                   @keyup.enter.native="handleLogin"
                   class="get_code_box"
@@ -34,25 +34,25 @@
             </el-form-item>
           </div>
           <div class>
-            <P class="text-black font-size-12 aui-margin-b-5">重新设置密码：</P>
+            <P class="text-black font-size-12 aui-margin-b-5">Reset password:</P>
             <el-form-item prop="password">
               <el-input
                 v-model="form.password"
                 type="password"
                 auto-complete="off"
-                placeholder="请输入密码"
+                placeholder="Please enter your password"
                 @keyup.enter.native="handleLogin"
               ></el-input>
             </el-form-item>
           </div>
           <div class>
-            <P class="text-black font-size-12 aui-margin-b-5">再次输入密码：</P>
+            <P class="text-black font-size-12 aui-margin-b-5">Enter your password again:</P>
             <el-form-item prop="password">
               <el-input
                 v-model="form.againPassword"
                 type="password"
                 auto-complete="off"
-                placeholder="请再次输入密码"
+                placeholder="Please enter your password again"
                 @keyup.enter.native="handleLogin"
               ></el-input>
             </el-form-item>
@@ -66,8 +66,8 @@
               style="width:60%;height:40px;border-radius:20px;margin-left:20%;  "
               @click.native.prevent="submit"
             >
-              <span v-if="!loading">确定</span>
-              <span v-else>提交中...</span>
+              <span v-if="!loading">determine</span>
+              <span v-else>In the submission...</span>
             </el-button>
           </el-form-item>
         </el-form>
@@ -85,10 +85,10 @@ export default {
   name: "password",
   data() {
     return {
-      login_title: "假期预定管理系统",
-      code_txt: "获取验证码",
-      technicalPhone: "", //客服电话
-      backGroundPic: "", //登录背景图片
+      login_title: "Vacation reservation management system",
+      code_txt: "Obtaining verification code",
+      technicalPhone: "", //Customer service telephone
+      backGroundPic: "", //Login Background image
       cookiePassword: "",
       form: {
         phone: "",
@@ -98,15 +98,15 @@ export default {
         uuid: "",
       },
       loginRules: {
-        phone: [{ required: true, trigger: "blur", message: "手机号不能为空" }],
+        phone: [{ required: true, trigger: "blur", message: "Mobile phone number cannot be empty" }],
         password: [
-          { required: true, trigger: "blur", message: "密码不能为空" },
+          { required: true, trigger: "blur", message: "The password cannot be empty" },
         ],
         againPassword: [
-          { required: true, trigger: "blur", message: "密码不能为空" },
+          { required: true, trigger: "blur", message: "The password cannot be empty" },
         ],
         code: [
-          { required: true, trigger: "change", message: "验证码不能为空" },
+          { required: true, trigger: "change", message: "The verification code cannot be empty" },
         ],
       },
       loading: false,
@@ -139,27 +139,27 @@ export default {
     // },
     getCode() {
       if (this.form.phone == "") {
-        this.msgError("请输入账号");
+        this.msgError("Please enter your account number");
         return;
       }
       var myreg = /^[1][3,4,5,7,8,9][0-9]{9}$/;
       if (!myreg.test(this.form.phone)) {
-        this.msgError("手机号格式不正确");
+        this.msgError("The phone number format is incorrect");
         return;
       }
       getCodes(this.form.phone, 1, 2).then((res) => {
         if (res.code == 200) {
-          this.msgSuccess("验证码发送成功");
+          this.msgSuccess("The verification code is sent successfully. Procedure");
           this.count=60
           if (!this.timer) {
             this.timer = setInterval(() => {
               if (this.count > 0 && this.count <= 60) {
                 this.count--;
                 this.code_type=1
-                this.code_txt =this.count+"s后重新发送";
+                this.code_txt =this.count+"sRetransmit after";
               } else {
                 this.code_type=0
-                this.code_txt = "重新发送";
+                this.code_txt = "To resend";
                 clearInterval(this.timer);
                 this.timer = null;
               }
@@ -172,19 +172,19 @@ export default {
 
     submit() {
       if (this.form.code == "") {
-        this.msgError("请输入验证码");
+        this.msgError("Please enter the verification code");
         return;
       }
       if (this.form.password != this.form.againPassword) {
-        this.msgError("两次密码输入不一致");
+        this.msgError("The two passwords are inconsistent");
         return;
       }
       forgetPassword(this.form).then((res) => {
         if (res.code == 200) {
-          this.msgSuccess("密码修改成功");
-          // 调用全局挂载的方法,关闭当前标签页
+          this.msgSuccess("Password changed successfully");
+          // Call the globally mounted method,Close the current TAB
           this.$store.dispatch("tagsView/delView", this.$route);
-          // 返回上一步路由，返回上一个标签页
+          // Returns the route of the previous step,Returns the previous TAB
           this.$router.go(-1);
         }
       });

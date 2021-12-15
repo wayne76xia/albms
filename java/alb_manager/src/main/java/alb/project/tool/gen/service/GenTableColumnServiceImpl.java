@@ -1,14 +1,15 @@
 package alb.project.tool.gen.service;
 
-import java.util.List;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 import alb.common.core.text.Convert;
 import alb.project.tool.gen.domain.GenTableColumn;
 import alb.project.tool.gen.mapper.GenTableColumnMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
- * 业务字段 服务层实现
+ * The business field Service layer implementation
  *
  */
 @Service
@@ -18,10 +19,10 @@ public class GenTableColumnServiceImpl implements IGenTableColumnService
 	private GenTableColumnMapper genTableColumnMapper;
 
 	/**
-     * 查询业务字段列表
+     * Example Query the service field list
      * 
-     * @param tableId 业务字段编号
-     * @return 业务字段集合
+     * @param tableId Business Field Number
+     * @return Collection of business fields
      */
 	@Override
 	public List<GenTableColumn> selectGenTableColumnListByTableId(Long tableId)
@@ -30,10 +31,10 @@ public class GenTableColumnServiceImpl implements IGenTableColumnService
 	}
 	
     /**
-     * 新增业务字段
+     * New Service Field
      * 
-     * @param genTableColumn 业务字段信息
-     * @return 结果
+     * @param genTableColumn Business field information
+     * @return The results of
      */
 	@Override
 	public int insertGenTableColumn(GenTableColumn genTableColumn)
@@ -42,10 +43,10 @@ public class GenTableColumnServiceImpl implements IGenTableColumnService
 	}
 	
 	/**
-     * 修改业务字段
+     * Modifying service Fields
      * 
-     * @param genTableColumn 业务字段信息
-     * @return 结果
+     * @param genTableColumn Business field information
+     * @return The results of
      */
 	@Override
 	public int updateGenTableColumn(GenTableColumn genTableColumn)
@@ -54,10 +55,10 @@ public class GenTableColumnServiceImpl implements IGenTableColumnService
 	}
 
 	/**
-     * 删除业务字段对象
+     * Deletes a business field object
      * 
-     * @param ids 需要删除的数据ID
-     * @return 结果
+     * @param ids Data to be deletedID
+     * @return The results of
      */
 	@Override
 	public int deleteGenTableColumnByIds(String ids)

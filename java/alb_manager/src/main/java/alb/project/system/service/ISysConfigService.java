@@ -5,76 +5,76 @@ import alb.project.system.domain.SysConfig;
 import java.util.List;
 
 /**
- * 参数配置 服务层
+ * Parameter configuration The service layer
  *
  */
 public interface ISysConfigService {
     /**
-     * 查询参数配置信息
+     * Example Query parameter configurations
      *
-     * @param configId 参数配置ID
-     * @return 参数配置信息
+     * @param configId Parameter configurationID
+     * @return Parameter Configuration
      */
     SysConfig selectConfigById(Long configId);
 
     /**
-     * 通过键名查询参数配置对象
+     * Query parameter configuration objects by key name
      *
-     * @param configKey 参数key
-     * @return 参数配置信息
+     * @param configKey parameterkey
+     * @return Parameter Configuration
      */
     SysConfig selectConfigObjectByKey(String configKey);
 
     /**
-     * 根据键名查询参数配置信息
+     * Query parameter configurations based on key names
      *
-     * @param configKey 参数键名
-     * @return 参数键值
+     * @param configKey Parameters of the key name
+     * @return Parameters of the key value
      */
     String selectConfigByKey(String configKey);
 
     /**
-     * 查询参数配置列表
+     * Example Query the parameter list
      *
-     * @param config 参数配置信息
-     * @return 参数配置集合
+     * @param config Parameter Configuration
+     * @return Parameter Configuration Set
      */
     List<SysConfig> selectConfigList(SysConfig config);
 
     /**
-     * 新增参数配置
+     * New Parameter Configuration
      *
-     * @param config 参数配置信息
-     * @return 结果
+     * @param config Parameter Configuration
+     * @return The results of
      */
     int insertConfig(SysConfig config);
 
     /**
-     * 修改参数配置
+     * Modifying Parameter Settings
      *
-     * @param config 参数配置信息
-     * @return 结果
+     * @param config Parameter Configuration
+     * @return The results of
      */
     int updateConfig(SysConfig config);
 
     /**
-     * 批量删除参数信息
+     * Delete parameter information in batches
      *
-     * @param configIds 需要删除的参数ID
-     * @return 结果
+     * @param configIds Parameter to deleteID
+     * @return The results of
      */
     int deleteConfigByIds(Long[] configIds);
 
     /**
-     * 清空缓存数据
+     * Clearing cached data
      */
     void clearCache();
 
     /**
-     * 校验参数键名是否唯一
+     * Verify whether the parameter key name is unique
      *
-     * @param config 参数信息
-     * @return 结果
+     * @param config Parameter information
+     * @return The results of
      */
     String checkConfigKeyUnique(SysConfig config);
 }

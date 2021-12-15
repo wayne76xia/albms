@@ -1,14 +1,14 @@
 package alb.framework.web.controller;
 
 import alb.common.constant.HttpStatus;
+import alb.common.utils.DateUtils;
+import alb.common.utils.StringUtils;
+import alb.common.utils.sql.SqlUtil;
 import alb.framework.web.domain.AjaxResult;
 import alb.framework.web.page.PageDomain;
 import alb.framework.web.page.TableDataInfo;
 import alb.framework.web.page.TableSupport;
 import cn.hutool.core.convert.ConverterRegistry;
-import alb.common.utils.DateUtils;
-import alb.common.utils.StringUtils;
-import alb.common.utils.sql.SqlUtil;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.slf4j.Logger;
@@ -22,20 +22,20 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * web层通用数据处理
+ * webLayer general data processing
  *
  */
 public class BaseController
 {
     protected final Logger logger = LoggerFactory.getLogger(BaseController.class);
-    // 全局类型转换器
+    // Global type converter
     protected final static ConverterRegistry converterRegistry = ConverterRegistry.getInstance();
 
     public static <T> List<T> removeNull(List<? extends T> oldList) {
-        // 临时集合
+        // Temporary collection
         List<T> listTemp = new LinkedList<>();
         for (T t : oldList) {
-            // 保存不为空的元素
+            // Save elements that are not empty
             if (t != null) {
                 listTemp.add(t);
             }
@@ -43,12 +43,12 @@ public class BaseController
         return listTemp;
     }
     /**
-     * 将前台传递过来的日期格式的字符串，自动转化为Date类型
+     * A string in the format of the date passed from the foreground,Automatically convert toDatetype
      */
     @InitBinder
     public void initBinder(WebDataBinder binder)
     {
-        // Date 类型转换
+        // Date Type conversion
         binder.registerCustomEditor(Date.class, new PropertyEditorSupport()
         {
             @Override
@@ -60,7 +60,7 @@ public class BaseController
     }
 
     /**
-     * 设置请求分页数据
+     * Set request paging data
      */
     protected void startPage()
     {
@@ -75,24 +75,24 @@ public class BaseController
     }
 
     /**
-     * 响应请求分页数据
+     * Respond to request paging data
      */
     @SuppressWarnings({ "rawtypes", "unchecked" })
     protected TableDataInfo getDataTable(List<?> list)
     {
         TableDataInfo rspData = new TableDataInfo();
         rspData.setCode(HttpStatus.SUCCESS);
-        rspData.setMsg("查询成功");
+        rspData.setMsg("The query is successful");
         rspData.setRows(list);
         rspData.setTotal(new PageInfo(list).getTotal());
         return rspData;
     }
 
     /**
-     * 响应返回结果
+     * Response return result
      * 
-     * @param rows 影响行数
-     * @return 操作结果
+     * @param rows Affect the number of rows
+     * @return Operating results
      */
     protected AjaxResult toAjax(int rows)
     {

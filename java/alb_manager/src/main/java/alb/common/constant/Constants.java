@@ -3,143 +3,143 @@ package alb.common.constant;
 import io.jsonwebtoken.Claims;
 
 /**
- * 通用常量信息
+ * General constant information
  *
  */
 public class Constants
 {
     /**
-     * UTF-8 字符集
+     * UTF-8 Character set
      */
     public static final String UTF8 = "UTF-8";
 
     /**
-     * GBK 字符集
+     * GBK Character set
      */
     public static final String GBK = "GBK";
 
     /**
-     * http请求
+     * httprequest
      */
     public static final String HTTP = "http://";
 
     /**
-     * https请求
+     * httpsrequest
      */
     public static final String HTTPS = "https://";
 
     /**
-     * 通用成功标识
+     * Universal success identifier
      */
     public static final String SUCCESS = "0";
 
     /**
-     * 通用失败标识
+     * Universal failure identifier
      */
     public static final String FAIL = "1";
 
     /**
-     * 登录成功
+     * Login successful
      */
     public static final String LOGIN_SUCCESS = "Success";
 
     /**
-     * 注销
+     * The cancellation
      */
     public static final String LOGOUT = "Logout";
 
     /**
-     * 登录失败
+     * Login failed
      */
     public static final String LOGIN_FAIL = "Error";
 
     /**
-     * 验证码 redis key
+     * Verification code redis key
      */
     public static final String CAPTCHA_CODE_KEY = "captcha_codes:";
 
     /**
-     * 短信验证码 redis key
+     * SMS verification code redis key
      */
     public static final String SMS_CODE_KEY = "sms_codes:";
 
     /**
-     * 登录用户 redis key
+     * The logged in user redis key
      */
     public static final String LOGIN_TOKEN_KEY = "login_tokens:";
 
     /**
-     * 验证码有效期（分钟）
+     * Verification code validity period(minutes)
      */
     public static final Integer CAPTCHA_EXPIRATION = 2;
 
     /**
-     * 短信验证码有效期（分钟）
+     * Validity period of SMS verification code(minutes)
      */
     public static final Integer SMS_EXPIRATION = 10;
 
     /**
-     * 令牌
+     * The token
      */
     public static final String TOKEN = "token";
 
     /**
-     * 令牌前缀
+     * The token prefix
      */
     public static final String TOKEN_PREFIX = "Bearer ";
 
     /**
-     * 令牌前缀
+     * The token prefix
      */
     public static final String LOGIN_USER_KEY = "login_user_key";
 
     /**
-     * 用户ID
+     * The userID
      */
     public static final String JWT_USERID = "userid";
 
     /**
-     * 用户名称
+     * The user name
      */
     public static final String JWT_USERNAME = Claims.SUBJECT;
 
     /**
-     * 用户头像
+     * The avatars
      */
     public static final String JWT_AVATAR = "avatar";
 
     /**
-     * 创建时间
+     * Creation time
      */
     public static final String JWT_CREATED = "created";
 
     /**
-     * 用户权限
+     * User permissions
      */
     public static final String JWT_AUTHORITIES = "authorities";
 
     /**
-     * 参数管理 cache key
+     * Parameter management cache key
      */
     public static final String SYS_CONFIG_KEY = "sys_config:";
 
     /**
-     * 字典管理 cache key
+     * The dictionary management cache key
      */
     public static final String SYS_DICT_KEY = "sys_dict:";
 
     /**
-     * 资源映射路径 前缀
+     * Resource Mapping Path The prefix
      */
     public static final String RESOURCE_PREFIX = "/profile";
 
     /**
-     * 验证码修改密码失败
+     * Verification code Failed to change the password
      */
     public static final String SMS_RESET_PASSWORD_FAIL = "Error";
 
     /**
-     * 验证码修改密码失败
+     * Verification code Failed to change the password
      */
     public static final String SMS_RESET_PASSWORD_SUCCESS = "Success";
 

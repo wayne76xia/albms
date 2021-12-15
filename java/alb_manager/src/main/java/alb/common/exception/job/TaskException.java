@@ -1,7 +1,7 @@
 package alb.common.exception.job;
 
 /**
- * 计划策略异常
+ * Schedule policy Exception
  *
  */
 public class TaskException extends Exception

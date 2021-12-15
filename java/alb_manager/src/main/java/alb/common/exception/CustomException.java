@@ -1,7 +1,7 @@
 package alb.common.exception;
 
 /**
- * 自定义异常
+ * Custom exception
  *
  */
 public class CustomException extends RuntimeException

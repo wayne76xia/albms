@@ -126,7 +126,7 @@ export default {
         ],
         series: [
           {
-            name: "子公司数量",
+            name: "Number of subsidiaries",
             type: "line",
             smooth: true,
             symbol: "circle",

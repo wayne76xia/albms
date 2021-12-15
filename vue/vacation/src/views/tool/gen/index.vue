@@ -1,25 +1,25 @@
 <template>
   <div class="app-container">
     <el-form :model="queryParams" ref="queryForm" :inline="true" label-width="68px">
-      <el-form-item label="表名称" prop="tableName">
+      <el-form-item label="The name of the table" prop="tableName">
         <el-input
           v-model="queryParams.tableName"
-          placeholder="请输入表名称"
+          placeholder="Please enter a table name"
           clearable
           size="small"
           @keyup.enter.native="handleQuery"
         />
       </el-form-item>
-      <el-form-item label="表描述" prop="tableComment">
+      <el-form-item label="Table describes" prop="tableComment">
         <el-input
           v-model="queryParams.tableComment"
-          placeholder="请输入表描述"
+          placeholder="Please enter a table description"
           clearable
           size="small"
           @keyup.enter.native="handleQuery"
         />
       </el-form-item>
-      <el-form-item label="创建时间">
+      <el-form-item label="Creation time">
         <el-date-picker
           v-model="dateRange"
           size="small"
@@ -27,13 +27,13 @@
           value-format="yyyy-MM-dd"
           type="daterange"
           range-separator="-"
-          start-placeholder="开始日期"
-          end-placeholder="结束日期"
+          start-placeholder="Start date"
+          end-placeholder="End date"
         ></el-date-picker>
       </el-form-item>
       <el-form-item>
-        <el-button type="primary" icon="el-icon-search" size="mini" @click="handleQuery">搜索</el-button>
-        <el-button icon="el-icon-refresh" size="mini" @click="resetQuery">重置</el-button>
+        <el-button type="primary" icon="el-icon-search" size="mini" @click="handleQuery">search</el-button>
+        <el-button icon="el-icon-refresh" size="mini" @click="resetQuery">reset</el-button>
       </el-form-item>
     </el-form>
 
@@ -45,7 +45,7 @@
           size="mini"
           @click="handleGenTable"
           v-hasPermi="['tool:gen:code']"
-        >生成</el-button>
+        >generate</el-button>
       </el-col>
       <el-col :span="1.5">
         <el-button
@@ -54,7 +54,7 @@
           size="mini"
           @click="openImportTable"
           v-hasPermi="['tool:gen:import']"
-        >导入</el-button>
+        >The import</el-button>
       </el-col>
       <el-col :span="1.5">
         <el-button
@@ -64,7 +64,7 @@
           :disabled="single"
           @click="handleEditTable"
           v-hasPermi="['tool:gen:edit']"
-        >修改</el-button>
+        >Modify the</el-button>
       </el-col>
       <el-col :span="1.5">
         <el-button
@@ -74,41 +74,41 @@
           :disabled="multiple"
           @click="handleDelete"
           v-hasPermi="['tool:gen:remove']"
-        >删除</el-button>
+        >delete</el-button>
       </el-col>
     </el-row>
 
     <el-table v-loading="loading" :data="tableList" @selection-change="handleSelectionChange">
       <el-table-column type="selection" width="55"></el-table-column>
-      <el-table-column label="序号" type="index" width="50" align="center">
+      <el-table-column label="The serial number" type="index" width="50" align="center">
         <template slot-scope="scope">
           <span>{{(queryParams.pageNum - 1) * queryParams.pageSize + scope.$index + 1}}</span>
         </template>
       </el-table-column>
       <el-table-column
-        label="表名称"
+        label="The name of the table"
         align="center"
         prop="tableName"
         :show-overflow-tooltip="true"
         width="130"
       />
       <el-table-column
-        label="表描述"
+        label="Table describes"
         align="center"
         prop="tableComment"
         :show-overflow-tooltip="true"
         width="130"
       />
       <el-table-column
-        label="实体"
+        label="entity"
         align="center"
         prop="className"
         :show-overflow-tooltip="true"
         width="130"
       />
-      <el-table-column label="创建时间" align="center" prop="createTime" width="160" />
-      <el-table-column label="更新时间" align="center" prop="updateTime" width="160" />
-      <el-table-column label="操作" align="center" class-name="small-padding fixed-width">
+      <el-table-column label="Creation time" align="center" prop="createTime" width="160" />
+      <el-table-column label="Update time" align="center" prop="updateTime" width="160" />
+      <el-table-column label="operation" align="center" class-name="small-padding fixed-width">
         <template slot-scope="scope">
           <el-button
             type="text"
@@ -116,28 +116,28 @@
             icon="el-icon-view"
             @click="handlePreview(scope.row)"
             v-hasPermi="['tool:gen:preview']"
-          >预览</el-button>
+          >preview</el-button>
           <el-button
             type="text"
             size="small"
             icon="el-icon-edit"
             @click="handleEditTable(scope.row)"
             v-hasPermi="['tool:gen:edit']"
-          >编辑</el-button>
+          >The editor</el-button>
           <el-button
             type="text"
             size="small"
             icon="el-icon-delete"
             @click="handleDelete(scope.row)"
             v-hasPermi="['tool:gen:remove']"
-          >删除</el-button>
+          >delete</el-button>
           <el-button
             type="text"
             size="small"
             icon="el-icon-download"
             @click="handleGenTable(scope.row)"
             v-hasPermi="['tool:gen:code']"
-          >生成代码</el-button>
+          >The generated code</el-button>
         </template>
       </el-table-column>
     </el-table>
@@ -148,7 +148,7 @@
       :limit.sync="queryParams.pageSize"
       @pagination="getList"
     />
-    <!-- 预览界面 -->
+    <!-- Preview the interface -->
     <el-dialog :title="preview.title" :visible.sync="preview.open" width="80%" top="5vh" append-to-body>
       <el-tabs v-model="preview.activeName">
         <el-tab-pane
@@ -174,35 +174,35 @@ export default {
   components: { importTable },
   data() {
     return {
-      // 遮罩层
+      // The mask layer
       loading: true,
-      // 唯一标识符
+      // Unique identifier
       uniqueId: "",
-      // 选中数组
+      // Select the array
       ids: [],
-      // 选中表数组
+      // Select table array
       tableNames: [],
-      // 非单个禁用
+      // Non-single disable
       single: true,
-      // 非多个禁用
+      // Non-multiple disable
       multiple: true,
-      // 总条数
+      // The total number of article
       total: 0,
-      // 表数据
+      // Table data
       tableList: [],
-      // 日期范围
+      // Date range
       dateRange: "",
-      // 查询参数
+      // Query parameters
       queryParams: {
         pageNum: 1,
         pageSize: 10,
         tableName: undefined,
         tableComment: undefined
       },
-      // 预览参数
+      // Preview the parameters
       preview: {
         open: false,
-        title: "代码预览",
+        title: "Code review",
         data: {},
         activeName: "domain.java"
       }
@@ -219,7 +219,7 @@ export default {
     }
   },
   methods: {
-    /** 查询表集合 */
+    /** Query the collection of tables */
     getList() {
       this.loading = true;
       listTable(this.addDateRange(this.queryParams, this.dateRange)).then(response => {
@@ -229,61 +229,61 @@ export default {
         }
       );
     },
-    /** 搜索按钮操作 */
+    /** Search button operation */
     handleQuery() {
       this.queryParams.pageNum = 1;
       this.getList();
     },
-    /** 生成代码操作 */
+    /** Generated code operation */
     handleGenTable(row) {
       const tableNames = row.tableName || this.tableNames;
       if (tableNames == "") {
-        this.msgError("请选择要生成的数据");
+        this.msgError("Select the data to generate");
         return;
       }
       downLoadZip("/tool/gen/batchGenCode?tables=" + tableNames, "ruoyi");
     },
-    /** 打开导入表弹窗 */
+    /** Open the import table pop-up window */
     openImportTable() {
       this.$refs.import.show();
     },
-    /** 重置按钮操作 */
+    /** Reset button operation */
     resetQuery() {
       this.dateRange = [];
       this.resetForm("queryForm");
       this.handleQuery();
     },
-    /** 预览按钮 */
+    /** Preview button */
     handlePreview(row) {
       previewTable(row.tableId).then(response => {
         this.preview.data = response.data;
         this.preview.open = true;
       });
     },
-    // 多选框选中数据
+    // Select data in multiple boxes
     handleSelectionChange(selection) {
       this.ids = selection.map(item => item.tableId);
       this.tableNames = selection.map(item => item.tableName);
       this.single = selection.length != 1;
       this.multiple = !selection.length;
     },
-    /** 修改按钮操作 */
+    /** Modify button operation */
     handleEditTable(row) {
       const tableId = row.tableId || this.ids[0];
       this.$router.push("/gen/edit/" + tableId);
     },
-    /** 删除按钮操作 */
+    /** Delete button operation */
     handleDelete(row) {
       const tableIds = row.tableId || this.ids;
-      this.$confirm('是否确认删除表编号为"' + tableIds + '"的数据项?', "警告", {
-        confirmButtonText: "确定",
-        cancelButtonText: "取消",
+      this.$confirm('Confirm whether the table number is"' + tableIds + '"Data item?', "warning", {
+        confirmButtonText: "determine",
+        cancelButtonText: "cancel",
         type: "warning"
       }).then(function() {
           return delTable(tableIds);
       }).then(() => {
           this.getList();
-          this.msgSuccess("删除成功");
+          this.msgSuccess("Delete the success");
       }).catch(function() {});
     }
   }

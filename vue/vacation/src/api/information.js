@@ -2,7 +2,7 @@ import request from '@/utils/request'
 
 
 
-//根据条件获取未读条目数
+//Gets the number of unread entries based on the condition
 export function getNoReadNumStatus(status) {
     return request({
         url: '/glasses/messages/getNoReadNum?status=' + status,
@@ -10,7 +10,7 @@ export function getNoReadNumStatus(status) {
     })
 }
 
-// 查询消息列表
+// Querying message list
 export function messagesList(status) {
     return request({
         url: '/glasses/messages/list',
@@ -19,7 +19,7 @@ export function messagesList(status) {
 }
 
 
-// 查询消息列表
+// Querying message list
 export function clearMessages(ids) {
     return request({
         url: '/glasses/messages/' + ids,

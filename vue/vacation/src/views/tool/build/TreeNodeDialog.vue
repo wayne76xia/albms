@@ -18,24 +18,24 @@
         >
           <el-col :span="24">
             <el-form-item
-              label="选项名"
+              label="Option of"
               prop="label"
             >
               <el-input
                 v-model="formData.label"
-                placeholder="请输入选项名"
+                placeholder="Please enter an option name"
                 clearable
               />
             </el-form-item>
           </el-col>
           <el-col :span="24">
             <el-form-item
-              label="选项值"
+              label="The option value"
               prop="value"
             >
               <el-input
                 v-model="formData.value"
-                placeholder="请输入选项值"
+                placeholder="Please enter option values"
                 clearable
               >
                 <el-select
@@ -61,10 +61,10 @@
           type="primary"
           @click="handelConfirm"
         >
-          确定
+          determine
         </el-button>
         <el-button @click="close">
-          取消
+          cancel
         </el-button>
       </div>
     </el-dialog>
@@ -88,14 +88,14 @@ export default {
         label: [
           {
             required: true,
-            message: '请输入选项名',
+            message: 'Please enter an option name',
             trigger: 'blur'
           }
         ],
         value: [
           {
             required: true,
-            message: '请输入选项值',
+            message: 'Please enter option values',
             trigger: 'blur'
           }
         ]
@@ -103,11 +103,11 @@ export default {
       dataType: 'string',
       dataTypeOptions: [
         {
-          label: '字符串',
+          label: 'string',
           value: 'string'
         },
         {
-          label: '数字',
+          label: 'digital',
           value: 'number'
         }
       ]

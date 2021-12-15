@@ -7,24 +7,24 @@ Vue.use(Router)
 import Layout from '@/layout'
 
 /**
- * Note: 路由配置项
+ * Note: Route configuration item
  *
- * hidden: true                   // 当设置 true 的时候该路由不会再侧边栏出现 如401，login等页面，或者如一些编辑页面/edit/1
- * alwaysShow: true               // 当你一个路由下面的 children 声明的路由大于1个时，自动会变成嵌套的模式--如组件页面
- *                                // 只有一个时，会将那个子路由当做根路由显示在侧边栏--如引导页面
- *                                // 若你想不管路由下面的 children 声明的个数都显示你的根路由
- *                                // 你可以设置 alwaysShow: true，这样它就会忽略之前定义的规则，一直显示根路由
- * redirect: noRedirect           // 当设置 noRedirect 的时候该路由在面包屑导航中不可被点击
- * name:'router-name'             // 设定路由的名字，一定要填写不然使用<keep-alive>时会出现各种问题
+ * hidden: true                   // When setting true The route will no longer appear in the sidebar Such as401,loginSuch as the page,Or Such as some editing pages/edit/1
+ * alwaysShow: true               // When you have a route below children The declared route is greater than1When a,Automatically becomes a nested mode--Such as component pages
+ *                                // There is only one time,The child route is displayed in the sidebar as the root route--Such as the boot page
+ *                                // If you don't want the pipe to go from the bottom children The number of declared routes shows your root route
+ *                                // You can set alwaysShow: true,It then ignores the previously defined rule,The root route is always displayed
+ * redirect: noRedirect           // When setting noRedirect The route is not clickable in breadcrumb navigation
+ * name:'router-name'             // Set the name of the route,Be sure to fill it out or use it<keep-alive>All kinds of problems can arise
  * meta : {
-    roles: ['admin','editor']    // 设置该路由进入的权限，支持多个权限叠加
-    title: 'title'               // 设置该路由在侧边栏和面包屑中展示的名字
-    icon: 'svg-name'             // 设置该路由的图标，对应路径src/icons/svg
-    breadcrumb: false            // 如果设置为false，则不会在breadcrumb面包屑中显示
+    roles: ['admin','editor']    // Set the access permission of the route,Multiple permissions can be added
+    title: 'title'               // Sets the name of the route displayed in the sidebar and breadcrumbs
+    icon: 'svg-name'             // Sets the icon of the route,Corresponding pathsrc/icons/svg
+    breadcrumb: false            // If set tofalse,Is not inbreadcrumbAs shown in the bread crumbs
   }
  */
 
-// 公共路由
+// Public routing
 export const constantRoutes = [{
   path: '/redirect',
   component: Layout,
@@ -44,7 +44,7 @@ export const constantRoutes = [{
     path: '/password',
     component: (resolve) => require(['@/views/password1'], resolve),
     meta: {
-      requireAuth: false // 配置此条，进入页面前判断是否需要登陆
+      requireAuth: false // Configure this,Determine whether you need to log in before entering the page
     },
     hidden: true
   },
@@ -65,8 +65,8 @@ export const constantRoutes = [{
     children: [{
       path: 'index',
       component: (resolve) => require(['@/views/index'], resolve),
-      name: '首页',
-      meta: { title: '首页', icon: 'dashboard', noCache: true, affix: true }
+      name: 'Overview',
+      meta: { title: 'Overview', icon: 'dashboard', noCache: true, affix: true }
     }]
   },
   {
@@ -77,8 +77,8 @@ export const constantRoutes = [{
     children: [{
       path: 'info',
       component: (resolve) => require(['@/views/information/info/index'], resolve),
-      name: '消息',
-      meta: { title: '消息', icon: 'dashboard' }
+      name: 'The message',
+      meta: { title: 'The message', icon: 'dashboard' }
     }]
   },
   {
@@ -90,7 +90,7 @@ export const constantRoutes = [{
       path: 'profile',
       component: (resolve) => require(['@/views/system/user/profile/index'], resolve),
       name: 'Profile',
-      meta: { title: '个人中心', icon: 'user' }
+      meta: { title: 'Personal center', icon: 'user' }
     }]
   },
   {
@@ -101,7 +101,7 @@ export const constantRoutes = [{
       path: 'type/data/:dictId(\\d+)',
       component: (resolve) => require(['@/views/system/dict/data'], resolve),
       name: 'Data',
-      meta: { title: '字典数据', icon: '' }
+      meta: { title: 'The data dictionary', icon: '' }
     }]
   },
   {
@@ -112,7 +112,7 @@ export const constantRoutes = [{
       path: 'log',
       component: (resolve) => require(['@/views/monitor/job/log'], resolve),
       name: 'JobLog',
-      meta: { title: '调度日志' }
+      meta: { title: 'Operation log' }
     }]
   },
   {
@@ -123,7 +123,7 @@ export const constantRoutes = [{
       path: 'edit/:tableId(\\d+)',
       component: (resolve) => require(['@/views/tool/gen/editTable'], resolve),
       name: 'GenEdit',
-      meta: { title: '修改生成配置' }
+      meta: { title: 'Modifying the Build Configuration' }
     }]
   },
   {
@@ -133,25 +133,25 @@ export const constantRoutes = [{
     children: [{
       path: 'holiday',
       component: (resolve) => require(['@/views/vacation/holiday/index'], resolve),
-      name: '假期管理',
-      meta: { title: '假期管理'}
+      name: 'Vacation Management',
+      meta: { title: 'Vacation Management'}
     },{
       path: 'approval',
       component: (resolve) => require(['@/views/vacation/approval/index'], resolve),
-      name: '假期审批',
-      meta: { title: '假期审批'}
+      name: 'Vacation approval',
+      meta: { title: 'Vacation approval'}
     },{
       path: 'approvalSetting',
       component: (resolve) => require(['@/views/vacation/approval/setting'], resolve),
-      name: '审批设置',
-      meta: { title: '审批设置'}
+      name: 'Approval settings',
+      meta: { title: 'Approval settings'}
     }]
   },
 ]
 
 export default new Router({
-  // mode: 'history', // 去掉url中的#
-  mode: 'hash', // hash模式
+  // mode: 'history', // To get rid ofurlIn the#
+  mode: 'hash', // hashmodel
   scrollBehavior: () => ({ y: 0 }),
   routes: constantRoutes
 })

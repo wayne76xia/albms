@@ -15,34 +15,34 @@ import java.util.Date;
 import java.util.Random;
 
 /**
- * 阿里云短信接口
+ * Ali Cloud SMS interface
  */
 public class AliYunSms {
 
-    /** 产品名称:云通信短信API产品,开发者无需替换 */
+    /** The product name:Cloud communication SMSAPIproduct,Developers don't need to replace */
     private static final String product = "Dysmsapi";
-    /** 产品域名,开发者无需替换 */
+    /** The product domain,,Developers don't need to replace */
     private static final String domain = "dysmsapi.aliyuncs.com";
 
-    /** 此处需要替换成开发者自己的AK(在阿里云访问控制台寻找) */
+    /** This needs to be replaced with the developer's ownAK(Look for it in ali Cloud access console) */
     private static final String accessKeyId = "LTAIlkcGk1b1Y3Cm";
     private static final String accessKeySecret = "djGug9Mx9mcwGb5RfXlVnDw3BLrKsD";
 
-    /** 必填:短信签名-可在短信控制台中找到 */
-    private static final String signName = "网来网去";
-    /** 必填:待发送手机号 */
+    /** mandatory:Message signatures-It can be found in the SMS console */
+    private static final String signName = "Network to network";
+    /** mandatory:Phone number to be sent */
     private String phoneNumbers;
-    /** 必填:短信模板-可在短信控制台中找到 */
+    /** mandatory:Message template-It can be found in the SMS console */
     private String templateCode;
-    /** 可选:模板中的变量替换JSON串,如模板内容为"亲爱的${name},您的验证码为${code}"时,此处的值为 */
+    /** optional:Substitution of variables in templatesJSONstring,For example, the template content is"dear${name},Your verification code is${code}"when,The value here is */
     private String templateParam;
-    /** 可选:outId为提供给业务方扩展字段,最终在短信回执消息中将此值带回给调用者 */
+    /** optional:outIdExtend the field to provide to the business side,This value is eventually returned to the caller in the SMS receipt message */
     private String outId;
 
     public AliYunSms() {
     }
 
-    /** 手机号、短信模板、模板中的变量替换JSON串构造器 */
+    /** Mobile phone no.、Message template、Substitution of variables in templatesJSONString constructor */
     public AliYunSms(String phoneNumbers, String templateCode, String templateParam) {
         super();
         this.phoneNumbers = phoneNumbers;
@@ -84,33 +84,33 @@ public class AliYunSms {
 
     public SendSmsResponse sendSms() throws ClientException {
 
-        // 可自助调整超时时间
+        // You can adjust the timeout period by yourself
         System.setProperty("sun.net.client.defaultConnectTimeout", "10000");
         System.setProperty("sun.net.client.defaultReadTimeout", "10000");
 
-        // 初始化acsClient,暂不支持region化
+        // Initialize theacsClient,Temporary does not supportregionthe
         IClientProfile profile = DefaultProfile.getProfile("cn-hangzhou", accessKeyId, accessKeySecret);
         DefaultProfile.addEndpoint("cn-hangzhou", "cn-hangzhou", product, domain);
         IAcsClient acsClient = new DefaultAcsClient(profile);
 
-        // 组装请求对象-具体描述见控制台-文档部分内容
+        // Assemble request object-See the console for detailed description-Document Contents
         SendSmsRequest request = new SendSmsRequest();
-        // 必填:待发送手机号
+        // mandatory:Phone number to be sent
         request.setPhoneNumbers(phoneNumbers);
-        // 必填:短信签名-可在短信控制台中找到
+        // mandatory:Message signatures-It can be found in the SMS console
         request.setSignName(signName);
-        // 必填:短信模板-可在短信控制台中找到
+        // mandatory:Message template-It can be found in the SMS console
         request.setTemplateCode(templateCode);
-        // 可选:模板中的变量替换JSON串,如模板内容为"亲爱的${name},您的验证码为${code}"时,此处的值为
+        // optional:Substitution of variables in templatesJSONstring,For example, the template content is"dear${name},Your verification code is${code}"when,The value here is
         request.setTemplateParam(templateParam);
 
-        // 选填-上行短信扩展码(无特殊需求用户请忽略此字段)
+        // optional-Upstream SMS extension code(For users without special requirements, ignore this field)
         // request.setSmsUpExtendCode("90997");
 
-        // 可选:outId为提供给业务方扩展字段,最终在短信回执消息中将此值带回给调用者
+        // optional:outIdExtend the field to provide to the business side,This value is eventually returned to the caller in the SMS receipt message
         request.setOutId(outId);
 
-        // hint 此处可能会抛出异常，注意catch
+        // hint An exception may be thrown here,Pay attention tocatch
         SendSmsResponse sendSmsResponse = acsClient.getAcsResponse(request);
 
         return sendSmsResponse;
@@ -118,37 +118,37 @@ public class AliYunSms {
 
     public QuerySendDetailsResponse querySendDetails(String bizId) throws ClientException {
 
-        // 可自助调整超时时间
+        // You can adjust the timeout period by yourself
         System.setProperty("sun.net.client.defaultConnectTimeout", "10000");
         System.setProperty("sun.net.client.defaultReadTimeout", "10000");
 
-        // 初始化acsClient,暂不支持region化
+        // Initialize theacsClient,Temporary does not supportregionthe
         IClientProfile profile = DefaultProfile.getProfile("cn-hangzhou", accessKeyId, accessKeySecret);
         DefaultProfile.addEndpoint("cn-hangzhou", "cn-hangzhou", product, domain);
         IAcsClient acsClient = new DefaultAcsClient(profile);
 
-        // 组装请求对象
+        // Assemble request object
         QuerySendDetailsRequest request = new QuerySendDetailsRequest();
-        // 必填-号码
+        // mandatory-number
         request.setPhoneNumber(phoneNumbers);
-        // 可选-流水号
+        // optional-Serial number
         request.setBizId(bizId);
-        // 必填-发送日期 支持30天内记录查询，格式yyyyMMdd
+        // mandatory-Sending date support30Record query within days,formatyyyyMMdd
         SimpleDateFormat ft = new SimpleDateFormat("yyyyMMdd");
         request.setSendDate(ft.format(new Date()));
-        // 必填-页大小
+        // mandatory-Page size
         request.setPageSize(10L);
-        // 必填-当前页码从1开始计数
+        // mandatory-Current page number from1Start counting
         request.setCurrentPage(1L);
 
-        // hint 此处可能会抛出异常，注意catch
+        // hint An exception may be thrown here,Pay attention tocatch
         QuerySendDetailsResponse querySendDetailsResponse = acsClient.getAcsResponse(request);
 
         return querySendDetailsResponse;
     }
 
     /**
-     * 生成随机六位数
+     * Generate a random six digit number
      *
      * @param from
      * @param to

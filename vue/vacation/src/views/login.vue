@@ -10,20 +10,20 @@
             >{{login_title}}</h3>
           </div>
           <div class>
-            <P class="text-black font-size-12 aui-margin-b-10">账号：</P>
+            <P class="text-black font-size-12 aui-margin-b-10">account:</P>
             <el-form-item prop="username">
               <el-input
                 autocomplete="off"
                 v-model="loginForm.username"
                 type="text"
                 @keyup.native="checkUser"
-                placeholder="请输入账号"
+                placeholder="Please enter your account number"
                 style="box-shadow: inset 0 0 0 1000px #f7f7f7 !important;"
               ></el-input>
             </el-form-item>
           </div>
           <div class>
-            <P class="text-black font-size-12 aui-margin-b-10">密码：</P>
+            <P class="text-black font-size-12 aui-margin-b-10">password:</P>
             <el-form-item prop="password">
               <div class="flex">
                 <el-input
@@ -31,7 +31,7 @@
                   v-model="loginForm.password"
                   :type="passwordType"
                   autocomplete="off"
-                  placeholder="请输入密码"
+                  placeholder="Please enter your password"
                   @blur="capsTooltip = false"
                   @keyup.enter.native="handleLogin"
                 ></el-input>
@@ -42,12 +42,12 @@
             </el-form-item>
           </div>
           <div class>
-            <P class="text-black font-size-12 aui-margin-b-10">验证码：</P>
+            <P class="text-black font-size-12 aui-margin-b-10">Verification code:</P>
             <el-form-item prop="code">
               <el-input
                 v-model="loginForm.code"
                 auto-complete="off"
-                placeholder="请输入验证码"
+                placeholder="Please enter the verification code"
                 style="width: 58%"
                 @keyup.enter.native="handleLogin"
               ></el-input>
@@ -57,8 +57,8 @@
             </el-form-item>
           </div>
           <div class="flex">
-            <el-checkbox v-model="loginForm.rememberMe">记住密码</el-checkbox>
-            <div class="text-deepblue udline font-size-12" @click="forget">忘记密码/修改密码</div>
+            <el-checkbox v-model="loginForm.rememberMe">Remember the password</el-checkbox>
+            <div class="text-deepblue udline font-size-12" @click="forget">Forgot password/Change the password</div>
           </div>
           <el-form-item class="aui-margin-t-15" style="width:100%;border:none !important">
             <el-button
@@ -68,8 +68,8 @@
               style="width:60%;height:40px;border-radius:20px;margin-left:20%;  "
               @click.native.prevent="handleLogin"
             >
-              <span v-if="!loading">登 录</span>
-              <span v-else>登 录 中...</span>
+              <span v-if="!loading">deng record</span>
+              <span v-else>deng record In the...</span>
             </el-button>
           </el-form-item>
         </el-form>
@@ -87,10 +87,10 @@ export default {
   name: "Login",
   data() {
     return {
-      login_title: "假期预定管理系统",
-      technicalPhone: "", //客服电话
-      backGroundPic: "", //登录背景图片
-      codeUrl: "", //验证码图片
+      login_title: "Vacation reservation management system",
+      technicalPhone: "", //Customer service telephone
+      backGroundPic: "", //Login Background image
+      codeUrl: "", //Captcha picture
       cookiePassword: "",
       loginForm: {
         username: "",
@@ -101,13 +101,13 @@ export default {
       },
       loginRules: {
         username: [
-          { required: true, trigger: "blur", message: "用户名不能为空" },
+          { required: true, trigger: "blur", message: "The user name cannot be empty" },
         ],
         password: [
-          { required: true, trigger: "blur", message: "密码不能为空" },
+          { required: true, trigger: "blur", message: "The password cannot be empty" },
         ],
         code: [
-          { required: true, trigger: "change", message: "验证码不能为空" },
+          { required: true, trigger: "change", message: "The verification code cannot be empty" },
         ],
       },
       loading: false,
@@ -137,7 +137,7 @@ export default {
           this.login_title = res.data;
         }
         if(res==""){
-this.login_title = "假期预定管理系统";
+this.login_title = "Vacation reservation management system";
         }
       });
     },
@@ -162,7 +162,7 @@ this.login_title = "假期预定管理系统";
     },
     getLoginInfomation() {
       getLoginInfo().then((res) => {
-        console.log(res, "获取登录页面图片及技术客服电话");
+        console.log(res, "Obtain the login page picture and technical customer service number");
         this.backGroundPic = res.data.backGroundPic;
         this.technicalPhone = res.data.technicalPhone;
       });

@@ -97,7 +97,7 @@ export default {
         yAxis: [
           {
             type: "value",
-            name: "元",
+            name: "yuan",
             axisTick: {
               show: false,
             },
@@ -121,7 +121,7 @@ export default {
         ],
         series: [
           {
-            name: "销售额",
+            name: "sales",
             type: "line",
             smooth: true,
             symbol: "circle",

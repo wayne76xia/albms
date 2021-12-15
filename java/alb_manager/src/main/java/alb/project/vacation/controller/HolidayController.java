@@ -40,7 +40,7 @@ import java.util.List;
 @RequestMapping("/vacation/holiday")
 public class HolidayController extends BaseController {
 
-    @Resource // @Resource（这个注解属于J2EE的），默认按照名称进行装配
+    @Resource // @Resource(This annotation belongs toJ2EEthe),The assembly is by name by default
     private IHolidayService holidayService;
     @Resource
     private IHolidayItemService holidayItemService;
@@ -49,14 +49,14 @@ public class HolidayController extends BaseController {
     @Resource
     private ISysUserService userService;
 
-    @Autowired // @Autowired（这个注解是属于spring的），默认按类型装配
+    @Autowired // @Autowired(This annotation belongs tospringthe),The default assembly is by type
     private TokenService tokenService;
 
     /**
-     * 查询单条数据
+     * Example Query a single piece of data
      *
-     * @param holidayId 主键
-     * @return 实例对象
+     * @param holidayId A primary key
+     * @return Instance objects
      */
     @GetMapping("/{holidayId}")
     @PreAuthorize("@ss.hasPermi('vacation:holiday:query')")
@@ -66,27 +66,27 @@ public class HolidayController extends BaseController {
     }
 
     /**
-     * 是否有下一节点
+     * Whether there is a next node
      *
-     * @param holidayId 主键
-     * @return 实例对象
+     * @param holidayId A primary key
+     * @return Instance objects
      */
     @GetMapping("/next/{holidayId}")
     @PreAuthorize("@ss.hasPermi('vacation:holiday:query')")
     public AjaxResult hasNext(@PathVariable("holidayId") Long holidayId) {
         Holiday holiday = this.holidayService.queryOne(holidayId);
-        // 默认取第一个角色
+        // The default role is the first role
         Long roleId = this.userService.selectUserById(holiday.getProposerId()).getRoles().get(0).getRoleId();
         HolidayApproval params = HolidayApproval.builder()
                 .holidayTypeId(holiday.getHolidayTypeId())
                 .roleId(roleId)
                 .currentApprovedIndex(holiday.getCurrentApprovedIndex())
                 .build();
-        return this.holidayApprovalService.hasNextApproved(params) ? AjaxResult.success("存在下一节点") : AjaxResult.success(null);
+        return this.holidayApprovalService.hasNextApproved(params) ? AjaxResult.success("The next node exists") : AjaxResult.success(null);
     }
 
     /**
-     * 查询多条数据
+     * Querying multiple pieces of Data
      *
      * @param holiday
      * @return
@@ -104,7 +104,7 @@ public class HolidayController extends BaseController {
     }
 
     /**
-     * 查询多条数据
+     * Querying multiple pieces of Data
      *
      * @param holiday
      * @return
@@ -122,7 +122,7 @@ public class HolidayController extends BaseController {
     }
 
     /**
-     * 查询多条数据
+     * Querying multiple pieces of Data
      *
      * @param holiday
      * @return
@@ -130,20 +130,20 @@ public class HolidayController extends BaseController {
     @GetMapping("/user/list")
     @PreAuthorize("@ss.hasPermi('vacation:holiday:list')")
     public AjaxResult queryUserList(Holiday holiday) {
-        if (holiday.getHolidayId() != null) { // 审批阶段查询
+        if (holiday.getHolidayId() != null) { // Approval Stage query
             List<HolidayUserResultVO> result = new ArrayList<>();
-            // 待审批用户
+            // User to be approved
             SysUser user = this.userService.selectUserById(holiday.getProposerId());
             Long deptId = user.getDept().getDeptId();
             SysRole role = user.getRoles().get(0);
-            // 根据类型和当前用户角色ID，查询预设审批
+            // Based on type and current user roleID,Query default approval
             HolidayApproval approvalParams = HolidayApproval.builder()
                     .holidayTypeId(holiday.getHolidayTypeId())
                     .roleId(role.getRoleId())
                     .currentApprovedIndex(holiday.getCurrentApprovedIndex())
                     .build();
             List<HolidayApproval> approvals = holidayApprovalService.queryAll(approvalParams);
-            // 根据部门ID和查询到的角色ID，查询可选用户
+            // According to the departmentIDAnd the role to be queriedID,Example Query available users
             for (HolidayApproval approval : approvals) {
                 HolidayUserParamsVO paramsVO = HolidayUserParamsVO.builder()
                         .deptId(deptId)
@@ -153,21 +153,21 @@ public class HolidayController extends BaseController {
                 result.addAll(resultVOList);
             }
             return AjaxResult.success(result);
-        } else { // 新增阶段查询
+        } else { // New Phase Query
             LoginUser loginUser = tokenService.getLoginUser(ServletUtils.getRequest());
             if (!StringUtils.isNull(loginUser) && !CollectionUtils.isEmpty(loginUser.getUser().getRoles())) {
                 List<HolidayUserResultVO> result = new ArrayList<>();
 
                 Long deptId = loginUser.getUser().getDept().getDeptId();
                 SysRole role = loginUser.getUser().getRoles().get(0);
-                // 根据类型和当前用户角色ID，查询预设审批
+                // Based on type and current user roleID,Query default approval
                 HolidayApproval approvalParams = HolidayApproval.builder()
                         .holidayTypeId(holiday.getHolidayTypeId())
                         .roleId(role.getRoleId())
                         .currentApprovedIndex(holiday.getCurrentApprovedIndex())
                         .build();
                 List<HolidayApproval> approvals = holidayApprovalService.queryAll(approvalParams);
-                // 根据部门ID和查询到的角色ID，查询可选用户
+                // According to the departmentIDAnd the role to be queriedID,Example Query available users
                 for (HolidayApproval approval : approvals) {
                     HolidayUserParamsVO paramsVO = HolidayUserParamsVO.builder()
                             .deptId(deptId)
@@ -179,22 +179,22 @@ public class HolidayController extends BaseController {
                 return AjaxResult.success(result);
             }
         }
-        return AjaxResult.error("当前用户暂无权限！");
+        return AjaxResult.error("The current user has no permission!");
     }
 
     /**
-     * 新增数据
+     * The new data
      *
-     * @param holiday 实例对象
-     * @return 实例对象
+     * @param holiday Instance objects
+     * @return Instance objects
      */
     @PostMapping("")
     @PreAuthorize("@ss.hasPermi('vacation:holiday:add')")
-    @Log(title = "假期", businessType = BusinessType.INSERT)
+    @Log(title = "During the holiday", businessType = BusinessType.INSERT)
     public AjaxResult addHoliday(@RequestBody Holiday holiday) {
         LoginUser loginUser = tokenService.getLoginUser(ServletUtils.getRequest());
 
-        // 雪花算法生成唯一通话记录号 单体服务 数据中心id和终端id都填1
+        // Snowflake algorithm generates unique call log numbers Individual services The data centeridAnd terminalidAll fill in1
         Long holidayId = IdUtil.getSnowflake(1, 1).nextId();
 
         holiday.setHolidayId(holidayId);
@@ -218,20 +218,20 @@ public class HolidayController extends BaseController {
         int countItem = this.holidayItemService.insert(holidayItem);
 
         int count = this.holidayService.insert(holiday);
-        return count > 0 & countItem > 0 ? AjaxResult.success("新增成功") : AjaxResult.error("新增失败");
+        return count > 0 & countItem > 0 ? AjaxResult.success("New success") : AjaxResult.error("The new failure");
     }
 
     /**
-     * 修改数据
+     * Modify the data
      *
-     * @param holiday 实例对象
-     * @return 实例对象
+     * @param holiday Instance objects
+     * @return Instance objects
      */
     @PutMapping("")
     @PreAuthorize("@ss.hasPermi('vacation:holiday:edit')")
-    @Log(title = "假期", businessType = BusinessType.UPDATE)
+    @Log(title = "During the holiday", businessType = BusinessType.UPDATE)
     public AjaxResult modifyHoliday(@RequestBody Holiday holiday) {
-        // 保存当前审批事项
+        // Save the current approval items
         HolidayItem holidayItem = HolidayItem.builder()
                 .holidayId(holiday.getHolidayId())
                 .approvedIndex(holiday.getCurrentApprovedIndex())
@@ -240,8 +240,8 @@ public class HolidayController extends BaseController {
                 .build();
         int countItem = this.holidayItemService.update(holidayItem);
 
-        // 若通过且有下一节点，则添加下一事项
-        // 默认取第一个角色
+        // If it passes and there is a next node,Then add the next item
+        // The default role is the first role
         Long roleId = this.userService.selectUserById(holiday.getProposerId()).getRoles().get(0).getRoleId();
         HolidayApproval params = HolidayApproval.builder()
                 .holidayTypeId(holiday.getHolidayTypeId())
@@ -249,8 +249,6 @@ public class HolidayController extends BaseController {
                 .currentApprovedIndex(holiday.getCurrentApprovedIndex())
                 .build();
         if (this.holidayApprovalService.hasNextApproved(params) && holiday.getStatus() == 1) {
-            holiday.setCurrentApprovedIndex(holiday.getCurrentApprovedIndex() + 1);
-            holiday.setStatus(0);
             HolidayItem newHolidayItem = HolidayItem.builder()
                     .holidayId(holiday.getHolidayId())
                     .approvedUserId(holiday.getCurrentApproverId())
@@ -259,23 +257,26 @@ public class HolidayController extends BaseController {
                     .delFlag(0)
                     .build();
             this.holidayItemService.insert(newHolidayItem);
+
+            holiday.setCurrentApprovedIndex(holiday.getCurrentApprovedIndex() + 1);
+            holiday.setStatus(0);
         }
-        // 驳回了 / 没有下一节点了
+        // rejected / There's no next node
         int count = this.holidayService.update(holiday);
-        return count > 0 & countItem > 0? AjaxResult.success("修改成功") : AjaxResult.error("修改失败");
+        return count > 0 & countItem > 0? AjaxResult.success("Modify the success") : AjaxResult.error("Modify the failure");
     }
 
     /**
-     * 通过主键删除数据
+     * Delete data by primary key
      *
-     * @param holidayId 主键
-     * @return 是否成功
+     * @param holidayId A primary key
+     * @return The success of
      */
     @DeleteMapping("/{holidayId}")
     @PreAuthorize("@ss.hasPermi('vacation:holiday:delete')")
-    @Log(title = "假期", businessType = BusinessType.DELETE)
+    @Log(title = "During the holiday", businessType = BusinessType.DELETE)
     public AjaxResult deleteById(@PathVariable("holidayId") Long holidayId) {
         int count = this.holidayService.deleteById(holidayId);
-        return count > 0 ? AjaxResult.success("删除成功") : AjaxResult.error("删除失败");
+        return count > 0 ? AjaxResult.success("Delete the success") : AjaxResult.error("Delete failed");
     }
 }

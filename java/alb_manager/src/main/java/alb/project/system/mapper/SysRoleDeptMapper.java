@@ -5,40 +5,40 @@ import java.util.List;
 import alb.project.system.domain.SysRoleDept;
 
 /**
- * 角色与部门关联表 数据层
+ * Association table between roles and departments The data layer
  *
  */
 public interface SysRoleDeptMapper
 {
     /**
-     * 通过角色ID删除角色和部门关联
+     * Through the roleIDDelete the role and department association
      * 
-     * @param roleId 角色ID
-     * @return 结果
+     * @param roleId roleID
+     * @return The results of
      */
     int deleteRoleDeptByRoleId(Long roleId);
 
     /**
-     * 批量删除角色部门关联信息
+     * Delete departments associated with roles in batches
      * 
-     * @param ids 需要删除的数据ID
-     * @return 结果
+     * @param ids Data to be deletedID
+     * @return The results of
      */
     int deleteRoleDept(Long[] ids);
 
     /**
-     * 查询部门使用数量
+     * Query the number of departments used
      * 
-     * @param deptId 部门ID
-     * @return 结果
+     * @param deptId departmentID
+     * @return The results of
      */
     int selectCountRoleDeptByDeptId(Long deptId);
 
     /**
-     * 批量新增角色部门信息
+     * Add department information about roles in batches
      * 
-     * @param roleDeptList 角色部门列表
-     * @return 结果
+     * @param roleDeptList Role Department List
+     * @return The results of
      */
     int batchRoleDept(List<SysRoleDept> roleDeptList);
 }

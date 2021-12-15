@@ -13,7 +13,7 @@ import com.alibaba.fastjson.JSONObject;
 import alb.common.utils.ServletUtils;
 
 /**
- * 防止重复提交拦截器
+ * Prevent repeated submission of interceptors
  *
  */
 @Component
@@ -31,7 +31,7 @@ public abstract class RepeatSubmitInterceptor extends HandlerInterceptorAdapter
             {
                 if (this.isRepeatSubmit(request))
                 {
-                    AjaxResult ajaxResult = AjaxResult.error("不允许重复提交，请稍后再试");
+                    AjaxResult ajaxResult = AjaxResult.error("Duplicate submissions are not allowed,Please try again later");
                     ServletUtils.renderString(response, JSONObject.toJSONString(ajaxResult));
                     return false;
                 }
@@ -45,7 +45,7 @@ public abstract class RepeatSubmitInterceptor extends HandlerInterceptorAdapter
     }
 
     /**
-     * 验证是否重复提交由子类实现具体的防重复提交的规则
+     * Verify whether a subclass implements a specific rule against double submission
      * 
      * @param httpServletRequest
      * @return

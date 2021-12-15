@@ -16,12 +16,12 @@ public class HolidayApproval extends BaseEntity
 {
     private static final long serialVersionUID = 1L;
 
-    /* 假期审批ID */
+    /* Vacation approvalID */
     @JsonSerialize(using = LongJsonSerializer.class)
     @JsonDeserialize(using = LongJsonDeserializer.class)
     private Long holidayApprovalId;
 
-    /* 假期类型 */
+    /* Holiday types */
     @JsonSerialize(using = LongJsonSerializer.class)
     @JsonDeserialize(using = LongJsonDeserializer.class)
     private Long holidayTypeId;
@@ -30,24 +30,24 @@ public class HolidayApproval extends BaseEntity
 
     private String typeValue;
 
-    /* 待审批人角色ID */
+    /* Role of the person awaiting approvalID */
     @JsonSerialize(using = LongJsonSerializer.class)
     @JsonDeserialize(using = LongJsonDeserializer.class)
     private Long roleId;
 
     private String roleName;
 
-    /* 审批人角色ID */
+    /* Approver roleID */
     @JsonSerialize(using = LongJsonSerializer.class)
     @JsonDeserialize(using = LongJsonDeserializer.class)
     private Long approvedRoleId;
 
     private String approvedRoleName;
 
-    /* 当前审批序号 从1开始计数 */
+    /* Current Approval Number from1Start counting */
     private Integer currentApprovedIndex;
 
-    /* 下一级审批的的角色ID，若为最后一级审批则为0 */
+    /* The role of the next level of approvalID,If it is the last level of approval0 */
     @JsonSerialize(using = LongJsonSerializer.class)
     @JsonDeserialize(using = LongJsonDeserializer.class)
     private Long nextApprovalId;

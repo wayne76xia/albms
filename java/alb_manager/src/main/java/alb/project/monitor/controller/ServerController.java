@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 import alb.framework.web.controller.BaseController;
 
 /**
- * 服务器监控
+ * Server monitoring
  *
  */
 @RestController

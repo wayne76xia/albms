@@ -21,10 +21,10 @@ import io.swagger.annotations.ApiModelProperty;
 import io.swagger.annotations.ApiOperation;
 
 /**
- * swagger 用户测试方法
+ * swagger User test method
  *
  */
-@Api("用户信息管理")
+@Api("User Information Management")
 @RestController
 @RequestMapping("/test/user")
 public class TestController extends BaseController
@@ -35,7 +35,7 @@ public class TestController extends BaseController
         users.put(2, new UserEntity(2, "ry", "admin123", "15666666666"));
     }
 
-    @ApiOperation("获取用户列表")
+    @ApiOperation("Get user list")
     @GetMapping("/list")
     public AjaxResult userList()
     {
@@ -43,8 +43,8 @@ public class TestController extends BaseController
         return AjaxResult.success(userList);
     }
 
-    @ApiOperation("获取用户详细")
-    @ApiImplicitParam(name = "userId", value = "用户ID", required = true, dataType = "int", paramType = "path")
+    @ApiOperation("Obtaining User details")
+    @ApiImplicitParam(name = "userId", value = "The userID", required = true, dataType = "int", paramType = "path")
     @GetMapping("/{userId}")
     public AjaxResult getUser(@PathVariable Integer userId)
     {
@@ -54,41 +54,41 @@ public class TestController extends BaseController
         }
         else
         {
-            return AjaxResult.error("用户不存在");
+            return AjaxResult.error("User does not exist");
         }
     }
 
-    @ApiOperation("新增用户")
-    @ApiImplicitParam(name = "userEntity", value = "新增用户信息", dataType = "UserEntity")
+    @ApiOperation("New users")
+    @ApiImplicitParam(name = "userEntity", value = "Adding User Information", dataType = "UserEntity")
     @PostMapping("/save")
     public AjaxResult save(UserEntity user)
     {
         if (StringUtils.isNull(user) || StringUtils.isNull(user.getUserId()))
         {
-            return AjaxResult.error("用户ID不能为空");
+            return AjaxResult.error("The userIDCan't be empty");
         }
         return AjaxResult.success(users.put(user.getUserId(), user));
     }
 
-    @ApiOperation("更新用户")
-    @ApiImplicitParam(name = "userEntity", value = "新增用户信息", dataType = "UserEntity")
+    @ApiOperation("Update user")
+    @ApiImplicitParam(name = "userEntity", value = "Adding User Information", dataType = "UserEntity")
     @PutMapping("/update")
     public AjaxResult update(UserEntity user)
     {
         if (StringUtils.isNull(user) || StringUtils.isNull(user.getUserId()))
         {
-            return AjaxResult.error("用户ID不能为空");
+            return AjaxResult.error("The userIDCan't be empty");
         }
         if (users.isEmpty() || !users.containsKey(user.getUserId()))
         {
-            return AjaxResult.error("用户不存在");
+            return AjaxResult.error("User does not exist");
         }
         users.remove(user.getUserId());
         return AjaxResult.success(users.put(user.getUserId(), user));
     }
 
-    @ApiOperation("删除用户信息")
-    @ApiImplicitParam(name = "userId", value = "用户ID", required = true, dataType = "int", paramType = "path")
+    @ApiOperation("Deleting User Information")
+    @ApiImplicitParam(name = "userId", value = "The userID", required = true, dataType = "int", paramType = "path")
     @DeleteMapping("/{userId}")
     public AjaxResult delete(@PathVariable Integer userId)
     {
@@ -99,24 +99,24 @@ public class TestController extends BaseController
         }
         else
         {
-            return AjaxResult.error("用户不存在");
+            return AjaxResult.error("User does not exist");
         }
     }
 }
 
-@ApiModel("用户实体")
+@ApiModel("The user entity")
 class UserEntity
 {
-    @ApiModelProperty("用户ID")
+    @ApiModelProperty("The userID")
     private Integer userId;
 
-    @ApiModelProperty("用户名称")
+    @ApiModelProperty("The user name")
     private String username;
 
-    @ApiModelProperty("用户密码")
+    @ApiModelProperty("The user password")
     private String password;
 
-    @ApiModelProperty("用户手机")
+    @ApiModelProperty("User's phone")
     private String mobile;
 
     public UserEntity()

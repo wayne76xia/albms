@@ -1,6 +1,6 @@
 import request from '@/utils/request'
 
-// 查询公告查看记录列表
+// Query bulletin View the record list
 export function listNoticeRecord(query) {
     return request({
         url: '/glasses/noticeRecord/list',
@@ -9,7 +9,7 @@ export function listNoticeRecord(query) {
     })
 }
 
-// 查询公告查看记录详细
+// Query bulletins To view details
 export function getNoticeRecord(id) {
     return request({
         url: '/glasses/noticeRecord/' + id,
@@ -17,7 +17,7 @@ export function getNoticeRecord(id) {
     })
 }
 
-// 新增公告查看记录
+// Added bulletin viewing records
 export function addNoticeRecord(data) {
     return request({
         url: '/glasses/noticeRecord',
@@ -26,7 +26,7 @@ export function addNoticeRecord(data) {
     })
 }
 
-// 修改公告查看记录
+// Modify bulletin viewing records
 export function updateNoticeRecord(data) {
     return request({
         url: '/glasses/noticeRecord',
@@ -35,7 +35,7 @@ export function updateNoticeRecord(data) {
     })
 }
 
-// 删除公告查看记录
+// Delete bulletin viewing records
 export function delNoticeRecord(id) {
     return request({
         url: '/glasses/noticeRecord/' + id,
@@ -43,7 +43,7 @@ export function delNoticeRecord(id) {
     })
 }
 
-// 导出公告查看记录
+// Export bulletin viewing records
 export function exportNoticeRecord(query) {
     return request({
         url: '/glasses/noticeRecord/export',

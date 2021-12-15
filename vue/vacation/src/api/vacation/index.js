@@ -1,7 +1,7 @@
 import request from '@/utils/request'
 
 
-// 假期列表
+// The holiday list
 export function holidayList(data) {
   return request({
     url: '/vacation/holiday/list',
@@ -10,7 +10,7 @@ export function holidayList(data) {
   })
 }
 
-// 假期审批列表
+// Leave Approval List
 export function holidayListNeedApproval(data) {
   return request({
     url: '/vacation/holiday/approvalList',
@@ -19,7 +19,7 @@ export function holidayListNeedApproval(data) {
   })
 }
 
-// 假期详细信息
+// Holiday Details
 export function getHolidayInfo(id) {
     return request({
         url: '/vacation/holiday/' + id,
@@ -27,7 +27,7 @@ export function getHolidayInfo(id) {
     })
 }
 
-// 新增假期
+// The new holiday
 export function holidayAdd(data) {
     return request({
         url: '/vacation/holiday',
@@ -36,7 +36,7 @@ export function holidayAdd(data) {
     })
 }
 
-// 修改假期
+// Modify the holiday
 export function holidayUpdate(data) {
     return request({
         url: '/vacation/holiday',
@@ -45,7 +45,7 @@ export function holidayUpdate(data) {
     })
 }
 
-// 删除假期
+// Remove the holiday
 export function holidayRemove(id) {
     return request({
         url: '/vacation/holiday/' + id,

@@ -1,6 +1,6 @@
 import request from '@/utils/request'
 
-// 假期审批列表
+// Leave Approval List
 export function holidayApprovalList(data) {
   return request({
     url: '/vacation/holiday/approval/list',
@@ -9,7 +9,7 @@ export function holidayApprovalList(data) {
   })
 }
 
-// 角色列表
+// The role list
 export function roleList() {
   return request({
     url: '/vacation/holiday/approval/roleList',
@@ -17,7 +17,7 @@ export function roleList() {
   })
 }
 
-// 假期审批详细信息
+// Leave approval details
 export function getHolidayApprovalInfo(id) {
   return request({
     url: '/vacation/holiday/approval/' + id,
@@ -25,7 +25,7 @@ export function getHolidayApprovalInfo(id) {
   })
 }
 
-// 新增假期审批
+// Approval of new leave
 export function holidayApprovalAdd(data) {
   return request({
     url: '/vacation/holiday/approval',
@@ -34,7 +34,7 @@ export function holidayApprovalAdd(data) {
   })
 }
 
-// 修改假期审批
+// Modify leave approval
 export function holidayApprovalUpdate(data) {
   return request({
     url: '/vacation/holiday/approval',
@@ -43,7 +43,7 @@ export function holidayApprovalUpdate(data) {
   })
 }
 
-// 删除假期审批
+// Delete leave approval
 export function holidayApprovalRemove(id) {
   return request({
     url: '/vacation/holiday/approval/' + id,

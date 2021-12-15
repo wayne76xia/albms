@@ -4,60 +4,60 @@ import java.util.List;
 import alb.project.monitor.domain.SysJobLog;
 
 /**
- * 调度任务日志信息 数据层
+ * Logs about scheduling tasks The data layer
  *
  */
 public interface SysJobLogMapper
 {
     /**
-     * 获取quartz调度器日志的计划任务
+     * To obtainquartzSchedule tasks for scheduler logs
      * 
-     * @param jobLog 调度日志信息
-     * @return 调度任务日志集合
+     * @param jobLog Scheduling Log Information
+     * @return Scheduling task log collection
      */
     List<SysJobLog> selectJobLogList(SysJobLog jobLog);
 
     /**
-     * 查询所有调度任务日志
+     * Example Query the logs of all scheduling tasks
      *
-     * @return 调度任务日志列表
+     * @return Scheduling task log list
      */
     List<SysJobLog> selectJobLogAll();
 
     /**
-     * 通过调度任务日志ID查询调度信息
+     * By scheduling task logsIDQuerying Scheduling Information
      * 
-     * @param jobLogId 调度任务日志ID
-     * @return 调度任务日志对象信息
+     * @param jobLogId Scheduling Task LogsID
+     * @return Information about a scheduling task log object
      */
     SysJobLog selectJobLogById(Long jobLogId);
 
     /**
-     * 新增任务日志
+     * Adding Task Logs
      * 
-     * @param jobLog 调度日志信息
-     * @return 结果
+     * @param jobLog Scheduling Log Information
+     * @return The results of
      */
     int insertJobLog(SysJobLog jobLog);
 
     /**
-     * 批量删除调度日志信息
+     * Example Delete scheduling logs in batches
      * 
-     * @param logIds 需要删除的数据ID
-     * @return 结果
+     * @param logIds Data to be deletedID
+     * @return The results of
      */
     int deleteJobLogByIds(Long[] logIds);
 
     /**
-     * 删除任务日志
+     * Deleting Task Logs
      * 
-     * @param jobId 调度日志ID
-     * @return 结果
+     * @param jobId Operation logID
+     * @return The results of
      */
     int deleteJobLogById(Long jobId);
 
     /**
-     * 清空任务日志
+     * Clearing task Logs
      */
     void cleanJobLog();
 }

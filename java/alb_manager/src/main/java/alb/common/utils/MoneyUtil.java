@@ -3,92 +3,92 @@ package alb.common.utils;
 import java.text.DecimalFormat;
 
 /**
- * 金额工具类
+ * Amount instrument class
  *
  * @author HaoHao
  * Created on 2021/1/11.
  */
 public class MoneyUtil {
-    /** 大写数字 */
-    private final static String[] STR_NUMBER = { "零", "壹", "贰", "叁", "肆", "伍",
-            "陆", "柒", "捌", "玖" };
-    /** 整数单位 */
-    private final static String[] STR_UNIT = { "", "拾", "佰", "仟", "万", "拾",
-            "佰", "仟", "亿", "拾", "佰", "仟" };
-    /** 小数单位 */
-    private final static String[] STR_UNIT2 = { "角", "分", "厘" };
+    /** Upper case number */
+    private final static String[] STR_NUMBER = { "zero", "one", "Ii.", "3", "boss", "wu",
+            "lu", "Retailer,", "捌", "nine" };
+    /** The integer unit */
+    private final static String[] STR_UNIT = { "", "Pick up", "hk", "micky", "wan", "Pick up",
+            "hk", "micky", "Hundred million", "Pick up", "hk", "micky" };
+    /** The decimal unit */
+    private final static String[] STR_UNIT2 = { "Angle", "points", "li" };
 
     /**
-     * 获取整数部分
+     * Get integer part
      */
     public static String getInteger(String num) {
-        // 判断是否包含小数点
+        // Determine whether a decimal point is included
         if (num.contains(".")) {
             num = num.substring(0, num.indexOf("."));
         }
-        // 反转字符串
+        // Inverted string
         num = new StringBuffer(num).reverse().toString();
-        // 创建一个StringBuffer对象
+        // To create aStringBufferobject
         StringBuffer temp = new StringBuffer();
-        // 加入单位
+        // In the unit
         for (int i = 0; i < num.length(); i++) {
             temp.append(STR_UNIT[i]);
             temp.append(STR_NUMBER[num.charAt(i) - 48]);
         }
-        // 反转字符串
+        // Inverted string
         num = temp.reverse().toString();
-        // 替换字符串的字符
-        num = numReplace(num, "零拾", "零");
-        num = numReplace(num, "零佰", "零");
-        num = numReplace(num, "零仟", "零");
-        num = numReplace(num, "零万", "万");
-        num = numReplace(num, "零亿", "亿");
-        num = numReplace(num, "零零", "零");
-        num = numReplace(num, "亿万", "亿");
-        // 如果字符串以零结尾将其除去
-        if (num.lastIndexOf("零") == num.length() - 1) {
+        // The character that replaces the string
+        num = numReplace(num, "Zero to pick up", "zero");
+        num = numReplace(num, "Zero mean", "zero");
+        num = numReplace(num, "Zero micky", "zero");
+        num = numReplace(num, "One hundred thousand", "wan");
+        num = numReplace(num, "One billion", "Hundred million");
+        num = numReplace(num, "Zero zero", "zero");
+        num = numReplace(num, "One hundred million", "Hundred million");
+        // Remove the string if it ends in zero
+        if (num.lastIndexOf("zero") == num.length() - 1) {
             num = num.substring(0, num.length() - 1);
         }
         return num;
     }
 
     /**
-     * 获取小数部分
+     * Get decimal part
      *
      * @param num
      * @return
      */
     public static String getDecimal(String num) {
-        // 判断是否包含小数点
+        // Determine whether a decimal point is included
         if (!num.contains(".")) {
             return "";
         }
         num = num.substring(num.indexOf(".") + 1);
-        // 反转字符串
+        // Inverted string
         num = new StringBuffer(num).reverse().toString();
-        // 创建一个StringBuffer对象
+        // To create aStringBufferobject
         StringBuffer temp = new StringBuffer();
-        // 加入单位
+        // In the unit
         for (int i = 0; i < num.length(); i++) {
 //            temp.append(STR_UNIT2[i]);
             temp.append(STR_UNIT2[(num.length()-1)-i]);
             temp.append(STR_NUMBER[num.charAt(i) - 48]);
         }
-        // 替换字符串的字符
+        // The character that replaces the string
         num = temp.reverse().toString();
-        num = numReplace(num, "零角", "零");
-        num = numReplace(num, "零分", "零");
-        num = numReplace(num, "零厘", "零");
-        num = numReplace(num, "零零", "零");
-        // 如果字符串以零结尾将其除去
-        if (num.lastIndexOf("零") == num.length() - 1) {
+        num = numReplace(num, "Zero Angle", "zero");
+        num = numReplace(num, "A zero", "zero");
+        num = numReplace(num, "Zero duty", "zero");
+        num = numReplace(num, "Zero zero", "zero");
+        // Remove the string if it ends in zero
+        if (num.lastIndexOf("zero") == num.length() - 1) {
             num = num.substring(0, num.length() - 1);
         }
         return num;
     }
 
     /**
-     * 替换字符串中内容
+     * Replace the contents of a string
      * @param num
      * @param oldStr
      * @param newStr
@@ -96,51 +96,51 @@ public class MoneyUtil {
      */
     public static String numReplace(String num, String oldStr, String newStr) {
         while (true) {
-            // 判断字符串中是否包含指定字符
+            // Checks whether the string contains the specified character
             if (!num.contains(oldStr)) {
                 break;
             }
-            // 替换字符串
+            // Substitution string
             num = num.replaceAll(oldStr, newStr);
         }
-        // 返回替换后的字符串
+        // Returns the replaced string
         return num;
     }
 
     /**
-     * 把小写金额转成大写金额
+     * Convert the amount from lowercase to uppercase
      * @param d
      * @return
      */
     public static String convert(double d) {
-        // 实例化DecimalFormat对象
+        // instantiationDecimalFormatobject
         DecimalFormat df = new DecimalFormat("#0.###");
-        // 格式化double数字
+        // formattingdoubledigital
         String strNum = df.format(d);
-        // 判断是否包含小数点
+        // Determine whether a decimal point is included
         if (strNum.contains(".")) {
             String num = strNum.substring(0, strNum.indexOf("."));
-            // 整数部分大于12不能转换
+            // Integer part greater than12You cannot convert
             if (num.length() > 12) {
-                System.out.println("数字太大，不能完成转换！");
+                System.out.println("Number is too big,Unable to complete conversion!");
                 return "";
             }
         }
-        // 小数点
+        // The decimal point
         String point = "";
         if (strNum.contains(".")) {
-            point = "元";
+            point = "yuan";
         } else {
-            point = "元整";
+            point = "yuan";
         }
-        // 转换结果
+        // Conversion results
         String result = getInteger(strNum) + point + getDecimal(strNum);
-        // 判断是字符串是否已"元"结尾
-        if (result.startsWith("元")) {
-            // 截取字符串
+        // Check if the string is already"yuan"At the end
+        if (result.startsWith("yuan")) {
+            // Intercept string
             result = result.substring(1);
         }
-        // 返回新的字符串
+        // Return a new string
         return result;
     }
 }

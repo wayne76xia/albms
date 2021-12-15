@@ -1,6 +1,6 @@
 import request from '@/utils/request'
 
-// 查询在线用户列表
+// Example Query the list of online users
 export function list(query) {
   return request({
     url: '/monitor/online/list',
@@ -9,7 +9,7 @@ export function list(query) {
   })
 }
 
-// 强退用户
+// Strong back user
 export function forceLogout(tokenId) {
   return request({
     url: '/monitor/online/' + tokenId,

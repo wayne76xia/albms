@@ -1,9 +1,9 @@
 package alb.project.common;
 
 import alb.common.constant.Constants;
-import alb.common.utils.sign.Base64;
 import alb.common.utils.IdUtils;
 import alb.common.utils.VerifyCodeUtils;
+import alb.common.utils.sign.Base64;
 import alb.framework.redis.RedisCache;
 import alb.framework.web.domain.AjaxResult;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +16,7 @@ import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 /**
- * 验证码操作处理
+ * Verification code operation processing
  *
  */
 @RestController
@@ -26,19 +26,19 @@ public class CaptchaController
     private RedisCache redisCache;
 
     /**
-     * 生成验证码
+     * Generate captcha
      */
     @GetMapping("/captchaImage")
     public AjaxResult getCode(HttpServletResponse response) throws IOException
     {
-        // 生成随机字串
+        // Generate random strings
         String verifyCode = VerifyCodeUtils.generateVerifyCode(4);
-        // 唯一标识
+        // A unique identifier
         String uuid = IdUtils.simpleUUID();
         String verifyKey = Constants.CAPTCHA_CODE_KEY + uuid;
 
         redisCache.setCacheObject(verifyKey, verifyCode, Constants.CAPTCHA_EXPIRATION, TimeUnit.MINUTES);
-        // 生成图片
+        // Generate images
         int w = 111, h = 36;
         ByteArrayOutputStream stream = new ByteArrayOutputStream();
         VerifyCodeUtils.outputImage(w, h, stream, verifyCode);

@@ -19,7 +19,7 @@
         <result property="updateTime" column="update_time"/>
     </resultMap>
 
-    <!--查询角色列表-->
+    <!--Querying the Role List-->
     <select id="selectRoleList" resultType="alb.project.system.domain.SysRole">
         select r.role_id as roleId,
                r.role_name as roleName
@@ -28,7 +28,7 @@
         order by r.role_sort
     </select>
 
-    <!--查询是否下个实体-->
+    <!--Queries whether the next entity is created-->
     <select id="hasNext" resultType="java.lang.Long">
         select ha.next_approval_id
         from holiday_approval ha
@@ -39,7 +39,7 @@
         limit 1
     </select>
 
-    <!--查询单个实体-->
+    <!--Querying a single entity-->
     <select id="queryOne" resultMap="HolidayApprovalMap">
         select ha.holiday_approval_id,
                ha.holiday_type_id,
@@ -57,7 +57,7 @@
           limit 1
     </select>
 
-    <!--查询多个实体-->
+    <!--Querying multiple entities-->
     <select id="queryAll" resultMap="HolidayApprovalMap">
         select ha.holiday_approval_id,
         ha.holiday_type_id,
@@ -145,7 +145,7 @@
         </trim>
     </insert>
 
-    <!--通过主键修改数据-->
+    <!--Modify data by primary key-->
     <update id="update" parameterType="HolidayApproval">
         update holiday_approval
         <set>
@@ -163,7 +163,7 @@
         where holiday_approval_id = #{holidayApprovalId}
     </update>
 
-    <!--通过主键删除-->
+    <!--Delete by primary key-->
     <delete id="deleteById">
         delete from holiday_approval
         where holiday_approval_id = #{holidayApprovalId}

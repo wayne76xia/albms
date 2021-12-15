@@ -3,7 +3,7 @@
     <div class="map">
       <el-input
         v-model="addressKeyword"
-        placeholder="请输入地址查找相关位置"
+        placeholder="Please enter the address to find the relevant location"
         clearable
         style="margin-bottom: 20px"
       >
@@ -16,15 +16,15 @@
       <div id="container" style="width: 100%; height: 500px"></div>
       <div class="aui-padded-t-15 aui-padded-b-15 flex flex_start">
         <div>
-          <span>经度：</span>
+          <span>longitude:</span>
           <input class="aui-padded-5" type="text" v-model="shopInfo.lng" />
         </div>
         <div class="aui-padded-l-15">
-          <span>纬度：</span>
+          <span>latitude:</span>
           <input class="aui-padded-5" type="text" v-model="shopInfo.lat" />
         </div>
 
-        <!-- <span class="aui-padded-l-15">纬度：{{shopInfo.lat}}</span> -->
+        <!-- <span class="aui-padded-l-15">latitude:{{shopInfo.lat}}</span> -->
       </div>
     </div>
   </div>
@@ -36,7 +36,7 @@ export default {
   name: "qqmap",
   data() {
     return {
-      //腾讯地图
+      //Tencent map
       map: null,
       getAddress: null,
       getAddCode: null,
@@ -61,7 +61,7 @@ export default {
   },
 
   methods: {
-    //初始化地图
+    //Initialize the map
     init() {
       var that = this;
       maps.init("WW5BZ-LCN3U-VLPVA-4KQIT-PO5RO-ZVBOK", () => {
@@ -75,15 +75,15 @@ export default {
           document.getElementById("container"),
           myOptions
         );
-        //获取点击后的地址
+        //Gets the clicked address
         qq.maps.event.addListener(that.map, "click", function (event) {
-          // 获取点击后的地图坐标
+          // Gets the map coordinates after the click
           that.shopInfo.lng = event.latLng.getLng();
           that.shopInfo.lat = event.latLng.getLat();
           console.log(that.shopInfo);
           that.getAddressCode();
         });
-        //调用地址显示地图位置并设置地址
+        //The address call displays the map location and sets the address
         that.getAddress = new qq.maps.Geocoder({
           complete: function (result) {
             that.map.setCenter(result.detail.location);
@@ -96,7 +96,7 @@ export default {
             });
           },
         });
-        //通过坐标来显示地图地址
+        //Display map address by coordinates
         that.getAddCode = new qq.maps.Geocoder({
           complete: function (result) {
             that.addressKeyword = result.detail.address;
@@ -105,18 +105,18 @@ export default {
       });
     },
 
-    //通过地址获得位置
+    //Get location by address
     getAddressKeyword() {
       console.log(this.getAddress);
-      //通过getLocation();方法获取位置信息值
-      this.getAddress.getLocation(this.addressKeyword); //调用自带的接口
+      //throughgetLocation();Method to obtain the location information value
+      this.getAddress.getLocation(this.addressKeyword); //Call the native interface
     },
-    // 通过坐标获得地址
+    // Get the address from coordinates
     getAddressCode() {
       var lat = parseFloat(this.shopInfo.lat);
       var lng = parseFloat(this.shopInfo.lng);
       var latLng = new qq.maps.LatLng(lat, lng);
-      //调用获取位置方法
+      //Call the get location method
       this.getAddCode.getAddress(latLng);
     },
   },

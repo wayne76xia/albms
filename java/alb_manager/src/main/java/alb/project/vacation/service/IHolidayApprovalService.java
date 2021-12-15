@@ -6,63 +6,63 @@ import alb.project.vacation.domain.HolidayApproval;
 import java.util.List;
 
 /**
- * 假期表服务接口
+ * Vacation table service interface
  */
 public interface IHolidayApprovalService {
 
     /**
-     * 通过实体查询是否存在下一节点
+     * Check whether the next node exists by entity
      *
-     * @param holidayApproval 实例对象
-     * @return 实例对象
+     * @param holidayApproval Instance objects
+     * @return Instance objects
      */
     boolean hasNextApproved(HolidayApproval holidayApproval);
 
     /**
-     * 查询单条数据
+     * Example Query a single piece of data
      *
-     * @param holidayApprovalId 主键
-     * @return 实例对象
+     * @param holidayApprovalId A primary key
+     * @return Instance objects
      */
     HolidayApproval queryOne(Long holidayApprovalId);
 
     /**
-     * 检测插入后，假期类型是否有环
+     * After detection insertion,Whether the holiday type has a ring
      *
-     * @param holidayApproval 实例对象
-     * @return 实例对象
+     * @param holidayApproval Instance objects
+     * @return Instance objects
      */
     boolean hasRing(HolidayApproval holidayApproval);
 
     /**
-     * 通过实体作为筛选条件查询
+     * Query by entity as filter criteria
      *
-     * @param holidayApproval 实例对象
-     * @return 对象列表
+     * @param holidayApproval Instance objects
+     * @return The object list
      */
     List<HolidayApproval> queryAll(HolidayApproval holidayApproval);
 
 
     /**
-     * 查询角色列表
+     * Querying the Role List
      *
-     * @return 对象列表
+     * @return The object list
      */
     List<SysRole> selectRoleList();
 
     /**
-     * 新增数据
+     * The new data
      *
-     * @param holidayApproval 实例对象
-     * @return 影响行数
+     * @param holidayApproval Instance objects
+     * @return Affect the number of rows
      */
     int insert(HolidayApproval holidayApproval);
 
     /**
-     * 通过主键删除数据
+     * Delete data by primary key
      *
-     * @param holidayApprovalId 主键
-     * @return 是否成功
+     * @param holidayApprovalId A primary key
+     * @return The success of
      */
     int deleteById(Long holidayApprovalId);
 

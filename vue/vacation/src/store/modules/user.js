@@ -21,7 +21,7 @@ const user = {
 
         roles: [],
         permissions: [],
-        //新增
+        //new
         remark: '',
         infonum: '',
     },
@@ -71,7 +71,7 @@ const user = {
                 // })
             })
         },
-        // 登录
+        // The login
         Login({
             commit
         }, userInfo) {
@@ -90,7 +90,7 @@ const user = {
             })
         },
 
-        // 获取用户信息
+        // Obtaining User information
         GetInfo({
             commit,
             state
@@ -103,7 +103,7 @@ const user = {
                     });
                     const user = res.user
                     const avatar = user.avatar == "" ? require("@/assets/image/profile.jpg") : process.env.VUE_APP_BASE_API + user.avatar;
-                    if (res.roles && res.roles.length > 0) { // 验证返回的roles是否是一个非空数组
+                    if (res.roles && res.roles.length > 0) { // Validate returnedrolesIs a non-empty array
                         commit('SET_ROLES', res.roles)
                         commit('SET_PERMISSIONS', res.permissions)
                     } else {
@@ -123,7 +123,7 @@ const user = {
         },
 
 
-        // 退出系统
+        // Log out
         LogOut({
             commit,
             state
@@ -141,7 +141,7 @@ const user = {
             })
         },
 
-        // 前端 登出
+        // The front end logout
         FedLogOut({
             commit
         }) {

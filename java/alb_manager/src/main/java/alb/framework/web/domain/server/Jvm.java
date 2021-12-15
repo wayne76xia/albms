@@ -5,33 +5,33 @@ import alb.common.utils.Arith;
 import alb.common.utils.DateUtils;
 
 /**
- * JVM相关信息
+ * JVMThe relevant information
  *
  */
 public class Jvm
 {
     /**
-     * 当前JVM占用的内存总数(M)
+     * The currentJVMTotal memory occupied(M)
      */
     private double total;
 
     /**
-     * JVM最大可用内存总数(M)
+     * JVMMaximum amount of available memory(M)
      */
     private double max;
 
     /**
-     * JVM空闲内存(M)
+     * JVMFree memory(M)
      */
     private double free;
 
     /**
-     * JDK版本
+     * JDKversion
      */
     private String version;
 
     /**
-     * JDK路径
+     * JDKThe path
      */
     private String home;
 
@@ -76,7 +76,7 @@ public class Jvm
     }
 
     /**
-     * 获取JDK名称
+     * To obtainJDKThe name of the
      */
     public String getName()
     {
@@ -104,7 +104,7 @@ public class Jvm
     }
 
     /**
-     * JDK启动时间
+     * JDKThe startup time
      */
     public String getStartTime()
     {
@@ -112,7 +112,7 @@ public class Jvm
     }
 
     /**
-     * JDK运行时间
+     * JDKThe elapsed time
      */
     public String getRunTime()
     {

@@ -15,20 +15,19 @@ import java.util.Random;
 import javax.imageio.ImageIO;
 
 /**
- * 验证码工具类
+ * Captcha utility class
  *
  */
 public class VerifyCodeUtils
 {
-    // 使用到Algerian字体，系统里没有的话需要安装字体，字体只显示大写，去掉了1,0,i,o几个容易混淆的字符
     public static final String VERIFY_CODES = "123456789ABCDEFGHJKLMNPQRSTUVWXYZ";
 
     private static final Random random = new SecureRandom();
 
     /**
-     * 使用系统默认字符源生成验证码
+     * Generate a verification code using the system default character source
      * 
-     * @param verifySize 验证码长度
+     * @param verifySize Verification code length
      * @return
      */
     public static String generateVerifyCode(int verifySize)
@@ -37,10 +36,10 @@ public class VerifyCodeUtils
     }
 
     /**
-     * 使用指定源生成验证码
+     * Generates a captcha using the specified source
      * 
-     * @param verifySize 验证码长度
-     * @param sources 验证码字符源
+     * @param verifySize Verification code length
+     * @param sources Verification code character source
      * @return
      */
     public static String generateVerifyCode(int verifySize, String sources)
@@ -60,7 +59,7 @@ public class VerifyCodeUtils
     }
 
     /**
-     * 输出指定验证码图片流
+     * Output the specified captcha image stream
      * 
      * @param w
      * @param h
@@ -86,16 +85,16 @@ public class VerifyCodeUtils
         }
         Arrays.sort(fractions);
 
-        g2.setColor(Color.GRAY);// 设置边框色
+        g2.setColor(Color.GRAY);// Set the border color
         g2.fillRect(0, 0, w, h);
 
         Color c = getRandColor(200, 250);
-        g2.setColor(c);// 设置背景色
+        g2.setColor(c);// Set the background color
         g2.fillRect(0, 2, w, h - 4);
 
-        // 绘制干扰线
+        // Plot interference line
         Random random = new Random();
-        g2.setColor(getRandColor(160, 200));// 设置线条的颜色
+        g2.setColor(getRandColor(160, 200));// Sets the color of the line
         for (int i = 0; i < 20; i++)
         {
             int x = random.nextInt(w - 1);
@@ -105,8 +104,8 @@ public class VerifyCodeUtils
             g2.drawLine(x, y, x + xl + 40, y + yl + 20);
         }
 
-        // 添加噪点
-        float yawpRate = 0.05f;// 噪声率
+        // Add noise
+        float yawpRate = 0.05f;// Noise ratio
         int area = (int) (yawpRate * w * h);
         for (int i = 0; i < area; i++)
         {
@@ -116,7 +115,7 @@ public class VerifyCodeUtils
             image.setRGB(x, y, rgb);
         }
 
-        shear(g2, w, h, c);// 使图片扭曲
+        shear(g2, w, h, c);// Distort the picture
 
         g2.setColor(getRandColor(100, 160));
         int fontSize = h - 4;

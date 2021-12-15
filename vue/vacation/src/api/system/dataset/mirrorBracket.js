@@ -1,6 +1,6 @@
 import request from '@/utils/request'
 
-// 查询镜架参数列表
+// Query the frame parameter list
 export function listMirrorBracketParams(query) {
     return request({
         url: '/glasses/mirrorBracketParams/list',
@@ -9,7 +9,7 @@ export function listMirrorBracketParams(query) {
     })
 }
 
-// 查询镜架参数详细
+// Query details of frame parameters
 export function getMirrorBracketParams(type) {
     return request({
         url: '/glasses/mirrorBracketParams/getListByType?type=' + type,
@@ -17,7 +17,7 @@ export function getMirrorBracketParams(type) {
     })
 }
 
-// 新增镜架参数
+// Added frame parameters
 export function addMirrorBracketParams(data) {
     return request({
         url: '/glasses/mirrorBracketParams',
@@ -26,7 +26,7 @@ export function addMirrorBracketParams(data) {
     })
 }
 
-// 修改镜架参数
+// Modify frame parameters
 export function updateMirrorBracketParams(data) {
     return request({
         url: '/glasses/mirrorBracketParams',
@@ -35,7 +35,7 @@ export function updateMirrorBracketParams(data) {
     })
 }
 
-// 删除镜架参数
+// Delete frame parameters
 export function delMirrorBracketParams(id) {
     return request({
         url: '/glasses/mirrorBracketParams/' + id,
@@ -43,7 +43,7 @@ export function delMirrorBracketParams(id) {
     })
 }
 
-// 导出镜架参数
+// Export frame parameters
 export function exportMirrorBracketParams(query) {
     return request({
         url: '/glasses/mirrorBracketParams/export',

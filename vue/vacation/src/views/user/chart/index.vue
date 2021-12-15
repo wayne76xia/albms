@@ -1,33 +1,33 @@
 <template>
   <div>
     <div class="member">
-        <p class="font-size-20">用户分析</p>
+        <p class="font-size-20">User analysis</p>
       <div class="top_four flex aui-margin-t-15">
         <div class="top_four_item bg-white top_four_item1 flex bg-radius bg_shadow">
           <Chart1 id="chart1" height="100%" width="94%" style="margin-left:3%" :data="chartData" />
           <div class="top_four_item_text aui-padded-10">
-            <p>总公司员工数量</p>
+            <p>Number of head office employees</p>
             <div class="flex flex_start" style="align-items:flex-end">
               <p class="font-size-24 fw_bold aui-padded-t-5 aui-padded-r-5">{{chartData.totalUserNum}}</p>
               <!-- <img src="../../../assets/image/member_up.png" alt /> -->
             </div>
             <p class="aui-padded-t-5 font-size-14">
               <span class="text-green">{{chartData.totalUserNumRatio}}</span>
-              <span class="aui-padded-l-5">同上月对比</span>
+              <span class="aui-padded-l-5">Comparison with last month</span>
             </p>
           </div>
         </div>
         <div class="top_four_item bg-white top_four_item2 flex bg-radius bg_shadow">
           <Chart2 id="chart2" height="100%" width="94%" style="margin-left:3%" :data="chartData"/>
           <div class="top_four_item_text aui-padded-10">
-            <p>子公司数量</p>
+            <p>Number of subsidiaries</p>
             <div class="flex flex_start" style="align-items:flex-end;">
               <p class="font-size-24 fw_bold aui-padded-t-5 aui-padded-r-5">{{chartData.totalCompanyNum}}</p>
               <!-- <img src="../../../assets/image/member_down.png" alt /> -->
             </div>
             <p class="aui-padded-t-5 font-size-14">
               <span class="text-or">{{chartData.totalCompanyNumRatio}}</span>
-              <span class="aui-padded-l-5">同上月对比</span>
+              <span class="aui-padded-l-5">Comparison with last month</span>
             </p>
           </div>
         </div>
@@ -55,7 +55,7 @@ export default {
     return {
       dialogVisible: false,
       chartData:"",
-       data1: ["01月", "02月", "03月", "04月", "05月", "06月"],
+       data1: ["01month", "02month", "03month", "04month", "05month", "06month"],
       data2: [80, 90, 200, 400, 125, 200],
     };
   },
@@ -71,7 +71,7 @@ export default {
   },
   methods: {
     handleClose(done) {
-      this.$confirm("确认关闭？")
+      this.$confirm("Confirm the shut down?")
         .then((_) => {
           done();
         })

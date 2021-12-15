@@ -9,47 +9,47 @@ import alb.framework.aspectj.lang.annotation.Excel.ColumnType;
 import alb.framework.web.domain.BaseEntity;
 
 /**
- * 角色表 sys_role
+ * Character sheet sys_role
  *
  */
 public class SysRole extends BaseEntity
 {
     private static final long serialVersionUID = 1L;
 
-    /** 角色ID */
-    @Excel(name = "角色序号", cellType = ColumnType.NUMERIC)
+    /** roleID */
+    @Excel(name = "Part number", cellType = ColumnType.NUMERIC)
     private Long roleId;
 
-    /** 角色名称 */
-    @Excel(name = "角色名称")
+    /** Character name */
+    @Excel(name = "Character name")
     private String roleName;
 
-    /** 角色权限 */
-    @Excel(name = "角色权限")
+    /** Role authorization */
+    @Excel(name = "Role authorization")
     private String roleKey;
 
-    /** 角色排序 */
-    @Excel(name = "角色排序")
+    /** Character sorting */
+    @Excel(name = "Character sorting")
     private String roleSort;
 
-    /** 数据范围（1：所有数据权限；2：自定义数据权限；3：本部门数据权限；4：本部门及以下数据权限 5：仅本人数据权限） */
-    @Excel(name = "数据范围", readConverterExp = "1=所有数据权限,2=自定义数据权限,3=本部门数据权限,4=本部门及以下数据权限,5=仅本人数据权限")
+    /** Data range(1:All data permissions;2:Custom data permissions;3:Data permission of the department;4:Department and the following data rights 5:Only personal data permission) */
+    @Excel(name = "Data range", readConverterExp = "1=All data permissions,2=Custom data permissions,3=Data permission of the department,4=Department and the following data rights,5=Only personal data permission")
     private String dataScope;
 
-    /** 角色状态（0正常 1停用） */
-    @Excel(name = "角色状态", readConverterExp = "0=正常,1=停用")
+    /** A status(0normal 1disable) */
+    @Excel(name = "A status", readConverterExp = "0=normal,1=disable")
     private String status;
 
-    /** 删除标志（0代表存在 2代表删除） */
+    /** Delete logo(0On behalf of there 2On behalf of the delete) */
     private String delFlag;
 
-    /** 用户是否存在此角色标识 默认不存在 */
+    /** Whether the user has the role id Default does not exist */
     private boolean flag = false;
 
-    /** 菜单组 */
+    /** Menus group */
     private Long[] menuIds;
 
-    /** 部门组（数据权限） */
+    /** The department group(Data access) */
     private Long[] deptIds;
 
     public SysRole()
@@ -82,8 +82,8 @@ public class SysRole extends BaseEntity
         return roleId != null && 1L == roleId;
     }
 
-    @NotBlank(message = "角色名称不能为空")
-    @Size(min = 0, max = 30, message = "角色名称长度不能超过30个字符")
+    @NotBlank(message = "The role name cannot be empty")
+    @Size(min = 0, max = 30, message = "The role name cannot exceed the maximum length30A character")
     public String getRoleName()
     {
         return roleName;
@@ -94,8 +94,8 @@ public class SysRole extends BaseEntity
         this.roleName = roleName;
     }
 
-    @NotBlank(message = "权限字符不能为空")
-    @Size(min = 0, max = 100, message = "权限字符长度不能超过100个字符")
+    @NotBlank(message = "Permission characters cannot be empty")
+    @Size(min = 0, max = 100, message = "Permission characters cannot exceed the maximum length100A character")
     public String getRoleKey()
     {
         return roleKey;
@@ -106,7 +106,7 @@ public class SysRole extends BaseEntity
         this.roleKey = roleKey;
     }
 
-    @NotBlank(message = "显示顺序不能为空")
+    @NotBlank(message = "The display order cannot be empty")
     public String getRoleSort()
     {
         return roleSort;

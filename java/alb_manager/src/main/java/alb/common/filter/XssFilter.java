@@ -16,18 +16,18 @@ import javax.servlet.http.HttpServletResponse;
 import alb.common.utils.StringUtils;
 
 /**
- * 防止XSS攻击的过滤器
+ * To preventXSSAttack filter
  *
  */
 public class XssFilter implements Filter
 {
     /**
-     * 排除链接
+     * Rule out links
      */
     public List<String> excludes = new ArrayList<>();
 
     /**
-     * xss过滤开关
+     * xssFilter switch
      */
     public boolean enabled = false;
 

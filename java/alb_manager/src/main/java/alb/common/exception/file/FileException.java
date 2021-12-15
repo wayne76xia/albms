@@ -3,7 +3,7 @@ package alb.common.exception.file;
 import alb.common.exception.BaseException;
 
 /**
- * 文件信息异常类
+ * File information exception class
  *
  */
 public class FileException extends BaseException

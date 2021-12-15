@@ -9,30 +9,30 @@
           label-width="100px"
           class="aui-padded-l-10 aui-padded-r-10"
         >
-          <el-form-item label="登录地址：" prop="ipaddr">
+          <el-form-item label="The login address:" prop="ipaddr">
             <el-input
               v-model="queryParams.ipaddr"
-              placeholder="请输入登录地址"
+              placeholder="Please enter your login address"
               clearable
               style="width: 200px;"
               size="small"
               @keyup.enter.native="handleQuery"
             />
           </el-form-item>
-          <el-form-item label="用户名称：" prop="userName">
+          <el-form-item label="The user name:" prop="userName">
             <el-input
               v-model="queryParams.userName"
-              placeholder="请输入用户名称"
+              placeholder="Please enter a user name"
               clearable
               style="width: 200px;"
               size="small"
               @keyup.enter.native="handleQuery"
             />
           </el-form-item>
-          <el-form-item label="状态：" prop="status">
+          <el-form-item label="state:" prop="status">
             <el-select
               v-model="queryParams.status"
-              placeholder="登录状态"
+              placeholder="The login status"
               clearable
               size="small"
               style="width: 200px"
@@ -45,7 +45,7 @@
               />
             </el-select>
           </el-form-item>
-          <el-form-item label="登录时间：">
+          <el-form-item label="The login time:">
             <el-date-picker
               v-model="dateRange"
               size="small"
@@ -53,13 +53,13 @@
               value-format="yyyy-MM-dd"
               type="daterange"
               range-separator="-"
-              start-placeholder="开始日期"
-              end-placeholder="结束日期"
+              start-placeholder="Start date"
+              end-placeholder="End date"
             ></el-date-picker>
           </el-form-item>
           <el-form-item>
-            <el-button type="primary" icon="el-icon-search" size="mini" @click="handleQuery">搜索</el-button>
-            <el-button icon="el-icon-refresh" size="mini" @click="resetQuery">重置</el-button>
+            <el-button type="primary" icon="el-icon-search" size="mini" @click="handleQuery">search</el-button>
+            <el-button icon="el-icon-refresh" size="mini" @click="resetQuery">reset</el-button>
           </el-form-item>
 
           <el-row :gutter="10" class="mb8">
@@ -71,7 +71,7 @@
                 :disabled="multiple"
                 @click="handleDelete"
                 v-hasPermi="['monitor:logininfor:remove']"
-              >删除</el-button>
+              >delete</el-button>
             </el-col>
             <el-col :span="1.5">
               <el-button
@@ -80,7 +80,7 @@
                 size="mini"
                 @click="handleClean"
                 v-hasPermi="['monitor:logininfor:remove']"
-              >清空</el-button>
+              >empty</el-button>
             </el-col>
             <el-col :span="1.5">
               <el-button
@@ -89,7 +89,7 @@
                 size="mini"
                 @click="handleExport"
                 v-hasPermi="['system:logininfor:export']"
-              >导出</el-button>
+              >export</el-button>
             </el-col>
           </el-row>
         </el-form>
@@ -101,26 +101,26 @@
             stripe
           >
             <el-table-column type="selection" width="55" align="center" />
-            <el-table-column label="访问编号" align="center" prop="infoId" />
-            <el-table-column label="用户名称" align="center" prop="userName" />
+            <el-table-column label="Access number" align="center" prop="infoId" />
+            <el-table-column label="The user name" align="center" prop="userName" />
             <el-table-column
-              label="登录地址"
+              label="The login address"
               align="center"
               prop="ipaddr"
               width="130"
               :show-overflow-tooltip="true"
             />
             <el-table-column
-              label="登录地点"
+              label="The login site"
               align="center"
               prop="loginLocation"
               :show-overflow-tooltip="true"
             />
-            <el-table-column label="浏览器" align="center" prop="browser" />
-            <el-table-column label="操作系统" align="center" prop="os" />
-            <el-table-column label="登录状态" align="center" prop="status" :formatter="statusFormat" />
-            <el-table-column label="操作信息" align="center" prop="msg" />
-            <el-table-column label="登录日期" align="center" prop="loginTime" width="180">
+            <el-table-column label="The browser" align="center" prop="browser" />
+            <el-table-column label="The operating system" align="center" prop="os" />
+            <el-table-column label="The login status" align="center" prop="status" :formatter="statusFormat" />
+            <el-table-column label="Operational information" align="center" prop="msg" />
+            <el-table-column label="Login date" align="center" prop="loginTime" width="180">
               <template slot-scope="scope">
                 <span>{{ parseTime(scope.row.loginTime) }}</span>
               </template>
@@ -152,21 +152,21 @@ export default {
   name: "Logininfor",
   data() {
     return {
-      // 遮罩层
+      // The mask layer
       loading: true,
-      // 选中数组
+      // Select the array
       ids: [],
-      // 非多个禁用
+      // Non-multiple disable
       multiple: true,
-      // 总条数
+      // The total number of article
       total: 0,
-      // 表格数据
+      // Tabular data
       list: [],
-      // 状态数据字典
+      // State data dictionary
       statusOptions: [],
-      // 日期范围
+      // Date range
       dateRange: [],
-      // 查询参数
+      // Query parameters
       queryParams: {
         pageNum: 1,
         pageSize: 10,
@@ -183,7 +183,7 @@ export default {
     });
   },
   methods: {
-    /** 查询登录日志列表 */
+    /** Example Query the login log list */
     getList() {
       this.loading = true;
       list(this.addDateRange(this.queryParams, this.dateRange)).then(
@@ -194,35 +194,35 @@ export default {
         }
       );
     },
-    // 登录状态字典翻译
+    // Login status dictionary translation
     statusFormat(row, column) {
       return this.selectDictLabel(this.statusOptions, row.status);
     },
-    /** 搜索按钮操作 */
+    /** Search button operation */
     handleQuery() {
       this.queryParams.pageNum = 1;
       this.getList();
     },
-    /** 重置按钮操作 */
+    /** Reset button operation */
     resetQuery() {
       this.dateRange = [];
       this.resetForm("queryForm");
       this.handleQuery();
     },
-    // 多选框选中数据
+    // Select data in multiple boxes
     handleSelectionChange(selection) {
       this.ids = selection.map((item) => item.infoId);
       this.multiple = !selection.length;
     },
-    /** 删除按钮操作 */
+    /** Delete button operation */
     handleDelete(row) {
       const infoIds = row.infoId || this.ids;
       this.$confirm(
-        '是否确认删除访问编号为"' + infoIds + '"的数据项?',
-        "警告",
+        'Confirm whether to delete the access number"' + infoIds + '"Data item?',
+        "warning",
         {
-          confirmButtonText: "确定",
-          cancelButtonText: "取消",
+          confirmButtonText: "determine",
+          cancelButtonText: "cancel",
           type: "warning",
         }
       )
@@ -231,15 +231,15 @@ export default {
         })
         .then(() => {
           this.getList();
-          this.msgSuccess("删除成功");
+          this.msgSuccess("Delete the success");
         })
         .catch(function () {});
     },
-    /** 清空按钮操作 */
+    /** Clear button operation */
     handleClean() {
-      this.$confirm("是否确认清空所有登录日志数据项?", "警告", {
-        confirmButtonText: "确定",
-        cancelButtonText: "取消",
+      this.$confirm("Determine whether to delete all login log data items?", "warning", {
+        confirmButtonText: "determine",
+        cancelButtonText: "cancel",
         type: "warning",
       })
         .then(function () {
@@ -247,16 +247,16 @@ export default {
         })
         .then(() => {
           this.getList();
-          this.msgSuccess("清空成功");
+          this.msgSuccess("Empty the success");
         })
         .catch(function () {});
     },
-    /** 导出按钮操作 */
+    /** Export button operation */
     handleExport() {
       const queryParams = this.queryParams;
-      this.$confirm("是否确认导出所有操作日志数据项?", "警告", {
-        confirmButtonText: "确定",
-        cancelButtonText: "取消",
+      this.$confirm("Whether to export all operation log data items?", "warning", {
+        confirmButtonText: "determine",
+        cancelButtonText: "cancel",
         type: "warning",
       })
         .then(function () {

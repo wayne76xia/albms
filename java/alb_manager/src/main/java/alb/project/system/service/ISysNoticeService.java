@@ -5,56 +5,56 @@ import java.util.List;
 import alb.project.system.domain.SysNotice;
 
 /**
- * 公告 服务层
+ * The announcement The service layer
  *
  */
 public interface ISysNoticeService
 {
     /**
-     * 查询公告信息
+     * Querying Bulletin Information
      * 
-     * @param noticeId 公告ID
-     * @return 公告信息
+     * @param noticeId The announcementID
+     * @return Announcement of the information
      */
     SysNotice selectNoticeById(Long noticeId);
 
     /**
-     * 查询公告列表
+     * Querying the Bulletin List
      * 
-     * @param notice 公告信息
-     * @return 公告集合
+     * @param notice Announcement of the information
+     * @return The announcement set
      */
     List<SysNotice> selectNoticeList(SysNotice notice);
 
     /**
-     * 新增公告
+     * The new announcement
      * 
-     * @param notice 公告信息
-     * @return 结果
+     * @param notice Announcement of the information
+     * @return The results of
      */
     int insertNotice(SysNotice notice);
 
     /**
-     * 修改公告
+     * Modify bulletin
      * 
-     * @param notice 公告信息
-     * @return 结果
+     * @param notice Announcement of the information
+     * @return The results of
      */
     int updateNotice(SysNotice notice);
 
     /**
-     * 删除公告信息
+     * Deleting a Bulletin
      * 
-     * @param noticeId 公告ID
-     * @return 结果
+     * @param noticeId The announcementID
+     * @return The results of
      */
     int deleteNoticeById(Long noticeId);
     
     /**
-     * 批量删除公告信息
+     * Delete bulletins in batches
      * 
-     * @param noticeIds 需要删除的公告ID
-     * @return 结果
+     * @param noticeIds Bulletin to deleteID
+     * @return The results of
      */
     int deleteNoticeByIds(Long[] noticeIds);
 }

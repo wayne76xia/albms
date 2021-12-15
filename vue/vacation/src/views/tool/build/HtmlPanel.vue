@@ -17,7 +17,7 @@ Vue.use(MuseUI)
 Vue.use(VueResource);
 
 export default{
-  // 使用时请使用 :url.sync=""传值
+  // Please use when using :url.sync=""The value of
   props: {
     url: {
       required: true
@@ -40,18 +40,18 @@ export default{
   methods: {
     load (url) {
       if (url && url.length > 0) {
-        // 加载中
+        // In the load
         this.loading = true
         let param = {
           accept: 'text/html, text/plain'
         }
         this.$http.get(url, param).then((response) => {
           this.loading = false
-          // 处理HTML显示
+          // To deal withHTMLAccording to
           this.html = response.data
         }).catch(() => {
           this.loading = false
-          this.html = '加载失败'
+          this.html = 'Load failed'
         })
       }
     }

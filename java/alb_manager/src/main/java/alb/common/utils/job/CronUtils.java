@@ -1,21 +1,22 @@
 package alb.common.utils.job;
 
-import java.text.ParseException;
-import java.util.Date;
 import org.quartz.CronExpression;
 
+import java.text.ParseException;
+import java.util.Date;
+
 /**
- * cron表达式工具类
+ * cronExpression utility class
  *
  *
  */
 public class CronUtils
 {
     /**
-     * 返回一个布尔值代表一个给定的Cron表达式的有效性
+     * Returns a Boolean value representing a givenCronValidity of an expression
      *
-     * @param cronExpression Cron表达式
-     * @return boolean 表达式是否有效
+     * @param cronExpression Cronexpression
+     * @return boolean Whether the expression is valid
      */
     public static boolean isValid(String cronExpression)
     {
@@ -23,10 +24,10 @@ public class CronUtils
     }
 
     /**
-     * 返回一个字符串值,表示该消息无效Cron表达式给出有效性
+     * Returns a string value,Indicates that the message is invalidCronExpression gives validity
      *
-     * @param cronExpression Cron表达式
-     * @return String 无效时返回表达式错误描述,如果有效返回null
+     * @param cronExpression Cronexpression
+     * @return String Returns an expression error description when invalid,If it is validnull
      */
     public static String getInvalidMessage(String cronExpression)
     {
@@ -42,10 +43,10 @@ public class CronUtils
     }
 
     /**
-     * 返回下一个执行时间根据给定的Cron表达式
+     * Returns the next execution time based on the givenCronexpression
      *
-     * @param cronExpression Cron表达式
-     * @return Date 下次Cron表达式执行时间
+     * @param cronExpression Cronexpression
+     * @return Date The next timeCronExpression execution time
      */
     public static Date getNextExecution(String cronExpression)
     {

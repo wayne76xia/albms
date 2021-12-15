@@ -1,7 +1,7 @@
 package alb.common.exception;
 
 /**
- * 工具类异常
+ * Utility class exception
  *
  */
 public class UtilException extends RuntimeException

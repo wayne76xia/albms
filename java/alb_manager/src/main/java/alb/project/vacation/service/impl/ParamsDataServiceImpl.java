@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 /**
- * 参数设置Service业务层处理
+ * Parameter SettingsServiceBusiness layer processing
  *
  * @date 2020-07-16
  */
@@ -22,10 +22,10 @@ public class ParamsDataServiceImpl implements IParamsDataService {
     }
 
     /**
-     * 查询参数设置
+     * Querying Parameter Settings
      *
-     * @param id 参数设置ID
-     * @return 参数设置
+     * @param id Parameter SettingsID
+     * @return Parameter Settings
      */
     @Override
     public ParamsData selectParamsDataById(Long id) {
@@ -33,10 +33,10 @@ public class ParamsDataServiceImpl implements IParamsDataService {
     }
 
     /**
-     * 查询参数设置列表
+     * Example Query the parameter list
      *
-     * @param paramsData 参数设置
-     * @return 参数设置
+     * @param paramsData Parameter Settings
+     * @return Parameter Settings
      */
     @Override
     public List<ParamsData> selectParamsDataList(ParamsData paramsData) {
@@ -44,10 +44,10 @@ public class ParamsDataServiceImpl implements IParamsDataService {
     }
 
     /**
-     * 新增参数设置
+     * New Parameter Settings
      *
-     * @param paramsData 参数设置
-     * @return 结果
+     * @param paramsData Parameter Settings
+     * @return The results of
      */
     @Override
     public int insertParamsData(ParamsData paramsData) {
@@ -55,10 +55,10 @@ public class ParamsDataServiceImpl implements IParamsDataService {
     }
 
     /**
-     * 修改参数设置
+     * Modifying Parameter Settings
      *
-     * @param paramsData 参数设置
-     * @return 结果
+     * @param paramsData Parameter Settings
+     * @return The results of
      */
     @Override
     public int updateParamsData(ParamsData paramsData) {
@@ -66,10 +66,10 @@ public class ParamsDataServiceImpl implements IParamsDataService {
     }
 
     /**
-     * 批量删除参数设置
+     * Delete parameter Settings in batches
      *
-     * @param ids 需要删除的参数设置ID
-     * @return 结果
+     * @param ids Parameter Settings that you want to deleteID
+     * @return The results of
      */
     @Override
     public int deleteParamsDataByIds(Long[] ids) {
@@ -77,10 +77,10 @@ public class ParamsDataServiceImpl implements IParamsDataService {
     }
 
     /**
-     * 删除参数设置信息
+     * Example Delete parameter Settings
      *
-     * @param id 参数设置ID
-     * @return 结果
+     * @param id Parameter SettingsID
+     * @return The results of
      */
     @Override
     public int deleteParamsDataById(Long id) {

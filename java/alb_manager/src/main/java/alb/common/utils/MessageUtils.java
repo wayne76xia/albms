@@ -5,17 +5,17 @@ import org.springframework.context.MessageSource;
 import org.springframework.context.i18n.LocaleContextHolder;
 
 /**
- * 获取i18n资源文件
+ * To obtaini18nResource file
  *
  */
 public class MessageUtils
 {
     /**
-     * 根据消息键和参数 获取消息 委托给spring messageSource
+     * Based on message keys and parameters To get the message Entrusted tospring messageSource
      *
-     * @param code 消息键
-     * @param args 参数
-     * @return 获取国际化翻译值
+     * @param code Message key
+     * @param args parameter
+     * @return Gets the internationalized translation value
      */
     public static String message(String code, Object... args)
     {

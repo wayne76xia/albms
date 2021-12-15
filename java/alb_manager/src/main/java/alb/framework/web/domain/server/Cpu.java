@@ -3,38 +3,38 @@ package alb.framework.web.domain.server;
 import alb.common.utils.Arith;
 
 /**
- * CPU相关信息
+ * CPUThe relevant information
  *
  */
 public class Cpu
 {
     /**
-     * 核心数
+     * The core number
      */
     private int cpuNum;
 
     /**
-     * CPU总的使用率
+     * CPUTotal utilization rate
      */
     private double total;
 
     /**
-     * CPU系统使用率
+     * CPUSystem usage
      */
     private double sys;
 
     /**
-     * CPU用户使用率
+     * CPUUser usage
      */
     private double used;
 
     /**
-     * CPU当前等待率
+     * CPUCurrent waiting rate
      */
     private double wait;
 
     /**
-     * CPU当前空闲率
+     * CPUCurrent idle rate
      */
     private double free;
 

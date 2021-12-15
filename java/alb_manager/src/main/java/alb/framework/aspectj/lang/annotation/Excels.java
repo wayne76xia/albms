@@ -6,7 +6,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * Excel注解集
+ * ExcelAnnotation set
  *
  */
 @Target(ElementType.FIELD)

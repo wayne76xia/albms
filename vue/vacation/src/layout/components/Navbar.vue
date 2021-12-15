@@ -24,13 +24,13 @@
         </div>
         <el-dropdown-menu slot="dropdown">
           <router-link to="/user/profile">
-            <el-dropdown-item>个人中心</el-dropdown-item>
+            <el-dropdown-item>Personal center</el-dropdown-item>
           </router-link>
           <el-dropdown-item @click.native="setting = true">
-            <span>布局设置</span>
+            <span>Layout Settings</span>
           </el-dropdown-item>
           <el-dropdown-item divided @click.native="logout">
-            <span>退出登录</span>
+            <span>Log out</span>
           </el-dropdown-item>
         </el-dropdown-menu>
       </el-dropdown>
@@ -53,17 +53,17 @@
       <!-- <template v-if="device!=='mobile'">
         <search id="header-search" class="right-menu-item" />
         
-        <el-tooltip content="源码地址" effect="dark" placement="bottom">
+        <el-tooltip content="The source address" effect="dark" placement="bottom">
           <ruo-yi-git id="ruoyi-git" class="right-menu-item hover-effect" />
         </el-tooltip>
 
-        <el-tooltip content="文档地址" effect="dark" placement="bottom">
+        <el-tooltip content="The document address" effect="dark" placement="bottom">
           <ruo-yi-doc id="ruoyi-doc" class="right-menu-item hover-effect" />
         </el-tooltip>
 
         <screenfull id="screenfull" class="right-menu-item hover-effect" />
 
-        <el-tooltip content="布局大小" effect="dark" placement="bottom">
+        <el-tooltip content="The layout size" effect="dark" placement="bottom">
           <size-select id="size-select" class="right-menu-item hover-effect" />
         </el-tooltip>
 
@@ -122,15 +122,15 @@ export default {
   },
   methods: {
     info() {
-      this.$router.push({ name: "消息", path: "/information/info" });
+      this.$router.push({ name: "The message", path: "/information/info" });
     },
     toggleSideBar() {
       this.$store.dispatch("app/toggleSideBar");
     },
     async logout() {
-      this.$confirm("确定注销并退出系统吗？", "提示", {
-        confirmButtonText: "确定",
-        cancelButtonText: "取消",
+      this.$confirm("Are you sure to log out and exit the system?", "prompt", {
+        confirmButtonText: "determine",
+        cancelButtonText: "cancel",
         type: "warning",
       }).then(() => {
         this.$store.dispatch("LogOut").then(() => {

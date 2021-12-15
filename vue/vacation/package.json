@@ -1,7 +1,7 @@
 {
   "name": "ruoyi",
   "version": "2.3.0",
-  "description": "假期预定管理系统",
+  "description": "Holiday reservation management system",
   "author": "yingyingying",
   "license": "MIT",
   "scripts": {

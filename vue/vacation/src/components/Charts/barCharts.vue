@@ -57,17 +57,17 @@ export default {
 
       this.chart.setOption({
         legend: {
-          type: "plain", // 图列类型，默认为 'plain'
-          top: "0%", // 图列相对容器的位置 top\bottom\left\right
+          type: "plain", // Figure column type,The default is 'plain'
+          top: "0%", // The position of the diagram column relative to the container top\bottom\left\right
           selected: {
-            // '销量': true  // 图列选择，图形加载出来会显示选择的图列，默认为true
+            // 'sales': true  // Figure column selection,The graph loads to show the selected graph column,The default istrue
           },
           textStyle: {
-            // 图列内容样式
-            color: "#0D1444", // 字体颜色
+            // Diagram column content style
+            color: "#0D1444", // The font color
           },
           tooltip: {
-            // 图列提示框，默认不显示
+            // Figure column prompt box,Not displayed by default
             show: true,
             color: "red",
           },
@@ -75,8 +75,8 @@ export default {
         tooltip: {
           trigger: "axis",
           axisPointer: {
-            // 坐标轴指示器，坐标轴触发有效
-            type: "shadow", // 默认为直线，可选为：'line' | 'shadow'
+            // Axis indicator,Axis trigger works
+            type: "shadow", // Default is a straight line,Optional for:'line' | 'shadow'
           },
         },
         grid: {
@@ -97,8 +97,8 @@ export default {
             axisLine: {
               lineStyle: {
                 type: "solid",
-                color: "#eee", //左边线的颜色
-                width: "1", //坐标线的宽度
+                color: "#eee", //The color of the left line
+                width: "1", //The width of the coordinate line
               },
             },
             axisLabel: {
@@ -106,7 +106,7 @@ export default {
                 // interval:3,
                 rotate:30,
               textStyle: {
-                color: "#0D1444", //坐标值得具体的颜色
+                color: "#0D1444", //Coordinates are worth specific colors
               },
             },
           },
@@ -120,21 +120,21 @@ export default {
             axisLine: {
               lineStyle: {
                 type: "solid",
-                color: "#eee", //左边线的颜色
-                width: "1", //坐标线的宽度
+                color: "#eee", //The color of the left line
+                width: "1", //The width of the coordinate line
               },
             },
             axisLabel: {
               
               textStyle: {
-                color: "#0D1444", //坐标值得具体的颜色
+                color: "#0D1444", //Coordinates are worth specific colors
               },
             },
           },
         ],
         series: [
           {
-            name: "业绩达标门店数量",
+            name: "Number of stores meeting performance standards",
             type: "bar",
             stack: "vistors",
             barWidth: "50%",
@@ -143,7 +143,7 @@ export default {
             color: ["#4860FB"],
           },
           {
-            name: "门店数量",
+            name: "Number of stores",
             type: "bar",
             stack: "vistors",
             barWidth: "50%",

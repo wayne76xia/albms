@@ -1,12 +1,12 @@
 /**
- * 通用js方法封装处理
+ * generaljsMethod encapsulation processing
  * Copyright (c) 2019 ruoyi
  */
 
 const baseURL = process.env.VUE_APP_BASE_API
     // const baseURL = 'http://47.101.183.57:8080'
 
-// 日期格式化
+// Date formatting
 export function parseTime(time, pattern) {
     if (arguments.length === 0 || !time) {
         return null
@@ -38,7 +38,7 @@ export function parseTime(time, pattern) {
     const time_str = format.replace(/{(y|m|d|h|i|s|a)+}/g, (result, key) => {
         let value = formatObj[key]
             // Note: getDay() returns 0 on Sunday
-        if (key === 'a') { return ['日', '一', '二', '三', '四', '五', '六'][value] }
+        if (key === 'a') { return ['day', 'one', 'two', 'three', 'four', 'five', 'six'][value] }
         if (result.length > 0 && value < 10) {
             value = '0' + value
         }
@@ -47,14 +47,14 @@ export function parseTime(time, pattern) {
     return time_str
 }
 
-// 表单重置
+// Reset the form
 export function resetForm(refName) {
     if (this.$refs[refName]) {
         this.$refs[refName].resetFields();
     }
 }
 
-// 添加日期范围
+// Add date range
 export function addDateRange(params, dateRange) {
     var search = params;
     search.beginTime = "";
@@ -66,7 +66,7 @@ export function addDateRange(params, dateRange) {
     return search;
 }
 
-// 回显数据字典
+// The data dictionary is displayed
 export function selectDictLabel(datas, value) {
     var actions = [];
     Object.keys(datas).map((key) => {
@@ -78,12 +78,12 @@ export function selectDictLabel(datas, value) {
     return actions.join('');
 }
 
-// 通用下载方法
+// Common download method
 export function download(fileName) {
     window.location.href = baseURL + "/common/download?fileName=" + encodeURI(fileName) + "&delete=" + true;
 }
 
-// 字符串格式化(%s )
+// String formatting(%s )
 export function sprintf(str) {
     var args = arguments,
         flag = true,
@@ -99,7 +99,7 @@ export function sprintf(str) {
     return flag ? str : '';
 }
 
-// 转换字符串，undefined,null等转化为""
+// Conversion string,undefined,nullSuch as into""
 export function praseStrEmpty(str) {
     if (!str || str == "undefined" || str == "null") {
         return "";
@@ -108,28 +108,28 @@ export function praseStrEmpty(str) {
 }
 
 /**
- * 构造树型结构数据
- * @param {*} data 数据源
- * @param {*} id id字段 默认 'id'
- * @param {*} parentId 父节点字段 默认 'parentId'
- * @param {*} children 孩子节点字段 默认 'children'
- * @param {*} rootId 根Id 默认 0
+ * Construct the tree structure data
+ * @param {*} data The data source
+ * @param {*} id idfield The default 'id'
+ * @param {*} parentId Parent node field The default 'parentId'
+ * @param {*} children Child node field The default 'children'
+ * @param {*} rootId The rootId The default 0
  */
 export function handleTree(data, id, parentId, children, rootId) {
     id = id || 'id'
     parentId = parentId || 'parentId'
     children = children || 'children'
     rootId = rootId || 0
-        //对源数据深度克隆
+        //Deep clone source data
     const cloneData = JSON.parse(JSON.stringify(data))
-        //循环所有项
+        //Loop through all items
     const treeData = cloneData.filter(father => {
         let branchArr = cloneData.filter(child => {
-            //返回每一项的子级数组
+            //Returns a subseries set for each term
             return father[id] === child[parentId]
         });
         branchArr.length > 0 ? father.children = branchArr : '';
-        //返回第一层
+        //Return to the first layer
         return father[parentId] === rootId;
     });
     return treeData != '' ? treeData : data;

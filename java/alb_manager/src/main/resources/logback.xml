@@ -1,69 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
-    <!-- 日志存放路径 -->
+    <!-- Log Storage Path -->
 	<property name="log.path" value="./logs" />
-    <!-- 日志输出格式 -->
+    <!-- Log Output format -->
 	<property name="log.pattern" value="%d{HH:mm:ss.SSS} [%thread] %-5level %logger{20} - [%method,%line] - %msg%n" />
 
-	<!-- 控制台输出 -->
+	<!-- Console output -->
 	<appender name="console" class="ch.qos.logback.core.ConsoleAppender">
 		<encoder>
 			<pattern>${log.pattern}</pattern>
 		</encoder>
 	</appender>
 	
-	<!-- 系统日志输出 -->
+	<!-- System Log Output -->
 	<appender name="file_info" class="ch.qos.logback.core.rolling.RollingFileAppender">
 	    <file>${log.path}/sys-info.log</file>
-        <!-- 循环政策：基于时间创建日志文件 -->
+        <!-- Circulation policy:Create log files based on time -->
 		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <!-- 日志文件名格式 -->
+            <!-- Log file name format -->
 			<fileNamePattern>${log.path}/sys-info.%d{yyyy-MM-dd}.log</fileNamePattern>
-			<!-- 日志最大的历史 60天 -->
+			<!-- Log maximum history 60day -->
 			<maxHistory>60</maxHistory>
 		</rollingPolicy>
 		<encoder>
 			<pattern>${log.pattern}</pattern>
 		</encoder>
 		<filter class="ch.qos.logback.classic.filter.LevelFilter">
-            <!-- 过滤的级别 -->
+            <!-- Level of filtering -->
             <level>INFO</level>
-            <!-- 匹配时的操作：接收（记录） -->
+            <!-- The operation when matching:receive(record) -->
             <onMatch>ACCEPT</onMatch>
-            <!-- 不匹配时的操作：拒绝（不记录） -->
+            <!-- Operation in case of a mismatch:Refused to(Don't record) -->
             <onMismatch>DENY</onMismatch>
         </filter>
 	</appender>
 	
 	<appender name="file_error" class="ch.qos.logback.core.rolling.RollingFileAppender">
 	    <file>${log.path}/sys-error.log</file>
-        <!-- 循环政策：基于时间创建日志文件 -->
+        <!-- Circulation policy:Create log files based on time -->
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <!-- 日志文件名格式 -->
+            <!-- Log file name format -->
             <fileNamePattern>${log.path}/sys-error.%d{yyyy-MM-dd}.log</fileNamePattern>
-			<!-- 日志最大的历史 60天 -->
+			<!-- Log maximum history 60day -->
 			<maxHistory>60</maxHistory>
         </rollingPolicy>
         <encoder>
             <pattern>${log.pattern}</pattern>
         </encoder>
         <filter class="ch.qos.logback.classic.filter.LevelFilter">
-            <!-- 过滤的级别 -->
+            <!-- Level of filtering -->
             <level>ERROR</level>
-			<!-- 匹配时的操作：接收（记录） -->
+			<!-- The operation when matching:receive(record) -->
             <onMatch>ACCEPT</onMatch>
-			<!-- 不匹配时的操作：拒绝（不记录） -->
+			<!-- Operation in case of a mismatch:Refused to(Don't record) -->
             <onMismatch>DENY</onMismatch>
         </filter>
     </appender>
 	
-	<!-- 用户访问日志输出  -->
+	<!-- User access logs are generated  -->
     <appender name="sys-user" class="ch.qos.logback.core.rolling.RollingFileAppender">
 		<file>${log.path}/sys-user.log</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <!-- 按天回滚 daily -->
+            <!-- According to the days rolled back daily -->
             <fileNamePattern>${log.path}/sys-user.%d{yyyy-MM-dd}.log</fileNamePattern>
-            <!-- 日志最大的历史 60天 -->
+            <!-- Log maximum history 60day -->
             <maxHistory>60</maxHistory>
         </rollingPolicy>
         <encoder>
@@ -71,22 +71,22 @@
         </encoder>
     </appender>
 	
-	<!-- 系统模块日志级别控制  -->
+	<!-- System module log level control  -->
 	<logger name="alb" level="info" />
-	<!-- Spring日志级别控制  -->
+	<!-- SpringLog Level Control  -->
 	<logger name="org.springframework" level="warn" />
 
 	<root level="info">
 		<appender-ref ref="console" />
 	</root>
 	
-	<!--系统操作日志-->
+	<!--System Operation logs-->
     <root level="info">
         <appender-ref ref="file_info" />
         <appender-ref ref="file_error" />
     </root>
 	
-	<!--系统用户操作日志-->
+	<!--Operation logs of system users-->
     <logger name="sys-user" level="info">
         <appender-ref ref="sys-user"/>
     </logger>

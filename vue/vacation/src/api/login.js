@@ -1,6 +1,6 @@
 import request from '@/utils/request'
 
-// 登录方法
+// Login method
 export function login(username, password, code, uuid) {
     const data = {
         username,
@@ -14,7 +14,7 @@ export function login(username, password, code, uuid) {
         data: data
     })
 }
-//根据登录名获取部门
+//Get the department based on the login name
 
 export function getUserName(user) {
     return request({
@@ -26,7 +26,7 @@ export function getUserName(user) {
 
 
 
-// 获取用户详细信息
+// Get user details
 export function getInfo() {
     return request({
         url: '/getInfo',
@@ -35,7 +35,7 @@ export function getInfo() {
 }
 
 
-//获取登录页面图片及技术客服电话
+//Obtain the login page picture and technical customer service number
 export function getLoginInfo() {
     return request({
         url: '/getLoginBackGroundPicAndTechnicalPhone',
@@ -44,7 +44,7 @@ export function getLoginInfo() {
 }
 
 
-// 退出方法
+// Exit the method
 export function logout() {
     return request({
         url: '/logout',
@@ -52,7 +52,7 @@ export function logout() {
     })
 }
 
-// 获取验证码
+// Obtaining verification code
 export function getCodeImg() {
     return request({
         url: '/captchaImage',

@@ -5,18 +5,18 @@ import com.google.common.base.Optional;
 import java.math.BigDecimal;
 
 /**
- * @ClassName : BigDecimalUtils  //类名
- * @Description : decimal工具类  //描述
- * @Date: 2019-12-10 14:05  //时间
+ * @ClassName : BigDecimalUtils  //The name of the class
+ * @Description : decimalUtility class  //describe
+ * @Date: 2019-12-10 14:05  //time
  */
 public class BigDecimalUtils {
 
 
     /**
-     * 大于
-     * @param b1 操作数1
-     * @param b2 操作数2
-     * @return 结果
+     * Is greater than
+     * @param b1 The operand1
+     * @param b2 The operand2
+     * @return The results of
      */
     public static boolean greaterThan(BigDecimal b1, BigDecimal b2) {
         if (b1 == null) {
@@ -29,10 +29,10 @@ public class BigDecimalUtils {
     }
 
     /**
-     * 大于或等于
-     * @param b1 操作数1
-     * @param b2 操作数2
-     * @return 结果
+     * Greater than or equal to
+     * @param b1 The operand1
+     * @param b2 The operand2
+     * @return The results of
      */
     public static boolean greaterOrEquals(BigDecimal b1, BigDecimal b2) {
         if (b1 == null) {
@@ -45,10 +45,10 @@ public class BigDecimalUtils {
     }
 
     /**
-     * 小于
-     * @param b1 操作数1
-     * @param b2 操作数2
-     * @return 结果
+     * Less than
+     * @param b1 The operand1
+     * @param b2 The operand2
+     * @return The results of
      */
     public static boolean lessThan(BigDecimal b1, BigDecimal b2) {
         if (b1 == null) {
@@ -61,10 +61,10 @@ public class BigDecimalUtils {
     }
 
     /**
-     * 小于或等于
-     * @param b1 操作数1
-     * @param b2 操作数2
-     * @return 结果
+     * Less than or equal to
+     * @param b1 The operand1
+     * @param b2 The operand2
+     * @return The results of
      */
     public static boolean lessOrEquals(BigDecimal b1, BigDecimal b2) {
         if (b1 == null) {
@@ -77,10 +77,10 @@ public class BigDecimalUtils {
     }
 
     /**
-     * 等于
-     * @param b1 操作数1
-     * @param b2 操作数2
-     * @return 结果
+     * Is equal to the
+     * @param b1 The operand1
+     * @param b2 The operand2
+     * @return The results of
      */
     public static boolean equals(BigDecimal b1, BigDecimal b2) {
         if (b1 == null) {
@@ -94,37 +94,37 @@ public class BigDecimalUtils {
 
 //    public static Integer compare(BigDecimal a,BigDecimal b){
 //        Integer i = null;
-//        //使用compareTo方法比较
-//        //注意：a、b均不能为null，否则会报空指针
+//        //usecompareToMethods to compare
+//        //Pay attention to:a、bAre not asnull,Otherwise a null pointer is reported
 //        if(a.compareTo(b) == -1){
 //            i = -1;
-////            System.out.println("a小于b");
+////            System.out.println("aLess thanb");
 //        }
 //
 //        if(a.compareTo(b) == 0){
 //            i = 0;
-////            System.out.println("a等于b");
+////            System.out.println("aIs equal to theb");
 //        }
 //
 //        if(a.compareTo(b) == 1){
 //            i = 1;
-////            System.out.println("a大于b");
+////            System.out.println("aIs greater thanb");
 //        }
 //
 //        if(a.compareTo(b) > -1){
 //            i = 2;
-////            System.out.println("a大于等于b");
+////            System.out.println("aGreater than or equal tob");
 //        }
 //
 //        if(a.compareTo(b) < 1){
 //            i = 3;
-////            System.out.println("a小于等于b");
+////            System.out.println("aLess than or equal tob");
 //        }
 //        return i;
 //    }
 
     /**
-     * BigDecimal的加法运算封装
+     * BigDecimalThe addition operation encapsulation of
      * @param b1
      * @param bn
      * @return
@@ -142,10 +142,10 @@ public class BigDecimalUtils {
     }
 
     /**
-     * Integer加法运算的封装
-     * @param b1   第一个数
-     * @param bn   需要加的加法数组
-     * @注 ： Optional  是属于com.google.common.base.Optional<T> 下面的class
+     * IntegerEncapsulation of addition operations
+     * @param b1   The first number
+     * @param bn   The additive array to add
+     * @note : Optional  It is to belong tocom.google.common.base.Optional<T> The followingclass
      * @return
      */
     public static Integer safeAdd(Integer b1, Integer... bn) {
@@ -162,7 +162,7 @@ public class BigDecimalUtils {
     }
 
     /**
-     * 计算金额方法
+     * Calculation method
      * @param b1
      * @param bn
      * @return
@@ -172,10 +172,10 @@ public class BigDecimalUtils {
     }
 
     /**
-     * BigDecimal的安全减法运算
-     * @param isZero  减法结果为负数时是否返回0，true是返回0（金额计算时使用），false是返回负数结果
-     * @param b1		   被减数
-     * @param bn        需要减的减数数组
+     * BigDecimalSafety subtraction operation
+     * @param isZero  Whether to return if the subtraction result is negative0,trueIs to return0(For the calculation of the amount),falseIs to return negative result
+     * @param b1		   minuend
+     * @param bn        The subtraction array to subtract
      * @return
      */
     public static BigDecimal safeSubtract(Boolean isZero, BigDecimal b1, BigDecimal... bn) {
@@ -192,7 +192,7 @@ public class BigDecimalUtils {
     }
 
     /**
-     * 整型的减法运算，小于0时返回0
+     * The subtraction operation of an integer,Less than0When to return to0
      * @param b1
      * @param bn
      * @return
@@ -211,7 +211,6 @@ public class BigDecimalUtils {
     }
 
     /**
-     * 金额除法计算，返回2位小数（具体的返回多少位大家自己看着改吧）
      * @param b1
      * @param b2
      * @return
@@ -221,8 +220,8 @@ public class BigDecimalUtils {
     }
 
     /**
-     * BigDecimal的除法运算封装，如果除数或者被除数为0，返回默认值
-     * 默认返回小数位后2位，用于金额计算
+     * BigDecimalDivision operation encapsulation,If the divisor or dividend is zero0,Return the default value
+     * Default return after decimal place2position,For amount calculation
      * @param b1
      * @param b2
      * @param defaultValue
@@ -240,7 +239,7 @@ public class BigDecimalUtils {
     }
 
     /**
-     * BigDecimal的乘法运算封装
+     * BigDecimalThe multiplication operation encapsulation of
      * @param b1
      * @param b2
      * @return

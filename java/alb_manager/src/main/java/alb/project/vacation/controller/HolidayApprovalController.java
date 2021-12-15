@@ -22,14 +22,14 @@ import java.util.List;
 @RequestMapping("/vacation/holiday/approval")
 public class HolidayApprovalController extends BaseController {
 
-    @Resource // @Resource（这个注解属于J2EE的），默认按照名称进行装配
+    @Resource // @Resource(This annotation belongs toJ2EEthe),The assembly is by name by default
     private IHolidayApprovalService holidayApprovalService;
 
     /**
-     * 查询单条数据
+     * Example Query a single piece of data
      *
-     * @param holidayApprovalId 主键
-     * @return 实例对象
+     * @param holidayApprovalId A primary key
+     * @return Instance objects
      */
     @GetMapping("/{holidayApprovalId}")
     @PreAuthorize("@ss.hasPermi('vacation:holidayApproval:query')")
@@ -39,7 +39,7 @@ public class HolidayApprovalController extends BaseController {
     }
 
     /**
-     * 查询多条数据
+     * Querying multiple pieces of Data
      *
      * @param holidayApproval
      * @return
@@ -53,9 +53,9 @@ public class HolidayApprovalController extends BaseController {
     }
 
     /**
-     * 查询角色列表
+     * Querying the Role List
      *
-     * @return 对象列表
+     * @return The object list
      */
     @GetMapping("/roleList")
     @PreAuthorize("@ss.hasPermi('vacation:holidayApproval:list')")
@@ -64,33 +64,33 @@ public class HolidayApprovalController extends BaseController {
     }
 
     /**
-     * 新增数据
+     * The new data
      *
-     * @param holidayApproval 实例对象
-     * @return 实例对象
+     * @param holidayApproval Instance objects
+     * @return Instance objects
      */
     @PostMapping("")
     @PreAuthorize("@ss.hasPermi('vacation:holidayApproval:add')")
-    @Log(title = "假期", businessType = BusinessType.INSERT)
+    @Log(title = "During the holiday", businessType = BusinessType.INSERT)
     public AjaxResult addHolidayApproval(@RequestBody HolidayApproval holidayApproval) {
         if (this.holidayApprovalService.hasRing(holidayApproval)) {
-            return AjaxResult.error("新增失败，无法添加该项");
+            return AjaxResult.error("The new failure,Unable to add item");
         }
         int count = this.holidayApprovalService.insert(holidayApproval);
-        return count > 0 ? AjaxResult.success("新增成功") : AjaxResult.error("新增失败");
+        return count > 0 ? AjaxResult.success("New success") : AjaxResult.error("The new failure");
     }
 
     /**
-     * 通过主键删除数据
+     * Delete data by primary key
      *
-     * @param holidayApprovalId 主键
-     * @return 是否成功
+     * @param holidayApprovalId A primary key
+     * @return The success of
      */
     @DeleteMapping("/{holidayApprovalId}")
     @PreAuthorize("@ss.hasPermi('vacation:holidayApproval:delete')")
-    @Log(title = "假期", businessType = BusinessType.DELETE)
+    @Log(title = "During the holiday", businessType = BusinessType.DELETE)
     public AjaxResult deleteById(@PathVariable("holidayApprovalId") Long holidayApprovalId) {
         int count = this.holidayApprovalService.deleteById(holidayApprovalId);
-        return count > 0 ? AjaxResult.success("删除成功") : AjaxResult.error("删除失败");
+        return count > 0 ? AjaxResult.success("Delete the success") : AjaxResult.error("Delete failed");
     }
 }

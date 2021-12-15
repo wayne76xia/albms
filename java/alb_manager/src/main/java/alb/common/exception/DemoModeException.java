@@ -1,7 +1,7 @@
 package alb.common.exception;
 
 /**
- * 演示模式异常
+ * Abnormal presentation mode
  *
  */
 public class DemoModeException extends RuntimeException

@@ -6,62 +6,62 @@ import alb.project.vacation.domain.HolidayApproval;
 import java.util.List;
 
 /**
- * 假期事项表数据库访问层
+ * Vacation to-do list database access layer
  */
 public interface HolidayApprovalMapper {
 
     /**
-     * 通过实体查询是否存在下一节点
+     * Check whether the next node exists by entity
      *
-     * @param holidayApproval 实例对象
-     * @return 实例对象
+     * @param holidayApproval Instance objects
+     * @return Instance objects
      */
     Long hasNext(HolidayApproval holidayApproval);
 
     /**
-     * 通过ID查询单条数据
+     * throughIDExample Query a single piece of data
      *
-     * @param holidayApprovalId 主键
-     * @return 实例对象
+     * @param holidayApprovalId A primary key
+     * @return Instance objects
      */
     HolidayApproval queryOne(Long holidayApprovalId);
 
     /**
-     * 通过实体作为筛选条件查询
+     * Query by entity as filter criteria
      *
-     * @param holidayApproval 实例对象
-     * @return 对象列表
+     * @param holidayApproval Instance objects
+     * @return The object list
      */
     List<HolidayApproval> queryAll(HolidayApproval holidayApproval);
 
     /**
-     * 新增数据
+     * The new data
      *
-     * @param holidayApproval 实例对象
-     * @return 影响行数
+     * @param holidayApproval Instance objects
+     * @return Affect the number of rows
      */
     int insert(HolidayApproval holidayApproval);
 
     /**
-     * 修改数据
+     * Modify the data
      *
-     * @param holidayApproval 实例对象
-     * @return 影响行数
+     * @param holidayApproval Instance objects
+     * @return Affect the number of rows
      */
     int update(HolidayApproval holidayApproval);
 
     /**
-     * 通过主键删除数据
+     * Delete data by primary key
      *
-     * @param holidayId 主键
-     * @return 影响行数
+     * @param holidayId A primary key
+     * @return Affect the number of rows
      */
     int deleteById(Long holidayId);
 
     /**
-     * 查询角色列表
+     * Querying the Role List
      *
-     * @return 对象列表
+     * @return The object list
      */
     List<SysRole> selectRoleList();
 }

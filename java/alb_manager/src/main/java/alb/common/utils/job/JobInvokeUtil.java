@@ -10,15 +10,15 @@ import alb.common.utils.spring.SpringUtils;
 import alb.project.monitor.domain.SysJob;
 
 /**
- * 任务执行工具
+ * Task execution tool
  *
  */
 public class JobInvokeUtil
 {
     /**
-     * 执行方法
+     * Execution method
      *
-     * @param sysJob 系统任务
+     * @param sysJob System task
      */
     public static void invokeMethod(SysJob sysJob) throws Exception
     {
@@ -40,11 +40,11 @@ public class JobInvokeUtil
     }
 
     /**
-     * 调用任务方法
+     * Calling task methods
      *
-     * @param bean 目标对象
-     * @param methodName 方法名称
-     * @param methodParams 方法参数
+     * @param bean The target object
+     * @param methodName Method names
+     * @param methodParams The method parameters
      */
     private static void invokeMethod(Object bean, String methodName, List<Object[]> methodParams)
             throws NoSuchMethodException, SecurityException, IllegalAccessException, IllegalArgumentException,
@@ -63,10 +63,10 @@ public class JobInvokeUtil
     }
 
     /**
-     * 校验是否为为class包名
+     * Check whether the value is set toclassThe package name
      * 
-     * @param str 名称
-     * @return true是 false否
+     * @param str The name of the
+     * @return trueis falseno
      */
     public static boolean isValidClassName(String invokeTarget)
     {
@@ -74,10 +74,10 @@ public class JobInvokeUtil
     }
 
     /**
-     * 获取bean名称
+     * To obtainbeanThe name of the
      * 
-     * @param invokeTarget 目标字符串
-     * @return bean名称
+     * @param invokeTarget Target string
+     * @return beanThe name of the
      */
     public static String getBeanName(String invokeTarget)
     {
@@ -86,10 +86,10 @@ public class JobInvokeUtil
     }
 
     /**
-     * 获取bean方法
+     * To obtainbeanmethods
      * 
-     * @param invokeTarget 目标字符串
-     * @return method方法
+     * @param invokeTarget Target string
+     * @return methodmethods
      */
     public static String getMethodName(String invokeTarget)
     {
@@ -98,10 +98,10 @@ public class JobInvokeUtil
     }
 
     /**
-     * 获取method方法参数相关列表
+     * To obtainmethodMethod parameter correlation list
      * 
-     * @param invokeTarget 目标字符串
-     * @return method方法相关参数列表
+     * @param invokeTarget Target string
+     * @return methodMethod parameter list
      */
     public static List<Object[]> getMethodParams(String invokeTarget)
     {
@@ -115,27 +115,27 @@ public class JobInvokeUtil
         for (int i = 0; i < methodParams.length; i++)
         {
             String str = StringUtils.trimToEmpty(methodParams[i]);
-            // String字符串类型，包含'
+            // StringString type,contains'
             if (StringUtils.contains(str, "'"))
             {
                 classs.add(new Object[] { StringUtils.replace(str, "'", ""), String.class });
             }
-            // boolean布尔类型，等于true或者false
+            // booleanBoolean type,Is equal to thetrueorfalse
             else if (StringUtils.equals(str, "true") || StringUtils.equalsIgnoreCase(str, "false"))
             {
                 classs.add(new Object[] { Boolean.valueOf(str), Boolean.class });
             }
-            // long长整形，包含L
+            // longLong plastic,containsL
             else if (StringUtils.containsIgnoreCase(str, "L"))
             {
                 classs.add(new Object[] { Long.valueOf(StringUtils.replaceIgnoreCase(str, "L", "")), Long.class });
             }
-            // double浮点类型，包含D
+            // doubleFloating point types,containsD
             else if (StringUtils.containsIgnoreCase(str, "D"))
             {
                 classs.add(new Object[] { Double.valueOf(StringUtils.replaceIgnoreCase(str, "D", "")), Double.class });
             }
-            // 其他类型归类为整形
+            // Other types are classified as plastic
             else
             {
                 classs.add(new Object[] { Integer.valueOf(str), Integer.class });
@@ -145,10 +145,10 @@ public class JobInvokeUtil
     }
 
     /**
-     * 获取参数类型
+     * Get parameter types
      * 
-     * @param methodParams 参数相关列表
-     * @return 参数类型列表
+     * @param methodParams Parameter correlation list
+     * @return Parameter Type list
      */
     public static Class<?>[] getMethodParamsType(List<Object[]> methodParams)
     {
@@ -163,10 +163,10 @@ public class JobInvokeUtil
     }
 
     /**
-     * 获取参数值
+     * Get parameter values
      * 
-     * @param methodParams 参数相关列表
-     * @return 参数值列表
+     * @param methodParams Parameter correlation list
+     * @return Parameter Value List
      */
     public static Object[] getMethodParamsValue(List<Object[]> methodParams)
     {

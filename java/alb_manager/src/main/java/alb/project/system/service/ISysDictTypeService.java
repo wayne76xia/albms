@@ -5,84 +5,84 @@ import alb.project.system.domain.SysDictData;
 import alb.project.system.domain.SysDictType;
 
 /**
- * 字典 业务层
+ * The dictionary The business layer
  *
  */
 public interface ISysDictTypeService
 {
     /**
-     * 根据条件分页查询字典类型
+     * Query dictionary types based on conditional paging
      * 
-     * @param dictType 字典类型信息
-     * @return 字典类型集合信息
+     * @param dictType Dictionary type information
+     * @return Dictionary type collection information
      */
     List<SysDictType> selectDictTypeList(SysDictType dictType);
 
     /**
-     * 根据所有字典类型
+     * According to all dictionary types
      * 
-     * @return 字典类型集合信息
+     * @return Dictionary type collection information
      */
     List<SysDictType> selectDictTypeAll();
 
     /**
-     * 根据字典类型查询字典数据
+     * Query dictionary data by dictionary type
      * 
-     * @param dictType 字典类型
-     * @return 字典数据集合信息
+     * @param dictType A dictionary type
+     * @return Dictionary data set information
      */
     List<SysDictData> selectDictDataByType(String dictType);
 
     /**
-     * 根据字典类型ID查询信息
+     * According to the dictionary typeIDQuery information
      * 
-     * @param dictId 字典类型ID
-     * @return 字典类型
+     * @param dictId A dictionary typeID
+     * @return A dictionary type
      */
     SysDictType selectDictTypeById(Long dictId);
 
     /**
-     * 根据字典类型查询信息
+     * Query information by dictionary type
      * 
-     * @param dictType 字典类型
-     * @return 字典类型
+     * @param dictType A dictionary type
+     * @return A dictionary type
      */
     SysDictType selectDictTypeByType(String dictType);
 
     /**
-     * 批量删除字典信息
+     * Delete dictionaries in batches
      * 
-     * @param dictIds 需要删除的字典ID
-     * @return 结果
+     * @param dictIds Dictionaries that need to be deletedID
+     * @return The results of
      */
     int deleteDictTypeByIds(Long[] dictIds);
 
     /**
-     * 清空缓存数据
+     * Clearing cached data
      */
     void clearCache();
 
     /**
-     * 新增保存字典类型信息
+     * Added saving dictionary type information
      * 
-     * @param dictType 字典类型信息
-     * @return 结果
+     * @param dictType Dictionary type information
+     * @return The results of
      */
     int insertDictType(SysDictType dictType);
 
     /**
-     * 修改保存字典类型信息
+     * Modify save dictionary type information
      * 
-     * @param dictType 字典类型信息
-     * @return 结果
+     * @param dictType Dictionary type information
+     * @return The results of
      */
     int updateDictType(SysDictType dictType);
 
     /**
-     * 校验字典类型称是否唯一
+     * Verify that the dictionary type name is unique
      * 
-     * @param dictType 字典类型
-     * @return 结果
+     * @param dictType A dictionary type
+     * @return The results of
      */
     String checkDictTypeUnique(SysDictType dictType);
 }

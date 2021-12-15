@@ -1,7 +1,7 @@
 package alb.common.exception.file;
 
 /**
- * 文件名大小限制异常类
+ * Filename size limits exception classes
  *
  */
 public class FileSizeLimitExceededException extends FileException

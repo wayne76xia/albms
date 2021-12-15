@@ -3,18 +3,18 @@ package alb.common.utils.sql;
 import alb.common.utils.StringUtils;
 
 /**
- * sql操作工具类
+ * sqlOperation tool class
  *
  */
 public class SqlUtil
 {
     /**
-     * 仅支持字母、数字、下划线、空格、逗号（支持多个字段排序）
+     * Letters only、digital、The underline、The blank space、The comma(Multiple field sorting is supported)
      */
     public static String SQL_PATTERN = "[a-zA-Z0-9_\\ \\,]+";
 
     /**
-     * 检查字符，防止注入绕过
+     * Check the characters,Preventing injection bypass
      */
     public static String escapeOrderBySql(String value)
     {
@@ -26,7 +26,7 @@ public class SqlUtil
     }
 
     /**
-     * 验证 order by 语法是否符合规范
+     * validation order by Does the syntax conform to the specification
      */
     public static boolean isValidOrderBySql(String value)
     {

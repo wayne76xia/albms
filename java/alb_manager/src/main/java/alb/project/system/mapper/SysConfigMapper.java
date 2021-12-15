@@ -4,64 +4,64 @@ import java.util.List;
 import alb.project.system.domain.SysConfig;
 
 /**
- * 参数配置 数据层
+ * Parameter configuration The data layer
  *
  */
 public interface SysConfigMapper
 {
     /**
-     * 查询参数配置信息
+     * Example Query parameter configurations
      * 
-     * @param config 参数配置信息
-     * @return 参数配置信息
+     * @param config Parameter Configuration
+     * @return Parameter Configuration
      */
     SysConfig selectConfig(SysConfig config);
 
     /**
-     * 查询参数配置列表
+     * Example Query the parameter list
      * 
-     * @param config 参数配置信息
-     * @return 参数配置集合
+     * @param config Parameter Configuration
+     * @return Parameter Configuration Set
      */
     List<SysConfig> selectConfigList(SysConfig config);
 
     /**
-     * 根据键名查询参数配置信息
+     * Query parameter configurations based on key names
      * 
-     * @param configKey 参数键名
-     * @return 参数配置信息
+     * @param configKey Parameters of the key name
+     * @return Parameter Configuration
      */
     SysConfig checkConfigKeyUnique(String configKey);
 
     /**
-     * 新增参数配置
+     * New Parameter Configuration
      * 
-     * @param config 参数配置信息
-     * @return 结果
+     * @param config Parameter Configuration
+     * @return The results of
      */
     int insertConfig(SysConfig config);
 
     /**
-     * 修改参数配置
+     * Modifying Parameter Settings
      * 
-     * @param config 参数配置信息
-     * @return 结果
+     * @param config Parameter Configuration
+     * @return The results of
      */
     int updateConfig(SysConfig config);
 
     /**
-     * 删除参数配置
+     * Deleting Parameter Settings
      * 
-     * @param configId 参数ID
-     * @return 结果
+     * @param configId parameterID
+     * @return The results of
      */
     int deleteConfigById(Long configId);
 
     /**
-     * 批量删除参数信息
+     * Delete parameter information in batches
      * 
-     * @param configIds 需要删除的参数ID
-     * @return 结果
+     * @param configIds Parameter to deleteID
+     * @return The results of
      */
     int deleteConfigByIds(Long[] configIds);
 }

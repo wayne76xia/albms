@@ -6,47 +6,47 @@ import alb.project.vacation.domain.HolidayItem;
 import java.util.List;
 
 /**
- * 假期表服务接口
+ * Vacation table service interface
  */
 public interface IHolidayItemService {
 
     /**
-     * 通过ID查询单条数据
+     * throughIDExample Query a single piece of data
      *
-     * @param holidayItem 实例对象
-     * @return 实例对象
+     * @param holidayItem Instance objects
+     * @return Instance objects
      */
     HolidayItem queryOne(HolidayItem holidayItem);
 
     /**
-     * 通过实体作为筛选条件查询
+     * Query by entity as filter criteria
      *
-     * @param holidayItem 实例对象
-     * @return 对象列表
+     * @param holidayItem Instance objects
+     * @return The object list
      */
     List<HolidayItem> queryAll(HolidayItem holidayItem);
 
     /**
-     * 新增数据
+     * The new data
      *
-     * @param holidayItem 实例对象
-     * @return 影响行数
+     * @param holidayItem Instance objects
+     * @return Affect the number of rows
      */
     int insert(HolidayItem holidayItem);
 
     /**
-     * 修改数据
+     * Modify the data
      *
-     * @param holidayItem 实例对象
-     * @return 影响行数
+     * @param holidayItem Instance objects
+     * @return Affect the number of rows
      */
     int update(HolidayItem holidayItem);
 
     /**
-     * 通过主键删除数据
+     * Delete data by primary key
      *
-     * @param holidayId 主键
-     * @return 是否成功
+     * @param holidayId A primary key
+     * @return The success of
      */
     int deleteById(Long holidayId);
 

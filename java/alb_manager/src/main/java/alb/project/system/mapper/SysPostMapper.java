@@ -6,99 +6,99 @@ import alb.project.system.domain.SysPost;
 import org.apache.ibatis.annotations.Param;
 
 /**
- * 岗位信息 数据层
+ * Post information The data layer
  *
  */
 public interface SysPostMapper {
     /**
-     * 查询岗位数据集合
+     * Query the job data set
      *
-     * @param post 岗位信息
-     * @return 岗位数据集合
+     * @param post Post information
+     * @return Job data set
      */
     List<SysPost> selectPostList(SysPost post);
 
     /**
-     * 查询所有岗位
+     * Query all posts
      *
-     * @return 岗位列表
+     * @return Post a list of
      */
     List<SysPost> selectPostAll();
 
     /**
-     * 通过岗位ID查询岗位信息
+     * Through the postIDQuery job information
      *
-     * @param postId 岗位ID
-     * @return 角色对象信息
+     * @param postId jobsID
+     * @return Role Object Information
      */
     SysPost selectPostById(Long postId);
 
     /**
-     * 根据用户ID获取岗位选择框列表
+     * According to the userIDGet the job selection box list
      *
-     * @param userId 用户ID
-     * @return 选中岗位ID列表
+     * @param userId The userID
+     * @return Select the jobsIDThe list of
      */
     List<Integer> selectPostListByUserId(Long userId);
 
     /**
-     * 查询用户所属岗位组
+     * Example Query the job group to which a user belongs
      *
-     * @param userName 用户名
-     * @return 结果
+     * @param userName The user name
+     * @return The results of
      */
     List<SysPost> selectPostsByUserName(String userName);
 
     /**
-     * 删除岗位信息
+     * Delete job information
      *
-     * @param postId 岗位ID
-     * @return 结果
+     * @param postId jobsID
+     * @return The results of
      */
     int deletePostById(Long postId);
 
     /**
-     * 批量删除岗位信息
+     * Delete job information in batches
      *
-     * @param postIds 需要删除的岗位ID
-     * @return 结果
+     * @param postIds Jobs to be deletedID
+     * @return The results of
      */
     int deletePostByIds(Long[] postIds);
 
     /**
-     * 修改岗位信息
+     * Modify job information
      *
-     * @param post 岗位信息
-     * @return 结果
+     * @param post Post information
+     * @return The results of
      */
     int updatePost(SysPost post);
 
     /**
-     * 新增岗位信息
+     * New Post Information
      *
-     * @param post 岗位信息
-     * @return 结果
+     * @param post Post information
+     * @return The results of
      */
     int insertPost(SysPost post);
 
     /**
-     * 校验岗位名称
+     * Calibration post Name
      *
-     * @param postName 岗位名称
-     * @return 结果
+     * @param postName Post the name
+     * @return The results of
      */
     SysPost checkPostNameUnique(String postName);
 
     /**
-     * 校验岗位编码
+     * Check post code
      *
-     * @param postCode 岗位编码
-     * @return 结果
+     * @param postCode Post code
+     * @return The results of
      */
     SysPost checkPostCodeUnique(String postCode);
 
     /**
-     * 根据用户id查询用户岗位
+     * According to the useridQuerying user Positions
      *
      * @param userId
      * @return
@@ -106,7 +106,7 @@ public interface SysPostMapper {
     List<String> selectPostNameByUserId(Long userId);
 
     /**
-     * 根据职位编码查询职位
+     * Search for jobs by job code
      *
      * @param ygs
      * @return

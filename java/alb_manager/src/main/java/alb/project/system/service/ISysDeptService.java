@@ -9,129 +9,129 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * 部门管理 服务层
+ * Department Management The service layer
  *
  */
 public interface ISysDeptService
 {
     /**
-     * 查询部门管理数据
+     * Example Query department management data
      * 
-     * @param dept 部门信息
-     * @return 部门信息集合
+     * @param dept Department information
+     * @return Department information set
      */
     List<SysDept> selectDeptList(SysDept dept);
 
     /**
-     * 构建前端所需要树结构
+     * The tree structure is needed to build the front end
      * 
-     * @param depts 部门列表
-     * @return 树结构列表
+     * @param depts Department list
+     * @return Tree structure list
      */
     List<SysDept> buildDeptTree(List<SysDept> depts);
 
     /**
-     * 构建前端所需要下拉树结构
+     * The drop-down tree structure is needed to build the front end
      * 
-     * @param depts 部门列表
-     * @return 下拉树结构列表
+     * @param depts Department list
+     * @return List of drop-down tree structures
      */
     List<TreeSelect> buildDeptTreeSelect(List<SysDept> depts);
 
     /**
-     * 根据角色ID查询部门树信息
+     * According to the characterIDExample Query department tree information
      * 
-     * @param roleId 角色ID
-     * @return 选中部门列表
+     * @param roleId roleID
+     * @return Select department list
      */
     List<Integer> selectDeptListByRoleId(Long roleId);
 
     /**
-     * 根据部门ID查询信息
+     * According to the departmentIDQuery information
      * 
-     * @param deptId 部门ID
-     * @return 部门信息
+     * @param deptId departmentID
+     * @return Department information
      */
     SysDept selectDeptById(Long deptId);
 
     /**
-     * 根据ID查询所有子部门（正常状态）
+     * According to theIDQuery all subdepartments(The normal state)
      * 
-     * @param deptId 部门ID
-     * @return 子部门数
+     * @param deptId departmentID
+     * @return Department number
      */
     int selectNormalChildrenDeptById(Long deptId);
 
     /**
-     * 是否存在部门子节点
+     * Check whether there are department sub-nodes
      * 
-     * @param deptId 部门ID
-     * @return 结果
+     * @param deptId departmentID
+     * @return The results of
      */
     boolean hasChildByDeptId(Long deptId);
 
     /**
-     * 查询部门是否存在用户
+     * Query whether users exist in the department
      * 
-     * @param deptId 部门ID
-     * @return 结果 true 存在 false 不存在
+     * @param deptId departmentID
+     * @return The results of true There are false There not are
      */
     boolean checkDeptExistUser(Long deptId);
 
     /**
-     * 校验部门名称是否唯一
+     * Verify that the department name is unique
      * 
-     * @param dept 部门信息
-     * @return 结果
+     * @param dept Department information
+     * @return The results of
      */
     String checkDeptNameUnique(SysDept dept);
 
     /**
-     * 新增保存部门信息
+     * Added Saving department information
      * 
-     * @param dept 部门信息
-     * @return 结果
+     * @param dept Department information
+     * @return The results of
      */
     int insertDept(SysDept dept);
 
     /**
-     * 修改保存部门信息
+     * Modify Save department information
      * 
-     * @param dept 部门信息
-     * @return 结果
+     * @param dept Department information
+     * @return The results of
      */
     int updateDept(SysDept dept);
 
     /**
-     * 删除部门管理信息
+     * Example Delete department management information
      * 
-     * @param deptId 部门ID
-     * @return 结果
+     * @param deptId departmentID
+     * @return The results of
      */
     int deleteDeptById(Long deptId);
 
     /**
-     * 查询父id为此id的数量
+     * Query the fatheridTo do thisidThe number of
      * @param deptId
      * @return Integer
      */
     Integer countTotalNumByParentId(Long deptId);
 
     /**
-     * 查询总公司id（仅查询一个）
+     * Check head officeid(Query only one)
      * @return Long
      */
     Long selectHeadCompanyId();
 
     /**
-     * 获取子公司列表
+     * Get list of subsidiaries
      * @param dept
      * @return
      */
     List<Map<String, Object>> selectSubsidiaryCompanyList(SysDept dept);
 
     /**
-     * 获取门店列表
+     * Get store list
      * @param dept
      * @return
      */
@@ -144,66 +144,66 @@ public interface ISysDeptService
     String importShop(List<ShopExcelVO> list, boolean updateSupport, String operName);
 
     /**
-     * 获取所有的门店列表
+     * Get a list of all stores
      * @return
      */
     List<Map<String, Object>> getAllShopList();
 
     /**
-     * 查询所有的分公司列表 只查询deptId与deptName
+     * Query the list of all branches Only the querydeptIdwithdeptName
      * @return
      */
     List<SysDept> getAllSubsidiaryCompanyList();
 
     /**
-     * 查询分公司下所有门店
+     * Query all stores in branches
      * @param deptId
      * @return
      */
     List<SysDept> selectShopListByParentId(Long deptId);
 
     /**
-     * 根据shopIds查询门店
+     * According to theshopIdsQuery stores
      * @param shopIds
      * @return
      */
     List<SysDept> selectDeptByIds(String shopIds);
 
     /**
-     * 根据子公司id查询门店列表
+     * According to the subsidiaryidQuery store list
      * @param ids
      * @return
      */
     List<SysDept> getShopListByCompanyIds(String ids);
 
     /**
-     * 根据月份获取子公司数据
+     * Obtain subsidiary data by month
      * @param month
      * @return
      */
     Integer getTotalCompanyNumByMonth(String month);
 
     /**
-     * 根据月份获取门店数量
+     * Obtain the number of stores by month
      * @param month
      * @return
      */
     Integer getTotalShopNumByMonth(String month);
 
     /**
-     * 门店数量
+     * Number of stores
      * @return
      */
     Integer getTotalShopNum();
 
     /**
-     * 子公司数量
+     * Number of subsidiaries
      * @return
      */
     Integer getTotalCompanyNum();
 
     /**
-     * 查询所有的子公司列表-划分数据权限
+     * Query the list of all subsidiaries-Dividing data Permissions
      * @return
      */
     List<SysDept> getSubsidiaryCompanyList(SysDept dept);

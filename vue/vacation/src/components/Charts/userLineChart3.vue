@@ -126,7 +126,7 @@ export default {
         ],
         series: [
           {
-            name: "门店数量",
+            name: "Number of stores",
             type: "line",
             smooth: true,
             symbol: "circle",

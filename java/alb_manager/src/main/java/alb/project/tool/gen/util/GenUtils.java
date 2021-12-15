@@ -10,13 +10,13 @@ import alb.common.utils.StringUtils;
 import alb.framework.config.GenConfig;
 
 /**
- * 代码生成器 工具类
+ * Code generator Utility class
  *
  */
 public class GenUtils
 {
     /**
-     * 初始化表信息
+     * Initialize table information
      */
     public static void initTable(GenTable genTable, String operName)
     {
@@ -30,7 +30,7 @@ public class GenUtils
     }
 
     /**
-     * 初始化列属性字段
+     * Initialize the column property field
      */
     public static void initColumnField(GenTableColumn column, GenTable table)
     {
@@ -38,13 +38,13 @@ public class GenUtils
         String columnName = column.getColumnName();
         column.setTableId(table.getTableId());
         column.setCreateBy(table.getCreateBy());
-        // 设置java字段名
+        // Set up thejavaThe field name
         column.setJavaField(StringUtils.toCamelCase(columnName));
 
         if (arraysContains(GenConstants.COLUMNTYPE_STR, dataType))
         {
             column.setJavaType(GenConstants.TYPE_STRING);
-            // 字符串长度超过500设置为文本域
+            // String length exceeds500Set to text field
             Integer columnLength = getColumnLength(column.getColumnType());
             String htmlType = columnLength >= 500 ? GenConstants.HTML_TEXTAREA : GenConstants.HTML_INPUT;
             column.setHtmlType(htmlType);
@@ -58,54 +58,54 @@ public class GenUtils
         {
             column.setHtmlType(GenConstants.HTML_INPUT);
 
-            // 如果是浮点型 统一用BigDecimal
+            // If it's floating point Unified withBigDecimal
             String[] str = StringUtils.split(StringUtils.substringBetween(column.getColumnType(), "(", ")"), ",");
             if (str != null && str.length == 2 && Integer.parseInt(str[1]) > 0)
             {
                 column.setJavaType(GenConstants.TYPE_BIGDECIMAL);
             }
-            // 如果是整形
+            // If it's plastic surgery
             else if (str != null && str.length == 1 && Integer.parseInt(str[0]) <= 10)
             {
                 column.setJavaType(GenConstants.TYPE_INTEGER);
             }
-            // 长整形
+            // Long plastic
             else
             {
                 column.setJavaType(GenConstants.TYPE_LONG);
             }
         }
 
-        // 插入字段（默认所有字段都需要插入）
+        // Insert the fields(By default, all fields need to be inserted)
         column.setIsInsert(GenConstants.REQUIRE);
 
-        // 编辑字段
+        // Edit field
         if (!arraysContains(GenConstants.COLUMNNAME_NOT_EDIT, columnName) && !column.isPk())
         {
             column.setIsEdit(GenConstants.REQUIRE);
         }
-        // 列表字段
+        // A list of fields
         if (!arraysContains(GenConstants.COLUMNNAME_NOT_LIST, columnName) && !column.isPk())
         {
             column.setIsList(GenConstants.REQUIRE);
         }
-        // 查询字段
+        // Query field
         if (!arraysContains(GenConstants.COLUMNNAME_NOT_QUERY, columnName) && !column.isPk())
         {
             column.setIsQuery(GenConstants.REQUIRE);
         }
 
-        // 查询字段类型
+        // Query field type
         if (StringUtils.endsWithIgnoreCase(columnName, "name"))
         {
             column.setQueryType(GenConstants.QUERY_LIKE);
         }
-        // 状态字段设置单选框
+        // Status field option box
         if (StringUtils.endsWithIgnoreCase(columnName, "status"))
         {
             column.setHtmlType(GenConstants.HTML_RADIO);
         }
-        // 类型&性别字段设置下拉框
+        // type&Gender field Settings drop - down box
         else if (StringUtils.endsWithIgnoreCase(columnName, "type")
                 || StringUtils.endsWithIgnoreCase(columnName, "sex"))
         {
@@ -114,11 +114,11 @@ public class GenUtils
     }
 
     /**
-     * 校验数组是否包含指定值
+     * Verifies that the array contains the specified value
      * 
-     * @param arr 数组
-     * @param targetValue 值
-     * @return 是否包含
+     * @param arr An array of
+     * @param targetValue value
+     * @return Does it include
      */
     public static boolean arraysContains(String[] arr, String targetValue)
     {
@@ -126,10 +126,10 @@ public class GenUtils
     }
 
     /**
-     * 获取模块名
+     * Get module name
      * 
-     * @param packageName 包名
-     * @return 模块名
+     * @param packageName The package name
+     * @return Module name
      */
     public static String getModuleName(String packageName)
     {
@@ -140,10 +140,10 @@ public class GenUtils
     }
 
     /**
-     * 获取业务名
+     * Get business name
      * 
-     * @param tableName 表名
-     * @return 业务名
+     * @param tableName The name of the table
+     * @return The business name
      */
     public static String getBusinessName(String tableName)
     {
@@ -154,10 +154,10 @@ public class GenUtils
     }
 
     /**
-     * 表名转换成Java类名
+     * Table name converted toJavaThe name of the class
      * 
-     * @param tableName 表名称
-     * @return 类名
+     * @param tableName The name of the table
+     * @return The name of the class
      */
     public static String convertClassName(String tableName)
     {
@@ -172,10 +172,10 @@ public class GenUtils
     }
 
     /**
-     * 批量替换前缀
+     * Batch prefix replacement
      * 
-     * @param replacementm 替换值
-     * @param searchList 替换列表
+     * @param replacementm Replacement value
+     * @param searchList Replace the list
      * @return
      */
     public static String replaceFirst(String replacementm, String[] searchList)
@@ -193,21 +193,21 @@ public class GenUtils
     }
 
     /**
-     * 关键字替换
+     * Keyword substitution
      * 
-     * @param name 需要被替换的名字
-     * @return 替换后的名字
+     * @param name The name that needs to be replaced
+     * @return The replacement name
      */
     public static String replaceText(String text)
     {
-        return RegExUtils.replaceAll(text, "(?:表|若依)", "");
+        return RegExUtils.replaceAll(text, "(?:table|If in accordance with the)", "");
     }
 
     /**
-     * 获取数据库类型字段
+     * Gets the database type field
      * 
-     * @param columnType 列类型
-     * @return 截取后的列类型
+     * @param columnType The column type
+     * @return The truncated column type
      */
     public static String getDbType(String columnType)
     {
@@ -222,10 +222,10 @@ public class GenUtils
     }
 
     /**
-     * 获取字段长度
+     * Get field length
      * 
-     * @param columnType 列类型
-     * @return 截取后的列类型
+     * @param columnType The column type
+     * @return The truncated column type
      */
     public static Integer getColumnLength(String columnType)
     {

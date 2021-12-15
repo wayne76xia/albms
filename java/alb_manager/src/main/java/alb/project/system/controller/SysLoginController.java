@@ -24,7 +24,7 @@ import alb.framework.web.domain.AjaxResult;
 import alb.project.system.service.ISysMenuService;
 
 /**
- * 登录验证
+ * Login authentication
  *
  */
 @RestController
@@ -46,16 +46,16 @@ public class SysLoginController extends BaseController
     private ISysUserService userService;
 
     /**
-     * 登录方法
+     * Login method
      * 
-     * @param loginBody 登陆信息
-     * @return 结果
+     * @param loginBody Login information
+     * @return The results of
      */
     @PostMapping("/login")
     public AjaxResult login(@RequestBody LoginBody loginBody)
     {
         AjaxResult ajax = AjaxResult.success();
-        // 生成令牌
+        // To generate the token
         String token = loginService.login(loginBody.getUsername(), loginBody.getPassword(), loginBody.getCode(),
                 loginBody.getUuid());
         ajax.put(Constants.TOKEN, token);
@@ -63,18 +63,18 @@ public class SysLoginController extends BaseController
     }
 
     /**
-     * 获取用户信息
+     * Obtaining User information
      * 
-     * @return 用户信息
+     * @return The user information
      */
     @GetMapping("getInfo")
     public AjaxResult getInfo()
     {
         LoginUser loginUser = tokenService.getLoginUser(ServletUtils.getRequest());
         SysUser user = loginUser.getUser();
-        // 角色集合
+        // Character set
         Set<String> roles = permissionService.getRolePermission(user);
-        // 权限集合
+        // Privilege set
         Set<String> permissions = permissionService.getMenuPermission(user);
         AjaxResult ajax = AjaxResult.success();
         ajax.put("user", user);
@@ -84,15 +84,15 @@ public class SysLoginController extends BaseController
     }
 
     /**
-     * 获取路由信息
+     * Obtaining Routing Information
      * 
-     * @return 路由信息
+     * @return Routing information
      */
     @GetMapping("getRouters")
     public AjaxResult getRouters()
     {
         LoginUser loginUser = tokenService.getLoginUser(ServletUtils.getRequest());
-        // 用户信息
+        // The user information
         SysUser user = loginUser.getUser();
         List<SysMenu> menus = menuService.selectMenuTreeByUserId(user.getUserId());
         return AjaxResult.success(menuService.buildMenus(menus));
@@ -105,11 +105,11 @@ public class SysLoginController extends BaseController
 
     /**
      *  @Date: 2020/7/13 19:38
-     *  @Description: 忘记密码
+     *  @Description: Forgot password
      */
     @PostMapping(value = "/forgetPassword")
     public AjaxResult forgetPassword(@RequestBody @Validated ForgetPasswordParamsVO params, BindingResult bindingResult){
-        // 校验参数
+        // Calibration parameters
         if (bindingResult.hasErrors()){
             return AjaxResult.error(bindingResult.getFieldError().getDefaultMessage());
         }

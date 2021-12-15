@@ -7,20 +7,20 @@ import alb.project.vacation.resultVO.HolidayUserResultVO;
 import java.util.List;
 
 /**
- * 假期表服务接口
+ * Vacation table service interface
  */
 public interface IHolidayService {
 
     /**
-     * 查询单条数据
+     * Example Query a single piece of data
      *
-     * @param holidayId 主键
-     * @return 实例对象
+     * @param holidayId A primary key
+     * @return Instance objects
      */
     Holiday queryOne(Long holidayId);
 
     /**
-     * 查询多条数据
+     * Querying multiple pieces of Data
      *
      * @param holiday
      * @return
@@ -28,34 +28,34 @@ public interface IHolidayService {
     List<Holiday> queryAll(Holiday holiday);
 
     /**
-     * 新增数据
+     * The new data
      *
-     * @param holiday 实例对象
-     * @return 实例对象
+     * @param holiday Instance objects
+     * @return Instance objects
      */
     int insert(Holiday holiday);
 
     /**
-     * 修改数据
+     * Modify the data
      *
-     * @param holiday 实例对象
-     * @return 实例对象
+     * @param holiday Instance objects
+     * @return Instance objects
      */
     int update(Holiday holiday);
 
     /**
-     * 通过主键删除数据
+     * Delete data by primary key
      *
-     * @param holidayId 主键
-     * @return 是否成功
+     * @param holidayId A primary key
+     * @return The success of
      */
     int deleteById(Long holidayId);
 
     /**
-     * 查询用户列表
+     * Querying a User List
      *
-     * @param holidayUserParamsVO 实例对象
-     * @return 实例对象
+     * @param holidayUserParamsVO Instance objects
+     * @return Instance objects
      */
     List<HolidayUserResultVO> selectUserList(HolidayUserParamsVO holidayUserParamsVO);
 }

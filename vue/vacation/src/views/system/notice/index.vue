@@ -1,14 +1,14 @@
 <template>
   <div class="aui-padded-15">
     <div class="flex flex_start aui-padded-b-10">
-      <p class="font-size-20 fw_bold">公告通知</p>
+      <p class="font-size-20 fw_bold">The announcement to inform</p>
       <div class="aui-padded-l-15 flex" v-hasPermi="['system:notice:add']">
         <div class="flex">
           <div
             class="addnew bg-theme text-white border-radius font-size-14"
             @click="handleAdd"
           >
-            新增
+            new
           </div>
         </div>
       </div>
@@ -24,28 +24,28 @@
           >
             <el-row>
               <el-col :span="20">
-                <el-form-item label="公告标题" prop="noticeTitle">
+                <el-form-item label="The announcement title" prop="noticeTitle">
                   <el-input
                     v-model="queryParams.noticeTitle"
-                    placeholder="请输入公告标题"
+                    placeholder="Please enter the announcement title"
                     clearable
                     size="small"
                     @keyup.enter.native="handleQuery"
                   />
                 </el-form-item>
-                <el-form-item label="操作人员" prop="createBy">
+                <el-form-item label="The operator" prop="createBy">
                   <el-input
                     v-model="queryParams.createBy"
-                    placeholder="请输入操作人员"
+                    placeholder="Please enter operator"
                     clearable
                     size="small"
                     @keyup.enter.native="handleQuery"
                   />
                 </el-form-item>
-                <el-form-item label="类型" prop="noticeType">
+                <el-form-item label="type" prop="noticeType">
                   <el-select
                     v-model="queryParams.noticeType"
-                    placeholder="公告类型"
+                    placeholder="The announcement type"
                     clearable
                     size="small"
                   >
@@ -63,10 +63,10 @@
                     size="mini"
                     @click="handleQuery"
                     class="find_btn"
-                    >查询</el-button
+                    >The query</el-button
                   >
                   <el-button size="mini" @click="resetQuery" class="reset_btn"
-                    >重置</el-button
+                    >reset</el-button
                   >
                 </el-form-item>
            
@@ -76,7 +76,7 @@
                 <div class>
                   <div class="flex export_box" style="float: right">
                     <div class="text-black font-size-14 aui-padded-r-10">
-                      共{{ total }}条数据
+                      A total of{{ total }}The data
                     </div>
                   </div>
                 </div>
@@ -93,39 +93,39 @@
           @selection-change="handleSelectionChange"
         >
           <el-table-column
-            label="序号"
+            label="The serial number"
             align="center"
             prop="noticeId"
             width="100"
           />
           <el-table-column
-            label="公告标题"
+            label="The announcement title"
             align="center"
             prop="noticeTitle"
             :show-overflow-tooltip="true"
           />
           <el-table-column
-            label="公告类型"
+            label="The announcement type"
             align="center"
             prop="noticeType"
             :formatter="typeFormat"
            
           />
           <el-table-column
-            label="状态"
+            label="state"
             align="center"
             prop="status"
             :formatter="statusFormat"
             
           />
           <el-table-column
-            label="创建者"
+            label="The creator"
             align="center"
             prop="createBy"
            
           />
           <el-table-column
-            label="创建时间"
+            label="Creation time"
             align="center"
             prop="createTime"
             
@@ -135,7 +135,7 @@
             </template>
           </el-table-column>
           <el-table-column
-            label="操作"
+            label="operation"
             align="center"
             class-name="small-padding fixed-width"
           >
@@ -147,7 +147,7 @@
                 @click="handleUpdate(scope.row)"
                 v-hasPermi="['system:notice:edit']"
                 style="color: #5ecc59 !important; font-size: 16px"
-                title="编辑"
+                title="The editor"
               ></el-button>
               <el-button
                 size="mini"
@@ -156,7 +156,7 @@
                 @click="handleDelete(scope.row)"
                 style="color: #e8522a !important; font-size: 16px"
                 v-hasPermi="['system:notice:remove']"
-                title="删除"
+                title="delete"
               ></el-button>
               <!-- <el-button
                 size="mini"
@@ -164,7 +164,7 @@
                 icon="el-icon-edit"
                 @click="handleUpdate(scope.row)"
                 v-hasPermi="['system:notice:edit']"
-                >修改</el-button
+                >Modify the</el-button
               >
               <el-button
                 size="mini"
@@ -172,7 +172,7 @@
                 icon="el-icon-delete"
                 @click="handleDelete(scope.row)"
                 v-hasPermi="['system:notice:remove']"
-                >删除</el-button
+                >delete</el-button
               > -->
             </template>
           </el-table-column>
@@ -188,21 +188,21 @@
       />
     </div>
 
-    <!-- 添加或修改公告对话框 -->
+    <!-- Add or modify announcement dialog box -->
     <el-dialog :title="title" :visible.sync="open" width="780px" append-to-body>
       <el-form ref="form" :model="form" :rules="rules" label-width="80px">
         <el-row>
           <el-col :span="12">
-            <el-form-item label="公告标题" prop="noticeTitle">
+            <el-form-item label="The announcement title" prop="noticeTitle">
               <el-input
                 v-model="form.noticeTitle"
-                placeholder="请输入公告标题"
+                placeholder="Please enter the announcement title"
               />
             </el-form-item>
           </el-col>
           <el-col :span="12">
-            <el-form-item label="公告类型" prop="noticeType">
-              <el-select v-model="form.noticeType" placeholder="请选择">
+            <el-form-item label="The announcement type" prop="noticeType">
+              <el-select v-model="form.noticeType" placeholder="Please select a">
                 <el-option
                   v-for="dict in typeOptions"
                   :key="dict.dictValue"
@@ -213,7 +213,7 @@
             </el-form-item>
           </el-col>
           <el-col :span="24">
-            <el-form-item label="状态">
+            <el-form-item label="state">
               <el-radio-group v-model="form.status">
                 <el-radio
                   v-for="dict in statusOptions"
@@ -225,15 +225,15 @@
             </el-form-item>
           </el-col>
           <el-col :span="24">
-            <el-form-item label="内容">
+            <el-form-item label="content">
               <Editor v-model="form.noticeContent" />
             </el-form-item>
           </el-col>
         </el-row>
       </el-form>
       <div slot="footer" class="dialog-footer" style="padding-top: 20px">
-        <el-button type="primary" @click="submitForm">确 定</el-button>
-        <el-button @click="cancel">取 消</el-button>
+        <el-button type="primary" @click="submitForm">indeed set</el-button>
+        <el-button @click="cancel">take eliminate</el-button>
       </div>
     </el-dialog>
   </div>
@@ -257,27 +257,27 @@ export default {
   },
   data() {
     return {
-      // 遮罩层
+      // The mask layer
       loading: true,
-      // 选中数组
+      // Select the array
       ids: [],
-      // 非单个禁用
+      // Non-single disable
       single: true,
-      // 非多个禁用
+      // Non-multiple disable
       multiple: true,
-      // 总条数
+      // The total number of article
       total: 0,
-      // 公告表格数据
+      // Announcement form data
       noticeList: [],
-      // 弹出层标题
+      // Pop-up layer title
       title: "",
-      // 是否显示弹出层
+      // Whether to display the pop-up layer
       open: false,
-      // 类型数据字典
+      // Type data dictionary
       statusOptions: [],
-      // 状态数据字典
+      // State data dictionary
       typeOptions: [],
-      // 查询参数
+      // Query parameters
       queryParams: {
         pageNum: 1,
         pageSize: 20,
@@ -285,15 +285,15 @@ export default {
         createBy: undefined,
         status: undefined,
       },
-      // 表单参数
+      // The form parameter
       form: {},
-      // 表单校验
+      // Form validation
       rules: {
         noticeTitle: [
-          { required: true, message: "公告标题不能为空", trigger: "blur" },
+          { required: true, message: "The announcement title cannot be empty", trigger: "blur" },
         ],
         noticeType: [
-          { required: true, message: "公告类型不能为空", trigger: "blur" },
+          { required: true, message: "The bulletin type cannot be empty", trigger: "blur" },
         ],
       },
     };
@@ -308,7 +308,7 @@ export default {
     });
   },
   methods: {
-    /** 查询公告列表 */
+    /** Querying the Bulletin List */
     getList() {
       this.loading = true;
       listNotice(this.queryParams).then((response) => {
@@ -317,20 +317,20 @@ export default {
         this.loading = false;
       });
     },
-    // 公告状态字典翻译
+    // Bulletin status dictionary translation
     statusFormat(row, column) {
       return this.selectDictLabel(this.statusOptions, row.status);
     },
-    // 公告状态字典翻译
+    // Bulletin status dictionary translation
     typeFormat(row, column) {
       return this.selectDictLabel(this.typeOptions, row.noticeType);
     },
-    // 取消按钮
+    // Cancel button
     cancel() {
       this.open = false;
       this.reset();
     },
-    // 表单重置
+    // Reset the form
     reset() {
       this.form = {
         noticeId: undefined,
@@ -341,46 +341,46 @@ export default {
       };
       this.resetForm("form");
     },
-    /** 搜索按钮操作 */
+    /** Search button operation */
     handleQuery() {
       this.queryParams.pageNum = 1;
       this.getList();
     },
-    /** 重置按钮操作 */
+    /** Reset button operation */
     resetQuery() {
       this.resetForm("queryForm");
       this.handleQuery();
     },
-    // 多选框选中数据
+    // Select data in multiple boxes
     handleSelectionChange(selection) {
       this.ids = selection.map((item) => item.noticeId);
       this.single = selection.length != 1;
       this.multiple = !selection.length;
     },
-    /** 新增按钮操作 */
+    /** New Button Operation */
     handleAdd() {
       this.reset();
       this.open = true;
-      this.title = "添加公告";
+      this.title = "Add the announcement";
     },
-    /** 修改按钮操作 */
+    /** Modify button operation */
     handleUpdate(row) {
       this.reset();
       const noticeId = row.noticeId || this.ids;
       getNotice(noticeId).then((response) => {
         this.form = response.data;
         this.open = true;
-        this.title = "修改公告";
+        this.title = "Modify bulletin";
       });
     },
-    /** 提交按钮 */
+    /** The submit button */
     submitForm: function () {
       this.$refs["form"].validate((valid) => {
         if (valid) {
           if (this.form.noticeId != undefined) {
             updateNotice(this.form).then((response) => {
               if (response.code === 200) {
-                this.msgSuccess("修改成功");
+                this.msgSuccess("Modify the success");
                 this.open = false;
                 this.getList();
               }
@@ -388,7 +388,7 @@ export default {
           } else {
             addNotice(this.form).then((response) => {
               if (response.code === 200) {
-                this.msgSuccess("新增成功");
+                this.msgSuccess("New success");
                 this.open = false;
                 this.getList();
               }
@@ -397,15 +397,15 @@ export default {
         }
       });
     },
-    /** 删除按钮操作 */
+    /** Delete button operation */
     handleDelete(row) {
       const noticeIds = row.noticeId || this.ids;
       this.$confirm(
-        '是否确认删除公告编号为"' + noticeIds + '"的数据项?',
-        "警告",
+        'Confirm whether to delete the bulletin"' + noticeIds + '"Data item?',
+        "warning",
         {
-          confirmButtonText: "确定",
-          cancelButtonText: "取消",
+          confirmButtonText: "determine",
+          cancelButtonText: "cancel",
           type: "warning",
         }
       )
@@ -414,7 +414,7 @@ export default {
         })
         .then(() => {
           this.getList();
-          this.msgSuccess("删除成功");
+          this.msgSuccess("Delete the success");
         })
         .catch(function () {});
     },

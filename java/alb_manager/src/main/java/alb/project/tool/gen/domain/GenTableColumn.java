@@ -1,70 +1,70 @@
 package alb.project.tool.gen.domain;
 
-import javax.validation.constraints.NotBlank;
 import alb.common.utils.StringUtils;
 import alb.framework.web.domain.BaseEntity;
 
+import javax.validation.constraints.NotBlank;
+
 /**
- * 代码生成业务字段表 gen_table_column
+ * The code generates a table of business fields gen_table_column
  *
  */
 public class GenTableColumn extends BaseEntity
 {
     private static final long serialVersionUID = 1L;
 
-    /** 编号 */
+    /** Serial number */
     private Long columnId;
 
-    /** 归属表编号 */
+    /** Ownership table Number */
     private Long tableId;
 
-    /** 列名称 */
+    /** Column name */
     private String columnName;
 
-    /** 列描述 */
+    /** Columns. */
     private String columnComment;
 
-    /** 列类型 */
+    /** The column type */
     private String columnType;
 
-    /** JAVA类型 */
+    /** JAVAtype */
     private String javaType;
 
-    /** JAVA字段名 */
-    @NotBlank(message = "Java属性不能为空")
+    /** JAVAThe field name */
+    @NotBlank(message = "JavaProperty cannot be null")
     private String javaField;
 
-    /** 是否主键（1是） */
+    /** Whether the primary key(1is) */
     private String isPk;
 
-    /** 是否自增（1是） */
+    /** Whether the increased(1is) */
     private String isIncrement;
 
-    /** 是否必填（1是） */
+    /** If required(1is) */
     private String isRequired;
 
-    /** 是否为插入字段（1是） */
+    /** Whether it is an insert field(1is) */
     private String isInsert;
 
-    /** 是否编辑字段（1是） */
+    /** Edit field or not(1is) */
     private String isEdit;
 
-    /** 是否列表字段（1是） */
+    /** List field(1is) */
     private String isList;
 
-    /** 是否查询字段（1是） */
+    /** Query field(1is) */
     private String isQuery;
 
-    /** 查询方式（EQ等于、NE不等于、GT大于、LT小于、LIKE模糊、BETWEEN范围） */
     private String queryType;
 
-    /** 显示类型（input文本框、textarea文本域、select下拉框、checkbox复选框、radio单选框、datetime日期控件） */
+    /** Display type(inputThe text box、textareaText field、selectA drop-down box、checkboxCheck box、radioRadio buttons、datetimeDate controls) */
     private String htmlType;
 
-    /** 字典类型 */
+    /** A dictionary type */
     private String dictType;
 
-    /** 排序 */
+    /** The sorting */
     private Integer sort;
 
     public void setColumnId(Long columnId)
@@ -338,13 +338,12 @@ public class GenTableColumn extends BaseEntity
 
     public static boolean isUsableColumn(String javaField)
     {
-        // isSuperColumn()中的名单用于避免生成多余Domain属性，若某些属性在生成页面时需要用到不能忽略，则放在此处白名单
         return StringUtils.equalsAnyIgnoreCase(javaField, "parentId", "orderNum");
     }
 
     public String readConverterExp()
     {
-        String remarks = StringUtils.substringBetween(this.columnComment, "（", "）");
+        String remarks = StringUtils.substringBetween(this.columnComment, "(", ")");
         StringBuffer sb = new StringBuffer();
         if (StringUtils.isNotEmpty(remarks))
         {

@@ -128,7 +128,7 @@ export default {
         ],
         series: [
           {
-            name: "业绩",
+            name: "results",
             type: "line",
             smooth: true,
             symbol: "circle",

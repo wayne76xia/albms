@@ -126,7 +126,7 @@ export default {
         ],
         series: [
           {
-            name: "总公司员工数量",
+            name: "Number of head office employees",
             type: "line",
             smooth: true,
             symbol: "circle",

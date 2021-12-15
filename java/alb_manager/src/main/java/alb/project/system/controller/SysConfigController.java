@@ -18,7 +18,7 @@ import alb.framework.web.domain.AjaxResult;
 import alb.framework.web.page.TableDataInfo;
 
 /**
- * 参数配置 信息操作处理
+ * Parameter configuration Information processing
  *
  */
 @RestController
@@ -29,7 +29,7 @@ public class SysConfigController extends BaseController
     private ISysConfigService configService;
 
     /**
-     * 获取参数配置列表
+     * Gets the parameter configuration list
      */
     @PreAuthorize("@ss.hasPermi('system:config:list')")
     @GetMapping("/list")
@@ -40,18 +40,18 @@ public class SysConfigController extends BaseController
         return getDataTable(list);
     }
 
-    @Log(title = "参数管理", businessType = BusinessType.EXPORT)
+    @Log(title = "Parameter management", businessType = BusinessType.EXPORT)
     @PreAuthorize("@ss.hasPermi('system:config:export')")
     @GetMapping("/export")
     public AjaxResult export(SysConfig config)
     {
         List<SysConfig> list = configService.selectConfigList(config);
         ExcelUtil<SysConfig> util = new ExcelUtil<SysConfig>(SysConfig.class);
-        return util.exportExcel(list, "参数数据");
+        return util.exportExcel(list, "Parameter data");
     }
 
     /**
-     * 根据参数编号获取详细信息
+     * Obtain details by parameter number
      */
     @PreAuthorize("@ss.hasPermi('system:config:query')")
     @GetMapping(value = "/{configId}")
@@ -61,7 +61,7 @@ public class SysConfigController extends BaseController
     }
 
     /**
-     * 根据参数键名查询参数值
+     * Query parameter values by parameter key names
      */
     @GetMapping(value = "/configKey/{configKey}")
     public AjaxResult getConfigKey(@PathVariable String configKey)
@@ -70,42 +70,42 @@ public class SysConfigController extends BaseController
     }
 
     /**
-     * 新增参数配置
+     * New Parameter Configuration
      */
     @PreAuthorize("@ss.hasPermi('system:config:add')")
-    @Log(title = "参数管理", businessType = BusinessType.INSERT)
+    @Log(title = "Parameter management", businessType = BusinessType.INSERT)
     @PostMapping
     public AjaxResult add(@Validated @RequestBody SysConfig config)
     {
         if (UserConstants.NOT_UNIQUE.equals(configService.checkConfigKeyUnique(config)))
         {
-            return AjaxResult.error("新增参数'" + config.getConfigName() + "'失败，参数键名已存在");
+            return AjaxResult.error("The new parameters'" + config.getConfigName() + "'failure,The parameter key name already exists");
         }
         config.setCreateBy(SecurityUtils.getUsername());
         return toAjax(configService.insertConfig(config));
     }
 
     /**
-     * 修改参数配置
+     * Modifying Parameter Settings
      */
     @PreAuthorize("@ss.hasPermi('system:config:edit')")
-    @Log(title = "参数管理", businessType = BusinessType.UPDATE)
+    @Log(title = "Parameter management", businessType = BusinessType.UPDATE)
     @PutMapping
     public AjaxResult edit(@Validated @RequestBody SysConfig config)
     {
         if (UserConstants.NOT_UNIQUE.equals(configService.checkConfigKeyUnique(config)))
         {
-            return AjaxResult.error("修改参数'" + config.getConfigName() + "'失败，参数键名已存在");
+            return AjaxResult.error("Modify the parameters'" + config.getConfigName() + "'failure,The parameter key name already exists");
         }
         config.setUpdateBy(SecurityUtils.getUsername());
         return toAjax(configService.updateConfig(config));
     }
 
     /**
-     * 删除参数配置
+     * Deleting Parameter Settings
      */
     @PreAuthorize("@ss.hasPermi('system:config:remove')")
-    @Log(title = "参数管理", businessType = BusinessType.DELETE)
+    @Log(title = "Parameter management", businessType = BusinessType.DELETE)
     @DeleteMapping("/{configIds}")
     public AjaxResult remove(@PathVariable Long[] configIds)
     {
@@ -113,10 +113,10 @@ public class SysConfigController extends BaseController
     }
 
     /**
-     * 清空缓存
+     * Clear the cache
      */
     @PreAuthorize("@ss.hasPermi('system:config:remove')")
-    @Log(title = "参数管理", businessType = BusinessType.CLEAN)
+    @Log(title = "Parameter management", businessType = BusinessType.CLEAN)
     @DeleteMapping("/clearCache")
     public AjaxResult clearCache()
     {

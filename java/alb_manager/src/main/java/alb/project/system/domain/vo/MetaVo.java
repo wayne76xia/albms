@@ -1,18 +1,18 @@
 package alb.project.system.domain.vo;
 
 /**
- * 路由显示信息
+ * Route Display Information
  *
  */
 public class MetaVo
 {
     /**
-     * 设置该路由在侧边栏和面包屑中展示的名字
+     * Sets the name of the route displayed in the sidebar and breadcrumbs
      */
     private String title;
 
     /**
-     * 设置该路由的图标，对应路径src/icons/svg
+     * Sets the icon of the route,Corresponding pathsrc/icons/svg
      */
     private String icon;
 

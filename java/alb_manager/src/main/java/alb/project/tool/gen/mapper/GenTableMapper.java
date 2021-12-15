@@ -1,75 +1,76 @@
 package alb.project.tool.gen.mapper;
 
-import java.util.List;
 import alb.project.tool.gen.domain.GenTable;
 
+import java.util.List;
+
 /**
- * 业务 数据层
+ * business The data layer
  *
  */
 public interface GenTableMapper
 {
     /**
-     * 查询业务列表
+     * Querying a Service List
      * 
-     * @param genTable 业务信息
-     * @return 业务集合
+     * @param genTable Business information
+     * @return Business collection
      */
     List<GenTable> selectGenTableList(GenTable genTable);
 
     /**
-     * 查询据库列表
+     * Query the data library list
      * 
-     * @param genTable 业务信息
-     * @return 数据库表集合
+     * @param genTable Business information
+     * @return Collection of database tables
      */
     List<GenTable> selectDbTableList(GenTable genTable);
 
     /**
-     * 查询据库列表
+     * Query the data library list
      * 
-     * @param tableNames 表名称组
-     * @return 数据库表集合
+     * @param tableNames The table name group
+     * @return Collection of database tables
      */
     List<GenTable> selectDbTableListByNames(String[] tableNames);
 
     /**
-     * 查询表ID业务信息
+     * Lookup tableIDBusiness information
      * 
-     * @param id 业务ID
-     * @return 业务信息
+     * @param id businessID
+     * @return Business information
      */
     GenTable selectGenTableById(Long id);
 
     /**
-     * 查询表名称业务信息
+     * Querying table name Service information
      * 
-     * @param tableName 表名称
-     * @return 业务信息
+     * @param tableName The name of the table
+     * @return Business information
      */
     GenTable selectGenTableByName(String tableName);
 
     /**
-     * 新增业务
+     * The new business
      * 
-     * @param genTable 业务信息
-     * @return 结果
+     * @param genTable Business information
+     * @return The results of
      */
     int insertGenTable(GenTable genTable);
 
     /**
-     * 修改业务
+     * Modify the business
      * 
-     * @param genTable 业务信息
-     * @return 结果
+     * @param genTable Business information
+     * @return The results of
      */
     int updateGenTable(GenTable genTable);
 
     /**
-     * 批量删除业务
+     * Deleting services in batches
      * 
-     * @param ids 需要删除的数据ID
-     * @return 结果
+     * @param ids Data to be deletedID
+     * @return The results of
      */
     int deleteGenTableByIds(Long[] ids);
 }

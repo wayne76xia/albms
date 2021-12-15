@@ -4,44 +4,44 @@ import java.util.List;
 import alb.project.monitor.domain.SysOperLog;
 
 /**
- * 操作日志 数据层
+ * The operation log The data layer
  *
  */
 public interface SysOperLogMapper
 {
     /**
-     * 新增操作日志
+     * Adding Operation Logs
      * 
-     * @param operLog 操作日志对象
+     * @param operLog Operation Log Object
      */
     void insertOperlog(SysOperLog operLog);
 
     /**
-     * 查询系统操作日志集合
+     * Example Query a set of system operation logs
      * 
-     * @param operLog 操作日志对象
-     * @return 操作日志集合
+     * @param operLog Operation Log Object
+     * @return Operation log collection
      */
     List<SysOperLog> selectOperLogList(SysOperLog operLog);
 
     /**
-     * 批量删除系统操作日志
+     * Delete system operation logs in batches
      * 
-     * @param operIds 需要删除的操作日志ID
-     * @return 结果
+     * @param operIds Operation logs that you want to deleteID
+     * @return The results of
      */
     int deleteOperLogByIds(Long[] operIds);
 
     /**
-     * 查询操作日志详细
+     * Query details about operation logs
      * 
-     * @param operId 操作ID
-     * @return 操作日志对象
+     * @param operId operationID
+     * @return Operation Log Object
      */
     SysOperLog selectOperLogById(Long operId);
 
     /**
-     * 清空操作日志
+     * Clearing Operation Logs
      */
     void cleanOperLog();
 }

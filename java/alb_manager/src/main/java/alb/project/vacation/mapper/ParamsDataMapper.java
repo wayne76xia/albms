@@ -5,57 +5,57 @@ import alb.project.vacation.domain.ParamsData;
 import java.util.List;
 
 /**
- * 参数设置Mapper接口
+ * Parameter SettingsMapperinterface
  *
  * @date 2020-07-16
  */
 public interface ParamsDataMapper 
 {
     /**
-     * 查询参数设置
+     * Querying Parameter Settings
      * 
-     * @param id 参数设置ID
-     * @return 参数设置
+     * @param id Parameter SettingsID
+     * @return Parameter Settings
      */
     ParamsData selectParamsDataById(Long id);
 
     /**
-     * 查询参数设置列表
+     * Example Query the parameter list
      * 
-     * @param paramsData 参数设置
-     * @return 参数设置集合
+     * @param paramsData Parameter Settings
+     * @return Set of parameters
      */
     List<ParamsData> selectParamsDataList(ParamsData paramsData);
 
     /**
-     * 新增参数设置
+     * New Parameter Settings
      * 
-     * @param paramsData 参数设置
-     * @return 结果
+     * @param paramsData Parameter Settings
+     * @return The results of
      */
     int insertParamsData(ParamsData paramsData);
 
     /**
-     * 修改参数设置
+     * Modifying Parameter Settings
      * 
-     * @param paramsData 参数设置
-     * @return 结果
+     * @param paramsData Parameter Settings
+     * @return The results of
      */
     int updateParamsData(ParamsData paramsData);
 
     /**
-     * 删除参数设置
+     * Delete parameter Settings
      * 
-     * @param id 参数设置ID
-     * @return 结果
+     * @param id Parameter SettingsID
+     * @return The results of
      */
     int deleteParamsDataById(Long id);
 
     /**
-     * 批量删除参数设置
+     * Delete parameter Settings in batches
      * 
-     * @param ids 需要删除的数据ID
-     * @return 结果
+     * @param ids Data to be deletedID
+     * @return The results of
      */
     int deleteParamsDataByIds(Long[] ids);
 }

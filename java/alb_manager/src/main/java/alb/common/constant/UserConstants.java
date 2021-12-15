@@ -1,59 +1,59 @@
 package alb.common.constant;
 
 /**
- * 用户常量信息
+ * User constant information
  *
  */
 public class UserConstants
 {
     /**
-     * 平台内系统用户的唯一标志
+     * Unique identification of system users within the platform
      */
     public static final String SYS_USER = "SYS_USER";
 
-    /** 正常状态 */
+    /** The normal state */
     public static final String NORMAL = "0";
 
-    /** 异常状态 */
+    /** Abnormal state */
     public static final String EXCEPTION = "1";
 
-    /** 用户封禁状态 */
+    /** User blocked status */
     public static final String USER_DISABLE = "1";
 
-    /** 角色封禁状态 */
+    /** The role is disabled */
     public static final String ROLE_DISABLE = "1";
 
-    /** 部门正常状态 */
+    /** Normal department Status */
     public static final String DEPT_NORMAL = "0";
 
-    /** 部门停用状态 */
+    /** Department outage status */
     public static final String DEPT_DISABLE = "1";
 
-    /** 字典正常状态 */
+    /** Dictionary normal state */
     public static final String DICT_NORMAL = "0";
 
-    /** 是否为系统默认（是） */
+    /** Whether it is the default value(is) */
     public static final String YES = "Y";
 
-    /** 是否菜单外链（是） */
+    /** Whether the menu outside the chain(is) */
     public static final String YES_FRAME = "0";
 
-    /** 是否菜单外链（否） */
+    /** Whether the menu outside the chain(no) */
     public static final String NO_FRAME = "1";
 
-    /** 菜单类型（目录） */
+    /** The menu type(directory) */
     public static final String TYPE_DIR = "M";
 
-    /** 菜单类型（菜单） */
+    /** The menu type(The menu) */
     public static final String TYPE_MENU = "C";
 
-    /** 菜单类型（按钮） */
+    /** The menu type(button) */
     public static final String TYPE_BUTTON = "F";
 
-    /** Layout组件标识 */
+    /** LayoutComponent identification */
     public final static String LAYOUT = "Layout";
 
-    /** 校验返回结果码 */
+    /** Verify return result code */
     public final static String UNIQUE = "0";
     public final static String NOT_UNIQUE = "1";
 }

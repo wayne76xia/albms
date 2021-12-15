@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
- * 操作日志 服务层处理
+ * The operation log Service layer processing
  *
  */
 @Service
@@ -19,9 +19,9 @@ public class SysOperLogServiceImpl implements ISysOperLogService
     private SysOperLogMapper operLogMapper;
 
     /**
-     * 新增操作日志
+     * Adding Operation Logs
      * 
-     * @param operLog 操作日志对象
+     * @param operLog Operation Log Object
      */
     @Override
     public void insertOperlog(SysOperLog operLog)
@@ -30,10 +30,10 @@ public class SysOperLogServiceImpl implements ISysOperLogService
     }
 
     /**
-     * 查询系统操作日志集合
+     * Example Query a set of system operation logs
      * 
-     * @param operLog 操作日志对象
-     * @return 操作日志集合
+     * @param operLog Operation Log Object
+     * @return Operation log collection
      */
     @Override
     public List<SysOperLog> selectOperLogList(SysOperLog operLog)
@@ -42,10 +42,10 @@ public class SysOperLogServiceImpl implements ISysOperLogService
     }
 
     /**
-     * 批量删除系统操作日志
+     * Delete system operation logs in batches
      * 
-     * @param operIds 需要删除的操作日志ID
-     * @return 结果
+     * @param operIds Operation logs that you want to deleteID
+     * @return The results of
      */
     @Override
     public int deleteOperLogByIds(Long[] operIds)
@@ -54,10 +54,10 @@ public class SysOperLogServiceImpl implements ISysOperLogService
     }
 
     /**
-     * 查询操作日志详细
+     * Query details about operation logs
      * 
-     * @param operId 操作ID
-     * @return 操作日志对象
+     * @param operId operationID
+     * @return Operation Log Object
      */
     @Override
     public SysOperLog selectOperLogById(Long operId)
@@ -66,7 +66,7 @@ public class SysOperLogServiceImpl implements ISysOperLogService
     }
 
     /**
-     * 清空操作日志
+     * Clearing Operation Logs
      */
     @Override
     public void cleanOperLog()

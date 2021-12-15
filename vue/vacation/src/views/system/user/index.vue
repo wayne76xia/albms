@@ -4,12 +4,12 @@
       <chart />
     </div>
     <el-row :gutter="20" class="aui-margin-t-15">
-      <!--部门数据-->
+      <!--Department of data-->
       <el-col :span="4" :xs="24">
         <div class="head-container">
           <el-input
             v-model="deptName"
-            placeholder="请输入部门名称"
+            placeholder="Please enter a department name"
             clearable
             size="small"
             prefix-icon="el-icon-search"
@@ -28,20 +28,20 @@
           />
         </div>
       </el-col>
-      <!--用户数据-->
+      <!--User data-->
       <el-col :span="20" :xs="24">
         <div class="flex flex_start title_box aui-padded-b-15">
-          <p class="font-size-20">用户管理</p>
+          <p class="font-size-20">User Management</p>
           <div
             class="addnew bg-theme text-white aui-margin-l-10 border-radius font-size-14"
             @click="handleAdd"
             v-hasPermi="['system:user:add']"
-          >新增</div>
+          >new</div>
           <div
             class="addnew delnew text-white aui-margin-l-10 border-radius font-size-14"
             @click="handleDelete"
             v-hasPermi="['system:user:remove']"
-          >删除</div>
+          >delete</div>
         </div>
         <div class="table_data">
           <div class="bg-white bg_shadow bg-radius">
@@ -49,27 +49,27 @@
               <el-form :model="queryParams" ref="queryForm" :inline="true" label-width="100px">
                 <el-row>
                   <el-col :span="20">
-                    <el-form-item label="用户名称：" prop="userName">
+                    <el-form-item label="The user name:" prop="userName">
                       <el-input
                         v-model="queryParams.userName"
-                        placeholder="请输入用户名称"
+                        placeholder="Please enter a user name"
                         clearable
                         size="small"
                         @keyup.enter.native="handleQuery"
                       />
                     </el-form-item>
-                    <el-form-item label="手机号码：" prop="phonenumber">
+                    <el-form-item label="Mobile phone number:" prop="phonenumber">
                       <el-input
                         v-model="queryParams.phonenumber"
-                        placeholder="请输入手机号码"
+                        placeholder="Please enter your mobile phone number"
                         clearable
                         size="small"
                         @keyup.enter.native="handleQuery"
                       />
                     </el-form-item>
-                    <el-form-item label="岗位：">
+                    <el-form-item label="jobs:">
 
-                      <el-select v-model="queryParams.postId"  placeholder="请选择" style="width:100%"  clearable filterable>
+                      <el-select v-model="queryParams.postId"  placeholder="Please select a" style="width:100%"  clearable filterable>
                         <el-option
                           v-for="item in postOptions"
                           :key="item.postId"
@@ -80,7 +80,7 @@
                         ></el-option>
                       </el-select>
                     </el-form-item>
-                    <el-form-item label="创建时间：">
+                    <el-form-item label="Creation time:">
                       <el-date-picker
                         v-model="dateRange"
                         size="small"
@@ -88,13 +88,13 @@
                         value-format="yyyy-MM-dd"
                         type="daterange"
                         range-separator="-"
-                        start-placeholder="开始日期"
-                        end-placeholder="结束日期"
+                        start-placeholder="Start date"
+                        end-placeholder="End date"
                       ></el-date-picker>
                     </el-form-item>
                     <el-form-item>
-                      <el-button type="primary" size="medium" @click="handleQuery">查询</el-button>
-                      <el-button size="medium" @click="resetQuery">重置</el-button>
+                      <el-button type="primary" size="medium" @click="handleQuery">The query</el-button>
+                      <el-button size="medium" @click="resetQuery">reset</el-button>
                     </el-form-item>
                   </el-col>
                   <el-col :span="4">
@@ -104,7 +104,7 @@
                       size="mini"
                       @click="handleAdd"
                       v-hasPermi="['system:user:add']"
-                    >新增</el-button>
+                    >new</el-button>
                     <el-button
                       type="success"
                       icon="el-icon-edit"
@@ -112,7 +112,7 @@
                       :disabled="single"
                       @click="handleUpdate"
                       v-hasPermi="['system:user:edit']"
-                    >修改</el-button>
+                    >Modify the</el-button>
                     <el-button
                       type="danger"
                       icon="el-icon-delete"
@@ -120,32 +120,32 @@
                       :disabled="multiple"
                       @click="handleDelete"
                       v-hasPermi="['system:user:remove']"
-                    >删除</el-button>-->
+                    >delete</el-button>-->
                     <!-- <el-button
                       type="info"
                       icon="el-icon-upload2"
                       size="mini"
                       @click="handleImport"
                       v-hasPermi="['system:user:import']"
-                    >导入</el-button>
+                    >The import</el-button>
                     <el-button
                       type="warning"
                       icon="el-icon-download"
                       size="mini"
                       @click="handleExport"
                       v-hasPermi="['system:user:export']"
-                    >导出</el-button>-->
+                    >export</el-button>-->
 
                     <div class>
                       <div class="flex export_box" style="float:right">
-                        <div class="text-black font-size-14 aui-padded-r-10">共{{total}}条数据</div>
+                        <div class="text-black font-size-14 aui-padded-r-10">A total of{{total}}The data</div>
                         <el-button
                           size="mini"
                           @click="handleImport"
                           v-hasPermi="['system:user:import']"
                         >
                           <img src="../../../assets/image/daoru.png" alt />
-                          <p style="margin-top:2px">导入</p>
+                          <p style="margin-top:2px">The import</p>
                         </el-button>
                         <el-button
                           size="mini"
@@ -153,7 +153,7 @@
                           v-hasPermi="['system:user:export']"
                         >
                           <img src="../../../assets/image/daochu.png" alt />
-                          <p style="margin-top:2px">导出</p>
+                          <p style="margin-top:2px">export</p>
                         </el-button>
                       </div>
                     </div>
@@ -168,27 +168,27 @@
               stripe
             >
               <el-table-column type="selection" width="80" align="center" />
-              <el-table-column label="用户工号" align="center" prop="userCode" />
+              <el-table-column label="The user work number" align="center" prop="userCode" />
               <el-table-column
-                label="用户名称"
+                label="The user name"
                 align="center"
                 prop="userName"
                 :show-overflow-tooltip="true"
               />
               <el-table-column
-                label="用户昵称"
+                label="The user nickname"
                 align="center"
                 prop="nickName"
                 :show-overflow-tooltip="true"
               />
               <el-table-column
-                label="部门"
+                label="department"
                 align="center"
                 prop="dept.deptName"
                 :show-overflow-tooltip="true"
               />
-              <el-table-column label="手机号码" align="center" prop="phonenumber" width="120" />
-              <el-table-column label="状态" align="center">
+              <el-table-column label="Mobile phone number" align="center" prop="phonenumber" width="120" />
+              <el-table-column label="state" align="center">
                 <template slot-scope="scope">
                   <el-switch
                     v-model="scope.row.status"
@@ -198,13 +198,13 @@
                   ></el-switch>
                 </template>
               </el-table-column>
-              <el-table-column label="创建时间" align="center" prop="createTime" width="160">
+              <el-table-column label="Creation time" align="center" prop="createTime" width="160">
                 <template slot-scope="scope">
                   <span>{{ parseTime(scope.row.createTime) }}</span>
                 </template>
               </el-table-column>
               <el-table-column
-                label="操作"
+                label="operation"
                 align="center"
                 width="180"
                 class-name="small-padding fixed-width"
@@ -217,7 +217,7 @@
                     @click="handleUpdate(scope.row)"
                     v-hasPermi="['system:user:edit']"
                     style="color:#5ECC59 !important;font-size:16px"
-                    title="编辑"
+                    title="The editor"
                   ></el-button>
                   <el-button
                     v-if="scope.row.userId !== 1"
@@ -227,7 +227,7 @@
                     @click="handleDelete(scope.row)"
                     v-hasPermi="['system:user:remove']"
                     style="color: #E8522A !important;font-size:16px"
-                    title="删除"
+                    title="delete"
                   ></el-button>
                   <el-button
                     size="mini"
@@ -236,7 +236,7 @@
                     @click="handleResetPwd(scope.row)"
                     v-hasPermi="['system:user:resetPwd']"
                     style="font-size:16px"
-                    title="重置密码"
+                    title="To reset your password"
                   ></el-button>
                 </template>
               </el-table-column>
@@ -253,62 +253,62 @@
       </el-col>
     </el-row>
 
-    <!-- 添加或修改参数配置对话框 -->
+    <!-- Add or modify parameter configuration dialog box -->
     <el-dialog :title="title" :visible.sync="open" width="40%" append-to-body>
       <el-form ref="form" :model="form" :rules="rules" label-width="120px">
         <el-row>
           <el-col :span="12">
-            <el-form-item label="用户昵称：" prop="nickName">
-              <el-input v-model="form.nickName" placeholder="请输入用户昵称" />
+            <el-form-item label="The user nickname:" prop="nickName">
+              <el-input v-model="form.nickName" placeholder="Please enter a user nickname" />
             </el-form-item>
           </el-col>
           <el-col :span="12">
-            <el-form-item label="用户工号：" prop="userCode">
-              <el-input v-model="form.userCode" placeholder="系统自动分配" :disabled="true"/>
+            <el-form-item label="The user work number:" prop="userCode">
+              <el-input v-model="form.userCode" placeholder="Automatic system allocation" :disabled="true"/>
             </el-form-item>
           </el-col>
 
         </el-row>
         <el-row>
           <el-col :span="12">
-            <el-form-item label="归属部门：" prop="deptId">
+            <el-form-item label="Attribution department:" prop="deptId">
               <treeselect
                 v-model="form.deptId"
                 :options="deptOptions"
                 :show-count="true"
-                placeholder="请选择归属部门"
+                placeholder="Select a department"
               />
             </el-form-item>
           </el-col>
           <el-col :span="12">
-            <el-form-item label="手机号码：" prop="phonenumber">
-              <el-input v-model="form.phonenumber" placeholder="请输入手机号码" maxlength="11" />
+            <el-form-item label="Mobile phone number:" prop="phonenumber">
+              <el-input v-model="form.phonenumber" placeholder="Please enter your mobile phone number" maxlength="11" />
             </el-form-item>
           </el-col>
 
         </el-row>
         <el-row>
           <el-col :span="12">
-            <el-form-item label="邮箱：" prop="email">
-              <el-input v-model="form.email" placeholder="请输入邮箱" maxlength="50" />
+            <el-form-item label="email:" prop="email">
+              <el-input v-model="form.email" placeholder="Please enter email address" maxlength="50" />
             </el-form-item>
           </el-col>
           <el-col :span="12">
-            <el-form-item v-if="form.userId == undefined" label="用户名称：" prop="userName">
-              <el-input v-model="form.userName" placeholder="请输入用户名称" />
+            <el-form-item v-if="form.userId == undefined" label="The user name:" prop="userName">
+              <el-input v-model="form.userName" placeholder="Please enter a user name" />
             </el-form-item>
           </el-col>
 
         </el-row>
         <el-row>
           <el-col :span="12">
-            <el-form-item v-if="form.userId == undefined" label="用户密码：" prop="password">
-              <el-input v-model="form.password" placeholder="请输入用户密码" type="password" />
+            <el-form-item v-if="form.userId == undefined" label="The user password:" prop="password">
+              <el-input v-model="form.password" placeholder="Please enter the user password" type="password" />
             </el-form-item>
           </el-col>
           <el-col :span="12">
-            <el-form-item label="用户性别：">
-              <el-select v-model="form.sex" placeholder="请选择" style="width:100%">
+            <el-form-item label="User's gender:">
+              <el-select v-model="form.sex" placeholder="Please select a" style="width:100%">
                 <el-option
                   v-for="dict in sexOptions"
                   :key="dict.dictValue"
@@ -323,8 +323,8 @@
         <el-row>
 
           <el-col :span="12">
-            <el-form-item label="岗位：">
-              <el-select v-model="postIds"  placeholder="请选择" style="width:100%"  @change="postSel">
+            <el-form-item label="jobs:">
+              <el-select v-model="postIds"  placeholder="Please select a" style="width:100%"  @change="postSel">
                 <el-option
                   v-for="item in postOptions"
                   :key="item.postId"
@@ -336,8 +336,8 @@
             </el-form-item>
           </el-col>
           <el-col :span="12">
-            <el-form-item label="角色：">
-              <el-select v-model="form.roleIds" multiple placeholder="请选择" style="width:100%">
+            <el-form-item label="role:">
+              <el-select v-model="form.roleIds" multiple placeholder="Please select a" style="width:100%">
                 <el-option
                   v-for="item in roleOptions"
                   :key="item.roleId"
@@ -352,7 +352,7 @@
         </el-row>
         <el-row>
           <el-col :span="12">
-            <el-form-item label="状态：">
+            <el-form-item label="state:">
               <el-radio-group v-model="form.status">
                 <el-radio
                   v-for="dict in statusOptions"
@@ -364,19 +364,19 @@
           </el-col>
 
           <el-col :span="24">
-            <el-form-item label="备注：">
-              <el-input v-model="form.remark" type="textarea" placeholder="请输入内容"></el-input>
+            <el-form-item label="note:">
+              <el-input v-model="form.remark" type="textarea" placeholder="Please enter the content"></el-input>
             </el-form-item>
           </el-col>
         </el-row>
       </el-form>
       <div slot="footer" class="dialog-footer">
-        <el-button type="primary" @click="submitForm">确 定</el-button>
-        <el-button @click="cancel">取 消</el-button>
+        <el-button type="primary" @click="submitForm">indeed set</el-button>
+        <el-button @click="cancel">take eliminate</el-button>
       </div>
     </el-dialog>
 
-    <!-- 用户导入对话框 -->
+    <!-- User import dialog box -->
     <el-dialog :title="upload.title" :visible.sync="upload.open" width="400px" append-to-body>
       <el-upload
         ref="upload"
@@ -392,18 +392,18 @@
       >
         <i class="el-icon-upload"></i>
         <div class="el-upload__text">
-          将文件拖到此处，或
-          <em>点击上传</em>
+          Drag the file here,or
+          <em>Click on the upload</em>
         </div>
         <div class="el-upload__tip" slot="tip">
-          <el-checkbox v-model="upload.updateSupport" />是否更新已经存在的用户数据
-          <el-link type="info" style="font-size:12px" @click="importTemplate">下载模板</el-link>
+          <el-checkbox v-model="upload.updateSupport" />Whether to update existing user data
+          <el-link type="info" style="font-size:12px" @click="importTemplate">Download the template</el-link>
         </div>
-        <div class="el-upload__tip" style="color:red" slot="tip">提示：仅允许导入“xls”或“xlsx”格式文件！</div>
+        <div class="el-upload__tip" style="color:red" slot="tip">prompt:Import only“xls”or“xlsx”Format file!</div>
       </el-upload>
       <div slot="footer" class="dialog-footer">
-        <el-button type="primary" @click="submitFileForm">确 定</el-button>
-        <el-button @click="upload.open = false">取 消</el-button>
+        <el-button type="primary" @click="submitFileForm">indeed set</el-button>
+        <el-button @click="upload.open = false">take eliminate</el-button>
       </div>
     </el-dialog>
   </div>
@@ -432,61 +432,61 @@ export default {
   components: { Treeselect, chart },
   data() {
     return {
-      // 遮罩层
+      // The mask layer
       loading: true,
-      // 选中数组
+      // Select the array
       ids: [],
-      // 非单个禁用
+      // Non-single disable
       single: true,
-      // 非多个禁用
+      // Non-multiple disable
       multiple: true,
-      // 总条数
+      // The total number of article
       total: 0,
-      // 用户表格数据
+      // User table data
       userList: null,
-      // 弹出层标题
+      // Pop-up layer title
       title: "",
-      // 部门树选项
+      // Department tree option
       deptOptions: undefined,
-      // 是否显示弹出层
+      // Whether to display the pop-up layer
       open: false,
-      // 部门名称
+      // Department name
       deptName: undefined,
-      // 默认密码
+      // The default password
       initPassword: undefined,
-      // 日期范围
+      // Date range
       dateRange: [],
-      // 状态数据字典
+      // State data dictionary
       statusOptions: [],
-      // 性别状态字典
+      // Gender status dictionary
       sexOptions: [],
-      // 岗位选项
+      // Job options
       postOptions: [],
-      // 角色选项
+      // Role options
       roleOptions: [],
-      // 表单参数
+      // The form parameter
       form: {},
       defaultProps: {
         children: "children",
         label: "label",
       },
-      // 用户导入参数
+      // User Import Parameters
       upload: {
-        // 是否显示弹出层（用户导入）
+        // Whether to display the pop-up layer(The user to import)
         open: false,
-        // 弹出层标题（用户导入）
+        // Pop-up layer title(The user to import)
         title: "",
-        // 是否禁用上传
+        // Whether to disable upload
         isUploading: false,
-        // 是否更新已经存在的用户数据
+        // Whether to update existing user data
         updateSupport: 0,
-        // 设置上传的请求头部
+        // Set the upload request header
         headers: { Authorization: "Bearer " + getToken() },
-        // 上传的地址
+        // Upload address
         url: process.env.VUE_APP_BASE_API + "/system/user/importData",
       },
       postIds:undefined,
-      // 查询参数
+      // Query parameters
       queryParams: {
         pageNum: 1,
         pageSize: 10,
@@ -499,36 +499,36 @@ export default {
         endTime:undefined
 
       },
-      // 表单校验
+      // Form validation
       rules: {
         userName: [
-          { required: true, message: "用户名称不能为空", trigger: "blur" },
+          { required: true, message: "The user name cannot be empty", trigger: "blur" },
         ],
         // userCode: [
-        //   { required: true, message: "工号不能为空", trigger: "blur" },
+        //   { required: true, message: "The id cannot be empty", trigger: "blur" },
         // ],
         nickName: [
-          { required: true, message: "用户昵称不能为空", trigger: "blur" },
+          { required: true, message: "User nicknames cannot be empty", trigger: "blur" },
         ],
         deptId: [
-          { required: true, message: "归属部门不能为空", trigger: "blur" },
+          { required: true, message: "The owning department cannot be empty", trigger: "blur" },
         ],
         password: [
-          { required: true, message: "用户密码不能为空", trigger: "blur" },
+          { required: true, message: "The user password cannot be empty", trigger: "blur" },
         ],
         email: [
-          { required: true, message: "邮箱地址不能为空", trigger: "blur" },
+          { required: true, message: "The email address cannot be empty", trigger: "blur" },
           {
             type: "email",
-            message: "'请输入正确的邮箱地址",
+            message: "'Please enter the correct email address",
             trigger: ["blur", "change"],
           },
         ],
         phonenumber: [
-          { required: true, message: "手机号码不能为空", trigger: "blur" },
+          { required: true, message: "The mobile phone number cannot be empty", trigger: "blur" },
           {
             pattern: /^1[3|4|5|6|7|8|9][0-9]\d{8}$/,
-            message: "请输入正确的手机号码",
+            message: "Please enter the correct mobile phone number",
             trigger: "blur",
           },
         ],
@@ -537,7 +537,7 @@ export default {
   },
   watch: {
 
-    // 根据名称筛选部门树
+    // Filter the department tree by name
     deptName(val) {
       this.$refs.tree.filter(val);
     },
@@ -565,7 +565,7 @@ export default {
 
 
     },
-    /** 查询用户列表 */
+    /** Querying a User List */
     getList() {
       this.loading = true;
       listUser(this.queryParams).then(
@@ -577,31 +577,31 @@ export default {
         }
       );
     },
-    /** 查询部门下拉树结构 */
+    /** Query the department drop-down tree structure */
     getTreeselect() {
       treeselect().then((response) => {
         this.deptOptions = response.data;
       });
     },
-    // 筛选节点
+    // Screening of node
     filterNode(value, data) {
       if (!value) return true;
       return data.label.indexOf(value) !== -1;
     },
-    // 节点单击事件
+    // Node Click event
     handleNodeClick(data) {
       this.queryParams.deptId = data.id;
       this.getList();
     },
-    // 用户状态修改
+    // User Status Modification
     handleStatusChange(row) {
-      let text = row.status === "0" ? "启用" : "停用";
+      let text = row.status === "0" ? "To enable the" : "disable";
       this.$confirm(
-        '确认要"' + text + '""' + row.userName + '"用户吗?',
-        "警告",
+        'Confirm to"' + text + '""' + row.userName + '"The user??',
+        "warning",
         {
-          confirmButtonText: "确定",
-          cancelButtonText: "取消",
+          confirmButtonText: "determine",
+          cancelButtonText: "cancel",
           type: "warning",
         }
       )
@@ -609,18 +609,18 @@ export default {
           return changeUserStatus(row.userId, row.status);
         })
         .then(() => {
-          this.msgSuccess(text + "成功");
+          this.msgSuccess(text + "successful");
         })
         .catch(function () {
           row.status = row.status === "0" ? "1" : "0";
         });
     },
-    // 取消按钮
+    // Cancel button
     cancel() {
       this.open = false;
       this.reset();
     },
-    // 表单重置
+    // Reset the form
     reset() {
       this.form = {
         userId: undefined,
@@ -639,7 +639,7 @@ export default {
       };
       this.resetForm("form");
     },
-    /** 搜索按钮操作 */
+    /** Search button operation */
     handleQuery() {
       this.queryParams.pageNum = 1;
       this.queryParams.beginTime = this.dateRange[0]
@@ -647,7 +647,7 @@ export default {
 
       this.getList();
     },
-    /** 重置按钮操作 */
+    /** Reset button operation */
     resetQuery() {
       this.dateRange = [];
       this.queryParams= {
@@ -665,13 +665,13 @@ export default {
       this.resetForm("queryForm");
       this.handleQuery();
     },
-    // 多选框选中数据
+    // Select data in multiple boxes
     handleSelectionChange(selection) {
       this.ids = selection.map((item) => item.userId);
       this.single = selection.length != 1;
       this.multiple = !selection.length;
     },
-    /** 新增按钮操作 */
+    /** New Button Operation */
     handleAdd() {
       this.reset();
       this.getTreeselect();
@@ -679,11 +679,11 @@ export default {
         this.postOptions = response.posts;
         this.roleOptions = response.roles;
         this.open = true;
-        this.title = "添加用户";
+        this.title = "Add user";
         this.form.password = this.initPassword;
       });
     },
-    /** 修改按钮操作 */
+    /** Modify button operation */
     handleUpdate(row) {
       this.reset();
       this.getTreeselect();
@@ -696,33 +696,33 @@ export default {
         this.form.postIds = response.postIds;
         this.form.roleIds = response.roleIds;
         this.open = true;
-        this.title = "修改用户";
+        this.title = "Modify the user";
         this.form.password = "";
       });
     },
-    /** 重置密码按钮操作 */
+    /** Reset password button operation */
     handleResetPwd(row) {
-      this.$prompt('请输入"' + row.userName + '"的新密码', "提示", {
-        confirmButtonText: "确定",
-        cancelButtonText: "取消",
+      this.$prompt('Please enter the"' + row.userName + '"The new password', "prompt", {
+        confirmButtonText: "determine",
+        cancelButtonText: "cancel",
       })
         .then(({ value }) => {
           resetUserPwd(row.userId, value).then((response) => {
             if (response.code === 200) {
-              this.msgSuccess("修改成功，新密码是：" + value);
+              this.msgSuccess("Modify the success,The new password is:" + value);
             }
           });
         })
         .catch(() => {});
     },
-    /** 提交按钮 */
+    /** The submit button */
     submitForm: function () {
       this.$refs["form"].validate((valid) => {
         if (valid) {
           if (this.form.userId != undefined) {
             updateUser(this.form).then((response) => {
               if (response.code === 200) {
-                this.msgSuccess("修改成功");
+                this.msgSuccess("Modify the success");
                 this.open = false;
                 this.getList();
               }
@@ -730,7 +730,7 @@ export default {
           } else {
             addUser(this.form).then((response) => {
               if (response.code === 200) {
-                this.msgSuccess("新增成功");
+                this.msgSuccess("New success");
                 this.open = false;
                 this.getList();
               }
@@ -739,15 +739,15 @@ export default {
         }
       });
     },
-    /** 删除按钮操作 */
+    /** Delete button operation */
     handleDelete(row) {
       const userIds = row.userId || this.ids;
       this.$confirm(
-        '是否确认删除用户编号为"' + userIds + '"的数据项?',
-        "警告",
+        'Confirm whether to delete the user"' + userIds + '"Data item?',
+        "warning",
         {
-          confirmButtonText: "确定",
-          cancelButtonText: "取消",
+          confirmButtonText: "determine",
+          cancelButtonText: "cancel",
           type: "warning",
         }
       )
@@ -756,16 +756,16 @@ export default {
         })
         .then(() => {
           this.getList();
-          this.msgSuccess("删除成功");
+          this.msgSuccess("Delete the success");
         })
         .catch(function () {});
     },
-    /** 导出按钮操作 */
+    /** Export button operation */
     handleExport() {
       const queryParams = this.queryParams;
-      this.$confirm("是否确认导出所有用户数据项?", "警告", {
-        confirmButtonText: "确定",
-        cancelButtonText: "取消",
+      this.$confirm("Whether to confirm that all user data items are exported?", "warning", {
+        confirmButtonText: "determine",
+        cancelButtonText: "cancel",
         type: "warning",
       })
         .then(function () {
@@ -776,32 +776,32 @@ export default {
         })
         .catch(function () {});
     },
-    /** 导入按钮操作 */
+    /** Import button operation */
     handleImport() {
-      this.upload.title = "用户导入";
+      this.upload.title = "The user to import";
       this.upload.open = true;
     },
-    /** 下载模板操作 */
+    /** Downloading a Template */
     importTemplate() {
       importTemplate().then((response) => {
         this.download(response.msg);
       });
     },
-    // 文件上传中处理
+    // File upload processing
     handleFileUploadProgress(event, file, fileList) {
       console.log(file)
       this.upload.isUploading = true;
     },
-    // 文件上传成功处理
+    // The file is successfully uploaded. Procedure
     handleFileSuccess(response, file, fileList) {
       console.log(file)
       this.upload.open = false;
       this.upload.isUploading = false;
       this.$refs.upload.clearFiles();
-      this.$alert(response.msg, "导入结果", { dangerouslyUseHTMLString: true });
+      this.$alert(response.msg, "Import the results", { dangerouslyUseHTMLString: true });
       this.getList();
     },
-    // 提交上传文件
+    // Submit and upload files
     submitFileForm() {
       this.$refs.upload.submit();
     },

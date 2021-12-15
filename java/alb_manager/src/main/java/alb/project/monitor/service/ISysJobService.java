@@ -7,96 +7,96 @@ import org.quartz.SchedulerException;
 import alb.project.monitor.domain.SysJob;
 
 /**
- * 定时任务调度信息信息 服务层
+ * Periodic task scheduling information The service layer
  *
  */
 public interface ISysJobService
 {
     /**
-     * 获取quartz调度器的计划任务
+     * To obtainquartzSchedule tasks for the scheduler
      * 
-     * @param job 调度信息
-     * @return 调度任务集合
+     * @param job Scheduling information
+     * @return Scheduling task set
      */
     List<SysJob> selectJobList(SysJob job);
 
     /**
-     * 通过调度任务ID查询调度信息
+     * By scheduling tasksIDQuerying Scheduling Information
      * 
-     * @param jobId 调度任务ID
-     * @return 调度任务对象信息
+     * @param jobId Scheduling tasksID
+     * @return Scheduling task object information
      */
     SysJob selectJobById(Long jobId);
 
     /**
-     * 暂停任务
+     * Suspended task
      * 
-     * @param job 调度信息
-     * @return 结果
+     * @param job Scheduling information
+     * @return The results of
      */
     int pauseJob(SysJob job) throws SchedulerException;
 
     /**
-     * 恢复任务
+     * The restore task
      * 
-     * @param job 调度信息
-     * @return 结果
+     * @param job Scheduling information
+     * @return The results of
      */
     int resumeJob(SysJob job) throws SchedulerException;
 
     /**
-     * 删除任务后，所对应的trigger也将被删除
+     * After deleting a Task,The correspondingtriggerWill also be deleted
      * 
-     * @param job 调度信息
-     * @return 结果
+     * @param job Scheduling information
+     * @return The results of
      */
     int deleteJob(SysJob job) throws SchedulerException;
 
     /**
-     * 批量删除调度信息
+     * Delete scheduling information in batches
      * 
-     * @param jobIds 需要删除的任务ID
-     * @return 结果
+     * @param jobIds Tasks that need to be deletedID
+     * @return The results of
      */
     void deleteJobByIds(Long[] jobIds) throws SchedulerException;
 
     /**
-     * 任务调度状态修改
+     * Description The task scheduling status is changed
      * 
-     * @param job 调度信息
-     * @return 结果
+     * @param job Scheduling information
+     * @return The results of
      */
     int changeStatus(SysJob job) throws SchedulerException;
 
     /**
-     * 立即运行任务
+     * Run task now
      * 
-     * @param job 调度信息
-     * @return 结果
+     * @param job Scheduling information
+     * @return The results of
      */
     void run(SysJob job) throws SchedulerException;
 
     /**
-     * 新增任务
+     * The new task
      * 
-     * @param job 调度信息
-     * @return 结果
+     * @param job Scheduling information
+     * @return The results of
      */
     int insertJob(SysJob job) throws SchedulerException, TaskException;
 
     /**
-     * 更新任务
+     * The update task
      * 
-     * @param job 调度信息
-     * @return 结果
+     * @param job Scheduling information
+     * @return The results of
      */
     int updateJob(SysJob job) throws SchedulerException, TaskException;
 
     /**
-     * 校验cron表达式是否有效
+     * checkcronWhether the expression is valid
      * 
-     * @param cronExpression 表达式
-     * @return 结果
+     * @param cronExpression expression
+     * @return The results of
      */
     boolean checkCronExpressionIsValid(String cronExpression);
 }

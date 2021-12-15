@@ -4,57 +4,57 @@ import java.util.List;
 import alb.project.system.domain.SysDictData;
 
 /**
- * 字典 业务层
+ * The dictionary The business layer
  *
  */
 public interface ISysDictDataService
 {
     /**
-     * 根据条件分页查询字典数据
+     * Query dictionary data by conditional paging
      * 
-     * @param dictData 字典数据信息
-     * @return 字典数据集合信息
+     * @param dictData Dictionary data information
+     * @return Dictionary data set information
      */
     List<SysDictData> selectDictDataList(SysDictData dictData);
 
     /**
-     * 根据字典类型和字典键值查询字典数据信息
+     * Query dictionary data information by dictionary type and dictionary key value
      * 
-     * @param dictType 字典类型
-     * @param dictValue 字典键值
-     * @return 字典标签
+     * @param dictType A dictionary type
+     * @param dictValue The dictionary keys
+     * @return The dictionary labels
      */
     String selectDictLabel(String dictType, String dictValue);
 
     /**
-     * 根据字典数据ID查询信息
+     * According to dictionary dataIDQuery information
      * 
-     * @param dictCode 字典数据ID
-     * @return 字典数据
+     * @param dictCode The data dictionaryID
+     * @return The data dictionary
      */
     SysDictData selectDictDataById(Long dictCode);
 
     /**
-     * 批量删除字典数据信息
+     * Delete dictionary data in batches
      * 
-     * @param dictCodes 需要删除的字典数据ID
-     * @return 结果
+     * @param dictCodes Dictionary data to deleteID
+     * @return The results of
      */
     int deleteDictDataByIds(Long[] dictCodes);
 
     /**
-     * 新增保存字典数据信息
+     * Added saving dictionary data information
      * 
-     * @param dictData 字典数据信息
-     * @return 结果
+     * @param dictData Dictionary data information
+     * @return The results of
      */
     int insertDictData(SysDictData dictData);
 
     /**
-     * 修改保存字典数据信息
+     * Modify save dictionary data information
      * 
-     * @param dictData 字典数据信息
-     * @return 结果
+     * @param dictData Dictionary data information
+     * @return The results of
      */
     int updateDictData(SysDictData dictData);
 }

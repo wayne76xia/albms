@@ -51,7 +51,7 @@ export default {
           boundaryGap: false,
           axisLine: {
             lineStyle: {
-              // 设置x轴颜色
+              // Set up thexAxis color
               color: '#999',
             }
           },
@@ -61,7 +61,7 @@ export default {
           boundaryGap: [0, "30%"],
            axisLine: {
             lineStyle: {
-              // 设置x轴颜色
+              // Set up thexAxis color
               color: '#999',
             }
           },
@@ -82,7 +82,7 @@ export default {
             itemStyle: {
               normal: {
                 color: "#999",
-                borderColor:'#5962ff',  //拐点边框颜色
+                borderColor:'#5962ff',  //Inflection point border color
                 
               },
             },
@@ -113,18 +113,18 @@ export default {
               color: "none",
             },
             data: [
-              ["1月", 200],
-              ["2月", 400],
-              ["3月", 650],
-              ["4月", 500],
-              ["5月", 250],
-              ["6月", 300],
-              ["7月", 450],
-              ["8月", 300],
-              ["9月", 100],
-              ["10月", 300],
-              ["11月", 200],
-              ["12月", 100],
+              ["1month", 200],
+              ["2month", 400],
+              ["3month", 650],
+              ["4month", 500],
+              ["5month", 250],
+              ["6month", 300],
+              ["7month", 450],
+              ["8month", 300],
+              ["9month", 100],
+              ["10month", 300],
+              ["11month", 200],
+              ["12month", 100],
             ],
           },
         ],

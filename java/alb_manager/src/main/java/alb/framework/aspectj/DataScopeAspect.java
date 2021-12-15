@@ -1,7 +1,7 @@
 package alb.framework.aspectj;
 
-import java.lang.reflect.Method;
-
+import alb.common.utils.ServletUtils;
+import alb.common.utils.StringUtils;
 import alb.common.utils.spring.SpringUtils;
 import alb.framework.aspectj.lang.annotation.DataScope;
 import alb.framework.security.LoginUser;
@@ -16,11 +16,11 @@ import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
 import org.aspectj.lang.reflect.MethodSignature;
 import org.springframework.stereotype.Component;
-import alb.common.utils.ServletUtils;
-import alb.common.utils.StringUtils;
+
+import java.lang.reflect.Method;
 
 /**
- * 数据过滤处理
+ * Data filtering
  *
  */
 @Aspect
@@ -28,36 +28,36 @@ import alb.common.utils.StringUtils;
 public class DataScopeAspect
 {
     /**
-     * 全部数据权限
+     * All data permissions
      */
     public static final String DATA_SCOPE_ALL = "1";
 
     /**
-     * 自定数据权限
+     * Custom data permissions
      */
     public static final String DATA_SCOPE_CUSTOM = "2";
 
     /**
-     * 部门数据权限
+     * Department Data permissions
      */
     public static final String DATA_SCOPE_DEPT = "3";
 
     /**
-     * 部门及以下数据权限
+     * Department and the following data permissions
      */
     public static final String DATA_SCOPE_DEPT_AND_CHILD = "4";
 
     /**
-     * 仅本人数据权限
+     * Only personal data permission
      */
     public static final String DATA_SCOPE_SELF = "5";
 
     /**
-     * 数据权限过滤关键字
+     * Data permission filtering keyword
      */
     public static final String DATA_SCOPE = "dataScope";
 
-    // 配置织入点
+    // Configure the weave point
     @Pointcut("@annotation(alb.framework.aspectj.lang.annotation.DataScope)")
     public void dataScopePointCut()
     {
@@ -71,18 +71,18 @@ public class DataScopeAspect
 
     protected void handleDataScope(final JoinPoint joinPoint)
     {
-        // 获得注解
+        // Get annotations
         DataScope controllerDataScope = getAnnotationLog(joinPoint);
         if (controllerDataScope == null)
         {
             return;
         }
-        // 获取当前的用户
+        // Gets the current user
         LoginUser loginUser = SpringUtils.getBean(TokenService.class).getLoginUser(ServletUtils.getRequest());
         SysUser currentUser = loginUser.getUser();
         if (currentUser != null)
         {
-            // 如果是超级管理员，则不过滤数据
+            // If you are the super administrator,Data is not filtered
             if (!currentUser.isAdmin())
             {
                 dataScopeFilter(joinPoint, currentUser, controllerDataScope.deptAlias(),
@@ -92,11 +92,11 @@ public class DataScopeAspect
     }
 
     /**
-     * 数据范围过滤
+     * Data range filtering
      * 
-     * @param joinPoint 切点
-     * @param user 用户
-     * @param alias 别名
+     * @param joinPoint Point of tangency
+     * @param user The user
+     * @param alias The alias
      */
     public static void dataScopeFilter(JoinPoint joinPoint, SysUser user, String deptAlias, String userAlias)
     {
@@ -134,7 +134,7 @@ public class DataScopeAspect
                 }
                 else
                 {
-                    // 数据权限为仅本人且没有userAlias别名不查询任何数据
+                    // Data permission is for myself only and nouserAliasAliases do not query any data
                     sqlString.append(" OR 1=0 ");
                 }
             }
@@ -148,7 +148,7 @@ public class DataScopeAspect
     }
 
     /**
-     * 是否存在注解，如果存在就获取
+     * Are there annotations?,Get if it exists
      */
     private DataScope getAnnotationLog(JoinPoint joinPoint)
     {

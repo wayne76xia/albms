@@ -1,6 +1,6 @@
 import request from '@/utils/request'
 
-// 查询菜单列表
+// Query menu list
 export function listMenu(query) {
   return request({
     url: '/system/menu/list',
@@ -9,7 +9,7 @@ export function listMenu(query) {
   })
 }
 
-// 查询菜单详细
+// Query Menu Details
 export function getMenu(menuId) {
   return request({
     url: '/system/menu/' + menuId,
@@ -17,7 +17,7 @@ export function getMenu(menuId) {
   })
 }
 
-// 查询菜单下拉树结构
+// Query the menu drop-down tree structure
 export function treeselect() {
   return request({
     url: '/system/menu/treeselect',
@@ -25,7 +25,7 @@ export function treeselect() {
   })
 }
 
-// 根据角色ID查询菜单下拉树结构
+// According to the characterIDQuery the menu drop-down tree structure
 export function roleMenuTreeselect(roleId) {
   return request({
     url: '/system/menu/roleMenuTreeselect/' + roleId,
@@ -33,7 +33,7 @@ export function roleMenuTreeselect(roleId) {
   })
 }
 
-// 新增菜单
+// The new menu
 export function addMenu(data) {
   return request({
     url: '/system/menu',
@@ -42,7 +42,7 @@ export function addMenu(data) {
   })
 }
 
-// 修改菜单
+// Modify the menu
 export function updateMenu(data) {
   return request({
     url: '/system/menu',
@@ -51,7 +51,7 @@ export function updateMenu(data) {
   })
 }
 
-// 删除菜单
+// Delete menu
 export function delMenu(menuId) {
   return request({
     url: '/system/menu/' + menuId,

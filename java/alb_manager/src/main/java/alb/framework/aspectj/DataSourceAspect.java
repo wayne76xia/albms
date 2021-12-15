@@ -1,8 +1,8 @@
 package alb.framework.aspectj;
 
-import java.util.Objects;
-
+import alb.common.utils.StringUtils;
 import alb.framework.aspectj.lang.annotation.DataSource;
+import alb.framework.datasource.DynamicDataSourceContextHolder;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
@@ -13,11 +13,11 @@ import org.slf4j.LoggerFactory;
 import org.springframework.core.annotation.AnnotationUtils;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
-import alb.common.utils.StringUtils;
-import alb.framework.datasource.DynamicDataSourceContextHolder;
+
+import java.util.Objects;
 
 /**
- * 多数据源处理
+ * Multi-data source processing
  *
  */
 @Aspect
@@ -50,13 +50,13 @@ public class DataSourceAspect
         }
         finally
         {
-            // 销毁数据源 在执行方法之后
+            // Destroying the data source After executing the method
             DynamicDataSourceContextHolder.clearDataSourceType();
         }
     }
 
     /**
-     * 获取需要切换的数据源
+     * Gets the data source to switch
      */
     public DataSource getDataSource(ProceedingJoinPoint point)
     {

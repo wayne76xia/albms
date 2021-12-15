@@ -1,19 +1,19 @@
 package alb.framework.aspectj.lang.enums;
 
 /**
- * 操作状态
+ * Operating state
  *
  *
  */
 public enum BusinessStatus
 {
     /**
-     * 成功
+     * successful
      */
     SUCCESS,
 
     /**
-     * 失败
+     * failure
      */
     FAIL,
 }

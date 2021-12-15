@@ -27,7 +27,7 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * 参数设置Controller
+ * Parameter SettingsController
  *
  * @date 2020-07-16
  */
@@ -46,7 +46,7 @@ public class ParamsDataController extends BaseController {
     }
 
     /**
-     * 根据类型查询参数设置列表-下拉列表哟个
+     * Query the parameter setting list by type-Drop down list yo
      */
     @GetMapping("/getListByType")
     public AjaxResult getListByType(ParamsData paramsData) {
@@ -55,13 +55,13 @@ public class ParamsDataController extends BaseController {
     }
 
     /**
-     * 查询参数设置列表
+     * Example Query the parameter list
      */
     @PreAuthorize("@ss.hasPermi('vacation:paramsData:list')")
     @GetMapping("/list")
     public AjaxResult list(ParamsData paramsData) {
         List<ParamsData> list = paramsDataService.selectParamsDataList(paramsData);
-        // 登录页图片链接替换
+        // Login page image link replacement
         list.stream().filter(e -> e.getType() == 6).forEach(e -> {
             String src = configService.selectConfigByKey(e.getValue());
             e.setValue(src);
@@ -70,10 +70,10 @@ public class ParamsDataController extends BaseController {
     }
 
     /**
-     * 导出参数设置列表
+     * Example Export the parameter setting list
      */
     @PreAuthorize("@ss.hasPermi('vacation:paramsData:export')")
-    @Log(title = "参数设置", businessType = BusinessType.EXPORT)
+    @Log(title = "Parameter Settings", businessType = BusinessType.EXPORT)
     @GetMapping("/export")
     public AjaxResult export(ParamsData paramsData) {
         List<ParamsData> list = paramsDataService.selectParamsDataList(paramsData);
@@ -82,7 +82,7 @@ public class ParamsDataController extends BaseController {
     }
 
     /**
-     * 获取参数设置详细信息
+     * Gets details about parameter Settings
      */
     @PreAuthorize("@ss.hasPermi('vacation:paramsData:query')")
     @GetMapping(value = "/{id}")
@@ -91,7 +91,7 @@ public class ParamsDataController extends BaseController {
     }
 
     /**
-     * 登录页暂时只能写成固定形式
+     * The login page can only be written in fixed form for the time being
      */
     @PreAuthorize("@ss.hasPermi('vacation:paramsData:query')")
     @GetMapping(value = "/backGroundPic/{id}")
@@ -104,7 +104,7 @@ public class ParamsDataController extends BaseController {
     }
 
     /**
-     * 生成二维码
+     * Generate qr code
      *
      * @param id
      * @return
@@ -112,11 +112,11 @@ public class ParamsDataController extends BaseController {
     @GetMapping(value = "/getQrCode")
     public AjaxResult getQrCode(Long id) throws IOException {
         if (id == null) {
-            throw new CustomException("标识为空！");
+            throw new CustomException("Logo is empty!");
         }
         ParamsData data = paramsDataService.selectParamsDataById(id);
         if (data == null) {
-            throw new CustomException("未获取到详细信息！");
+            throw new CustomException("No details were obtained!");
         }
         ConverterRegistry converter = ConverterRegistry.getInstance();
         String path = WlwqConfig.getAvatarPath() + "/qrCode.jpg";
@@ -128,10 +128,10 @@ public class ParamsDataController extends BaseController {
     }
 
     /**
-     * 新增参数设置
+     * New Parameter Settings
      */
     @PreAuthorize("@ss.hasPermi('vacation:paramsData:add')")
-    @Log(title = "参数设置", businessType = BusinessType.INSERT)
+    @Log(title = "Parameter Settings", businessType = BusinessType.INSERT)
     @PostMapping
     public AjaxResult add(@RequestBody ParamsData paramsData) {
         paramsData.setLastDate(new Date());
@@ -139,10 +139,10 @@ public class ParamsDataController extends BaseController {
     }
 
     /**
-     * 修改参数设置
+     * Modifying Parameter Settings
      */
     @PreAuthorize("@ss.hasPermi('vacation:paramsData:edit')")
-    @Log(title = "参数设置", businessType = BusinessType.UPDATE)
+    @Log(title = "Parameter Settings", businessType = BusinessType.UPDATE)
     @PutMapping
     public AjaxResult edit(@RequestBody ParamsData paramsData) {
         paramsData.setLastDate(new Date());
@@ -150,31 +150,31 @@ public class ParamsDataController extends BaseController {
     }
 
     /**
-     * 修改登录页
+     * Modifying the Login page
      */
     @PreAuthorize("@ss.hasPermi('vacation:paramsData:edit')")
-    @Log(title = "参数设置", businessType = BusinessType.UPDATE)
+    @Log(title = "Parameter Settings", businessType = BusinessType.UPDATE)
     @PutMapping(value = "/backGroundPic")
     public AjaxResult editBackGroundPic(@RequestBody ParamsData paramsData) {
-        // 获取原始对象
+        // Get the original object
         ParamsData backGroundPic = paramsDataService.selectParamsDataById(paramsData.getId());
-        // 获取参数配置对象
+        // Gets the parameter configuration object
         SysConfig config = configService.selectConfigObjectByKey(backGroundPic.getValue());
-        // 更新图片新值
+        // Update picture new value
         config.setConfigValue(paramsData.getValue());
-        // 更新参数配置对象
+        // Update the parameter configuration object
         config.setUpdateBy(SecurityUtils.getUsername());
         configService.updateConfig(config);
-        // 更新对象时间状态
+        // Updates the time status of an object
         backGroundPic.setLastDate(new Date());
         return toAjax(paramsDataService.updateParamsData(backGroundPic));
     }
 
     /**
-     * 删除参数设置
+     * Delete parameter Settings
      */
     @PreAuthorize("@ss.hasPermi('vacation:paramsData:remove')")
-    @Log(title = "参数设置", businessType = BusinessType.DELETE)
+    @Log(title = "Parameter Settings", businessType = BusinessType.DELETE)
     @DeleteMapping("/{ids}")
     public AjaxResult remove(@PathVariable Long[] ids) {
         return toAjax(paramsDataService.deleteParamsDataByIds(ids));

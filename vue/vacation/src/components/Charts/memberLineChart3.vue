@@ -126,7 +126,7 @@ export default {
         ],
         series: [
           {
-            name: "成交额",
+            name: "turnover",
             type: "line",
             smooth: true,
             symbol: "circle",

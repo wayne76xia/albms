@@ -107,24 +107,24 @@ export default {
         },
         series:[
           {
-            name: "镜架",
+            name: "frame",
             type: "line",
-            symbolSize: 10, //拐点圆的大小
-            color: "#715AE5", //折线条的颜色
+            symbolSize: 10, //The size of an inflection circle
+            color: "#715AE5", //The color of the broken line
             data: this.data.mirrorBracketConsumeNumList
           },
           {
-            name: "镜片",
+            name: "The lens",
             type: "line",
-            symbolSize: 10, //拐点圆的大小
-            color: "#5ECC59", //折线条的颜色
+            symbolSize: 10, //The size of an inflection circle
+            color: "#5ECC59", //The color of the broken line
             data: this.data.mirrorSliceConsumeNumList
           },
           {
-            name: "成镜",
+            name: "As a mirror",
             type: "line",
-            symbolSize: 10, //拐点圆的大小
-            color: "#E8522A", //折线条的颜色
+            symbolSize: 10, //The size of an inflection circle
+            color: "#E8522A", //The color of the broken line
             data: this.data.mirrorConsumeNumList
           },
         ],

@@ -13,7 +13,7 @@ import java.time.Period;
 import java.util.*;
 
 /**
- * 时间工具类
+ * Time tool class
  *
  */
 public class DateUtils extends org.apache.commons.lang3.time.DateUtils {
@@ -33,16 +33,16 @@ public class DateUtils extends org.apache.commons.lang3.time.DateUtils {
             "yyyy.MM.dd", "yyyy.MM.dd HH:mm:ss", "yyyy.MM.dd HH:mm", "yyyy.MM"};
 
     /**
-     * 获取当前Date型日期
+     * Gets the currentDateType of date
      *
-     * @return Date() 当前日期
+     * @return Date() The current date
      */
     public static Date getNowDate() {
         return new Date();
     }
 
     /**
-     * 获取当前日期, 默认格式为yyyy-MM-dd
+     * Get the current date, The default format isyyyy-MM-dd
      *
      * @return String
      */
@@ -79,7 +79,7 @@ public class DateUtils extends org.apache.commons.lang3.time.DateUtils {
     }
 
     /**
-     * 日期路径 即年/月/日 如2018/08/08
+     * Date path That year/month/day Such as2018/08/08
      */
     public static final String datePath() {
         Date now = new Date();
@@ -87,7 +87,7 @@ public class DateUtils extends org.apache.commons.lang3.time.DateUtils {
     }
 
     /**
-     * 日期路径 即年/月/日 如20180808
+     * Date path That year/month/day Such as20180808
      */
     public static final String dateTime() {
         Date now = new Date();
@@ -95,7 +95,7 @@ public class DateUtils extends org.apache.commons.lang3.time.DateUtils {
     }
 
     /**
-     * 日期型字符串转化为日期 格式
+     * The date string is converted to a date format
      */
     public static Date parseDate(Object str) {
         if (str == null) {
@@ -109,7 +109,7 @@ public class DateUtils extends org.apache.commons.lang3.time.DateUtils {
     }
 
     /**
-     * 获取服务器启动时间
+     * Obtain the server startup time
      */
     public static Date getServerStartDate() {
         long time = ManagementFactory.getRuntimeMXBean().getStartTime();
@@ -117,29 +117,29 @@ public class DateUtils extends org.apache.commons.lang3.time.DateUtils {
     }
 
     /**
-     * 计算两个时间差
+     * Calculate two time differences
      */
     public static String getDatePoor(Date endDate, Date nowDate) {
         long nd = 1000 * 24 * 60 * 60;
         long nh = 1000 * 60 * 60;
         long nm = 1000 * 60;
         // long ns = 1000;
-        // 获得两个时间的毫秒时间差异
+        // Get the millisecond time difference between the two times
         long diff = endDate.getTime() - nowDate.getTime();
-        // 计算差多少天
+        // Calculate the difference of days
         long day = diff / nd;
-        // 计算差多少小时
+        // Calculate the difference in hours
         long hour = diff % nd / nh;
-        // 计算差多少分钟
+        // Calculate the difference in minutes
         long min = diff % nd % nh / nm;
-        // 计算差多少秒//输出结果
+        // Calculate the difference in seconds//The output
         // long sec = diff % nd % nh % nm / ns;
-        return day + "天" + hour + "小时" + min + "分钟";
+        return day + "day" + hour + "hours" + min + "minutes";
     }
 
     /**
      * @Date: 2020/6/6 10:35
-     * @Description:格式化时间为指定格式 appoint 格式
+     * @Description:The format time is specified appoint format
      */
     public static String formatDateToAppoint(Date date, Integer appoint) {
         StringBuilder resultDate = new StringBuilder();
@@ -148,7 +148,7 @@ public class DateUtils extends org.apache.commons.lang3.time.DateUtils {
             resultDate.append(dateFormat.format(date));
         }
         if (appoint == 2) {
-            DateFormat dateFormat = new SimpleDateFormat("yyyy年MM月dd日");
+            DateFormat dateFormat = new SimpleDateFormat("yyyyyearsMMmonthddday");
             resultDate.append(dateFormat.format(date));
         }
         if (appoint == 3) {
@@ -160,11 +160,11 @@ public class DateUtils extends org.apache.commons.lang3.time.DateUtils {
             resultDate.append(dateFormat.format(date));
         }
         if (appoint == 5) {
-            DateFormat dateFormat = new SimpleDateFormat("yyyy年MM月dd日 HH:00");
+            DateFormat dateFormat = new SimpleDateFormat("yyyyyearsMMmonthddday HH:00");
             resultDate.append(dateFormat.format(date));
         }
         if (appoint == 6) {
-            DateFormat dateFormat = new SimpleDateFormat("yyyy年MM月dd日 HH:mm:ss");
+            DateFormat dateFormat = new SimpleDateFormat("yyyyyearsMMmonthddday HH:mm:ss");
             resultDate.append(dateFormat.format(date));
         }
         if (appoint == 7) {
@@ -175,12 +175,12 @@ public class DateUtils extends org.apache.commons.lang3.time.DateUtils {
     }
 
     /**
-     * 计算2个日期之间相差的  相差多少年月日
-     * 比如：2011-02-02 到  2017-03-02 相差 6年，1个月，0天
+     * To calculate2The date difference between  How many years month day difference
+     * Such as:2011-02-02 to  2017-03-02 Difference between 6years,1months,0day
      *
      * @param startDate YYYY-MM-DD
      * @param endDate   YYYY-MM-DD
-     * @return 年, 月, 日 例如 1,1,1
+     * @return years, month, day For example, 1,1,1
      */
     public static String dayComparePrecise(Date startDate, Date endDate) {
         String fromDate = formatDateToAppoint(startDate, 7);
@@ -189,20 +189,20 @@ public class DateUtils extends org.apache.commons.lang3.time.DateUtils {
 
         StringBuilder sb = new StringBuilder();
         if (period.getYears() > 0) {
-            sb.append(period.getYears()).append("年");
+            sb.append(period.getYears()).append("years");
         }
         if (period.getMonths() > 0) {
-            sb.append(period.getMonths()).append("月");
+            sb.append(period.getMonths()).append("month");
         }
         if (period.getDays() > 0) {
-            sb.append(period.getDays()).append("天");
+            sb.append(period.getDays()).append("day");
         }
         return sb.toString();
     }
 
 
     /**
-     * 获取近一年的月份
+     * Gets the month of nearly a year
      *
      * @return
      */
@@ -216,7 +216,7 @@ public class DateUtils extends org.apache.commons.lang3.time.DateUtils {
             if (j >= 1) {
                 date = k + "-" + (j >= 10 ? "" : "0") + j;
             } else {
-                int p = 11 - i;//剩余循环次数
+                int p = 11 - i;//Number of remaining cycles
                 int m = c.get(Calendar.YEAR) - 1;
                 int n = c.get(Calendar.MONTH) + 2 + p;
                 date = m + "-" + (n >= 10 ? "" : "0") + n;
@@ -235,11 +235,11 @@ public class DateUtils extends org.apache.commons.lang3.time.DateUtils {
     }
 
     /**
-     * 获取近N天的日期
+     * To get close toNThe date of the day
      * @param days
      * @return
      */
-    public static  List<String> getDaysBetween(int days){ //最近几天日期
+    public static  List<String> getDaysBetween(int days){ //Date of last few days
         List<String> dayss = new ArrayList<>();
         Calendar start = Calendar.getInstance();
         start.setTime(getDateAdd(days));
@@ -261,26 +261,26 @@ public class DateUtils extends org.apache.commons.lang3.time.DateUtils {
 
 
     /**
-     * 根据返回的weekKey判断是周几
+     * According to the returnedweekKeyThe day of the week
      * @param weekKey
      * @return
      */
     public static String getWeekName(Integer weekKey){
         if (weekKey == 1){
-            return "周日";
+            return "Sunday";
         }
         if (weekKey == 2){
-            return "周一";
+            return "Monday";
         }if (weekKey == 3){
-            return "周二";
+            return "Tuesday";
         }if (weekKey == 4){
-            return "周三";
+            return "Wednesday";
         }if (weekKey == 5){
-            return "周四";
+            return "Thursday";
         }if (weekKey == 6){
-            return "周五";
+            return "Friday";
         }if (weekKey == 7){
-            return "周六";
+            return "Saturday";
         }
         return null;
     }
@@ -288,47 +288,47 @@ public class DateUtils extends org.apache.commons.lang3.time.DateUtils {
     /**
      *  Create By Renbowen
      *  @Date: 2020/8/18 21:20
-     *  @Description:转换时间
+     *  @Description:Conversion time
      */
     public static String convertToTimeString(Date time) {
         Integer weekKey = DateUtil.dayOfWeek(time);
-        // 当前时间
+        // The current time
         Date nowDate = DateUtil.date();
 
         StringBuilder result = new StringBuilder();
-        // 如果当前时间大于需要转换的时间
+        // If the current time is greater than the time required to convert
         if (nowDate.getTime() > time.getTime()){
-            // 今天最大的时间
+            // Maximum time today
             Date todayMaxDate = DateUtil.endOfDay(nowDate);
-            // 计算两个时间相差多少秒
+            // Calculate the difference in seconds between the two times
             long betweenSecond = DateUtil.between(time, nowDate, DateUnit.SECOND);
-            // 当前时间距今天剩余秒数
+            // The number of seconds left between the current time and today
             long maxBetweenSecond = DateUtil.between(time,todayMaxDate,DateUnit.SECOND);
-            // 今天剩余秒数
+            // The number of seconds left today
             long todayBetweenSecond = DateUtil.between(nowDate,todayMaxDate,DateUnit.SECOND);
-            // 如果秒数小于一年
+            // If the seconds are less than a year
             if (betweenSecond < 31536000){
-                // 如果两个时间差 小于 今天剩余秒数
+                // If the two times are different Less than The number of seconds left today
                 if (todayBetweenSecond > maxBetweenSecond){
-                    // 如果是一分钟之内
+                    // If it's less than a minute
                     if (betweenSecond < 60){
-                        result.append("刚刚").append("(").append(getWeekName(weekKey)).append(")");
+                        result.append("just").append("(").append(getWeekName(weekKey)).append(")");
                     }else if (betweenSecond < 3600){
-                        result.append(betweenSecond / 60).append("分钟前").append("(").append(getWeekName(weekKey)).append(")");
+                        result.append(betweenSecond / 60).append("Minutes ago").append("(").append(getWeekName(weekKey)).append(")");
                     }else{
-                        result.append(betweenSecond/3600).append("小时前").append("(").append(getWeekName(weekKey)).append(")");
+                        result.append(betweenSecond/3600).append("Hours before").append("(").append(getWeekName(weekKey)).append(")");
                     }
                 }else {
-                    // 获取两个时间相差多少天  此方法精确到秒 未满86400秒则不算一天
+                    // Gets the number of days between the two times  This method is accurate to the second under86400Seconds don't count as days
                     long betweenDay = compareDays(time,nowDate);
                     if (betweenDay == 1){
-                        result.append("昨天").append("(").append(getWeekName(weekKey)).append(")").append(DateUtil.format(time,"HH:mm:ss"));
+                        result.append("yesterday").append("(").append(getWeekName(weekKey)).append(")").append(DateUtil.format(time,"HH:mm:ss"));
                     }
                     else if (betweenDay == 2){
-                        result.append("前天").append("(").append(getWeekName(weekKey)).append(")").append(DateUtil.format(time,"HH:mm:ss"));
+                        result.append("The day before yesterday").append("(").append(getWeekName(weekKey)).append(")").append(DateUtil.format(time,"HH:mm:ss"));
                     }
                     else if (betweenDay == 3){
-                        result.append(betweenDay).append("天前").append("(").append(getWeekName(weekKey)).append(")").append(DateUtil.format(time,"HH:mm:ss"));
+                        result.append(betweenDay).append("Days ago,").append("(").append(getWeekName(weekKey)).append(")").append(DateUtil.format(time,"HH:mm:ss"));
                     }else {
                         result.append(DateUtil.format(time,"yyyy-MM-dd HH:mm:ss")).append("(").append(getWeekName(weekKey)).append(")");
                     }
@@ -337,18 +337,18 @@ public class DateUtils extends org.apache.commons.lang3.time.DateUtils {
                 result.append(DateUtil.format(time,"yyyy-MM-dd HH:mm:ss")).append("(").append(getWeekName(weekKey)).append(")");
             }
         }
-        // 如果当前时间小于等于需要转换的时间
+        // If the current time is less than or equal to the conversion time
         else {
-            // 获取两个时间相差多少天  此方法精确到秒 未满86400秒则不算一天
+            // Gets the number of days between the two times  This method is accurate to the second under86400Seconds don't count as days
             long betweenDay = compareDays(nowDate,time);
             if (betweenDay == 0){
-                result.append("今天").append("(").append(getWeekName(weekKey)).append(")").append(DateUtil.format(time,"HH:mm:ss"));
+                result.append("today").append("(").append(getWeekName(weekKey)).append(")").append(DateUtil.format(time,"HH:mm:ss"));
             }
             else if (betweenDay == 1){
-                result.append("明天").append("(").append(getWeekName(weekKey)).append(")").append(DateUtil.format(time,"HH:mm:ss"));
+                result.append("tomorrow").append("(").append(getWeekName(weekKey)).append(")").append(DateUtil.format(time,"HH:mm:ss"));
             }
             else if (betweenDay == 2){
-                result.append("后天").append("(").append(getWeekName(weekKey)).append(")").append(DateUtil.format(time,"HH:mm:ss"));
+                result.append("The day after tomorrow").append("(").append(getWeekName(weekKey)).append(")").append(DateUtil.format(time,"HH:mm:ss"));
             }else {
                 result.append(DateUtil.format(time,"yyyy-MM-dd HH:mm:ss")).append("(").append(getWeekName(weekKey)).append(")");
             }
@@ -359,7 +359,7 @@ public class DateUtils extends org.apache.commons.lang3.time.DateUtils {
 
     /**
      *  @Date: 2020/8/18 21:10
-     *  @Description: 计算两个日期相差多少天
+     *  @Description: Calculate how many days apart the two dates are
      */
     public static Integer compareDays(Date date1, Date date2) {
         int day = 0;

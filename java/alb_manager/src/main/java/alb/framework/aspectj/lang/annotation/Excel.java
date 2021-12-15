@@ -6,7 +6,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * 自定义导出Excel数据注解
+ * Custom exportExcelData annotations
  *
  */
 @Retention(RetentionPolicy.RUNTIME)
@@ -14,67 +14,67 @@ import java.lang.annotation.Target;
 public @interface Excel
 {
     /**
-     * 导出到Excel中的名字.
+     * Export toExcelIn the name.
      */
     String name() default "";
 
     /**
-     * 日期格式, 如: yyyy-MM-dd
+     * The date format, Such as: yyyy-MM-dd
      */
     String dateFormat() default "";
 
     /**
-     * 读取内容转表达式 (如: 0=男,1=女,2=未知)
+     * Read content to turn expression (Such as: 0=male,1=female,2=The unknown)
      */
     String readConverterExp() default "";
 
     /**
-     * 导出类型（0数字 1字符串）
+     * Derived type(0digital 1string)
      */
     ColumnType cellType() default ColumnType.STRING;
 
     /**
-     * 导出时在excel中每个列的高度 单位为字符
+     * When exporting inexcelThe height of each column in Unit: character
      */
     double height() default 14;
 
     /**
-     * 导出时在excel中每个列的宽 单位为字符
+     * When exporting inexcelThe width of each column in Unit: character
      */
     double width() default 16;
 
     /**
-     * 文字后缀,如% 90 变成90%
+     * Word suffix,Such as% 90 become90%
      */
     String suffix() default "";
 
     /**
-     * 当值为空时,字段的默认值
+     * When the value is null,The default value for the field
      */
     String defaultValue() default "";
 
     /**
-     * 提示信息
+     * Prompt information
      */
     String prompt() default "";
 
     /**
-     * 设置只能选择不能输入的列内容.
+     * Set only column contents that cannot be entered to be selected.
      */
     String[] combo() default {};
 
     /**
-     * 是否导出数据,应对需求:有时我们需要导出一份模板,这是标题需要但内容需要用户手工填写.
+     * Whether to export data,To cope with demand:Sometimes we need to export a template,This is for the title but the content needs to be manually filled in by the user.
      */
     boolean isExport() default true;
 
     /**
-     * 另一个类中的属性名称,支持多级获取,以小数点隔开
+     * The name of an attribute in another class,Support for multi-level fetching,Separated by decimal points
      */
     String targetAttr() default "";
 
     /**
-     * 字段类型（0：导出导入；1：仅导出；2：仅导入）
+     * The field type(0:Export import;1:Export only;2:Import only)
      */
     Type type() default Type.ALL;
 

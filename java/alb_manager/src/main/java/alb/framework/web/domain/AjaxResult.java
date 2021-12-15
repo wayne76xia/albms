@@ -1,43 +1,43 @@
 package alb.framework.web.domain;
 
-import java.util.HashMap;
-
 import alb.common.constant.HttpStatus;
 import alb.common.utils.StringUtils;
 
+import java.util.HashMap;
+
 /**
- * 操作消息提醒
+ * Operation message alert
  *
  */
 public class AjaxResult extends HashMap<String, Object>
 {
     private static final long serialVersionUID = 1L;
 
-    /** 状态码 */
+    /** Status code */
     public static final String CODE_TAG = "code";
 
-    /** 返回内容 */
+    /** Returns the content */
     public static final String MSG_TAG = "msg";
 
-    /** 数据对象 */
+    /** The data object */
     public static final String DATA_TAG = "data";
 
-    public static final String successMsg = "操作成功";
+    public static final String successMsg = "Operation is successful";
 
-    public static final String errorMsg = "操作失败";
+    public static final String errorMsg = "The operation failure";
 
     /**
-     * 初始化一个新创建的 AjaxResult 对象，使其表示一个空消息。
+     * Initializes a newly created AjaxResult object,Make it represent an empty message。
      */
     public AjaxResult()
     {
     }
 
     /**
-     * 初始化一个新创建的 AjaxResult 对象
+     * Initializes a newly created AjaxResult object
      * 
-     * @param code 状态码
-     * @param msg 返回内容
+     * @param code Status code
+     * @param msg Returns the content
      */
     public AjaxResult(int code, String msg)
     {
@@ -46,11 +46,11 @@ public class AjaxResult extends HashMap<String, Object>
     }
 
     /**
-     * 初始化一个新创建的 AjaxResult 对象
+     * Initializes a newly created AjaxResult object
      * 
-     * @param code 状态码
-     * @param msg 返回内容
-     * @param data 数据对象
+     * @param code Status code
+     * @param msg Returns the content
+     * @param data The data object
      */
     public AjaxResult(int code, String msg, Object data)
     {
@@ -63,9 +63,9 @@ public class AjaxResult extends HashMap<String, Object>
     }
 
     /**
-     * 返回成功消息
+     * Return success message
      * 
-     * @return 成功消息
+     * @return Success message
      */
     public static AjaxResult success()
     {
@@ -73,9 +73,9 @@ public class AjaxResult extends HashMap<String, Object>
     }
 
     /**
-     * 返回成功数据
+     * Return success data
      * 
-     * @return 成功消息
+     * @return Success message
      */
     public static AjaxResult success(Object data)
     {
@@ -83,10 +83,10 @@ public class AjaxResult extends HashMap<String, Object>
     }
 
     /**
-     * 返回成功消息
+     * Return success message
      * 
-     * @param msg 返回内容
-     * @return 成功消息
+     * @param msg Returns the content
+     * @return Success message
      */
     public static AjaxResult success(String msg)
     {
@@ -94,11 +94,11 @@ public class AjaxResult extends HashMap<String, Object>
     }
 
     /**
-     * 返回成功消息
+     * Return success message
      * 
-     * @param msg 返回内容
-     * @param data 数据对象
-     * @return 成功消息
+     * @param msg Returns the content
+     * @param data The data object
+     * @return Success message
      */
     public static AjaxResult success(String msg, Object data)
     {
@@ -106,7 +106,7 @@ public class AjaxResult extends HashMap<String, Object>
     }
 
     /**
-     * 返回错误消息
+     * Return error message
      * 
      * @return
      */
@@ -116,10 +116,10 @@ public class AjaxResult extends HashMap<String, Object>
     }
 
     /**
-     * 返回错误消息
+     * Return error message
      * 
-     * @param msg 返回内容
-     * @return 警告消息
+     * @param msg Returns the content
+     * @return A warning message
      */
     public static AjaxResult error(String msg)
     {
@@ -127,11 +127,11 @@ public class AjaxResult extends HashMap<String, Object>
     }
 
     /**
-     * 返回错误消息
+     * Return error message
      * 
-     * @param msg 返回内容
-     * @param data 数据对象
-     * @return 警告消息
+     * @param msg Returns the content
+     * @param data The data object
+     * @return A warning message
      */
     public static AjaxResult error(String msg, Object data)
     {
@@ -139,11 +139,11 @@ public class AjaxResult extends HashMap<String, Object>
     }
 
     /**
-     * 返回错误消息
+     * Return error message
      * 
-     * @param code 状态码
-     * @param msg 返回内容
-     * @return 警告消息
+     * @param code Status code
+     * @param msg Returns the content
+     * @return A warning message
      */
     public static AjaxResult error(int code, String msg)
     {

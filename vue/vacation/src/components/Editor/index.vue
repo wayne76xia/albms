@@ -1,6 +1,6 @@
 <template>
   <div>
-    <!-- 图片上传组件辅助 -->
+    <!-- Image upload component assist -->
     <el-upload
       class="avatar-uploader quill-img"
       :action="uploadImgUrl"
@@ -13,7 +13,7 @@
       accept='.jpg,.jpeg,.png,.gif'
     ></el-upload>
 
-    <!-- 富文本组件 -->
+    <!-- Rich text component -->
     <quill-editor
       class="editor"
       v-model="content"
@@ -29,18 +29,18 @@
 <script>
 import { getToken } from '@/utils/auth'
 
-// 工具栏配置
+// Toolbar Configuration
 const toolbarOptions = [
-  ["bold", "italic", "underline", "strike"],       // 加粗 斜体 下划线 删除线
-  ["blockquote", "code-block"],                    // 引用  代码块
-  [{ list: "ordered" }, { list: "bullet" }],       // 有序、无序列表
-  [{ indent: "-1" }, { indent: "+1" }],            // 缩进
-  [{ size: ["small", false, "large", "huge"] }],   // 字体大小
-  [{ header: [1, 2, 3, 4, 5, 6, false] }],         // 标题
-  [{ color: [] }, { background: [] }],             // 字体颜色、字体背景颜色
-  [{ align: [] }],                                 // 对齐方式
-  ["clean"],                                       // 清除文本格式
-  ["link", "image", "video"]                       // 链接、图片、视频
+  ["bold", "italic", "underline", "strike"],       // bold italics The underline Delete the line
+  ["blockquote", "code-block"],                    // reference  The code block
+  [{ list: "ordered" }, { list: "bullet" }],       // The orderly、Unordered list
+  [{ indent: "-1" }, { indent: "+1" }],            // The indentation
+  [{ size: ["small", false, "large", "huge"] }],   // The font size
+  [{ header: [1, 2, 3, 4, 5, 6, false] }],         // The title
+  [{ color: [] }, { background: [] }],             // The font color、Font background color
+  [{ align: [] }],                                 // alignment
+  ["clean"],                                       // Clear text formatting
+  ["link", "image", "video"]                       // link、The picture、video
 ];
 
 import { quillEditor } from "vue-quill-editor";
@@ -50,11 +50,11 @@ import "quill/dist/quill.bubble.css";
 
 export default {
   props: {
-    /* 编辑器的内容 */
+    /* Contents of the editor */
     value: {
       type: String
     },
-    /* 图片大小 */
+    /* Image size */
     maxSize: {
       type: Number,
       default: 4000 //kb
@@ -68,14 +68,14 @@ export default {
       editorOption: {
         placeholder: "",
         theme: "snow", // or 'bubble'
-        placeholder: "请输入内容",
+        placeholder: "Please enter the content",
         modules: {
           toolbar: {
             container: toolbarOptions,
             handlers: {
               image: function(value) {
                 if (value) {
-                  // 触发input框选择图片文件
+                  // The triggerinputBox to select the picture file
                   document.querySelector(".quill-img input").click();
                 } else {
                   this.quill.format("image", false);
@@ -85,7 +85,7 @@ export default {
           }
         }
       },
-      uploadImgUrl: process.env.VUE_APP_BASE_API + "/common/upload", // 上传的图片服务器地址
+      uploadImgUrl: process.env.VUE_APP_BASE_API + "/common/upload", // Address of the uploaded image server
       headers: {
         Authorization: 'Bearer ' + getToken()
       }
@@ -98,47 +98,47 @@ export default {
   },
   methods: {
     onEditorBlur() {
-      //失去焦点事件
+      //Out-of-focus event
     },
     onEditorFocus() {
-      //获得焦点事件
+      //Get focus event
     },
     onEditorChange() {
-      //内容改变事件
+      //Content change event
       this.$emit("input", this.content);
     },
 
-    // 富文本图片上传前
+    // Rich text images before uploading
     quillImgBefore(file) {
       let fileType = file.type;
 			if(fileType === 'image/jpeg' || fileType === 'image/png'){
 				return true;
 			}else {
-				this.$message.error('请插入图片类型文件(jpg/jpeg/png)');
+				this.$message.error('Please insert the image type file(jpg/jpeg/png)');
 				return false;
 			}
     },
 
     quillImgSuccess(res, file) {
-      // res为图片服务器返回的数据
-      // 获取富文本组件实例
+      // resData returned for the image server
+      // Gets a rich text component instance
       let quill = this.$refs.quillEditor.quill;
-      // 如果上传成功
+      // If the upload succeeds
       if (res.code == 200) {
-        // 获取光标所在位置
+        // Gets the cursor position
         let length = quill.getSelection().index;
-        // 插入图片  res.url为服务器返回的图片地址
+        // Insert the picture  res.urlThe address of the picture returned by the server
         quill.insertEmbed(length, "image", res.url);
-        // 调整光标到最后
+        // Adjust the cursor to the end
         quill.setSelection(length + 1);
       } else {
-        this.$message.error("图片插入失败");
+        this.$message.error("Image insertion failed");
       }
     },
-    // 富文本图片上传失败
+    // Failed to upload rich text image
     uploadError() {
-      // loading动画消失
-      this.$message.error("图片插入失败");
+      // loadingAnimation disappear
+      this.$message.error("Image insertion failed");
     }
   }
 };
@@ -153,16 +153,16 @@ export default {
   display: none;
 }
 .ql-snow .ql-tooltip[data-mode="link"]::before {
-  content: "请输入链接地址:";
+  content: "Please enter the link address:";
 }
 .ql-snow .ql-tooltip.ql-editing a.ql-action::after {
   border-right: 0px;
-  content: "保存";
+  content: "save";
   padding-right: 0px;
 }
 
 .ql-snow .ql-tooltip[data-mode="video"]::before {
-  content: "请输入视频地址:";
+  content: "Please enter the video address:";
 }
 
 .ql-snow .ql-picker.ql-size .ql-picker-label::before,
@@ -184,43 +184,43 @@ export default {
 
 .ql-snow .ql-picker.ql-header .ql-picker-label::before,
 .ql-snow .ql-picker.ql-header .ql-picker-item::before {
-  content: "文本";
+  content: "The text";
 }
 .ql-snow .ql-picker.ql-header .ql-picker-label[data-value="1"]::before,
 .ql-snow .ql-picker.ql-header .ql-picker-item[data-value="1"]::before {
-  content: "标题1";
+  content: "The title1";
 }
 .ql-snow .ql-picker.ql-header .ql-picker-label[data-value="2"]::before,
 .ql-snow .ql-picker.ql-header .ql-picker-item[data-value="2"]::before {
-  content: "标题2";
+  content: "The title2";
 }
 .ql-snow .ql-picker.ql-header .ql-picker-label[data-value="3"]::before,
 .ql-snow .ql-picker.ql-header .ql-picker-item[data-value="3"]::before {
-  content: "标题3";
+  content: "The title3";
 }
 .ql-snow .ql-picker.ql-header .ql-picker-label[data-value="4"]::before,
 .ql-snow .ql-picker.ql-header .ql-picker-item[data-value="4"]::before {
-  content: "标题4";
+  content: "The title4";
 }
 .ql-snow .ql-picker.ql-header .ql-picker-label[data-value="5"]::before,
 .ql-snow .ql-picker.ql-header .ql-picker-item[data-value="5"]::before {
-  content: "标题5";
+  content: "The title5";
 }
 .ql-snow .ql-picker.ql-header .ql-picker-label[data-value="6"]::before,
 .ql-snow .ql-picker.ql-header .ql-picker-item[data-value="6"]::before {
-  content: "标题6";
+  content: "The title6";
 }
 
 .ql-snow .ql-picker.ql-font .ql-picker-label::before,
 .ql-snow .ql-picker.ql-font .ql-picker-item::before {
-  content: "标准字体";
+  content: "Standard font";
 }
 .ql-snow .ql-picker.ql-font .ql-picker-label[data-value="serif"]::before,
 .ql-snow .ql-picker.ql-font .ql-picker-item[data-value="serif"]::before {
-  content: "衬线字体";
+  content: "Serif fonts";
 }
 .ql-snow .ql-picker.ql-font .ql-picker-label[data-value="monospace"]::before,
 .ql-snow .ql-picker.ql-font .ql-picker-item[data-value="monospace"]::before {
-  content: "等宽字体";
+  content: "Monospaced font";
 }
 </style>

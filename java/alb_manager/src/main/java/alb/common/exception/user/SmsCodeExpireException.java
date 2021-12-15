@@ -1,7 +1,7 @@
 package alb.common.exception.user;
 
 /**
- * 验证码失效异常类
+ * Verification code failure exception class
  *
  */
 public class SmsCodeExpireException extends UserException

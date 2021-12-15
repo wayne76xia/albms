@@ -4,7 +4,6 @@ body {
     -webkit-touch-callout: none;
     -webkit-text-size-adjust: none;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    /*不允许选中文本*/
     -webkit-user-select:none;
     -moz-user-select:none;
     -o-user-select:none;
@@ -256,7 +255,6 @@ li {
 * {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
-    /*不允许选中文本*/
     /*-webkit-user-select:none;*/
     /*-moz-user-select:none;*/
     /*-o-user-select:none;*/
@@ -283,7 +281,6 @@ li {
 }
 
 
-/*阴影*/
 
 .shadow {
     box-shadow: 0 1px 6px rgba(38, 45, 46, .3);
@@ -294,14 +291,12 @@ li {
 }
 
 
-/*字体居中*/
 
 .text-center {
     text-align: center;
 }
 
 
-/*字体加粗*/
 
 .fw5 {
     font-weight: 500 !important;
@@ -316,7 +311,6 @@ li {
 }
 
 
-/*隐藏显示*/
 
 .disnone {
     display: none !important;
@@ -327,7 +321,6 @@ li {
 }
 
 
-/*鼠标经过*/
 
 .hover:hover {
     color: #1765FF;
@@ -335,14 +328,12 @@ li {
 }
 
 
-/*边框*/
 
 .border-b {
     border-bottom: solid 1px #E6EBF4;
 }
 
 
-/*超出隐藏*/
 
 .ellipsis {
     overflow: hidden;
@@ -373,7 +364,6 @@ li {
 }
 
 
-/* 文字对齐 */
 
 .aui-text-left {
     text-align: left !important;
@@ -392,7 +382,6 @@ li {
 }
 
 
-/* 边框样式 */
 
 .aui-border-l {
     border-left: 1px solid #dddddd;
@@ -425,7 +414,6 @@ li {
 }
 
 
-/* 弹性布局 */
 
 .flex {
     display: flex;
@@ -446,7 +434,6 @@ li {
 }
 
 
-/*背景颜色*/
 
 .bg-black {
     background-color: #0D1444 !important;
@@ -473,7 +460,6 @@ li {
 }
 
 
-/*字体颜色*/
 
 .text-black {
     color: #0D1444 !important;
@@ -516,7 +502,6 @@ li {
 }
 
 
-/*字体大小*/
 
 .font-size-12 {
     font-size: 12px;
@@ -559,7 +544,6 @@ li {
 }
 
 
-/* 表格数据新增 */
 
 .addnew {
     padding: 5px 10px !important;
@@ -579,10 +563,8 @@ li {
 }
 
 
-/* 表格样式 */
 
 
-/* 表格高度设置 */
 
 .table_data .el-table__header-wrapper {
     background-color: #f6f8ff !important;
@@ -620,7 +602,6 @@ li {
 }
 
 
-/* 表格switch按钮样式设置 */
 
 .table_data .el-switch .el-switch__core {
     border-color: #DEDEDF !important;
@@ -637,7 +618,6 @@ li {
 }
 
 
-/* 表格多选框样式设置 */
 
 .table_data .el-checkbox .el-checkbox__inner {
     border-radius: 7px;
@@ -698,7 +678,6 @@ li {
 }
 
 
-/* 导入导出样式 */
 
 .table_data .export_box .el-button {
     border: none !important;
@@ -706,7 +685,6 @@ li {
 }
 
 
-/* radio按钮样式 */
 
 .el-radio__input.is-checked .el-radio__inner {
     border-color: #4860FB !important;
@@ -732,7 +710,6 @@ li {
 }
 
 
-/* 下拉框禁选样式 */
 
 .el-input.is-disabled .el-input__inner {
     background-color: #ffffff !important;
@@ -755,7 +732,6 @@ li {
 
 .el-dialog::-webkit-scrollbar {
     display: none;
-    /*隐藏滚动条*/
 }
 
 .el-dialog:not(.is-fullscreen) {
@@ -772,11 +748,9 @@ li {
 
 .el-dialog__body::-webkit-scrollbar {
     display: none;
-    /*隐藏滚动条*/
 }
 
 
-/* 库存预警切换样式 */
 
 .repertory_nav_txt {
     padding: 0 20px;
@@ -807,7 +781,6 @@ li {
 } */
 
 
-/* 表格中button样式 */
 
 .table_btn .qr {
     background-color: #4860fb !important;
@@ -894,10 +867,8 @@ li {
 }
 
 
-/* div+css表格样式 */
 
 .custom_table .table {
-    /*此元素会作为块级表格来显示（类似 <table>），表格前后带有换行符。*/
     display: table;
     /*border-collapse:collapse;*/
     border-collapse: separate;
@@ -905,14 +876,12 @@ li {
 }
 
 .custom_table .table-caption {
-    /*此元素会作为一个表格标题显示（类似 <caption>）*/
     display: table-caption;
     margin: 0;
     font-size: 16px;
 }
 
 .custom_table .table-header-group {
-    /*此元素会作为一个或多个行的分组来显示（类似 <thead>）。*/
     display: table-header-group;
     background: #f6f8ff;
     /* font-weight: bold; */
@@ -920,12 +889,10 @@ li {
 }
 
 .custom_table .table-row-group {
-    /*此元素会作为一个或多个行的分组来显示（类似 <tbody>）。*/
     display: table-row-group;
 }
 
 .custom_table .table-footer-group {
-    /*此元素会作为一个或多个行的分组来显示（类似 <tfoot>）。*/
     display: table-footer-group;
 }
 
@@ -934,7 +901,6 @@ li {
 }
 
 .custom_table .table-row {
-    /*此元素会作为一个表格行显示（类似 <tr>）。*/
     display: table-row;
 }
 
@@ -949,7 +915,6 @@ li {
 }
 
 .custom_table .table-cell {
-    /*此元素会作为一个表格单元格显示（类似 <td> 和 <th>）*/
     display: table-cell;
     padding: 0 5px;
     border: 0.5px solid #ddd;
@@ -963,12 +928,10 @@ li {
 }
 
 .custom_table .table-column-group {
-    /*此元素会作为一个或多个列的分组来显示（类似 <colgroup>）。*/
     display: table-column-group;
 }
 
 .custom_table .table-column {
-    /*此元素会作为一个单元格列显示（类似 <col>）*/
     display: table-column;
     width: 100px;
 }

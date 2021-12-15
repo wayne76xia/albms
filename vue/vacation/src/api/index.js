@@ -1,7 +1,7 @@
 import request from '@/utils/request'
 
 
-// 首页上面统计数据
+// Home page above statistics
 export function getTopData() {
     return request({
         url: '/index/topData',
@@ -10,7 +10,7 @@ export function getTopData() {
 }
 
 
-// 销售额分析
+// Sales analysis
 export function salePriceAnalyse() {
     return request({
         url: '/index/salePriceAnalyse',
@@ -19,7 +19,7 @@ export function salePriceAnalyse() {
 }
 
 
-// 销售记录分析
+// Sales record analysis
 export function saleNumAnalyse() {
     return request({
         url: '/index/saleNumAnalyse',
@@ -28,7 +28,7 @@ export function saleNumAnalyse() {
 }
 
 
-// 会员分析
+// Member analysis
 export function clientMemberLevelAnalyse() {
     return request({
         url: '/index/clientMemberLevelAnalyse',
@@ -36,7 +36,7 @@ export function clientMemberLevelAnalyse() {
     })
 }
 
-//待审核售后订单
+//After-sale orders to be reviewed
 export function afterSalesOrderToBeReviewed() {
     return request({
         url: '/index/afterSalesOrderToBeReviewed',
@@ -44,7 +44,7 @@ export function afterSalesOrderToBeReviewed() {
     })
 }
 
-//待审核积分变更
+//Changes in credits to be reviewed
 export function afterIntegralOrderToBeReviewed() {
     return request({
         url: '/index/afterIntegralOrderToBeReviewed',
@@ -53,7 +53,7 @@ export function afterIntegralOrderToBeReviewed() {
 }
 
 
-//待审核库存调拨
+//Inventory transfer to be audited
 export function afterAllotOrderToBeReviewed() {
     return request({
         url: '/index/afterAllotOrderToBeReviewed',
@@ -61,7 +61,7 @@ export function afterAllotOrderToBeReviewed() {
     })
 }
 
-//待处理事项
+//Pending matters
 export function pendingMatters() {
     return request({
         url: '/index/pendingMatters',
@@ -69,7 +69,7 @@ export function pendingMatters() {
     })
 }
 
-//待处理事项
+//Pending matters
 export function indexPopUpWindows() {
     return request({
         url: '/index/indexPopUpWindows',
@@ -77,7 +77,7 @@ export function indexPopUpWindows() {
     })
 }
 
-//根据条件获取未读条目数
+//Gets the number of unread entries based on the condition
 export function getNoReadNum() {
     return request({
         url: '/glasses/messages/getNoReadNum',

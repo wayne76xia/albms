@@ -1,7 +1,7 @@
 import request from '@/utils/request'
 import { praseStrEmpty } from "@/utils/ruoyi";
 
-// 查询用户列表
+// Querying a User List
 export function listUser(query) {
   return request({
     url: '/system/user/list',
@@ -10,7 +10,7 @@ export function listUser(query) {
   })
 }
 
-// 查询用户详细
+// Querying User Details
 export function getUser(userId) {
   return request({
     url: '/system/user/' + praseStrEmpty(userId),
@@ -18,7 +18,7 @@ export function getUser(userId) {
   })
 }
 
-// 新增用户
+// New users
 export function addUser(data) {
   return request({
     url: '/system/user',
@@ -27,7 +27,7 @@ export function addUser(data) {
   })
 }
 
-// 修改用户
+// Modify the user
 export function updateUser(data) {
   return request({
     url: '/system/user',
@@ -36,7 +36,7 @@ export function updateUser(data) {
   })
 }
 
-// 删除用户
+// Delete user
 export function delUser(userId) {
   return request({
     url: '/system/user/' + userId,
@@ -44,7 +44,7 @@ export function delUser(userId) {
   })
 }
 
-// 导出用户
+// Export the user
 export function exportUser(query) {
   return request({
     url: '/system/user/export',
@@ -53,7 +53,7 @@ export function exportUser(query) {
   })
 }
 
-// 用户密码重置
+// User Password Reset
 export function resetUserPwd(userId, password) {
   const data = {
     userId,
@@ -66,7 +66,7 @@ export function resetUserPwd(userId, password) {
   })
 }
 
-// 用户状态修改
+// User Status Modification
 export function changeUserStatus(userId, status) {
   const data = {
     userId,
@@ -79,7 +79,7 @@ export function changeUserStatus(userId, status) {
   })
 }
 
-// 查询用户个人信息
+// Example Query the personal information of a user
 export function getUserProfile() {
   return request({
     url: '/system/user/profile',
@@ -87,7 +87,7 @@ export function getUserProfile() {
   })
 }
 
-// 修改用户个人信息
+// Example Modify personal information of a user
 export function updateUserProfile(data) {
   return request({
     url: '/system/user/profile',
@@ -96,7 +96,7 @@ export function updateUserProfile(data) {
   })
 }
 
-// 用户密码重置
+// User Password Reset
 export function updateUserPwd(oldPassword, newPassword) {
   const data = {
     oldPassword,
@@ -109,7 +109,7 @@ export function updateUserPwd(oldPassword, newPassword) {
   })
 }
 
-// 用户头像上传
+// Upload user profile picture
 export function uploadAvatar(data) {
   return request({
     url: '/system/user/profile/avatar',
@@ -118,7 +118,7 @@ export function uploadAvatar(data) {
   })
 }
 
-// 下载用户导入模板
+// Download a user import template
 export function importTemplate() {
   return request({
     url: '/system/user/importTemplate',

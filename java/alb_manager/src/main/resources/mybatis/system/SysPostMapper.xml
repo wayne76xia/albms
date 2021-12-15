@@ -175,7 +175,7 @@
         where u.user_id = #{userId}
     </select>
 
-<!--    根据职位编码查询职位-->
+<!--    Search for jobs by job code-->
     <select id="selectPostByPostCode" resultMap="SysPostResult">
         select post_id,
                post_code,

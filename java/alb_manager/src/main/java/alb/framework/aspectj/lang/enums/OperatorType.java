@@ -1,23 +1,23 @@
 package alb.framework.aspectj.lang.enums;
 
 /**
- * 操作人类别
+ * Operator type
  *
  */
 public enum OperatorType
 {
     /**
-     * 其它
+     * other
      */
     OTHER,
 
     /**
-     * 后台用户
+     * Background the user
      */
     MANAGE,
 
     /**
-     * 手机端用户
+     * Mobile terminal user
      */
     MOBILE
 }

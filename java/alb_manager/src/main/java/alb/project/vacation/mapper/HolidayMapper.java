@@ -7,62 +7,62 @@ import alb.project.vacation.resultVO.HolidayUserResultVO;
 import java.util.List;
 
 /**
- * 假期表数据库访问层
+ * Vacation table database access layer
  */
 public interface HolidayMapper {
     /**
-     * 通过ID查询单条数据
+     * throughIDExample Query a single piece of data
      *
-     * @param holidayId 主键
-     * @return 实例对象
+     * @param holidayId A primary key
+     * @return Instance objects
      */
     int queryHolidayIsExists(Long holidayId);
 
     /**
-     * 通过ID查询单条数据
+     * throughIDExample Query a single piece of data
      *
-     * @param holidayId 主键
-     * @return 实例对象
+     * @param holidayId A primary key
+     * @return Instance objects
      */
     Holiday queryOne(Long holidayId);
 
     /**
-     * 通过实体作为筛选条件查询
+     * Query by entity as filter criteria
      *
-     * @param holiday 实例对象
-     * @return 对象列表
+     * @param holiday Instance objects
+     * @return The object list
      */
     List<Holiday> queryAll(Holiday holiday);
 
     /**
-     * 新增数据
+     * The new data
      *
-     * @param holiday 实例对象
-     * @return 影响行数
+     * @param holiday Instance objects
+     * @return Affect the number of rows
      */
     int insert(Holiday holiday);
 
     /**
-     * 修改数据
+     * Modify the data
      *
-     * @param holiday 实例对象
-     * @return 影响行数
+     * @param holiday Instance objects
+     * @return Affect the number of rows
      */
     int update(Holiday holiday);
 
     /**
-     * 通过主键删除数据
+     * Delete data by primary key
      *
-     * @param holidayId 主键
-     * @return 影响行数
+     * @param holidayId A primary key
+     * @return Affect the number of rows
      */
     int deleteById(Long holidayId);
 
     /**
-     * 查询用户列表
+     * Querying a User List
      *
-     * @param holidayUserParamsVO 实例对象
-     * @return 实例对象
+     * @param holidayUserParamsVO Instance objects
+     * @return Instance objects
      */
     List<HolidayUserResultVO> selectUserList(HolidayUserParamsVO holidayUserParamsVO);
 

@@ -4,31 +4,31 @@ import alb.common.constant.Constants;
 import alb.common.utils.StringUtils;
 import alb.common.utils.http.HttpUtils;
 import alb.framework.config.WlwqConfig;
+import com.alibaba.fastjson.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import com.alibaba.fastjson.JSONObject;
 
 /**
- * 获取地址类
+ * Get address class
  *
  */
 public class AddressUtils
 {
     private static final Logger log = LoggerFactory.getLogger(AddressUtils.class);
 
-    // IP地址查询
+    // IPAddress the query
     public static final String IP_URL = "http://whois.pconline.com.cn/ipJson.jsp";
 
-    // 未知地址
+    // Unknown address
     public static final String UNKNOWN = "XX XX";
 
     public static String getRealAddressByIP(String ip)
     {
         String address = UNKNOWN;
-        // 内网不查询
+        // No Intranet Query
         if (IpUtils.internalIp(ip))
         {
-            return "内网IP";
+            return "IntranetIP";
         }
         if (WlwqConfig.isAddressEnabled())
         {
@@ -37,7 +37,7 @@ public class AddressUtils
                 String rspStr = HttpUtils.sendGet(IP_URL, "ip=" + ip + "&json=true", Constants.GBK);
                 if (StringUtils.isEmpty(rspStr))
                 {
-                    log.error("获取地理位置异常 {}", ip);
+                    log.error("Get a geographic location exception {}", ip);
                     return UNKNOWN;
                 }
                 JSONObject obj = JSONObject.parseObject(rspStr);
@@ -47,7 +47,7 @@ public class AddressUtils
             }
             catch (Exception e)
             {
-                log.error("获取地理位置异常 {}", ip);
+                log.error("Get a geographic location exception {}", ip);
             }
         }
         return address;

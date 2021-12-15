@@ -1,6 +1,6 @@
 import request from '@/utils/request'
 
-// 查询字典类型列表
+// Query the dictionary type list
 export function listType(query) {
   return request({
     url: '/system/dict/type/list',
@@ -9,7 +9,7 @@ export function listType(query) {
   })
 }
 
-// 查询字典类型详细
+// Query details about the dictionary type
 export function getType(dictId) {
   return request({
     url: '/system/dict/type/' + dictId,
@@ -17,7 +17,7 @@ export function getType(dictId) {
   })
 }
 
-// 新增字典类型
+// New dictionary type
 export function addType(data) {
   return request({
     url: '/system/dict/type',
@@ -26,7 +26,7 @@ export function addType(data) {
   })
 }
 
-// 修改字典类型
+// Changing the dictionary type
 export function updateType(data) {
   return request({
     url: '/system/dict/type',
@@ -35,7 +35,7 @@ export function updateType(data) {
   })
 }
 
-// 删除字典类型
+// Delete dictionary type
 export function delType(dictId) {
   return request({
     url: '/system/dict/type/' + dictId,
@@ -43,7 +43,7 @@ export function delType(dictId) {
   })
 }
 
-// 清理参数缓存
+// Clearing the parameter cache
 export function clearCache() {
   return request({
     url: '/system/dict/type/clearCache',
@@ -51,7 +51,7 @@ export function clearCache() {
   })
 }
 
-// 导出字典类型
+// Exporting dictionary types
 export function exportType(query) {
   return request({
     url: '/system/dict/type/export',
@@ -60,7 +60,7 @@ export function exportType(query) {
   })
 }
 
-// 获取字典选择框列表
+// Gets a list of dictionary selection boxes
 export function optionselect() {
   return request({
     url: '/system/dict/type/optionselect',

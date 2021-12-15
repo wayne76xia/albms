@@ -17,37 +17,37 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 /**
- * spring security配置
+ * spring securityconfiguration
  *
  */
 @EnableGlobalMethodSecurity(prePostEnabled = true, securedEnabled = true)
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
     /**
-     * 自定义用户认证逻辑
+     * Custom user authentication logic
      */
     @Autowired
     private UserDetailsService userDetailsService;
 
     /**
-     * 认证失败处理类
+     * Authentication failure handling class
      */
     @Autowired
     private AuthenticationEntryPointImpl unauthorizedHandler;
 
     /**
-     * 退出处理类
+     * Exit handler class
      */
     @Autowired
     private LogoutSuccessHandlerImpl logoutSuccessHandler;
 
     /**
-     * token认证过滤器
+     * tokenAuthentication filter
      */
     @Autowired
     private JwtAuthenticationTokenFilter authenticationTokenFilter;
 
     /**
-     * 解决 无法直接注入 AuthenticationManager
+     * To solve Can't inject directly AuthenticationManager
      *
      * @return
      * @throws Exception
@@ -59,36 +59,36 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
     /**
-     * anyRequest          |   匹配所有请求路径
-     * access              |   SpringEl表达式结果为true时可以访问
-     * anonymous           |   匿名可以访问
-     * denyAll             |   用户不能访问
-     * fullyAuthenticated  |   用户完全认证可以访问（非remember-me下自动登录）
-     * hasAnyAuthority     |   如果有参数，参数表示权限，则其中任何一个权限可以访问
-     * hasAnyRole          |   如果有参数，参数表示角色，则其中任何一个角色可以访问
-     * hasAuthority        |   如果有参数，参数表示权限，则其权限可以访问
-     * hasIpAddress        |   如果有参数，参数表示IP地址，如果用户IP和参数匹配，则可以访问
-     * hasRole             |   如果有参数，参数表示角色，则其角色可以访问
-     * permitAll           |   用户可以任意访问
-     * rememberMe          |   允许通过remember-me登录的用户访问
-     * authenticated       |   用户登录后可访问
+     * anyRequest          |   Matches all request paths
+     * access              |   SpringElThe expression results intrueCan be accessed
+     * anonymous           |   Anonymously accessible
+     * denyAll             |   User cannot access
+     * fullyAuthenticated  |   Users are fully authenticated for access(nonremember-meAutomatic login)
+     * hasAnyAuthority     |   If you have parameters,Parameter Indicates permission,Any of these permissions can be accessed
+     * hasAnyRole          |   If you have parameters,Parameter Indicates role,Then any of the roles can access it
+     * hasAuthority        |   If you have parameters,Parameter Indicates permission,The permission of the user can be accessed
+     * hasIpAddress        |   If you have parameters,parameterIPaddress,If the userIPAnd parameter matching,You can access
+     * hasRole             |   If you have parameters,Parameter Indicates role,Then its role can access it
+     * permitAll           |   Users can access it at will
+     * rememberMe          |   Allowed to pass throughremember-meLogged-in user access
+     * authenticated       |   Users can access it after logging in
      */
     @Override
     protected void configure(HttpSecurity httpSecurity) throws Exception {
         httpSecurity
-                // CRSF禁用，因为不使用session
+                // CRSFdisable,Because it's not usedsession
                 .csrf().disable()
-                // 认证失败处理类
+                // Authentication failure handling class
                 .exceptionHandling().authenticationEntryPoint(unauthorizedHandler).and()
-                // 基于token，所以不需要session
+                // Based on thetoken,So you don't have tosession
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
-                // 过滤请求
+                // Filtering request
                 .authorizeRequests()
-                // 对于登录login 验证码captchaImage 允许匿名访问
+                // To log inlogin Verification codecaptchaImage Allow anonymous access
                 .antMatchers("/login",
                         "/captchaImage",
                         "/getLoginBackGroundPicAndTechnicalPhone",
-                        "/pushIncomingPoolMq", // 排除进线
+                        "/pushIncomingPoolMq", // Rule out into line
                         "/getDeptNameByUserName").anonymous()
                 .antMatchers(
                         HttpMethod.GET,
@@ -105,20 +105,20 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/webjars/**").anonymous()
                 .antMatchers("/*/api-docs").anonymous()
                 .antMatchers("/druid/**").anonymous()
-                .antMatchers("/forgetPassword").anonymous() // 忘记密码放行
-                .antMatchers("/sendSMS").anonymous() // 修改密码 发送短信验证码放行
-                // 除上面外的所有请求全部需要鉴权认证
+                .antMatchers("/forgetPassword").anonymous() // Forget password release
+                .antMatchers("/sendSMS").anonymous() // Change the password Send SMS verification code to put lines
+                // All requests other than the above require authentication
                 .anyRequest().authenticated()
                 .and()
                 .headers().frameOptions().disable();
         httpSecurity.logout().logoutUrl("/logout").logoutSuccessHandler(logoutSuccessHandler);
-        // 添加JWT filter
+        // addJWT filter
         httpSecurity.addFilterBefore(authenticationTokenFilter, UsernamePasswordAuthenticationFilter.class);
     }
 
 
     /**
-     * 强散列哈希加密实现
+     * Strong hash hash encryption implementation
      */
     @Bean
     public BCryptPasswordEncoder bCryptPasswordEncoder() {
@@ -126,7 +126,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
     /**
-     * 身份认证接口
+     * Identity authentication interface
      */
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {

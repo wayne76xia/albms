@@ -1,49 +1,50 @@
 package alb.framework.web.domain;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.io.Serializable;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
-import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
- * Entity基类
+ * EntityThe base class
  *
  */
 public class BaseEntity implements Serializable
 {
     private static final long serialVersionUID = 1L;
 
-    /** 搜索值 */
+    /** Search value */
     private String searchValue;
 
-    /** 创建者 */
+    /** The creator */
     private String createBy;
 
-    /** 创建时间 */
+    /** Creation time */
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date createTime;
 
-    /** 更新者 */
+    /** Update the */
     private String updateBy;
 
-    /** 更新时间 */
+    /** Update time */
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date updateTime;
 
-    /** 备注 */
+    /** note */
     private String remark;
 
-    /** 开始时间 */
+    /** The start time */
     @JsonIgnore
     private String beginTime;
 
-    /** 结束时间 */
+    /** The end of time */
     @JsonIgnore
     private String endTime;
 
-    /** 请求参数 */
+    /** Request parameters */
     private Map<String, Object> params;
 
     public String getSearchValue()

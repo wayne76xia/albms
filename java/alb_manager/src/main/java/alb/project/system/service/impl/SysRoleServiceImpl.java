@@ -24,7 +24,7 @@ import alb.common.utils.StringUtils;
 import alb.framework.aspectj.lang.annotation.DataScope;
 
 /**
- * 角色 业务层处理
+ * role Business layer processing
  *
  */
 @Service
@@ -43,10 +43,10 @@ public class SysRoleServiceImpl implements ISysRoleService
     private SysRoleDeptMapper roleDeptMapper;
 
     /**
-     * 根据条件分页查询角色数据
+     * Query role data based on conditional paging
      * 
-     * @param role 角色信息
-     * @return 角色数据集合信息
+     * @param role The role of information
+     * @return Role data set information
      */
     @Override
     @DataScope(deptAlias = "d")
@@ -56,10 +56,10 @@ public class SysRoleServiceImpl implements ISysRoleService
     }
 
     /**
-     * 根据用户ID查询权限
+     * According to the userIDQuery permissions
      * 
-     * @param userId 用户ID
-     * @return 权限列表
+     * @param userId The userID
+     * @return Permissions list
      */
     @Override
     public Set<String> selectRolePermissionByUserId(Long userId)
@@ -77,9 +77,9 @@ public class SysRoleServiceImpl implements ISysRoleService
     }
 
     /**
-     * 查询所有角色
+     * Querying All Roles
      * 
-     * @return 角色列表
+     * @return The role list
      */
     @Override
     public List<SysRole> selectRoleAll()
@@ -88,10 +88,10 @@ public class SysRoleServiceImpl implements ISysRoleService
     }
 
     /**
-     * 根据用户ID获取角色选择框列表
+     * According to the userIDGets the list of role selection boxes
      * 
-     * @param userId 用户ID
-     * @return 选中角色ID列表
+     * @param userId The userID
+     * @return Select the roleIDThe list of
      */
     @Override
     public List<Integer> selectRoleListByUserId(Long userId)
@@ -100,10 +100,10 @@ public class SysRoleServiceImpl implements ISysRoleService
     }
 
     /**
-     * 通过角色ID查询角色
+     * Through the roleIDQuery role
      * 
-     * @param roleId 角色ID
-     * @return 角色对象信息
+     * @param roleId roleID
+     * @return Role Object Information
      */
     @Override
     public SysRole selectRoleById(Long roleId)
@@ -112,10 +112,10 @@ public class SysRoleServiceImpl implements ISysRoleService
     }
 
     /**
-     * 校验角色名称是否唯一
+     * Verify that the role name is unique
      * 
-     * @param role 角色信息
-     * @return 结果
+     * @param role The role of information
+     * @return The results of
      */
     @Override
     public String checkRoleNameUnique(SysRole role)
@@ -130,10 +130,10 @@ public class SysRoleServiceImpl implements ISysRoleService
     }
 
     /**
-     * 校验角色权限是否唯一
+     * Verify that the role has unique permissions
      * 
-     * @param role 角色信息
-     * @return 结果
+     * @param role The role of information
+     * @return The results of
      */
     @Override
     public String checkRoleKeyUnique(SysRole role)
@@ -148,24 +148,24 @@ public class SysRoleServiceImpl implements ISysRoleService
     }
 
     /**
-     * 校验角色是否允许操作
+     * Verify whether the role allows operations
      * 
-     * @param role 角色信息
+     * @param role The role of information
      */
     @Override
     public void checkRoleAllowed(SysRole role)
     {
         if (StringUtils.isNotNull(role.getRoleId()) && role.isAdmin())
         {
-            throw new CustomException("不允许操作超级管理员角色");
+            throw new CustomException("Do not operate the super administrator role");
         }
     }
 
     /**
-     * 通过角色ID查询角色使用数量
+     * Through the roleIDExample Query the number of roles
      * 
-     * @param roleId 角色ID
-     * @return 结果
+     * @param roleId roleID
+     * @return The results of
      */
     @Override
     public int countUserRoleByRoleId(Long roleId)
@@ -174,42 +174,42 @@ public class SysRoleServiceImpl implements ISysRoleService
     }
 
     /**
-     * 新增保存角色信息
+     * Added Saving role information
      * 
-     * @param role 角色信息
-     * @return 结果
+     * @param role The role of information
+     * @return The results of
      */
     @Override
     @Transactional
     public int insertRole(SysRole role)
     {
-        // 新增角色信息
+        // Adding Role Information
         roleMapper.insertRole(role);
         return insertRoleMenu(role);
     }
 
     /**
-     * 修改保存角色信息
+     * Modify Save role information
      * 
-     * @param role 角色信息
-     * @return 结果
+     * @param role The role of information
+     * @return The results of
      */
     @Override
     @Transactional
     public int updateRole(SysRole role)
     {
-        // 修改角色信息
+        // Modifying Role Information
         roleMapper.updateRole(role);
-        // 删除角色与菜单关联
+        // Delete the association between a role and a menu
         roleMenuMapper.deleteRoleMenuByRoleId(role.getRoleId());
         return insertRoleMenu(role);
     }
 
     /**
-     * 修改角色状态
+     * Modifying role Status
      * 
-     * @param role 角色信息
-     * @return 结果
+     * @param role The role of information
+     * @return The results of
      */
     @Override
     public int updateRoleStatus(SysRole role)
@@ -218,32 +218,32 @@ public class SysRoleServiceImpl implements ISysRoleService
     }
 
     /**
-     * 修改数据权限信息
+     * Example Modify data permission information
      * 
-     * @param role 角色信息
-     * @return 结果
+     * @param role The role of information
+     * @return The results of
      */
     @Override
     @Transactional
     public int authDataScope(SysRole role)
     {
-        // 修改角色信息
+        // Modifying Role Information
         roleMapper.updateRole(role);
-        // 删除角色与部门关联
+        // Delete the association between a role and a department
         roleDeptMapper.deleteRoleDeptByRoleId(role.getRoleId());
-        // 新增角色和部门信息（数据权限）
+        // Added role and department information(Data access)
         return insertRoleDept(role);
     }
 
     /**
-     * 新增角色菜单信息
+     * Added role menu information
      * 
-     * @param role 角色对象
+     * @param role Role object
      */
     public int insertRoleMenu(SysRole role)
     {
         int rows = 1;
-        // 新增用户与角色管理
+        // Added user and role management
         List<SysRoleMenu> list = new ArrayList<SysRoleMenu>();
         for (Long menuId : role.getMenuIds())
         {
@@ -260,14 +260,14 @@ public class SysRoleServiceImpl implements ISysRoleService
     }
 
     /**
-     * 新增角色部门信息(数据权限)
+     * Added role department information(Data access)
      *
-     * @param role 角色对象
+     * @param role Role object
      */
     public int insertRoleDept(SysRole role)
     {
         int rows = 1;
-        // 新增角色与部门（数据权限）管理
+        // Added roles and departments(Data access)management
         List<SysRoleDept> list = new ArrayList<SysRoleDept>();
         for (Long deptId : role.getDeptIds())
         {
@@ -284,10 +284,10 @@ public class SysRoleServiceImpl implements ISysRoleService
     }
 
     /**
-     * 通过角色ID删除角色
+     * Through the roleIDDelete the role
      * 
-     * @param roleId 角色ID
-     * @return 结果
+     * @param roleId roleID
+     * @return The results of
      */
     @Override
     public int deleteRoleById(Long roleId)
@@ -296,10 +296,10 @@ public class SysRoleServiceImpl implements ISysRoleService
     }
 
     /**
-     * 批量删除角色信息
+     * Delete role information in batches
      * 
-     * @param roleIds 需要删除的角色ID
-     * @return 结果
+     * @param roleIds Role that you want to deleteID
+     * @return The results of
      */
     @Override
     public int deleteRoleByIds(Long[] roleIds)
@@ -310,7 +310,7 @@ public class SysRoleServiceImpl implements ISysRoleService
             SysRole role = selectRoleById(roleId);
             if (countUserRoleByRoleId(roleId) > 0)
             {
-                throw new CustomException(String.format("%1$s已分配,不能删除", role.getRoleName()));
+                throw new CustomException(String.format("%1$sallocated,Can't delete", role.getRoleName()));
             }
         }
         return roleMapper.deleteRoleByIds(roleIds);

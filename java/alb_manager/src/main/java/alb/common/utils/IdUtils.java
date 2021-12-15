@@ -3,15 +3,15 @@ package alb.common.utils;
 import alb.common.core.lang.UUID;
 
 /**
- * ID生成器工具类
+ * IDGenerator utility class
  *
  */
 public class IdUtils
 {
     /**
-     * 获取随机UUID
+     * Access to randomUUID
      * 
-     * @return 随机UUID
+     * @return randomUUID
      */
     public static String randomUUID()
     {
@@ -19,9 +19,9 @@ public class IdUtils
     }
 
     /**
-     * 简化的UUID，去掉了横线
+     * A simplifiedUUID,I got rid of the line
      * 
-     * @return 简化的UUID，去掉了横线
+     * @return A simplifiedUUID,I got rid of the line
      */
     public static String simpleUUID()
     {
@@ -29,9 +29,9 @@ public class IdUtils
     }
 
     /**
-     * 获取随机UUID，使用性能更好的ThreadLocalRandom生成UUID
+     * Access to randomUUID,Use something with better performanceThreadLocalRandomgenerateUUID
      * 
-     * @return 随机UUID
+     * @return randomUUID
      */
     public static String fastUUID()
     {
@@ -39,9 +39,9 @@ public class IdUtils
     }
 
     /**
-     * 简化的UUID，去掉了横线，使用性能更好的ThreadLocalRandom生成UUID
+     * A simplifiedUUID,I got rid of the line,Use something with better performanceThreadLocalRandomgenerateUUID
      * 
-     * @return 简化的UUID，去掉了横线
+     * @return A simplifiedUUID,I got rid of the line
      */
     public static String fastSimpleUUID()
     {

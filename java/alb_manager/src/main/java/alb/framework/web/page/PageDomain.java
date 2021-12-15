@@ -3,18 +3,18 @@ package alb.framework.web.page;
 import alb.common.utils.StringUtils;
 
 /**
- * 分页数据
+ * Paging data
  *
  */
 public class PageDomain
 {
-    /** 当前记录起始索引 */
+    /** Start index of the current record */
     private Integer pageNum;
-    /** 每页显示记录数 */
+    /** Number of records per page */
     private Integer pageSize;
-    /** 排序列 */
+    /** Row of the sequence */
     private String orderByColumn;
-    /** 排序的方向 "desc" 或者 "asc". */
+    /** Sorting direction "desc" or "asc". */
     private String isAsc;
 
     public String getOrderBy()

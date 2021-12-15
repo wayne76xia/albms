@@ -23,7 +23,7 @@
         <result property="updateTime" column="update_time"/>
     </resultMap>
 
-    <!--查询单个是否存在-->
+    <!--Query whether a single node exists-->
     <select id="queryHolidayIsExists" resultType="java.lang.Integer">
         select count(1)
         from holiday h
@@ -31,7 +31,7 @@
           and h.del_flag = 0
     </select>
 
-    <!--通过单个实体-->
+    <!--Through a single entity-->
     <select id="queryOne" resultMap="HolidayMap">
         select h.holiday_id,
                h.holiday_type_id,
@@ -54,7 +54,7 @@
         limit 1
     </select>
 
-    <!--查询多个实体-->
+    <!--Querying multiple entities-->
     <select id="queryAll" resultMap="HolidayMap">
         select h.holiday_id,
         h.holiday_type_id,
@@ -172,7 +172,7 @@
         </trim>
     </insert>
 
-    <!--通过主键修改数据-->
+    <!--Modify data by primary key-->
     <update id="update" parameterType="Holiday">
         update holiday
         <set>
@@ -215,7 +215,7 @@
         limit 1
     </update>
 
-    <!--通过主键删除-->
+    <!--Delete by primary key-->
     <delete id="deleteById">
         update holiday
         set del_flag = 1

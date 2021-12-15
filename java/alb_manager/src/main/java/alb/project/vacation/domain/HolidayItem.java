@@ -23,32 +23,32 @@ public class HolidayItem extends BaseEntity
 {
     private static final long serialVersionUID = 1L;
 
-    /* 假期主键 */
+    /* The primary key holiday */
     @JsonSerialize(using = LongJsonSerializer.class)
     @JsonDeserialize(using = LongJsonDeserializer.class)
     private Long holidayId;
 
-    /* 审批人Id */
+    /* The approverId */
     @JsonSerialize(using = LongJsonSerializer.class)
     @JsonDeserialize(using = LongJsonDeserializer.class)
     private Long approvedUserId;
     private String approvedUserName;
 
-    /* 审批序号 从1开始计数 */
+    /* Approval number from1Start counting */
     private Integer approvedIndex;
 
-    /* 审批状态 0未处理，1通过，2驳回 */
+    /* The examination and approval status 0untreated,1through,2rejected */
     private Integer status;
 
-    /* 审批时间 */
+    /* The examination and approval time */
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date approveTime;
 
-    /* 审批说明 */
+    /* Instructions for examination and approval of */
     private String approveInstruction;
 
     /**
-     * 删除状态0未1已
+     * Delete the state0not1has
      */
     private Integer delFlag;
 }

@@ -13,85 +13,85 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 部门表 sys_dept
+ * Department of table sys_dept
  *
  */
 public class SysDept extends BaseEntity
 {
     private static final long serialVersionUID = 1L;
 
-    /** 部门ID */
+    /** departmentID */
     private Long deptId;
 
-    /** 部门编码 */
+    /** Department code */
     private String deptCode;
 
 
-    /** 父部门ID */
+    /** The parent departmentID */
     private Long parentId;
 
-    /** 祖级列表 */
+    /** Face level list */
     private String ancestors;
 
-    /** 部门名称 */
+    /** Department name */
     private String deptName;
 
-    /** 部门电话 */
+    /** Department of the phone */
     private String deptPhone;
 
-    /** 显示顺序 */
+    /** According to the order */
     private String orderNum;
 
-    /** 负责人 */
+    /** head */
     private String leader;
 
-    /** 联系电话 */
+    /** Contact phone number */
     private String phone;
 
-    /** 邮箱 */
+    /** email */
     private String email;
 
-    /** 省 .*/
+    /** province .*/
     private String province;
 
-    /** 市 .*/
+    /** The city .*/
     private String city;
 
-    /** 区 .*/
+    /** area .*/
     private String district;
 
-    /** 详细地址 .*/
+    /** Detailed address .*/
     private String address;
 
-    /** 门店类型 数据字段dept_type 1直营店2加盟店 .*/
+    /** Store type The data fieldsdept_type 1stores2Its franchisees .*/
     private Integer deptType;
 
-    /** 默认0其他 1分公司 2门店 */
+    /** The default0other 1branch 2stores */
     private Integer type;
 
-    /** 部门状态:0正常,1停用 */
+    /** Department of state:0normal,1disable */
     private String status;
 
-    /** 删除标志（0代表存在 2代表删除） */
+    /** Delete logo(0On behalf of there 2On behalf of the delete) */
     private String delFlag;
 
     /**
-     * 经度
+     * longitude
      */
-    @Excel(name = "经度")
+    @Excel(name = "longitude")
     private String longitude;
 
     /**
-     * 纬度
+     * latitude
      */
-    @Excel(name = "纬度")
+    @Excel(name = "latitude")
     private String latitude;
 
-    /** 父部门名称 */
+    /** Name of Parent Department */
     @Transient
     private String parentName;
     
-    /** 子部门 */
+    /** A division */
     private List<SysDept> children = new ArrayList<SysDept>();
 
 
@@ -141,8 +141,8 @@ public class SysDept extends BaseEntity
         this.ancestors = ancestors;
     }
 
-    @NotBlank(message = "部门名称不能为空")
-    @Size(min = 0, max = 30, message = "部门名称长度不能超过30个字符")
+    @NotBlank(message = "The department name cannot be empty")
+    @Size(min = 0, max = 30, message = "The department name cannot exceed the maximum length30A character")
     public String getDeptName()
     {
         return deptName;
@@ -153,7 +153,7 @@ public class SysDept extends BaseEntity
         this.deptName = deptName;
     }
 
-    @NotBlank(message = "显示顺序不能为空")
+    @NotBlank(message = "The display order cannot be empty")
     public String getOrderNum()
     {
         return orderNum;
@@ -174,7 +174,7 @@ public class SysDept extends BaseEntity
         this.leader = leader;
     }
 
-    @Size(min = 0, max = 11, message = "联系电话长度不能超过11个字符")
+    @Size(min = 0, max = 11, message = "The number length cannot exceed11A character")
     public String getPhone()
     {
         return phone;
@@ -185,8 +185,8 @@ public class SysDept extends BaseEntity
         this.phone = phone;
     }
 
-    @Email(message = "邮箱格式不正确")
-    @Size(min = 0, max = 50, message = "邮箱长度不能超过50个字符")
+    @Email(message = "The mailbox format is incorrect")
+    @Size(min = 0, max = 50, message = "The length of the mailbox cannot exceed50A character")
     public String getEmail()
     {
         return email;

@@ -1,13253 +1,13253 @@
 export default [{
-        value: "北京",
-        label: "北京",
+        value: "Beijing",
+        label: "Beijing",
         children: [
 
             {
-                value: "北京",
-                label: "北京",
+                value: "Beijing",
+                label: "Beijing",
                 children: [{
-                    value: "请选择",
-                    label: "请选择"
+                    value: "Please select a",
+                    label: "Please select a"
                 }, {
-                    value: "东城区",
-                    label: "东城区"
+                    value: "The dongcheng district",
+                    label: "The dongcheng district"
                 }, {
-                    value: "西城区",
-                    label: "西城区"
+                    value: "Xicheng district",
+                    label: "Xicheng district"
                 }, {
-                    value: "崇文区",
-                    label: "崇文区"
+                    value: "Chongwen district",
+                    label: "Chongwen district"
                 }, {
-                    value: "宣武区",
-                    label: "宣武区"
+                    value: "Xuanwu district",
+                    label: "Xuanwu district"
                 }, {
-                    value: "朝阳区",
-                    label: "朝阳区"
+                    value: "Chaoyang district",
+                    label: "Chaoyang district"
                 }, {
-                    value: "海淀区",
-                    label: "海淀区"
+                    value: "Haidian district,",
+                    label: "Haidian district,"
                 }, {
-                    value: "丰台区",
-                    label: "丰台区"
+                    value: "Fengtai district",
+                    label: "Fengtai district"
                 }, {
-                    value: "石景山区",
-                    label: "石景山区"
+                    value: "The shijingshan district",
+                    label: "The shijingshan district"
                 }, {
-                    value: "房山区",
-                    label: "房山区"
+                    value: "Fangshan district",
+                    label: "Fangshan district"
                 }, {
-                    value: "通州区",
-                    label: "通州区"
+                    value: "Tongzhou district",
+                    label: "Tongzhou district"
                 }, {
-                    value: "顺义区",
-                    label: "顺义区"
+                    value: "Shunyi district",
+                    label: "Shunyi district"
                 }, {
-                    value: "昌平区",
-                    label: "昌平区"
+                    value: "Changping district",
+                    label: "Changping district"
                 }, {
-                    value: "大兴区",
-                    label: "大兴区"
+                    value: "Daxing district",
+                    label: "Daxing district"
                 }, {
-                    value: "怀柔区",
-                    label: "怀柔区"
+                    value: "Huairou district",
+                    label: "Huairou district"
                 }, {
-                    value: "平谷区",
-                    label: "平谷区"
+                    value: "Pinggu district",
+                    label: "Pinggu district"
                 }, {
-                    value: "门头沟区",
-                    label: "门头沟区"
+                    value: "Mentougou district",
+                    label: "Mentougou district"
                 }, {
-                    value: "密云县",
-                    label: "密云县"
+                    value: "Miyun county",
+                    label: "Miyun county"
                 }, {
-                    value: "延庆县",
-                    label: "延庆县"
+                    value: "Yanqing county",
+                    label: "Yanqing county"
                 }, {
-                    value: "其他",
-                    label: "其他"
+                    value: "other",
+                    label: "other"
                 }],
 
             }
         ],
     },
     {
-        value: "广东",
-        label: "广东",
+        value: "guangdong",
+        label: "guangdong",
         children: [{
-                value: "广州",
-                label: "广州",
+                value: "Guangzhou",
+                label: "Guangzhou",
                 children: [{
-                    value: "请选择",
-                    label: "请选择"
+                    value: "Please select a",
+                    label: "Please select a"
                 }, {
-                    value: "越秀区",
-                    label: "越秀区"
+                    value: "Yuexiu district",
+                    label: "Yuexiu district"
                 }, {
-                    value: "荔湾区",
-                    label: "荔湾区"
+                    value: "Liwan district",
+                    label: "Liwan district"
                 }, {
-                    value: "海珠区",
-                    label: "海珠区"
+                    value: "zhuhai",
+                    label: "zhuhai"
                 }, {
-                    value: "天河区",
-                    label: "天河区"
+                    value: "The tianhe district",
+                    label: "The tianhe district"
                 }, {
-                    value: "白云区",
-                    label: "白云区"
+                    value: "Baiyun district",
+                    label: "Baiyun district"
                 }, {
-                    value: "黄埔区",
-                    label: "黄埔区"
+                    value: "Huangpu district",
+                    label: "Huangpu district"
                 }, {
-                    value: "番禺区",
-                    label: "番禺区"
+                    value: "Panyu district,",
+                    label: "Panyu district,"
                 }, {
-                    value: "花都区",
-                    label: "花都区"
+                    value: "Huadu district",
+                    label: "Huadu district"
                 }, {
-                    value: "南沙区",
-                    label: "南沙区"
+                    value: "Nansha district",
+                    label: "Nansha district"
                 }, {
-                    value: "萝岗区",
-                    label: "萝岗区"
+                    value: "luogang",
+                    label: "luogang"
                 }, {
-                    value: "增城市",
-                    label: "增城市"
+                    value: "Zengcheng city",
+                    label: "Zengcheng city"
                 }, {
-                    value: "从化市",
-                    label: "从化市"
+                    value: "conghua",
+                    label: "conghua"
                 }, {
-                    value: "其他",
-                    label: "其他"
+                    value: "other",
+                    label: "other"
                 }],
 
             },
             {
-                value: "深圳",
-                label: "深圳",
+                value: "shenzhen",
+                label: "shenzhen",
                 children: [{
-                    value: "请选择",
-                    label: "请选择"
+                    value: "Please select a",
+                    label: "Please select a"
                 }, {
-                    value: "福田区",
-                    label: "福田区"
+                    value: "Futian district",
+                    label: "Futian district"
                 }, {
-                    value: "罗湖区",
-                    label: "罗湖区"
+                    value: "Luohu district",
+                    label: "Luohu district"
                 }, {
-                    value: "南山区",
-                    label: "南山区"
+                    value: "Nanshan district",
+                    label: "Nanshan district"
                 }, {
-                    value: "宝安区",
-                    label: "宝安区"
+                    value: "Baoan district",
+                    label: "Baoan district"
                 }, {
-                    value: "龙岗区",
-                    label: "龙岗区"
+                    value: "Longgang district",
+                    label: "Longgang district"
                 }, {
-                    value: "盐田区",
-                    label: "盐田区"
+                    value: "Yantian district",
+                    label: "Yantian district"
                 }, {
-                    value: "其他",
-                    label: "其他"
+                    value: "other",
+                    label: "other"
                 }],
 
             },
             {
-                value: "珠海",
-                label: "珠海",
+                value: "zhuhai",
+                label: "zhuhai",
                 children: [{
-                    value: "请选择",
-                    label: "请选择"
+                    value: "Please select a",
+                    label: "Please select a"
                 }, {
-                    value: "香洲区",
-                    label: "香洲区"
+                    value: "Xiangzhou district has injected",
+                    label: "Xiangzhou district has injected"
                 }, {
-                    value: "斗门区",
-                    label: "斗门区"
+                    value: "Doumen district",
+                    label: "Doumen district"
                 }, {
-                    value: "金湾区",
-                    label: "金湾区"
+                    value: "Golden bay area",
+                    label: "Golden bay area"
                 }, {
-                    value: "其他",
-                    label: "其他"
+                    value: "other",
+                    label: "other"
                 }],
 
             },
             {
-                value: "汕头",
-                label: "汕头",
+                value: "shantou",
+                label: "shantou",
                 children: [{
-                    value: "请选择",
-                    label: "请选择"
+                    value: "Please select a",
+                    label: "Please select a"
                 }, {
-                    value: "金平区",
-                    label: "金平区"
+                    value: "Jin area",
+                    label: "Jin area"
                 }, {
-                    value: "濠江区",
-                    label: "濠江区"
+                    value: "Hao gong area",
+                    label: "Hao gong area"
                 }, {
-                    value: "龙湖区",
-                    label: "龙湖区"
+                    value: "Longhu district",
+                    label: "Longhu district"
                 }, {
-                    value: "潮阳区",
-                    label: "潮阳区"
+                    value: "Chaoyang district",
+                    label: "Chaoyang district"
                 }, {
-                    value: "潮南区",
-                    label: "潮南区"
+                    value: "ChaoNa area",
+                    label: "ChaoNa area"
                 }, {
-                    value: "澄海区",
-                    label: "澄海区"
+                    value: "Chenghai district",
+                    label: "Chenghai district"
                 }, {
-                    value: "南澳县",
-                    label: "南澳县"
+                    value: "County of south Australia",
+                    label: "County of south Australia"
                 }, {
-                    value: "其他",
-                    label: "其他"
+                    value: "other",
+                    label: "other"
                 }],
             },
             {
-                value: "韶关",
-                label: "韶关",
+                value: "shaoguan",
+                label: "shaoguan",
                 children: [{
-                    value: "请选择",
-                    label: "请选择"
+                    value: "Please select a",
+                    label: "Please select a"
                 }, {
-                    value: "浈江区",
-                    label: "浈江区"
+                    value: "Zhen river area",
+                    label: "Zhen river area"
                 }, {
-                    value: "武江区",
-                    label: "武江区"
+                    value: "Wu Jiang area",
+                    label: "Wu Jiang area"
                 }, {
-                    value: "曲江区",
-                    label: "曲江区"
+                    value: "Qujiang district",
+                    label: "Qujiang district"
                 }, {
-                    value: "乐昌市",
-                    label: "乐昌市"
+                    value: "Lechang city",
+                    label: "Lechang city"
                 }, {
-                    value: "南雄市",
-                    label: "南雄市"
+                    value: "South male,",
+                    label: "South male,"
                 }, {
-                    value: "始兴县",
-                    label: "始兴县"
+                    value: "Shixing county",
+                    label: "Shixing county"
                 }, {
-                    value: "仁化县",
-                    label: "仁化县"
+                    value: "Ren the county",
+                    label: "Ren the county"
                 }, {
-                    value: "翁源县",
-                    label: "翁源县"
+                    value: "Wengyuen county",
+                    label: "Wengyuen county"
                 }, {
-                    value: "新丰县",
-                    label: "新丰县"
+                    value: "The new venture",
+                    label: "The new venture"
                 }, {
-                    value: "乳源瑶族自治县",
-                    label: "乳源瑶族自治县"
+                    value: "Ruyuan Yao Autonomous County",
+                    label: "Ruyuan Yao Autonomous County"
                 }, {
-                    value: "其他",
-                    label: "其他"
-                }],
-
-            },
-            {
-                value: "佛山",
-                label: "佛山",
-                children: [{
-                    value: "请选择",
-                    label: "请选择"
-                }, {
-                    value: "禅城区",
-                    label: "禅城区"
-                }, {
-                    value: "南海区",
-                    label: "南海区"
-                }, {
-                    value: "顺德区",
-                    label: "顺德区"
-                }, {
-                    value: "三水区",
-                    label: "三水区"
-                }, {
-                    value: "高明区",
-                    label: "高明区"
-                }, {
-                    value: "其他",
-                    label: "其他"
+                    value: "other",
+                    label: "other"
                 }],
 
             },
             {
-                value: "江门",
-                label: "江门",
+                value: "foshan",
+                label: "foshan",
                 children: [{
-                    value: "请选择",
-                    label: "请选择"
+                    value: "Please select a",
+                    label: "Please select a"
                 }, {
-                    value: "蓬江区",
-                    label: "蓬江区"
+                    value: "Zen city",
+                    label: "Zen city"
                 }, {
-                    value: "江海区",
-                    label: "江海区"
+                    value: "Nanhai district",
+                    label: "Nanhai district"
                 }, {
-                    value: "新会区",
-                    label: "新会区"
+                    value: "Shunde.",
+                    label: "Shunde."
                 }, {
-                    value: "恩平市",
-                    label: "恩平市"
+                    value: "Sanshui district",
+                    label: "Sanshui district"
                 }, {
-                    value: "台山市",
-                    label: "台山市"
+                    value: "Brillant district",
+                    label: "Brillant district"
                 }, {
-                    value: "开平市",
-                    label: "开平市"
-                }, {
-                    value: "鹤山市",
-                    label: "鹤山市"
-                }, {
-                    value: "其他",
-                    label: "其他"
+                    value: "other",
+                    label: "other"
                 }],
 
             },
             {
-                value: "江门",
-                label: "江门",
+                value: "jiangmen",
+                label: "jiangmen",
                 children: [{
-                    value: "请选择",
-                    label: "请选择"
+                    value: "Please select a",
+                    label: "Please select a"
                 }, {
-                    value: "赤坎区",
-                    label: "赤坎区"
+                    value: "Pengjiang wealth purifying",
+                    label: "Pengjiang wealth purifying"
                 }, {
-                    value: "霞山区",
-                    label: "霞山区"
+                    value: "Jianghai district",
+                    label: "Jianghai district"
                 }, {
-                    value: "坡头区",
-                    label: "坡头区"
+                    value: "xinhui",
+                    label: "xinhui"
                 }, {
-                    value: "麻章区",
-                    label: "麻章区"
+                    value: "enping",
+                    label: "enping"
                 }, {
-                    value: "吴川市",
-                    label: "吴川市"
+                    value: "Taishan city",
+                    label: "Taishan city"
                 }, {
-                    value: "廉江市",
-                    label: "廉江市"
+                    value: "kaiping",
+                    label: "kaiping"
                 }, {
-                    value: "雷州市",
-                    label: "雷州市"
+                    value: "yinhe",
+                    label: "yinhe"
                 }, {
-                    value: "遂溪县",
-                    label: "遂溪县"
-                }, {
-                    value: "徐闻县",
-                    label: "徐闻县"
-                }, {
-                    value: "其他",
-                    label: "其他"
+                    value: "other",
+                    label: "other"
                 }],
 
             },
             {
-                value: "茂名",
-                label: "茂名",
+                value: "jiangmen",
+                label: "jiangmen",
                 children: [{
-                    value: "请选择",
-                    label: "请选择"
+                    value: "Please select a",
+                    label: "Please select a"
                 }, {
-                    value: "茂南区",
-                    label: "茂南区"
+                    value: "Guangdong area",
+                    label: "Guangdong area"
                 }, {
-                    value: "茂港区",
-                    label: "茂港区"
+                    value: "Chardonnay mountains",
+                    label: "Chardonnay mountains"
                 }, {
-                    value: "化州市",
-                    label: "化州市"
+                    value: "PoTou area",
+                    label: "PoTou area"
                 }, {
-                    value: "信宜市",
-                    label: "信宜市"
+                    value: "MaZhang area",
+                    label: "MaZhang area"
                 }, {
-                    value: "高州市",
-                    label: "高州市"
+                    value: "Wuchuan city",
+                    label: "Wuchuan city"
                 }, {
-                    value: "电白县",
-                    label: "电白县"
+                    value: "lianjiang",
+                    label: "lianjiang"
                 }, {
-                    value: "其他",
-                    label: "其他"
+                    value: "leizhou",
+                    label: "leizhou"
+                }, {
+                    value: "shuixi",
+                    label: "shuixi"
+                }, {
+                    value: "xuwen",
+                    label: "xuwen"
+                }, {
+                    value: "other",
+                    label: "other"
                 }],
 
             },
             {
-                value: "肇庆",
-                label: "肇庆",
+                value: "maoming",
+                label: "maoming",
                 children: [{
-                    value: "请选择",
-                    label: "请选择"
+                    value: "Please select a",
+                    label: "Please select a"
                 }, {
-                    value: "端州区",
-                    label: "端州区"
+                    value: "Mau southern district",
+                    label: "Mau southern district"
                 }, {
-                    value: "鼎湖区",
-                    label: "鼎湖区"
+                    value: "Maoxian area",
+                    label: "Maoxian area"
                 }, {
-                    value: "高要市",
-                    label: "高要市"
+                    value: "Huazhou city",
+                    label: "Huazhou city"
                 }, {
-                    value: "四会市",
-                    label: "四会市"
+                    value: "XinYi city",
+                    label: "XinYi city"
                 }, {
-                    value: "广宁县",
-                    label: "广宁县"
+                    value: "Gaozhou county",
+                    label: "Gaozhou county"
                 }, {
-                    value: "怀集县",
-                    label: "怀集县"
+                    value: "Dianbai county",
+                    label: "Dianbai county"
                 }, {
-                    value: "封开县",
-                    label: "封开县"
-                }, {
-                    value: "德庆县",
-                    label: "德庆县"
-                }, {
-                    value: "其他",
-                    label: "其他"
+                    value: "other",
+                    label: "other"
                 }],
 
             },
             {
-                value: "惠州",
-                label: "惠州",
+                value: "zhaoqing",
+                label: "zhaoqing",
                 children: [{
-                    value: "请选择",
-                    label: "请选择"
+                    value: "Please select a",
+                    label: "Please select a"
                 }, {
-                    value: "惠城区",
-                    label: "惠城区"
+                    value: "DuanZhou area",
+                    label: "DuanZhou area"
                 }, {
-                    value: "惠阳区",
-                    label: "惠阳区"
+                    value: "Dinghu district",
+                    label: "Dinghu district"
                 }, {
-                    value: "博罗县",
-                    label: "博罗县"
+                    value: "factory.to",
+                    label: "factory.to"
                 }, {
-                    value: "惠东县",
-                    label: "惠东县"
+                    value: "sihui",
+                    label: "sihui"
                 }, {
-                    value: "龙门县",
-                    label: "龙门县"
+                    value: "Guangning county",
+                    label: "Guangning county"
                 }, {
-                    value: "其他",
-                    label: "其他"
+                    value: "huaiji",
+                    label: "huaiji"
+                }, {
+                    value: "Sealing in kaixian county",
+                    label: "Sealing in kaixian county"
+                }, {
+                    value: "Deqing county",
+                    label: "Deqing county"
+                }, {
+                    value: "other",
+                    label: "other"
                 }],
 
             },
             {
-                value: "梅州",
-                label: "梅州",
+                value: "huizhou",
+                label: "huizhou",
                 children: [{
-                    value: "请选择",
-                    label: "请选择"
+                    value: "Please select a",
+                    label: "Please select a"
                 }, {
-                    value: "梅江区",
-                    label: "梅江区"
+                    value: "city",
+                    label: "city"
                 }, {
-                    value: "兴宁市",
-                    label: "兴宁市"
+                    value: "Huiyang district",
+                    label: "Huiyang district"
                 }, {
-                    value: "梅县",
-                    label: "梅县"
+                    value: "Boluo county",
+                    label: "Boluo county"
                 }, {
-                    value: "大埔县",
-                    label: "大埔县"
+                    value: "Huidong county",
+                    label: "Huidong county"
                 }, {
-                    value: "丰顺县",
-                    label: "丰顺县"
+                    value: "Longmen county",
+                    label: "Longmen county"
                 }, {
-                    value: "五华县",
-                    label: "五华县"
-                }, {
-                    value: "平远县",
-                    label: "平远县"
-                }, {
-                    value: "蕉岭县",
-                    label: "蕉岭县"
-                }, {
-                    value: "其他",
-                    label: "其他"
+                    value: "other",
+                    label: "other"
                 }],
 
             },
             {
-                value: "汕尾",
-                label: "汕尾",
+                value: "meizhou",
+                label: "meizhou",
                 children: [{
-                    value: "请选择",
-                    label: "请选择"
+                    value: "Please select a",
+                    label: "Please select a"
                 }, {
-                    value: "城区",
-                    label: "城区"
+                    value: "Meijiang district",
+                    label: "Meijiang district"
                 }, {
-                    value: "陆丰市",
-                    label: "陆丰市"
+                    value: "Xin,",
+                    label: "Xin,"
                 }, {
-                    value: "海丰县",
-                    label: "海丰县"
+                    value: "Mei country",
+                    label: "Mei country"
                 }, {
-                    value: "陆河县",
-                    label: "陆河县"
+                    value: "Dapu county",
+                    label: "Dapu county"
                 }, {
-                    value: "其他",
-                    label: "其他"
+                    value: "Fengshun fuxing county",
+                    label: "Fengshun fuxing county"
+                }, {
+                    value: "Five county",
+                    label: "Five county"
+                }, {
+                    value: "Or county",
+                    label: "Or county"
+                }, {
+                    value: "Banana hill county,",
+                    label: "Banana hill county,"
+                }, {
+                    value: "other",
+                    label: "other"
                 }],
 
             },
             {
-                value: "河源",
-                label: "河源",
+                value: "shanwei",
+                label: "shanwei",
                 children: [{
-                    value: "请选择",
-                    label: "请选择"
+                    value: "Please select a",
+                    label: "Please select a"
                 }, {
-                    value: "源城区",
-                    label: "源城区"
+                    value: "The city",
+                    label: "The city"
                 }, {
-                    value: "紫金县",
-                    label: "紫金县"
+                    value: "lufeng",
+                    label: "lufeng"
                 }, {
-                    value: "龙川县",
-                    label: "龙川县"
+                    value: "The sea venture",
+                    label: "The sea venture"
                 }, {
-                    value: "连平县",
-                    label: "连平县"
+                    value: "Lu He county",
+                    label: "Lu He county"
                 }, {
-                    value: "和平县",
-                    label: "和平县"
-                }, {
-                    value: "东源县",
-                    label: "东源县"
-                }, {
-                    value: "其他",
-                    label: "其他"
+                    value: "other",
+                    label: "other"
                 }],
 
             },
             {
-                value: "阳江",
-                label: "阳江",
+                value: "heyuan",
+                label: "heyuan",
                 children: [{
-                    value: "请选择",
-                    label: "请选择"
+                    value: "Please select a",
+                    label: "Please select a"
                 }, {
-                    value: "江城区",
-                    label: "江城区"
+                    value: "Source city",
+                    label: "Source city"
                 }, {
-                    value: "阳春市",
-                    label: "阳春市"
+                    value: "Zijin county",
+                    label: "Zijin county"
                 }, {
-                    value: "阳西县",
-                    label: "阳西县"
+                    value: "Longchuan county",
+                    label: "Longchuan county"
                 }, {
-                    value: "阳东县",
-                    label: "阳东县"
+                    value: "lianping",
+                    label: "lianping"
                 }, {
-                    value: "其他",
-                    label: "其他"
+                    value: "Peace county",
+                    label: "Peace county"
+                }, {
+                    value: "Dongyuan county",
+                    label: "Dongyuan county"
+                }, {
+                    value: "other",
+                    label: "other"
                 }],
 
             },
             {
-                value: "清远",
-                label: "清远",
+                value: "yangjiang",
+                label: "yangjiang",
                 children: [{
-                    value: "请选择",
-                    label: "请选择"
+                    value: "Please select a",
+                    label: "Please select a"
                 }, {
-                    value: "清城区",
-                    label: "清城区"
+                    value: "Jiangcheng district",
+                    label: "Jiangcheng district"
                 }, {
-                    value: "英德市",
-                    label: "英德市"
+                    value: "yangchun",
+                    label: "yangchun"
                 }, {
-                    value: "连州市",
-                    label: "连州市"
+                    value: "Yang west county,",
+                    label: "Yang west county,"
                 }, {
-                    value: "佛冈县",
-                    label: "佛冈县"
+                    value: "Yoto county",
+                    label: "Yoto county"
                 }, {
-                    value: "阳山县",
-                    label: "阳山县"
-                }, {
-                    value: "清新县",
-                    label: "清新县"
-                }, {
-                    value: "连山壮族瑶族自治县",
-                    label: "连山壮族瑶族自治县"
-                }, {
-                    value: "连南瑶族自治县",
-                    label: "连南瑶族自治县"
-                }, {
-                    value: "其他",
-                    label: "其他"
+                    value: "other",
+                    label: "other"
                 }],
 
             },
             {
-                value: "东莞",
-                label: "东莞",
+                value: "qingyuan",
+                label: "qingyuan",
+                children: [{
+                    value: "Please select a",
+                    label: "Please select a"
+                }, {
+                    value: "Qing city",
+                    label: "Qing city"
+                }, {
+                    value: "German city",
+                    label: "German city"
+                }, {
+                    value: "city",
+                    label: "city"
+                }, {
+                    value: "Fe gang county",
+                    label: "Fe gang county"
+                }, {
+                    value: "Yangshan county",
+                    label: "Yangshan county"
+                }, {
+                    value: "Fresh county",
+                    label: "Fresh county"
+                }, {
+                    value: "Lianshan Zhuang and Yao Autonomous County",
+                    label: "Lianshan Zhuang and Yao Autonomous County"
+                }, {
+                    value: "Liannan Yao Autonomous County",
+                    label: "Liannan Yao Autonomous County"
+                }, {
+                    value: "other",
+                    label: "other"
+                }],
+
+            },
+            {
+                value: "dongguan",
+                label: "dongguan",
                 children: [],
 
             },
             {
-                value: "中山",
-                label: "中山",
+                value: "zhongshan",
+                label: "zhongshan",
                 children: [],
 
             },
             {
-                value: "潮州",
-                label: "潮州",
+                value: "chaozhou",
+                label: "chaozhou",
                 children: [{
-                    value: "请选择",
-                    label: "请选择"
+                    value: "Please select a",
+                    label: "Please select a"
                 }, {
-                    value: "湘桥区",
-                    label: "湘桥区"
+                    value: "Xiang bridge",
+                    label: "Xiang bridge"
                 }, {
-                    value: "潮安县",
-                    label: "潮安县"
+                    value: "chaoan",
+                    label: "chaoan"
                 }, {
-                    value: "饶平县",
-                    label: "饶平县"
+                    value: "raoping",
+                    label: "raoping"
                 }, {
-                    value: "其他",
-                    label: "其他"
+                    value: "other",
+                    label: "other"
                 }],
 
             },
             {
-                value: "揭阳",
-                label: "揭阳",
+                value: "jieyang",
+                label: "jieyang",
                 children: [{
-                    value: "请选择",
-                    label: "请选择"
+                    value: "Please select a",
+                    label: "Please select a"
                 }, {
-                    value: "榕城区",
-                    label: "榕城区"
+                    value: "RongCheng area",
+                    label: "RongCheng area"
                 }, {
-                    value: "普宁市",
-                    label: "普宁市"
+                    value: "puning",
+                    label: "puning"
                 }, {
-                    value: "揭东县",
-                    label: "揭东县"
+                    value: "Jiedong county",
+                    label: "Jiedong county"
                 }, {
-                    value: "揭西县",
-                    label: "揭西县"
+                    value: "JieXi county",
+                    label: "JieXi county"
                 }, {
-                    value: "惠来县",
-                    label: "惠来县"
+                    value: "huilai",
+                    label: "huilai"
                 }, {
-                    value: "其他",
-                    label: "其他"
+                    value: "other",
+                    label: "other"
                 }],
 
             },
             {
-                value: "云浮",
-                label: "云浮",
+                value: "yunfu",
+                label: "yunfu",
                 children: [{
-                    value: "请选择",
-                    label: "请选择"
+                    value: "Please select a",
+                    label: "Please select a"
                 }, {
-                    value: "云城区",
-                    label: "云城区"
+                    value: "The cloud city",
+                    label: "The cloud city"
                 }, {
-                    value: "罗定市",
-                    label: "罗定市"
+                    value: "luoding",
+                    label: "luoding"
                 }, {
-                    value: "云安县",
-                    label: "云安县"
+                    value: "YunAn county",
+                    label: "YunAn county"
                 }, {
-                    value: "新兴县",
-                    label: "新兴县"
+                    value: "Xinxing county",
+                    label: "Xinxing county"
                 }, {
-                    value: "郁南县",
-                    label: "郁南县"
+                    value: "Yu pingnan",
+                    label: "Yu pingnan"
                 }, {
-                    value: "其他",
-                    label: "其他"
+                    value: "other",
+                    label: "other"
                 }],
 
             },
             {
-                value: "其他",
-                label: "其他"
+                value: "other",
+                label: "other"
             }
         ],
 
     },
     {
-        value: "上海",
-        label: "上海",
+        value: "Shanghai",
+        label: "Shanghai",
         children: [{
-                value: "请选择",
-                label: "请选择"
+                value: "Please select a",
+                label: "Please select a"
             },
             {
-                value: "上海",
-                label: "上海",
+                value: "Shanghai",
+                label: "Shanghai",
                 children: [{
-                    value: "请选择",
-                    label: "请选择"
+                    value: "Please select a",
+                    label: "Please select a"
                 }, {
-                    value: "黄浦区",
-                    label: "黄浦区"
+                    value: "Huangpu district",
+                    label: "Huangpu district"
                 }, {
-                    value: "卢湾区",
-                    label: "卢湾区"
+                    value: "Luwan district",
+                    label: "Luwan district"
                 }, {
-                    value: "徐汇区",
-                    label: "徐汇区"
+                    value: "Xuhui district",
+                    label: "Xuhui district"
                 }, {
-                    value: "长宁区",
-                    label: "长宁区"
+                    value: "Changning district",
+                    label: "Changning district"
                 }, {
-                    value: "静安区",
-                    label: "静安区"
+                    value: "Jing'an District",
+                    label: "Jing'an District"
                 }, {
-                    value: "普陀区",
-                    label: "普陀区"
+                    value: "Putuo district",
+                    label: "Putuo district"
                 }, {
-                    value: "闸北区",
-                    label: "闸北区"
+                    value: "zhabei",
+                    label: "zhabei"
                 }, {
-                    value: "虹口区",
-                    label: "虹口区"
+                    value: "Hongkou district",
+                    label: "Hongkou district"
                 }, {
-                    value: "杨浦区",
-                    label: "杨浦区"
+                    value: "Yangpu district",
+                    label: "Yangpu district"
                 }, {
-                    value: "宝山区",
-                    label: "宝山区"
+                    value: "Baoshan district",
+                    label: "Baoshan district"
                 }, {
-                    value: "闵行区",
-                    label: "闵行区"
+                    value: "Minhang district",
+                    label: "Minhang district"
                 }, {
-                    value: "嘉定区",
-                    label: "嘉定区"
+                    value: "Jiading district,",
+                    label: "Jiading district,"
                 }, {
-                    value: "松江区",
-                    label: "松江区"
+                    value: "Songjiang district",
+                    label: "Songjiang district"
                 }, {
-                    value: "金山区",
-                    label: "金山区"
+                    value: "jinshan",
+                    label: "jinshan"
                 }, {
-                    value: "青浦区",
-                    label: "青浦区"
+                    value: "Qingpu,",
+                    label: "Qingpu,"
                 }, {
-                    value: "南汇区",
-                    label: "南汇区"
+                    value: "Nanhui district",
+                    label: "Nanhui district"
                 }, {
-                    value: "奉贤区",
-                    label: "奉贤区"
+                    value: "The district",
+                    label: "The district"
                 }, {
-                    value: "浦东新区",
-                    label: "浦东新区"
+                    value: "Pudong new area",
+                    label: "Pudong new area"
                 }, {
-                    value: "崇明县",
-                    label: "崇明县"
+                    value: "for",
+                    label: "for"
                 }, {
-                    value: "其他",
-                    label: "其他"
-                }],
-
-            }
-        ],
-    },
-    {
-        value: "天津",
-        label: "天津",
-        children: [{
-                value: "请选择",
-                label: "请选择"
-            },
-            {
-                value: "天津",
-                label: "天津",
-                children: [{
-                    value: "请选择",
-                    label: "请选择"
-                }, {
-                    value: "和平区",
-                    label: "和平区"
-                }, {
-                    value: "河东区",
-                    label: "河东区"
-                }, {
-                    value: "河西区",
-                    label: "河西区"
-                }, {
-                    value: "南开区",
-                    label: "南开区"
-                }, {
-                    value: "河北区",
-                    label: "河北区"
-                }, {
-                    value: "红桥区",
-                    label: "红桥区"
-                }, {
-                    value: "塘沽区",
-                    label: "塘沽区"
-                }, {
-                    value: "汉沽区",
-                    label: "汉沽区"
-                }, {
-                    value: "大港区",
-                    label: "大港区"
-                }, {
-                    value: "东丽区",
-                    label: "东丽区"
-                }, {
-                    value: "西青区",
-                    label: "西青区"
-                }, {
-                    value: "北辰区",
-                    label: "北辰区"
-                }, {
-                    value: "津南区",
-                    label: "津南区"
-                }, {
-                    value: "武清区",
-                    label: "武清区"
-                }, {
-                    value: "宝坻区",
-                    label: "宝坻区"
-                }, {
-                    value: "静海县",
-                    label: "静海县"
-                }, {
-                    value: "宁河县",
-                    label: "宁河县"
-                }, {
-                    value: "蓟县",
-                    label: "蓟县"
-                }, {
-                    value: "其他",
-                    label: "其他"
+                    value: "other",
+                    label: "other"
                 }],
 
             }
         ],
     },
     {
-        value: "重庆",
-        label: "重庆",
+        value: "tianjin",
+        label: "tianjin",
         children: [{
-                value: "请选择",
-                label: "请选择"
+                value: "Please select a",
+                label: "Please select a"
             },
             {
-                value: "重庆",
-                label: "重庆",
+                value: "tianjin",
+                label: "tianjin",
                 children: [{
-                    value: "请选择",
-                    label: "请选择"
+                    value: "Please select a",
+                    label: "Please select a"
                 }, {
-                    value: "渝中区",
-                    label: "渝中区"
+                    value: "Heping district",
+                    label: "Heping district"
                 }, {
-                    value: "大渡口区",
-                    label: "大渡口区"
+                    value: "Hedong district",
+                    label: "Hedong district"
                 }, {
-                    value: "江北区",
-                    label: "江北区"
+                    value: "Hexi district",
+                    label: "Hexi district"
                 }, {
-                    value: "南岸区",
-                    label: "南岸区"
+                    value: "Nankai district",
+                    label: "Nankai district"
                 }, {
-                    value: "北碚区",
-                    label: "北碚区"
+                    value: "hebei",
+                    label: "hebei"
                 }, {
-                    value: "渝北区",
-                    label: "渝北区"
+                    value: "Hongqiao district",
+                    label: "Hongqiao district"
                 }, {
-                    value: "巴南区",
-                    label: "巴南区"
+                    value: "Tanggu district",
+                    label: "Tanggu district"
                 }, {
-                    value: "长寿区",
-                    label: "长寿区"
+                    value: "hangu",
+                    label: "hangu"
                 }, {
-                    value: "双桥区",
-                    label: "双桥区"
+                    value: "Dagang district",
+                    label: "Dagang district"
                 }, {
-                    value: "沙坪坝区",
-                    label: "沙坪坝区"
+                    value: "Dong li",
+                    label: "Dong li"
                 }, {
-                    value: "万盛区",
-                    label: "万盛区"
+                    value: "Xiqing district",
+                    label: "Xiqing district"
                 }, {
-                    value: "万州区",
-                    label: "万州区"
+                    value: "Beichen district",
+                    label: "Beichen district"
                 }, {
-                    value: "涪陵区",
-                    label: "涪陵区"
+                    value: "jinnan",
+                    label: "jinnan"
                 }, {
-                    value: "黔江区",
-                    label: "黔江区"
+                    value: "Wu qing",
+                    label: "Wu qing"
                 }, {
-                    value: "永川区",
-                    label: "永川区"
+                    value: "Baodi district",
+                    label: "Baodi district"
                 }, {
-                    value: "合川区",
-                    label: "合川区"
+                    value: "fruits",
+                    label: "fruits"
                 }, {
-                    value: "江津区",
-                    label: "江津区"
+                    value: "Ninghe county",
+                    label: "Ninghe county"
                 }, {
-                    value: "九龙坡区",
-                    label: "九龙坡区"
+                    value: "jixian",
+                    label: "jixian"
                 }, {
-                    value: "南川区",
-                    label: "南川区"
-                }, {
-                    value: "綦江县",
-                    label: "綦江县"
-                }, {
-                    value: "潼南县",
-                    label: "潼南县"
-                }, {
-                    value: "荣昌县",
-                    label: "荣昌县"
-                }, {
-                    value: "璧山县",
-                    label: "璧山县"
-                }, {
-                    value: "大足县",
-                    label: "大足县"
-                }, {
-                    value: "铜梁县",
-                    label: "铜梁县"
-                }, {
-                    value: "梁平县",
-                    label: "梁平县"
-                }, {
-                    value: "开县",
-                    label: "开县"
-                }, {
-                    value: "忠县",
-                    label: "忠县"
-                }, {
-                    value: "城口县",
-                    label: "城口县"
-                }, {
-                    value: "垫江县",
-                    label: "垫江县"
-                }, {
-                    value: "武隆县",
-                    label: "武隆县"
-                }, {
-                    value: "丰都县",
-                    label: "丰都县"
-                }, {
-                    value: "奉节县",
-                    label: "奉节县"
-                }, {
-                    value: "云阳县",
-                    label: "云阳县"
-                }, {
-                    value: "巫溪县",
-                    label: "巫溪县"
-                }, {
-                    value: "巫山县",
-                    label: "巫山县"
-                }, {
-                    value: "石柱土家族自治县",
-                    label: "石柱土家族自治县"
-                }, {
-                    value: "秀山土家族苗族自治县",
-                    label: "秀山土家族苗族自治县"
-                }, {
-                    value: "酉阳土家族苗族自治县",
-                    label: "酉阳土家族苗族自治县"
-                }, {
-                    value: "彭水苗族土家族自治县",
-                    label: "彭水苗族土家族自治县"
-                }, {
-                    value: "其他",
-                    label: "其他"
+                    value: "other",
+                    label: "other"
                 }],
 
             }
         ],
     },
     {
-        value: "辽宁",
-        label: "辽宁",
+        value: "chongqing",
+        label: "chongqing",
         children: [{
-                value: "请选择",
-                label: "请选择"
+                value: "Please select a",
+                label: "Please select a"
             },
             {
-                value: "沈阳",
-                label: "沈阳",
+                value: "chongqing",
+                label: "chongqing",
                 children: [{
-                    value: "请选择",
-                    label: "请选择"
+                    value: "Please select a",
+                    label: "Please select a"
                 }, {
-                    value: "沈河区",
-                    label: "沈河区"
+                    value: "Yuzhong district",
+                    label: "Yuzhong district"
                 }, {
-                    value: "皇姑区",
-                    label: "皇姑区"
+                    value: "Dadukou district",
+                    label: "Dadukou district"
                 }, {
-                    value: "和平区",
-                    label: "和平区"
+                    value: "jiangbei",
+                    label: "jiangbei"
                 }, {
-                    value: "大东区",
-                    label: "大东区"
+                    value: "Nanan distract",
+                    label: "Nanan distract"
                 }, {
-                    value: "铁西区",
-                    label: "铁西区"
+                    value: "beibei",
+                    label: "beibei"
                 }, {
-                    value: "苏家屯区",
-                    label: "苏家屯区"
+                    value: "Yubei District",
+                    label: "Yubei District"
                 }, {
-                    value: "东陵区",
-                    label: "东陵区"
+                    value: "banan",
+                    label: "banan"
                 }, {
-                    value: "于洪区",
-                    label: "于洪区"
+                    value: "Longevity area",
+                    label: "Longevity area"
                 }, {
-                    value: "新民市",
-                    label: "新民市"
+                    value: "Double bridge",
+                    label: "Double bridge"
                 }, {
-                    value: "法库县",
-                    label: "法库县"
+                    value: "Shapingba district",
+                    label: "Shapingba district"
                 }, {
-                    value: "辽中县",
-                    label: "辽中县"
+                    value: "wansheng",
+                    label: "wansheng"
                 }, {
-                    value: "康平县",
-                    label: "康平县"
+                    value: "Wanzhou district",
+                    label: "Wanzhou district"
                 }, {
-                    value: "新城子区",
-                    label: "新城子区"
+                    value: "fuling",
+                    label: "fuling"
                 }, {
-                    value: "其他",
-                    label: "其他"
+                    value: "qianjiang",
+                    label: "qianjiang"
+                }, {
+                    value: "Yongchuan district",
+                    label: "Yongchuan district"
+                }, {
+                    value: "Ocean area",
+                    label: "Ocean area"
+                }, {
+                    value: "metro",
+                    label: "metro"
+                }, {
+                    value: "Jiulongpo district",
+                    label: "Jiulongpo district"
+                }, {
+                    value: "The nanchuan district",
+                    label: "The nanchuan district"
+                }, {
+                    value: "Qijiang county",
+                    label: "Qijiang county"
+                }, {
+                    value: "Model.flood-control county",
+                    label: "Model.flood-control county"
+                }, {
+                    value: "rongchang",
+                    label: "rongchang"
+                }, {
+                    value: "bishan",
+                    label: "bishan"
+                }, {
+                    value: "Dazu county",
+                    label: "Dazu county"
+                }, {
+                    value: "tongliang",
+                    label: "tongliang"
+                }, {
+                    value: "Liangping county",
+                    label: "Liangping county"
+                }, {
+                    value: "In kaixian county",
+                    label: "In kaixian county"
+                }, {
+                    value: "zhongxian",
+                    label: "zhongxian"
+                }, {
+                    value: "chengkou",
+                    label: "chengkou"
+                }, {
+                    value: "Dianjiang county",
+                    label: "Dianjiang county"
+                }, {
+                    value: "Wulong county",
+                    label: "Wulong county"
+                }, {
+                    value: "fengdu",
+                    label: "fengdu"
+                }, {
+                    value: "fengjie",
+                    label: "fengjie"
+                }, {
+                    value: "yunyang",
+                    label: "yunyang"
+                }, {
+                    value: "wuxi",
+                    label: "wuxi"
+                }, {
+                    value: "home",
+                    label: "home"
+                }, {
+                    value: "Shizhu Tujia Autonomous County",
+                    label: "Shizhu Tujia Autonomous County"
+                }, {
+                    value: "Xiushan Tujia and Miao Autonomous County",
+                    label: "Xiushan Tujia and Miao Autonomous County"
+                }, {
+                    value: "Youyang Tujia and Miao Autonomous County",
+                    label: "Youyang Tujia and Miao Autonomous County"
+                }, {
+                    value: "Pengshui Miao Tujia Autonomous County",
+                    label: "Pengshui Miao Tujia Autonomous County"
+                }, {
+                    value: "other",
+                    label: "other"
+                }],
+
+            }
+        ],
+    },
+    {
+        value: "liaoning",
+        label: "liaoning",
+        children: [{
+                value: "Please select a",
+                label: "Please select a"
+            },
+            {
+                value: "shenyang",
+                label: "shenyang",
+                children: [{
+                    value: "Please select a",
+                    label: "Please select a"
+                }, {
+                    value: "Shenhe district",
+                    label: "Shenhe district"
+                }, {
+                    value: "Huanggu District",
+                    label: "Huanggu District"
+                }, {
+                    value: "Heping district",
+                    label: "Heping district"
+                }, {
+                    value: "Big east",
+                    label: "Big east"
+                }, {
+                    value: "I",
+                    label: "I"
+                }, {
+                    value: "Sujiatun district",
+                    label: "Sujiatun district"
+                }, {
+                    value: "Dongling district",
+                    label: "Dongling district"
+                }, {
+                    value: "yuhong",
+                    label: "yuhong"
+                }, {
+                    value: "Xinmin city",
+                    label: "Xinmin city"
+                }, {
+                    value: "Faku county",
+                    label: "Faku county"
+                }, {
+                    value: "liaozhong",
+                    label: "liaozhong"
+                }, {
+                    value: "kangping",
+                    label: "kangping"
+                }, {
+                    value: "XinChengZi area",
+                    label: "XinChengZi area"
+                }, {
+                    value: "other",
+                    label: "other"
                 }],
 
             },
             {
-                value: "大连",
-                label: "大连",
+                value: "dalian",
+                label: "dalian",
                 children: [{
-                    value: "请选择",
-                    label: "请选择"
+                    value: "Please select a",
+                    label: "Please select a"
                 }, {
-                    value: "西岗区",
-                    label: "西岗区"
+                    value: "Xigang district",
+                    label: "Xigang district"
                 }, {
-                    value: "中山区",
-                    label: "中山区"
+                    value: "The first-hand",
+                    label: "The first-hand"
                 }, {
-                    value: "沙河口区",
-                    label: "沙河口区"
+                    value: "Shahekou District",
+                    label: "Shahekou District"
                 }, {
-                    value: "甘井子区",
-                    label: "甘井子区"
+                    value: "Was seated",
+                    label: "Was seated"
                 }, {
-                    value: "旅顺口区",
-                    label: "旅顺口区"
+                    value: "lushunkou",
+                    label: "lushunkou"
                 }, {
-                    value: "金州区",
-                    label: "金州区"
+                    value: "jinzhou",
+                    label: "jinzhou"
                 }, {
-                    value: "瓦房店市",
-                    label: "瓦房店市"
+                    value: "Wafangdian city",
+                    label: "Wafangdian city"
                 }, {
-                    value: "普兰店市",
-                    label: "普兰店市"
+                    value: "pulandian",
+                    label: "pulandian"
                 }, {
-                    value: "庄河市",
-                    label: "庄河市"
+                    value: "zhuanghe",
+                    label: "zhuanghe"
                 }, {
-                    value: "长海县",
-                    label: "长海县"
+                    value: "changhai",
+                    label: "changhai"
                 }, {
-                    value: "其他",
-                    label: "其他"
+                    value: "other",
+                    label: "other"
                 }],
 
             },
             {
-                value: "鞍山",
-                label: "鞍山",
+                value: "anshan",
+                label: "anshan",
                 children: [{
-                    value: "请选择",
-                    label: "请选择"
+                    value: "Please select a",
+                    label: "Please select a"
                 }, {
-                    value: "铁东区",
-                    label: "铁东区"
+                    value: "tiedong",
+                    label: "tiedong"
                 }, {
-                    value: "铁西区",
-                    label: "铁西区"
+                    value: "I",
+                    label: "I"
                 }, {
-                    value: "立山区",
-                    label: "立山区"
+                    value: "Lishan district",
+                    label: "Lishan district"
                 }, {
-                    value: "千山区",
-                    label: "千山区"
+                    value: "Qianshan mountain area",
+                    label: "Qianshan mountain area"
                 }, {
-                    value: "海城市",
-                    label: "海城市"
+                    value: "Haicheng county",
+                    label: "Haicheng county"
                 }, {
-                    value: "台安县",
-                    label: "台安县"
+                    value: "Taian county",
+                    label: "Taian county"
                 }, {
-                    value: "岫岩满族自治县",
-                    label: "岫岩满族自治县"
+                    value: "Xiuyan Manchu Autonomous County",
+                    label: "Xiuyan Manchu Autonomous County"
                 }, {
-                    value: "其他",
-                    label: "其他"
+                    value: "other",
+                    label: "other"
                 }],
 
             },
             {
-                value: "抚顺",
-                label: "抚顺",
+                value: "fushun",
+                label: "fushun",
                 children: [{
-                    value: "请选择",
-                    label: "请选择"
+                    value: "Please select a",
+                    label: "Please select a"
                 }, {
-                    value: "顺城区",
-                    label: "顺城区"
+                    value: "shuncheng",
+                    label: "shuncheng"
                 }, {
-                    value: "新抚区",
-                    label: "新抚区"
+                    value: "XinFu area",
+                    label: "XinFu area"
                 }, {
-                    value: "东洲区",
-                    label: "东洲区"
+                    value: "Dongzhou district",
+                    label: "Dongzhou district"
                 }, {
-                    value: "望花区",
-                    label: "望花区"
+                    value: "wanghua",
+                    label: "wanghua"
                 }, {
-                    value: "抚顺县",
-                    label: "抚顺县"
+                    value: "fushun",
+                    label: "fushun"
                 }, {
-                    value: "清原满族自治县",
-                    label: "清原满族自治县"
+                    value: "Qingyuan Manchu Autonomous County",
+                    label: "Qingyuan Manchu Autonomous County"
                 }, {
-                    value: "新宾满族自治县",
-                    label: "新宾满族自治县"
+                    value: "Xinbin Manchu Autonomous County",
+                    label: "Xinbin Manchu Autonomous County"
                 }, {
-                    value: "其他",
-                    label: "其他"
+                    value: "other",
+                    label: "other"
                 }],
 
             },
             {
-                value: "本溪",
-                label: "本溪",
+                value: "benxi",
+                label: "benxi",
                 children: [{
-                    value: "请选择",
-                    label: "请选择"
+                    value: "Please select a",
+                    label: "Please select a"
                 }, {
-                    value: "平山区",
-                    label: "平山区"
+                    value: "Hirayama area",
+                    label: "Hirayama area"
                 }, {
-                    value: "明山区",
-                    label: "明山区"
+                    value: "Daming mountain area",
+                    label: "Daming mountain area"
                 }, {
-                    value: "溪湖区",
-                    label: "溪湖区"
+                    value: "Sihu area",
+                    label: "Sihu area"
                 }, {
-                    value: "南芬区",
-                    label: "南芬区"
+                    value: "NaFen area",
+                    label: "NaFen area"
                 }, {
-                    value: "本溪满族自治县",
-                    label: "本溪满族自治县"
+                    value: "Benxi Manchu Autonomous County",
+                    label: "Benxi Manchu Autonomous County"
                 }, {
-                    value: "桓仁满族自治县",
-                    label: "桓仁满族自治县"
+                    value: "Huanren Manchu Autonomous County",
+                    label: "Huanren Manchu Autonomous County"
                 }, {
-                    value: "其他",
-                    label: "其他"
+                    value: "other",
+                    label: "other"
                 }],
 
             },
             {
-                value: "丹东",
-                label: "丹东",
+                value: "dandong",
+                label: "dandong",
                 children: [{
-                    value: "请选择",
-                    label: "请选择"
+                    value: "Please select a",
+                    label: "Please select a"
                 }, {
-                    value: "振兴区",
-                    label: "振兴区"
+                    value: "zone",
+                    label: "zone"
                 }, {
-                    value: "元宝区",
-                    label: "元宝区"
+                    value: "Yuanbao district",
+                    label: "Yuanbao district"
                 }, {
-                    value: "振安区",
-                    label: "振安区"
+                    value: "Vibration district",
+                    label: "Vibration district"
                 }, {
-                    value: "东港市",
-                    label: "东港市"
+                    value: "donggang",
+                    label: "donggang"
                 }, {
-                    value: "凤城市",
-                    label: "凤城市"
+                    value: "fengcheng",
+                    label: "fengcheng"
                 }, {
-                    value: "宽甸满族自治县",
-                    label: "宽甸满族自治县"
+                    value: "Kuandian Manchu Autonomous County",
+                    label: "Kuandian Manchu Autonomous County"
                 }, {
-                    value: "其他",
-                    label: "其他"
+                    value: "other",
+                    label: "other"
                 }],
 
             },
             {
-                value: "锦州",
-                label: "锦州",
+                value: "jinzhou",
+                label: "jinzhou",
                 children: [{
-                    value: "请选择",
-                    label: "请选择"
+                    value: "Please select a",
+                    label: "Please select a"
                 }, {
-                    value: "太和区",
-                    label: "太和区"
+                    value: "Taihe district",
+                    label: "Taihe district"
                 }, {
-                    value: "古塔区",
-                    label: "古塔区"
+                    value: "The pagoda area",
+                    label: "The pagoda area"
                 }, {
-                    value: "凌河区",
-                    label: "凌河区"
+                    value: "Ling riverfront",
+                    label: "Ling riverfront"
                 }, {
-                    value: "凌海市",
-                    label: "凌海市"
+                    value: "linghai",
+                    label: "linghai"
                 }, {
-                    value: "黑山县",
-                    label: "黑山县"
+                    value: "Heishan county",
+                    label: "Heishan county"
                 }, {
-                    value: "义县",
-                    label: "义县"
+                    value: "In yixian",
+                    label: "In yixian"
                 }, {
-                    value: "北宁市",
-                    label: "北宁市"
+                    value: "Bac ninh",
+                    label: "Bac ninh"
                 }, {
-                    value: "其他",
-                    label: "其他"
+                    value: "other",
+                    label: "other"
                 }],
 
             },
             {
-                value: "营口",
-                label: "营口",
+                value: "yingkou",
+                label: "yingkou",
                 children: [{
-                    value: "请选择",
-                    label: "请选择"
+                    value: "Please select a",
+                    label: "Please select a"
                 }, {
-                    value: "站前区",
-                    label: "站前区"
+                    value: "Station area",
+                    label: "Station area"
                 }, {
-                    value: "西市区",
-                    label: "西市区"
+                    value: "West city",
+                    label: "West city"
                 }, {
-                    value: "鲅鱼圈区",
-                    label: "鲅鱼圈区"
+                    value: "BaYuJuan area",
+                    label: "BaYuJuan area"
                 }, {
-                    value: "老边区",
-                    label: "老边区"
+                    value: "The old border region",
+                    label: "The old border region"
                 }, {
-                    value: "大石桥市",
-                    label: "大石桥市"
+                    value: "dashiqiao",
+                    label: "dashiqiao"
                 }, {
-                    value: "盖州市",
-                    label: "盖州市"
+                    value: "Gaizhou city",
+                    label: "Gaizhou city"
                 }, {
-                    value: "其他",
-                    label: "其他"
+                    value: "other",
+                    label: "other"
                 }],
 
             },
             {
-                value: "阜新",
-                label: "阜新",
+                value: "fuxin",
+                label: "fuxin",
                 children: [{
-                    value: "请选择",
-                    label: "请选择"
+                    value: "Please select a",
+                    label: "Please select a"
                 }, {
-                    value: "海州区",
-                    label: "海州区"
+                    value: "haizhou",
+                    label: "haizhou"
                 }, {
-                    value: "新邱区",
-                    label: "新邱区"
+                    value: "The new high area",
+                    label: "The new high area"
                 }, {
-                    value: "太平区",
-                    label: "太平区"
+                    value: "Taiping city",
+                    label: "Taiping city"
                 }, {
-                    value: "清河门区",
-                    label: "清河门区"
+                    value: "QingHeMen area",
+                    label: "QingHeMen area"
                 }, {
-                    value: "细河区",
-                    label: "细河区"
+                    value: "Fine riverfront",
+                    label: "Fine riverfront"
                 }, {
-                    value: "彰武县",
-                    label: "彰武县"
+                    value: "zhangwu",
+                    label: "zhangwu"
                 }, {
-                    value: "阜新蒙古族自治县",
-                    label: "阜新蒙古族自治县"
+                    value: "Fuxin Mongolian Autonomous County",
+                    label: "Fuxin Mongolian Autonomous County"
                 }, {
-                    value: "其他",
-                    label: "其他"
+                    value: "other",
+                    label: "other"
                 }],
 
             },
             {
-                value: "辽阳",
-                label: "辽阳",
+                value: "liaoyang",
+                label: "liaoyang",
                 children: [{
-                    value: "请选择",
-                    label: "请选择"
+                    value: "Please select a",
+                    label: "Please select a"
                 }, {
-                    value: "白塔区",
-                    label: "白塔区"
+                    value: "The white area",
+                    label: "The white area"
                 }, {
-                    value: "文圣区",
-                    label: "文圣区"
+                    value: "I",
+                    label: "I"
                 }, {
-                    value: "宏伟区",
-                    label: "宏伟区"
+                    value: "hongwei",
+                    label: "hongwei"
                 }, {
-                    value: "太子河区",
-                    label: "太子河区"
+                    value: "taizihe",
+                    label: "taizihe"
                 }, {
-                    value: "弓长岭区",
-                    label: "弓长岭区"
+                    value: "Bow fault zone",
+                    label: "Bow fault zone"
                 }, {
-                    value: "灯塔市",
-                    label: "灯塔市"
+                    value: "dengta",
+                    label: "dengta"
                 }, {
-                    value: "辽阳县",
-                    label: "辽阳县"
+                    value: "Liaoyang county",
+                    label: "Liaoyang county"
                 }, {
-                    value: "其他",
-                    label: "其他"
+                    value: "other",
+                    label: "other"
                 }],
 
             },
             {
-                value: "盘锦",
-                label: "盘锦",
+                value: "Set up a file",
+                label: "Set up a file",
                 children: [{
-                    value: "请选择",
-                    label: "请选择"
+                    value: "Please select a",
+                    label: "Please select a"
                 }, {
-                    value: "双台子区",
-                    label: "双台子区"
+                    value: "The double table area",
+                    label: "The double table area"
                 }, {
-                    value: "兴隆台区",
-                    label: "兴隆台区"
+                    value: "Xinglong area",
+                    label: "Xinglong area"
                 }, {
-                    value: "盘山县",
-                    label: "盘山县"
+                    value: "panshan",
+                    label: "panshan"
                 }, {
-                    value: "大洼县",
-                    label: "大洼县"
+                    value: "merchant",
+                    label: "merchant"
                 }, {
-                    value: "其他",
-                    label: "其他"
+                    value: "other",
+                    label: "other"
                 }],
 
             },
             {
-                value: "铁岭",
-                label: "铁岭",
+                value: "tieling",
+                label: "tieling",
                 children: [{
-                    value: "请选择",
-                    label: "请选择"
+                    value: "Please select a",
+                    label: "Please select a"
                 }, {
-                    value: "银州区",
-                    label: "银州区"
+                    value: "Silver state",
+                    label: "Silver state"
                 }, {
-                    value: "清河区",
-                    label: "清河区"
+                    value: "Qinghe district",
+                    label: "Qinghe district"
                 }, {
-                    value: "调兵山市",
-                    label: "调兵山市"
+                    value: "The soldiers mountain city",
+                    label: "The soldiers mountain city"
                 }, {
-                    value: "开原市",
-                    label: "开原市"
+                    value: "Kaiyuan city",
+                    label: "Kaiyuan city"
                 }, {
-                    value: "铁岭县",
-                    label: "铁岭县"
+                    value: "Tieling county",
+                    label: "Tieling county"
                 }, {
-                    value: "昌图县",
-                    label: "昌图县"
+                    value: "changtu",
+                    label: "changtu"
                 }, {
-                    value: "西丰县",
-                    label: "西丰县"
+                    value: "Xifeng county",
+                    label: "Xifeng county"
                 }, {
-                    value: "其他",
-                    label: "其他"
+                    value: "other",
+                    label: "other"
                 }],
 
             },
             {
-                value: "朝阳",
-                label: "朝阳",
+                value: "The rising sun",
+                label: "The rising sun",
                 children: [{
-                    value: "请选择",
-                    label: "请选择"
+                    value: "Please select a",
+                    label: "Please select a"
                 }, {
-                    value: "双塔区",
-                    label: "双塔区"
+                    value: "The twin towers area",
+                    label: "The twin towers area"
                 }, {
-                    value: "龙城区",
-                    label: "龙城区"
+                    value: "The dragon city",
+                    label: "The dragon city"
                 }, {
-                    value: "凌源市",
-                    label: "凌源市"
+                    value: "lingyuan",
+                    label: "lingyuan"
                 }, {
-                    value: "北票市",
-                    label: "北票市"
+                    value: "saves",
+                    label: "saves"
                 }, {
-                    value: "朝阳县",
-                    label: "朝阳县"
+                    value: "Chaoyang county",
+                    label: "Chaoyang county"
                 }, {
-                    value: "建平县",
-                    label: "建平县"
+                    value: "Jianping county",
+                    label: "Jianping county"
                 }, {
-                    value: "喀喇沁左翼蒙古族自治县",
-                    label: "喀喇沁左翼蒙古族自治县"
+                    value: "Karaqin Left-wing Mongolian Autonomous County",
+                    label: "Karaqin Left-wing Mongolian Autonomous County"
                 }, {
-                    value: "其他",
-                    label: "其他"
+                    value: "other",
+                    label: "other"
                 }],
 
             },
             {
-                value: "葫芦岛",
-                label: "葫芦岛",
+                value: "huludao",
+                label: "huludao",
                 children: [{
-                    value: "请选择",
-                    label: "请选择"
+                    value: "Please select a",
+                    label: "Please select a"
                 }, {
-                    value: "龙港区",
-                    label: "龙港区"
+                    value: "LongGang District",
+                    label: "LongGang District"
                 }, {
-                    value: "南票区",
-                    label: "南票区"
+                    value: "The south voted",
+                    label: "The south voted"
                 }, {
-                    value: "连山区",
-                    label: "连山区"
+                    value: "lianshan",
+                    label: "lianshan"
                 }, {
-                    value: "兴城市",
-                    label: "兴城市"
+                    value: "xingcheng",
+                    label: "xingcheng"
                 }, {
-                    value: "绥中县",
-                    label: "绥中县"
+                    value: "Suizhong county",
+                    label: "Suizhong county"
                 }, {
-                    value: "建昌县",
-                    label: "建昌县"
+                    value: "integrated",
+                    label: "integrated"
                 }, {
-                    value: "其他",
-                    label: "其他"
+                    value: "other",
+                    label: "other"
                 }],
 
             },
             {
-                value: "其他",
-                label: "其他"
+                value: "other",
+                label: "other"
             }
         ],
 
     },
     {
-        value: "江苏",
-        label: "江苏",
+        value: "jiangsu",
+        label: "jiangsu",
         children: [{
-                value: "请选择",
-                label: "请选择"
+                value: "Please select a",
+                label: "Please select a"
             },
             {
-                value: "南京",
-                label: "南京",
+                value: "nanjing",
+                label: "nanjing",
                 children: [{
-                    value: "请选择",
-                    label: "请选择"
+                    value: "Please select a",
+                    label: "Please select a"
                 }, {
-                    value: "玄武区",
-                    label: "玄武区"
+                    value: "Xuanwu borough",
+                    label: "Xuanwu borough"
                 }, {
-                    value: "白下区",
-                    label: "白下区"
+                    value: "baixia",
+                    label: "baixia"
                 }, {
-                    value: "秦淮区",
-                    label: "秦淮区"
+                    value: "The qinhuai district",
+                    label: "The qinhuai district"
                 }, {
-                    value: "建邺区",
-                    label: "建邺区"
+                    value: "Jianye district",
+                    label: "Jianye district"
                 }, {
-                    value: "鼓楼区",
-                    label: "鼓楼区"
+                    value: "gulou",
+                    label: "gulou"
                 }, {
-                    value: "下关区",
-                    label: "下关区"
+                    value: "Xiaguan district",
+                    label: "Xiaguan district"
                 }, {
-                    value: "栖霞区",
-                    label: "栖霞区"
+                    value: "Qixia district",
+                    label: "Qixia district"
                 }, {
-                    value: "雨花台区",
-                    label: "雨花台区"
+                    value: "it",
+                    label: "it"
                 }, {
-                    value: "浦口区",
-                    label: "浦口区"
+                    value: "pukou",
+                    label: "pukou"
                 }, {
-                    value: "江宁区",
-                    label: "江宁区"
+                    value: "Jiangning district",
+                    label: "Jiangning district"
                 }, {
-                    value: "六合区",
-                    label: "六合区"
+                    value: "Liuhe district",
+                    label: "Liuhe district"
                 }, {
-                    value: "溧水县",
-                    label: "溧水县"
+                    value: "lishui",
+                    label: "lishui"
                 }, {
-                    value: "高淳县",
-                    label: "高淳县"
+                    value: "Gaochun county",
+                    label: "Gaochun county"
                 }, {
-                    value: "其他",
-                    label: "其他"
+                    value: "other",
+                    label: "other"
                 }],
 
             },
             {
-                value: "苏州",
-                label: "苏州",
+                value: "suzhou",
+                label: "suzhou",
                 children: [{
-                    value: "请选择",
-                    label: "请选择"
+                    value: "Please select a",
+                    label: "Please select a"
                 }, {
-                    value: "金阊区",
-                    label: "金阊区"
+                    value: "Gold Chang area",
+                    label: "Gold Chang area"
                 }, {
-                    value: "平江区",
-                    label: "平江区"
+                    value: "At pingkiang area",
+                    label: "At pingkiang area"
                 }, {
-                    value: "沧浪区",
-                    label: "沧浪区"
+                    value: "canglang",
+                    label: "canglang"
                 }, {
-                    value: "虎丘区",
-                    label: "虎丘区"
+                    value: "district",
+                    label: "district"
                 }, {
-                    value: "吴中区",
-                    label: "吴中区"
+                    value: "Wuzhong district",
+                    label: "Wuzhong district"
                 }, {
-                    value: "相城区",
-                    label: "相城区"
+                    value: "city",
+                    label: "city"
                 }, {
-                    value: "常熟市",
-                    label: "常熟市"
+                    value: "changshu",
+                    label: "changshu"
                 }, {
-                    value: "张家港市",
-                    label: "张家港市"
+                    value: "Zhangjiagang city",
+                    label: "Zhangjiagang city"
                 }, {
-                    value: "昆山市",
-                    label: "昆山市"
+                    value: "Kunshan city",
+                    label: "Kunshan city"
                 }, {
-                    value: "吴江市",
-                    label: "吴江市"
+                    value: "Wujiang city",
+                    label: "Wujiang city"
                 }, {
-                    value: "太仓市",
-                    label: "太仓市"
+                    value: "Taicang city",
+                    label: "Taicang city"
                 }, {
-                    value: "其他",
-                    label: "其他"
+                    value: "other",
+                    label: "other"
                 }],
 
             },
             {
-                value: "无锡",
-                label: "无锡",
+                value: "wuxi",
+                label: "wuxi",
                 children: [{
-                    value: "请选择",
-                    label: "请选择"
+                    value: "Please select a",
+                    label: "Please select a"
                 }, {
-                    value: "崇安区",
-                    label: "崇安区"
+                    value: "Chong 'an district",
+                    label: "Chong 'an district"
                 }, {
-                    value: "南长区",
-                    label: "南长区"
+                    value: "Long south area",
+                    label: "Long south area"
                 }, {
-                    value: "北塘区",
-                    label: "北塘区"
+                    value: "Beitang district",
+                    label: "Beitang district"
                 }, {
-                    value: "滨湖区",
-                    label: "滨湖区"
+                    value: "Lakeshore zone",
+                    label: "Lakeshore zone"
                 }, {
-                    value: "锡山区",
-                    label: "锡山区"
+                    value: "Xishan district",
+                    label: "Xishan district"
                 }, {
-                    value: "惠山区",
-                    label: "惠山区"
+                    value: "Would you care to the mountains",
+                    label: "Would you care to the mountains"
                 }, {
-                    value: "江阴市",
-                    label: "江阴市"
+                    value: "Jiangyin city",
+                    label: "Jiangyin city"
                 }, {
-                    value: "宜兴市",
-                    label: "宜兴市"
+                    value: "Yixing city",
+                    label: "Yixing city"
                 }, {
-                    value: "其他",
-                    label: "其他"
+                    value: "other",
+                    label: "other"
                 }],
 
             },
             {
-                value: "常州",
-                label: "常州",
+                value: "changzhou",
+                label: "changzhou",
                 children: [{
-                    value: "请选择",
-                    label: "请选择"
+                    value: "Please select a",
+                    label: "Please select a"
                 }, {
-                    value: "钟楼区",
-                    label: "钟楼区"
+                    value: "The clock tower area",
+                    label: "The clock tower area"
                 }, {
-                    value: "天宁区",
-                    label: "天宁区"
+                    value: "tianning",
+                    label: "tianning"
                 }, {
-                    value: "戚墅堰区",
-                    label: "戚墅堰区"
+                    value: "Qi shuyan area",
+                    label: "Qi shuyan area"
                 }, {
-                    value: "新北区",
-                    label: "新北区"
+                    value: "The new north district",
+                    label: "The new north district"
                 }, {
-                    value: "武进区",
-                    label: "武进区"
+                    value: "Wujin district",
+                    label: "Wujin district"
                 }, {
-                    value: "金坛市",
-                    label: "金坛市"
+                    value: "The jintan city",
+                    label: "The jintan city"
                 }, {
-                    value: "溧阳市",
-                    label: "溧阳市"
+                    value: "Liyang city",
+                    label: "Liyang city"
                 }, {
-                    value: "其他",
-                    label: "其他"
+                    value: "other",
+                    label: "other"
                 }],
 
             },
             {
-                value: "镇江",
-                label: "镇江",
+                value: "zhenjiang",
+                label: "zhenjiang",
                 children: [{
-                    value: "请选择",
-                    label: "请选择"
+                    value: "Please select a",
+                    label: "Please select a"
                 }, {
-                    value: "京口区",
-                    label: "京口区"
+                    value: "Beijing estuary",
+                    label: "Beijing estuary"
                 }, {
-                    value: "润州区",
-                    label: "润州区"
+                    value: "runzhou",
+                    label: "runzhou"
                 }, {
-                    value: "丹徒区",
-                    label: "丹徒区"
+                    value: "Dantu district",
+                    label: "Dantu district"
                 }, {
-                    value: "丹阳市",
-                    label: "丹阳市"
+                    value: "danyang",
+                    label: "danyang"
                 }, {
-                    value: "扬中市",
-                    label: "扬中市"
+                    value: "yangzhong",
+                    label: "yangzhong"
                 }, {
-                    value: "句容市",
-                    label: "句容市"
+                    value: "Jurong city",
+                    label: "Jurong city"
                 }, {
-                    value: "其他",
-                    label: "其他"
+                    value: "other",
+                    label: "other"
                 }],
 
             },
             {
-                value: "南通",
-                label: "南通",
+                value: "nantong",
+                label: "nantong",
                 children: [{
-                    value: "请选择",
-                    label: "请选择"
+                    value: "Please select a",
+                    label: "Please select a"
                 }, {
-                    value: "崇川区",
-                    label: "崇川区"
+                    value: "Chongchuan district",
+                    label: "Chongchuan district"
                 }, {
-                    value: "港闸区",
-                    label: "港闸区"
+                    value: "Port lock area",
+                    label: "Port lock area"
                 }, {
-                    value: "通州市",
-                    label: "通州市"
+                    value: "Tongzhou city",
+                    label: "Tongzhou city"
                 }, {
-                    value: "如皋市",
-                    label: "如皋市"
+                    value: "rugao",
+                    label: "rugao"
                 }, {
-                    value: "海门市",
-                    label: "海门市"
+                    value: "haimen",
+                    label: "haimen"
                 }, {
-                    value: "启东市",
-                    label: "启东市"
+                    value: "qidong",
+                    label: "qidong"
                 }, {
-                    value: "海安县",
-                    label: "海安县"
+                    value: "Haian county",
+                    label: "Haian county"
                 }, {
-                    value: "如东县",
-                    label: "如东县"
+                    value: "rudong",
+                    label: "rudong"
                 }, {
-                    value: "其他",
-                    label: "其他"
+                    value: "other",
+                    label: "other"
                 }],
 
             },
             {
-                value: "泰州",
-                label: "泰州",
+                value: "taizhou",
+                label: "taizhou",
                 children: [{
-                    value: "请选择",
-                    label: "请选择"
+                    value: "Please select a",
+                    label: "Please select a"
                 }, {
-                    value: "海陵区",
-                    label: "海陵区"
+                    value: "'area",
+                    label: "'area"
                 }, {
-                    value: "高港区",
-                    label: "高港区"
+                    value: "gaogang",
+                    label: "gaogang"
                 }, {
-                    value: "姜堰市",
-                    label: "姜堰市"
+                    value: "Jiangyan city",
+                    label: "Jiangyan city"
                 }, {
-                    value: "泰兴市",
-                    label: "泰兴市"
+                    value: "Taixing city",
+                    label: "Taixing city"
                 }, {
-                    value: "靖江市",
-                    label: "靖江市"
+                    value: "jingjiang",
+                    label: "jingjiang"
                 }, {
-                    value: "兴化市",
-                    label: "兴化市"
+                    value: "xinghua",
+                    label: "xinghua"
                 }, {
-                    value: "其他",
-                    label: "其他"
+                    value: "other",
+                    label: "other"
                 }],
 
             },
             {
-                value: "扬州",
-                label: "扬州",
+                value: "yangzhou",
+                label: "yangzhou",
                 children: [{
-                    value: "请选择",
-                    label: "请选择"
+                    value: "Please select a",
+                    label: "Please select a"
                 }, {
-                    value: "广陵区",
-                    label: "广陵区"
+                    value: "straight",
+                    label: "straight"
                 }, {
-                    value: "维扬区",
-                    label: "维扬区"
+                    value: "The dimension area",
+                    label: "The dimension area"
                 }, {
-                    value: "邗江区",
-                    label: "邗江区"
+                    value: "HanJiang area",
+                    label: "HanJiang area"
                 }, {
-                    value: "江都市",
-                    label: "江都市"
+                    value: "jiangdu",
+                    label: "jiangdu"
                 }, {
-                    value: "仪征市",
-                    label: "仪征市"
+                    value: "Yizheng city",
+                    label: "Yizheng city"
                 }, {
-                    value: "高邮市",
-                    label: "高邮市"
+                    value: "gaoyou",
+                    label: "gaoyou"
                 }, {
-                    value: "宝应县",
-                    label: "宝应县"
+                    value: "baoying",
+                    label: "baoying"
                 }, {
-                    value: "其他",
-                    label: "其他"
+                    value: "other",
+                    label: "other"
                 }],
 
             },
             {
-                value: "盐城",
-                label: "盐城",
+                value: "yancheng",
+                label: "yancheng",
                 children: [{
-                    value: "请选择",
-                    label: "请选择"
+                    value: "Please select a",
+                    label: "Please select a"
                 }, {
-                    value: "亭湖区",
-                    label: "亭湖区"
+                    value: "Pavilion lakes",
+                    label: "Pavilion lakes"
                 }, {
-                    value: "盐都区",
-                    label: "盐都区"
+                    value: "Yandu district",
+                    label: "Yandu district"
                 }, {
-                    value: "大丰市",
-                    label: "大丰市"
+                    value: "Dafeng city",
+                    label: "Dafeng city"
                 }, {
-                    value: "东台市",
-                    label: "东台市"
+                    value: "dongtai",
+                    label: "dongtai"
                 }, {
-                    value: "建湖县",
-                    label: "建湖县"
+                    value: "jianhu",
+                    label: "jianhu"
                 }, {
-                    value: "射阳县",
-                    label: "射阳县"
+                    value: "Sheyang county",
+                    label: "Sheyang county"
                 }, {
-                    value: "阜宁县",
-                    label: "阜宁县"
+                    value: "country",
+                    label: "country"
                 }, {
-                    value: "滨海县",
-                    label: "滨海县"
+                    value: "binhai",
+                    label: "binhai"
                 }, {
-                    value: "响水县",
-                    label: "响水县"
+                    value: "Xiangshui county",
+                    label: "Xiangshui county"
                 }, {
-                    value: "其他",
-                    label: "其他"
+                    value: "other",
+                    label: "other"
                 }],
 
             },
             {
-                value: "连云港",
-                label: "连云港",
+                value: "lianyungang",
+                label: "lianyungang",
                 children: [{
-                    value: "请选择",
-                    label: "请选择"
+                    value: "Please select a",
+                    label: "Please select a"
                 }, {
-                    value: "新浦区",
-                    label: "新浦区"
+                    value: "xinpu",
+                    label: "xinpu"
                 }, {
-                    value: "海州区",
-                    label: "海州区"
+                    value: "haizhou",
+                    label: "haizhou"
                 }, {
-                    value: "连云区",
-                    label: "连云区"
+                    value: "lianyun",
+                    label: "lianyun"
                 }, {
-                    value: "东海县",
-                    label: "东海县"
+                    value: "Donghai county",
+                    label: "Donghai county"
                 }, {
-                    value: "灌云县",
-                    label: "灌云县"
+                    value: "Guanyun county",
+                    label: "Guanyun county"
                 }, {
-                    value: "赣榆县",
-                    label: "赣榆县"
+                    value: "Ganyu county",
+                    label: "Ganyu county"
                 }, {
-                    value: "灌南县",
-                    label: "灌南县"
+                    value: "Guannan county",
+                    label: "Guannan county"
                 }, {
-                    value: "其他",
-                    label: "其他"
+                    value: "other",
+                    label: "other"
                 }],
 
             },
             {
-                value: "徐州",
-                label: "徐州",
+                value: "xuzhou",
+                label: "xuzhou",
                 children: [{
-                    value: "请选择",
-                    label: "请选择"
+                    value: "Please select a",
+                    label: "Please select a"
                 }, {
-                    value: "云龙区",
-                    label: "云龙区"
+                    value: "Yunlong district",
+                    label: "Yunlong district"
                 }, {
-                    value: "鼓楼区",
-                    label: "鼓楼区"
+                    value: "gulou",
+                    label: "gulou"
                 }, {
-                    value: "九里区",
-                    label: "九里区"
+                    value: "In the nine areas",
+                    label: "In the nine areas"
                 }, {
-                    value: "泉山区",
-                    label: "泉山区"
+                    value: "Spring mountain",
+                    label: "Spring mountain"
                 }, {
-                    value: "贾汪区",
-                    label: "贾汪区"
+                    value: "Jia wang area",
+                    label: "Jia wang area"
                 }, {
-                    value: "邳州市",
-                    label: "邳州市"
+                    value: "pizhou",
+                    label: "pizhou"
                 }, {
-                    value: "新沂市",
-                    label: "新沂市"
+                    value: "The paper selects xinyi city",
+                    label: "The paper selects xinyi city"
                 }, {
-                    value: "铜山县",
-                    label: "铜山县"
+                    value: "Tongshan county",
+                    label: "Tongshan county"
                 }, {
-                    value: "睢宁县",
-                    label: "睢宁县"
+                    value: "The suining",
+                    label: "The suining"
                 }, {
-                    value: "沛县",
-                    label: "沛县"
+                    value: "Peixian county",
+                    label: "Peixian county"
                 }, {
-                    value: "丰县",
-                    label: "丰县"
+                    value: "venture",
+                    label: "venture"
                 }, {
-                    value: "其他",
-                    label: "其他"
+                    value: "other",
+                    label: "other"
                 }],
 
             },
             {
-                value: "淮安",
-                label: "淮安",
+                value: "huaian",
+                label: "huaian",
                 children: [{
-                    value: "请选择",
-                    label: "请选择"
+                    value: "Please select a",
+                    label: "Please select a"
                 }, {
-                    value: "清河区",
-                    label: "清河区"
+                    value: "Qinghe district",
+                    label: "Qinghe district"
                 }, {
-                    value: "清浦区",
-                    label: "清浦区"
+                    value: "Qingpu district",
+                    label: "Qingpu district"
                 }, {
-                    value: "楚州区",
-                    label: "楚州区"
+                    value: "Chuzhou district",
+                    label: "Chuzhou district"
                 }, {
-                    value: "淮阴区",
-                    label: "淮阴区"
+                    value: "Huaiyin district",
+                    label: "Huaiyin district"
                 }, {
-                    value: "涟水县",
-                    label: "涟水县"
+                    value: "Lianshui county",
+                    label: "Lianshui county"
                 }, {
-                    value: "洪泽县",
-                    label: "洪泽县"
+                    value: "Hongze county",
+                    label: "Hongze county"
                 }, {
-                    value: "金湖县",
-                    label: "金湖县"
+                    value: "Jinhu county",
+                    label: "Jinhu county"
                 }, {
-                    value: "盱眙县",
-                    label: "盱眙县"
+                    value: "xuyi",
+                    label: "xuyi"
                 }, {
-                    value: "其他",
-                    label: "其他"
+                    value: "other",
+                    label: "other"
                 }],
 
             },
             {
-                value: "宿迁",
-                label: "宿迁",
+                value: "suqian",
+                label: "suqian",
                 children: [{
-                    value: "请选择",
-                    label: "请选择"
+                    value: "Please select a",
+                    label: "Please select a"
                 }, {
-                    value: "宿城区",
-                    label: "宿城区"
+                    value: "sucheng",
+                    label: "sucheng"
                 }, {
-                    value: "宿豫区",
-                    label: "宿豫区"
+                    value: "Two districts area",
+                    label: "Two districts area"
                 }, {
-                    value: "沭阳县",
-                    label: "沭阳县"
+                    value: "shuyang",
+                    label: "shuyang"
                 }, {
-                    value: "泗阳县",
-                    label: "泗阳县"
+                    value: "Siyang county",
+                    label: "Siyang county"
                 }, {
-                    value: "泗洪县",
-                    label: "泗洪县"
+                    value: "sihong",
+                    label: "sihong"
                 }, {
-                    value: "其他",
-                    label: "其他"
+                    value: "other",
+                    label: "other"
                 }],
 
             },
             {
-                value: "其他",
-                label: "其他"
+                value: "other",
+                label: "other"
             }
         ],
 
     },
     {
-        value: "湖北",
-        label: "湖北",
+        value: "hubei",
+        label: "hubei",
         children: [{
-                value: "请选择",
-                label: "请选择"
+                value: "Please select a",
+                label: "Please select a"
             },
             {
-                value: "武汉",
-                label: "武汉",
+                value: "wuhan",
+                label: "wuhan",
                 children: [{
-                    value: "请选择",
-                    label: "请选择"
+                    value: "Please select a",
+                    label: "Please select a"
                 }, {
-                    value: "江岸区",
-                    label: "江岸区"
+                    value: "The riverbank district",
+                    label: "The riverbank district"
                 }, {
-                    value: "武昌区",
-                    label: "武昌区"
+                    value: "Wuchang district",
+                    label: "Wuchang district"
                 }, {
-                    value: "江汉区",
-                    label: "江汉区"
+                    value: "Jianghan district",
+                    label: "Jianghan district"
                 }, {
-                    value: "硚口区",
-                    label: "硚口区"
+                    value: "Qiao estuary",
+                    label: "Qiao estuary"
                 }, {
-                    value: "汉阳区",
-                    label: "汉阳区"
+                    value: "hanyang",
+                    label: "hanyang"
                 }, {
-                    value: "青山区",
-                    label: "青山区"
+                    value: "Qingshan district",
+                    label: "Qingshan district"
                 }, {
-                    value: "洪山区",
-                    label: "洪山区"
+                    value: "Hongshan district",
+                    label: "Hongshan district"
                 }, {
-                    value: "东西湖区",
-                    label: "东西湖区"
+                    value: "dongxihu",
+                    label: "dongxihu"
                 }, {
-                    value: "汉南区",
-                    label: "汉南区"
+                    value: "The southern han",
+                    label: "The southern han"
                 }, {
-                    value: "蔡甸区",
-                    label: "蔡甸区"
+                    value: "Caidian district",
+                    label: "Caidian district"
                 }, {
-                    value: "江夏区",
-                    label: "江夏区"
+                    value: "Jiangxia district",
+                    label: "Jiangxia district"
                 }, {
-                    value: "黄陂区",
-                    label: "黄陂区"
+                    value: "Huangpi district",
+                    label: "Huangpi district"
                 }, {
-                    value: "新洲区",
-                    label: "新洲区"
+                    value: "Xinzhou district",
+                    label: "Xinzhou district"
                 }, {
-                    value: "其他",
-                    label: "其他"
+                    value: "other",
+                    label: "other"
                 }],
 
             },
             {
-                value: "黄石",
-                label: "黄石",
+                value: "Yellowstone",
+                label: "Yellowstone",
                 children: [{
-                    value: "请选择",
-                    label: "请选择"
+                    value: "Please select a",
+                    label: "Please select a"
                 }, {
-                    value: "黄石港区",
-                    label: "黄石港区"
+                    value: "The Yellowstone area",
+                    label: "The Yellowstone area"
                 }, {
-                    value: "西塞山区",
-                    label: "西塞山区"
+                    value: "Cisse mountains",
+                    label: "Cisse mountains"
                 }, {
-                    value: "下陆区",
-                    label: "下陆区"
+                    value: "The land area",
+                    label: "The land area"
                 }, {
-                    value: "铁山区",
-                    label: "铁山区"
+                    value: "Iron mountain",
+                    label: "Iron mountain"
                 }, {
-                    value: "大冶市",
-                    label: "大冶市"
+                    value: "Daye county",
+                    label: "Daye county"
                 }, {
-                    value: "阳新县",
-                    label: "阳新县"
+                    value: "Yangxin county",
+                    label: "Yangxin county"
                 }, {
-                    value: "其他",
-                    label: "其他"
+                    value: "other",
+                    label: "other"
                 }],
 
             },
             {
-                value: "十堰",
-                label: "十堰",
+                value: "shiyan",
+                label: "shiyan",
                 children: [{
-                    value: "请选择",
-                    label: "请选择"
+                    value: "Please select a",
+                    label: "Please select a"
                 }, {
-                    value: "张湾区",
-                    label: "张湾区"
+                    value: "Zhang bay area",
+                    label: "Zhang bay area"
                 }, {
-                    value: "茅箭区",
-                    label: "茅箭区"
+                    value: "MAO arrow area",
+                    label: "MAO arrow area"
                 }, {
-                    value: "丹江口市",
-                    label: "丹江口市"
+                    value: "Danjiangkou city",
+                    label: "Danjiangkou city"
                 }, {
-                    value: "郧县",
-                    label: "郧县"
+                    value: "Yun county",
+                    label: "Yun county"
                 }, {
-                    value: "竹山县",
-                    label: "竹山县"
+                    value: "Zhushan county villagers",
+                    label: "Zhushan county villagers"
                 }, {
-                    value: "房县",
-                    label: "房县"
+                    value: "Fangxian county",
+                    label: "Fangxian county"
                 }, {
-                    value: "郧西县",
-                    label: "郧西县"
+                    value: "Yunxi county",
+                    label: "Yunxi county"
                 }, {
-                    value: "竹溪县",
-                    label: "竹溪县"
+                    value: "Zhuxi county",
+                    label: "Zhuxi county"
                 }, {
-                    value: "其他",
-                    label: "其他"
+                    value: "other",
+                    label: "other"
                 }],
 
             },
             {
-                value: "荆州",
-                label: "荆州",
+                value: "jingzhou",
+                label: "jingzhou",
                 children: [{
-                    value: "请选择",
-                    label: "请选择"
+                    value: "Please select a",
+                    label: "Please select a"
                 }, {
-                    value: "沙市区",
-                    label: "沙市区"
+                    value: "Sand city",
+                    label: "Sand city"
                 }, {
-                    value: "荆州区",
-                    label: "荆州区"
+                    value: "Jingzhou area",
+                    label: "Jingzhou area"
                 }, {
-                    value: "洪湖市",
-                    label: "洪湖市"
+                    value: "honghu",
+                    label: "honghu"
                 }, {
-                    value: "石首市",
-                    label: "石首市"
+                    value: "shishou",
+                    label: "shishou"
                 }, {
-                    value: "松滋市",
-                    label: "松滋市"
+                    value: "songzi",
+                    label: "songzi"
                 }, {
-                    value: "监利县",
-                    label: "监利县"
+                    value: "jianli",
+                    label: "jianli"
                 }, {
-                    value: "公安县",
-                    label: "公安县"
+                    value: "Gong 'an",
+                    label: "Gong 'an"
                 }, {
-                    value: "江陵县",
-                    label: "江陵县"
+                    value: "Jiangling county",
+                    label: "Jiangling county"
                 }, {
-                    value: "其他",
-                    label: "其他"
+                    value: "other",
+                    label: "other"
                 }],
 
             },
             {
-                value: "宜昌",
-                label: "宜昌",
+                value: "yichang",
+                label: "yichang",
                 children: [{
-                    value: "请选择",
-                    label: "请选择"
+                    value: "Please select a",
+                    label: "Please select a"
                 }, {
-                    value: "西陵区",
-                    label: "西陵区"
+                    value: "Xiling district,",
+                    label: "Xiling district,"
                 }, {
-                    value: "伍家岗区",
-                    label: "伍家岗区"
+                    value: "Wu family or",
+                    label: "Wu family or"
                 }, {
-                    value: "点军区",
-                    label: "点军区"
+                    value: "Some military area command",
+                    label: "Some military area command"
                 }, {
-                    value: "猇亭区",
-                    label: "猇亭区"
+                    value: "Xiao pavilion area",
+                    label: "Xiao pavilion area"
                 }, {
-                    value: "夷陵区",
-                    label: "夷陵区"
+                    value: "Reduced land",
+                    label: "Reduced land"
                 }, {
-                    value: "宜都市",
-                    label: "宜都市"
+                    value: "city",
+                    label: "city"
                 }, {
-                    value: "当阳市",
-                    label: "当阳市"
+                    value: "dangyang",
+                    label: "dangyang"
                 }, {
-                    value: "枝江市",
-                    label: "枝江市"
+                    value: "Zhijiang city",
+                    label: "Zhijiang city"
                 }, {
-                    value: "秭归县",
-                    label: "秭归县"
+                    value: "Zigui county",
+                    label: "Zigui county"
                 }, {
-                    value: "远安县",
-                    label: "远安县"
+                    value: "yuanan",
+                    label: "yuanan"
                 }, {
-                    value: "兴山县",
-                    label: "兴山县"
+                    value: "Xingshan county",
+                    label: "Xingshan county"
                 }, {
-                    value: "五峰土家族自治县",
-                    label: "五峰土家族自治县"
+                    value: "Wufeng Tujia Autonomous County",
+                    label: "Wufeng Tujia Autonomous County"
                 }, {
-                    value: "长阳土家族自治县",
-                    label: "长阳土家族自治县"
+                    value: "Changyang Tujia Autonomous County",
+                    label: "Changyang Tujia Autonomous County"
                 }, {
-                    value: "其他",
-                    label: "其他"
+                    value: "other",
+                    label: "other"
                 }],
 
             },
             {
-                value: "襄樊",
-                label: "襄樊",
+                value: "xiangfan",
+                label: "xiangfan",
                 children: [{
-                    value: "请选择",
-                    label: "请选择"
+                    value: "Please select a",
+                    label: "Please select a"
                 }, {
-                    value: "襄城区",
-                    label: "襄城区"
+                    value: "To make urban areas",
+                    label: "To make urban areas"
                 }, {
-                    value: "樊城区",
-                    label: "樊城区"
+                    value: "FanCheng area",
+                    label: "FanCheng area"
                 }, {
-                    value: "襄阳区",
-                    label: "襄阳区"
+                    value: "Xiangyang district",
+                    label: "Xiangyang district"
                 }, {
-                    value: "老河口市",
-                    label: "老河口市"
+                    value: "laohekou",
+                    label: "laohekou"
                 }, {
-                    value: "枣阳市",
-                    label: "枣阳市"
+                    value: "zaoyang",
+                    label: "zaoyang"
                 }, {
-                    value: "宜城市",
-                    label: "宜城市"
+                    value: "Yicheng city",
+                    label: "Yicheng city"
                 }, {
-                    value: "南漳县",
-                    label: "南漳县"
+                    value: "nanzhang",
+                    label: "nanzhang"
                 }, {
-                    value: "谷城县",
-                    label: "谷城县"
+                    value: "Gucheng county",
+                    label: "Gucheng county"
                 }, {
-                    value: "保康县",
-                    label: "保康县"
+                    value: "baokang",
+                    label: "baokang"
                 }, {
-                    value: "其他",
-                    label: "其他"
+                    value: "other",
+                    label: "other"
                 }],
 
             },
             {
-                value: "鄂州",
-                label: "鄂州",
+                value: "ezhou",
+                label: "ezhou",
                 children: [{
-                    value: "请选择",
-                    label: "请选择"
+                    value: "Please select a",
+                    label: "Please select a"
                 }, {
-                    value: "鄂城区",
-                    label: "鄂城区"
+                    value: "The city of hubei",
+                    label: "The city of hubei"
                 }, {
-                    value: "华容区",
-                    label: "华容区"
+                    value: "Huarong district",
+                    label: "Huarong district"
                 }, {
-                    value: "梁子湖区",
-                    label: "梁子湖区"
+                    value: "Issue the lakes",
+                    label: "Issue the lakes"
                 }, {
-                    value: "其他",
-                    label: "其他"
+                    value: "other",
+                    label: "other"
                 }],
 
             },
             {
-                value: "荆门",
-                label: "荆门",
+                value: "jingmen",
+                label: "jingmen",
                 children: [{
-                    value: "请选择",
-                    label: "请选择"
+                    value: "Please select a",
+                    label: "Please select a"
                 }, {
-                    value: "东宝区",
-                    label: "东宝区"
+                    value: "Dongbao district",
+                    label: "Dongbao district"
                 }, {
-                    value: "掇刀区",
-                    label: "掇刀区"
+                    value: "Duo knife area",
+                    label: "Duo knife area"
                 }, {
-                    value: "钟祥市",
-                    label: "钟祥市"
+                    value: "zhongxiang",
+                    label: "zhongxiang"
                 }, {
-                    value: "京山县",
-                    label: "京山县"
+                    value: "qunguang",
+                    label: "qunguang"
                 }, {
-                    value: "沙洋县",
-                    label: "沙洋县"
+                    value: "Shayang county",
+                    label: "Shayang county"
                 }, {
-                    value: "其他",
-                    label: "其他"
+                    value: "other",
+                    label: "other"
                 }],
 
             },
             {
-                value: "孝感",
-                label: "孝感",
+                value: "xiaogan",
+                label: "xiaogan",
                 children: [{
-                    value: "请选择",
-                    label: "请选择"
+                    value: "Please select a",
+                    label: "Please select a"
                 }, {
-                    value: "孝南区",
-                    label: "孝南区"
+                    value: "xiaonan",
+                    label: "xiaonan"
                 }, {
-                    value: "应城市",
-                    label: "应城市"
+                    value: "Should the city",
+                    label: "Should the city"
                 }, {
-                    value: "安陆市",
-                    label: "安陆市"
+                    value: "anlu",
+                    label: "anlu"
                 }, {
-                    value: "汉川市",
-                    label: "汉川市"
+                    value: "hanchuan",
+                    label: "hanchuan"
                 }, {
-                    value: "云梦县",
-                    label: "云梦县"
+                    value: "The yunmeng county",
+                    label: "The yunmeng county"
                 }, {
-                    value: "大悟县",
-                    label: "大悟县"
+                    value: "dawu",
+                    label: "dawu"
                 }, {
-                    value: "孝昌县",
-                    label: "孝昌县"
+                    value: "XiaoChang county",
+                    label: "XiaoChang county"
                 }, {
-                    value: "其他",
-                    label: "其他"
+                    value: "other",
+                    label: "other"
                 }],
 
             },
             {
-                value: "黄冈",
-                label: "黄冈",
+                value: "huanggang",
+                label: "huanggang",
                 children: [{
-                    value: "请选择",
-                    label: "请选择"
+                    value: "Please select a",
+                    label: "Please select a"
                 }, {
-                    value: "黄州区",
-                    label: "黄州区"
+                    value: "huangzhou",
+                    label: "huangzhou"
                 }, {
-                    value: "麻城市",
-                    label: "麻城市"
+                    value: "The town",
+                    label: "The town"
                 }, {
-                    value: "武穴市",
-                    label: "武穴市"
+                    value: "founded",
+                    label: "founded"
                 }, {
-                    value: "红安县",
-                    label: "红安县"
+                    value: "red",
+                    label: "red"
                 }, {
-                    value: "罗田县",
-                    label: "罗田县"
+                    value: "luotian",
+                    label: "luotian"
                 }, {
-                    value: "浠水县",
-                    label: "浠水县"
+                    value: "Xishui county",
+                    label: "Xishui county"
                 }, {
-                    value: "蕲春县",
-                    label: "蕲春县"
+                    value: "qichun",
+                    label: "qichun"
                 }, {
-                    value: "黄梅县",
-                    label: "黄梅县"
+                    value: "Huangmei county",
+                    label: "Huangmei county"
                 }, {
-                    value: "英山县",
-                    label: "英山县"
+                    value: "Yingshan county",
+                    label: "Yingshan county"
                 }, {
-                    value: "团风县",
-                    label: "团风县"
+                    value: "TuanFeng county",
+                    label: "TuanFeng county"
                 }, {
-                    value: "其他",
-                    label: "其他"
+                    value: "other",
+                    label: "other"
                 }],
 
             },
             {
-                value: "咸宁",
-                label: "咸宁",
+                value: "xianning",
+                label: "xianning",
                 children: [{
-                    value: "请选择",
-                    label: "请选择"
+                    value: "Please select a",
+                    label: "Please select a"
                 }, {
-                    value: "咸安区",
-                    label: "咸安区"
+                    value: "Haman district",
+                    label: "Haman district"
                 }, {
-                    value: "赤壁市",
-                    label: "赤壁市"
+                    value: "chibi",
+                    label: "chibi"
                 }, {
-                    value: "嘉鱼县",
-                    label: "嘉鱼县"
+                    value: "Jiayu county",
+                    label: "Jiayu county"
                 }, {
-                    value: "通山县",
-                    label: "通山县"
+                    value: "Tongshan county",
+                    label: "Tongshan county"
                 }, {
-                    value: "崇阳县",
-                    label: "崇阳县"
+                    value: "chongyang",
+                    label: "chongyang"
                 }, {
-                    value: "通城县",
-                    label: "通城县"
+                    value: "County city",
+                    label: "County city"
                 }, {
-                    value: "其他",
-                    label: "其他"
+                    value: "other",
+                    label: "other"
                 }],
 
             },
             {
-                value: "随州",
-                label: "随州",
+                value: "suizhou",
+                label: "suizhou",
                 children: [{
-                    value: "请选择",
-                    label: "请选择"
+                    value: "Please select a",
+                    label: "Please select a"
                 }, {
-                    value: "曾都区",
-                    label: "曾都区"
+                    value: "Once all area",
+                    label: "Once all area"
                 }, {
-                    value: "广水市",
-                    label: "广水市"
+                    value: "corp",
+                    label: "corp"
                 }, {
-                    value: "其他",
-                    label: "其他"
+                    value: "other",
+                    label: "other"
                 }],
 
             },
             {
-                value: "恩施土家族苗族自治州",
-                label: "恩施土家族苗族自治州",
+                value: "Enshi Tujia and Miao Autonomous Prefecture",
+                label: "Enshi Tujia and Miao Autonomous Prefecture",
                 children: [{
-                    value: "请选择",
-                    label: "请选择"
+                    value: "Please select a",
+                    label: "Please select a"
                 }, {
-                    value: "恩施市",
-                    label: "恩施市"
+                    value: "Enshi",
+                    label: "Enshi"
                 }, {
-                    value: "利川市",
-                    label: "利川市"
+                    value: "Lichuan city,",
+                    label: "Lichuan city,"
                 }, {
-                    value: "建始县",
-                    label: "建始县"
+                    value: "Jianshi county",
+                    label: "Jianshi county"
                 }, {
-                    value: "来凤县",
-                    label: "来凤县"
+                    value: "loafing",
+                    label: "loafing"
                 }, {
-                    value: "巴东县",
-                    label: "巴东县"
+                    value: "Badong county",
+                    label: "Badong county"
                 }, {
-                    value: "鹤峰县",
-                    label: "鹤峰县"
+                    value: "hefeng",
+                    label: "hefeng"
                 }, {
-                    value: "宣恩县",
-                    label: "宣恩县"
+                    value: "xuanen",
+                    label: "xuanen"
                 }, {
-                    value: "咸丰县",
-                    label: "咸丰县"
+                    value: "Human fluorosed",
+                    label: "Human fluorosed"
                 }, {
-                    value: "其他",
-                    label: "其他"
+                    value: "other",
+                    label: "other"
                 }],
 
             },
             {
-                value: "仙桃",
-                label: "仙桃",
+                value: "xiantao",
+                label: "xiantao",
                 children: [],
 
             },
             {
-                value: "天门",
-                label: "天门",
+                value: "tianmen",
+                label: "tianmen",
                 children: [],
 
             },
             {
-                value: "潜江",
-                label: "潜江",
+                value: "qianjiang",
+                label: "qianjiang",
                 children: [],
 
             },
             {
-                value: "神农架林区",
-                label: "神农架林区",
+                value: "Shennongjia Forest District",
+                label: "Shennongjia Forest District",
                 children: [],
 
             },
             {
-                value: "其他",
-                label: "其他"
+                value: "other",
+                label: "other"
             }
         ],
 
     },
     {
-        value: "四川",
-        label: "四川",
+        value: "sichuan",
+        label: "sichuan",
         children: [{
-                value: "请选择",
-                label: "请选择"
+                value: "Please select a",
+                label: "Please select a"
             },
             {
-                value: "成都",
-                label: "成都",
+                value: "chengdu",
+                label: "chengdu",
                 children: [{
-                    value: "请选择",
-                    label: "请选择"
+                    value: "Please select a",
+                    label: "Please select a"
                 }, {
-                    value: "青羊区",
-                    label: "青羊区"
+                    value: "venture",
+                    label: "venture"
                 }, {
-                    value: "锦江区",
-                    label: "锦江区"
+                    value: "Jinjiang district,",
+                    label: "Jinjiang district,"
                 }, {
-                    value: "金牛区",
-                    label: "金牛区"
+                    value: "thesis",
+                    label: "thesis"
                 }, {
-                    value: "武侯区",
-                    label: "武侯区"
+                    value: "Wuhou district",
+                    label: "Wuhou district"
                 }, {
-                    value: "成华区",
-                    label: "成华区"
+                    value: "In greater China",
+                    label: "In greater China"
                 }, {
-                    value: "龙泉驿区",
-                    label: "龙泉驿区"
+                    value: "Longquanyi district",
+                    label: "Longquanyi district"
                 }, {
-                    value: "青白江区",
-                    label: "青白江区"
+                    value: "Qingbaijiang district",
+                    label: "Qingbaijiang district"
                 }, {
-                    value: "新都区",
-                    label: "新都区"
+                    value: "district",
+                    label: "district"
                 }, {
-                    value: "温江区",
-                    label: "温江区"
+                    value: "Salween area",
+                    label: "Salween area"
                 }, {
-                    value: "都江堰市",
-                    label: "都江堰市"
+                    value: "Dujiangyan city",
+                    label: "Dujiangyan city"
                 }, {
-                    value: "彭州市",
-                    label: "彭州市"
+                    value: "pengzhou",
+                    label: "pengzhou"
                 }, {
-                    value: "邛崃市",
-                    label: "邛崃市"
+                    value: "Qionglai city",
+                    label: "Qionglai city"
                 }, {
-                    value: "崇州市",
-                    label: "崇州市"
+                    value: "Chung city",
+                    label: "Chung city"
                 }, {
-                    value: "金堂县",
-                    label: "金堂县"
+                    value: "Jintang county",
+                    label: "Jintang county"
                 }, {
-                    value: "郫县",
-                    label: "郫县"
+                    value: "PI county",
+                    label: "PI county"
                 }, {
-                    value: "新津县",
-                    label: "新津县"
+                    value: "xinjin",
+                    label: "xinjin"
                 }, {
-                    value: "双流县",
-                    label: "双流县"
+                    value: "it",
+                    label: "it"
                 }, {
-                    value: "蒲江县",
-                    label: "蒲江县"
+                    value: "Pujiang county",
+                    label: "Pujiang county"
                 }, {
-                    value: "大邑县",
-                    label: "大邑县"
+                    value: "Dayi county,",
+                    label: "Dayi county,"
                 }, {
-                    value: "其他",
-                    label: "其他"
+                    value: "other",
+                    label: "other"
                 }],
 
             },
             {
-                value: "自贡",
-                label: "自贡",
+                value: "zigong",
+                label: "zigong",
                 children: [{
-                    value: "请选择",
-                    label: "请选择"
+                    value: "Please select a",
+                    label: "Please select a"
                 }, {
-                    value: "大安区",
-                    label: "大安区"
+                    value: "Dan an area",
+                    label: "Dan an area"
                 }, {
-                    value: "自流井区",
-                    label: "自流井区"
+                    value: "Artesian well area",
+                    label: "Artesian well area"
                 }, {
-                    value: "贡井区",
-                    label: "贡井区"
+                    value: "gongjing",
+                    label: "gongjing"
                 }, {
-                    value: "沿滩区",
-                    label: "沿滩区"
+                    value: "Along the Yellow River",
+                    label: "Along the Yellow River"
                 }, {
-                    value: "荣县",
-                    label: "荣县"
+                    value: "Rong county",
+                    label: "Rong county"
                 }, {
-                    value: "富顺县",
-                    label: "富顺县"
+                    value: "FuShun County",
+                    label: "FuShun County"
                 }, {
-                    value: "其他",
-                    label: "其他"
+                    value: "other",
+                    label: "other"
                 }],
 
             },
             {
-                value: "攀枝花",
-                label: "攀枝花",
+                value: "panzhihua",
+                label: "panzhihua",
                 children: [{
-                    value: "请选择",
-                    label: "请选择"
+                    value: "Please select a",
+                    label: "Please select a"
                 }, {
-                    value: "仁和区",
-                    label: "仁和区"
+                    value: "renhe",
+                    label: "renhe"
                 }, {
-                    value: "米易县",
-                    label: "米易县"
+                    value: "Miyi county",
+                    label: "Miyi county"
                 }, {
-                    value: "盐边县",
-                    label: "盐边县"
+                    value: "Salt county",
+                    label: "Salt county"
                 }, {
-                    value: "东区",
-                    label: "东区"
+                    value: "east area",
+                    label: "east area"
                 }, {
-                    value: "西区",
-                    label: "西区"
+                    value: "west area",
+                    label: "west area"
                 }, {
-                    value: "其他",
-                    label: "其他"
+                    value: "other",
+                    label: "other"
                 }],
 
             },
             {
-                value: "泸州",
-                label: "泸州",
+                value: "luzhou",
+                label: "luzhou",
                 children: [{
-                    value: "请选择",
-                    label: "请选择"
+                    value: "Please select a",
+                    label: "Please select a"
                 }, {
-                    value: "江阳区",
-                    label: "江阳区"
+                    value: "jiangyang",
+                    label: "jiangyang"
                 }, {
-                    value: "纳溪区",
-                    label: "纳溪区"
+                    value: "Na creek area",
+                    label: "Na creek area"
                 }, {
-                    value: "龙马潭区",
-                    label: "龙马潭区"
+                    value: "longmatan",
+                    label: "longmatan"
                 }, {
-                    value: "泸县",
-                    label: "泸县"
+                    value: "Lugu county",
+                    label: "Lugu county"
                 }, {
-                    value: "合江县",
-                    label: "合江县"
+                    value: "Hejiang city",
+                    label: "Hejiang city"
                 }, {
-                    value: "叙永县",
-                    label: "叙永县"
+                    value: "xuyong",
+                    label: "xuyong"
                 }, {
-                    value: "古蔺县",
-                    label: "古蔺县"
+                    value: "Gulin county",
+                    label: "Gulin county"
                 }, {
-                    value: "其他",
-                    label: "其他"
+                    value: "other",
+                    label: "other"
                 }],
 
             },
             {
-                value: "德阳",
-                label: "德阳",
+                value: "deyang",
+                label: "deyang",
                 children: [{
-                    value: "请选择",
-                    label: "请选择"
+                    value: "Please select a",
+                    label: "Please select a"
                 }, {
-                    value: "旌阳区",
-                    label: "旌阳区"
+                    value: "jingyang",
+                    label: "jingyang"
                 }, {
-                    value: "广汉市",
-                    label: "广汉市"
+                    value: "guanghan",
+                    label: "guanghan"
                 }, {
-                    value: "什邡市",
-                    label: "什邡市"
+                    value: "Shifang city",
+                    label: "Shifang city"
                 }, {
-                    value: "绵竹市",
-                    label: "绵竹市"
+                    value: "Mianzhu city",
+                    label: "Mianzhu city"
                 }, {
-                    value: "罗江县",
-                    label: "罗江县"
+                    value: "Luojiang county",
+                    label: "Luojiang county"
                 }, {
-                    value: "中江县",
-                    label: "中江县"
+                    value: "zhongjiang",
+                    label: "zhongjiang"
                 }, {
-                    value: "其他",
-                    label: "其他"
+                    value: "other",
+                    label: "other"
                 }],
 
             },
             {
-                value: "绵阳",
-                label: "绵阳",
+                value: "mianyang",
+                label: "mianyang",
                 children: [{
-                    value: "请选择",
-                    label: "请选择"
+                    value: "Please select a",
+                    label: "Please select a"
                 }, {
-                    value: "涪城区",
-                    label: "涪城区"
+                    value: "Fucheng district",
+                    label: "Fucheng district"
                 }, {
-                    value: "游仙区",
-                    label: "游仙区"
+                    value: "Swim fairy area",
+                    label: "Swim fairy area"
                 }, {
-                    value: "江油市",
-                    label: "江油市"
+                    value: "jiangyou",
+                    label: "jiangyou"
                 }, {
-                    value: "盐亭县",
-                    label: "盐亭县"
+                    value: "yanting",
+                    label: "yanting"
                 }, {
-                    value: "三台县",
-                    label: "三台县"
+                    value: "santai",
+                    label: "santai"
                 }, {
-                    value: "平武县",
-                    label: "平武县"
+                    value: "pingwu",
+                    label: "pingwu"
                 }, {
-                    value: "安县",
-                    label: "安县"
+                    value: "Anxian county,",
+                    label: "Anxian county,"
                 }, {
-                    value: "梓潼县",
-                    label: "梓潼县"
+                    value: "zitong",
+                    label: "zitong"
                 }, {
-                    value: "北川羌族自治县",
-                    label: "北川羌族自治县"
+                    value: "Beichuan Qiang Autonomous County",
+                    label: "Beichuan Qiang Autonomous County"
                 }, {
-                    value: "其他",
-                    label: "其他"
+                    value: "other",
+                    label: "other"
                 }],
 
             },
             {
-                value: "广元",
-                label: "广元",
+                value: "guangyuan",
+                label: "guangyuan",
                 children: [{
-                    value: "请选择",
-                    label: "请选择"
+                    value: "Please select a",
+                    label: "Please select a"
                 }, {
-                    value: "元坝区",
-                    label: "元坝区"
+                    value: "yuanba",
+                    label: "yuanba"
                 }, {
-                    value: "朝天区",
-                    label: "朝天区"
+                    value: "The air area",
+                    label: "The air area"
                 }, {
-                    value: "青川县",
-                    label: "青川县"
+                    value: "qingchuan",
+                    label: "qingchuan"
                 }, {
-                    value: "旺苍县",
-                    label: "旺苍县"
+                    value: "wangcang",
+                    label: "wangcang"
                 }, {
-                    value: "剑阁县",
-                    label: "剑阁县"
+                    value: "jiange",
+                    label: "jiange"
                 }, {
-                    value: "苍溪县",
-                    label: "苍溪县"
+                    value: "cangxi",
+                    label: "cangxi"
                 }, {
-                    value: "市中区",
-                    label: "市中区"
+                    value: "Mark out",
+                    label: "Mark out"
                 }, {
-                    value: "其他",
-                    label: "其他"
+                    value: "other",
+                    label: "other"
                 }],
 
             },
             {
-                value: "遂宁",
-                label: "遂宁",
+                value: "suining",
+                label: "suining",
                 children: [{
-                    value: "请选择",
-                    label: "请选择"
+                    value: "Please select a",
+                    label: "Please select a"
                 }, {
-                    value: "船山区",
-                    label: "船山区"
+                    value: "The ship mountains",
+                    label: "The ship mountains"
                 }, {
-                    value: "安居区",
-                    label: "安居区"
+                    value: "Anju district",
+                    label: "Anju district"
                 }, {
-                    value: "射洪县",
-                    label: "射洪县"
+                    value: "Shehong county",
+                    label: "Shehong county"
                 }, {
-                    value: "蓬溪县",
-                    label: "蓬溪县"
+                    value: "Peng creek county",
+                    label: "Peng creek county"
                 }, {
-                    value: "大英县",
-                    label: "大英县"
+                    value: "daying",
+                    label: "daying"
                 }, {
-                    value: "其他",
-                    label: "其他"
+                    value: "other",
+                    label: "other"
                 }],
 
             },
             {
-                value: "内江",
-                label: "内江",
+                value: "neijiang",
+                label: "neijiang",
                 children: [{
-                    value: "请选择",
-                    label: "请选择"
+                    value: "Please select a",
+                    label: "Please select a"
                 }, {
-                    value: "市中区",
-                    label: "市中区"
+                    value: "Mark out",
+                    label: "Mark out"
                 }, {
-                    value: "东兴区",
-                    label: "东兴区"
+                    value: "Large area",
+                    label: "Large area"
                 }, {
-                    value: "资中县",
-                    label: "资中县"
+                    value: "zizhong",
+                    label: "zizhong"
                 }, {
-                    value: "隆昌县",
-                    label: "隆昌县"
+                    value: "longchang",
+                    label: "longchang"
                 }, {
-                    value: "威远县",
-                    label: "威远县"
+                    value: "weiyuan",
+                    label: "weiyuan"
                 }, {
-                    value: "其他",
-                    label: "其他"
+                    value: "other",
+                    label: "other"
                 }],
 
             },
             {
-                value: "乐山",
-                label: "乐山",
+                value: "leshan",
+                label: "leshan",
                 children: [{
-                    value: "请选择",
-                    label: "请选择"
+                    value: "Please select a",
+                    label: "Please select a"
                 }, {
-                    value: "市中区",
-                    label: "市中区"
+                    value: "Mark out",
+                    label: "Mark out"
                 }, {
-                    value: "五通桥区",
-                    label: "五通桥区"
+                    value: "Wutongqiao district",
+                    label: "Wutongqiao district"
                 }, {
-                    value: "沙湾区",
-                    label: "沙湾区"
+                    value: "The fandian",
+                    label: "The fandian"
                 }, {
-                    value: "金口河区",
-                    label: "金口河区"
+                    value: "jinkouhe",
+                    label: "jinkouhe"
                 }, {
-                    value: "峨眉山市",
-                    label: "峨眉山市"
+                    value: "Emei city",
+                    label: "Emei city"
                 }, {
-                    value: "夹江县",
-                    label: "夹江县"
+                    value: "jiajiang",
+                    label: "jiajiang"
                 }, {
-                    value: "井研县",
-                    label: "井研县"
+                    value: "Jingyan county during the",
+                    label: "Jingyan county during the"
                 }, {
-                    value: "犍为县",
-                    label: "犍为县"
+                    value: "qianwei",
+                    label: "qianwei"
                 }, {
-                    value: "沐川县",
-                    label: "沐川县"
+                    value: "Muchuan county",
+                    label: "Muchuan county"
                 }, {
-                    value: "马边彝族自治县",
-                    label: "马边彝族自治县"
+                    value: "Mabian Yi Autonomous County",
+                    label: "Mabian Yi Autonomous County"
                 }, {
-                    value: "峨边彝族自治县",
-                    label: "峨边彝族自治县"
+                    value: "Ebian Yi Autonomous County",
+                    label: "Ebian Yi Autonomous County"
                 }, {
-                    value: "其他",
-                    label: "其他"
+                    value: "other",
+                    label: "other"
                 }],
 
             },
             {
-                value: "南充",
-                label: "南充",
+                value: "nanchong",
+                label: "nanchong",
                 children: [{
-                    value: "请选择",
-                    label: "请选择"
+                    value: "Please select a",
+                    label: "Please select a"
                 }, {
-                    value: "顺庆区",
-                    label: "顺庆区"
+                    value: "Shunqing district",
+                    label: "Shunqing district"
                 }, {
-                    value: "高坪区",
-                    label: "高坪区"
+                    value: "Takatsubo area",
+                    label: "Takatsubo area"
                 }, {
-                    value: "嘉陵区",
-                    label: "嘉陵区"
+                    value: "Jialing district",
+                    label: "Jialing district"
                 }, {
-                    value: "阆中市",
-                    label: "阆中市"
+                    value: "langzhong",
+                    label: "langzhong"
                 }, {
-                    value: "营山县",
-                    label: "营山县"
+                    value: "YingShan County",
+                    label: "YingShan County"
                 }, {
-                    value: "蓬安县",
-                    label: "蓬安县"
+                    value: "Peng anxian county,",
+                    label: "Peng anxian county,"
                 }, {
-                    value: "仪陇县",
-                    label: "仪陇县"
+                    value: "Those days",
+                    label: "Those days"
                 }, {
-                    value: "南部县",
-                    label: "南部县"
+                    value: "Nanbu county",
+                    label: "Nanbu county"
                 }, {
-                    value: "西充县",
-                    label: "西充县"
+                    value: "Xichong county",
+                    label: "Xichong county"
                 }, {
-                    value: "其他",
-                    label: "其他"
+                    value: "other",
+                    label: "other"
                 }],
 
             },
             {
-                value: "眉山",
-                label: "眉山",
+                value: "meishan",
+                label: "meishan",
                 children: [{
-                    value: "请选择",
-                    label: "请选择"
+                    value: "Please select a",
+                    label: "Please select a"
                 }, {
-                    value: "东坡区",
-                    label: "东坡区"
+                    value: "Dongpo area",
+                    label: "Dongpo area"
                 }, {
-                    value: "仁寿县",
-                    label: "仁寿县"
+                    value: "renshou",
+                    label: "renshou"
                 }, {
-                    value: "彭山县",
-                    label: "彭山县"
+                    value: "land",
+                    label: "land"
                 }, {
-                    value: "洪雅县",
-                    label: "洪雅县"
+                    value: "Hoanya county",
+                    label: "Hoanya county"
                 }, {
-                    value: "丹棱县",
-                    label: "丹棱县"
+                    value: "danleng",
+                    label: "danleng"
                 }, {
-                    value: "青神县",
-                    label: "青神县"
+                    value: "Qingshen county",
+                    label: "Qingshen county"
                 }, {
-                    value: "其他",
-                    label: "其他"
+                    value: "other",
+                    label: "other"
                 }],
 
             },
             {
-                value: "宜宾",
-                label: "宜宾",
+                value: "yibin",
+                label: "yibin",
                 children: [{
-                    value: "请选择",
-                    label: "请选择"
+                    value: "Please select a",
+                    label: "Please select a"
                 }, {
-                    value: "翠屏区",
-                    label: "翠屏区"
+                    value: "Tsui ping district",
+                    label: "Tsui ping district"
                 }, {
-                    value: "宜宾县",
-                    label: "宜宾县"
+                    value: "yibin",
+                    label: "yibin"
                 }, {
-                    value: "兴文县",
-                    label: "兴文县"
+                    value: "Wenxin county",
+                    label: "Wenxin county"
                 }, {
-                    value: "南溪县",
-                    label: "南溪县"
+                    value: "Rival south county",
+                    label: "Rival south county"
                 }, {
-                    value: "珙县",
-                    label: "珙县"
+                    value: "Gong xien",
+                    label: "Gong xien"
                 }, {
-                    value: "长宁县",
-                    label: "长宁县"
+                    value: "ChangNing County",
+                    label: "ChangNing County"
                 }, {
-                    value: "高县",
-                    label: "高县"
+                    value: "High county",
+                    label: "High county"
                 }, {
-                    value: "江安县",
-                    label: "江安县"
+                    value: "Jiang, anxian county,",
+                    label: "Jiang, anxian county,"
                 }, {
-                    value: "筠连县",
-                    label: "筠连县"
+                    value: "junlian",
+                    label: "junlian"
                 }, {
-                    value: "屏山县",
-                    label: "屏山县"
+                    value: "Pingshan county",
+                    label: "Pingshan county"
                 }, {
-                    value: "其他",
-                    label: "其他"
+                    value: "other",
+                    label: "other"
                 }],
 
             },
             {
-                value: "广安",
-                label: "广安",
+                value: "cross",
+                label: "cross",
                 children: [{
-                    value: "请选择",
-                    label: "请选择"
+                    value: "Please select a",
+                    label: "Please select a"
                 }, {
-                    value: "广安区",
-                    label: "广安区"
+                    value: "Cross section",
+                    label: "Cross section"
                 }, {
-                    value: "华蓥市",
-                    label: "华蓥市"
+                    value: "huaying",
+                    label: "huaying"
                 }, {
-                    value: "岳池县",
-                    label: "岳池县"
+                    value: "YueChi county",
+                    label: "YueChi county"
                 }, {
-                    value: "邻水县",
-                    label: "邻水县"
+                    value: "linshui",
+                    label: "linshui"
                 }, {
-                    value: "武胜县",
-                    label: "武胜县"
+                    value: "Wusheng county.",
+                    label: "Wusheng county."
                 }, {
-                    value: "其他",
-                    label: "其他"
+                    value: "other",
+                    label: "other"
                 }],
 
             },
             {
-                value: "达州",
-                label: "达州",
+                value: "dazhou",
+                label: "dazhou",
                 children: [{
-                    value: "请选择",
-                    label: "请选择"
+                    value: "Please select a",
+                    label: "Please select a"
                 }, {
-                    value: "通川区",
-                    label: "通川区"
+                    value: "Tong chuan area",
+                    label: "Tong chuan area"
                 }, {
-                    value: "万源市",
-                    label: "万源市"
+                    value: "wanyuan",
+                    label: "wanyuan"
                 }, {
-                    value: "达县",
-                    label: "达县"
+                    value: "daxian",
+                    label: "daxian"
                 }, {
-                    value: "渠县",
-                    label: "渠县"
+                    value: "Qu county",
+                    label: "Qu county"
                 }, {
-                    value: "宣汉县",
-                    label: "宣汉县"
+                    value: "Xuanhan county",
+                    label: "Xuanhan county"
                 }, {
-                    value: "开江县",
-                    label: "开江县"
+                    value: "Open jiang county",
+                    label: "Open jiang county"
                 }, {
-                    value: "大竹县",
-                    label: "大竹县"
+                    value: "dazhu",
+                    label: "dazhu"
                 }, {
-                    value: "其他",
-                    label: "其他"
+                    value: "other",
+                    label: "other"
                 }],
 
             },
             {
-                value: "雅安",
-                label: "雅安",
+                value: "ya",
+                label: "ya",
                 children: [{
-                    value: "请选择",
-                    label: "请选择"
+                    value: "Please select a",
+                    label: "Please select a"
                 }, {
-                    value: "雨城区",
-                    label: "雨城区"
+                    value: "The rain city",
+                    label: "The rain city"
                 }, {
-                    value: "芦山县",
-                    label: "芦山县"
+                    value: "Forth county",
+                    label: "Forth county"
                 }, {
-                    value: "石棉县",
-                    label: "石棉县"
+                    value: "shimian",
+                    label: "shimian"
                 }, {
-                    value: "名山县",
-                    label: "名山县"
+                    value: "Mingshan county",
+                    label: "Mingshan county"
                 }, {
-                    value: "天全县",
-                    label: "天全县"
+                    value: "tianquan",
+                    label: "tianquan"
                 }, {
-                    value: "荥经县",
-                    label: "荥经县"
+                    value: "Xing by the county",
+                    label: "Xing by the county"
                 }, {
-                    value: "宝兴县",
-                    label: "宝兴县"
+                    value: "Treasure xingxian",
+                    label: "Treasure xingxian"
                 }, {
-                    value: "汉源县",
-                    label: "汉源县"
+                    value: "Hanyuan county",
+                    label: "Hanyuan county"
                 }, {
-                    value: "其他",
-                    label: "其他"
+                    value: "other",
+                    label: "other"
                 }],
 
             },
             {
-                value: "巴中",
-                label: "巴中",
+                value: "pakistan-china",
+                label: "pakistan-china",
                 children: [{
-                    value: "请选择",
-                    label: "请选择"
+                    value: "Please select a",
+                    label: "Please select a"
                 }, {
-                    value: "巴州区",
-                    label: "巴州区"
+                    value: "Bazhou area",
+                    label: "Bazhou area"
                 }, {
-                    value: "南江县",
-                    label: "南江县"
+                    value: "nanjiang",
+                    label: "nanjiang"
                 }, {
-                    value: "平昌县",
-                    label: "平昌县"
+                    value: "Pingchang county",
+                    label: "Pingchang county"
                 }, {
-                    value: "通江县",
-                    label: "通江县"
+                    value: "tongjiang",
+                    label: "tongjiang"
                 }, {
-                    value: "其他",
-                    label: "其他"
+                    value: "other",
+                    label: "other"
                 }],
 
             },
             {
-                value: "资阳",
-                label: "资阳",
+                value: "great",
+                label: "great",
                 children: [{
-                    value: "请选择",
-                    label: "请选择"
+                    value: "Please select a",
+                    label: "Please select a"
                 }, {
-                    value: "雁江区",
-                    label: "雁江区"
+                    value: "Wild goose jiang district",
+                    label: "Wild goose jiang district"
                 }, {
-                    value: "简阳市",
-                    label: "简阳市"
+                    value: "jianyang",
+                    label: "jianyang"
                 }, {
-                    value: "安岳县",
-                    label: "安岳县"
+                    value: "Anyue county",
+                    label: "Anyue county"
                 }, {
-                    value: "乐至县",
-                    label: "乐至县"
+                    value: "Joy to the county",
+                    label: "Joy to the county"
                 }, {
-                    value: "其他",
-                    label: "其他"
+                    value: "other",
+                    label: "other"
                 }],
 
             },
             {
-                value: "阿坝藏族羌族自治州",
-                label: "阿坝藏族羌族自治州",
+                value: "Aba Tibetan and Qiang Autonomous Prefecture",
+                label: "Aba Tibetan and Qiang Autonomous Prefecture",
                 children: [{
-                    value: "请选择",
-                    label: "请选择"
+                    value: "Please select a",
+                    label: "Please select a"
                 }, {
-                    value: "马尔康县",
-                    label: "马尔康县"
+                    value: "Barkam county",
+                    label: "Barkam county"
                 }, {
-                    value: "九寨沟县",
-                    label: "九寨沟县"
+                    value: "Jiuzhaigou county",
+                    label: "Jiuzhaigou county"
                 }, {
-                    value: "红原县",
-                    label: "红原县"
+                    value: "Holocene county",
+                    label: "Holocene county"
                 }, {
-                    value: "汶川县",
-                    label: "汶川县"
+                    value: "Wenchuan county,",
+                    label: "Wenchuan county,"
                 }, {
-                    value: "阿坝县",
-                    label: "阿坝县"
+                    value: "Aba county,",
+                    label: "Aba county,"
                 }, {
-                    value: "理县",
-                    label: "理县"
+                    value: "wenzhou",
+                    label: "wenzhou"
                 }, {
-                    value: "若尔盖县",
-                    label: "若尔盖县"
+                    value: "Ruoergai county",
+                    label: "Ruoergai county"
                 }, {
-                    value: "小金县",
-                    label: "小金县"
+                    value: "xiaojin",
+                    label: "xiaojin"
                 }, {
-                    value: "黑水县",
-                    label: "黑水县"
+                    value: "Heishui county",
+                    label: "Heishui county"
                 }, {
-                    value: "金川县",
-                    label: "金川县"
+                    value: "Jinchuan county",
+                    label: "Jinchuan county"
                 }, {
-                    value: "松潘县",
-                    label: "松潘县"
+                    value: "finest",
+                    label: "finest"
                 }, {
-                    value: "壤塘县",
-                    label: "壤塘县"
+                    value: "The soil pond county",
+                    label: "The soil pond county"
                 }, {
-                    value: "茂县",
-                    label: "茂县"
+                    value: "Maoxian county",
+                    label: "Maoxian county"
                 }, {
-                    value: "其他",
-                    label: "其他"
+                    value: "other",
+                    label: "other"
                 }],
 
             },
             {
-                value: "甘孜藏族自治州",
-                label: "甘孜藏族自治州",
+                value: "Ganzi Tibetan Autonomous Prefecture",
+                label: "Ganzi Tibetan Autonomous Prefecture",
                 children: [{
-                    value: "请选择",
-                    label: "请选择"
+                    value: "Please select a",
+                    label: "Please select a"
                 }, {
-                    value: "康定县",
-                    label: "康定县"
+                    value: "kangding",
+                    label: "kangding"
                 }, {
-                    value: "丹巴县",
-                    label: "丹巴县"
+                    value: "Dan yuba",
+                    label: "Dan yuba"
                 }, {
-                    value: "炉霍县",
-                    label: "炉霍县"
+                    value: "The furnace Huo County",
+                    label: "The furnace Huo County"
                 }, {
-                    value: "九龙县",
-                    label: "九龙县"
+                    value: "Jiulong county",
+                    label: "Jiulong county"
                 }, {
-                    value: "甘孜县",
-                    label: "甘孜县"
+                    value: "Ganzi county",
+                    label: "Ganzi county"
                 }, {
-                    value: "雅江县",
-                    label: "雅江县"
+                    value: "Yajiang county",
+                    label: "Yajiang county"
                 }, {
-                    value: "新龙县",
-                    label: "新龙县"
+                    value: "Neosaurus county",
+                    label: "Neosaurus county"
                 }, {
-                    value: "道孚县",
-                    label: "道孚县"
+                    value: "Daofu county",
+                    label: "Daofu county"
                 }, {
-                    value: "白玉县",
-                    label: "白玉县"
+                    value: "Baiyu county",
+                    label: "Baiyu county"
                 }, {
-                    value: "理塘县",
-                    label: "理塘县"
+                    value: "Litang county",
+                    label: "Litang county"
                 }, {
-                    value: "德格县",
-                    label: "德格县"
+                    value: "Dege county",
+                    label: "Dege county"
                 }, {
-                    value: "乡城县",
-                    label: "乡城县"
+                    value: "County township city",
+                    label: "County township city"
                 }, {
-                    value: "石渠县",
-                    label: "石渠县"
+                    value: "Shi Qu county",
+                    label: "Shi Qu county"
                 }, {
-                    value: "稻城县",
-                    label: "稻城县"
+                    value: "Daocheng county",
+                    label: "Daocheng county"
                 }, {
-                    value: "色达县",
-                    label: "色达县"
+                    value: "Color daxian",
+                    label: "Color daxian"
                 }, {
-                    value: "巴塘县",
-                    label: "巴塘县"
+                    value: "Their county",
+                    label: "Their county"
                 }, {
-                    value: "泸定县",
-                    label: "泸定县"
+                    value: "luding",
+                    label: "luding"
                 }, {
-                    value: "得荣县",
-                    label: "得荣县"
+                    value: "Have to rong county",
+                    label: "Have to rong county"
                 }, {
-                    value: "其他",
-                    label: "其他"
+                    value: "other",
+                    label: "other"
                 }],
 
             },
             {
-                value: "凉山彝族自治州",
-                label: "凉山彝族自治州",
+                value: "Liangshan Yi Autonomous Prefecture",
+                label: "Liangshan Yi Autonomous Prefecture",
                 children: [{
-                    value: "请选择",
-                    label: "请选择"
+                    value: "Please select a",
+                    label: "Please select a"
                 }, {
-                    value: "西昌市",
-                    label: "西昌市"
+                    value: "xichang",
+                    label: "xichang"
                 }, {
-                    value: "美姑县",
-                    label: "美姑县"
+                    value: "meigu",
+                    label: "meigu"
                 }, {
-                    value: "昭觉县",
-                    label: "昭觉县"
+                    value: "da",
+                    label: "da"
                 }, {
-                    value: "金阳县",
-                    label: "金阳县"
+                    value: "jinyang",
+                    label: "jinyang"
                 }, {
-                    value: "甘洛县",
-                    label: "甘洛县"
+                    value: "Ganluo county",
+                    label: "Ganluo county"
                 }, {
-                    value: "布拖县",
-                    label: "布拖县"
+                    value: "Jue county",
+                    label: "Jue county"
                 }, {
-                    value: "雷波县",
-                    label: "雷波县"
+                    value: "leibo",
+                    label: "leibo"
                 }, {
-                    value: "普格县",
-                    label: "普格县"
+                    value: "Purg county",
+                    label: "Purg county"
                 }, {
-                    value: "宁南县",
-                    label: "宁南县"
+                    value: "ningnan",
+                    label: "ningnan"
                 }, {
-                    value: "喜德县",
-                    label: "喜德县"
+                    value: "xide",
+                    label: "xide"
                 }, {
-                    value: "会东县",
-                    label: "会东县"
+                    value: "Will the east county,",
+                    label: "Will the east county,"
                 }, {
-                    value: "越西县",
-                    label: "越西县"
+                    value: "YueXi County",
+                    label: "YueXi County"
                 }, {
-                    value: "会理县",
-                    label: "会理县"
+                    value: "The view",
+                    label: "The view"
                 }, {
-                    value: "盐源县",
-                    label: "盐源县"
+                    value: "yanyuan",
+                    label: "yanyuan"
                 }, {
-                    value: "德昌县",
-                    label: "德昌县"
+                    value: "Dechang county",
+                    label: "Dechang county"
                 }, {
-                    value: "冕宁县",
-                    label: "冕宁县"
+                    value: "Mianning county",
+                    label: "Mianning county"
                 }, {
-                    value: "木里藏族自治县",
-                    label: "木里藏族自治县"
+                    value: "Muli Tibetan Autonomous County",
+                    label: "Muli Tibetan Autonomous County"
                 }, {
-                    value: "其他",
-                    label: "其他"
+                    value: "other",
+                    label: "other"
                 }],
 
             },
             {
-                value: "其他",
-                label: "其他"
+                value: "other",
+                label: "other"
             }
         ],
 
     },
     {
-        value: "陕西",
-        label: "陕西",
+        value: "shaanxi",
+        label: "shaanxi",
         children: [{
-                value: "请选择",
-                label: "请选择"
+                value: "Please select a",
+                label: "Please select a"
             },
             {
-                value: "西安",
-                label: "西安",
+                value: "Xi 'an",
+                label: "Xi 'an",
                 children: [{
-                    value: "请选择",
-                    label: "请选择"
+                    value: "Please select a",
+                    label: "Please select a"
                 }, {
-                    value: "莲湖区",
-                    label: "莲湖区"
+                    value: "Lotus lake area",
+                    label: "Lotus lake area"
                 }, {
-                    value: "新城区",
-                    label: "新城区"
+                    value: "New district",
+                    label: "New district"
                 }, {
-                    value: "碑林区",
-                    label: "碑林区"
+                    value: "beilin",
+                    label: "beilin"
                 }, {
-                    value: "雁塔区",
-                    label: "雁塔区"
+                    value: "The yanta district",
+                    label: "The yanta district"
                 }, {
-                    value: "灞桥区",
-                    label: "灞桥区"
+                    value: "baqiao",
+                    label: "baqiao"
                 }, {
-                    value: "未央区",
-                    label: "未央区"
+                    value: "Not ended area",
+                    label: "Not ended area"
                 }, {
-                    value: "阎良区",
-                    label: "阎良区"
+                    value: "yanliang",
+                    label: "yanliang"
                 }, {
-                    value: "临潼区",
-                    label: "临潼区"
+                    value: "Have established",
+                    label: "Have established"
                 }, {
-                    value: "长安区",
-                    label: "长安区"
+                    value: "Changan area",
+                    label: "Changan area"
                 }, {
-                    value: "高陵县",
-                    label: "高陵县"
+                    value: "High,",
+                    label: "High,"
                 }, {
-                    value: "蓝田县",
-                    label: "蓝田县"
+                    value: "Lantian county",
+                    label: "Lantian county"
                 }, {
-                    value: "户县",
-                    label: "户县"
+                    value: "Being one",
+                    label: "Being one"
                 }, {
-                    value: "周至县",
-                    label: "周至县"
+                    value: "Zhouzhi county",
+                    label: "Zhouzhi county"
                 }, {
-                    value: "其他",
-                    label: "其他"
+                    value: "other",
+                    label: "other"
                 }],
 
             },
             {
-                value: "铜川",
-                label: "铜川",
+                value: "tongchuan",
+                label: "tongchuan",
                 children: [{
-                    value: "请选择",
-                    label: "请选择"
+                    value: "Please select a",
+                    label: "Please select a"
                 }, {
-                    value: "耀州区",
-                    label: "耀州区"
+                    value: "Yao obviously",
+                    label: "Yao obviously"
                 }, {
-                    value: "王益区",
-                    label: "王益区"
+                    value: "Mr Wang area",
+                    label: "Mr Wang area"
                 }, {
-                    value: "印台区",
-                    label: "印台区"
+                    value: "Ink pad area",
+                    label: "Ink pad area"
                 }, {
-                    value: "宜君县",
-                    label: "宜君县"
+                    value: "Appropriate jun county",
+                    label: "Appropriate jun county"
                 }, {
-                    value: "其他",
-                    label: "其他"
+                    value: "other",
+                    label: "other"
                 }],
 
             },
             {
-                value: "宝鸡",
-                label: "宝鸡",
+                value: "baoji",
+                label: "baoji",
                 children: [{
-                    value: "请选择",
-                    label: "请选择"
+                    value: "Please select a",
+                    label: "Please select a"
                 }, {
-                    value: "渭滨区",
-                    label: "渭滨区"
+                    value: "Weibin district",
+                    label: "Weibin district"
                 }, {
-                    value: "金台区",
-                    label: "金台区"
+                    value: "Jin tai area",
+                    label: "Jin tai area"
                 }, {
-                    value: "陈仓区",
-                    label: "陈仓区"
+                    value: "Their area",
+                    label: "Their area"
                 }, {
-                    value: "岐山县",
-                    label: "岐山县"
+                    value: "Qishan county",
+                    label: "Qishan county"
                 }, {
-                    value: "凤翔县",
-                    label: "凤翔县"
+                    value: "changqing",
+                    label: "changqing"
                 }, {
-                    value: "陇县",
-                    label: "陇县"
+                    value: "The regionalization",
+                    label: "The regionalization"
                 }, {
-                    value: "太白县",
-                    label: "太白县"
+                    value: "Taibai county",
+                    label: "Taibai county"
                 }, {
-                    value: "麟游县",
-                    label: "麟游县"
+                    value: "linyou",
+                    label: "linyou"
                 }, {
-                    value: "扶风县",
-                    label: "扶风县"
+                    value: "county",
+                    label: "county"
                 }, {
-                    value: "千阳县",
-                    label: "千阳县"
+                    value: "Qianyang county",
+                    label: "Qianyang county"
                 }, {
-                    value: "眉县",
-                    label: "眉县"
+                    value: "this",
+                    label: "this"
                 }, {
-                    value: "凤县",
-                    label: "凤县"
+                    value: "Fengxian county",
+                    label: "Fengxian county"
                 }, {
-                    value: "其他",
-                    label: "其他"
+                    value: "other",
+                    label: "other"
                 }],
 
             },
             {
-                value: "咸阳",
-                label: "咸阳",
+                value: "xianyang",
+                label: "xianyang",
                 children: [{
-                    value: "请选择",
-                    label: "请选择"
+                    value: "Please select a",
+                    label: "Please select a"
                 }, {
-                    value: "秦都区",
-                    label: "秦都区"
+                    value: "qindu",
+                    label: "qindu"
                 }, {
-                    value: "渭城区",
-                    label: "渭城区"
+                    value: "Wei city",
+                    label: "Wei city"
                 }, {
-                    value: "杨陵区",
-                    label: "杨陵区"
+                    value: "Yang land",
+                    label: "Yang land"
                 }, {
-                    value: "兴平市",
-                    label: "兴平市"
+                    value: "xingping",
+                    label: "xingping"
                 }, {
-                    value: "礼泉县",
-                    label: "礼泉县"
+                    value: "liquan",
+                    label: "liquan"
                 }, {
-                    value: "泾阳县",
-                    label: "泾阳县"
+                    value: "Jingyang county",
+                    label: "Jingyang county"
                 }, {
-                    value: "永寿县",
-                    label: "永寿县"
+                    value: "yongshou",
+                    label: "yongshou"
                 }, {
-                    value: "三原县",
-                    label: "三原县"
+                    value: "Sanyuan county",
+                    label: "Sanyuan county"
                 }, {
-                    value: "彬州市",
-                    label: "彬州市"
+                    value: "His city",
+                    label: "His city"
                 }, {
-                    value: "旬邑县",
-                    label: "旬邑县"
+                    value: "xunyi",
+                    label: "xunyi"
                 }, {
-                    value: "长武县",
-                    label: "长武县"
+                    value: "changwu",
+                    label: "changwu"
                 }, {
-                    value: "乾县",
-                    label: "乾县"
+                    value: "Dry county",
+                    label: "Dry county"
                 }, {
-                    value: "武功县",
-                    label: "武功县"
+                    value: "Wu gong county",
+                    label: "Wu gong county"
                 }, {
-                    value: "淳化县",
-                    label: "淳化县"
+                    value: "Chunhua county",
+                    label: "Chunhua county"
                 }, {
-                    value: "其他",
-                    label: "其他"
+                    value: "other",
+                    label: "other"
                 }],
 
             },
             {
-                value: "渭南",
-                label: "渭南",
+                value: "weinan",
+                label: "weinan",
                 children: [{
-                    value: "请选择",
-                    label: "请选择"
+                    value: "Please select a",
+                    label: "Please select a"
                 }, {
-                    value: "临渭区",
-                    label: "临渭区"
+                    value: "linwei",
+                    label: "linwei"
                 }, {
-                    value: "韩城市",
-                    label: "韩城市"
+                    value: "Korean city",
+                    label: "Korean city"
                 }, {
-                    value: "华阴市",
-                    label: "华阴市"
+                    value: "Hua hin,",
+                    label: "Hua hin,"
                 }, {
-                    value: "蒲城县",
-                    label: "蒲城县"
+                    value: "Pucheng county",
+                    label: "Pucheng county"
                 }, {
-                    value: "潼关县",
-                    label: "潼关县"
+                    value: "Tongguan county",
+                    label: "Tongguan county"
                 }, {
-                    value: "白水县",
-                    label: "白水县"
+                    value: "Baishui county",
+                    label: "Baishui county"
                 }, {
-                    value: "澄城县",
-                    label: "澄城县"
+                    value: "chengcheng",
+                    label: "chengcheng"
                 }, {
-                    value: "华县",
-                    label: "华县"
+                    value: "county",
+                    label: "county"
                 }, {
-                    value: "合阳县",
-                    label: "合阳县"
+                    value: "heyang",
+                    label: "heyang"
                 }, {
-                    value: "富平县",
-                    label: "富平县"
+                    value: "fuping",
+                    label: "fuping"
                 }, {
-                    value: "大荔县",
-                    label: "大荔县"
+                    value: "Dali county",
+                    label: "Dali county"
                 }, {
-                    value: "其他",
-                    label: "其他"
+                    value: "other",
+                    label: "other"
                 }],
 
             },
             {
-                value: "延安",
-                label: "延安",
+                value: "Yan'an",
+                label: "Yan'an",
                 children: [{
-                    value: "请选择",
-                    label: "请选择"
+                    value: "Please select a",
+                    label: "Please select a"
                 }, {
-                    value: "宝塔区",
-                    label: "宝塔区"
+                    value: "Baota district",
+                    label: "Baota district"
                 }, {
-                    value: "安塞县",
-                    label: "安塞县"
+                    value: "The objectives of",
+                    label: "The objectives of"
                 }, {
-                    value: "洛川县",
-                    label: "洛川县"
+                    value: "luochuan",
+                    label: "luochuan"
                 }, {
-                    value: "子长县",
-                    label: "子长县"
+                    value: "Zichang county",
+                    label: "Zichang county"
                 }, {
-                    value: "黄陵县",
-                    label: "黄陵县"
+                    value: "huangling",
+                    label: "huangling"
                 }, {
-                    value: "延川县",
-                    label: "延川县"
+                    value: "yanchuan",
+                    label: "yanchuan"
                 }, {
-                    value: "富县",
-                    label: "富县"
+                    value: "Rich county",
+                    label: "Rich county"
                 }, {
-                    value: "延长县",
-                    label: "延长县"
+                    value: "yanchang",
+                    label: "yanchang"
                 }, {
-                    value: "甘泉县",
-                    label: "甘泉县"
+                    value: "ganquan",
+                    label: "ganquan"
                 }, {
-                    value: "宜川县",
-                    label: "宜川县"
+                    value: "YiChuan county",
+                    label: "YiChuan county"
                 }, {
-                    value: "志丹县",
-                    label: "志丹县"
+                    value: "zhidan",
+                    label: "zhidan"
                 }, {
-                    value: "黄龙县",
-                    label: "黄龙县"
+                    value: "Huanglong county",
+                    label: "Huanglong county"
                 }, {
-                    value: "吴起县",
-                    label: "吴起县"
+                    value: "The wuqi county",
+                    label: "The wuqi county"
                 }, {
-                    value: "其他",
-                    label: "其他"
+                    value: "other",
+                    label: "other"
                 }],
 
             },
             {
-                value: "汉中",
-                label: "汉中",
+                value: "Hanzhong city",
+                label: "Hanzhong city",
                 children: [{
-                    value: "请选择",
-                    label: "请选择"
+                    value: "Please select a",
+                    label: "Please select a"
                 }, {
-                    value: "汉台区",
-                    label: "汉台区"
+                    value: "Han area",
+                    label: "Han area"
                 }, {
-                    value: "留坝县",
-                    label: "留坝县"
+                    value: "Leave a dam county",
+                    label: "Leave a dam county"
                 }, {
-                    value: "镇巴县",
-                    label: "镇巴县"
+                    value: "zhenba",
+                    label: "zhenba"
                 }, {
-                    value: "城固县",
-                    label: "城固县"
+                    value: "Some towns",
+                    label: "Some towns"
                 }, {
-                    value: "南郑县",
-                    label: "南郑县"
+                    value: "The house",
+                    label: "The house"
                 }, {
-                    value: "洋县",
-                    label: "洋县"
+                    value: "New York county",
+                    label: "New York county"
                 }, {
-                    value: "宁强县",
-                    label: "宁强县"
+                    value: "NingQiang county",
+                    label: "NingQiang county"
                 }, {
-                    value: "佛坪县",
-                    label: "佛坪县"
+                    value: "Foping county",
+                    label: "Foping county"
                 }, {
-                    value: "勉县",
-                    label: "勉县"
+                    value: "Mian county",
+                    label: "Mian county"
                 }, {
-                    value: "西乡县",
-                    label: "西乡县"
+                    value: "Xixiang county",
+                    label: "Xixiang county"
                 }, {
-                    value: "略阳县",
-                    label: "略阳县"
+                    value: "Lueyang county",
+                    label: "Lueyang county"
                 }, {
-                    value: "其他",
-                    label: "其他"
+                    value: "other",
+                    label: "other"
                 }],
 
             },
             {
-                value: "榆林",
-                label: "榆林",
+                value: "Yulin.",
+                label: "Yulin.",
                 children: [{
-                    value: "请选择",
-                    label: "请选择"
+                    value: "Please select a",
+                    label: "Please select a"
                 }, {
-                    value: "榆阳区",
-                    label: "榆阳区"
+                    value: "Yu Yang district",
+                    label: "Yu Yang district"
                 }, {
-                    value: "清涧县",
-                    label: "清涧县"
+                    value: "Qingjian county",
+                    label: "Qingjian county"
                 }, {
-                    value: "绥德县",
-                    label: "绥德县"
+                    value: "suide",
+                    label: "suide"
                 }, {
-                    value: "神木县",
-                    label: "神木县"
+                    value: "Shenmu county",
+                    label: "Shenmu county"
                 }, {
-                    value: "佳县",
-                    label: "佳县"
+                    value: "jia",
+                    label: "jia"
                 }, {
-                    value: "府谷县",
-                    label: "府谷县"
+                    value: "Fugu county",
+                    label: "Fugu county"
                 }, {
-                    value: "子洲县",
-                    label: "子洲县"
+                    value: "Sub continent county",
+                    label: "Sub continent county"
                 }, {
-                    value: "靖边县",
-                    label: "靖边县"
+                    value: "jingbian",
+                    label: "jingbian"
                 }, {
-                    value: "横山县",
-                    label: "横山县"
+                    value: "Hengshan county were taken",
+                    label: "Hengshan county were taken"
                 }, {
-                    value: "米脂县",
-                    label: "米脂县"
+                    value: "mizhi",
+                    label: "mizhi"
                 }, {
-                    value: "吴堡县",
-                    label: "吴堡县"
+                    value: "Wu fort county",
+                    label: "Wu fort county"
                 }, {
-                    value: "定边县",
-                    label: "定边县"
+                    value: "Dingbian county",
+                    label: "Dingbian county"
                 }, {
-                    value: "其他",
-                    label: "其他"
+                    value: "other",
+                    label: "other"
                 }],
 
             },
             {
-                value: "安康",
-                label: "安康",
+                value: "ankang",
+                label: "ankang",
                 children: [{
-                    value: "请选择",
-                    label: "请选择"
+                    value: "Please select a",
+                    label: "Please select a"
                 }, {
-                    value: "汉滨区",
-                    label: "汉滨区"
+                    value: "Han marina district",
+                    label: "Han marina district"
                 }, {
-                    value: "紫阳县",
-                    label: "紫阳县"
+                    value: "Ziyang county",
+                    label: "Ziyang county"
                 }, {
-                    value: "岚皋县",
-                    label: "岚皋县"
+                    value: "langao",
+                    label: "langao"
                 }, {
-                    value: "旬阳县",
-                    label: "旬阳县"
+                    value: "Xunyang county",
+                    label: "Xunyang county"
                 }, {
-                    value: "镇坪县",
-                    label: "镇坪县"
+                    value: "Zhenping county",
+                    label: "Zhenping county"
                 }, {
-                    value: "平利县",
-                    label: "平利县"
+                    value: "pingli",
+                    label: "pingli"
                 }, {
-                    value: "石泉县",
-                    label: "石泉县"
+                    value: "shiquan",
+                    label: "shiquan"
                 }, {
-                    value: "宁陕县",
-                    label: "宁陕县"
+                    value: "NingShan county",
+                    label: "NingShan county"
                 }, {
-                    value: "白河县",
-                    label: "白河县"
+                    value: "Baihe county",
+                    label: "Baihe county"
                 }, {
-                    value: "汉阴县",
-                    label: "汉阴县"
+                    value: "hanyin",
+                    label: "hanyin"
                 }, {
-                    value: "其他",
-                    label: "其他"
+                    value: "other",
+                    label: "other"
                 }],
 
             },
             {
-                value: "商洛",
-                label: "商洛",
+                value: "shangluo",
+                label: "shangluo",
                 children: [{
-                    value: "请选择",
-                    label: "请选择"
+                    value: "Please select a",
+                    label: "Please select a"
                 }, {
-                    value: "商州区",
-                    label: "商州区"
+                    value: "Culture area",
+                    label: "Culture area"
                 }, {
-                    value: "镇安县",
-                    label: "镇安县"
+                    value: "Zhenan county",
+                    label: "Zhenan county"
                 }, {
-                    value: "山阳县",
-                    label: "山阳县"
+                    value: "The son duong district",
+                    label: "The son duong district"
                 }, {
-                    value: "洛南县",
-                    label: "洛南县"
+                    value: "luonan",
+                    label: "luonan"
                 }, {
-                    value: "商南县",
-                    label: "商南县"
+                    value: "shangnan",
+                    label: "shangnan"
                 }, {
-                    value: "丹凤县",
-                    label: "丹凤县"
+                    value: "Danfeng county",
+                    label: "Danfeng county"
                 }, {
-                    value: "柞水县",
-                    label: "柞水县"
+                    value: "ZhaShui county",
+                    label: "ZhaShui county"
                 }, {
-                    value: "其他",
-                    label: "其他"
+                    value: "other",
+                    label: "other"
                 }],
 
             },
             {
-                value: "其他",
-                label: "其他"
+                value: "other",
+                label: "other"
             }
         ],
 
     },
     {
-        value: "河北",
-        label: "河北",
+        value: "hebei",
+        label: "hebei",
         children: [{
                 value: "",
-                label: "请选择"
+                label: "Please select a"
             },
             {
-                value: "石家庄",
-                label: "石家庄",
+                value: "shijiazhuang",
+                label: "shijiazhuang",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "长安区"
+                    label: "Changan area"
                 }, {
                     value: "",
-                    label: "桥东区"
+                    label: "qiaodong"
                 }, {
                     value: "",
-                    label: "桥西区"
+                    label: "qiaoxi"
                 }, {
                     value: "",
-                    label: "新华区"
+                    label: "Xinhua district"
                 }, {
                     value: "",
-                    label: "裕华区"
+                    label: "Yuhua district,"
                 }, {
                     value: "",
-                    label: "井陉矿区"
+                    label: "Jingxing mining area"
                 }, {
                     value: "",
-                    label: "鹿泉市"
+                    label: "Luquan city"
                 }, {
                     value: "",
-                    label: "辛集市"
+                    label: "Xinji city"
                 }, {
                     value: "",
-                    label: "藁城市"
+                    label: "gaocheng"
                 }, {
                     value: "",
-                    label: "晋州市"
+                    label: "jinju"
                 }, {
                     value: "",
-                    label: "新乐市"
+                    label: "Xinle city"
                 }, {
                     value: "",
-                    label: "深泽县"
+                    label: "shenze"
                 }, {
                     value: "",
-                    label: "无极县"
+                    label: "Wuji county"
                 }, {
                     value: "",
-                    label: "赵县"
+                    label: "Zhao country"
                 }, {
                     value: "",
-                    label: "灵寿县"
+                    label: "lingshou"
                 }, {
                     value: "",
-                    label: "高邑县"
+                    label: "gaoyi"
                 }, {
                     value: "",
-                    label: "元氏县"
+                    label: "Yuanshi county"
                 }, {
                     value: "",
-                    label: "赞皇县"
+                    label: "zanhuang"
                 }, {
                     value: "",
-                    label: "平山县"
+                    label: "Ping shan county"
                 }, {
                     value: "",
-                    label: "井陉县"
+                    label: "Jingxing county"
                 }, {
                     value: "",
-                    label: "栾城县"
+                    label: "Luancheng county"
                 }, {
                     value: "",
-                    label: "正定县"
+                    label: "zhengding"
                 }, {
                     value: "",
-                    label: "行唐县"
+                    label: "Xingtang county"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
-                value: "唐山",
-                label: "唐山",
+                value: "tangshan",
+                label: "tangshan",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "路北区"
+                    label: "Lubei district"
                 }, {
                     value: "",
-                    label: "路南区"
+                    label: "Lunan district"
                 }, {
                     value: "",
-                    label: "古冶区"
+                    label: "Guye district"
                 }, {
                     value: "",
-                    label: "开平区"
+                    label: "Kaiping district"
                 }, {
                     value: "",
-                    label: "丰南区"
+                    label: "Abundant south area"
                 }, {
                     value: "",
-                    label: "丰润区"
+                    label: "Rich area"
                 }, {
                     value: "",
-                    label: "遵化市"
+                    label: "zunhua"
                 }, {
                     value: "",
-                    label: "迁安市"
+                    label: "Qian 'an"
                 }, {
                     value: "",
-                    label: "迁西县"
+                    label: "Qianxi map"
                 }, {
                     value: "",
-                    label: "滦南县"
+                    label: "luannan"
                 }, {
                     value: "",
-                    label: "玉田县"
+                    label: "Yutian county"
                 }, {
                     value: "",
-                    label: "唐海县"
+                    label: "Tanghai county"
                 }, {
                     value: "",
-                    label: "乐亭县"
+                    label: "Laoting county"
                 }, {
                     value: "",
-                    label: "滦县"
+                    label: "Luan county"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
-                value: "秦皇岛",
-                label: "秦皇岛",
+                value: "qinhuangdao",
+                label: "qinhuangdao",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "海港区"
+                    label: "Haigang district"
                 }, {
                     value: "",
-                    label: "山海关区"
+                    label: "Shanhaiguan district"
                 }, {
                     value: "",
-                    label: "北戴河区"
+                    label: "beidaihe"
                 }, {
                     value: "",
-                    label: "昌黎县"
+                    label: "Our caravan left changli county"
                 }, {
                     value: "",
-                    label: "抚宁县"
+                    label: "funing"
                 }, {
                     value: "",
-                    label: "卢龙县"
+                    label: "lulong"
                 }, {
                     value: "",
-                    label: "青龙满族自治县"
+                    label: "Qinglong Manchu Autonomous County"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
-                value: "邯郸",
-                label: "邯郸",
+                value: "handan",
+                label: "handan",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "邯山区"
+                    label: "Hanshan district"
                 }, {
                     value: "",
-                    label: "丛台区"
+                    label: "CongTai area"
                 }, {
                     value: "",
-                    label: "复兴区"
+                    label: "Renaissance zone"
                 }, {
                     value: "",
-                    label: "峰峰矿区"
+                    label: "Fengfeng mining area"
                 }, {
                     value: "",
-                    label: "武安市"
+                    label: "wuan"
                 }, {
                     value: "",
-                    label: "邱县"
+                    label: "An official"
                 }, {
                     value: "",
-                    label: "大名县"
+                    label: "Daming county"
                 }, {
                     value: "",
-                    label: "魏县"
+                    label: "Wei country"
                 }, {
                     value: "",
-                    label: "曲周县"
+                    label: "Quzhou county"
                 }, {
                     value: "",
-                    label: "鸡泽县"
+                    label: "jize"
                 }, {
                     value: "",
-                    label: "肥乡县"
+                    label: "feixiang"
                 }, {
                     value: "",
-                    label: "广平县"
+                    label: "guangping"
                 }, {
                     value: "",
-                    label: "成安县"
+                    label: "chengan"
                 }, {
                     value: "",
-                    label: "临漳县"
+                    label: "linzhang"
                 }, {
                     value: "",
-                    label: "磁县"
+                    label: "axis"
                 }, {
                     value: "",
-                    label: "涉县"
+                    label: "She county"
                 }, {
                     value: "",
-                    label: "永年县"
+                    label: "yongnian"
                 }, {
                     value: "",
-                    label: "馆陶县"
+                    label: "guantao"
                 }, {
                     value: "",
-                    label: "邯郸县"
+                    label: "Handan county"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
-                value: "邢台",
-                label: "邢台",
+                value: "xingtai",
+                label: "xingtai",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "桥东区"
+                    label: "qiaodong"
                 }, {
                     value: "",
-                    label: "桥西区"
+                    label: "qiaoxi"
                 }, {
                     value: "",
-                    label: "南宫市"
+                    label: "nangong"
                 }, {
                     value: "",
-                    label: "沙河市"
+                    label: "City of"
                 }, {
                     value: "",
-                    label: "临城县"
+                    label: "In the city, county,"
                 }, {
                     value: "",
-                    label: "内丘县"
+                    label: "In hill county,"
                 }, {
                     value: "",
-                    label: "柏乡县"
+                    label: "baixiang"
                 }, {
                     value: "",
-                    label: "隆尧县"
+                    label: "Long yao county"
                 }, {
                     value: "",
-                    label: "任县"
+                    label: "Ren county"
                 }, {
                     value: "",
-                    label: "南和县"
+                    label: "South county"
                 }, {
                     value: "",
-                    label: "宁晋县"
+                    label: "Ningjin map"
                 }, {
                     value: "",
-                    label: "巨鹿县"
+                    label: "The stag county"
                 }, {
                     value: "",
-                    label: "新河县"
+                    label: "xinhe"
                 }, {
                     value: "",
-                    label: "广宗县"
+                    label: "Guangzong county"
                 }, {
                     value: "",
-                    label: "平乡县"
+                    label: "Pingxiang county"
                 }, {
                     value: "",
-                    label: "威县"
+                    label: "ngawi"
                 }, {
                     value: "",
-                    label: "清河县"
+                    label: "total"
                 }, {
                     value: "",
-                    label: "临西县"
+                    label: "In the west county,"
                 }, {
                     value: "",
-                    label: "邢台县"
+                    label: "Xingtai county"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
-                value: "保定",
-                label: "保定",
+                value: "baoding",
+                label: "baoding",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "新市区"
+                    label: "Urban area"
                 }, {
                     value: "",
-                    label: "北市区"
+                    label: "Beishi district"
                 }, {
                     value: "",
-                    label: "南市区"
+                    label: "Nanshi district"
                 }, {
                     value: "",
-                    label: "定州市"
+                    label: "dingzhou"
                 }, {
                     value: "",
-                    label: "涿州市"
+                    label: "zhuozhou"
                 }, {
                     value: "",
-                    label: "安国市"
+                    label: "Anguo city"
                 }, {
                     value: "",
-                    label: "高碑店市"
+                    label: "Gao beidian"
                 }, {
                     value: "",
-                    label: "易县"
+                    label: "yihsien"
                 }, {
                     value: "",
-                    label: "徐水县"
+                    label: "xushui"
                 }, {
                     value: "",
-                    label: "涞源县"
+                    label: "Laiyuan county"
                 }, {
                     value: "",
-                    label: "顺平县"
+                    label: "Shunping county"
                 }, {
                     value: "",
-                    label: "唐县"
+                    label: "volunteers"
                 }, {
                     value: "",
-                    label: "望都县"
+                    label: "Wangdu county"
                 }, {
                     value: "",
-                    label: "涞水县"
+                    label: "Laishui county"
                 }, {
                     value: "",
-                    label: "高阳县"
+                    label: "Gaoyang county"
                 }, {
                     value: "",
-                    label: "安新县"
+                    label: "Anxin county"
                 }, {
                     value: "",
-                    label: "雄县"
+                    label: "Xiong county"
                 }, {
                     value: "",
-                    label: "容城县"
+                    label: "Should the city county"
                 }, {
                     value: "",
-                    label: "蠡县"
+                    label: "Li County"
                 }, {
                     value: "",
-                    label: "曲阳县"
+                    label: "quyang"
                 }, {
                     value: "",
-                    label: "阜平县"
+                    label: "Fuping county"
                 }, {
                     value: "",
-                    label: "博野县"
+                    label: "Boye county"
                 }, {
                     value: "",
-                    label: "满城县"
+                    label: "Mancheng county"
                 }, {
                     value: "",
-                    label: "清苑县"
+                    label: "bao"
                 }, {
                     value: "",
-                    label: "定兴县"
+                    label: "dingxing"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
-                value: "张家口",
-                label: "张家口",
+                value: "zhangjiakou",
+                label: "zhangjiakou",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "桥东区"
+                    label: "qiaodong"
                 }, {
                     value: "",
-                    label: "桥西区"
+                    label: "qiaoxi"
                 }, {
                     value: "",
-                    label: "宣化区"
+                    label: "Xuanhua district,"
                 }, {
                     value: "",
-                    label: "下花园区"
+                    label: "Garden area"
                 }, {
                     value: "",
-                    label: "张北县"
+                    label: "Zhangbei county"
                 }, {
                     value: "",
-                    label: "康保县"
+                    label: "Koho county"
                 }, {
                     value: "",
-                    label: "沽源县"
+                    label: "guyuan"
                 }, {
                     value: "",
-                    label: "尚义县"
+                    label: "shangyi"
                 }, {
                     value: "",
-                    label: "蔚县"
+                    label: "Yu county"
                 }, {
                     value: "",
-                    label: "阳原县"
+                    label: "YangYuan county"
                 }, {
                     value: "",
-                    label: "怀安县"
+                    label: "huaian"
                 }, {
                     value: "",
-                    label: "万全县"
+                    label: "Wan quan"
                 }, {
                     value: "",
-                    label: "怀来县"
+                    label: "Huailai county"
                 }, {
                     value: "",
-                    label: "赤城县"
+                    label: "Chicheng county"
                 }, {
                     value: "",
-                    label: "崇礼县"
+                    label: "Chung li county"
                 }, {
                     value: "",
-                    label: "宣化县"
+                    label: "Xuanhua county"
                 }, {
                     value: "",
-                    label: "涿鹿县"
+                    label: "Zhuolu county"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
-                value: "承德",
-                label: "承德",
+                value: "chengde",
+                label: "chengde",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "双桥区"
+                    label: "Double bridge"
                 }, {
                     value: "",
-                    label: "双滦区"
+                    label: "shuangluan"
                 }, {
                     value: "",
-                    label: "鹰手营子矿区"
+                    label: "Yingyingzi mining area"
                 }, {
                     value: "",
-                    label: "兴隆县"
+                    label: "xinglong"
                 }, {
                     value: "",
-                    label: "平泉县"
+                    label: "Pingquan county"
                 }, {
                     value: "",
-                    label: "滦平县"
+                    label: "Luanping county"
                 }, {
                     value: "",
-                    label: "隆化县"
+                    label: "Longhua county"
                 }, {
                     value: "",
-                    label: "承德县"
+                    label: "Chengde county"
                 }, {
                     value: "",
-                    label: "丰宁满族自治县"
+                    label: "Fengning Manchu Autonomous County"
                 }, {
                     value: "",
-                    label: "宽城满族自治县"
+                    label: "Kuancheng Manchu Autonomous County"
                 }, {
                     value: "",
-                    label: "围场满族蒙古族自治县"
+                    label: "Weichang Manchu and Mongolian Autonomous County"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
-                value: "沧州",
-                label: "沧州",
+                value: "cangzhou",
+                label: "cangzhou",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "新华区"
+                    label: "Xinhua district"
                 }, {
                     value: "",
-                    label: "运河区"
+                    label: "Canal zone"
                 }, {
                     value: "",
-                    label: "泊头市"
+                    label: "Botou city"
                 }, {
                     value: "",
-                    label: "任丘市"
+                    label: "renqiu"
                 }, {
                     value: "",
-                    label: "黄骅市"
+                    label: "huanghua"
                 }, {
                     value: "",
-                    label: "河间市"
+                    label: "hejian"
                 }, {
                     value: "",
-                    label: "献县"
+                    label: "xian"
                 }, {
                     value: "",
-                    label: "吴桥县"
+                    label: "Wuqiao county"
                 }, {
                     value: "",
-                    label: "沧县"
+                    label: "cangxian"
                 }, {
                     value: "",
-                    label: "东光县"
+                    label: "Dongguang county"
                 }, {
                     value: "",
-                    label: "肃宁县"
+                    label: "Suning county"
                 }, {
                     value: "",
-                    label: "南皮县"
+                    label: "our"
                 }, {
                     value: "",
-                    label: "盐山县"
+                    label: "The salt mountain county"
                 }, {
                     value: "",
-                    label: "青县"
+                    label: "Qing county"
                 }, {
                     value: "",
-                    label: "海兴县"
+                    label: "Haixing county"
                 }, {
                     value: "",
-                    label: "孟村回族自治县"
+                    label: "Mengcun Hui Autonomous County"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
-                value: "廊坊",
-                label: "廊坊",
+                value: "langfang",
+                label: "langfang",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "安次区"
+                    label: "anci"
                 }, {
                     value: "",
-                    label: "广阳区"
+                    label: "Guang Yang district"
                 }, {
                     value: "",
-                    label: "霸州市"
+                    label: "bazhou"
                 }, {
                     value: "",
-                    label: "三河市"
+                    label: "sanhe"
                 }, {
                     value: "",
-                    label: "香河县"
+                    label: "xianghe"
                 }, {
                     value: "",
-                    label: "永清县"
+                    label: "yongqing"
                 }, {
                     value: "",
-                    label: "固安县"
+                    label: "The cpmpany county"
                 }, {
                     value: "",
-                    label: "文安县"
+                    label: "wenan"
                 }, {
                     value: "",
-                    label: "大城县"
+                    label: "Dacheng county"
                 }, {
                     value: "",
-                    label: "大厂回族自治县"
+                    label: "Dachang Hui Autonomous County"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
-                value: "衡水",
-                label: "衡水",
+                value: "hengshui",
+                label: "hengshui",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "桃城区"
+                    label: "Taocheng district"
                 }, {
                     value: "",
-                    label: "冀州市"
+                    label: "jizhou"
                 }, {
                     value: "",
-                    label: "深州市"
+                    label: "specialized"
                 }, {
                     value: "",
-                    label: "枣强县"
+                    label: "fushun"
                 }, {
                     value: "",
-                    label: "武邑县"
+                    label: "Wu Yi county"
                 }, {
                     value: "",
-                    label: "武强县"
+                    label: "Wuqiang county"
                 }, {
                     value: "",
-                    label: "饶阳县"
+                    label: "raoyang"
                 }, {
                     value: "",
-                    label: "安平县"
+                    label: "anpingxian"
                 }, {
                     value: "",
-                    label: "故城县"
+                    label: "City county"
                 }, {
                     value: "",
-                    label: "景县"
+                    label: "kinghsien"
                 }, {
                     value: "",
-                    label: "阜城县"
+                    label: "Fucheng county"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
-                value: "其他",
-                label: "其他"
+                value: "other",
+                label: "other"
             }
         ],
 
     },
     {
-        value: "山西",
-        label: "山西",
+        value: "shanxi",
+        label: "shanxi",
         children: [{
-                value: "请选择",
-                label: "请选择"
+                value: "Please select a",
+                label: "Please select a"
             },
             {
-                value: "太原",
-                label: "太原",
+                value: "taiyuan",
+                label: "taiyuan",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "杏花岭区"
+                    label: "xinghualing"
                 }, {
                     value: "",
-                    label: "小店区"
+                    label: "knick-knacks"
                 }, {
                     value: "",
-                    label: "迎泽区"
+                    label: "Yingze district"
                 }, {
                     value: "",
-                    label: "尖草坪区"
+                    label: "Tip the lawn area"
                 }, {
                     value: "",
-                    label: "万柏林区"
+                    label: "Wan Bailin area"
                 }, {
                     value: "",
-                    label: "晋源区"
+                    label: "In the source region"
                 }, {
                     value: "",
-                    label: "古交市"
+                    label: "Gujiao city"
                 }, {
                     value: "",
-                    label: "阳曲县"
+                    label: "YangQu county"
                 }, {
                     value: "",
-                    label: "清徐县"
+                    label: "Qingxu county"
                 }, {
                     value: "",
-                    label: "娄烦县"
+                    label: "Loufan county"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
-                value: "大同",
-                label: "大同",
+                value: "datong",
+                label: "datong",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "城区"
+                    label: "The city"
                 }, {
                     value: "",
-                    label: "矿区"
+                    label: "The mining area"
                 }, {
                     value: "",
-                    label: "南郊区"
+                    label: "had"
                 }, {
                     value: "",
-                    label: "新荣区"
+                    label: "Xinrong district"
                 }, {
                     value: "",
-                    label: "大同县"
+                    label: "Datong county"
                 }, {
                     value: "",
-                    label: "天镇县"
+                    label: "Days county town"
                 }, {
                     value: "",
-                    label: "灵丘县"
+                    label: "xuankongshi"
                 }, {
                     value: "",
-                    label: "阳高县"
+                    label: "attractions-and"
                 }, {
                     value: "",
-                    label: "左云县"
+                    label: "operation"
                 }, {
                     value: "",
-                    label: "广灵县"
+                    label: "Guang ling county"
                 }, {
                     value: "",
-                    label: "浑源县"
+                    label: "Muddy source county"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
-                value: "阳泉",
-                label: "阳泉",
+                value: "yangquan",
+                label: "yangquan",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "城区"
+                    label: "The city"
                 }, {
                     value: "",
-                    label: "矿区"
+                    label: "The mining area"
                 }, {
                     value: "",
-                    label: "郊区"
+                    label: "On the outskirts of"
                 }, {
                     value: "",
-                    label: "平定县"
+                    label: "Pingding county"
                 }, {
                     value: "",
-                    label: "盂县"
+                    label: "Yu County"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
-                value: "长治",
-                label: "长治",
+                value: "changzhi",
+                label: "changzhi",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "城区"
+                    label: "The city"
                 }, {
                     value: "",
-                    label: "郊区"
+                    label: "On the outskirts of"
                 }, {
                     value: "",
-                    label: "潞城市"
+                    label: "lucheng"
                 }, {
                     value: "",
-                    label: "长治县"
+                    label: "Changzhi county"
                 }, {
                     value: "",
-                    label: "长子县"
+                    label: "The eldest son county"
                 }, {
                     value: "",
-                    label: "平顺县"
+                    label: "pingshun"
                 }, {
                     value: "",
-                    label: "襄垣县"
+                    label: "xiangyuan"
                 }, {
                     value: "",
-                    label: "沁源县"
+                    label: "Qinyuan county"
                 }, {
                     value: "",
-                    label: "屯留县"
+                    label: "tunliu"
                 }, {
                     value: "",
-                    label: "黎城县"
+                    label: "licheng"
                 }, {
                     value: "",
-                    label: "武乡县"
+                    label: "Wuxiang county"
                 }, {
                     value: "",
-                    label: "沁县"
+                    label: "Qin county"
                 }, {
                     value: "",
-                    label: "壶关县"
+                    label: "huguan"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
-                value: "晋城",
-                label: "晋城",
+                value: "jincheng",
+                label: "jincheng",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "城区"
+                    label: "The city"
                 }, {
                     value: "",
-                    label: "高平市"
+                    label: "Gaoping city"
                 }, {
                     value: "",
-                    label: "泽州县"
+                    label: "zezhou"
                 }, {
                     value: "",
-                    label: "陵川县"
+                    label: "Scucession Alt ogether"
                 }, {
                     value: "",
-                    label: "阳城县"
+                    label: "Yangcheng county"
                 }, {
                     value: "",
-                    label: "沁水县"
+                    label: "qinshui"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
-                value: "朔州",
-                label: "朔州",
+                value: "It is mined here",
+                label: "It is mined here",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "朔城区"
+                    label: "shuocheng"
                 }, {
                     value: "",
-                    label: "平鲁区"
+                    label: "Ping lu area"
                 }, {
                     value: "",
-                    label: "山阴县"
+                    label: "In shanyin"
                 }, {
                     value: "",
-                    label: "右玉县"
+                    label: "youyu"
                 }, {
                     value: "",
-                    label: "应县"
+                    label: "during"
                 }, {
                     value: "",
-                    label: "怀仁县"
+                    label: "huairen"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
-                value: "晋中",
-                label: "晋中",
+                value: "jinzhong",
+                label: "jinzhong",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "榆次区"
+                    label: "quality"
                 }, {
                     value: "",
-                    label: "介休市"
+                    label: "Jiexiu city,"
                 }, {
                     value: "",
-                    label: "昔阳县"
+                    label: "xiyang"
                 }, {
                     value: "",
-                    label: "灵石县"
+                    label: "Lingshi county"
                 }, {
                     value: "",
-                    label: "祁县"
+                    label: "qixian"
                 }, {
                     value: "",
-                    label: "左权县"
+                    label: "zuoquan"
                 }, {
                     value: "",
-                    label: "寿阳县"
+                    label: "Thing that"
                 }, {
                     value: "",
-                    label: "太谷县"
+                    label: "Taigu County"
                 }, {
                     value: "",
-                    label: "和顺县"
+                    label: "heshun"
                 }, {
                     value: "",
-                    label: "平遥县"
+                    label: "Pingyao county"
                 }, {
                     value: "",
-                    label: "榆社县"
+                    label: "Yushe county"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
-                value: "运城",
-                label: "运城",
+                value: "yuncheng",
+                label: "yuncheng",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "盐湖区"
+                    label: "Salt lake valley"
                 }, {
                     value: "",
-                    label: "河津市"
+                    label: "hejin"
                 }, {
                     value: "",
-                    label: "永济市"
+                    label: "Yongji city"
                 }, {
                     value: "",
-                    label: "闻喜县"
+                    label: "Wenxi county"
                 }, {
                     value: "",
-                    label: "新绛县"
+                    label: ","
                 }, {
                     value: "",
-                    label: "平陆县"
+                    label: "Pinglu county"
                 }, {
                     value: "",
-                    label: "垣曲县"
+                    label: "Yuanqu county"
                 }, {
                     value: "",
-                    label: "绛县"
+                    label: "Jiangxian county"
                 }, {
                     value: "",
-                    label: "稷山县"
+                    label: "Jishan county"
                 }, {
                     value: "",
-                    label: "芮城县"
+                    label: "Ruicheng county"
                 }, {
                     value: "",
-                    label: "夏县"
+                    label: "research"
                 }, {
                     value: "",
-                    label: "万荣县"
+                    label: "Wanrong county"
                 }, {
                     value: "",
-                    label: "临猗县"
+                    label: "LinYi County"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
-                value: "忻州",
-                label: "忻州",
+                value: "xinzhou",
+                label: "xinzhou",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "忻府区"
+                    label: "XinFu area"
                 }, {
                     value: "",
-                    label: "原平市"
+                    label: "yuanping"
                 }, {
                     value: "",
-                    label: "代县"
+                    label: "Dai county"
                 }, {
                     value: "",
-                    label: "神池县"
+                    label: "ShenChi county"
                 }, {
                     value: "",
-                    label: "五寨县"
+                    label: "wuzhai"
                 }, {
                     value: "",
-                    label: "五台县"
+                    label: "sanshi"
                 }, {
                     value: "",
-                    label: "偏关县"
+                    label: "pianguan"
                 }, {
                     value: "",
-                    label: "宁武县"
+                    label: "ningwu"
                 }, {
                     value: "",
-                    label: "静乐县"
+                    label: "Jingle county"
                 }, {
                     value: "",
-                    label: "繁峙县"
+                    label: "Fanshi county"
                 }, {
                     value: "",
-                    label: "河曲县"
+                    label: "Hequ county"
                 }, {
                     value: "",
-                    label: "保德县"
+                    label: "baode"
                 }, {
                     value: "",
-                    label: "定襄县"
+                    label: "Dingxiang county"
                 }, {
                     value: "",
-                    label: "岢岚县"
+                    label: "Kelan county"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
-                value: "临汾",
-                label: "临汾",
+                value: "linfen",
+                label: "linfen",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "尧都区"
+                    label: "YaoDou area"
                 }, {
                     value: "",
-                    label: "侯马市"
+                    label: "houma"
                 }, {
                     value: "",
-                    label: "霍州市"
+                    label: "huozhou"
                 }, {
                     value: "",
-                    label: "汾西县"
+                    label: "Fenxi county"
                 }, {
                     value: "",
-                    label: "吉县"
+                    label: "Map of jixian"
                 }, {
                     value: "",
-                    label: "安泽县"
+                    label: "anze"
                 }, {
                     value: "",
-                    label: "大宁县"
+                    label: "Big zhengning county"
                 }, {
                     value: "",
-                    label: "浮山县"
+                    label: "Fushan county"
                 }, {
                     value: "",
-                    label: "古县"
+                    label: "Ancient county"
                 }, {
                     value: "",
-                    label: "隰县"
+                    label: "Xi county"
                 }, {
                     value: "",
-                    label: "襄汾县"
+                    label: "xiangfen"
                 }, {
                     value: "",
-                    label: "翼城县"
+                    label: "yicheng"
                 }, {
                     value: "",
-                    label: "永和县"
+                    label: "suburb"
                 }, {
                     value: "",
-                    label: "乡宁县"
+                    label: "xiangning"
                 }, {
                     value: "",
-                    label: "曲沃县"
+                    label: "Quwo county"
                 }, {
                     value: "",
-                    label: "洪洞县"
+                    label: "Hongdong county"
                 }, {
                     value: "",
-                    label: "蒲县"
+                    label: "Pu county"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
-                value: "吕梁",
-                label: "吕梁",
+                value: "luliang",
+                label: "luliang",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "离石区"
+                    label: "Lishi district"
                 }, {
                     value: "",
-                    label: "孝义市"
+                    label: "(xiaoyi city"
                 }, {
                     value: "",
-                    label: "汾阳市"
+                    label: "Travels the city"
                 }, {
                     value: "",
-                    label: "文水县"
+                    label: "Wenshui county"
                 }, {
                     value: "",
-                    label: "中阳县"
+                    label: "zhongyang"
                 }, {
                     value: "",
-                    label: "兴县"
+                    label: "xingxian"
                 }, {
                     value: "",
-                    label: "临县"
+                    label: "Lin County"
                 }, {
                     value: "",
-                    label: "方山县"
+                    label: "Fangshan county"
                 }, {
                     value: "",
-                    label: "柳林县"
+                    label: "Liulin,"
                 }, {
                     value: "",
-                    label: "岚县"
+                    label: "LAN county"
                 }, {
                     value: "",
-                    label: "交口县"
+                    label: "Jiaokou county"
                 }, {
                     value: "",
-                    label: "交城县"
+                    label: "Pay the city county"
                 }, {
                     value: "",
-                    label: "石楼县"
+                    label: "Stone floor county"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
-                value: "其他",
-                label: "其他"
+                value: "other",
+                label: "other"
             }
         ],
 
     },
     {
-        value: "河南",
-        label: "河南",
+        value: "henan",
+        label: "henan",
         children: [{
-                value: "请选择",
-                label: "请选择"
+                value: "Please select a",
+                label: "Please select a"
             },
             {
-                value: "郑州",
-                label: "郑州",
+                value: "zhengzhou",
+                label: "zhengzhou",
                 children: [{
-                    value: "请选择",
-                    label: "请选择"
+                    value: "Please select a",
+                    label: "Please select a"
                 }, {
-                    value: "中原区",
-                    label: "中原区"
+                    value: "Zhongyuan district",
+                    label: "Zhongyuan district"
                 }, {
-                    value: "金水区",
-                    label: "金水区"
+                    value: "Jinshui district",
+                    label: "Jinshui district"
                 }, {
-                    value: "二七区",
-                    label: "二七区"
+                    value: "Erqi district",
+                    label: "Erqi district"
                 }, {
-                    value: "管城回族区",
-                    label: "管城回族区"
+                    value: "Guancheng Minority Area",
+                    label: "Guancheng Minority Area"
                 }, {
-                    value: "上街区",
-                    label: "上街区"
+                    value: "shangjie",
+                    label: "shangjie"
                 }, {
-                    value: "惠济区",
-                    label: "惠济区"
+                    value: "HuiJi area",
+                    label: "HuiJi area"
                 }, {
-                    value: "巩义市",
-                    label: "巩义市"
+                    value: "Gongyi city",
+                    label: "Gongyi city"
                 }, {
-                    value: "新郑市",
-                    label: "新郑市"
+                    value: "xinzheng",
+                    label: "xinzheng"
                 }, {
-                    value: "新密市",
-                    label: "新密市"
+                    value: "xinmi",
+                    label: "xinmi"
                 }, {
-                    value: "登封市",
-                    label: "登封市"
+                    value: "Dengfeng city",
+                    label: "Dengfeng city"
                 }, {
-                    value: "荥阳市",
-                    label: "荥阳市"
+                    value: "xingyang",
+                    label: "xingyang"
                 }, {
-                    value: "中牟县",
-                    label: "中牟县"
+                    value: "Zhongmou county",
+                    label: "Zhongmou county"
                 }, {
-                    value: "其他",
-                    label: "其他"
+                    value: "other",
+                    label: "other"
                 }],
 
             },
             {
-                value: "开封",
-                label: "开封",
+                value: "kaifeng",
+                label: "kaifeng",
                 children: [{
-                    value: "请选择",
-                    label: "请选择"
+                    value: "Please select a",
+                    label: "Please select a"
                 }, {
-                    value: "鼓楼区",
-                    label: "鼓楼区"
+                    value: "gulou",
+                    label: "gulou"
                 }, {
-                    value: "龙亭区",
-                    label: "龙亭区"
+                    value: "longting",
+                    label: "longting"
                 }, {
-                    value: "顺河回族区",
-                    label: "顺河回族区"
+                    value: "Along the River Hui area",
+                    label: "Along the River Hui area"
                 }, {
-                    value: "禹王台区",
-                    label: "禹王台区"
+                    value: "Yu queen cell area",
+                    label: "Yu queen cell area"
                 }, {
-                    value: "金明区",
-                    label: "金明区"
+                    value: "Named area",
+                    label: "Named area"
                 }, {
-                    value: "开封县",
-                    label: "开封县"
+                    value: "kaifeng",
+                    label: "kaifeng"
                 }, {
-                    value: "尉氏县",
-                    label: "尉氏县"
+                    value: "Optimization methodology for",
+                    label: "Optimization methodology for"
                 }, {
-                    value: "兰考县",
-                    label: "兰考县"
+                    value: "lankao",
+                    label: "lankao"
                 }, {
-                    value: "杞县",
-                    label: "杞县"
+                    value: "Qi county",
+                    label: "Qi county"
                 }, {
-                    value: "通许县",
-                    label: "通许县"
+                    value: "tongxu",
+                    label: "tongxu"
                 }, {
-                    value: "其他",
-                    label: "其他"
+                    value: "other",
+                    label: "other"
                 }],
 
             },
             {
-                value: "洛阳",
-                label: "洛阳",
+                value: "luoyang",
+                label: "luoyang",
                 children: [{
-                    value: "请选择",
-                    label: "请选择"
+                    value: "Please select a",
+                    label: "Please select a"
                 }, {
-                    value: "西工区",
-                    label: "西工区"
+                    value: "xigong",
+                    label: "xigong"
                 }, {
-                    value: "老城区",
-                    label: "老城区"
+                    value: "The old city",
+                    label: "The old city"
                 }, {
-                    value: "涧西区",
-                    label: "涧西区"
+                    value: "jianxi",
+                    label: "jianxi"
                 }, {
-                    value: "瀍河回族区",
-                    label: "瀍河回族区"
+                    value: "The Chanhe River Minority Area",
+                    label: "The Chanhe River Minority Area"
                 }, {
-                    value: "洛龙区",
-                    label: "洛龙区"
+                    value: "Los dragon area",
+                    label: "Los dragon area"
                 }, {
-                    value: "吉利区",
-                    label: "吉利区"
+                    value: "jili",
+                    label: "jili"
                 }, {
-                    value: "偃师市",
-                    label: "偃师市"
+                    value: "yanshi",
+                    label: "yanshi"
                 }, {
-                    value: "孟津县",
-                    label: "孟津县"
+                    value: "mengjin",
+                    label: "mengjin"
                 }, {
-                    value: "汝阳县",
-                    label: "汝阳县"
+                    value: "ruyang",
+                    label: "ruyang"
                 }, {
-                    value: "伊川县",
-                    label: "伊川县"
+                    value: "yichuan",
+                    label: "yichuan"
                 }, {
-                    value: "洛宁县",
-                    label: "洛宁县"
+                    value: "luoning",
+                    label: "luoning"
                 }, {
-                    value: "嵩县",
-                    label: "嵩县"
+                    value: "Song county",
+                    label: "Song county"
                 }, {
-                    value: "宜阳县",
-                    label: "宜阳县"
+                    value: "Yiyang county",
+                    label: "Yiyang county"
                 }, {
-                    value: "新安县",
-                    label: "新安县"
+                    value: "xinan",
+                    label: "xinan"
                 }, {
-                    value: "栾川县",
-                    label: "栾川县"
+                    value: "Luanchuan county",
+                    label: "Luanchuan county"
                 }, {
-                    value: "其他",
-                    label: "其他"
+                    value: "other",
+                    label: "other"
                 }],
 
             },
             {
-                value: "平顶山",
-                label: "平顶山",
+                value: "pingdingshan",
+                label: "pingdingshan",
                 children: [{
-                    value: "请选择",
-                    label: "请选择"
+                    value: "Please select a",
+                    label: "Please select a"
                 }, {
-                    value: "新华区",
-                    label: "新华区"
+                    value: "Xinhua district",
+                    label: "Xinhua district"
                 }, {
-                    value: "卫东区",
-                    label: "卫东区"
+                    value: "weidong",
+                    label: "weidong"
                 }, {
-                    value: "湛河区",
-                    label: "湛河区"
+                    value: "zhanhe",
+                    label: "zhanhe"
                 }, {
-                    value: "石龙区",
-                    label: "石龙区"
+                    value: "Shilong district",
+                    label: "Shilong district"
                 }, {
-                    value: "汝州市",
-                    label: "汝州市"
+                    value: "ruzhou",
+                    label: "ruzhou"
                 }, {
-                    value: "舞钢市",
-                    label: "舞钢市"
+                    value: "wugang",
+                    label: "wugang"
                 }, {
-                    value: "宝丰县",
-                    label: "宝丰县"
+                    value: "Baofeng county",
+                    label: "Baofeng county"
                 }, {
-                    value: "叶县",
-                    label: "叶县"
+                    value: "Ye county",
+                    label: "Ye county"
                 }, {
-                    value: "郏县",
-                    label: "郏县"
+                    value: "jiaxian",
+                    label: "jiaxian"
                 }, {
-                    value: "鲁山县",
-                    label: "鲁山县"
+                    value: "Lushan county",
+                    label: "Lushan county"
                 }, {
-                    value: "其他",
-                    label: "其他"
+                    value: "other",
+                    label: "other"
                 }],
 
             },
             {
-                value: "安阳",
-                label: "安阳",
+                value: "anyang",
+                label: "anyang",
                 children: [{
-                    value: "请选择",
-                    label: "请选择"
+                    value: "Please select a",
+                    label: "Please select a"
                 }, {
-                    value: "北关区",
-                    label: "北关区"
+                    value: "Beiguan district",
+                    label: "Beiguan district"
                 }, {
-                    value: "文峰区",
-                    label: "文峰区"
+                    value: "wenfeng",
+                    label: "wenfeng"
                 }, {
-                    value: "殷都区",
-                    label: "殷都区"
+                    value: "Area of the Yin",
+                    label: "Area of the Yin"
                 }, {
-                    value: "龙安区",
-                    label: "龙安区"
+                    value: "Long An area",
+                    label: "Long An area"
                 }, {
-                    value: "林州市",
-                    label: "林州市"
+                    value: "Linzhou city",
+                    label: "Linzhou city"
                 }, {
-                    value: "安阳县",
-                    label: "安阳县"
+                    value: "Anyang county",
+                    label: "Anyang county"
                 }, {
-                    value: "滑县",
-                    label: "滑县"
+                    value: "Huaxian county enjoys",
+                    label: "Huaxian county enjoys"
                 }, {
-                    value: "内黄县",
-                    label: "内黄县"
+                    value: "neihuang",
+                    label: "neihuang"
                 }, {
-                    value: "汤阴县",
-                    label: "汤阴县"
+                    value: "tangyin",
+                    label: "tangyin"
                 }, {
-                    value: "其他",
-                    label: "其他"
+                    value: "other",
+                    label: "other"
                 }],
 
             },
             {
-                value: "鹤壁",
-                label: "鹤壁",
+                value: "hebi",
+                label: "hebi",
                 children: [{
-                    value: "请选择",
-                    label: "请选择"
+                    value: "Please select a",
+                    label: "Please select a"
                 }, {
-                    value: "淇滨区",
-                    label: "淇滨区"
+                    value: "Q waterfront",
+                    label: "Q waterfront"
                 }, {
-                    value: "山城区",
-                    label: "山城区"
+                    value: "The mountain city",
+                    label: "The mountain city"
                 }, {
-                    value: "鹤山区",
-                    label: "鹤山区"
+                    value: "Heshan district",
+                    label: "Heshan district"
                 }, {
-                    value: "浚县",
-                    label: "浚县"
+                    value: "Xun county",
+                    label: "Xun county"
                 }, {
-                    value: "淇县",
-                    label: "淇县"
+                    value: "Qi County",
+                    label: "Qi County"
                 }, {
-                    value: "其他",
-                    label: "其他"
+                    value: "other",
+                    label: "other"
                 }],
 
             },
             {
-                value: "新乡",
-                label: "新乡",
+                value: "xinxiang",
+                label: "xinxiang",
                 children: [{
-                    value: "请选择",
-                    label: "请选择"
+                    value: "Please select a",
+                    label: "Please select a"
                 }, {
-                    value: "卫滨区",
-                    label: "卫滨区"
+                    value: "WeiBin area",
+                    label: "WeiBin area"
                 }, {
-                    value: "红旗区",
-                    label: "红旗区"
+                    value: "Hongqi district",
+                    label: "Hongqi district"
                 }, {
-                    value: "凤泉区",
-                    label: "凤泉区"
+                    value: "Chicken spring area",
+                    label: "Chicken spring area"
                 }, {
-                    value: "牧野区",
-                    label: "牧野区"
+                    value: "Makino area",
+                    label: "Makino area"
                 }, {
-                    value: "卫辉市",
-                    label: "卫辉市"
+                    value: "Weihui municipal",
+                    label: "Weihui municipal"
                 }, {
-                    value: "辉县市",
-                    label: "辉县市"
+                    value: "Hui xian city",
+                    label: "Hui xian city"
                 }, {
-                    value: "新乡县",
-                    label: "新乡县"
+                    value: "Xinxiang county",
+                    label: "Xinxiang county"
                 }, {
-                    value: "获嘉县",
-                    label: "获嘉县"
+                    value: "huojia",
+                    label: "huojia"
                 }, {
-                    value: "原阳县",
-                    label: "原阳县"
+                    value: "Yuanyang country",
+                    label: "Yuanyang country"
                 }, {
-                    value: "长垣县",
-                    label: "长垣县"
+                    value: "Changyuan county",
+                    label: "Changyuan county"
                 }, {
-                    value: "封丘县",
-                    label: "封丘县"
+                    value: "fengqiu",
+                    label: "fengqiu"
                 }, {
-                    value: "延津县",
-                    label: "延津县"
+                    value: "YanJin County",
+                    label: "YanJin County"
                 }, {
-                    value: "其他",
-                    label: "其他"
+                    value: "other",
+                    label: "other"
                 }],
 
             },
             {
-                value: "焦作",
-                label: "焦作",
+                value: "jiaozuo",
+                label: "jiaozuo",
                 children: [{
-                    value: "请选择",
-                    label: "请选择"
+                    value: "Please select a",
+                    label: "Please select a"
                 }, {
-                    value: "解放区",
-                    label: "解放区"
+                    value: "Liberated areas",
+                    label: "Liberated areas"
                 }, {
-                    value: "中站区",
-                    label: "中站区"
+                    value: "In the same",
+                    label: "In the same"
                 }, {
-                    value: "马村区",
-                    label: "马村区"
+                    value: "Area;",
+                    label: "Area;"
                 }, {
-                    value: "山阳区",
-                    label: "山阳区"
+                    value: "Shanyang district",
+                    label: "Shanyang district"
                 }, {
-                    value: "沁阳市",
-                    label: "沁阳市"
+                    value: "his",
+                    label: "his"
                 }, {
-                    value: "孟州市",
-                    label: "孟州市"
+                    value: "mengzhou",
+                    label: "mengzhou"
                 }, {
-                    value: "修武县",
-                    label: "修武县"
+                    value: "xiuwu",
+                    label: "xiuwu"
                 }, {
-                    value: "温县",
-                    label: "温县"
+                    value: "county",
+                    label: "county"
                 }, {
-                    value: "武陟县",
-                    label: "武陟县"
+                    value: "Wuzhi county",
+                    label: "Wuzhi county"
                 }, {
-                    value: "博爱县",
-                    label: "博爱县"
+                    value: "Bo 'ai",
+                    label: "Bo 'ai"
                 }, {
-                    value: "其他",
-                    label: "其他"
+                    value: "other",
+                    label: "other"
                 }],
 
             },
             {
-                value: "濮阳",
-                label: "濮阳",
+                value: "puyang",
+                label: "puyang",
                 children: [{
-                    value: "请选择",
-                    label: "请选择"
+                    value: "Please select a",
+                    label: "Please select a"
                 }, {
-                    value: "华龙区",
-                    label: "华龙区"
+                    value: "Hualong district.",
+                    label: "Hualong district."
                 }, {
-                    value: "濮阳县",
-                    label: "濮阳县"
+                    value: "the",
+                    label: "the"
                 }, {
-                    value: "南乐县",
-                    label: "南乐县"
+                    value: "nanle",
+                    label: "nanle"
                 }, {
-                    value: "台前县",
-                    label: "台前县"
+                    value: "Before the county",
+                    label: "Before the county"
                 }, {
-                    value: "清丰县",
-                    label: "清丰县"
+                    value: "qingfengxian",
+                    label: "qingfengxian"
                 }, {
-                    value: "范县",
-                    label: "范县"
+                    value: "He finds",
+                    label: "He finds"
                 }, {
-                    value: "其他",
-                    label: "其他"
+                    value: "other",
+                    label: "other"
                 }],
 
             },
             {
-                value: "许昌",
-                label: "许昌",
+                value: "xuchang",
+                label: "xuchang",
                 children: [{
-                    value: "请选择",
-                    label: "请选择"
+                    value: "Please select a",
+                    label: "Please select a"
                 }, {
-                    value: "魏都区",
-                    label: "魏都区"
+                    value: "weidu",
+                    label: "weidu"
                 }, {
-                    value: "禹州市",
-                    label: "禹州市"
+                    value: "Yuzhou city",
+                    label: "Yuzhou city"
                 }, {
-                    value: "长葛市",
-                    label: "长葛市"
+                    value: "changge",
+                    label: "changge"
                 }, {
-                    value: "许昌县",
-                    label: "许昌县"
+                    value: "Xuchang county",
+                    label: "Xuchang county"
                 }, {
-                    value: "鄢陵县",
-                    label: "鄢陵县"
+                    value: "yanling",
+                    label: "yanling"
                 }, {
-                    value: "襄城县",
-                    label: "襄城县"
+                    value: "xiangcheng",
+                    label: "xiangcheng"
                 }, {
-                    value: "其他",
-                    label: "其他"
+                    value: "other",
+                    label: "other"
                 }],
 
             },
             {
-                value: "漯河",
-                label: "漯河",
+                value: "Luo river",
+                label: "Luo river",
                 children: [{
-                    value: "请选择",
-                    label: "请选择"
+                    value: "Please select a",
+                    label: "Please select a"
                 }, {
-                    value: "源汇区",
-                    label: "源汇区"
+                    value: "Source area",
+                    label: "Source area"
                 }, {
-                    value: "郾城区",
-                    label: "郾城区"
+                    value: "Yan city",
+                    label: "Yan city"
                 }, {
-                    value: "召陵区",
-                    label: "召陵区"
+                    value: "Call the land",
+                    label: "Call the land"
                 }, {
-                    value: "临颍县",
-                    label: "临颍县"
+                    value: "yuzhong",
+                    label: "yuzhong"
                 }, {
-                    value: "舞阳县",
-                    label: "舞阳县"
+                    value: "Wuyang county",
+                    label: "Wuyang county"
                 }, {
-                    value: "其他",
-                    label: "其他"
+                    value: "other",
+                    label: "other"
                 }],
 
             },
             {
-                value: "三门峡",
-                label: "三门峡",
+                value: "sanmenxia",
+                label: "sanmenxia",
                 children: [{
-                    value: "请选择",
-                    label: "请选择"
+                    value: "Please select a",
+                    label: "Please select a"
                 }, {
-                    value: "湖滨区",
-                    label: "湖滨区"
+                    value: "Lakeside zone",
+                    label: "Lakeside zone"
                 }, {
-                    value: "义马市",
-                    label: "义马市"
+                    value: "Righteousness,",
+                    label: "Righteousness,"
                 }, {
-                    value: "灵宝市",
-                    label: "灵宝市"
+                    value: "Lingbao city",
+                    label: "Lingbao city"
                 }, {
-                    value: "渑池县",
-                    label: "渑池县"
+                    value: "Mian pool",
+                    label: "Mian pool"
                 }, {
-                    value: "卢氏县",
-                    label: "卢氏县"
+                    value: "lushi",
+                    label: "lushi"
                 }, {
-                    value: "陕县",
-                    label: "陕县"
+                    value: "shan",
+                    label: "shan"
                 }, {
-                    value: "其他",
-                    label: "其他"
+                    value: "other",
+                    label: "other"
                 }],
 
             },
             {
-                value: "南阳",
-                label: "南阳",
+                value: "nanyang",
+                label: "nanyang",
                 children: [{
-                    value: "请选择",
-                    label: "请选择"
+                    value: "Please select a",
+                    label: "Please select a"
                 }, {
-                    value: "卧龙区",
-                    label: "卧龙区"
+                    value: "Wolong district",
+                    label: "Wolong district"
                 }, {
-                    value: "宛城区",
-                    label: "宛城区"
+                    value: "wancheng",
+                    label: "wancheng"
                 }, {
-                    value: "邓州市",
-                    label: "邓州市"
+                    value: "dengzhou",
+                    label: "dengzhou"
                 }, {
-                    value: "桐柏县",
-                    label: "桐柏县"
+                    value: "tongbai",
+                    label: "tongbai"
                 }, {
-                    value: "方城县",
-                    label: "方城县"
+                    value: "Fangcheng county",
+                    label: "Fangcheng county"
                 }, {
-                    value: "淅川县",
-                    label: "淅川县"
+                    value: "Xichuan county",
+                    label: "Xichuan county"
                 }, {
-                    value: "镇平县",
-                    label: "镇平县"
+                    value: "Zhenping county",
+                    label: "Zhenping county"
                 }, {
-                    value: "唐河县",
-                    label: "唐河县"
+                    value: "tanghe",
+                    label: "tanghe"
                 }, {
-                    value: "南召县",
-                    label: "南召县"
+                    value: "nanzhao",
+                    label: "nanzhao"
                 }, {
-                    value: "内乡县",
-                    label: "内乡县"
+                    value: "neixiang",
+                    label: "neixiang"
                 }, {
-                    value: "新野县",
-                    label: "新野县"
+                    value: "xinye",
+                    label: "xinye"
                 }, {
-                    value: "社旗县",
-                    label: "社旗县"
+                    value: "sheqi",
+                    label: "sheqi"
                 }, {
-                    value: "西峡县",
-                    label: "西峡县"
+                    value: "Xixia county",
+                    label: "Xixia county"
                 }, {
-                    value: "其他",
-                    label: "其他"
+                    value: "other",
+                    label: "other"
                 }],
 
             },
             {
-                value: "商丘",
-                label: "商丘",
+                value: "shangqiu",
+                label: "shangqiu",
                 children: [{
-                    value: "请选择",
-                    label: "请选择"
+                    value: "Please select a",
+                    label: "Please select a"
                 }, {
-                    value: "梁园区",
-                    label: "梁园区"
+                    value: "liangyuan",
+                    label: "liangyuan"
                 }, {
-                    value: "睢阳区",
-                    label: "睢阳区"
+                    value: "Suiyang district",
+                    label: "Suiyang district"
                 }, {
-                    value: "永城市",
-                    label: "永城市"
+                    value: "yongcheng",
+                    label: "yongcheng"
                 }, {
-                    value: "宁陵县",
-                    label: "宁陵县"
+                    value: "aiming",
+                    label: "aiming"
                 }, {
-                    value: "虞城县",
-                    label: "虞城县"
+                    value: "Yucheng county",
+                    label: "Yucheng county"
                 }, {
-                    value: "民权县",
-                    label: "民权县"
+                    value: "Minquan county",
+                    label: "Minquan county"
                 }, {
-                    value: "夏邑县",
-                    label: "夏邑县"
+                    value: "xiayi",
+                    label: "xiayi"
                 }, {
-                    value: "柘城县",
-                    label: "柘城县"
+                    value: "zhecheng",
+                    label: "zhecheng"
                 }, {
-                    value: "睢县",
-                    label: "睢县"
+                    value: "Hui County",
+                    label: "Hui County"
                 }, {
-                    value: "其他",
-                    label: "其他"
+                    value: "other",
+                    label: "other"
                 }],
 
             },
             {
-                value: "信阳",
-                label: "信阳",
+                value: "xinyang",
+                label: "xinyang",
                 children: [{
-                    value: "请选择",
-                    label: "请选择"
+                    value: "Please select a",
+                    label: "Please select a"
                 }, {
-                    value: "浉河区",
-                    label: "浉河区"
+                    value: "The shihe riverfront",
+                    label: "The shihe riverfront"
                 }, {
-                    value: "平桥区",
-                    label: "平桥区"
+                    value: "PingQiao area",
+                    label: "PingQiao area"
                 }, {
-                    value: "潢川县",
-                    label: "潢川县"
+                    value: "Huangchuan county",
+                    label: "Huangchuan county"
                 }, {
-                    value: "淮滨县",
-                    label: "淮滨县"
+                    value: "Huai bin county",
+                    label: "Huai bin county"
                 }, {
-                    value: "息县",
-                    label: "息县"
+                    value: "xixian",
+                    label: "xixian"
                 }, {
-                    value: "新县",
-                    label: "新县"
+                    value: "hsin-hsien",
+                    label: "hsin-hsien"
                 }, {
-                    value: "商城县",
-                    label: "商城县"
+                    value: "The shangcheng county",
+                    label: "The shangcheng county"
                 }, {
-                    value: "固始县",
-                    label: "固始县"
+                    value: "Gushi county",
+                    label: "Gushi county"
                 }, {
-                    value: "罗山县",
-                    label: "罗山县"
+                    value: "Luoshan county",
+                    label: "Luoshan county"
                 }, {
-                    value: "光山县",
-                    label: "光山县"
+                    value: "Guangshan county",
+                    label: "Guangshan county"
                 }, {
-                    value: "其他",
-                    label: "其他"
+                    value: "other",
+                    label: "other"
                 }],
 
             },
             {
-                value: "周口",
-                label: "周口",
+                value: "zhoukou",
+                label: "zhoukou",
                 children: [{
-                    value: "请选择",
-                    label: "请选择"
+                    value: "Please select a",
+                    label: "Please select a"
                 }, {
-                    value: "川汇区",
-                    label: "川汇区"
+                    value: "Chuan hui district",
+                    label: "Chuan hui district"
                 }, {
-                    value: "项城市",
-                    label: "项城市"
+                    value: "The city",
+                    label: "The city"
                 }, {
-                    value: "商水县",
-                    label: "商水县"
+                    value: "Shangshui county",
+                    label: "Shangshui county"
                 }, {
-                    value: "淮阳县",
-                    label: "淮阳县"
+                    value: "Huaiyang county",
+                    label: "Huaiyang county"
                 }, {
-                    value: "太康县",
-                    label: "太康县"
+                    value: "Taikang county",
+                    label: "Taikang county"
                 }, {
-                    value: "鹿邑县",
-                    label: "鹿邑县"
+                    value: "already",
+                    label: "already"
                 }, {
-                    value: "西华县",
-                    label: "西华县"
+                    value: "Xihua county",
+                    label: "Xihua county"
                 }, {
-                    value: "扶沟县",
-                    label: "扶沟县"
+                    value: "Fugou county",
+                    label: "Fugou county"
                 }, {
-                    value: "沈丘县",
-                    label: "沈丘县"
+                    value: "shenqiu",
+                    label: "shenqiu"
                 }, {
-                    value: "郸城县",
-                    label: "郸城县"
+                    value: "He nan county",
+                    label: "He nan county"
                 }, {
-                    value: "其他",
-                    label: "其他"
+                    value: "other",
+                    label: "other"
                 }],
 
             },
             {
-                value: "驻马店",
-                label: "驻马店",
+                value: "zhumadian",
+                label: "zhumadian",
                 children: [{
-                    value: "请选择",
-                    label: "请选择"
+                    value: "Please select a",
+                    label: "Please select a"
                 }, {
-                    value: "驿城区",
-                    label: "驿城区"
+                    value: "Yi city",
+                    label: "Yi city"
                 }, {
-                    value: "确山县",
-                    label: "确山县"
+                    value: "queshan",
+                    label: "queshan"
                 }, {
-                    value: "新蔡县",
-                    label: "新蔡县"
+                    value: "xincai",
+                    label: "xincai"
                 }, {
-                    value: "上蔡县",
-                    label: "上蔡县"
+                    value: "Shangcai county",
+                    label: "Shangcai county"
                 }, {
-                    value: "西平县",
-                    label: "西平县"
+                    value: "Xiping county",
+                    label: "Xiping county"
                 }, {
-                    value: "泌阳县",
-                    label: "泌阳县"
+                    value: "biyang",
+                    label: "biyang"
                 }, {
-                    value: "平舆县",
-                    label: "平舆县"
+                    value: "pingyu",
+                    label: "pingyu"
                 }, {
-                    value: "汝南县",
-                    label: "汝南县"
+                    value: "plain",
+                    label: "plain"
                 }, {
-                    value: "遂平县",
-                    label: "遂平县"
+                    value: "suiping",
+                    label: "suiping"
                 }, {
-                    value: "正阳县",
-                    label: "正阳县"
+                    value: "Zhenyang county",
+                    label: "Zhenyang county"
                 }, {
-                    value: "其他",
-                    label: "其他"
+                    value: "other",
+                    label: "other"
                 }],
 
             },
             {
-                value: "焦作",
-                label: "焦作",
+                value: "jiaozuo",
+                label: "jiaozuo",
                 children: [{
-                    value: "请选择",
-                    label: "请选择"
+                    value: "Please select a",
+                    label: "Please select a"
                 }, {
-                    value: "济源市",
-                    label: "济源市"
+                    value: "Jiyuan city",
+                    label: "Jiyuan city"
                 }, {
-                    value: "其他",
-                    label: "其他"
+                    value: "other",
+                    label: "other"
                 }],
 
             },
             {
-                value: "其他",
-                label: "其他"
+                value: "other",
+                label: "other"
             }
         ],
 
     },
     {
-        value: "吉林",
-        label: "吉林",
+        value: "Ji Lin",
+        label: "Ji Lin",
         children: [{
                 value: "",
-                label: "请选择"
+                label: "Please select a"
             },
             {
                 value: "",
-                label: "长春",
+                label: "changchun",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "朝阳区"
+                    label: "Chaoyang district"
                 }, {
                     value: "",
-                    label: "宽城区"
+                    label: "Wide area"
                 }, {
                     value: "",
-                    label: "二道区"
+                    label: "erdao"
                 }, {
                     value: "",
-                    label: "南关区"
+                    label: "Nanguan district"
                 }, {
                     value: "",
-                    label: "绿园区"
+                    label: "Green park"
                 }, {
                     value: "",
-                    label: "双阳区"
+                    label: "Shuangyang district"
                 }, {
                     value: "",
-                    label: "九台市"
+                    label: "jiutai"
                 }, {
                     value: "",
-                    label: "榆树市"
+                    label: "Yushu city"
                 }, {
                     value: "",
-                    label: "德惠市"
+                    label: "dehui"
                 }, {
                     value: "",
-                    label: "农安县"
+                    label: "County agriculture"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "吉林",
+                label: "Ji Lin",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "船营区"
+                    label: "Ship the camp"
                 }, {
                     value: "",
-                    label: "昌邑区"
+                    label: "Changyi district"
                 }, {
                     value: "",
-                    label: "龙潭区"
+                    label: "Longtan district"
                 }, {
                     value: "",
-                    label: "丰满区"
+                    label: "Plump area"
                 }, {
                     value: "",
-                    label: "舒兰市"
+                    label: "shulan"
                 }, {
                     value: "",
-                    label: "桦甸市"
+                    label: "Birch survey,"
                 }, {
                     value: "",
-                    label: "蛟河市"
+                    label: "jiaohe"
                 }, {
                     value: "",
-                    label: "磐石市"
+                    label: "panshi"
                 }, {
                     value: "",
-                    label: "永吉县"
+                    label: "YongJi County"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "四平",
+                label: "siping",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "铁西区"
+                    label: "I"
                 }, {
                     value: "",
-                    label: "铁东区"
+                    label: "tiedong"
                 }, {
                     value: "",
-                    label: "公主岭市"
+                    label: "Gongzhuling city"
                 }, {
                     value: "",
-                    label: "双辽市"
+                    label: "Double liao city"
                 }, {
                     value: "",
-                    label: "梨树县"
+                    label: "Lishu county"
                 }, {
                     value: "",
-                    label: "伊通满族自治县"
+                    label: "Yitong Manchu Autonomous County"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "辽源",
+                label: "long-withering",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "龙山区"
+                    label: "list"
                 }, {
                     value: "",
-                    label: "西安区"
+                    label: "Xi 'an area"
                 }, {
                     value: "",
-                    label: "东辽县"
+                    label: "dongliao"
                 }, {
                     value: "",
-                    label: "东丰县"
+                    label: "Dongfeng county"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "通化",
+                label: "tonghua",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "东昌区"
+                    label: "dongchang"
                 }, {
                     value: "",
-                    label: "二道江区"
+                    label: "2 river area"
                 }, {
                     value: "",
-                    label: "梅河口市"
+                    label: "meihekou"
                 }, {
                     value: "",
-                    label: "集安市"
+                    label: "Ji 'an"
                 }, {
                     value: "",
-                    label: "通化县"
+                    label: "tonghua"
                 }, {
                     value: "",
-                    label: "辉南县"
+                    label: "huinan"
                 }, {
                     value: "",
-                    label: "柳河县"
+                    label: "liuhe"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "白山",
+                label: "baishan",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "八道江区"
+                    label: "BaDaoJiang District"
                 }, {
                     value: "",
-                    label: "江源区"
+                    label: "Area"
                 }, {
                     value: "",
-                    label: "临江市"
+                    label: "Linjiang city"
                 }, {
                     value: "",
-                    label: "靖宇县"
+                    label: "Jingyu county"
                 }, {
                     value: "",
-                    label: "抚松县"
+                    label: "fusong"
                 }, {
                     value: "",
-                    label: "长白朝鲜族自治县"
+                    label: "Changbai Korean Autonomous County"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "松原",
+                label: "matsubara",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "宁江区"
+                    label: "Ning river area"
                 }, {
                     value: "",
-                    label: "乾安县"
+                    label: "Dry, anxian county,"
                 }, {
                     value: "",
-                    label: "长岭县"
+                    label: "Changling county"
                 }, {
                     value: "",
-                    label: "扶余县"
+                    label: "Fuyu county"
                 }, {
                     value: "",
-                    label: "前郭尔罗斯蒙古族自治县"
+                    label: "Former Goerros Mongolian Autonomous County"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "白城",
+                label: "baicheng",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "洮北区"
+                    label: "China's north"
                 }, {
                     value: "",
-                    label: "大安市"
+                    label: "Da 'an"
                 }, {
                     value: "",
-                    label: "洮南市"
+                    label: "taonan"
                 }, {
                     value: "",
-                    label: "镇赉县"
+                    label: "The town of adlai was in charge county"
                 }, {
                     value: "",
-                    label: "通榆县"
+                    label: "Tongyu county"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "延边朝鲜族自治州",
+                label: "Yanbian Korean Autonomous Prefecture",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "延吉市"
+                    label: "yanji"
                 }, {
                     value: "",
-                    label: "图们市"
+                    label: "Crossing at"
                 }, {
                     value: "",
-                    label: "敦化市"
+                    label: "dunhua"
                 }, {
                     value: "",
-                    label: "龙井市"
+                    label: "provice"
                 }, {
                     value: "",
-                    label: "珲春市"
+                    label: "hunchun"
                 }, {
                     value: "",
-                    label: "和龙市"
+                    label: "helong"
                 }, {
                     value: "",
-                    label: "安图县"
+                    label: "Antu county"
                 }, {
                     value: "",
-                    label: "汪清县"
+                    label: "Pools county"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "其他"
+                label: "other"
             }
         ],
 
     },
     {
-        value: "黑龙江",
-        label: "黑龙江",
+        value: "heilongjiang",
+        label: "heilongjiang",
         children: [{
                 value: "",
-                label: "请选择"
+                label: "Please select a"
             },
             {
                 value: "",
-                label: "哈尔滨",
+                label: "Harbin",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "松北区"
+                    label: "Loose north"
                 }, {
                     value: "",
-                    label: "道里区"
+                    label: "Daoli district"
                 }, {
                     value: "",
-                    label: "南岗区"
+                    label: "nangang"
                 }, {
                     value: "",
-                    label: "平房区"
+                    label: "Collection of"
                 }, {
                     value: "",
-                    label: "香坊区"
+                    label: "Xiangfang district"
                 }, {
                     value: "",
-                    label: "道外区"
+                    label: "Daowai district"
                 }, {
                     value: "",
-                    label: "呼兰区"
+                    label: "Hulan district"
                 }, {
                     value: "",
-                    label: "阿城区"
+                    label: "The city o"
                 }, {
                     value: "",
-                    label: "双城市"
+                    label: "shuangcheng"
                 }, {
                     value: "",
-                    label: "尚志市"
+                    label: "shangzhi"
                 }, {
                     value: "",
-                    label: "五常市"
+                    label: "The amount"
                 }, {
                     value: "",
-                    label: "宾县"
+                    label: "Bin county"
                 }, {
                     value: "",
-                    label: "方正县"
+                    label: "Founder county"
                 }, {
                     value: "",
-                    label: "通河县"
+                    label: "Tong river county,"
                 }, {
                     value: "",
-                    label: "巴彦县"
+                    label: "And he county"
                 }, {
                     value: "",
-                    label: "延寿县"
+                    label: "Yanshou county"
                 }, {
                     value: "",
-                    label: "木兰县"
+                    label: "Mulan county"
                 }, {
                     value: "",
-                    label: "依兰县"
+                    label: "Yilan county"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "齐齐哈尔",
+                label: "qiqihar",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "龙沙区"
+                    label: "Lonza area"
                 }, {
                     value: "",
-                    label: "昂昂溪区"
+                    label: "High spirited creek area"
                 }, {
                     value: "",
-                    label: "铁锋区"
+                    label: "Iron frontal"
                 }, {
                     value: "",
-                    label: "建华区"
+                    label: "To build greater China"
                 }, {
                     value: "",
-                    label: "富拉尔基区"
+                    label: "Fularki district"
                 }, {
                     value: "",
-                    label: "碾子山区"
+                    label: "Treadmills mountains"
                 }, {
                     value: "",
-                    label: "梅里斯达斡尔族区"
+                    label: "The Daur region of Merris"
                 }, {
                     value: "",
-                    label: "讷河市"
+                    label: "nehe"
                 }, {
                     value: "",
-                    label: "富裕县"
+                    label: "fuyu"
                 }, {
                     value: "",
-                    label: "拜泉县"
+                    label: "baiquan"
                 }, {
                     value: "",
-                    label: "甘南县"
+                    label: "Gannan county"
                 }, {
                     value: "",
-                    label: "依安县"
+                    label: "yian"
                 }, {
                     value: "",
-                    label: "克山县"
+                    label: "The hill county"
                 }, {
                     value: "",
-                    label: "泰来县"
+                    label: "Ty to county"
                 }, {
                     value: "",
-                    label: "克东县"
+                    label: "G the east county"
                 }, {
                     value: "",
-                    label: "龙江县"
+                    label: "Longjiang county"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "鹤岗",
+                label: "hegang",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "兴山区"
+                    label: "Hing mountain"
                 }, {
                     value: "",
-                    label: "工农区"
+                    label: "Area of workers and peasants"
                 }, {
                     value: "",
-                    label: "南山区"
+                    label: "Nanshan district"
                 }, {
                     value: "",
-                    label: "兴安区"
+                    label: "Sing-an area"
                 }, {
                     value: "",
-                    label: "向阳区"
+                    label: "Xiangyang district"
                 }, {
                     value: "",
-                    label: "东山区"
+                    label: "Dongshan district"
                 }, {
                     value: "",
-                    label: "萝北县"
+                    label: "luobei"
                 }, {
                     value: "",
-                    label: "绥滨县"
+                    label: "Shore suijiang county"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "双鸭山",
+                label: "shuangyashan",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "尖山区"
+                    label: "Jianshan area"
                 }, {
                     value: "",
-                    label: "岭东区"
+                    label: "The ridge east"
                 }, {
                     value: "",
-                    label: "四方台区"
+                    label: "Sifang area"
                 }, {
                     value: "",
-                    label: "宝山区"
+                    label: "Baoshan district"
                 }, {
                     value: "",
-                    label: "集贤县"
+                    label: "Jixian county"
                 }, {
                     value: "",
-                    label: "宝清县"
+                    label: "baoqing"
                 }, {
                     value: "",
-                    label: "友谊县"
+                    label: "Friendship county"
                 }, {
                     value: "",
-                    label: "饶河县"
+                    label: "RaoHe county"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "鸡西",
+                label: "jixi",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "鸡冠区"
+                    label: "jiguan"
                 }, {
                     value: "",
-                    label: "恒山区"
+                    label: "Heng heng district"
                 }, {
                     value: "",
-                    label: "城子河区"
+                    label: "City child reach"
                 }, {
                     value: "",
-                    label: "滴道区"
+                    label: "Drops of road area"
                 }, {
                     value: "",
-                    label: "梨树区"
+                    label: "Pear area"
                 }, {
                     value: "",
-                    label: "麻山区"
+                    label: "Ma mountain"
                 }, {
                     value: "",
-                    label: "密山市"
+                    label: "The basic data"
                 }, {
                     value: "",
-                    label: "虎林市"
+                    label: "hulin"
                 }, {
                     value: "",
-                    label: "鸡东县"
+                    label: "Jidong county"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "大庆",
+                label: "daqing",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "萨尔图区"
+                    label: "sartu"
                 }, {
                     value: "",
-                    label: "红岗区"
+                    label: "The red district"
                 }, {
                     value: "",
-                    label: "龙凤区"
+                    label: "Longfeng district"
                 }, {
                     value: "",
-                    label: "让胡路区"
+                    label: "ranghulu"
                 }, {
                     value: "",
-                    label: "大同区"
+                    label: "Datong area"
                 }, {
                     value: "",
-                    label: "林甸县"
+                    label: "Lindian county"
                 }, {
                     value: "",
-                    label: "肇州县"
+                    label: "Zhaozhou county"
                 }, {
                     value: "",
-                    label: "肇源县"
+                    label: "Zhaoyuan country"
                 }, {
                     value: "",
-                    label: "杜尔伯特蒙古族自治县"
+                    label: "Duerbert Mongolian Autonomous County"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "伊春",
+                label: "yichun",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "伊春区"
+                    label: "Yichun area"
                 }, {
                     value: "",
-                    label: "带岭区"
+                    label: "With end"
                 }, {
                     value: "",
-                    label: "南岔区"
+                    label: "Nantsa area"
                 }, {
                     value: "",
-                    label: "金山屯区"
+                    label: "Jin Shantun area"
                 }, {
                     value: "",
-                    label: "西林区"
+                    label: "West area"
                 }, {
                     value: "",
-                    label: "美溪区"
+                    label: "The creek area"
                 }, {
                     value: "",
-                    label: "乌马河区"
+                    label: "Uma riverfront"
                 }, {
                     value: "",
-                    label: "翠峦区"
+                    label: "Green mountain area"
                 }, {
                     value: "",
-                    label: "友好区"
+                    label: "Friendly district"
                 }, {
                     value: "",
-                    label: "上甘岭区"
+                    label: "As district"
                 }, {
                     value: "",
-                    label: "五营区"
+                    label: "Five camps"
                 }, {
                     value: "",
-                    label: "红星区"
+                    label: "hongxing"
                 }, {
                     value: "",
-                    label: "新青区"
+                    label: "The new green area"
                 }, {
                     value: "",
-                    label: "汤旺河区"
+                    label: "Shang Wang riverfront"
                 }, {
                     value: "",
-                    label: "乌伊岭区"
+                    label: "Wu yi end"
                 }, {
                     value: "",
-                    label: "铁力市"
+                    label: "Prosperous tieli lies"
                 }, {
                     value: "",
-                    label: "嘉荫县"
+                    label: "Jiayin county"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "牡丹江",
+                label: "mudanjiang",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "爱民区"
+                    label: "Aimin district"
                 }, {
                     value: "",
-                    label: "东安区"
+                    label: "Dongan area"
                 }, {
                     value: "",
-                    label: "阳明区"
+                    label: "Yang Ming area"
                 }, {
                     value: "",
-                    label: "西安区"
+                    label: "Xi 'an area"
                 }, {
                     value: "",
-                    label: "绥芬河市"
+                    label: "suifenhe"
                 }, {
                     value: "",
-                    label: "宁安市"
+                    label: "ningan"
                 }, {
                     value: "",
-                    label: "海林市"
+                    label: "hailin"
                 }, {
                     value: "",
-                    label: "穆棱市"
+                    label: "MuLeng city"
                 }, {
                     value: "",
-                    label: "林口县"
+                    label: "linkou"
                 }, {
                     value: "",
-                    label: "东宁县"
+                    label: "East county"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "佳木斯",
+                label: "jiamusi",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "向阳区"
+                    label: "Xiangyang district"
                 }, {
                     value: "",
-                    label: "前进区"
+                    label: "Forward area"
                 }, {
                     value: "",
-                    label: "东风区"
+                    label: "Dongfeng area"
                 }, {
                     value: "",
-                    label: "郊区"
+                    label: "On the outskirts of"
                 }, {
                     value: "",
-                    label: "同江市"
+                    label: "Tongjiang city"
                 }, {
                     value: "",
-                    label: "富锦市"
+                    label: "Fujin city"
                 }, {
                     value: "",
-                    label: "桦川县"
+                    label: "Birch chuan county"
                 }, {
                     value: "",
-                    label: "抚远县"
+                    label: "fuyuan"
                 }, {
                     value: "",
-                    label: "桦南县"
+                    label: "huanan"
                 }, {
                     value: "",
-                    label: "汤原县"
+                    label: "Soup of the original county"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "七台河",
+                label: "qitaihe",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "桃山区"
+                    label: "Peach mountain"
                 }, {
                     value: "",
-                    label: "新兴区"
+                    label: "Emerging area"
                 }, {
                     value: "",
-                    label: "茄子河区"
+                    label: "Eggplant riverfront"
                 }, {
                     value: "",
-                    label: "勃利县"
+                    label: "Boli county"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "黑河",
+                label: "Heihe river",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "爱辉区"
+                    label: "Love xinhui district"
                 }, {
                     value: "",
-                    label: "北安市"
+                    label: "beian"
                 }, {
                     value: "",
-                    label: "五大连池市"
+                    label: "Wudalianchi City"
                 }, {
                     value: "",
-                    label: "逊克县"
+                    label: "1 county"
                 }, {
                     value: "",
-                    label: "嫩江县"
+                    label: "Nenjiang county"
                 }, {
                     value: "",
-                    label: "孙吴县"
+                    label: "Sun wuxian"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "绥化",
+                label: "That is suihua",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "北林区"
+                    label: "North forest region"
                 }, {
                     value: "",
-                    label: "安达市"
+                    label: "anda"
                 }, {
                     value: "",
-                    label: "肇东市"
+                    label: "zhaodong"
                 }, {
                     value: "",
-                    label: "海伦市"
+                    label: "hailun"
                 }, {
                     value: "",
-                    label: "绥棱县"
+                    label: "Suiling county"
                 }, {
                     value: "",
-                    label: "兰西县"
+                    label: "lanxi"
                 }, {
                     value: "",
-                    label: "明水县"
+                    label: "MingShui county"
                 }, {
                     value: "",
-                    label: "青冈县"
+                    label: "qinggang"
                 }, {
                     value: "",
-                    label: "庆安县"
+                    label: "qingan"
                 }, {
                     value: "",
-                    label: "望奎县"
+                    label: "wangkui"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "大兴安岭地区",
+                label: "Greater Hinggan Mountains region",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "呼玛县"
+                    label: "Huma county"
                 }, {
                     value: "",
-                    label: "塔河县"
+                    label: "tahe"
                 }, {
                     value: "",
-                    label: "漠河县"
+                    label: "mohe"
                 }, {
                     value: "",
-                    label: "大兴安岭辖区"
+                    label: "Greater Hinggan Mountains area"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "其他"
+                label: "other"
             }
         ],
 
     },
     {
-        value: "内蒙古",
-        label: "内蒙古",
+        value: "Inner Mongolia",
+        label: "Inner Mongolia",
         children: [{
                 value: "",
-                label: "请选择"
+                label: "Please select a"
             },
             {
                 value: "",
-                label: "呼和浩特",
+                label: "Hohhot,",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "回民区"
+                    label: "Hui district"
                 }, {
                     value: "",
-                    label: "玉泉区"
+                    label: "Yuquan district"
                 }, {
                     value: "",
-                    label: "新城区"
+                    label: "New district"
                 }, {
                     value: "",
-                    label: "赛罕区"
+                    label: "Abraham area"
                 }, {
                     value: "",
-                    label: "托克托县"
+                    label: "Togtoh county"
                 }, {
                     value: "",
-                    label: "清水河县"
+                    label: "qingshuihe"
                 }, {
                     value: "",
-                    label: "武川县"
+                    label: "WuChuan County"
                 }, {
                     value: "",
-                    label: "和林格尔县"
+                    label: "And Lingle County"
                 }, {
                     value: "",
-                    label: "土默特左旗"
+                    label: "Tumed left flag"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "包头",
+                label: "baotou",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "昆都仑区"
+                    label: "Kunduz shimron area"
                 }, {
                     value: "",
-                    label: "青山区"
+                    label: "Qingshan district"
                 }, {
                     value: "",
-                    label: "东河区"
+                    label: "The east river area"
                 }, {
                     value: "",
-                    label: "九原区"
+                    label: "jiuyuan"
                 }, {
                     value: "",
-                    label: "石拐区"
+                    label: "Turn stone area"
                 }, {
                     value: "",
-                    label: "白云矿区"
+                    label: "Baiyun area"
                 }, {
                     value: "",
-                    label: "固阳县"
+                    label: "guyang"
                 }, {
                     value: "",
-                    label: "土默特右旗"
+                    label: "Tumed right flag"
                 }, {
                     value: "",
-                    label: "达尔罕茂明安联合旗"
+                    label: "The Darham Mau Ming 'an Union Flag"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "乌海",
+                label: "The wuhai",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "海勃湾区"
+                    label: "haibowan"
                 }, {
                     value: "",
-                    label: "乌达区"
+                    label: "Wuda area"
                 }, {
                     value: "",
-                    label: "海南区"
+                    label: "Hainan area"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "赤峰",
+                label: "chifeng",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "红山区"
+                    label: "punavuori"
                 }, {
                     value: "",
-                    label: "元宝山区"
+                    label: "yuanbaoshan"
                 }, {
                     value: "",
-                    label: "松山区"
+                    label: "songshan"
                 }, {
                     value: "",
-                    label: "宁城县"
+                    label: "ningcheng"
                 }, {
                     value: "",
-                    label: "林西县"
+                    label: "Linxi county"
                 }, {
                     value: "",
-                    label: "喀喇沁旗"
+                    label: "Harqin banner"
                 }, {
                     value: "",
-                    label: "巴林左旗"
+                    label: "Bahrain left flag"
                 }, {
                     value: "",
-                    label: "敖汉旗"
+                    label: "aohan"
                 }, {
                     value: "",
-                    label: "阿鲁科尔沁旗"
+                    label: "Alukhorqin Banner"
                 }, {
                     value: "",
-                    label: "翁牛特旗"
+                    label: "wengniute-kulun"
                 }, {
                     value: "",
-                    label: "克什克腾旗"
+                    label: "Keshiketengqi"
                 }, {
                     value: "",
-                    label: "巴林右旗"
+                    label: "Bahrain right flag"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "通辽",
+                label: "tgo",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "科尔沁区"
+                    label: "Horqin district"
                 }, {
                     value: "",
-                    label: "霍林郭勒市"
+                    label: "Hollingole"
                 }, {
                     value: "",
-                    label: "开鲁县"
+                    label: "Kailu county"
                 }, {
                     value: "",
-                    label: "科尔沁左翼中旗"
+                    label: "Horqin left wing middle banner"
                 }, {
                     value: "",
-                    label: "科尔沁左翼后旗"
+                    label: "Horqin left wing rear flag"
                 }, {
                     value: "",
-                    label: "库伦旗"
+                    label: "Cullen flag"
                 }, {
                     value: "",
-                    label: "奈曼旗"
+                    label: "Naiman banner"
                 }, {
                     value: "",
-                    label: "扎鲁特旗"
+                    label: "jarud"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "鄂尔多斯",
+                label: "ordos",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "东胜区"
+                    label: "Dongsheng district"
                 }, {
                     value: "",
-                    label: "准格尔旗"
+                    label: "Jungar banner"
                 }, {
                     value: "",
-                    label: "乌审旗"
+                    label: "Wushen banner"
                 }, {
                     value: "",
-                    label: "伊金霍洛旗"
+                    label: "Ejin Horo flag"
                 }, {
                     value: "",
-                    label: "鄂托克旗"
+                    label: "This flag"
                 }, {
                     value: "",
-                    label: "鄂托克前旗"
+                    label: "Otoki front flag"
                 }, {
                     value: "",
-                    label: "杭锦旗"
+                    label: "An adapted"
                 }, {
                     value: "",
-                    label: "达拉特旗"
+                    label: "dalad"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "呼伦贝尔",
+                label: "The hulunbuir",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "海拉尔区"
+                    label: "Hailaer area"
                 }, {
                     value: "",
-                    label: "满洲里市"
+                    label: "Manzhouli town"
                 }, {
                     value: "",
-                    label: "牙克石市"
+                    label: "Tooth stone city"
                 }, {
                     value: "",
-                    label: "扎兰屯市"
+                    label: "zhalantun"
                 }, {
                     value: "",
-                    label: "根河市"
+                    label: "Root river city"
                 }, {
                     value: "",
-                    label: "额尔古纳市"
+                    label: "Erguna city"
                 }, {
                     value: "",
-                    label: "陈巴尔虎旗"
+                    label: "Chenbal Tiger flag"
                 }, {
                     value: "",
-                    label: "阿荣旗"
+                    label: "assets"
                 }, {
                     value: "",
-                    label: "新巴尔虎左旗"
+                    label: "The new Baltiger left flag"
                 }, {
                     value: "",
-                    label: "新巴尔虎右旗"
+                    label: "New Baltiger right flag"
                 }, {
                     value: "",
-                    label: "鄂伦春自治旗"
+                    label: "Oroqen Autonomous Banner"
                 }, {
                     value: "",
-                    label: "莫力达瓦达斡尔族自治旗"
+                    label: "Molidawa Daur Autonomous Banner"
                 }, {
                     value: "",
-                    label: "鄂温克族自治旗"
+                    label: "Ewenki Autonomous Banner"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "巴彦淖尔",
+                label: "bayinnaoer",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "临河区"
+                    label: "Linhe district"
                 }, {
                     value: "",
-                    label: "五原县"
+                    label: "WuYuan County"
                 }, {
                     value: "",
-                    label: "磴口县"
+                    label: "The settle mouth county"
                 }, {
                     value: "",
-                    label: "杭锦后旗"
+                    label: "Hanggin HouQi"
                 }, {
                     value: "",
-                    label: "乌拉特中旗"
+                    label: "Urat middle flag"
                 }, {
                     value: "",
-                    label: "乌拉特前旗"
+                    label: "Urat front flag"
                 }, {
                     value: "",
-                    label: "乌拉特后旗"
+                    label: "The rear flag of Urat"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "乌兰察布",
+                label: "wulanchabu",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "集宁区"
+                    label: "jining"
                 }, {
                     value: "",
-                    label: "丰镇市"
+                    label: "Xinfeng city"
                 }, {
                     value: "",
-                    label: "兴和县"
+                    label: "Xinghe county"
                 }, {
                     value: "",
-                    label: "卓资县"
+                    label: "zhuozi"
                 }, {
                     value: "",
-                    label: "商都县"
+                    label: "Shangdu county"
                 }, {
                     value: "",
-                    label: "凉城县"
+                    label: "liangcheng"
                 }, {
                     value: "",
-                    label: "化德县"
+                    label: "huade"
                 }, {
                     value: "",
-                    label: "四子王旗"
+                    label: "siziwang"
                 }, {
                     value: "",
-                    label: "察哈尔右翼前旗"
+                    label: "Chahar right wing front flag"
                 }, {
                     value: "",
-                    label: "察哈尔右翼中旗"
+                    label: "Chahar right wing center flag"
                 }, {
                     value: "",
-                    label: "察哈尔右翼后旗"
+                    label: "Chahar right wing rear flag"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "锡林郭勒盟",
+                label: "Xilin Gol League",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "锡林浩特市"
+                    label: "Xilinhot"
                 }, {
                     value: "",
-                    label: "二连浩特市"
+                    label: "Erlianhot"
                 }, {
                     value: "",
-                    label: "多伦县"
+                    label: "Duolun county"
                 }, {
                     value: "",
-                    label: "阿巴嘎旗"
+                    label: "O ba ga flag"
                 }, {
                     value: "",
-                    label: "西乌珠穆沁旗"
+                    label: "West Ujimqin Banner"
                 }, {
                     value: "",
-                    label: "东乌珠穆沁旗"
+                    label: "East Uzhumuqin Banner"
                 }, {
                     value: "",
-                    label: "苏尼特左旗"
+                    label: "Left flag of Sunite"
                 }, {
                     value: "",
-                    label: "苏尼特右旗"
+                    label: "Flag of Sunite right"
                 }, {
                     value: "",
-                    label: "太仆寺旗"
+                    label: "taibus"
                 }, {
                     value: "",
-                    label: "正镶白旗"
+                    label: "Plain and bordered white banner"
                 }, {
                     value: "",
-                    label: "正蓝旗"
+                    label: "Blue flag is"
                 }, {
                     value: "",
-                    label: "镶黄旗"
+                    label: "We have got rich"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "兴安盟",
+                label: "Xingan league",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "乌兰浩特市"
+                    label: "Ulanhot"
                 }, {
                     value: "",
-                    label: "阿尔山市"
+                    label: "arxan"
                 }, {
                     value: "",
-                    label: "突泉县"
+                    label: "Tu springs county"
                 }, {
                     value: "",
-                    label: "扎赉特旗"
+                    label: "zhalaite"
                 }, {
                     value: "",
-                    label: "科尔沁右翼前旗"
+                    label: "Horqin right wing front flag"
                 }, {
                     value: "",
-                    label: "科尔沁右翼中旗"
+                    label: "Horqin right wing middle banner"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "阿拉善盟",
+                label: "La shan au",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "阿拉善左旗"
+                    label: "Alxa left flag"
                 }, {
                     value: "",
-                    label: "阿拉善右旗"
+                    label: "Alxa right Flag"
                 }, {
                     value: "",
-                    label: "额济纳旗"
+                    label: "mesozoic-cenozoic"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "其他"
+                label: "other"
             }
         ],
 
     },
     {
-        value: "山东",
-        label: "山东",
+        value: "shandong",
+        label: "shandong",
         children: [{
                 value: "",
-                label: "请选择"
+                label: "Please select a"
             },
             {
                 value: "",
-                label: "济南",
+                label: "jinan",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "市中区"
+                    label: "Mark out"
                 }, {
                     value: "",
-                    label: "历下区"
+                    label: "Lixia district"
                 }, {
                     value: "",
-                    label: "天桥区"
+                    label: "flyover"
                 }, {
                     value: "",
-                    label: "槐荫区"
+                    label: "HuaiYin District"
                 }, {
                     value: "",
-                    label: "历城区"
+                    label: "Licheng district"
                 }, {
                     value: "",
-                    label: "长清区"
+                    label: "Pingyin area"
                 }, {
                     value: "",
-                    label: "章丘市"
+                    label: "zhangqiu"
                 }, {
                     value: "",
-                    label: "平阴县"
+                    label: "pingyin"
                 }, {
                     value: "",
-                    label: "济阳县"
+                    label: "jiyang"
                 }, {
                     value: "",
-                    label: "商河县"
+                    label: "shanghe"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "青岛",
+                label: "Qingdao",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "市南区"
+                    label: "districts"
                 }, {
                     value: "",
-                    label: "市北区"
+                    label: "Shibei district"
                 }, {
                     value: "",
-                    label: "城阳区"
+                    label: "Chengyang district"
                 }, {
                     value: "",
-                    label: "四方区"
+                    label: "Sifang district"
                 }, {
                     value: "",
-                    label: "李沧区"
+                    label: "Licang district"
                 }, {
                     value: "",
-                    label: "黄岛区"
+                    label: "Huangdao district,"
                 }, {
                     value: "",
-                    label: "崂山区"
+                    label: "Laoshan district"
                 }, {
                     value: "",
-                    label: "胶南市"
+                    label: "jiaonan"
                 }, {
                     value: "",
-                    label: "胶州市"
+                    label: "Producing soft container bags.for"
                 }, {
                     value: "",
-                    label: "平度市"
+                    label: "The total"
                 }, {
                     value: "",
-                    label: "莱西市"
+                    label: "Lacey had"
                 }, {
                     value: "",
-                    label: "即墨市"
+                    label: "jimo"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "淄博",
+                label: "zibo",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "张店区"
+                    label: "is"
                 }, {
                     value: "",
-                    label: "临淄区"
+                    label: "Linzi district"
                 }, {
                     value: "",
-                    label: "淄川区"
+                    label: "zichuan"
                 }, {
                     value: "",
-                    label: "博山区"
+                    label: "Boshan area"
                 }, {
                     value: "",
-                    label: "周村区"
+                    label: "Zhoucun district"
                 }, {
                     value: "",
-                    label: "桓台县"
+                    label: "Huantai county"
                 }, {
                     value: "",
-                    label: "高青县"
+                    label: "In gaoqing"
                 }, {
                     value: "",
-                    label: "沂源县"
+                    label: "yiyuan"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "枣庄",
+                label: "zaozhuang",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "市中区"
+                    label: "Mark out"
                 }, {
                     value: "",
-                    label: "山亭区"
+                    label: "shanting"
                 }, {
                     value: "",
-                    label: "峄城区"
+                    label: "Yicheng district"
                 }, {
                     value: "",
-                    label: "台儿庄区"
+                    label: "taierzhuang"
                 }, {
                     value: "",
-                    label: "薛城区"
+                    label: ".20 xuechengqu"
                 }, {
                     value: "",
-                    label: "滕州市"
+                    label: "su"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "东营",
+                label: "dongying",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "东营区"
+                    label: "Dongying district"
                 }, {
                     value: "",
-                    label: "河口区"
+                    label: "estuary"
                 }, {
                     value: "",
-                    label: "垦利县"
+                    label: "kenli"
                 }, {
                     value: "",
-                    label: "广饶县"
+                    label: "Guangrao county"
                 }, {
                     value: "",
-                    label: "利津县"
+                    label: "Lijin county"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "烟台",
+                label: "yantai",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "芝罘区"
+                    label: "zhifu"
                 }, {
                     value: "",
-                    label: "福山区"
+                    label: "Fushan district"
                 }, {
                     value: "",
-                    label: "牟平区"
+                    label: "muping"
                 }, {
                     value: "",
-                    label: "莱山区"
+                    label: "Laishan district"
                 }, {
                     value: "",
-                    label: "龙口市"
+                    label: "egg"
                 }, {
                     value: "",
-                    label: "莱阳市"
+                    label: "Lai Yang city"
                 }, {
                     value: "",
-                    label: "莱州市"
+                    label: "Laizhou city"
                 }, {
                     value: "",
-                    label: "招远市"
+                    label: "Zhaoyuan city"
                 }, {
                     value: "",
-                    label: "蓬莱市"
+                    label: "Penglai city"
                 }, {
                     value: "",
-                    label: "栖霞市"
+                    label: "Qixia city"
                 }, {
                     value: "",
-                    label: "海阳市"
+                    label: "Haiyang city"
                 }, {
                     value: "",
-                    label: "长岛县"
+                    label: "Changdao county"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "潍坊",
+                label: "weifang",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "潍城区"
+                    label: "Weifang diesel city"
                 }, {
                     value: "",
-                    label: "寒亭区"
+                    label: "hanting"
                 }, {
                     value: "",
-                    label: "坊子区"
+                    label: "dostict"
                 }, {
                     value: "",
-                    label: "奎文区"
+                    label: "Kuiwei district"
                 }, {
                     value: "",
-                    label: "青州市"
+                    label: "qingzhou"
                 }, {
                     value: "",
-                    label: "诸城市"
+                    label: "zhucheng"
                 }, {
                     value: "",
-                    label: "寿光市"
+                    label: "shouguang"
                 }, {
                     value: "",
-                    label: "安丘市"
+                    label: "Anqiu city"
                 }, {
                     value: "",
-                    label: "高密市"
+                    label: "Gaomi city"
                 }, {
                     value: "",
-                    label: "昌邑市"
+                    label: "Changyi city"
                 }, {
                     value: "",
-                    label: "昌乐县"
+                    label: "instructor"
                 }, {
                     value: "",
-                    label: "临朐县"
+                    label: "Linqu county"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "济宁",
+                label: "jining",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "市中区"
+                    label: "Mark out"
                 }, {
                     value: "",
-                    label: "任城区"
+                    label: "rencheng"
                 }, {
                     value: "",
-                    label: "曲阜市"
+                    label: "qufu"
                 }, {
                     value: "",
-                    label: "兖州市"
+                    label: "yanzhou"
                 }, {
                     value: "",
-                    label: "邹城市"
+                    label: "zoucheng"
                 }, {
                     value: "",
-                    label: "鱼台县"
+                    label: "yutai"
                 }, {
                     value: "",
-                    label: "金乡县"
+                    label: "jinxiang"
                 }, {
                     value: "",
-                    label: "嘉祥县"
+                    label: "jiaxiang"
                 }, {
                     value: "",
-                    label: "微山县"
+                    label: "Rural area"
                 }, {
                     value: "",
-                    label: "汶上县"
+                    label: "Wenshang county"
                 }, {
                     value: "",
-                    label: "泗水县"
+                    label: "Surabaya county"
                 }, {
                     value: "",
-                    label: "梁山县"
+                    label: "beam"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "泰安",
+                label: "taian",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "泰山区"
+                    label: "Tai shan district"
                 }, {
                     value: "",
-                    label: "岱岳区"
+                    label: "daiyue"
                 }, {
                     value: "",
-                    label: "新泰市"
+                    label: "Xintai city"
                 }, {
                     value: "",
-                    label: "肥城市"
+                    label: "status"
                 }, {
                     value: "",
-                    label: "宁阳县"
+                    label: "The ningyang county"
                 }, {
                     value: "",
-                    label: "东平县"
+                    label: "Dongping county"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "威海",
+                label: "weihai",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "环翠区"
+                    label: "Huancui district"
                 }, {
                     value: "",
-                    label: "乳山市"
+                    label: "Rushan city"
                 }, {
                     value: "",
-                    label: "文登市"
+                    label: "wendeng"
                 }, {
                     value: "",
-                    label: "荣成市"
+                    label: "flourish"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "日照",
+                label: "rizhao",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "东港区"
+                    label: "Donggang district"
                 }, {
                     value: "",
-                    label: "岚山区"
+                    label: "Donggang district"
                 }, {
                     value: "",
-                    label: "五莲县"
+                    label: "wulian"
                 }, {
                     value: "",
-                    label: "莒县"
+                    label: "j"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "莱芜",
+                label: "laiwu",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "莱城区"
+                    label: "Lai city"
                 }, {
                     value: "",
-                    label: "钢城区"
+                    label: "gangcheng"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "临沂",
+                label: "linyi",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "兰山区"
+                    label: "Country-specific ones area"
                 }, {
                     value: "",
-                    label: "罗庄区"
+                    label: "Luo Zhuang area"
                 }, {
                     value: "",
-                    label: "河东区"
+                    label: "Hedong district"
                 }, {
                     value: "",
-                    label: "沂南县"
+                    label: "Yinan county"
                 }, {
                     value: "",
-                    label: "郯城县"
+                    label: "tancheng"
                 }, {
                     value: "",
-                    label: "沂水县"
+                    label: "phenomenon.the"
                 }, {
                     value: "",
-                    label: "苍山县"
+                    label: "Cangshan county"
                 }, {
                     value: "",
-                    label: "费县"
+                    label: "Fei county"
                 }, {
                     value: "",
-                    label: "平邑县"
+                    label: "In pingyi county"
                 }, {
                     value: "",
-                    label: "莒南县"
+                    label: "Junan county"
                 }, {
                     value: "",
-                    label: "蒙阴县"
+                    label: "mengyin"
                 }, {
                     value: "",
-                    label: "临沭县"
+                    label: "linshu"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "德州",
+                label: "Texas",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "德城区"
+                    label: "DE city"
                 }, {
                     value: "",
-                    label: "乐陵市"
+                    label: "laoling"
                 }, {
                     value: "",
-                    label: "禹城市"
+                    label: "Yucheng city"
                 }, {
                     value: "",
-                    label: "陵县"
+                    label: ","
                 }, {
                     value: "",
-                    label: "宁津县"
+                    label: "NingJin County"
                 }, {
                     value: "",
-                    label: "齐河县"
+                    label: "qihe"
                 }, {
                     value: "",
-                    label: "武城县"
+                    label: "In wucheng county can dispose"
                 }, {
                     value: "",
-                    label: "庆云县"
+                    label: "qingyun"
                 }, {
                     value: "",
-                    label: "平原县"
+                    label: "Pingyuan county"
                 }, {
                     value: "",
-                    label: "夏津县"
+                    label: "xiajin"
                 }, {
                     value: "",
-                    label: "临邑县"
+                    label: "Linyi county"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "聊城",
+                label: "liaocheng",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "东昌府区"
+                    label: "dongchangfu"
                 }, {
                     value: "",
-                    label: "临清市"
+                    label: "Linqing city"
                 }, {
                     value: "",
-                    label: "高唐县"
+                    label: "gaotang"
                 }, {
                     value: "",
-                    label: "阳谷县"
+                    label: "Yanggu county"
                 }, {
                     value: "",
-                    label: "茌平县"
+                    label: "chiping"
                 }, {
                     value: "",
-                    label: "莘县"
+                    label: "Shen county"
                 }, {
                     value: "",
-                    label: "东阿县"
+                    label: "Dong 'e"
                 }, {
                     value: "",
-                    label: "冠县"
+                    label: "guan"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "滨州",
+                label: "binzhou",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "滨城区"
+                    label: "Marina city"
                 }, {
                     value: "",
-                    label: "邹平县"
+                    label: "Zouping county"
                 }, {
                     value: "",
-                    label: "沾化县"
+                    label: "zhanhua"
                 }, {
                     value: "",
-                    label: "惠民县"
+                    label: "southeast"
                 }, {
                     value: "",
-                    label: "博兴县"
+                    label: "boxing"
                 }, {
                     value: "",
-                    label: "阳信县"
+                    label: "yangxin"
                 }, {
                     value: "",
-                    label: "无棣县"
+                    label: "wudi"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "菏泽",
+                label: "heze",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "牡丹区"
+                    label: "The peony district"
                 }, {
                     value: "",
-                    label: "鄄城县"
+                    label: "Juancheng county"
                 }, {
                     value: "",
-                    label: "单县"
+                    label: "Shan county"
                 }, {
                     value: "",
-                    label: "郓城县"
+                    label: "Yuncheng county"
                 }, {
                     value: "",
-                    label: "曹县"
+                    label: "Caoxian county"
                 }, {
                     value: "",
-                    label: "定陶县"
+                    label: "The dingtao county"
                 }, {
                     value: "",
-                    label: "巨野县"
+                    label: "The juye"
                 }, {
                     value: "",
-                    label: "东明县"
+                    label: "dongming"
                 }, {
                     value: "",
-                    label: "成武县"
+                    label: "chengwu"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "其他"
+                label: "other"
             }
         ],
 
     },
     {
-        value: "安徽",
-        label: "安徽",
+        value: "anhui",
+        label: "anhui",
         children: [{
                 value: "",
-                label: "请选择"
+                label: "Please select a"
             },
             {
                 value: "",
-                label: "合肥",
+                label: "hefei",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "庐阳区"
+                    label: "Luyang district"
                 }, {
                     value: "",
-                    label: "瑶海区"
+                    label: "Yao area"
                 }, {
                     value: "",
-                    label: "蜀山区"
+                    label: "Of shushan district"
                 }, {
                     value: "",
-                    label: "包河区"
+                    label: "The package reach"
                 }, {
                     value: "",
-                    label: "长丰县"
+                    label: "Changfeng county"
                 }, {
                     value: "",
-                    label: "肥东县"
+                    label: "feidong"
                 }, {
                     value: "",
-                    label: "肥西县"
+                    label: "Feixi county"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "芜湖",
+                label: "wuhu",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "镜湖区"
+                    label: "jinghu"
                 }, {
                     value: "",
-                    label: "弋江区"
+                    label: "Yi river area"
                 }, {
                     value: "",
-                    label: "鸠江区"
+                    label: "Dove river area"
                 }, {
                     value: "",
-                    label: "三山区"
+                    label: "Three mountains"
                 }, {
                     value: "",
-                    label: "芜湖县"
+                    label: "Wuhu county"
                 }, {
                     value: "",
-                    label: "南陵县"
+                    label: "The south,"
                 }, {
                     value: "",
-                    label: "繁昌县"
+                    label: "fanchang"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "蚌埠",
+                label: "bengbu",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "蚌山区"
+                    label: "Clam mountains"
                 }, {
                     value: "",
-                    label: "龙子湖区"
+                    label: "Give the lakes"
                 }, {
                     value: "",
-                    label: "禹会区"
+                    label: "Yu will area"
                 }, {
                     value: "",
-                    label: "淮上区"
+                    label: "Huai area on"
                 }, {
                     value: "",
-                    label: "怀远县"
+                    label: "cb"
                 }, {
                     value: "",
-                    label: "固镇县"
+                    label: "guzhen"
                 }, {
                     value: "",
-                    label: "五河县"
+                    label: "wuhe"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "淮南",
+                label: "huainan",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "田家庵区"
+                    label: "Tian Jiaan area"
                 }, {
                     value: "",
-                    label: "大通区"
+                    label: "Chase area"
                 }, {
                     value: "",
-                    label: "谢家集区"
+                    label: "Xie Jiaji area"
                 }, {
                     value: "",
-                    label: "八公山区"
+                    label: "Eight male mountain"
                 }, {
                     value: "",
-                    label: "潘集区"
+                    label: "Pan set area"
                 }, {
                     value: "",
-                    label: "凤台县"
+                    label: "Fengtai county"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "马鞍山",
+                label: "Ma on shan",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "雨山区"
+                    label: "The rain mountain"
                 }, {
                     value: "",
-                    label: "花山区"
+                    label: "Huashan area"
                 }, {
                     value: "",
-                    label: "金家庄区"
+                    label: "Jin Jiazhuang area"
                 }, {
                     value: "",
-                    label: "当涂县"
+                    label: "dangtu"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "淮北",
+                label: "huaibei",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "相山区"
+                    label: "In the mountains"
                 }, {
                     value: "",
-                    label: "杜集区"
+                    label: "Du set area"
                 }, {
                     value: "",
-                    label: "烈山区"
+                    label: "The fierce mountain"
                 }, {
                     value: "",
-                    label: "濉溪县"
+                    label: "SuiXi County"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "铜陵",
+                label: "tongling",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "铜官山区"
+                    label: "Copper officer mountain"
                 }, {
                     value: "",
-                    label: "狮子山区"
+                    label: "The lion mountain"
                 }, {
                     value: "",
-                    label: "郊区"
+                    label: "On the outskirts of"
                 }, {
                     value: "",
-                    label: "铜陵县"
+                    label: "there"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "安庆",
+                label: "anqing",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "迎江区"
+                    label: "Ying jiang district"
                 }, {
                     value: "",
-                    label: "大观区"
+                    label: "Daguan district"
                 }, {
                     value: "",
-                    label: "宜秀区"
+                    label: "Appropriate show area"
                 }, {
                     value: "",
-                    label: "桐城市"
+                    label: "Tongcheng city"
                 }, {
                     value: "",
-                    label: "宿松县"
+                    label: "SuSong county"
                 }, {
                     value: "",
-                    label: "枞阳县"
+                    label: "zongyang"
                 }, {
                     value: "",
-                    label: "太湖县"
+                    label: "Taihu county"
                 }, {
                     value: "",
-                    label: "怀宁县"
+                    label: "Huaining county"
                 }, {
                     value: "",
-                    label: "岳西县"
+                    label: "Yuexi county"
                 }, {
                     value: "",
-                    label: "望江县"
+                    label: "Wangjiang county"
                 }, {
                     value: "",
-                    label: "潜山县"
+                    label: "qianshan"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "黄山",
+                label: "huangshan",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "屯溪区"
+                    label: "Tunxi district"
                 }, {
                     value: "",
-                    label: "黄山区"
+                    label: "Huangshan area"
                 }, {
                     value: "",
-                    label: "徽州区"
+                    label: "Huizhou district"
                 }, {
                     value: "",
-                    label: "休宁县"
+                    label: "Hugh zhengning county"
                 }, {
                     value: "",
-                    label: "歙县"
+                    label: "rapidly"
                 }, {
                     value: "",
-                    label: "祁门县"
+                    label: "qimen"
                 }, {
                     value: "",
-                    label: "黟县"
+                    label: "yixian"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "滁州",
+                label: "chuzhou",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "琅琊区"
+                    label: "Reed {langya} area"
                 }, {
                     value: "",
-                    label: "南谯区"
+                    label: "nanqiao"
                 }, {
                     value: "",
-                    label: "天长市"
+                    label: "tianchang"
                 }, {
                     value: "",
-                    label: "明光市"
+                    label: "Mingguang city"
                 }, {
                     value: "",
-                    label: "全椒县"
+                    label: "quanjiao"
                 }, {
                     value: "",
-                    label: "来安县"
+                    label: "Lai 'an county"
                 }, {
                     value: "",
-                    label: "定远县"
+                    label: "dingyuan"
                 }, {
                     value: "",
-                    label: "凤阳县"
+                    label: "fengyang"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "阜阳",
+                label: "fuyang",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "颍州区"
+                    label: "'obviously"
                 }, {
                     value: "",
-                    label: "颍东区"
+                    label: "'east"
                 }, {
                     value: "",
-                    label: "颍泉区"
+                    label: "'spring area"
                 }, {
                     value: "",
-                    label: "界首市"
+                    label: "jieshou"
                 }, {
                     value: "",
-                    label: "临泉县"
+                    label: "linquan"
                 }, {
                     value: "",
-                    label: "颍上县"
+                    label: "Stands on the county"
                 }, {
                     value: "",
-                    label: "阜南县"
+                    label: "Funan county"
                 }, {
                     value: "",
-                    label: "太和县"
+                    label: "Taihe county"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "宿州",
+                label: "suzhou",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "埇桥区"
+                    label: "bridge"
                 }, {
                     value: "",
-                    label: "萧县"
+                    label: "Xiao county"
                 }, {
                     value: "",
-                    label: "泗县"
+                    label: "Si county"
                 }, {
                     value: "",
-                    label: "砀山县"
+                    label: "dangshan"
                 }, {
                     value: "",
-                    label: "灵璧县"
+                    label: "lingbi"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "巢湖",
+                label: "Chaohu lake",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "居巢区"
+                    label: "Uniform area"
                 }, {
                     value: "",
-                    label: "含山县"
+                    label: "Hanshan county"
                 }, {
                     value: "",
-                    label: "无为县"
+                    label: "Wuwei county"
                 }, {
                     value: "",
-                    label: "庐江县"
+                    label: "cultivated"
                 }, {
                     value: "",
-                    label: "和县"
+                    label: "And county"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "六安",
+                label: "luan",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "金安区"
+                    label: "Jin 'an district"
                 }, {
                     value: "",
-                    label: "裕安区"
+                    label: "Yuan district"
                 }, {
                     value: "",
-                    label: "寿县"
+                    label: "Shou county"
                 }, {
                     value: "",
-                    label: "霍山县"
+                    label: "Huoshan county"
                 }, {
                     value: "",
-                    label: "霍邱县"
+                    label: "Huoqiu county"
                 }, {
                     value: "",
-                    label: "舒城县"
+                    label: "shucheng"
                 }, {
                     value: "",
-                    label: "金寨县"
+                    label: "jinzhai"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "亳州",
+                label: "bozhou",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "谯城区"
+                    label: "Qiaocheng district"
                 }, {
                     value: "",
-                    label: "利辛县"
+                    label: "The xin county"
                 }, {
                     value: "",
-                    label: "涡阳县"
+                    label: "Guoyang county"
                 }, {
                     value: "",
-                    label: "蒙城县"
+                    label: "mengcheng"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "池州",
+                label: "chizhou",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "贵池区"
+                    label: "Guichi district"
                 }, {
                     value: "",
-                    label: "东至县"
+                    label: "East to the county"
                 }, {
                     value: "",
-                    label: "石台县"
+                    label: "Stone stage county"
                 }, {
                     value: "",
-                    label: "青阳县"
+                    label: "county"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "宣城",
+                label: "xuancheng",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "宣州区"
+                    label: "Xuanzhou district"
                 }, {
                     value: "",
-                    label: "宁国市"
+                    label: "Ningguo city"
                 }, {
                     value: "",
-                    label: "广德县"
+                    label: ".the"
                 }, {
                     value: "",
-                    label: "郎溪县"
+                    label: "LangXi county"
                 }, {
                     value: "",
-                    label: "泾县"
+                    label: "Jingxian county"
                 }, {
                     value: "",
-                    label: "旌德县"
+                    label: "Continuous DE county,"
                 }, {
                     value: "",
-                    label: "绩溪县"
+                    label: "Jixi county"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "其他"
+                label: "other"
             }
         ],
 
     },
     {
-        value: "浙江",
-        label: "浙江",
+        value: "zhejiang",
+        label: "zhejiang",
         children: [{
                 value: "",
-                label: "请选择"
+                label: "Please select a"
             },
             {
                 value: "",
-                label: "杭州",
+                label: "hangzhou",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "拱墅区"
+                    label: "Gongshu district"
                 }, {
                     value: "",
-                    label: "西湖区"
+                    label: "lake"
                 }, {
                     value: "",
-                    label: "上城区"
+                    label: "uptown"
                 }, {
                     value: "",
-                    label: "下城区"
+                    label: "In lower"
                 }, {
                     value: "",
-                    label: "江干区"
+                    label: "Jianggan district"
                 }, {
                     value: "",
-                    label: "滨江区"
+                    label: "Binjiang,"
                 }, {
                     value: "",
-                    label: "余杭区"
+                    label: "Yuhang district"
                 }, {
                     value: "",
-                    label: "萧山区"
+                    label: "Xiaoshan district,"
                 }, {
                     value: "",
-                    label: "建德市"
+                    label: "jiande"
                 }, {
                     value: "",
-                    label: "富阳市"
+                    label: "fuyang"
                 }, {
                     value: "",
-                    label: "临安市"
+                    label: "Linan city"
                 }, {
                     value: "",
-                    label: "桐庐县"
+                    label: "Tonglu county"
                 }, {
                     value: "",
-                    label: "淳安县"
+                    label: "Chunan county"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "宁波",
+                label: "ningbo",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "海曙区"
+                    label: "Haishu district"
                 }, {
                     value: "",
-                    label: "江东区"
+                    label: "Jiangdong district"
                 }, {
                     value: "",
-                    label: "江北区"
+                    label: "jiangbei"
                 }, {
                     value: "",
-                    label: "镇海区"
+                    label: "zhenhai"
                 }, {
                     value: "",
-                    label: "北仑区"
+                    label: "beilun"
                 }, {
                     value: "",
-                    label: "鄞州区"
+                    label: "Yinzhou district"
                 }, {
                     value: "",
-                    label: "余姚市"
+                    label: "yuyao"
                 }, {
                     value: "",
-                    label: "慈溪市"
+                    label: "Cixi city"
                 }, {
                     value: "",
-                    label: "奉化市"
+                    label: "fenghua"
                 }, {
                     value: "",
-                    label: "宁海县"
+                    label: "yuan"
                 }, {
                     value: "",
-                    label: "象山县"
+                    label: "xiangshan"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "温州",
+                label: "wenzhou",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "鹿城区"
+                    label: "lucheng"
                 }, {
                     value: "",
-                    label: "龙湾区"
+                    label: "longwan"
                 }, {
                     value: "",
-                    label: "瓯海区"
+                    label: "The pressure-state-response model"
                 }, {
                     value: "",
-                    label: "瑞安市"
+                    label: "ruian"
                 }, {
                     value: "",
-                    label: "乐清市"
+                    label: "Yueqing city"
                 }, {
                     value: "",
-                    label: "永嘉县"
+                    label: "Yongjia county,"
                 }, {
                     value: "",
-                    label: "洞头县"
+                    label: "Dongtou county"
                 }, {
                     value: "",
-                    label: "平阳县"
+                    label: "Pingyang county"
                 }, {
                     value: "",
-                    label: "苍南县"
+                    label: "Cangnan county"
                 }, {
                     value: "",
-                    label: "文成县"
+                    label: "wencheng"
                 }, {
                     value: "",
-                    label: "泰顺县"
+                    label: "taishun"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "嘉兴",
+                label: "jiaxing",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "秀城区"
+                    label: "Show the city"
                 }, {
                     value: "",
-                    label: "秀洲区"
+                    label: "Show chau district"
                 }, {
                     value: "",
-                    label: "海宁市"
+                    label: "haining"
                 }, {
                     value: "",
-                    label: "平湖市"
+                    label: "pinghu"
                 }, {
                     value: "",
-                    label: "桐乡市"
+                    label: "tongxiang"
                 }, {
                     value: "",
-                    label: "嘉善县"
+                    label: "Jiashan county"
                 }, {
                     value: "",
-                    label: "海盐县"
+                    label: "haiyan"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "湖州",
+                label: "huzhou",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "吴兴区"
+                    label: "Wu Xing area"
                 }, {
                     value: "",
-                    label: "南浔区"
+                    label: "nanxun"
                 }, {
                     value: "",
-                    label: "长兴县"
+                    label: "Changxing county"
                 }, {
                     value: "",
-                    label: "德清县"
+                    label: "Deqing county"
                 }, {
                     value: "",
-                    label: "安吉县"
+                    label: "Anji county,"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "绍兴",
+                label: "shaoxing",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "越城区"
+                    label: "The city"
                 }, {
                     value: "",
-                    label: "诸暨市"
+                    label: "Zhuji city"
                 }, {
                     value: "",
-                    label: "上虞市"
+                    label: "shangyu"
                 }, {
                     value: "",
-                    label: "嵊州市"
+                    label: "shengzhou"
                 }, {
                     value: "",
-                    label: "绍兴县"
+                    label: "Shaoxing county"
                 }, {
                     value: "",
-                    label: "新昌县"
+                    label: "xinchangxian"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "金华",
+                label: "jinhua",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "婺城区"
+                    label: "Wu city"
                 }, {
                     value: "",
-                    label: "金东区"
+                    label: "But gold zone"
                 }, {
                     value: "",
-                    label: "兰溪市"
+                    label: "lanxi"
                 }, {
                     value: "",
-                    label: "义乌市"
+                    label: "Yiwu city"
                 }, {
                     value: "",
-                    label: "东阳市"
+                    label: "dongyang"
                 }, {
                     value: "",
-                    label: "永康市"
+                    label: "yongkang"
                 }, {
                     value: "",
-                    label: "武义县"
+                    label: "wuyi"
                 }, {
                     value: "",
-                    label: "浦江县"
+                    label: "pujiang"
                 }, {
                     value: "",
-                    label: "磐安县"
+                    label: "Panan county,"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "衢州",
+                label: "quzhou",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "柯城区"
+                    label: "Ke city"
                 }, {
                     value: "",
-                    label: "衢江区"
+                    label: "Qu jiang district"
                 }, {
                     value: "",
-                    label: "江山市"
+                    label: "Jiangshan city"
                 }, {
                     value: "",
-                    label: "龙游县"
+                    label: "longyou"
                 }, {
                     value: "",
-                    label: "常山县"
+                    label: "Changshan county"
                 }, {
                     value: "",
-                    label: "开化县"
+                    label: "kaihua"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "舟山",
+                label: "zhoushan",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "定海区"
+                    label: "dinghai"
                 }, {
                     value: "",
-                    label: "普陀区"
+                    label: "Putuo district"
                 }, {
                     value: "",
-                    label: "岱山县"
+                    label: "daishan"
                 }, {
                     value: "",
-                    label: "嵊泗县"
+                    label: "Shengsi county"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "台州",
+                label: "taizhou",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "椒江区"
+                    label: "jiaojiang"
                 }, {
                     value: "",
-                    label: "黄岩区"
+                    label: "Huangyan district"
                 }, {
                     value: "",
-                    label: "路桥区"
+                    label: "Jiang days"
                 }, {
                     value: "",
-                    label: "临海市"
+                    label: "Linhai city"
                 }, {
                     value: "",
-                    label: "温岭市"
+                    label: "Wenling city"
                 }, {
                     value: "",
-                    label: "玉环县"
+                    label: "Yuhuan county"
                 }, {
                     value: "",
-                    label: "天台县"
+                    label: "Tiantai county"
                 }, {
                     value: "",
-                    label: "仙居县"
+                    label: "Xianju county"
                 }, {
                     value: "",
-                    label: "三门县"
+                    label: "Sanmen county"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "丽水",
+                label: "lishui",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "莲都区"
+                    label: "Lotus is area"
                 }, {
                     value: "",
-                    label: "龙泉市"
+                    label: "longquan"
                 }, {
                     value: "",
-                    label: "缙云县"
+                    label: "Jinyun county"
                 }, {
                     value: "",
-                    label: "青田县"
+                    label: "Qingtian county,"
                 }, {
                     value: "",
-                    label: "云和县"
+                    label: "The cloud and county"
                 }, {
                     value: "",
-                    label: "遂昌县"
+                    label: "The local"
                 }, {
                     value: "",
-                    label: "松阳县"
+                    label: "songyang"
                 }, {
                     value: "",
-                    label: "庆元县"
+                    label: "Closing hillsides"
                 }, {
                     value: "",
-                    label: "景宁畲族自治县"
+                    label: "Jingning She Autonomous County"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "其他"
+                label: "other"
             }
         ],
 
     },
     {
-        value: "福建",
-        label: "福建",
+        value: "fujian",
+        label: "fujian",
         children: [{
                 value: "",
-                label: "请选择"
+                label: "Please select a"
             },
             {
                 value: "",
-                label: "福州",
+                label: "fuzhou",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "鼓楼区"
+                    label: "gulou"
                 }, {
                     value: "",
-                    label: "台江区"
+                    label: "Says ha tae-keung area"
                 }, {
                     value: "",
-                    label: "仓山区"
+                    label: "CangShan area"
                 }, {
                     value: "",
-                    label: "马尾区"
+                    label: "Mawei district"
                 }, {
                     value: "",
-                    label: "晋安区"
+                    label: "Jinan district"
                 }, {
                     value: "",
-                    label: "福清市"
+                    label: "Fuqing city"
                 }, {
                     value: "",
-                    label: "长乐市"
+                    label: "changle"
                 }, {
                     value: "",
-                    label: "闽侯县"
+                    label: "Minhou county"
                 }, {
                     value: "",
-                    label: "闽清县"
+                    label: "minqing"
                 }, {
                     value: "",
-                    label: "永泰县"
+                    label: "Yongtai county"
                 }, {
                     value: "",
-                    label: "连江县"
+                    label: "Lianjiang county"
                 }, {
                     value: "",
-                    label: "罗源县"
+                    label: "Luoyuan county"
                 }, {
                     value: "",
-                    label: "平潭县"
+                    label: "Pingtan county"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "厦门",
+                label: "xiamen",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "思明区"
+                    label: "Amoy area"
                 }, {
                     value: "",
-                    label: "海沧区"
+                    label: "Haicang district"
                 }, {
                     value: "",
-                    label: "湖里区"
+                    label: "The lake district"
                 }, {
                     value: "",
-                    label: "集美区"
+                    label: "Jimei district"
                 }, {
                     value: "",
-                    label: "同安区"
+                    label: "Tong 'an"
                 }, {
                     value: "",
-                    label: "翔安区"
+                    label: "Xiang 'an area"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "莆田",
+                label: "putian",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "城厢区"
+                    label: "Residences area"
                 }, {
                     value: "",
-                    label: "涵江区"
+                    label: "HanJiang area"
                 }, {
                     value: "",
-                    label: "荔城区"
+                    label: "Li city"
                 }, {
                     value: "",
-                    label: "秀屿区"
+                    label: "Xiuyu district"
                 }, {
                     value: "",
-                    label: "仙游县"
+                    label: "xianyou"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "三明",
+                label: "sanming",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "梅列区"
+                    label: "Meredov district"
                 }, {
                     value: "",
-                    label: "三元区"
+                    label: "Three yuan area"
                 }, {
                     value: "",
-                    label: "永安市"
+                    label: "yongan"
                 }, {
                     value: "",
-                    label: "明溪县"
+                    label: "MingXi county"
                 }, {
                     value: "",
-                    label: "将乐县"
+                    label: "To le county,"
                 }, {
                     value: "",
-                    label: "大田县"
+                    label: "Datian county"
                 }, {
                     value: "",
-                    label: "宁化县"
+                    label: "ninghua"
                 }, {
                     value: "",
-                    label: "建宁县"
+                    label: "Set up rather county"
                 }, {
                     value: "",
-                    label: "沙县"
+                    label: "Sha county"
                 }, {
                     value: "",
-                    label: "尤溪县"
+                    label: "Youxi county"
                 }, {
                     value: "",
-                    label: "清流县"
+                    label: "qingliu"
                 }, {
                     value: "",
-                    label: "泰宁县"
+                    label: "taining"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "泉州",
+                label: "quanzhou",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "鲤城区"
+                    label: "The carp city"
                 }, {
                     value: "",
-                    label: "丰泽区"
+                    label: "Okanagan valley area"
                 }, {
                     value: "",
-                    label: "洛江区"
+                    label: "Luojiang district"
                 }, {
                     value: "",
-                    label: "泉港区"
+                    label: "Spring harbor"
                 }, {
                     value: "",
-                    label: "石狮市"
+                    label: "Shishi city"
                 }, {
                     value: "",
-                    label: "晋江市"
+                    label: "jinjiang"
                 }, {
                     value: "",
-                    label: "南安市"
+                    label: "nanan"
                 }, {
                     value: "",
-                    label: "惠安县"
+                    label: "huian"
                 }, {
                     value: "",
-                    label: "永春县"
+                    label: "yongchun"
                 }, {
                     value: "",
-                    label: "安溪县"
+                    label: "anxi"
                 }, {
                     value: "",
-                    label: "德化县"
+                    label: "Dehua county"
                 }, {
                     value: "",
-                    label: "金门县"
+                    label: "Kinmen county"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "漳州",
+                label: "zhangzhou",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "芗城区"
+                    label: "A drug city"
                 }, {
                     value: "",
-                    label: "龙文区"
+                    label: "Yong man area"
                 }, {
                     value: "",
-                    label: "龙海市"
+                    label: "Longhai city"
                 }, {
                     value: "",
-                    label: "平和县"
+                    label: "Peaceful county"
                 }, {
                     value: "",
-                    label: "南靖县"
+                    label: "Nanjing county"
                 }, {
                     value: "",
-                    label: "诏安县"
+                    label: "Zhao 'an"
                 }, {
                     value: "",
-                    label: "漳浦县"
+                    label: "Liang-fon estate located"
                 }, {
                     value: "",
-                    label: "华安县"
+                    label: "huaan"
                 }, {
                     value: "",
-                    label: "东山县"
+                    label: "Dongshan county"
                 }, {
                     value: "",
-                    label: "长泰县"
+                    label: "Changtai county"
                 }, {
                     value: "",
-                    label: "云霄县"
+                    label: "yunxiao"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "南平",
+                label: "nanping",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "延平区"
+                    label: "Yeonpyeong area"
                 }, {
                     value: "",
-                    label: "建瓯市"
+                    label: "jianou"
                 }, {
                     value: "",
-                    label: "邵武市"
+                    label: "shao-wu"
                 }, {
                     value: "",
-                    label: "武夷山市"
+                    label: "Wuyishan city"
                 }, {
                     value: "",
-                    label: "建阳市"
+                    label: "jianyang"
                 }, {
                     value: "",
-                    label: "松溪县"
+                    label: "songxi"
                 }, {
                     value: "",
-                    label: "光泽县"
+                    label: "Gloss county"
                 }, {
                     value: "",
-                    label: "顺昌县"
+                    label: "Shun cheong county"
                 }, {
                     value: "",
-                    label: "浦城县"
+                    label: "PuCheng county"
                 }, {
                     value: "",
-                    label: "政和县"
+                    label: "vegetationdistribution"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "龙岩",
+                label: "longyan",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "新罗区"
+                    label: "Xinluo district"
                 }, {
                     value: "",
-                    label: "漳平市"
+                    label: "zhangping"
                 }, {
                     value: "",
-                    label: "长汀县"
+                    label: "Changting county"
                 }, {
                     value: "",
-                    label: "武平县"
+                    label: "Ms wu county,"
                 }, {
                     value: "",
-                    label: "上杭县"
+                    label: "Shanghang county"
                 }, {
                     value: "",
-                    label: "永定县"
+                    label: "Yongding county"
                 }, {
                     value: "",
-                    label: "连城县"
+                    label: "Liancheng county"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "宁德",
+                label: "ningde",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "蕉城区"
+                    label: "Manila city"
                 }, {
                     value: "",
-                    label: "福安市"
+                    label: "makes"
                 }, {
                     value: "",
-                    label: "福鼎市"
+                    label: "fuding"
                 }, {
                     value: "",
-                    label: "寿宁县"
+                    label: "shouning"
                 }, {
                     value: "",
-                    label: "霞浦县"
+                    label: "Xiapu county"
                 }, {
                     value: "",
-                    label: "柘荣县"
+                    label: "zherong"
                 }, {
                     value: "",
-                    label: "屏南县"
+                    label: "Pingnan county"
                 }, {
                     value: "",
-                    label: "古田县"
+                    label: "Thou farmland county"
                 }, {
                     value: "",
-                    label: "周宁县"
+                    label: "Zhou ning county,"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "其他"
+                label: "other"
             }
         ],
 
     },
     {
-        value: "湖南",
-        label: "湖南",
+        value: "hunan",
+        label: "hunan",
         children: [{
                 value: "",
-                label: "请选择"
+                label: "Please select a"
             },
             {
                 value: "",
-                label: "长沙",
+                label: "changsha",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "岳麓区"
+                    label: "Yuelu district"
                 }, {
                     value: "",
-                    label: "芙蓉区"
+                    label: "Furong district"
                 }, {
                     value: "",
-                    label: "天心区"
+                    label: "By tianxin"
                 }, {
                     value: "",
-                    label: "开福区"
+                    label: "Kaifu district"
                 }, {
                     value: "",
-                    label: "雨花区"
+                    label: "Yuhua district"
                 }, {
                     value: "",
-                    label: "浏阳市"
+                    label: "liuyang"
                 }, {
                     value: "",
-                    label: "长沙县"
+                    label: "xingsha"
                 }, {
                     value: "",
-                    label: "望城县"
+                    label: "wangcheng"
                 }, {
                     value: "",
-                    label: "宁乡县"
+                    label: "Ningxiang county"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "株洲",
+                label: "zhuzhou",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "天元区"
+                    label: "Tianyuan district,"
                 }, {
                     value: "",
-                    label: "荷塘区"
+                    label: "Lotus pond area"
                 }, {
                     value: "",
-                    label: "芦淞区"
+                    label: "LuSong area"
                 }, {
                     value: "",
-                    label: "石峰区"
+                    label: "Stone mountain area"
                 }, {
                     value: "",
-                    label: "醴陵市"
+                    label: "liling"
                 }, {
                     value: "",
-                    label: "株洲县"
+                    label: "Zhuzhou county"
                 }, {
                     value: "",
-                    label: "炎陵县"
+                    label: "tianxinli"
                 }, {
                     value: "",
-                    label: "茶陵县"
+                    label: "chaling"
                 }, {
                     value: "",
-                    label: "攸县"
+                    label: "remote"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "湘潭",
+                label: "xiangtan",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "岳塘区"
+                    label: "Yue pond area"
                 }, {
                     value: "",
-                    label: "雨湖区"
+                    label: "yuhu"
                 }, {
                     value: "",
-                    label: "湘乡市"
+                    label: "The xiangxiang"
                 }, {
                     value: "",
-                    label: "韶山市"
+                    label: "Shaoshan city"
                 }, {
                     value: "",
-                    label: "湘潭县"
+                    label: "Xiangtan county"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "衡阳",
+                label: "hengyang",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "雁峰区"
+                    label: "Wild goose peak area"
                 }, {
                     value: "",
-                    label: "珠晖区"
+                    label: "Bead CDH area"
                 }, {
                     value: "",
-                    label: "石鼓区"
+                    label: "Shek kwu district"
                 }, {
                     value: "",
-                    label: "蒸湘区"
+                    label: "Steamed hunan area"
                 }, {
                     value: "",
-                    label: "南岳区"
+                    label: "Nanyue district"
                 }, {
                     value: "",
-                    label: "耒阳市"
+                    label: "leiyang"
                 }, {
                     value: "",
-                    label: "常宁市"
+                    label: "Changning county"
                 }, {
                     value: "",
-                    label: "衡阳县"
+                    label: "Hengyang county"
                 }, {
                     value: "",
-                    label: "衡东县"
+                    label: "Hengdong county"
                 }, {
                     value: "",
-                    label: "衡山县"
+                    label: "hengshan"
                 }, {
                     value: "",
-                    label: "衡南县"
+                    label: "hengnan"
                 }, {
                     value: "",
-                    label: "祁东县"
+                    label: "Qidong well county"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "邵阳",
+                label: "shaoyang",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "双清区"
+                    label: "Double clear zone"
                 }, {
                     value: "",
-                    label: "大祥区"
+                    label: "Hand area"
                 }, {
                     value: "",
-                    label: "北塔区"
+                    label: "The north tower area"
                 }, {
                     value: "",
-                    label: "武冈市"
+                    label: "wugang"
                 }, {
                     value: "",
-                    label: "邵东县"
+                    label: "shaodong"
                 }, {
                     value: "",
-                    label: "洞口县"
+                    label: "Dongkou county"
                 }, {
                     value: "",
-                    label: "新邵县"
+                    label: "XinShao county"
                 }, {
                     value: "",
-                    label: "绥宁县"
+                    label: "suining"
                 }, {
                     value: "",
-                    label: "新宁县"
+                    label: "New county"
                 }, {
                     value: "",
-                    label: "邵阳县"
+                    label: "Shaoyang county"
                 }, {
                     value: "",
-                    label: "隆回县"
+                    label: "Longhui county"
                 }, {
                     value: "",
-                    label: "城步苗族自治县"
+                    label: "Chengbu Miao Autonomous County"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "岳阳",
+                label: "yueyang",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "岳阳楼区"
+                    label: "Yueyang LouQu"
                 }, {
                     value: "",
-                    label: "云溪区"
+                    label: "Cloud creek area"
                 }, {
                     value: "",
-                    label: "君山区"
+                    label: "Junshan island area"
                 }, {
                     value: "",
-                    label: "临湘市"
+                    label: "Linxiang city"
                 }, {
                     value: "",
-                    label: "汨罗市"
+                    label: "Miluo city"
                 }, {
                     value: "",
-                    label: "岳阳县"
+                    label: "Yueyang county"
                 }, {
                     value: "",
-                    label: "湘阴县"
+                    label: "xiangyin"
                 }, {
                     value: "",
-                    label: "平江县"
+                    label: "The pingjiang xian"
                 }, {
                     value: "",
-                    label: "华容县"
+                    label: "Huarong county"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "常德",
+                label: "changde",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "武陵区"
+                    label: "Wuling district"
                 }, {
                     value: "",
-                    label: "鼎城区"
+                    label: "Dingcheng district"
                 }, {
                     value: "",
-                    label: "津市市"
+                    label: "Tianjin city"
                 }, {
                     value: "",
-                    label: "澧县"
+                    label: "Li County"
                 }, {
                     value: "",
-                    label: "临澧县"
+                    label: "linli"
                 }, {
                     value: "",
-                    label: "桃源县"
+                    label: "Taoyuan county"
                 }, {
                     value: "",
-                    label: "汉寿县"
+                    label: "hanshou"
                 }, {
                     value: "",
-                    label: "安乡县"
+                    label: "anxiang"
                 }, {
                     value: "",
-                    label: "石门县"
+                    label: "concession"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "张家界",
+                label: "zhangjiajie",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "永定区"
+                    label: "Yongding district"
                 }, {
                     value: "",
-                    label: "武陵源区"
+                    label: "Wulingyuan district"
                 }, {
                     value: "",
-                    label: "慈利县"
+                    label: "cili"
                 }, {
                     value: "",
-                    label: "桑植县"
+                    label: "sangzhi"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "益阳",
+                label: "yiyang",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "赫山区"
+                    label: "Guming area"
                 }, {
                     value: "",
-                    label: "资阳区"
+                    label: "Ziyang district"
                 }, {
                     value: "",
-                    label: "沅江市"
+                    label: "Ruanjiang city"
                 }, {
                     value: "",
-                    label: "桃江县"
+                    label: "Taojiang county"
                 }, {
                     value: "",
-                    label: "南县"
+                    label: "no"
                 }, {
                     value: "",
-                    label: "安化县"
+                    label: "Anhua.we will act"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "郴州",
+                label: "chenzhou",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "北湖区"
+                    label: "beihu"
                 }, {
                     value: "",
-                    label: "苏仙区"
+                    label: "Suxian district"
                 }, {
                     value: "",
-                    label: "资兴市"
+                    label: "The municipality ("
                 }, {
                     value: "",
-                    label: "宜章县"
+                    label: "yizhang"
                 }, {
                     value: "",
-                    label: "汝城县"
+                    label: "Your city, county,"
                 }, {
                     value: "",
-                    label: "安仁县"
+                    label: "AnRen county"
                 }, {
                     value: "",
-                    label: "嘉禾县"
+                    label: "jiahe"
                 }, {
                     value: "",
-                    label: "临武县"
+                    label: "Linwu county"
                 }, {
                     value: "",
-                    label: "桂东县"
+                    label: "Our county"
                 }, {
                     value: "",
-                    label: "永兴县"
+                    label: "Yongxing county"
                 }, {
                     value: "",
-                    label: "桂阳县"
+                    label: "Guiyang county"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "永州",
+                label: "yongzhou",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "冷水滩区"
+                    label: "lengshuitan"
                 }, {
                     value: "",
-                    label: "零陵区"
+                    label: "lingling"
                 }, {
                     value: "",
-                    label: "祁阳县"
+                    label: "qiyang"
                 }, {
                     value: "",
-                    label: "蓝山县"
+                    label: "Lanshan county"
                 }, {
                     value: "",
-                    label: "宁远县"
+                    label: "Ningyuan county"
                 }, {
                     value: "",
-                    label: "新田县"
+                    label: "SAN tin county"
                 }, {
                     value: "",
-                    label: "东安县"
+                    label: "Dongan county"
                 }, {
                     value: "",
-                    label: "江永县"
+                    label: "Yun yong county"
                 }, {
                     value: "",
-                    label: "道县"
+                    label: "dao"
                 }, {
                     value: "",
-                    label: "双牌县"
+                    label: "The double card county"
                 }, {
                     value: "",
-                    label: "江华瑶族自治县"
+                    label: "Jianghua Yao Autonomous County"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "怀化",
+                label: "Which is",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "鹤城区"
+                    label: "Crane city"
                 }, {
                     value: "",
-                    label: "洪江市"
+                    label: "Is necessary,"
                 }, {
                     value: "",
-                    label: "会同县"
+                    label: "province"
                 }, {
                     value: "",
-                    label: "沅陵县"
+                    label: "yuanling"
                 }, {
                     value: "",
-                    label: "辰溪县"
+                    label: "Calvin creek county"
                 }, {
                     value: "",
-                    label: "溆浦县"
+                    label: "xupu"
                 }, {
                     value: "",
-                    label: "中方县"
+                    label: "zhongfang"
                 }, {
                     value: "",
-                    label: "新晃侗族自治县"
+                    label: "Xinhuang Dong Autonomous County"
                 }, {
                     value: "",
-                    label: "芷江侗族自治县"
+                    label: "Zhijiang Dong Autonomous County"
                 }, {
                     value: "",
-                    label: "通道侗族自治县"
+                    label: "Tongdong Autonomous County"
                 }, {
                     value: "",
-                    label: "靖州苗族侗族自治县"
+                    label: "Jingzhou Miao and Dong Autonomous County"
                 }, {
                     value: "",
-                    label: "麻阳苗族自治县"
+                    label: "Mayang Miao Autonomous County"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "娄底",
+                label: "loudi",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "娄星区"
+                    label: "LouXing area"
                 }, {
                     value: "",
-                    label: "冷水江市"
+                    label: "Lengshuijiang city"
                 }, {
                     value: "",
-                    label: "涟源市"
+                    label: "lianyuan"
                 }, {
                     value: "",
-                    label: "新化县"
+                    label: "xinhua"
                 }, {
                     value: "",
-                    label: "双峰县"
+                    label: "Bimodal county"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "湘西土家族苗族自治州",
+                label: "Xiangxi Tujia and Miao Autonomous Prefecture",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "吉首市"
+                    label: "jishou"
                 }, {
                     value: "",
-                    label: "古丈县"
+                    label: "The ancient cultural county"
                 }, {
                     value: "",
-                    label: "龙山县"
+                    label: "Longshan county"
                 }, {
                     value: "",
-                    label: "永顺县"
+                    label: "yongshun"
                 }, {
                     value: "",
-                    label: "凤凰县"
+                    label: "Fenghuang county"
                 }, {
                     value: "",
-                    label: "泸溪县"
+                    label: "LuXi county"
                 }, {
                     value: "",
-                    label: "保靖县"
+                    label: "Baojing county"
                 }, {
                     value: "",
-                    label: "花垣县"
+                    label: "Flowers through county"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "其他"
+                label: "other"
             }
         ],
 
     },
     {
-        value: "广西",
-        label: "广西",
+        value: "guangxi",
+        label: "guangxi",
         children: [{
                 value: "",
-                label: "请选择"
+                label: "Please select a"
             },
             {
                 value: "",
-                label: "南宁",
+                label: "nanning",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "青秀区"
+                    label: "Green area"
                 }, {
                     value: "",
-                    label: "兴宁区"
+                    label: "Xin district"
                 }, {
                     value: "",
-                    label: "西乡塘区"
+                    label: "Xixiang pond area"
                 }, {
                     value: "",
-                    label: "良庆区"
+                    label: "LiangQing area"
                 }, {
                     value: "",
-                    label: "江南区"
+                    label: "Jiangnan area"
                 }, {
                     value: "",
-                    label: "邕宁区"
+                    label: "Nanning ning district"
                 }, {
                     value: "",
-                    label: "武鸣县"
+                    label: "It has a"
                 }, {
                     value: "",
-                    label: "隆安县"
+                    label: "From the county,"
                 }, {
                     value: "",
-                    label: "马山县"
+                    label: "Mashan county"
                 }, {
                     value: "",
-                    label: "上林县"
+                    label: "shanglin"
                 }, {
                     value: "",
-                    label: "宾阳县"
+                    label: "binyang"
                 }, {
                     value: "",
-                    label: "横县"
+                    label: "heng"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "柳州",
+                label: "liuzhou",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "城中区"
+                    label: "The central city"
                 }, {
                     value: "",
-                    label: "鱼峰区"
+                    label: "yufeng"
                 }, {
                     value: "",
-                    label: "柳北区"
+                    label: "Liu north"
                 }, {
                     value: "",
-                    label: "柳南区"
+                    label: "District of"
                 }, {
                     value: "",
-                    label: "柳江县"
+                    label: "Liujiang,"
                 }, {
                     value: "",
-                    label: "柳城县"
+                    label: "Liucheng county"
                 }, {
                     value: "",
-                    label: "鹿寨县"
+                    label: "Abatis county"
                 }, {
                     value: "",
-                    label: "融安县"
+                    label: "Map of rongan county"
                 }, {
                     value: "",
-                    label: "融水苗族自治县"
+                    label: "Rongshui Miao Autonomous County"
                 }, {
                     value: "",
-                    label: "三江侗族自治县"
+                    label: "Sanjiang Dong Autonomous County"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "桂林",
+                label: "guilin",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "象山区"
+                    label: "Xiangshan area"
                 }, {
                     value: "",
-                    label: "秀峰区"
+                    label: "xiufeng"
                 }, {
                     value: "",
-                    label: "叠彩区"
+                    label: "diecai"
                 }, {
                     value: "",
-                    label: "七星区"
+                    label: "Seven star area"
                 }, {
                     value: "",
-                    label: "雁山区"
+                    label: "Wild goose mountain"
                 }, {
                     value: "",
-                    label: "阳朔县"
+                    label: "Yangshuo county"
                 }, {
                     value: "",
-                    label: "临桂县"
+                    label: "Guangxi in the county"
                 }, {
                     value: "",
-                    label: "灵川县"
+                    label: "Ling chuan county"
                 }, {
                     value: "",
-                    label: "全州县"
+                    label: "quanzhou"
                 }, {
                     value: "",
-                    label: "平乐县"
+                    label: "Pingle county"
                 }, {
                     value: "",
-                    label: "兴安县"
+                    label: "The county"
                 }, {
                     value: "",
-                    label: "灌阳县"
+                    label: "Filling and Yang county"
                 }, {
                     value: "",
-                    label: "荔浦县"
+                    label: "Lipu county"
                 }, {
                     value: "",
-                    label: "资源县"
+                    label: "Resources county,"
                 }, {
                     value: "",
-                    label: "永福县"
+                    label: "Yong fu county"
                 }, {
                     value: "",
-                    label: "龙胜各族自治县"
+                    label: "Longsheng ethnic autonomous County"
                 }, {
                     value: "",
-                    label: "恭城瑶族自治县"
+                    label: "Gongcheng Yao Autonomous County"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "梧州",
+                label: "wuzhou",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "万秀区"
+                    label: "Wan Xiu area"
                 }, {
                     value: "",
-                    label: "蝶山区"
+                    label: "Butterfly mountain"
                 }, {
                     value: "",
-                    label: "长洲区"
+                    label: "Changzhou area"
                 }, {
                     value: "",
-                    label: "岑溪市"
+                    label: "CenXi city"
                 }, {
                     value: "",
-                    label: "苍梧县"
+                    label: "Meaning county"
                 }, {
                     value: "",
-                    label: "藤县"
+                    label: "Cane county"
                 }, {
                     value: "",
-                    label: "蒙山县"
+                    label: "mengshan"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "北海",
+                label: "The north sea",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "海城区"
+                    label: "The sea city"
                 }, {
                     value: "",
-                    label: "银海区"
+                    label: "Silver sea area"
                 }, {
                     value: "",
-                    label: "铁山港区"
+                    label: "TieShanGang area"
                 }, {
                     value: "",
-                    label: "合浦县"
+                    label: "Hepu county"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "防城港",
+                label: "fangchenggang",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "港口区"
+                    label: "harbor"
                 }, {
                     value: "",
-                    label: "防城区"
+                    label: "The city"
                 }, {
                     value: "",
-                    label: "东兴市"
+                    label: "Dongxing city"
                 }, {
                     value: "",
-                    label: "上思县"
+                    label: "On si county"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "钦州",
+                label: "qinzhou",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "钦南区"
+                    label: "qinnan"
                 }, {
                     value: "",
-                    label: "钦北区"
+                    label: "Qin north"
                 }, {
                     value: "",
-                    label: "灵山县"
+                    label: "Lingshan county"
                 }, {
                     value: "",
-                    label: "浦北县"
+                    label: "Pubei county belongs"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "贵港",
+                label: "Your port",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "港北区"
+                    label: "The port of north"
                 }, {
                     value: "",
-                    label: "港南区"
+                    label: "Hong Kong southern district"
                 }, {
                     value: "",
-                    label: "覃塘区"
+                    label: "Gangbei district"
                 }, {
                     value: "",
-                    label: "桂平市"
+                    label: "Guigang city"
                 }, {
                     value: "",
-                    label: "平南县"
+                    label: "Ping pingnan"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "玉林",
+                label: "yulin",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "玉州区"
+                    label: "Yuzhou district"
                 }, {
                     value: "",
-                    label: "北流市"
+                    label: "North flow,"
                 }, {
                     value: "",
-                    label: "容县"
+                    label: "Should the county"
                 }, {
                     value: "",
-                    label: "陆川县"
+                    label: "luchuan"
                 }, {
                     value: "",
-                    label: "博白县"
+                    label: "bobai"
                 }, {
                     value: "",
-                    label: "兴业县"
+                    label: "Xingye county"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "百色",
+                label: "The baise",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "右江区"
+                    label: "Youjiang area"
                 }, {
                     value: "",
-                    label: "凌云县"
+                    label: "Lingyun county"
                 }, {
                     value: "",
-                    label: "平果县"
+                    label: "pingguo"
                 }, {
                     value: "",
-                    label: "西林县"
+                    label: "xilin"
                 }, {
                     value: "",
-                    label: "乐业县"
+                    label: "Leye county"
                 }, {
                     value: "",
-                    label: "德保县"
+                    label: "Debao county"
                 }, {
                     value: "",
-                    label: "田林县"
+                    label: "tianlin"
                 }, {
                     value: "",
-                    label: "田阳县"
+                    label: "tianyang"
                 }, {
                     value: "",
-                    label: "靖西县"
+                    label: "Jingxi county"
                 }, {
                     value: "",
-                    label: "田东县"
+                    label: "tiandong"
                 }, {
                     value: "",
-                    label: "那坡县"
+                    label: "The county,"
                 }, {
                     value: "",
-                    label: "隆林各族自治县"
+                    label: "Longlin Ethnic Autonomous County"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "贺州",
+                label: "Congratulation state",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "八步区"
+                    label: "Step eight area"
                 }, {
                     value: "",
-                    label: "钟山县"
+                    label: "Zhong shan county"
                 }, {
                     value: "",
-                    label: "昭平县"
+                    label: "Zhaoping county"
                 }, {
                     value: "",
-                    label: "富川瑶族自治县"
+                    label: "Fuchuan Yao Autonomous County"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "河池",
+                label: "hechi",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "金城江区"
+                    label: "Jin Chengjiang area"
                 }, {
                     value: "",
-                    label: "宜州市"
+                    label: "yizhou"
                 }, {
                     value: "",
-                    label: "天峨县"
+                    label: "TianE county"
                 }, {
                     value: "",
-                    label: "凤山县"
+                    label: "fengshan"
                 }, {
                     value: "",
-                    label: "南丹县"
+                    label: "Nandan county"
                 }, {
                     value: "",
-                    label: "东兰县"
+                    label: "donglan"
                 }, {
                     value: "",
-                    label: "都安瑶族自治县"
+                    label: "Du 'an Yao Autonomous County"
                 }, {
                     value: "",
-                    label: "罗城仫佬族自治县"
+                    label: "Luocheng Mulao Ethnic Autonomous County"
                 }, {
                     value: "",
-                    label: "巴马瑶族自治县"
+                    label: "Bama Yao Autonomous County"
                 }, {
                     value: "",
-                    label: "环江毛南族自治县"
+                    label: "Huanjiang Maonan Autonomous County"
                 }, {
                     value: "",
-                    label: "大化瑶族自治县"
+                    label: "Dahua Yao Autonomous County"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "来宾",
+                label: "The guest",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "兴宾区"
+                    label: "Xing bing area"
                 }, {
                     value: "",
-                    label: "合山市"
+                    label: "In mountain city"
                 }, {
                     value: "",
-                    label: "象州县"
+                    label: "Xiangzhou county"
                 }, {
                     value: "",
-                    label: "武宣县"
+                    label: "wuxuan"
                 }, {
                     value: "",
-                    label: "忻城县"
+                    label: "Xincheng county"
                 }, {
                     value: "",
-                    label: "金秀瑶族自治县"
+                    label: "Jinxiu Yao Autonomous County"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "崇左",
+                label: "The left part",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "江州区"
+                    label: "Jiang states"
                 }, {
                     value: "",
-                    label: "凭祥市"
+                    label: "Pingxiang city"
                 }, {
                     value: "",
-                    label: "宁明县"
+                    label: "Ningming county"
                 }, {
                     value: "",
-                    label: "扶绥县"
+                    label: "fusui"
                 }, {
                     value: "",
-                    label: "龙州县"
+                    label: "Longzhou county"
                 }, {
                     value: "",
-                    label: "大新县"
+                    label: "Big hsin-hsien"
                 }, {
                     value: "",
-                    label: "天等县"
+                    label: "Day such as county"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "其他"
+                label: "other"
             }
         ],
 
     },
     {
-        value: "江西",
-        label: "江西",
+        value: "jiangxi",
+        label: "jiangxi",
         children: [{
                 value: "",
-                label: "请选择"
+                label: "Please select a"
             },
             {
                 value: "",
-                label: "南昌",
+                label: "nanchang",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "东湖区"
+                    label: "The east lake area"
                 }, {
                     value: "",
-                    label: "西湖区"
+                    label: "lake"
                 }, {
                     value: "",
-                    label: "青云谱区"
+                    label: "Qingyun spectrum area"
                 }, {
                     value: "",
-                    label: "湾里区"
+                    label: "In the bay area"
                 }, {
                     value: "",
-                    label: "青山湖区"
+                    label: "Qingshan lake area"
                 }, {
                     value: "",
-                    label: "新建县"
+                    label: "The new county"
                 }, {
                     value: "",
-                    label: "南昌县"
+                    label: "Nanchang county"
                 }, {
                     value: "",
-                    label: "进贤县"
+                    label: "Jinxian county"
                 }, {
                     value: "",
-                    label: "安义县"
+                    label: "anyi"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "景德镇",
+                label: "jingdezhen",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "珠山区"
+                    label: "Bead mountain"
                 }, {
                     value: "",
-                    label: "昌江区"
+                    label: "ChangJiang area"
                 }, {
                     value: "",
-                    label: "乐平市"
+                    label: "leping"
                 }, {
                     value: "",
-                    label: "浮梁县"
+                    label: "The float saddle county"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "萍乡",
+                label: "pingxiang",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "安源区"
+                    label: "AnYuan area"
                 }, {
                     value: "",
-                    label: "湘东区"
+                    label: "xiangdong"
                 }, {
                     value: "",
-                    label: "莲花县"
+                    label: "Lianhua county"
                 }, {
                     value: "",
-                    label: "上栗县"
+                    label: "shangli"
                 }, {
                     value: "",
-                    label: "芦溪县"
+                    label: "LuXi county"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "九江",
+                label: "jiujiang",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "浔阳区"
+                    label: "A lot"
                 }, {
                     value: "",
-                    label: "庐山区"
+                    label: "Lushan district"
                 }, {
                     value: "",
-                    label: "瑞昌市"
+                    label: "Ruichang city"
                 }, {
                     value: "",
-                    label: "九江县"
+                    label: "Jiujiang county"
                 }, {
                     value: "",
-                    label: "星子县"
+                    label: "Xingzi county"
                 }, {
                     value: "",
-                    label: "武宁县"
+                    label: "Wuning county"
                 }, {
                     value: "",
-                    label: "彭泽县"
+                    label: "Penzer county"
                 }, {
                     value: "",
-                    label: "永修县"
+                    label: "Never take county"
                 }, {
                     value: "",
-                    label: "修水县"
+                    label: "Xiushui county"
                 }, {
                     value: "",
-                    label: "湖口县"
+                    label: "In hukou county"
                 }, {
                     value: "",
-                    label: "德安县"
+                    label: "DE 'an"
                 }, {
                     value: "",
-                    label: "都昌县"
+                    label: "Duchang county"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "新余",
+                label: "at",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "渝水区"
+                    label: "YuShui area"
                 }, {
                     value: "",
-                    label: "分宜县"
+                    label: "Fenyi county"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "鹰潭",
+                label: "yingtan",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "月湖区"
+                    label: "Yuehu district"
                 }, {
                     value: "",
-                    label: "贵溪市"
+                    label: "help"
                 }, {
                     value: "",
-                    label: "余江县"
+                    label: "Yu Jiang county"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "赣州",
+                label: "ganzhou",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "章贡区"
+                    label: "it"
                 }, {
                     value: "",
-                    label: "瑞金市"
+                    label: "ruijin"
                 }, {
                     value: "",
-                    label: "南康市"
+                    label: "nankang"
                 }, {
                     value: "",
-                    label: "石城县"
+                    label: "shicheng"
                 }, {
                     value: "",
-                    label: "安远县"
+                    label: "Anyuan county"
                 }, {
                     value: "",
-                    label: "赣县"
+                    label: "county"
                 }, {
                     value: "",
-                    label: "宁都县"
+                    label: "ningdu"
                 }, {
                     value: "",
-                    label: "寻乌县"
+                    label: "xunwu"
                 }, {
                     value: "",
-                    label: "兴国县"
+                    label: "institute"
                 }, {
                     value: "",
-                    label: "定南县"
+                    label: "Set the pingnan"
                 }, {
                     value: "",
-                    label: "上犹县"
+                    label: "shangyou"
                 }, {
                     value: "",
-                    label: "于都县"
+                    label: "yudu"
                 }, {
                     value: "",
-                    label: "龙南县"
+                    label: "Longnan county"
                 }, {
                     value: "",
-                    label: "崇义县"
+                    label: "Chung yi county"
                 }, {
                     value: "",
-                    label: "信丰县"
+                    label: "xinfeng"
                 }, {
                     value: "",
-                    label: "全南县"
+                    label: "All his no"
                 }, {
                     value: "",
-                    label: "大余县"
+                    label: "dayu"
                 }, {
                     value: "",
-                    label: "会昌县"
+                    label: "huichang"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "吉安",
+                label: "gian",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "吉州区"
+                    label: "Ji states"
                 }, {
                     value: "",
-                    label: "青原区"
+                    label: "QingYuan area"
                 }, {
                     value: "",
-                    label: "井冈山市"
+                    label: "Jinggangshan city"
                 }, {
                     value: "",
-                    label: "吉安县"
+                    label: "Ji county"
                 }, {
                     value: "",
-                    label: "永丰县"
+                    label: "Yongfeng county"
                 }, {
                     value: "",
-                    label: "永新县"
+                    label: "Yongxin county"
                 }, {
                     value: "",
-                    label: "新干县"
+                    label: "xingan"
                 }, {
                     value: "",
-                    label: "泰和县"
+                    label: "content"
                 }, {
                     value: "",
-                    label: "峡江县"
+                    label: "Fjard county"
                 }, {
                     value: "",
-                    label: "遂川县"
+                    label: "suichuan"
                 }, {
                     value: "",
-                    label: "安福县"
+                    label: "The upcoming county"
                 }, {
                     value: "",
-                    label: "吉水县"
+                    label: "news"
                 }, {
                     value: "",
-                    label: "万安县"
+                    label: "Thousands of anxian county,"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "宜春",
+                label: "yichun",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "袁州区"
+                    label: "Yuan states"
                 }, {
                     value: "",
-                    label: "丰城市"
+                    label: "Feng city"
                 }, {
                     value: "",
-                    label: "樟树市"
+                    label: "zhangshu"
                 }, {
                     value: "",
-                    label: "高安市"
+                    label: "gaoan"
                 }, {
                     value: "",
-                    label: "铜鼓县"
+                    label: "tonggu"
                 }, {
                     value: "",
-                    label: "靖安县"
+                    label: "JingAn county"
                 }, {
                     value: "",
-                    label: "宜丰县"
+                    label: "yifeng"
                 }, {
                     value: "",
-                    label: "奉新县"
+                    label: "FengXin county"
                 }, {
                     value: "",
-                    label: "万载县"
+                    label: "Wanzai county"
                 }, {
                     value: "",
-                    label: "上高县"
+                    label: "Shanggao county"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "抚州",
+                label: "fuzhou",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "临川区"
+                    label: "The district"
                 }, {
                     value: "",
-                    label: "南丰县"
+                    label: "Nanfeng county"
                 }, {
                     value: "",
-                    label: "乐安县"
+                    label: "County of lean"
                 }, {
                     value: "",
-                    label: "金溪县"
+                    label: "jinxi"
                 }, {
                     value: "",
-                    label: "南城县"
+                    label: "nancheng"
                 }, {
                     value: "",
-                    label: "东乡县"
+                    label: "Dongxiang county"
                 }, {
                     value: "",
-                    label: "资溪县"
+                    label: "Endowment brook county"
                 }, {
                     value: "",
-                    label: "宜黄县"
+                    label: "Yihuang county"
                 }, {
                     value: "",
-                    label: "广昌县"
+                    label: "guangchang"
                 }, {
                     value: "",
-                    label: "黎川县"
+                    label: "Li Chuan county"
                 }, {
                     value: "",
-                    label: "崇仁县"
+                    label: "Chongren county"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "上饶",
+                label: "shangrao",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "信州区"
+                    label: "Shinshu area"
                 }, {
                     value: "",
-                    label: "德兴市"
+                    label: "Dexing city"
                 }, {
                     value: "",
-                    label: "上饶县"
+                    label: "Shangrao county"
                 }, {
                     value: "",
-                    label: "广丰县"
+                    label: "guangfeng"
                 }, {
                     value: "",
-                    label: "鄱阳县"
+                    label: "Province Yang county"
                 }, {
                     value: "",
-                    label: "婺源县"
+                    label: "Wuyuan county"
                 }, {
                     value: "",
-                    label: "铅山县"
+                    label: "Lead mountain county"
                 }, {
                     value: "",
-                    label: "余干县"
+                    label: "yugan"
                 }, {
                     value: "",
-                    label: "横峰县"
+                    label: "hengfeng"
                 }, {
                     value: "",
-                    label: "弋阳县"
+                    label: "liansheng"
                 }, {
                     value: "",
-                    label: "玉山县"
+                    label: "Yushan county"
                 }, {
                     value: "",
-                    label: "万年县"
+                    label: "wannian"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "其他"
+                label: "other"
             }
         ],
 
     },
     {
-        value: "贵州",
-        label: "贵州",
+        value: "guizhou",
+        label: "guizhou",
         children: [{
                 value: "",
-                label: "请选择"
+                label: "Please select a"
             },
             {
                 value: "",
-                label: "贵阳",
+                label: "guiyang",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "南明区"
+                    label: "nanming"
                 }, {
                     value: "",
-                    label: "云岩区"
+                    label: "Yunyan district"
                 }, {
                     value: "",
-                    label: "花溪区"
+                    label: "Huaxi district"
                 }, {
                     value: "",
-                    label: "乌当区"
+                    label: "Wudang district"
                 }, {
                     value: "",
-                    label: "白云区"
+                    label: "Baiyun district"
                 }, {
                     value: "",
-                    label: "小河区"
+                    label: "The river area"
                 }, {
                     value: "",
-                    label: "清镇市"
+                    label: "qingzhen"
                 }, {
                     value: "",
-                    label: "开阳县"
+                    label: "kaiyang"
                 }, {
                     value: "",
-                    label: "修文县"
+                    label: "By the county"
                 }, {
                     value: "",
-                    label: "息烽县"
+                    label: "Map of xifeng county,"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "六盘水",
+                label: "liupanshui",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "钟山区"
+                    label: "Zhong shan area"
                 }, {
                     value: "",
-                    label: "水城县"
+                    label: "shuicheng"
                 }, {
                     value: "",
-                    label: "盘县"
+                    label: "Pan county"
                 }, {
                     value: "",
-                    label: "六枝特区"
+                    label: "liuzhi"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "遵义",
+                label: "zunyi",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "红花岗区"
+                    label: "Red flower district"
                 }, {
                     value: "",
-                    label: "汇川区"
+                    label: "Inovance area"
                 }, {
                     value: "",
-                    label: "赤水市"
+                    label: "Chishui city"
                 }, {
                     value: "",
-                    label: "仁怀市"
+                    label: "renhuai"
                 }, {
                     value: "",
-                    label: "遵义县"
+                    label: "Zunyi county"
                 }, {
                     value: "",
-                    label: "绥阳县"
+                    label: "suiyang"
                 }, {
                     value: "",
-                    label: "桐梓县"
+                    label: "TongZi county"
                 }, {
                     value: "",
-                    label: "习水县"
+                    label: "XiShui County"
                 }, {
                     value: "",
-                    label: "凤冈县"
+                    label: "Compared the county"
                 }, {
                     value: "",
-                    label: "正安县"
+                    label: "Is anxian county,"
                 }, {
                     value: "",
-                    label: "余庆县"
+                    label: "Yuqing county"
                 }, {
                     value: "",
-                    label: "湄潭县"
+                    label: "Mae tam county"
                 }, {
                     value: "",
-                    label: "道真仡佬族苗族自治县"
+                    label: "Dao Zhen Gelao Miao Autonomous County"
                 }, {
                     value: "",
-                    label: "务川仡佬族苗族自治县"
+                    label: "Wuchuan Gelao Miao Autonomous County"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "安顺",
+                label: "anshun",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "西秀区"
+                    label: "West show area"
                 }, {
                     value: "",
-                    label: "普定县"
+                    label: "Puding county"
                 }, {
                     value: "",
-                    label: "平坝县"
+                    label: "PingBa county"
                 }, {
                     value: "",
-                    label: "镇宁布依族苗族自治县"
+                    label: "Zhenning Buyi and Miao Autonomous County"
                 }, {
                     value: "",
-                    label: "紫云苗族布依族自治县"
+                    label: "Ziyun Miao Buyi Autonomous County"
                 }, {
                     value: "",
-                    label: "关岭布依族苗族自治县"
+                    label: "Guanling Buyi and Miao Autonomous County"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "铜仁地区",
+                label: "Tongren region",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "铜仁市"
+                    label: "including"
                 }, {
                     value: "",
-                    label: "德江县"
+                    label: "DE jiang county,"
                 }, {
                     value: "",
-                    label: "江口县"
+                    label: "jiangkou"
                 }, {
                     value: "",
-                    label: "思南县"
+                    label: "SiNa County"
                 }, {
                     value: "",
-                    label: "石阡县"
+                    label: "Shi Qian county"
                 }, {
                     value: "",
-                    label: "玉屏侗族自治县"
+                    label: "Yuping Dong Autonomous County"
                 }, {
                     value: "",
-                    label: "松桃苗族自治县"
+                    label: "Songtao Miao Autonomous County"
                 }, {
                     value: "",
-                    label: "印江土家族苗族自治县"
+                    label: "Yinjiang Tujia and Miao Autonomous County"
                 }, {
                     value: "",
-                    label: "沿河土家族自治县"
+                    label: "Yanhe Tujia Autonomous County"
                 }, {
                     value: "",
-                    label: "万山特区"
+                    label: "Wanshan SAR"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "毕节地区",
+                label: "bijie",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "毕节市"
+                    label: "Bijie city"
                 }, {
                     value: "",
-                    label: "黔西县"
+                    label: "qianxi"
                 }, {
                     value: "",
-                    label: "大方县"
+                    label: "dafang"
                 }, {
                     value: "",
-                    label: "织金县"
+                    label: "Zhijin county"
                 }, {
                     value: "",
-                    label: "金沙县"
+                    label: "jinsha"
                 }, {
                     value: "",
-                    label: "赫章县"
+                    label: "hezhang"
                 }, {
                     value: "",
-                    label: "纳雍县"
+                    label: "Na harmony county"
                 }, {
                     value: "",
-                    label: "威宁彝族回族苗族自治县"
+                    label: "Weining Yi Hui Miao Autonomous County"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "黔西南布依族苗族自治州",
+                label: "Qianxinan Buyi and Miao Autonomous Prefecture",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "兴义市"
+                    label: "xingyi"
                 }, {
                     value: "",
-                    label: "望谟县"
+                    label: "Wangmo county"
                 }, {
                     value: "",
-                    label: "兴仁县"
+                    label: "xingren"
                 }, {
                     value: "",
-                    label: "普安县"
+                    label: "Pu 'an"
                 }, {
                     value: "",
-                    label: "册亨县"
+                    label: "ceheng"
                 }, {
                     value: "",
-                    label: "晴隆县"
+                    label: "digging"
                 }, {
                     value: "",
-                    label: "贞丰县"
+                    label: "zhenfeng"
                 }, {
                     value: "",
-                    label: "安龙县"
+                    label: "Enron county"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "黔东南苗族侗族自治州",
+                label: "Qiandongnan Miao and Dong Autonomous Prefecture",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "凯里市"
+                    label: "kaili"
                 }, {
                     value: "",
-                    label: "施秉县"
+                    label: "Shi bing county"
                 }, {
                     value: "",
-                    label: "从江县"
+                    label: "Congjiang county"
                 }, {
                     value: "",
-                    label: "锦屏县"
+                    label: "Kam screen county"
                 }, {
                     value: "",
-                    label: "镇远县"
+                    label: "Zhenyuan county"
                 }, {
                     value: "",
-                    label: "麻江县"
+                    label: "Majiang county"
                 }, {
                     value: "",
-                    label: "台江县"
+                    label: "Says ha tae-keung county"
                 }, {
                     value: "",
-                    label: "天柱县"
+                    label: "talking"
                 }, {
                     value: "",
-                    label: "黄平县"
+                    label: "Huangping county"
                 }, {
                     value: "",
-                    label: "榕江县"
+                    label: "Rongjiang county"
                 }, {
                     value: "",
-                    label: "剑河县"
+                    label: "Jian river county,"
                 }, {
                     value: "",
-                    label: "三穗县"
+                    label: "Three ear county"
                 }, {
                     value: "",
-                    label: "雷山县"
+                    label: "In leishan county"
                 }, {
                     value: "",
-                    label: "黎平县"
+                    label: "province"
                 }, {
                     value: "",
-                    label: "岑巩县"
+                    label: "county"
                 }, {
                     value: "",
-                    label: "丹寨县"
+                    label: "danzhai"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "黔南布依族苗族自治州",
+                label: "Qiannan Buyi and Miao Autonomous Prefecture",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "都匀市"
+                    label: "DouYun city"
                 }, {
                     value: "",
-                    label: "福泉市"
+                    label: "Fuquan city"
                 }, {
                     value: "",
-                    label: "贵定县"
+                    label: "Guiding county"
                 }, {
                     value: "",
-                    label: "惠水县"
+                    label: "huishui"
                 }, {
                     value: "",
-                    label: "罗甸县"
+                    label: "luodian"
                 }, {
                     value: "",
-                    label: "瓮安县"
+                    label: "Weng 'an"
                 }, {
                     value: "",
-                    label: "荔波县"
+                    label: "libo"
                 }, {
                     value: "",
-                    label: "龙里县"
+                    label: "longli"
                 }, {
                     value: "",
-                    label: "平塘县"
+                    label: "PingTang county"
                 }, {
                     value: "",
-                    label: "长顺县"
+                    label: "changshun"
                 }, {
                     value: "",
-                    label: "独山县"
+                    label: "dushan"
                 }, {
                     value: "",
-                    label: "三都水族自治县"
+                    label: "Sandu Aquarium Autonomous County"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "其他"
+                label: "other"
             }
         ],
 
     },
     {
-        value: "云南",
-        label: "云南",
+        value: "yunnan",
+        label: "yunnan",
         children: [{
                 value: "",
-                label: "请选择"
+                label: "Please select a"
             },
             {
                 value: "",
-                label: "昆明",
+                label: "kunming",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "盘龙区"
+                    label: "panlong"
                 }, {
                     value: "",
-                    label: "五华区"
+                    label: "wuhua"
                 }, {
                     value: "",
-                    label: "官渡区"
+                    label: "Xiong deyou"
                 }, {
                     value: "",
-                    label: "西山区"
+                    label: "The mountain west conference"
                 }, {
                     value: "",
-                    label: "东川区"
+                    label: "dongchuan"
                 }, {
                     value: "",
-                    label: "安宁市"
+                    label: "Anning city"
                 }, {
                     value: "",
-                    label: "呈贡县"
+                    label: "Chenggong county"
                 }, {
                     value: "",
-                    label: "晋宁县"
+                    label: "Jinning county"
                 }, {
                     value: "",
-                    label: "富民县"
+                    label: "fumin"
                 }, {
                     value: "",
-                    label: "宜良县"
+                    label: "Should be a good county"
                 }, {
                     value: "",
-                    label: "嵩明县"
+                    label: "li"
                 }, {
                     value: "",
-                    label: "石林彝族自治县"
+                    label: "Shilin Yi Autonomous County"
                 }, {
                     value: "",
-                    label: "禄劝彝族苗族自治县"
+                    label: "Luquan Yi and Miao Autonomous County"
                 }, {
                     value: "",
-                    label: "寻甸回族彝族自治县"
+                    label: "Xundian Hui and Yi Autonomous County"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "曲靖",
+                label: "qujing",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "麒麟区"
+                    label: "Kirin area"
                 }, {
                     value: "",
-                    label: "宣威市"
+                    label: "xuanwei"
                 }, {
                     value: "",
-                    label: "马龙县"
+                    label: "Malong county"
                 }, {
                     value: "",
-                    label: "沾益县"
+                    label: "Zhanyi county"
                 }, {
                     value: "",
-                    label: "富源县"
+                    label: "FuYuan County"
                 }, {
                     value: "",
-                    label: "罗平县"
+                    label: "luoping"
                 }, {
                     value: "",
-                    label: "师宗县"
+                    label: "Shizong county"
                 }, {
                     value: "",
-                    label: "陆良县"
+                    label: "Drought-hit luliang county"
                 }, {
                     value: "",
-                    label: "会泽县"
+                    label: "huize"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "玉溪",
+                label: "yuxi",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "红塔区"
+                    label: "Hongta district"
                 }, {
                     value: "",
-                    label: "江川县"
+                    label: "Jiangchuan county"
                 }, {
                     value: "",
-                    label: "澄江县"
+                    label: "chengjiang"
                 }, {
                     value: "",
-                    label: "通海县"
+                    label: "tonghai"
                 }, {
                     value: "",
-                    label: "华宁县"
+                    label: "China zhengning county"
                 }, {
                     value: "",
-                    label: "易门县"
+                    label: "Dalongkou county"
                 }, {
                     value: "",
-                    label: "峨山彝族自治县"
+                    label: "Eshan Yi Autonomous County"
                 }, {
                     value: "",
-                    label: "新平彝族傣族自治县"
+                    label: "Xinping Yi and Dai Autonomous County"
                 }, {
                     value: "",
-                    label: "元江哈尼族彝族傣族自治县"
+                    label: "Yuanjiang Hani yi Dai Autonomous County"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "保山",
+                label: "baoshan",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "隆阳区"
+                    label: "Long Yang district"
                 }, {
                     value: "",
-                    label: "施甸县"
+                    label: "ShiDian county"
                 }, {
                     value: "",
-                    label: "腾冲县"
+                    label: "Tengchong county"
                 }, {
                     value: "",
-                    label: "龙陵县"
+                    label: "Longling county"
                 }, {
                     value: "",
-                    label: "昌宁县"
+                    label: "Chang zhengning county"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "昭通",
+                label: "zhaotong",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "昭阳区"
+                    label: "Zhaoyang district"
                 }, {
                     value: "",
-                    label: "鲁甸县"
+                    label: "ludian"
                 }, {
                     value: "",
-                    label: "巧家县"
+                    label: "Qiaojia county"
                 }, {
                     value: "",
-                    label: "盐津县"
+                    label: "YanJin county"
                 }, {
                     value: "",
-                    label: "大关县"
+                    label: "Daguan county"
                 }, {
                     value: "",
-                    label: "永善县"
+                    label: "Always good county"
                 }, {
                     value: "",
-                    label: "绥江县"
+                    label: "Suijiang county"
                 }, {
                     value: "",
-                    label: "镇雄县"
+                    label: "Xiong county town"
                 }, {
                     value: "",
-                    label: "彝良县"
+                    label: "YiLiang County"
                 }, {
                     value: "",
-                    label: "威信县"
+                    label: "Authority county"
                 }, {
                     value: "",
-                    label: "水富县"
+                    label: "In fushui county"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "丽江",
+                label: "lijiang",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "古城区"
+                    label: "The ancient city"
                 }, {
                     value: "",
-                    label: "永胜县"
+                    label: "Yongsheng county"
                 }, {
                     value: "",
-                    label: "华坪县"
+                    label: "Guozi hill of huping county"
                 }, {
                     value: "",
-                    label: "玉龙纳西族自治县"
+                    label: "Yulong Naxi Autonomous County"
                 }, {
                     value: "",
-                    label: "宁蒗彝族自治县"
+                    label: "Ninglang Yi Autonomous County"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "普洱",
+                label: "pu",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "思茅区"
+                    label: "Simao district"
                 }, {
                     value: "",
-                    label: "普洱哈尼族彝族自治县"
+                    label: "Pu 'er Hani and Yi Autonomous County"
                 }, {
                     value: "",
-                    label: "墨江哈尼族自治县"
+                    label: "Mojiang Hani Autonomous County"
                 }, {
                     value: "",
-                    label: "景东彝族自治县"
+                    label: "Jingdong Yi Autonomous County"
                 }, {
                     value: "",
-                    label: "景谷傣族彝族自治县"
+                    label: "Jinggu Dai and Yi Autonomous County"
                 }, {
                     value: "",
-                    label: "镇沅彝族哈尼族拉祜族自治县"
+                    label: "Zhenyuan Yi Hani Lahu Autonomous County"
                 }, {
                     value: "",
-                    label: "江城哈尼族彝族自治县"
+                    label: "Jiangcheng Hani and Yi Autonomous County"
                 }, {
                     value: "",
-                    label: "孟连傣族拉祜族佤族自治县"
+                    label: "Menglian Dai Lahu Wa Autonomous County"
                 }, {
                     value: "",
-                    label: "澜沧拉祜族自治县"
+                    label: "Lancang Lahu Autonomous County"
                 }, {
                     value: "",
-                    label: "西盟佤族自治县"
+                    label: "Ximeng Wa Autonomous County"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "临沧",
+                label: "lincang",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "临翔区"
+                    label: "Flying in the area"
                 }, {
                     value: "",
-                    label: "凤庆县"
+                    label: "Phoenix city county"
                 }, {
                     value: "",
-                    label: "云县"
+                    label: "Yun county"
                 }, {
                     value: "",
-                    label: "永德县"
+                    label: "yongde"
                 }, {
                     value: "",
-                    label: "镇康县"
+                    label: "zhenkang"
                 }, {
                     value: "",
-                    label: "双江拉祜族佤族布朗族傣族自治县"
+                    label: "Shuangjiang Lahu Wa Bulang Dai Autonomous County"
                 }, {
                     value: "",
-                    label: "耿马傣族佤族自治县"
+                    label: "Gengma Dai wa Autonomous County"
                 }, {
                     value: "",
-                    label: "沧源佤族自治县"
+                    label: "Cangyuan Wa Autonomous County"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "德宏傣族景颇族自治州",
+                label: "Dehong Dai and Jingpo Autonomous Prefecture",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "潞西市"
+                    label: "Luxi city"
                 }, {
                     value: "",
-                    label: "瑞丽市"
+                    label: "ruili"
                 }, {
                     value: "",
-                    label: "梁河县"
+                    label: "Lianghe county"
                 }, {
                     value: "",
-                    label: "盈江县"
+                    label: "Yingjiang county"
                 }, {
                     value: "",
-                    label: "陇川县"
+                    label: "(3) county,"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "怒江傈僳族自治州",
+                label: "Nujiang Lisu Autonomous Prefecture",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "泸水县"
+                    label: "Lushui county"
                 }, {
                     value: "",
-                    label: "福贡县"
+                    label: "fugong"
                 }, {
                     value: "",
-                    label: "贡山独龙族怒族自治县"
+                    label: "Gongshan Dulong Nu Autonomous County"
                 }, {
                     value: "",
-                    label: "兰坪白族普米族自治县"
+                    label: "Lanping Bai Pumi Autonomous County"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "迪庆藏族自治州",
+                label: "Diqing Tibetan Autonomous Prefecture",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "香格里拉县"
+                    label: "Shangri-la county"
                 }, {
                     value: "",
-                    label: "德钦县"
+                    label: "Deqin county"
                 }, {
                     value: "",
-                    label: "维西傈僳族自治县"
+                    label: "Weixi Lisu Autonomous County"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "大理白族自治州",
+                label: "Dali Bai Autonomous Prefecture",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "大理市"
+                    label: "The Dali"
                 }, {
                     value: "",
-                    label: "祥云县"
+                    label: "Xiangyun county"
                 }, {
                     value: "",
-                    label: "宾川县"
+                    label: "binchuan"
                 }, {
                     value: "",
-                    label: "弥渡县"
+                    label: "Cross the county"
                 }, {
                     value: "",
-                    label: "永平县"
+                    label: "Yongping county"
                 }, {
                     value: "",
-                    label: "云龙县"
+                    label: "Yunlong county"
                 }, {
                     value: "",
-                    label: "洱源县"
+                    label: "eryuan"
                 }, {
                     value: "",
-                    label: "剑川县"
+                    label: "JianChuan county"
                 }, {
                     value: "",
-                    label: "鹤庆县"
+                    label: "Heqing county"
                 }, {
                     value: "",
-                    label: "漾濞彝族自治县"
+                    label: "Yangbi Yi Autonomous County"
                 }, {
                     value: "",
-                    label: "南涧彝族自治县"
+                    label: "Nanjian Yi Autonomous County"
                 }, {
                     value: "",
-                    label: "巍山彝族回族自治县"
+                    label: "Weishan Yi and Hui Autonomous County"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "楚雄彝族自治州",
+                label: "Chuxiong Yi Autonomous Prefecture",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "楚雄市"
+                    label: "Chuxiong city"
                 }, {
                     value: "",
-                    label: "双柏县"
+                    label: "Double cypress county"
                 }, {
                     value: "",
-                    label: "牟定县"
+                    label: "Monding county"
                 }, {
                     value: "",
-                    label: "南华县"
+                    label: "nanhua"
                 }, {
                     value: "",
-                    label: "姚安县"
+                    label: "was"
                 }, {
                     value: "",
-                    label: "大姚县"
+                    label: "Dayao county"
                 }, {
                     value: "",
-                    label: "永仁县"
+                    label: "Yongren county"
                 }, {
                     value: "",
-                    label: "元谋县"
+                    label: "yuanmou"
                 }, {
                     value: "",
-                    label: "武定县"
+                    label: "wuding"
                 }, {
                     value: "",
-                    label: "禄丰县"
+                    label: "authors"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "红河哈尼族彝族自治州",
+                label: "Honghe Hani and Yi Autonomous Prefecture",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "蒙自县"
+                    label: "Mengzi county"
                 }, {
                     value: "",
-                    label: "个旧市"
+                    label: "gejiu"
                 }, {
                     value: "",
-                    label: "开远市"
+                    label: "kaiyuan"
                 }, {
                     value: "",
-                    label: "绿春县"
+                    label: "Green spring county"
                 }, {
                     value: "",
-                    label: "建水县"
+                    label: "jianshui"
                 }, {
                     value: "",
-                    label: "石屏县"
+                    label: "shiping"
                 }, {
                     value: "",
-                    label: "弥勒县"
+                    label: "Mile county"
                 }, {
                     value: "",
-                    label: "泸西县"
+                    label: "Luxi county"
                 }, {
                     value: "",
-                    label: "元阳县"
+                    label: "Yuan Yang county"
                 }, {
                     value: "",
-                    label: "红河县"
+                    label: "neurasthenia"
                 }, {
                     value: "",
-                    label: "金平苗族瑶族傣族自治县"
+                    label: "Jinping Miao Yao Dai Autonomous County"
                 }, {
                     value: "",
-                    label: "河口瑶族自治县"
+                    label: "Hekou Yao Autonomous County"
                 }, {
                     value: "",
-                    label: "屏边苗族自治县"
+                    label: "Pingbian Miao Autonomous County"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "文山壮族苗族自治州",
+                label: "Wenshan Zhuang and Miao Autonomous Prefecture",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "文山县"
+                    label: "wenshan"
                 }, {
                     value: "",
-                    label: "砚山县"
+                    label: "Yan mountain county"
                 }, {
                     value: "",
-                    label: "西畴县"
+                    label: "West county,"
                 }, {
                     value: "",
-                    label: "麻栗坡县"
+                    label: "malipo"
                 }, {
                     value: "",
-                    label: "马关县"
+                    label: "Maguan county"
                 }, {
                     value: "",
-                    label: "丘北县"
+                    label: "Hill north county"
                 }, {
                     value: "",
-                    label: "广南县"
+                    label: "Guangnan county were"
                 }, {
                     value: "",
-                    label: "富宁县"
+                    label: "Funing county"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "西双版纳傣族自治州",
+                label: "Xishuangbanna Dai Autonomous Prefecture",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "景洪市"
+                    label: "Jinghong,"
                 }, {
                     value: "",
-                    label: "勐海县"
+                    label: "Menghai county"
                 }, {
                     value: "",
-                    label: "勐腊县"
+                    label: "kang"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "其他"
+                label: "other"
             }
         ],
 
     },
     {
-        value: "西藏",
-        label: "西藏",
+        value: "Tibet",
+        label: "Tibet",
         children: [{
                 value: "",
-                label: "请选择"
+                label: "Please select a"
             },
             {
                 value: "",
-                label: "拉萨",
+                label: "Lhasa",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "城关区"
+                    label: "chengguan"
                 }, {
                     value: "",
-                    label: "林周县"
+                    label: "Linzhou county"
                 }, {
                     value: "",
-                    label: "当雄县"
+                    label: "Damxung county"
                 }, {
                     value: "",
-                    label: "尼木县"
+                    label: "Wood county,"
                 }, {
                     value: "",
-                    label: "曲水县"
+                    label: "Qu county water"
                 }, {
                     value: "",
-                    label: "堆龙德庆县"
+                    label: "Dailong Deqing County"
                 }, {
                     value: "",
-                    label: "达孜县"
+                    label: "Dazi county"
                 }, {
                     value: "",
-                    label: "墨竹工卡县"
+                    label: "Mozhu Gongka County"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "那曲地区",
+                label: "In naqu",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "那曲县"
+                    label: "Naqu county"
                 }, {
                     value: "",
-                    label: "嘉黎县"
+                    label: "jiali"
                 }, {
                     value: "",
-                    label: "比如县"
+                    label: "Biru county"
                 }, {
                     value: "",
-                    label: "聂荣县"
+                    label: "NieRong county"
                 }, {
                     value: "",
-                    label: "安多县"
+                    label: "Anduo county"
                 }, {
                     value: "",
-                    label: "申扎县"
+                    label: "shenzha"
                 }, {
                     value: "",
-                    label: "索县"
+                    label: "Mr. County"
                 }, {
                     value: "",
-                    label: "班戈县"
+                    label: "bange"
                 }, {
                     value: "",
-                    label: "巴青县"
+                    label: "The qing county"
                 }, {
                     value: "",
-                    label: "尼玛县"
+                    label: "Nima county"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "昌都地区",
+                label: "Changdu area",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "昌都县"
+                    label: "Nagqu county"
                 }, {
                     value: "",
-                    label: "江达县"
+                    label: "Jomda county"
                 }, {
                     value: "",
-                    label: "贡觉县"
+                    label: "GongJiao county"
                 }, {
                     value: "",
-                    label: "类乌齐县"
+                    label: "Wu qi county"
                 }, {
                     value: "",
-                    label: "丁青县"
+                    label: "Ding Qing county"
                 }, {
                     value: "",
-                    label: "察雅县"
+                    label: "ChaYa county"
                 }, {
                     value: "",
-                    label: "八宿县"
+                    label: "baxoi"
                 }, {
                     value: "",
-                    label: "左贡县"
+                    label: "ZuoGong county"
                 }, {
                     value: "",
-                    label: "芒康县"
+                    label: "Mangkang county,"
                 }, {
                     value: "",
-                    label: "洛隆县"
+                    label: "Los long county"
                 }, {
                     value: "",
-                    label: "边坝县"
+                    label: "Banbar county"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "林芝地区",
+                label: "nyingchi",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "林芝县"
+                    label: "Nyingchi county"
                 }, {
                     value: "",
-                    label: "工布江达县"
+                    label: "Gongbujiangda County"
                 }, {
                     value: "",
-                    label: "米林县"
+                    label: "mainling"
                 }, {
                     value: "",
-                    label: "墨脱县"
+                    label: "Motuo county"
                 }, {
                     value: "",
-                    label: "波密县"
+                    label: "bom"
                 }, {
                     value: "",
-                    label: "察隅县"
+                    label: "Zayu county"
                 }, {
                     value: "",
-                    label: "朗县"
+                    label: "Nang county"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "山南地区",
+                label: "shannan",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "乃东县"
+                    label: "Naidong county"
                 }, {
                     value: "",
-                    label: "扎囊县"
+                    label: "Zhanang county"
                 }, {
                     value: "",
-                    label: "贡嘎县"
+                    label: "gonggar"
                 }, {
                     value: "",
-                    label: "桑日县"
+                    label: "Sangri county"
                 }, {
                     value: "",
-                    label: "琼结县"
+                    label: "Joan junction county"
                 }, {
                     value: "",
-                    label: "曲松县"
+                    label: "Ceftriaxone county"
                 }, {
                     value: "",
-                    label: "措美县"
+                    label: "Measures the county"
                 }, {
                     value: "",
-                    label: "洛扎县"
+                    label: "luozha"
                 }, {
                     value: "",
-                    label: "加查县"
+                    label: "And the county"
                 }, {
                     value: "",
-                    label: "隆子县"
+                    label: "longzi"
                 }, {
                     value: "",
-                    label: "错那县"
+                    label: "Cona county"
                 }, {
                     value: "",
-                    label: "浪卡子县"
+                    label: "Wave clamp county"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "日喀则地区",
+                label: "Xigaze area",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "日喀则市"
+                    label: "xigaze"
                 }, {
                     value: "",
-                    label: "南木林县"
+                    label: "South forest county,"
                 }, {
                     value: "",
-                    label: "江孜县"
+                    label: "no.1"
                 }, {
                     value: "",
-                    label: "定日县"
+                    label: "Tingri county"
                 }, {
                     value: "",
-                    label: "萨迦县"
+                    label: "Issachar is county"
                 }, {
                     value: "",
-                    label: "拉孜县"
+                    label: "La transcribing county"
                 }, {
                     value: "",
-                    label: "昂仁县"
+                    label: "ngamring"
                 }, {
                     value: "",
-                    label: "谢通门县"
+                    label: "Xietongmen county,"
                 }, {
                     value: "",
-                    label: "白朗县"
+                    label: "Bainang county"
                 }, {
                     value: "",
-                    label: "仁布县"
+                    label: "Rinbung county"
                 }, {
                     value: "",
-                    label: "康马县"
+                    label: "Kang county horse"
                 }, {
                     value: "",
-                    label: "定结县"
+                    label: "The junction county"
                 }, {
                     value: "",
-                    label: "仲巴县"
+                    label: "Para yuba"
                 }, {
                     value: "",
-                    label: "亚东县"
+                    label: "Yadong county"
                 }, {
                     value: "",
-                    label: "吉隆县"
+                    label: "Jilong xian"
                 }, {
                     value: "",
-                    label: "聂拉木县"
+                    label: "Nyalam county"
                 }, {
                     value: "",
-                    label: "萨嘎县"
+                    label: "SaGa county"
                 }, {
                     value: "",
-                    label: "岗巴县"
+                    label: "GangBa county"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "阿里地区",
+                label: "ali",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "噶尔县"
+                    label: "Representative county"
                 }, {
                     value: "",
-                    label: "普兰县"
+                    label: "Alvin county"
                 }, {
                     value: "",
-                    label: "札达县"
+                    label: "Zagreb daxian"
                 }, {
                     value: "",
-                    label: "日土县"
+                    label: "County, soil"
                 }, {
                     value: "",
-                    label: "革吉县"
+                    label: "Leather map of jixian"
                 }, {
                     value: "",
-                    label: "改则县"
+                    label: "Gaize county"
                 }, {
                     value: "",
-                    label: "措勤县"
+                    label: "Measures frequently county"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "其他"
+                label: "other"
             }
         ],
 
     },
     {
-        value: "海南",
-        label: "海南",
+        value: "hainan",
+        label: "hainan",
         children: [{
                 value: "",
-                label: "请选择"
+                label: "Please select a"
             },
             {
                 value: "",
-                label: "海口",
+                label: "haikou",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "龙华区"
+                    label: "Longhua district"
                 }, {
                     value: "",
-                    label: "秀英区"
+                    label: "Xiuying district"
                 }, {
                     value: "",
-                    label: "琼山区"
+                    label: "QiongShan area"
                 }, {
                     value: "",
-                    label: "美兰区"
+                    label: "Meilan district"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "三亚",
+                label: "sanya",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "三亚市"
+                    label: "sanya"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "五指山",
-                children: [],
-
-            },
-            {
-                value: "",
-                label: "琼海",
+                label: "wuzhishan",
                 children: [],
 
             },
             {
                 value: "",
-                label: "儋州",
+                label: "qionghai",
                 children: [],
 
             },
             {
                 value: "",
-                label: "文昌",
+                label: "danzhou",
                 children: [],
 
             },
             {
                 value: "",
-                label: "万宁",
+                label: "wenchang",
                 children: [],
 
             },
             {
                 value: "",
-                label: "东方",
+                label: "mannings",
                 children: [],
 
             },
             {
                 value: "",
-                label: "澄迈县",
+                label: "The east",
                 children: [],
 
             },
             {
                 value: "",
-                label: "定安县",
+                label: "chengmai",
                 children: [],
 
             },
             {
                 value: "",
-                label: "屯昌县",
+                label: "Ding an",
                 children: [],
 
             },
             {
                 value: "",
-                label: "临高县",
+                label: "tunchang",
                 children: [],
 
             },
             {
                 value: "",
-                label: "白沙黎族自治县",
+                label: "lingao",
                 children: [],
 
             },
             {
                 value: "",
-                label: "昌江黎族自治县",
+                label: "Baisha Li Autonomous County",
                 children: [],
 
             },
             {
                 value: "",
-                label: "乐东黎族自治县",
+                label: "Changjiang Li Autonomous County",
                 children: [],
 
             },
             {
                 value: "",
-                label: "陵水黎族自治县",
+                label: "Ledong Li Autonomous County",
                 children: [],
 
             },
             {
                 value: "",
-                label: "保亭黎族苗族自治县",
+                label: "Lingshui Li Autonomous County",
                 children: [],
 
             },
             {
                 value: "",
-                label: "琼中黎族苗族自治县",
+                label: "Baoting Li and Miao Autonomous County",
                 children: [],
 
             },
             {
                 value: "",
-                label: "其他"
+                label: "Qiongzhong Li and Miao Autonomous County",
+                children: [],
+
+            },
+            {
+                value: "",
+                label: "other"
             }
         ],
 
     },
     {
-        value: "甘肃",
-        label: "甘肃",
+        value: "gansu",
+        label: "gansu",
         children: [{
                 value: "",
-                label: "请选择"
+                label: "Please select a"
             },
             {
                 value: "",
-                label: "兰州",
+                label: "lanzhou",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "城关区"
+                    label: "chengguan"
                 }, {
                     value: "",
-                    label: "七里河区"
+                    label: "Qilihe district"
                 }, {
                     value: "",
-                    label: "西固区"
+                    label: "West solid area"
                 }, {
                     value: "",
-                    label: "安宁区"
+                    label: "Anning district"
                 }, {
                     value: "",
-                    label: "红古区"
+                    label: "Ancient red zone"
                 }, {
                     value: "",
-                    label: "永登县"
+                    label: "Yongdeng county"
                 }, {
                     value: "",
-                    label: "皋兰县"
+                    label: "gaolan"
                 }, {
                     value: "",
-                    label: "榆中县"
+                    label: "Yuzhong county"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "嘉峪关",
+                label: "jiayuguan",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "嘉峪关市"
+                    label: "Jiayuguan city"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "金昌",
+                label: "jinchang",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "金川区"
+                    label: "Jinchuan district"
                 }, {
                     value: "",
-                    label: "永昌县"
+                    label: "yongchang"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "白银",
+                label: "silver",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "白银区"
+                    label: "Silver district"
                 }, {
                     value: "",
-                    label: "平川区"
+                    label: "Pingchuan district"
                 }, {
                     value: "",
-                    label: "靖远县"
+                    label: "Jingyuan,"
                 }, {
                     value: "",
-                    label: "会宁县"
+                    label: "huining"
                 }, {
                     value: "",
-                    label: "景泰县"
+                    label: "Jingtai county"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "天水",
+                label: "tianshui",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "清水县"
+                    label: "Qingshui county"
                 }, {
                     value: "",
-                    label: "秦安县"
+                    label: "qinan"
                 }, {
                     value: "",
-                    label: "甘谷县"
+                    label: "GanGu county"
                 }, {
                     value: "",
-                    label: "武山县"
+                    label: "WuShan County"
                 }, {
                     value: "",
-                    label: "张家川回族自治县"
+                    label: "Zhangjiachuan Hui Autonomous County"
                 }, {
                     value: "",
-                    label: "北道区"
+                    label: "BeiDao District"
                 }, {
                     value: "",
-                    label: "秦城区"
+                    label: "Qin city"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "武威",
+                label: "wuwei",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "凉州区"
+                    label: "Liangzhou district"
                 }, {
                     value: "",
-                    label: "民勤县"
+                    label: "Minqin county"
                 }, {
                     value: "",
-                    label: "古浪县"
+                    label: "gulang"
                 }, {
                     value: "",
-                    label: "天祝藏族自治县"
+                    label: "Tianzhu Tibetan Autonomous County"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "酒泉",
+                label: "jiuquan",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "肃州区"
+                    label: "The 'state"
                 }, {
                     value: "",
-                    label: "玉门市"
+                    label: "In yumen district"
                 }, {
                     value: "",
-                    label: "敦煌市"
+                    label: "Dunhuang city"
                 }, {
                     value: "",
-                    label: "金塔县"
+                    label: "Jinta county"
                 }, {
                     value: "",
-                    label: "肃北蒙古族自治县"
+                    label: "Subei Mongolian Autonomous County"
                 }, {
                     value: "",
-                    label: "阿克塞哈萨克族自治县"
+                    label: "Aksai Kazak Autonomous County"
                 }, {
                     value: "",
-                    label: "安西县"
+                    label: "Anxi county"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "张掖",
+                label: "Zhang ye",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "甘州区"
+                    label: "Ganzhou district"
                 }, {
                     value: "",
-                    label: "民乐县"
+                    label: "Minle county"
                 }, {
                     value: "",
-                    label: "临泽县"
+                    label: "Linze county"
                 }, {
                     value: "",
-                    label: "高台县"
+                    label: "Gaotai county"
                 }, {
                     value: "",
-                    label: "山丹县"
+                    label: "Shandan county"
                 }, {
                     value: "",
-                    label: "肃南裕固族自治县"
+                    label: "Sunan Yugur Autonomous County"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "庆阳",
+                label: "qingyang",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "西峰区"
+                    label: "Xifeng district"
                 }, {
                     value: "",
-                    label: "庆城县"
+                    label: "Celebrates the city county"
                 }, {
                     value: "",
-                    label: "环县"
+                    label: "Central county"
                 }, {
                     value: "",
-                    label: "华池县"
+                    label: "huachi"
                 }, {
                     value: "",
-                    label: "合水县"
+                    label: "heshui"
                 }, {
                     value: "",
-                    label: "正宁县"
+                    label: "Zhengning county"
                 }, {
                     value: "",
-                    label: "宁县"
+                    label: "Zhengning county"
                 }, {
                     value: "",
-                    label: "镇原县"
+                    label: "zhenyuan"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "平凉",
+                label: "Of out",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "崆峒区"
+                    label: "Kongdong area"
                 }, {
                     value: "",
-                    label: "泾川县"
+                    label: "jingchuan"
                 }, {
                     value: "",
-                    label: "灵台县"
+                    label: "Gv 10 county"
                 }, {
                     value: "",
-                    label: "崇信县"
+                    label: "Believed in the county"
                 }, {
                     value: "",
-                    label: "华亭县"
+                    label: "Huating county"
                 }, {
                     value: "",
-                    label: "庄浪县"
+                    label: "Zhuanglang county"
                 }, {
                     value: "",
-                    label: "静宁县"
+                    label: "Jingning county"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "定西",
+                label: "dingxi",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "安定区"
+                    label: "Stability zone"
                 }, {
                     value: "",
-                    label: "通渭县"
+                    label: "author"
                 }, {
                     value: "",
-                    label: "临洮县"
+                    label: "lintao"
                 }, {
                     value: "",
-                    label: "漳县"
+                    label: "Get a county"
                 }, {
                     value: "",
-                    label: "岷县"
+                    label: "Min county"
                 }, {
                     value: "",
-                    label: "渭源县"
+                    label: "weiyuan"
                 }, {
                     value: "",
-                    label: "陇西县"
+                    label: "Longxi county"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "陇南",
+                label: "longnan",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "武都区"
+                    label: "Wu all area"
                 }, {
                     value: "",
-                    label: "成县"
+                    label: "Into the county"
                 }, {
                     value: "",
-                    label: "宕昌县"
+                    label: "Dangchang county"
                 }, {
                     value: "",
-                    label: "康县"
+                    label: "Kang county"
                 }, {
                     value: "",
-                    label: "文县"
+                    label: "Wenxian county"
                 }, {
                     value: "",
-                    label: "西和县"
+                    label: "Xihe county"
                 }, {
                     value: "",
-                    label: "礼县"
+                    label: "Lixian county"
                 }, {
                     value: "",
-                    label: "两当县"
+                    label: "LiangDang county"
                 }, {
                     value: "",
-                    label: "徽县"
+                    label: "Hui county"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "临夏回族自治州",
+                label: "Linxia Hui Autonomous Prefecture",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "临夏市"
+                    label: "Linxia city"
                 }, {
                     value: "",
-                    label: "临夏县"
+                    label: "Linxia county"
                 }, {
                     value: "",
-                    label: "康乐县"
+                    label: "kangle"
                 }, {
                     value: "",
-                    label: "永靖县"
+                    label: "yongjing"
                 }, {
                     value: "",
-                    label: "广河县"
+                    label: "Vitalizing national economy.it"
                 }, {
                     value: "",
-                    label: "和政县"
+                    label: "hezheng"
                 }, {
                     value: "",
-                    label: "东乡族自治县"
+                    label: "Dongxiang Nationality Autonomous County"
                 }, {
                     value: "",
-                    label: "积石山保安族东乡族撒拉族自治县"
+                    label: "Jishi Mountain Baoan Dongxiang Salar Autonomous County"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "甘南藏族自治州",
+                label: "Gannan Tibetan Autonomous Prefecture",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "合作市"
+                    label: "Cooperation,"
                 }, {
                     value: "",
-                    label: "临潭县"
+                    label: "In the tam county"
                 }, {
                     value: "",
-                    label: "卓尼县"
+                    label: "zhuoni"
                 }, {
                     value: "",
-                    label: "舟曲县"
+                    label: "zhouqu"
                 }, {
                     value: "",
-                    label: "迭部县"
+                    label: "Overlapping of the county"
                 }, {
                     value: "",
-                    label: "玛曲县"
+                    label: "Ma qu county"
                 }, {
                     value: "",
-                    label: "碌曲县"
+                    label: "The importance qu county"
                 }, {
                     value: "",
-                    label: "夏河县"
+                    label: "Town was"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "其他"
+                label: "other"
             }
         ],
 
     },
     {
-        value: "宁夏",
-        label: "宁夏",
+        value: "ningxia",
+        label: "ningxia",
         children: [{
                 value: "",
-                label: "请选择"
+                label: "Please select a"
             },
             {
                 value: "",
-                label: "银川",
+                label: "yinchuan",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "兴庆区"
+                    label: "Xingqing district"
                 }, {
                     value: "",
-                    label: "西夏区"
+                    label: "Xixia district"
                 }, {
                     value: "",
-                    label: "金凤区"
+                    label: "Jinfeng district"
                 }, {
                     value: "",
-                    label: "灵武市"
+                    label: "lingwu"
                 }, {
                     value: "",
-                    label: "永宁县"
+                    label: "yongning"
                 }, {
                     value: "",
-                    label: "贺兰县"
+                    label: "Helan county"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "石嘴山",
+                label: "making",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "大武口区"
+                    label: "dawukou"
                 }, {
                     value: "",
-                    label: "惠农区"
+                    label: "Corresponding area"
                 }, {
                     value: "",
-                    label: "平罗县"
+                    label: "Pingluo county"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "吴忠",
+                label: "hui",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "利通区"
+                    label: "litong"
                 }, {
                     value: "",
-                    label: "青铜峡市"
+                    label: "qingtongxia"
                 }, {
                     value: "",
-                    label: "盐池县"
+                    label: "The existing"
                 }, {
                     value: "",
-                    label: "同心县"
+                    label: "tongxin"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "固原",
+                label: "evalution",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "原州区"
+                    label: "The original state"
                 }, {
                     value: "",
-                    label: "西吉县"
+                    label: "Xiji county"
                 }, {
                     value: "",
-                    label: "隆德县"
+                    label: "longde"
                 }, {
                     value: "",
-                    label: "泾源县"
+                    label: "jingyuan"
                 }, {
                     value: "",
-                    label: "彭阳县"
+                    label: "Taking pengyang county"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "中卫",
+                label: "Central defender",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "沙坡头区"
+                    label: "China area"
                 }, {
                     value: "",
-                    label: "中宁县"
+                    label: "In the county"
                 }, {
                     value: "",
-                    label: "海原县"
+                    label: "ninghxia"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "其他"
+                label: "other"
             }
         ],
 
     },
     {
-        value: "青海",
-        label: "青海",
+        value: "qinghai",
+        label: "qinghai",
         children: [{
                 value: "",
-                label: "请选择"
+                label: "Please select a"
             },
             {
                 value: "",
-                label: "西宁",
+                label: "xining",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "城中区"
+                    label: "The central city"
                 }, {
                     value: "",
-                    label: "城东区"
+                    label: "East area"
                 }, {
                     value: "",
-                    label: "城西区"
+                    label: "The west end"
                 }, {
                     value: "",
-                    label: "城北区"
+                    label: "Chengbei district"
                 }, {
                     value: "",
-                    label: "湟源县"
+                    label: "Huangyuan county"
                 }, {
                     value: "",
-                    label: "湟中县"
+                    label: "this"
                 }, {
                     value: "",
-                    label: "大通回族土族自治县"
+                    label: "Datong Hui Tu Autonomous County"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "海东地区",
+                label: "Whereas haidong539 area",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "平安县"
+                    label: "ping"
                 }, {
                     value: "",
-                    label: "乐都县"
+                    label: "Village in"
                 }, {
                     value: "",
-                    label: "民和回族土族自治县"
+                    label: "Minhe Hui Tu Autonomous County"
                 }, {
                     value: "",
-                    label: "互助土族自治县"
+                    label: "Huzhu Tu Autonomous County"
                 }, {
                     value: "",
-                    label: "化隆回族自治县"
+                    label: "Hualong Hui Autonomous County"
                 }, {
                     value: "",
-                    label: "循化撒拉族自治县"
+                    label: "Xunhua Salar Autonomous County"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "海北藏族自治州",
+                label: "Haibei Tibetan Autonomous Prefecture",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "海晏县"
+                    label: "Taking the sea county"
                 }, {
                     value: "",
-                    label: "祁连县"
+                    label: "qilian"
                 }, {
                     value: "",
-                    label: "刚察县"
+                    label: "Just was made in the county"
                 }, {
                     value: "",
-                    label: "门源回族自治县"
+                    label: "Menyuan Hui Autonomous County"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "海南藏族自治州",
+                label: "Hainan Tibetan Autonomous Prefecture",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "共和县"
+                    label: "prepares"
                 }, {
                     value: "",
-                    label: "同德县"
+                    label: "Tongde county"
                 }, {
                     value: "",
-                    label: "贵德县"
+                    label: "Your DE county,"
                 }, {
                     value: "",
-                    label: "兴海县"
+                    label: "Xinghai county"
                 }, {
                     value: "",
-                    label: "贵南县"
+                    label: "shagou"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "黄南藏族自治州",
+                label: "Huangnan Tibetan Autonomous Prefecture",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "同仁县"
+                    label: "Tongren county"
                 }, {
                     value: "",
-                    label: "尖扎县"
+                    label: "Sharp plunge into county"
                 }, {
                     value: "",
-                    label: "泽库县"
+                    label: "Ze library county"
                 }, {
                     value: "",
-                    label: "河南蒙古族自治县"
+                    label: "Henan Mongolian Autonomous County"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "果洛藏族自治州",
+                label: "Guoluo Tibetan Autonomous Prefecture",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "玛沁县"
+                    label: "Ma qin county"
                 }, {
                     value: "",
-                    label: "班玛县"
+                    label: "Class m county"
                 }, {
                     value: "",
-                    label: "甘德县"
+                    label: "Gander county"
                 }, {
                     value: "",
-                    label: "达日县"
+                    label: "Up to day county"
                 }, {
                     value: "",
-                    label: "久治县"
+                    label: "JiuZhi county"
                 }, {
                     value: "",
-                    label: "玛多县"
+                    label: "madoi"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "玉树藏族自治州",
+                label: "Yushu Tibetan Autonomous Prefecture",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "玉树县"
+                    label: "Yushu county"
                 }, {
                     value: "",
-                    label: "杂多县"
+                    label: "Heteropoly county"
                 }, {
                     value: "",
-                    label: "称多县"
+                    label: "According to many county"
                 }, {
                     value: "",
-                    label: "治多县"
+                    label: "For many counties"
                 }, {
                     value: "",
-                    label: "囊谦县"
+                    label: "Capsule modest county"
                 }, {
                     value: "",
-                    label: "曲麻莱县"
+                    label: "Song ma lai county"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "海西蒙古族藏族自治州",
+                label: "Haixi Mongolian and Tibetan Autonomous Prefecture",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "德令哈市"
+                    label: "DE delingha"
                 }, {
                     value: "",
-                    label: "格尔木市"
+                    label: "geermu"
                 }, {
                     value: "",
-                    label: "乌兰县"
+                    label: "His county"
                 }, {
                     value: "",
-                    label: "都兰县"
+                    label: "Touraine county"
                 }, {
                     value: "",
-                    label: "天峻县"
+                    label: "Tianjun county"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "其他"
+                label: "other"
             }
         ],
 
     },
     {
-        value: "新疆",
-        label: "新疆",
+        value: "xinjiang",
+        label: "xinjiang",
         children: [{
                 value: "",
-                label: "请选择"
+                label: "Please select a"
             },
             {
                 value: "",
-                label: "乌鲁木齐",
+                label: "urumqi",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "天山区"
+                    label: "Tianshan area"
                 }, {
                     value: "",
-                    label: "沙依巴克区"
+                    label: "Shaybak district"
                 }, {
                     value: "",
-                    label: "新市区"
+                    label: "Urban area"
                 }, {
                     value: "",
-                    label: "水磨沟区"
+                    label: "ShuiMoGou area"
                 }, {
                     value: "",
-                    label: "头屯河区"
+                    label: "toutunhe"
                 }, {
                     value: "",
-                    label: "达坂城区"
+                    label: "Daban city"
                 }, {
                     value: "",
-                    label: "东山区"
+                    label: "Dongshan district"
                 }, {
                     value: "",
-                    label: "乌鲁木齐县"
+                    label: "Urumqi county"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "克拉玛依",
+                label: "karamay",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "克拉玛依区"
+                    label: "Karamay District"
                 }, {
                     value: "",
-                    label: "独山子区"
+                    label: "The dushanzi district"
                 }, {
                     value: "",
-                    label: "白碱滩区"
+                    label: "White JianTan area"
                 }, {
                     value: "",
-                    label: "乌尔禾区"
+                    label: "Ur hetian area"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "吐鲁番地区",
+                label: "Turpan region",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "吐鲁番市"
+                    label: "Turpan city"
                 }, {
                     value: "",
-                    label: "托克逊县"
+                    label: "Toksun county"
                 }, {
                     value: "",
-                    label: "鄯善县"
+                    label: "Shanshan county,"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "哈密地区",
+                label: "Hami region",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "哈密市"
+                    label: "with"
                 }, {
                     value: "",
-                    label: "伊吾县"
+                    label: "The my county"
                 }, {
                     value: "",
-                    label: "巴里坤哈萨克自治县"
+                    label: "Balikun Kazakh Autonomous County"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "和田地区",
+                label: "Hotan region",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "和田市"
+                    label: "Hotan city"
                 }, {
                     value: "",
-                    label: "和田县"
+                    label: "Hotan county"
                 }, {
                     value: "",
-                    label: "洛浦县"
+                    label: "Los pu county"
                 }, {
                     value: "",
-                    label: "民丰县"
+                    label: "People venture"
                 }, {
                     value: "",
-                    label: "皮山县"
+                    label: "pishan"
                 }, {
                     value: "",
-                    label: "策勒县"
+                    label: "Zeller county"
                 }, {
                     value: "",
-                    label: "于田县"
+                    label: "Keriya county"
                 }, {
                     value: "",
-                    label: "墨玉县"
+                    label: "This county"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "阿克苏地区",
+                label: "Aksu region",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "阿克苏市"
+                    label: "Aksu city"
                 }, {
                     value: "",
-                    label: "温宿县"
+                    label: "Wensu county"
                 }, {
                     value: "",
-                    label: "沙雅县"
+                    label: "Shaya county"
                 }, {
                     value: "",
-                    label: "拜城县"
+                    label: "Baicheng county"
                 }, {
                     value: "",
-                    label: "阿瓦提县"
+                    label: "awat"
                 }, {
                     value: "",
-                    label: "库车县"
+                    label: "kuqa"
                 }, {
                     value: "",
-                    label: "柯坪县"
+                    label: "Keping county"
                 }, {
                     value: "",
-                    label: "新和县"
+                    label: "The new county"
                 }, {
                     value: "",
-                    label: "乌什县"
+                    label: "Uch turpan"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "喀什地区",
+                label: "Kashgar region",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "喀什市"
+                    label: "kashgar"
                 }, {
                     value: "",
-                    label: "巴楚县"
+                    label: "Bachu county"
                 }, {
                     value: "",
-                    label: "泽普县"
+                    label: "Zip county"
                 }, {
                     value: "",
-                    label: "伽师县"
+                    label: "no"
                 }, {
                     value: "",
-                    label: "叶城县"
+                    label: "Yecheng county"
                 }, {
                     value: "",
-                    label: "岳普湖县"
+                    label: "Yopurga county"
                 }, {
                     value: "",
-                    label: "疏勒县"
+                    label: "Shule county"
                 }, {
                     value: "",
-                    label: "麦盖提县"
+                    label: "Markit county"
                 }, {
                     value: "",
-                    label: "英吉沙县"
+                    label: "The auspicious sha county"
                 }, {
                     value: "",
-                    label: "莎车县"
+                    label: "yarkant"
                 }, {
                     value: "",
-                    label: "疏附县"
+                    label: "Hydrophobic attached county"
                 }, {
                     value: "",
-                    label: "塔什库尔干塔吉克自治县"
+                    label: "Tashkurgan Tajik Autonomous County"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "克孜勒苏柯尔克孜自治州",
+                label: "Kizilsu Kirgiz Autonomous Prefecture",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "阿图什市"
+                    label: "O figure city"
                 }, {
                     value: "",
-                    label: "阿合奇县"
+                    label: "O in qi county"
                 }, {
                     value: "",
-                    label: "乌恰县"
+                    label: "Wu just county"
                 }, {
                     value: "",
-                    label: "阿克陶县"
+                    label: "Cleo dingtao county"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "巴音郭楞蒙古自治州",
+                label: "Bayingolin Mongolian Autonomous Prefecture",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "库尔勒市"
+                    label: "korla"
                 }, {
                     value: "",
-                    label: "和静县"
+                    label: "hejing"
                 }, {
                     value: "",
-                    label: "尉犁县"
+                    label: "Yuli county"
                 }, {
                     value: "",
-                    label: "和硕县"
+                    label: "Hoxud county"
                 }, {
                     value: "",
-                    label: "且末县"
+                    label: "qiemo"
                 }, {
                     value: "",
-                    label: "博湖县"
+                    label: "Agency county"
                 }, {
                     value: "",
-                    label: "轮台县"
+                    label: "luntai"
                 }, {
                     value: "",
-                    label: "若羌县"
+                    label: "ruoqiang"
                 }, {
                     value: "",
-                    label: "焉耆回族自治县"
+                    label: "Yanqi Hui Autonomous County"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "昌吉回族自治州",
+                label: "Changji Hui Autonomous Prefecture",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "昌吉市"
+                    label: "changji"
                 }, {
                     value: "",
-                    label: "阜康市"
+                    label: "fukang"
                 }, {
                     value: "",
-                    label: "奇台县"
+                    label: "Qitai county"
                 }, {
                     value: "",
-                    label: "玛纳斯县"
+                    label: "Manas county,"
                 }, {
                     value: "",
-                    label: "吉木萨尔县"
+                    label: "Jimusal County"
                 }, {
                     value: "",
-                    label: "呼图壁县"
+                    label: "Call to seek wall county"
                 }, {
                     value: "",
-                    label: "木垒哈萨克自治县"
+                    label: "Mulei Kazakh Autonomous County"
                 }, {
                     value: "",
-                    label: "米泉市"
+                    label: "M springs,"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "博尔塔拉蒙古自治州",
+                label: "Bortala Mongol Autonomous Prefecture",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "博乐市"
+                    label: "bole"
                 }, {
                     value: "",
-                    label: "精河县"
+                    label: "JingHe county"
                 }, {
                     value: "",
-                    label: "温泉县"
+                    label: "Hot springs county"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "石河子",
+                label: "shihezi",
                 children: [],
 
             },
             {
                 value: "",
-                label: "阿拉尔",
+                label: "The aral",
                 children: [],
 
             },
             {
                 value: "",
-                label: "图木舒克",
+                label: "toumchouq",
                 children: [],
 
             },
             {
                 value: "",
-                label: "五家渠",
+                label: "wujiaqu",
                 children: [],
 
             },
             {
                 value: "",
-                label: "伊犁哈萨克自治州",
+                label: "Ili Kazak Autonomous Prefecture",
                 children: [{
                     value: "",
-                    label: "请选择"
+                    label: "Please select a"
                 }, {
                     value: "",
-                    label: "伊宁市"
+                    label: "Yining city"
                 }, {
                     value: "",
-                    label: "奎屯市"
+                    label: "Shihezi city"
                 }, {
                     value: "",
-                    label: "伊宁县"
+                    label: "Yining county"
                 }, {
                     value: "",
-                    label: "特克斯县"
+                    label: "Tex county"
                 }, {
                     value: "",
-                    label: "尼勒克县"
+                    label: "Nilka county"
                 }, {
                     value: "",
-                    label: "昭苏县"
+                    label: "Zhao su county"
                 }, {
                     value: "",
-                    label: "新源县"
+                    label: "Xinyuan county"
                 }, {
                     value: "",
-                    label: "霍城县"
+                    label: "Huocheng county"
                 }, {
                     value: "",
-                    label: "巩留县"
+                    label: "Gong leave county"
                 }, {
                     value: "",
-                    label: "察布查尔锡伯自治县"
+                    label: "Qapqal Xibe Autonomous County"
                 }, {
                     value: "",
-                    label: "塔城地区"
+                    label: "Tuscaloosa area"
                 }, {
                     value: "",
-                    label: "阿勒泰地区"
+                    label: "Altay region"
                 }, {
                     value: "",
-                    label: "其他"
+                    label: "other"
                 }],
 
             },
             {
                 value: "",
-                label: "其他"
+                label: "other"
             }
         ],
 
     },
     {
-        value: "香港",
-        label: "香港",
+        value: "Hong Kong",
+        label: "Hong Kong",
         children: [{
             value: "",
-            label: "请选择"
+            label: "Please select a"
         }, {
             value: "",
-            label: "中西区"
+            label: "And western"
         }, {
             value: "",
-            label: "湾仔区"
+            label: "Wan chai"
         }, {
             value: "",
-            label: "东区"
+            label: "east area"
         }, {
             value: "",
-            label: "南区"
+            label: "The southern district"
         }, {
             value: "",
-            label: "深水埗区"
+            label: "Sham shui Po district"
         }, {
             value: "",
-            label: "油尖旺区"
+            label: "Yau tsim mong district"
         }, {
             value: "",
-            label: "九龙城区"
+            label: "Kowloon city"
         }, {
             value: "",
-            label: "黄大仙区"
+            label: "Wong tai sin district,"
         }, {
             value: "",
-            label: "观塘区"
+            label: "Kwun tong district"
         }, {
             value: "",
-            label: "北区"
+            label: "North district"
         }, {
             value: "",
-            label: "大埔区"
+            label: "Tai Po district"
         }, {
             value: "",
-            label: "沙田区"
+            label: "The sha tin district"
         }, {
             value: "",
-            label: "西贡区"
+            label: "Sai kung district"
         }, {
             value: "",
-            label: "元朗区"
+            label: "Yuen long"
         }, {
             value: "",
-            label: "屯门区"
+            label: "Tuen mun"
         }, {
             value: "",
-            label: "荃湾区"
+            label: "Tsuen wan"
         }, {
             value: "",
-            label: "葵青区"
+            label: "Kwai tsing district"
         }, {
             value: "",
-            label: "离岛区"
+            label: "The outlying islands district"
         }, {
             value: "",
-            label: "其他"
+            label: "other"
         }],
 
     },
     {
-        value: "澳门",
-        label: "澳门",
+        value: "Macau",
+        label: "Macau",
         children: [{
             value: "",
-            label: "请选择"
+            label: "Please select a"
         }, {
             value: "",
-            label: "花地玛堂区"
+            label: "Huadima Parish"
         }, {
             value: "",
-            label: "圣安多尼堂区"
+            label: "St. Anthony's Parish"
         }, {
             value: "",
-            label: "大堂区"
+            label: "The lobby area"
         }, {
             value: "",
-            label: "望德堂区"
+            label: "Hope the parish"
         }, {
             value: "",
-            label: "风顺堂区"
+            label: "The wind along the parish"
         }, {
             value: "",
-            label: "嘉模堂区"
+            label: "Jia parish"
         }, {
             value: "",
-            label: "圣方济各堂区"
+            label: "St. Francis parish"
         }, {
             value: "",
-            label: "路凼"
+            label: "Lk"
         }, {
             value: "",
-            label: "其他"
+            label: "other"
         }],
 
     },
     {
-        value: "台湾",
-        label: "台湾",
+        value: "Taiwan",
+        label: "Taiwan",
         children: [{
             value: "",
-            label: "请选择"
+            label: "Please select a"
         }, {
             value: "",
-            label: "台北市"
+            label: "Taipei city"
         }, {
             value: "",
-            label: "高雄市"
+            label: "Kaohsiung city"
         }, {
             value: "",
-            label: "台北县"
+            label: "Taipei county"
         }, {
             value: "",
-            label: "桃园县"
+            label: "Taoyuan county"
         }, {
             value: "",
-            label: "新竹县"
+            label: "Hsinchu county"
         }, {
             value: "",
-            label: "苗栗县"
+            label: "Miaoli county"
         }, {
             value: "",
-            label: "台中县"
+            label: "Taichung county"
         }, {
             value: "",
-            label: "彰化县"
+            label: "Changhua county"
         }, {
             value: "",
-            label: "南投县"
+            label: "Nantou county"
         }, {
             value: "",
-            label: "云林县"
+            label: "Yunlin county"
         }, {
             value: "",
-            label: "嘉义县"
+            label: "chiayicounty.there"
         }, {
             value: "",
-            label: "台南县"
+            label: "Tainan county"
         }, {
             value: "",
-            label: "高雄县"
+            label: "kaohsiung"
         }, {
             value: "",
-            label: "屏东县"
+            label: "Pingtung county"
         }, {
             value: "",
-            label: "宜兰县"
+            label: "Yilan county"
         }, {
             value: "",
-            label: "花莲县"
+            label: "Hualien county"
         }, {
             value: "",
-            label: "台东县"
+            label: "Taitung county"
         }, {
             value: "",
-            label: "澎湖县"
+            label: "Penghu county"
         }, {
             value: "",
-            label: "基隆市"
+            label: "Keelung city"
         }, {
             value: "",
-            label: "新竹市"
+            label: "Hsinchu city"
         }, {
             value: "",
-            label: "台中市"
+            label: "Taichung city"
         }, {
             value: "",
-            label: "嘉义市"
+            label: "chiayi"
         }, {
             value: "",
-            label: "台南市"
+            label: "Tainan city"
         }, {
             value: "",
-            label: "其他"
+            label: "other"
         }],
 
     },
     {
-        value: "海外",
-        label: "海外",
+        value: "overseas",
+        label: "overseas",
         children: [{
             value: "",
-            label: "请选择"
+            label: "Please select a"
         }, {
             value: "",
-            label: "其他"
+            label: "other"
         }],
 
     },
     {
-        value: "其他",
-        label: "其他"
+        value: "other",
+        label: "other"
     }
 ]
 // export default options;

@@ -17,7 +17,7 @@
         <result property="updateTime" column="update_time"/>
     </resultMap>
 
-    <!--通过单个实体-->
+    <!--Through a single entity-->
     <select id="queryOne" resultMap="HolidayItemMap">
         select hi.holiday_id,
                hi.approved_user_id,
@@ -34,7 +34,7 @@
         limit 1
     </select>
 
-    <!--查询多个实体-->
+    <!--Querying multiple entities-->
     <select id="queryAll" resultMap="HolidayItemMap">
         select hi.holiday_id,
         hi.approved_user_id,
@@ -121,7 +121,7 @@
         </trim>
     </insert>
 
-    <!--通过主键修改数据-->
+    <!--Modify data by primary key-->
     <update id="update" parameterType="HolidayItem">
         update holiday_item
         <set>
@@ -143,7 +143,7 @@
         approved_index = #{approvedIndex}
     </update>
 
-    <!--通过主键删除-->
+    <!--Delete by primary key-->
     <delete id="deleteById">
         update holiday_item
         set del_flag =w 1

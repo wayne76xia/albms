@@ -31,7 +31,7 @@ import org.springframework.web.multipart.MultipartFile;
 import java.util.*;
 
 /**
- * 部门信息
+ * Department information
  *
  */
 @RestController
@@ -54,7 +54,7 @@ public class SysDeptController extends BaseController {
     }
 
     /**
-     * 获取部门列表
+     * Get department list
      */
     @PreAuthorize("@ss.hasPermi('system:dept:list')")
     @GetMapping("/list")
@@ -64,7 +64,7 @@ public class SysDeptController extends BaseController {
     }
 
     /**
-     * 查询部门列表（排除节点）
+     * Querying the Department List(Eliminate the node)
      */
     @PreAuthorize("@ss.hasPermi('system:dept:list')")
     @GetMapping("/list/exclude/{deptId}")
@@ -82,7 +82,7 @@ public class SysDeptController extends BaseController {
     }
 
     /**
-     * 根据部门编号获取详细信息
+     * Get details by department number
      */
     @PreAuthorize("@ss.hasPermi('system:dept:query')")
     @GetMapping(value = "/{deptId}")
@@ -91,7 +91,7 @@ public class SysDeptController extends BaseController {
     }
 
     /**
-     * 获取部门下拉树列表
+     * Obtain the department drop-down list
      */
     @GetMapping("/treeselect")
     public AjaxResult treeselect(SysDept dept) {
@@ -100,7 +100,7 @@ public class SysDeptController extends BaseController {
     }
 
     /**
-     * 加载对应角色部门列表树
+     * The department list tree of the role is displayed
      */
     @GetMapping(value = "/roleDeptTreeselect/{roleId}")
     public AjaxResult roleDeptTreeselect(@PathVariable("roleId") Long roleId) {
@@ -112,18 +112,18 @@ public class SysDeptController extends BaseController {
     }
 
     /**
-     * 新增部门
+     * The new department
      */
     @PreAuthorize("@ss.hasPermi('system:dept:add')")
-    @Log(title = "部门管理", businessType = BusinessType.INSERT)
+    @Log(title = "Department Management", businessType = BusinessType.INSERT)
     @PostMapping
     public AjaxResult add(@Validated @RequestBody SysDept dept) {
         if (UserConstants.NOT_UNIQUE.equals(deptService.checkDeptNameUnique(dept))) {
-            return AjaxResult.error("新增部门'" + dept.getDeptName() + "'失败，部门名称已存在");
+            return AjaxResult.error("The new department'" + dept.getDeptName() + "'failure,The department name already exists");
         }
         if (dept.getParentId() == 0) {
             if (deptService.selectHeadCompanyId() != null) {
-                return AjaxResult.error("新增顶级部门'" + dept.getDeptName() + "'失败，顶级部门已存在");
+                return AjaxResult.error("Add top departments'" + dept.getDeptName() + "'failure,Top-level departments already exist");
             }
         }
         dept.setCreateBy(SecurityUtils.getUsername());
@@ -131,43 +131,43 @@ public class SysDeptController extends BaseController {
     }
 
     /**
-     * 修改部门
+     * Modify the department
      */
     @PreAuthorize("@ss.hasPermi('system:dept:edit')")
-    @Log(title = "部门管理", businessType = BusinessType.UPDATE)
+    @Log(title = "Department Management", businessType = BusinessType.UPDATE)
     @PutMapping
     public AjaxResult edit(@Validated @RequestBody SysDept dept) {
         if (UserConstants.NOT_UNIQUE.equals(deptService.checkDeptNameUnique(dept))) {
-            return AjaxResult.error("修改部门'" + dept.getDeptName() + "'失败，部门名称已存在");
+            return AjaxResult.error("Modify the department'" + dept.getDeptName() + "'failure,The department name already exists");
         } else if (dept.getParentId().equals(dept.getDeptId())) {
-            return AjaxResult.error("修改部门'" + dept.getDeptName() + "'失败，上级部门不能是自己");
+            return AjaxResult.error("Modify the department'" + dept.getDeptName() + "'failure,The superior department cannot be itself");
         } else if (StringUtils.equals(UserConstants.DEPT_DISABLE, dept.getStatus())
                 && deptService.selectNormalChildrenDeptById(dept.getDeptId()) > 0) {
-            return AjaxResult.error("该部门包含未停用的子部门！");
+            return AjaxResult.error("This department contains the subdepartments that are not disabled!");
         }
         dept.setUpdateBy(SecurityUtils.getUsername());
         return toAjax(deptService.updateDept(dept));
     }
 
     /**
-     * 删除部门
+     * Delete the department
      */
     @PreAuthorize("@ss.hasPermi('system:dept:remove')")
-    @Log(title = "部门管理", businessType = BusinessType.DELETE)
+    @Log(title = "Department Management", businessType = BusinessType.DELETE)
     @DeleteMapping("/{deptId}")
     public AjaxResult remove(@PathVariable Long deptId) {
         if (deptService.hasChildByDeptId(deptId)) {
-            return AjaxResult.error("存在下级部门,不允许删除");
+            return AjaxResult.error("There are subordinate departments,Not allowed to delete");
         }
         if (deptService.checkDeptExistUser(deptId)) {
-            return AjaxResult.error("部门存在用户,不允许删除");
+            return AjaxResult.error("A user exists in the department.,Not allowed to delete");
         }
         return toAjax(deptService.deleteDeptById(deptId));
     }
 
 
     /**
-     *  获取所有的门店列表
+     *  Get a list of all stores
      * @return
      */
     @GetMapping(value = "/getAllShopList")
@@ -177,7 +177,7 @@ public class SysDeptController extends BaseController {
 
 
     /**
-     * 获取子公司列表
+     * Get list of subsidiaries
      *
      * @param dept
      * @return TableDataInfo
@@ -191,23 +191,23 @@ public class SysDeptController extends BaseController {
     }
 
     /**
-     * 下载子公司导入模板
+     * Download the subsidiary import template
      * @return
      */
     @GetMapping("/importTemplate")
     public AjaxResult importTemplate() {
         ExcelUtil<SubsidiaryCompanyExcelVO> util = new ExcelUtil<SubsidiaryCompanyExcelVO>(SubsidiaryCompanyExcelVO.class);
-        return util.importTemplateExcel("子公司数据");
+        return util.importTemplateExcel("Subsidiary data");
     }
 
     /**
-     * 子公司导入
+     * Subsidiary import
      *
      * @param file
      * @param updateSupport
      * @return
      */
-    @Log(title = "部门管理-子公司导入", businessType = BusinessType.IMPORT)
+    @Log(title = "Department Management-Subsidiary import", businessType = BusinessType.IMPORT)
     @PreAuthorize("@ss.hasPermi('system:dept:subsidiaryCompanyListImport')")
     @PostMapping(value = "/subsidiaryCompanyListImport")
     public AjaxResult subsidiaryCompanyListImport(MultipartFile file, boolean updateSupport) throws Exception {
@@ -220,12 +220,12 @@ public class SysDeptController extends BaseController {
     }
 
     /**
-     * 导出
+     * export
      *
      * @param dept
      * @return
      */
-    @Log(title = "部门管理-子公司导出", businessType = BusinessType.EXPORT)
+    @Log(title = "Department Management-Subsidiary export", businessType = BusinessType.EXPORT)
     @PreAuthorize("@ss.hasPermi('system:dept:subsidiaryCompanyListExport')")
     @GetMapping(value = "/subsidiaryCompanyListExport")
     public AjaxResult subsidiaryCompanyListExport(SysDept dept) {
@@ -235,7 +235,7 @@ public class SysDeptController extends BaseController {
                 list) {
             if (map != null) {
                 ConverterRegistry registry = ConverterRegistry.getInstance();
-                // 重组数据->导出
+                // Reorganization of the data->export
                 resultList.add(SubsidiaryCompanyExcelVO.builder()
                         .deptCode(registry.convert(String.class, map.get("deptCode")))
                         .deptName(registry.convert(String.class, map.get("deptName")))
@@ -252,12 +252,12 @@ public class SysDeptController extends BaseController {
             }
         }
         ExcelUtil<SubsidiaryCompanyExcelVO> util = new ExcelUtil<SubsidiaryCompanyExcelVO>(SubsidiaryCompanyExcelVO.class);
-        return util.exportExcel(resultList, "子公司数据");
+        return util.exportExcel(resultList, "Subsidiary data");
     }
 
 
     /**
-     * 子公司详细信息
+     * Subsidiary Details
      *
      * @param deptId
      * @return
@@ -266,14 +266,14 @@ public class SysDeptController extends BaseController {
     @GetMapping(value = "/subsidiaryCompanyInfo")
     public AjaxResult subsidiaryCompanyInfo(Long deptId) {
         if (deptId == null) {
-            throw new CustomException("部门标识为空！");
+            throw new CustomException("The department id is empty!");
         }
-        // 封装map返回
+        // encapsulationmapreturn
         Map<String, Object> resultMap = new HashMap<>(15);
-        // 根据部门id查询部门信息
+        // According to the departmentidQuerying Department Information
         SysDept dept = deptService.selectDeptById(deptId);
         if (dept == null) {
-            throw new CustomException("未获取到此部门数据！");
+            throw new CustomException("The department data was not obtained!");
         }
         resultMap.put("deptId", dept.getDeptId() == null ? "" : dept.getDeptId());
         resultMap.put("deptCode", dept.getDeptCode() == null ? "" : dept.getDeptCode());
@@ -287,19 +287,19 @@ public class SysDeptController extends BaseController {
         resultMap.put("address", dept.getAddress() == null ? "" : dept.getAddress());
         resultMap.put("createDate", dept.getCreateTime() == null ? "" : DateUtils.formatDateToAppoint(dept.getCreateTime(), 3));
 
-        // 计算子公司会员人数 准会员人数
-        // 查询该子公司下面门店集合
+        // Calculate the number of subsidiary members Associate membership
+        // Query the collection of stores under the subsidiary
         SysDept dept1 = new SysDept();
         dept1.setParentId(dept.getDeptId());
         List<Map<String, Object>> shopList = deptService.selectShopList(dept1);
         resultMap.put("shopList", shopList);
-        // 查询此子公司下门店数量
+        // Query the number of stores under the subsidiary
         resultMap.put("totalNum", shopList == null ? 0 : shopList.size());
         return AjaxResult.success(resultMap);
     }
 
     /**
-     * 获取所有的子公司列表  下拉列表用
+     * Get a list of all subsidiaries  Drop down list
      *
      * @return
      */
@@ -312,7 +312,7 @@ public class SysDeptController extends BaseController {
     }
 
     /**
-     * 获取门店列表
+     * Get store list
      *
      * @param dept
      * @return
@@ -327,23 +327,23 @@ public class SysDeptController extends BaseController {
 
 
     /**
-     * 下载门店导入模板
+     * Download the store import template
      * @return
      */
     @GetMapping("/importShopTemplate")
     public AjaxResult importShopTemplate() {
         ExcelUtil<ShopExcelVO> util = new ExcelUtil<ShopExcelVO>(ShopExcelVO.class);
-        return util.importTemplateExcel("门店数据");
+        return util.importTemplateExcel("Store the data");
     }
 
     /**
-     * 门店导入
+     * Stores the import
      *
      * @param file
      * @param updateSupport
      * @return
      */
-    @Log(title = "部门管理-门店导入", businessType = BusinessType.IMPORT)
+    @Log(title = "Department Management-Stores the import", businessType = BusinessType.IMPORT)
     @PreAuthorize("@ss.hasPermi('system:dept:shopListImport')")
     @PostMapping(value = "/shopListImport")
     public AjaxResult shopListImport(MultipartFile file, boolean updateSupport) throws Exception {
@@ -356,12 +356,12 @@ public class SysDeptController extends BaseController {
     }
 
     /**
-     * 导出
+     * export
      *
      * @param dept
      * @return
      */
-    @Log(title = "部门管理-门店导出", businessType = BusinessType.EXPORT)
+    @Log(title = "Department Management-Stores the export", businessType = BusinessType.EXPORT)
     @PreAuthorize("@ss.hasPermi('system:dept:shopListExport')")
     @GetMapping(value = "/shopListExport")
     public AjaxResult shopListExport(SysDept dept) {
@@ -371,9 +371,9 @@ public class SysDeptController extends BaseController {
                 list) {
             if (map != null) {
                 ConverterRegistry registry = ConverterRegistry.getInstance();
-                // 查询父级信息
+                // Example Query parent information
                 SysDept info = deptService.selectDeptById(registry.convert(Long.class,map.get("parentId")));
-                // 重组数据->导出
+                // Reorganization of the data->export
                 resultList.add(ShopExcelVO.builder()
                         .parentDeptCode(info == null ? "" : info.getDeptCode() == null ? "" : info.getDeptCode())
                         .parentDeptName(info == null ? "" : info.getDeptName() == null ? "" : info.getDeptName())
@@ -393,12 +393,12 @@ public class SysDeptController extends BaseController {
             }
         }
         ExcelUtil<ShopExcelVO> util = new ExcelUtil<ShopExcelVO>(ShopExcelVO.class);
-        return util.exportExcel(resultList, "门店数据");
+        return util.exportExcel(resultList, "Store the data");
     }
 
 
     /**
-     * 查询门店信息
+     * Querying store information
      *
      * @param deptId
      * @return
@@ -407,14 +407,14 @@ public class SysDeptController extends BaseController {
     @GetMapping(value = "/shopInfo")
     public AjaxResult shopInfo(Long deptId) {
         if (deptId == null) {
-            throw new CustomException("部门标识为空！");
+            throw new CustomException("The department id is empty!");
         }
-        // 封装map返回
+        // encapsulationmapreturn
         Map<String, Object> resultMap = new HashMap<>(14);
-        // 根据部门id查询部门信息
+        // According to the departmentidQuerying Department Information
         SysDept dept = deptService.selectDeptById(deptId);
         if (dept == null) {
-            throw new CustomException("未获取到此部门数据！");
+            throw new CustomException("The department data was not obtained!");
         }
         SysDept parentDept = deptService.selectDeptById(dept.getParentId());
         resultMap.put("deptId", dept.getDeptId() == null ? "" : dept.getDeptId());
@@ -432,7 +432,7 @@ public class SysDeptController extends BaseController {
         resultMap.put("deptType", dept.getDeptType() == null ? 0 : dept.getDeptType());
         resultMap.put("orderNum", dept.getOrderNum() == null ? 0 : dept.getOrderNum());
         resultMap.put("createDate", dept.getCreateTime() == null ? "" : DateUtils.formatDateToAppoint(dept.getCreateTime(), 3));
-        // 查询此门店下员工数量
+        // Query the number of employees in the store
         Integer employeesNum = deptService.countEmployeesNumByDeptId(deptId);
         resultMap.put("employeesNum", employeesNum);
 
@@ -440,7 +440,7 @@ public class SysDeptController extends BaseController {
     }
 
     /**
-     * 获取部门下员工列表
+     * Obtain the list of employees in the department
      *
      * @param deptId
      * @return
@@ -449,7 +449,7 @@ public class SysDeptController extends BaseController {
     @GetMapping(value = "/deptEmployeesList")
     public AjaxResult deptEmployeesList(Long deptId) {
         if (deptId == null) {
-            throw new CustomException("部门标识为空！");
+            throw new CustomException("The department id is empty!");
         }
         List<SysUser> list = userService.selectDeptEmployeesList(deptId);
         for (SysUser su :

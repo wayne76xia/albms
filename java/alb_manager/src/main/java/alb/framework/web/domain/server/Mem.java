@@ -3,23 +3,23 @@ package alb.framework.web.domain.server;
 import alb.common.utils.Arith;
 
 /**
- * 內存相关信息
+ * Memory information
  *
  */
 public class Mem
 {
     /**
-     * 内存总量
+     * Total memory
      */
     private double total;
 
     /**
-     * 已用内存
+     * Have used the memory
      */
     private double used;
 
     /**
-     * 剩余内存
+     * The remaining memory
      */
     private double free;
 

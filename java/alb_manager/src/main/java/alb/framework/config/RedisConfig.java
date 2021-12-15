@@ -12,7 +12,7 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
 
 /**
- * redis配置
+ * redisconfiguration
  *
  */
 @Configuration
@@ -32,7 +32,7 @@ public class RedisConfig extends CachingConfigurerSupport
         mapper.setVisibility(PropertyAccessor.ALL, JsonAutoDetect.Visibility.ANY);
         mapper.enableDefaultTyping(ObjectMapper.DefaultTyping.NON_FINAL);
         serializer.setObjectMapper(mapper);
-        // 使用StringRedisSerializer来序列化和反序列化redis的key值
+        // useStringRedisSerializerTo serialize and deserializeredisthekeyvalue
         template.setKeySerializer(new StringRedisSerializer());
         template.setValueSerializer(serializer);
         template.setHashKeySerializer(new StringRedisSerializer());

@@ -4,32 +4,32 @@ import java.util.List;
 import alb.project.system.domain.SysRoleMenu;
 
 /**
- * 角色与菜单关联表 数据层
+ * Role and menu association table The data layer
  *
  */
 public interface SysRoleMenuMapper
 {
     /**
-     * 查询菜单使用数量
+     * Example Query the number of menus used
      * 
-     * @param menuId 菜单ID
-     * @return 结果
+     * @param menuId The menuID
+     * @return The results of
      */
     int checkMenuExistRole(Long menuId);
 
     /**
-     * 通过角色ID删除角色和菜单关联
+     * Through the roleIDDelete the association between the role and the menu
      * 
-     * @param roleId 角色ID
-     * @return 结果
+     * @param roleId roleID
+     * @return The results of
      */
     int deleteRoleMenuByRoleId(Long roleId);
 
     /**
-     * 批量新增角色菜单信息
+     * Added role menu information in batches
      * 
-     * @param roleMenuList 角色菜单列表
-     * @return 结果
+     * @param roleMenuList Character menu list
+     * @return The results of
      */
     int batchRoleMenu(List<SysRoleMenu> roleMenuList);
 }

@@ -18,7 +18,7 @@ import alb.common.utils.StringUtils;
 import alb.framework.security.LoginUser;
 
 /**
- * token过滤器 验证token有效性
+ * tokenThe filter validationtokeneffectiveness
  *
  */
 @Component

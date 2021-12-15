@@ -28,7 +28,7 @@ import md5 from 'js-md5';
 
 Vue.prototype.bus = new Vue;
 
-// 全局方法挂载
+// Global method mount
 Vue.prototype.getDicts = getDicts
 Vue.prototype.getConfigKey = getConfigKey
 Vue.prototype.parseTime = parseTime
@@ -51,7 +51,7 @@ Vue.prototype.msgInfo = function(msg) {
     this.$message.info(msg);
 }
 
-// 全局组件挂载
+// Global component mount
 Vue.component('Pagination', Pagination)
 
 Vue.use(permission)

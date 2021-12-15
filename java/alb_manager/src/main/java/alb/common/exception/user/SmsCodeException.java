@@ -1,7 +1,7 @@
 package alb.common.exception.user;
 
 /**
- * 短信验证码错误异常类
+ * SMS verification code error exceptions
  *
  */
 public class SmsCodeException extends UserException

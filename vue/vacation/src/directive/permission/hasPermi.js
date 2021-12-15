@@ -1,5 +1,5 @@
  /**
- * 操作权限处理
+ * Operation permission Processing
  * Copyright (c) 2019 ruoyi
  */
  
@@ -22,7 +22,7 @@ export default {
         el.parentNode && el.parentNode.removeChild(el)
       }
     } else {
-      throw new Error(`请设置操作权限标签值`)
+      throw new Error(`Set the operation permission label value`)
     }
   }
 }

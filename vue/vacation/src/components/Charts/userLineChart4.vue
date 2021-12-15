@@ -126,7 +126,7 @@ export default {
         ],
         series: [
           {
-            name: "验光师数量",
+            name: "Number of optometrists",
             type: "line",
             smooth: true,
             symbol: "circle",

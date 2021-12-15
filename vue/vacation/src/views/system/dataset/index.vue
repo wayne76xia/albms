@@ -1,13 +1,13 @@
 <template>
   <div class="app-container">
-    <!-- packUpUpdate 的值需要注意 -->
-    <!-- 登录页图片 -->
+    <!-- packUpUpdate The value of -->
+    <!-- Image of login page -->
     <div
       class="member_set aui-margin-b-10"
       v-hasPermi="['glasses:paramsData:list']"
     >
       <div class="flex flex_start aui-padded-t-10 aui-padded-b-10">
-        <p class="fw_bold text-black font-size-20">登录页图片</p>
+        <p class="fw_bold text-black font-size-20">Image of login page</p>
       </div>
       <el-table
         class="shadow"
@@ -16,8 +16,8 @@
         :data="loginPic"
         @selection-change="handleSelectionChange"
       >
-        <el-table-column label="名称" prop="name" width="240"/>
-        <el-table-column label="图片" prop="value" width="240">
+        <el-table-column label="The name of the" prop="name" width="240"/>
+        <el-table-column label="The picture" prop="value" width="240">
           <template slot-scope="scope">
             <div class="aui-padded-t-5">
               <img
@@ -28,9 +28,9 @@
             </div>
           </template>
         </el-table-column>
-        <el-table-column label="操作时间" prop="lastDate" width="240"/>
+        <el-table-column label="Operating time" prop="lastDate" width="240"/>
 
-        <el-table-column label="操作" class-name="small-padding ">
+        <el-table-column label="operation" class-name="small-padding ">
           <template slot-scope="scope">
             <el-button
               size="mini"
@@ -39,14 +39,14 @@
               style="color: #5ecc59 !important; font-size: 16px"
               @click="handleBackGroundPicUpdate(scope.row)"
               v-hasPermi="['glasses:paramsData:edit','system:config:edit']"
-              title="编辑"
+              title="The editor"
             ></el-button>
           </template>
         </el-table-column>
         <el-table-column prop width="240" align="right">
           <template slot="header">
             <div class="text-theme aui-padded-r-15" @click="packUpUpdate(11)">
-              <span class="showdata">收起</span>
+              <span class="showdata">Pack up</span>
               <img
                 class="showimg"
                 style="width: 10px; height: 10px"
@@ -58,13 +58,13 @@
         </el-table-column>
       </el-table>
     </div>
-    <!-- 技术客服电话 -->
+    <!-- Technical Customer Service Telephone -->
     <div
       class="member_set aui-margin-b-10"
       v-hasPermi="['glasses:paramsData:list']"
     >
       <div class="flex flex_start aui-padded-t-10 aui-padded-b-10">
-        <p class="fw_bold text-black font-size-20">技术客服电话</p>
+        <p class="fw_bold text-black font-size-20">Technical Customer Service Telephone</p>
       </div>
       <el-table
         class="shadow"
@@ -73,10 +73,10 @@
         :data="tecPhone"
         @selection-change="handleSelectionChange"
       >
-        <el-table-column label="名称" prop="name" width="240"/>
-        <el-table-column label="电话" prop="value" width="240"/>
-        <el-table-column label="操作时间" prop="lastDate" width="240"/>
-        <el-table-column label="操作" class-name="small-padding ">
+        <el-table-column label="The name of the" prop="name" width="240"/>
+        <el-table-column label="The phone" prop="value" width="240"/>
+        <el-table-column label="Operating time" prop="lastDate" width="240"/>
+        <el-table-column label="operation" class-name="small-padding ">
           <template slot-scope="scope">
             <el-button
               size="mini"
@@ -85,14 +85,14 @@
               style="color: #5ecc59 !important; font-size: 16px"
               @click="paramshandleUpdate(scope.row)"
               v-hasPermi="['glasses:paramsData:edit']"
-              title="编辑"
+              title="The editor"
             ></el-button>
           </template>
         </el-table-column>
         <el-table-column prop width="240" align="right">
           <template slot="header">
             <div class="text-theme aui-padded-r-15" @click="packUpUpdate(12)">
-              <span class="showdata">收起</span>
+              <span class="showdata">Pack up</span>
               <img
                 class="showimg"
                 style="width: 10px; height: 10px"
@@ -104,7 +104,7 @@
         </el-table-column>
       </el-table>
     </div>
-    <!-- 参数设置 -->
+    <!-- Parameter Settings -->
     <el-dialog
       :title="paramstitle"
       :visible.sync="paramsopen"
@@ -117,11 +117,11 @@
         :rules="paramsRules"
         label-width="80px"
       >
-        <el-form-item label="名字" prop="name">
-          <el-input v-model="paramsform.name" placeholder="请输入名字"/>
+        <el-form-item label="The name" prop="name">
+          <el-input v-model="paramsform.name" placeholder="Please enter your name"/>
         </el-form-item>
         <div class v-if="paramsform.groupType === 5">
-          <el-form-item label="值" prop="value">
+          <el-form-item label="value" prop="value">
             <el-upload
               action="#"
               :http-request="requestUpload"
@@ -132,23 +132,23 @@
             </el-upload>
           </el-form-item>
         </div>
-        <el-form-item label="值" prop="value" v-else>
+        <el-form-item label="value" prop="value" v-else>
           <el-input
             v-model="paramsform.value"
-            placeholder="请输入值"
+            placeholder="Please enter a value"
             disabled
             v-if="dataType"
           />
           <el-input
             v-model="paramsform.value"
-            placeholder="请输入值"
+            placeholder="Please enter a value"
             v-if="!dataType"
           />
         </el-form-item>
       </el-form>
       <div slot="footer" class="dialog-footer">
-        <el-button type="primary" @click="paramsubmitForm">确 定</el-button>
-        <el-button @click="paramsCancel">取 消</el-button>
+        <el-button type="primary" @click="paramsubmitForm">indeed set</el-button>
+        <el-button @click="paramsCancel">take eliminate</el-button>
       </div>
     </el-dialog>
   </div>
@@ -172,165 +172,165 @@ export default {
       dataType: false,
       backGroundPic: false,
       dynamicTags: [],
-      // 收起/展开
-      packTitle: '收起 ',
+      // Pack up/an
+      packTitle: 'Pack up ',
       packImg: '../../../assets/image/display_data.png',
-      // 遮罩层
+      // The mask layer
 
       loading: true,
-      // 选中数组
+      // Select the array
       ids: [],
-      // 非单个禁用
+      // Non-single disable
       single: true,
-      // 非多个禁用
+      // Non-multiple disable
       multiple: true,
-      // 总条数
+      // The total number of article
       total: 0,
-      // 会员等级设置表格数据
+      // Membership level setting table data
       memberLevelList: [],
 
-      // 弹出层标题
+      // Pop-up layer title
       title: '',
-      // 是否显示弹出层
+      // Whether to display the pop-up layer
       open: false,
-      // 删除状态0未1已字典
+      // Delete the state0not1Have a dictionary
       delStatusOptions: [],
-      // 查询参数
+      // Query parameters
       queryParams: {
         // pageNum: 1,
         // pageSize: 20,
         name: undefined
       },
 
-      // 表单参数
+      // The form parameter
       form: {},
 
-      // 表单校验
+      // Form validation
       rules: {
         name: [
-          { required: true, message: '会员等级名字不能为空', trigger: 'blur' }
+          { required: true, message: 'Member level names cannot be empty', trigger: 'blur' }
         ],
         condition: [
-          { required: true, message: '满足条件不能为空', trigger: 'blur' }
+          { required: true, message: 'The condition cannot be null', trigger: 'blur' }
         ],
         discount: [
-          { required: true, message: '折扣比例不能为空', trigger: 'blur' }
+          { required: true, message: 'The discount rate cannot be empty', trigger: 'blur' }
         ],
         delStatus: [
           {
             required: true,
-            message: '删除状态0未1已不能为空',
+            message: 'Delete the state0not1It cannot be empty',
             trigger: 'blur'
           }
         ]
       },
-      //参数设置
+      //Parameter Settings
       paramsLoading: true,
-      paymentList: [], //预付定金比例
-      stockList: [], //库存报警设置
-      performanceList: [], //业绩考核标准
-      returnList: [], //回访时间设置
-      resorceList: [], //预约管理来源
-      loginPic: [], //登录页图片
-      tecPhone: [], //技术客服电话
+      paymentList: [], //Proportion of down payment
+      stockList: [], //Inventory alarm setting
+      performanceList: [], //Performance appraisal criteria
+      returnList: [], //Set the return visit time
+      resorceList: [], //Appointment Management Sources
+      loginPic: [], //Image of login page
+      tecPhone: [], //Technical Customer Service Telephone
       paramsDataList: [],
       paramsopen: false,
       paramstitle: '',
       paramsform: {},
-      // 查看二维码
+      // View qr code
       codePic: '',
       codeShow: false,
       checkDetailParams: {
         id: ''
       },
-      paramsAdd: '', // 添加参数
+      paramsAdd: '', // Add parameters
       paramsRules: {
-        name: [{ required: true, message: '名字不能为空', trigger: 'blur' }],
-        value: [{ required: true, message: '值不能为空', trigger: 'blur' }]
+        name: [{ required: true, message: 'The name cannot be empty', trigger: 'blur' }],
+        value: [{ required: true, message: 'The value cannot be null', trigger: 'blur' }]
       },
-      //业绩考核计算设置
+      //Performance assessment calculation setup
       calculateList: [],
-      branchList: [], //分公司考核计算
-      storeList: [], //门店考核计算
-      telephoneList: [], //话务员考核计算
-      optometristList: [], //验光师考核计算
+      branchList: [], //Assessment and calculation of branch company
+      storeList: [], //Store assessment and calculation
+      telephoneList: [], //Operator assessment calculation
+      optometristList: [], //Optometrist assessment calculation
       calculateLoading: false,
       calculateopen: false,
       calculatetitle: '',
       calculateform: {},
       calculaterules: {
-        name: [{ required: true, message: '名字不能为空', trigger: 'blur' }]
+        name: [{ required: true, message: 'The name cannot be empty', trigger: 'blur' }]
       },
 
-      // 镜架参数
+      // Frame parameters
       mirrorBracketParamsList: [],
       mirrorLoading: false,
       mirrorOpen: false,
       mirrorForm: {},
       mirrorTitle: '',
-      mirrorList: [], //根据type获取镜架参数
+      mirrorList: [], //According to thetypeGet frame parameters
 
       mirrorRules: {
         name: [
-          { required: true, message: '参数名字不能为空', trigger: 'blur' }
+          { required: true, message: 'Parameter names cannot be empty', trigger: 'blur' }
         ],
         type: [
           {
             required: true,
             message:
-              '类型（1款式2颜色3立线高度4材质5镜圈宽度6中梁宽度7前倾角8镜腿长度9面弯）不能为空',
+              'type(1style2color3Vertical line height4The material5Mirror ring width6The centre sill width7Before the Angle8Its leg length9Surface bending)Cant be empty',
             trigger: 'blur'
           }
         ],
         delStatus: [
           {
             required: true,
-            message: '删除状态0未1已不能为空',
+            message: 'Delete the state0not1It cannot be empty',
             trigger: 'blur'
           }
         ],
         lastDate: [
-          { required: true, message: '最后操作时间不能为空', trigger: 'blur' }
+          { required: true, message: 'The last operation time cannot be empty', trigger: 'blur' }
         ]
       },
-      //镜架型号
+      //Frame type
       glassList: [],
       glassloading: false,
       glassopen: false,
       glasstitle: '',
-      glassform: {}, // 表单参数
+      glassform: {}, // The form parameter
       glassrules: {
         name: [
-          { required: true, message: '型号名字不能为空', trigger: 'blur' }
+          { required: true, message: 'The model name cannot be empty', trigger: 'blur' }
         ],
-        styles: [{ required: true, message: '款式不能为空', trigger: 'blur' }],
-        colors: [{ required: true, message: '颜色不能为空', trigger: 'blur' }],
+        styles: [{ required: true, message: 'The style cannot be empty', trigger: 'blur' }],
+        colors: [{ required: true, message: 'The color cannot be empty', trigger: 'blur' }],
         verticalLineHeight: [
-          { required: true, message: '立线高度不能为空', trigger: 'blur' }
+          { required: true, message: 'Vertical line height cannot be empty', trigger: 'blur' }
         ],
         textures: [
-          { required: true, message: '材质不能为空', trigger: 'blur' }
+          { required: true, message: 'Materials cannot be empty', trigger: 'blur' }
         ],
         mirrorRingWidth: [
-          { required: true, message: '镜圈宽度不能为空', trigger: 'blur' }
+          { required: true, message: 'The circle width must not be empty', trigger: 'blur' }
         ],
         centreSillWidth: [
-          { required: true, message: '中梁宽度不能为空', trigger: 'blur' }
+          { required: true, message: 'The width of the middle beam must not be empty', trigger: 'blur' }
         ],
         topRake: [
-          { required: true, message: '前倾角不能为空', trigger: 'blur' }
+          { required: true, message: 'Rake Angle cannot be empty', trigger: 'blur' }
         ],
         legLength: [
-          { required: true, message: '镜腿长度不能为空', trigger: 'blur' }
+          { required: true, message: 'The length of the mirror leg must not be empty', trigger: 'blur' }
         ],
         surfaceBending: [
-          { required: true, message: '面弯不能为空', trigger: 'blur' }
+          { required: true, message: 'Face bend cannot be empty', trigger: 'blur' }
         ],
         lastDate: [
-          { required: true, message: '最后操作时间不能为空', trigger: 'blur' }
+          { required: true, message: 'The last operation time cannot be empty', trigger: 'blur' }
         ]
       },
-      //添加镜架参数列表
+      //Add frame parameter list
       kuanshi_List: [],
       yanse_List: [],
       lixian_List: [],
@@ -341,7 +341,7 @@ export default {
       jingtui_List: [],
       mianwan_List: [],
 
-      applyFaceTypeList: [], //脸型列表
+      applyFaceTypeList: [], //The face list
       applyFaceTypes: []
     }
   },
@@ -380,7 +380,7 @@ export default {
   methods: {
     beforeUpload(file) {
       if (file.type.indexOf('image/') == -1) {
-        this.msgError('文件格式错误，请上传图片类型,如：JPG，PNG后缀的文件。')
+        this.msgError('File format error,Please upload the image type,Such as:JPG,PNGFile with suffix。')
       } else {
         const reader = new FileReader()
         reader.readAsDataURL(file)
@@ -391,7 +391,7 @@ export default {
     },
     beforeUpload1(file) {
       if (file.type.indexOf('image/') == -1) {
-        this.msgError('文件格式错误，请上传图片类型,如：JPG，PNG后缀的文件。')
+        this.msgError('File format error,Please upload the image type,Such as:JPG,PNGFile with suffix。')
       } else {
         const reader = new FileReader()
         reader.readAsDataURL(file)
@@ -403,33 +403,33 @@ export default {
     requestUpload() {
     },
 
-    // 参数设置列表
+    // Parameter Setting List
     paramsdataList() {
       this.paramsLoading = true
       listParamsData(this.queryParams).then((response) => {
         var paramsDataList = response.data
         for (let i = 0; i < paramsDataList.length; i++) {
           if (paramsDataList[i].groupType == 1) {
-            this.paymentList.push(paramsDataList[i]) //预付定金比例
+            this.paymentList.push(paramsDataList[i]) //Proportion of down payment
           } else if (paramsDataList[i].groupType == 2) {
-            this.stockList.push(paramsDataList[i]) //库存报警设置
+            this.stockList.push(paramsDataList[i]) //Inventory alarm setting
           } else if (paramsDataList[i].groupType == 3) {
-            this.returnList.push(paramsDataList[i]) //回访时间设置
+            this.returnList.push(paramsDataList[i]) //Set the return visit time
           } else if (paramsDataList[i].groupType == 4) {
-            paramsDataList[i].checkDetail = '查看二维码'
-            this.resorceList.push(paramsDataList[i]) //预约管理来源
+            paramsDataList[i].checkDetail = 'View qr code'
+            this.resorceList.push(paramsDataList[i]) //Appointment Management Sources
           } else if (paramsDataList[i].groupType == 5) {
-            this.loginPic.push(paramsDataList[i]) //登录页图片
+            this.loginPic.push(paramsDataList[i]) //Image of login page
           } else if (paramsDataList[i].groupType == 6) {
-            this.tecPhone.push(paramsDataList[i]) //技术客服电话
+            this.tecPhone.push(paramsDataList[i]) //Technical Customer Service Telephone
           } else if (paramsDataList[i].groupType == 7) {
-            this.performanceList.push(paramsDataList[i]) //业绩考核标准
+            this.performanceList.push(paramsDataList[i]) //Performance appraisal criteria
           }
         }
         this.paramsLoading = false
       })
     },
-    /** 修改按钮操作 */
+    /** Modify button operation */
     paramshandleUpdate(row) {
       console.log(row)
       this.paramsReset()
@@ -444,28 +444,28 @@ export default {
         }
         this.paramsform = response.data
         this.paramsopen = true
-        this.paramstitle = '修改参数设置'
+        this.paramstitle = 'Modifying Parameter Settings'
       })
     },
-    /** 修改登录页 */
+    /** Modifying the Login page */
     handleBackGroundPicUpdate(row) {
       this.paramsReset()
       const id = row.id
       getBackGroundPic(id).then((response) => {
-        if (response.data.type === 6) { // 修改图片
+        if (response.data.type === 6) { // The images
           this.backGroundPic = true
         }
         this.paramsform = response.data
         this.paramsopen = true
-        this.paramstitle = '修改参数设置'
+        this.paramstitle = 'Modifying Parameter Settings'
       })
     },
     paramshandleDelete(row) {
       const name = row.name || this.name
       const ids = row.id || this.ids
-      this.$confirm('是否确认删除镜架型号为"' + name + '"的数据项?', '警告', {
-        confirmButtonText: '确定',
-        cancelButtonText: '取消',
+      this.$confirm('Is it confirmed to delete the frame model as"' + name + '"Data item?', 'warning', {
+        confirmButtonText: 'determine',
+        cancelButtonText: 'cancel',
         type: 'warning'
       })
         .then(function() {
@@ -480,21 +480,21 @@ export default {
           this.loginPic = []
           this.tecPhone = []
           this.paramsdataList()
-          this.msgSuccess('删除成功')
+          this.msgSuccess('Delete the success')
         })
         .catch(function() {
         })
     },
-    /** 添加按钮操作 */
+    /** Add button action */
     paramshandleAdd() {
       this.paramsReset()
       this.paramsopen = true
-      this.paramstitle = '添加参数设置'
+      this.paramstitle = 'Add parameter Settings'
       this.paramsform.groupType = 4
       this.paramsform.type = 5
       this.paramsAdd = 1
     },
-    /** 提交按钮 */
+    /** The submit button */
     paramsubmitForm: function() {
       this.$refs['paramsform'].validate((valid) => {
         if (valid) {
@@ -502,7 +502,7 @@ export default {
             if (this.backGroundPic) {
               updateBackGroundPic(this.paramsform).then((response) => {
                 if (response.code === 200) {
-                  this.msgSuccess('修改成功')
+                  this.msgSuccess('Modify the success')
                   this.paramsopen = false
                   this.paymentList = []
                   this.stockList = []
@@ -519,7 +519,7 @@ export default {
             } else {
               updateParamsData(this.paramsform).then((response) => {
                 if (response.code === 200) {
-                  this.msgSuccess('修改成功')
+                  this.msgSuccess('Modify the success')
                   this.paramsopen = false
                   this.paymentList = []
                   this.stockList = []
@@ -536,7 +536,7 @@ export default {
           } else {
             addParamsData(this.paramsform).then((response) => {
               if (response.code === 200) {
-                this.msgSuccess('新增成功')
+                this.msgSuccess('New success')
                 this.paramsopen = false
                 this.paramsopen = false
                 this.paymentList = []
@@ -554,14 +554,14 @@ export default {
       })
       this.dataType = false
     },
-    // 取消按钮
+    // Cancel button
     paramsCancel() {
       this.dataType = false
       this.paramsopen = false
       this.paramsAdd = 0
       this.paramsReset()
     },
-    // 表单重置
+    // Reset the form
     paramsReset() {
       this.paramsform = {
         id: undefined,
@@ -574,7 +574,7 @@ export default {
       this.paramsAdd = 0
       this.resetForm('paramsform')
     },
-    /** 查询会员等级设置列表 */
+    /** Query the membership level setting list */
     getList() {
       this.loading = true
       listMemberLevel(this.queryParams).then((response) => {
@@ -583,16 +583,16 @@ export default {
         this.loading = false
       })
     },
-    // 删除状态0未1已字典翻译
+    // Delete the state0not1Dictionary translation
     delStatusFormat(row, column) {
       return this.selectDictLabel(this.delStatusOptions, row.delStatus)
     },
-    // 取消按钮
+    // Cancel button
     cancel() {
       this.open = false
       this.reset()
     },
-    // 表单重置
+    // Reset the form
     reset() {
       this.form = {
         id: undefined,
@@ -604,59 +604,59 @@ export default {
       }
       this.resetForm('form')
     },
-    /** 搜索按钮操作 */
+    /** Search button operation */
     handleQuery() {
       this.queryParams.pageNum = 1
       this.getList()
     },
-    /** 重置按钮操作 */
+    /** Reset button operation */
     resetQuery() {
       this.resetForm('queryForm')
       this.handleQuery()
     },
-    // 多选框选中数据
+    // Select data in multiple boxes
     handleSelectionChange(selection) {
       // this.ids = selection.map((item) => item.id);
       this.single = selection.length != 1
       this.multiple = !selection.length
     },
-    /** 新增按钮操作 */
+    /** New Button Operation */
     handleAdd() {
       this.reset()
       this.open = true
-      this.title = '添加会员等级设置'
+      this.title = 'Add membership level Settings'
     },
 
-    /** 隐藏item操作 */
+    /** hiddenitemoperation */
     packUpUpdate(index) {
       if (document.querySelectorAll('.el-table__body-wrapper')[index].style.display === 'none') {
         document.querySelectorAll('.el-table__body-wrapper')[index].style.display = 'block'
-        document.querySelectorAll('.showdata')[index].innerHTML = '收起'
+        document.querySelectorAll('.showdata')[index].innerHTML = 'Pack up'
         document.querySelectorAll('.showimg')[index].src = '../../assets/image/login_top.png'
       } else {
         document.querySelectorAll('.el-table__body-wrapper')[index].style.display = 'none'
-        document.querySelectorAll('.showdata')[index].innerHTML = '展开'
+        document.querySelectorAll('.showdata')[index].innerHTML = 'an'
         document.querySelectorAll('.showimg')[index].src = '../../assets/image/login_top.png'
       }
     },
-    /** 修改按钮操作 */
+    /** Modify button operation */
     handleUpdate(row) {
       this.reset()
       const id = row.id
       getMemberLevel(id).then((response) => {
         this.form = response.data
         this.open = true
-        this.title = '修改会员等级设置'
+        this.title = 'Modify membership level Settings'
       })
     },
-    /** 提交按钮 */
+    /** The submit button */
     submitForm: function() {
       this.$refs['form'].validate((valid) => {
         if (valid) {
           if (this.form.id != undefined) {
             updateMemberLevel(this.form).then((response) => {
               if (response.code === 200) {
-                this.msgSuccess('修改成功')
+                this.msgSuccess('Modify the success')
                 this.open = false
                 this.getList()
               }
@@ -664,7 +664,7 @@ export default {
           } else {
             addMemberLevel(this.form).then((response) => {
               if (response.code === 200) {
-                this.msgSuccess('新增成功')
+                this.msgSuccess('New success')
                 this.open = false
                 this.getList()
               }
@@ -673,15 +673,15 @@ export default {
         }
       })
     },
-    /** 删除按钮操作 */
+    /** Delete button operation */
     handleDelete(row) {
       const ids = row.id
       this.$confirm(
-        '是否确认删除会员等级设置编号为"' + ids + '"的数据项?',
-        '警告',
+        'Confirm to delete the membership level setting number as"' + ids + '"Data item?',
+        'warning',
         {
-          confirmButtonText: '确定',
-          cancelButtonText: '取消',
+          confirmButtonText: 'determine',
+          cancelButtonText: 'cancel',
           type: 'warning'
         }
       )
@@ -690,17 +690,17 @@ export default {
         })
         .then(() => {
           this.getList()
-          this.msgSuccess('删除成功')
+          this.msgSuccess('Delete the success')
         })
         .catch(function() {
         })
     },
-    /** 导出按钮操作 */
+    /** Export button operation */
     handleExport() {
       const queryParams = this.queryParams
-      this.$confirm('是否确认导出所有会员等级设置数据项?', '警告', {
-        confirmButtonText: '确定',
-        cancelButtonText: '取消',
+      this.$confirm('Confirm to export all membership level setting data items?', 'warning', {
+        confirmButtonText: 'determine',
+        cancelButtonText: 'cancel',
         type: 'warning'
       })
         .then(function() {

@@ -1,6 +1,6 @@
 import request from '@/utils/request'
 
-// 获取路由
+// To get the routing
 export const getRouters = () => {
   return request({
     url: '/getRouters',

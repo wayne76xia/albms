@@ -69,7 +69,7 @@ export default {
           orient: "vertical",
           left: 150,
           top: 270,
-          selectedMode: false, //取消图例上的点击事件
+          selectedMode: false, //Cancel the click event on the legend
           itemWidth: 9,
           itemHeight: 9,
           // formatter: function (name) {
@@ -82,12 +82,12 @@ export default {
           //     }
           //   }
           //   return (
-          //     name + "\t\t\t" + target + "同上月对比"
+          //     name + "\t\t\t" + target + "Comparison with last month"
           //   );
           // },
         },
 
-        //环形颜色
+        //Color ring
         color: [
           "#F77317",
           "#4860FB",
@@ -101,7 +101,7 @@ export default {
           "#14caf1",
           "#da14f1",
         ],
-        // 设置环形中间的数据
+        // Sets the data in the middle of the ring
         graphic: [
           {
             type: "text",
@@ -110,7 +110,7 @@ export default {
             z: 10,
             style: {
               fill: "#717880",
-              text: this.data_num + "\n用户总数",
+              text: this.data_num + "\nTotal number of users",
               font: "14px Microsoft YaHei",
               textAlign: "middle",
               textVerticalAlign: "middle",
@@ -120,17 +120,17 @@ export default {
         series: [
           {
             hoverAnimation: false,
-            name: "会员分析",
+            name: "Member analysis",
             type: "pie",
-            radius: ["32%", "45%"], //两个表示环：内半径,外半径
-            center: ["50%", "35%"], //左右，上下
+            radius: ["32%", "45%"], //Two representation rings:Within a radius of,Outer radius
+            center: ["50%", "35%"], //Or so,Up and down
             avoidLabelOverlap: true,
             label: {
               normal: {
                 show: true,
                 position: "outer",
-                //模板变量有 {a}, {b}，{c}，{d}，{e}，分别表示系列名，数据名，数据值等。
-                formatter: "{c_set|{c}\t\t}人" + "\n\n占比{d}%",
+                //The template variables have {a}, {b},{c},{d},{e},Respectively indicate the series names,The data of,The data values etc.。
+                formatter: "{c_set|{c}\t\t}people" + "\n\nAccounted for{d}%",
                 borderWidth: 20,
                 borderRadius: 4,
                 padding: [90, -50],
@@ -152,7 +152,7 @@ export default {
                 },
               },
             },
-            //牵引线条颜色
+            //Color of traction line
             labelLine: {
               normal: {
                 show: true,

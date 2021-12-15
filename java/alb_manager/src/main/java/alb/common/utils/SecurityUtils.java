@@ -8,13 +8,13 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 /**
- * 安全服务工具类
+ * Security service utility class
  *
  */
 public class SecurityUtils
 {
     /**
-     * 获取用户账户
+     * Obtaining user accounts
      **/
     public static String getUsername()
     {
@@ -24,12 +24,12 @@ public class SecurityUtils
         }
         catch (Exception e)
         {
-            throw new CustomException("获取用户账户异常", HttpStatus.UNAUTHORIZED);
+            throw new CustomException("Obtaining the user account fails. Procedure", HttpStatus.UNAUTHORIZED);
         }
     }
 
     /**
-     * 获取用户
+     * Get the user
      **/
     public static LoginUser getLoginUser()
     {
@@ -39,12 +39,12 @@ public class SecurityUtils
         }
         catch (Exception e)
         {
-            throw new CustomException("获取用户信息异常", HttpStatus.UNAUTHORIZED);
+            throw new CustomException("Obtaining user information fails. Procedure", HttpStatus.UNAUTHORIZED);
         }
     }
 
     /**
-     * 获取Authentication
+     * To obtainAuthentication
      */
     public static Authentication getAuthentication()
     {
@@ -52,10 +52,10 @@ public class SecurityUtils
     }
 
     /**
-     * 生成BCryptPasswordEncoder密码
+     * generateBCryptPasswordEncoderpassword
      *
-     * @param password 密码
-     * @return 加密字符串
+     * @param password password
+     * @return Encrypted string
      */
     public static String encryptPassword(String password)
     {
@@ -64,11 +64,11 @@ public class SecurityUtils
     }
 
     /**
-     * 判断密码是否相同
+     * Check whether the passwords are the same
      *
-     * @param rawPassword 真实密码
-     * @param encodedPassword 加密后字符
-     * @return 结果
+     * @param rawPassword The real password
+     * @param encodedPassword Postencrypted character
+     * @return The results of
      */
     public static boolean matchesPassword(String rawPassword, String encodedPassword)
     {
@@ -77,10 +77,10 @@ public class SecurityUtils
     }
 
     /**
-     * 是否为管理员
+     * Administrator or not
      * 
-     * @param userId 用户ID
-     * @return 结果
+     * @param userId The userID
+     * @return The results of
      */
     public static boolean isAdmin(Long userId)
     {

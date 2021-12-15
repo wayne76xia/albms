@@ -4,15 +4,15 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
 /**
- * 用户和角色关联 sys_user_role
+ * Users are associated with roles sys_user_role
  *
  */
 public class SysUserRole
 {
-    /** 用户ID */
+    /** The userID */
     private Long userId;
     
-    /** 角色ID */
+    /** roleID */
     private Long roleId;
 
     public Long getUserId()

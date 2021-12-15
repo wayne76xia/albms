@@ -1,4 +1,4 @@
-// 打印类属性、方法定义
+// Print class properties、Method definition
 /* eslint-disable */
 const Print = function (dom, options) {
   if (!(this instanceof Print)) return new Print(dom, options);
@@ -78,16 +78,15 @@ Print.prototype = {
         }
       }
     }
-    // 包裹要打印的元素
+    // Wraps the element to print
     // fix: https://github.com/xyl66/vuePlugs_printjs/issues/36
     return this.wrapperRefDom(this.dom).innerHTML;
   },
-  // 向父级元素循环，包裹当前需要打印的元素
-  // 防止根级别开头的 css 选择器不生效
+  // Loop through the parent element,Wraps the element that you currently want to print
+  // Prevent root level beginning css The selector does not take effect
   wrapperRefDom: function (refDom) {
     let prevDom = null
     let currDom = refDom
-    // 判断当前元素是否在 body 中，不在文档中则直接返回该节点
     if (!this.isInBody(currDom)) return currDom
 
     while (currDom) {
@@ -142,7 +141,7 @@ Print.prototype = {
       console.log('err', err);
     }
   },
-  // 检查一个元素是否是 body 元素的后代元素且非 body 元素本身
+  // Checks whether an element is body The descendant of the element and not body The element itself
   isInBody: function (node) {
     return (node === document.body) ? false : document.body.contains(node);
   },
@@ -156,7 +155,7 @@ Print.prototype = {
 };
 const MyPlugin = {}
 MyPlugin.install = function (Vue, options) {
-  // 4. 添加实例方法
+  // 4. Add Instance method
   Vue.prototype.$print = Print
 }
 export default MyPlugin

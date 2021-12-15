@@ -18,7 +18,7 @@ import org.springframework.web.servlet.NoHandlerFoundException;
 import alb.common.utils.StringUtils;
 
 /**
- * 全局异常处理器
+ * Global exception handler
  *
  */
 @RestControllerAdvice
@@ -27,7 +27,7 @@ public class GlobalExceptionHandler
     private static final Logger log = LoggerFactory.getLogger(GlobalExceptionHandler.class);
 
     /**
-     * 基础异常
+     * Based on abnormal
      */
     @ExceptionHandler(BaseException.class)
     public AjaxResult baseException(BaseException e)
@@ -36,7 +36,7 @@ public class GlobalExceptionHandler
     }
 
     /**
-     * 业务异常
+     * Business exceptions
      */
     @ExceptionHandler(CustomException.class)
     public AjaxResult businessException(CustomException e)
@@ -52,14 +52,14 @@ public class GlobalExceptionHandler
     public AjaxResult handlerNoFoundException(Exception e)
     {
         log.error(e.getMessage(), e);
-        return AjaxResult.error(HttpStatus.NOT_FOUND, "路径不存在，请检查路径是否正确");
+        return AjaxResult.error(HttpStatus.NOT_FOUND, "Path does not exist,Check whether the path is correct");
     }
 
     @ExceptionHandler(AccessDeniedException.class)
     public AjaxResult handleAuthorizationException(AccessDeniedException e)
     {
         log.error(e.getMessage());
-        return AjaxResult.error(HttpStatus.FORBIDDEN, "没有权限，请联系管理员授权");
+        return AjaxResult.error(HttpStatus.FORBIDDEN, "Have no legal power,Contact the administrator for authorization");
     }
 
     @ExceptionHandler(AccountExpiredException.class)
@@ -84,7 +84,7 @@ public class GlobalExceptionHandler
     }
 
     /**
-     * 自定义验证异常
+     * Custom validation exception
      */
     @ExceptionHandler(BindException.class)
     public AjaxResult validatedBindException(BindException e)
@@ -95,7 +95,7 @@ public class GlobalExceptionHandler
     }
 
     /**
-     * 自定义验证异常
+     * Custom validation exception
      */
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public Object validExceptionHandler(MethodArgumentNotValidException e)
@@ -106,11 +106,11 @@ public class GlobalExceptionHandler
     }
 
     /**
-     * 演示模式异常
+     * Abnormal presentation mode
      */
     @ExceptionHandler(DemoModeException.class)
     public AjaxResult demoModeException(DemoModeException e)
     {
-        return AjaxResult.error("演示模式，不允许操作");
+        return AjaxResult.error("Demo mode,Disallow operation");
     }
 }

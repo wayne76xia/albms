@@ -56,27 +56,27 @@ export default {
         legend: {
           x: 30,
           data: [
-            // 图列内容
+            // Figure column content
             {
-              name: "预约单",
+              name: "reservations",
               icon: "rect",
               textStyle: {
-                color: "#95a0c4", // 单独设置某一个图列的颜色
-                backgroundColor: "#fff", // 单独设置某一个图列的字体背景色
+                color: "#95a0c4", // Sets the color of a graph column individually
+                backgroundColor: "#fff", // Sets the font background color of a column individually
               },
             },
             {
-              name: "销售单",
+              name: "Sales list",
               icon: "rect",
               textStyle: {
-                color: "#95a0c4", // 单独设置某一个图列的颜色
-                backgroundColor: "#fff", // 单独设置某一个图列的字体背景色
+                color: "#95a0c4", // Sets the color of a graph column individually
+                backgroundColor: "#fff", // Sets the font background color of a column individually
               },
             },
           ],
         },
         dataset: {
-          dimensions:["product", "预约单", "销售单"],
+          dimensions:["product", "reservations", "Sales list"],
           source: this.data
         },
         xAxis: {

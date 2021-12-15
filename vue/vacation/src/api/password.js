@@ -1,7 +1,7 @@
 import request from '@/utils/request'
 
 
-// 获取验证码
+// Obtaining verification code
 export function getCodes(phone, dealType, templateType) {
     return request({
         url: '/sendSMS?phone=' + phone + '&dealType=' + dealType + '&templateType=' + templateType,
@@ -9,7 +9,7 @@ export function getCodes(phone, dealType, templateType) {
     })
 }
 
-// 忘记密码
+// Forgot password
 export function forgetPassword(data) {
     return request({
         url: '/forgetPassword',
